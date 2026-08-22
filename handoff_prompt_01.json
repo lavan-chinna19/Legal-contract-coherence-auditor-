@@ -1,0 +1,214 @@
+﻿{
+  "prompt_number": "01",
+  "prompt_title": "Environment Bootstrap & Repository Baseline",
+  "session_timestamp_utc": "2026-08-22T14:29:22Z",
+  "session_timestamp_local": "2026-08-22T19:59:22+05:30",
+  "global_contract_version": "1.0",
+
+  "acceptance_gates": [
+    {
+      "gate_id": "AG1-1",
+      "description": "requirements.txt written with pinned exact versions for all required packages",
+      "status": "PASSED",
+      "evidence": "File written at c:\\project\\legal contarct\\requirements.txt with 23 direct dependencies pinned to versions verified in venv"
+    },
+    {
+      "gate_id": "AG1-2",
+      "description": "pip install -r requirements.txt exits 0",
+      "status": "PASSED",
+      "evidence": {
+        "command": ".venv\\Scripts\\pip install -r requirements.txt",
+        "task_id": "2230e8d9-e4d9-47b1-b12c-c2e1be42cdf4/task-42",
+        "exit_code": 0,
+        "outcome": "All requirements already satisfied",
+        "provenance": "REAL RUN - executed in this session"
+      }
+    },
+    {
+      "gate_id": "AG1-3",
+      "description": "en_core_web_sm spaCy pipeline downloaded and installed",
+      "status": "PASSED",
+      "evidence": {
+        "command": ".venv\\Scripts\\python -m spacy download en_core_web_sm",
+        "task_id": "2230e8d9-e4d9-47b1-b12c-c2e1be42cdf4/task-49",
+        "exit_code": 0,
+        "installed_version": "en_core_web_sm-3.8.0",
+        "source_url": "https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.8.0/en_core_web_sm-3.8.0-py3-none-any.whl",
+        "size_mb": 12.8,
+        "spacy_message": "[+] Download and installation successful",
+        "fallback_used": false,
+        "provenance": "REAL RUN - executed in this session"
+      }
+    },
+    {
+      "gate_id": "AG1-4",
+      "description": "Importability one-liner prints BOOTSTRAP SUCCESS",
+      "status": "PASSED",
+      "evidence": {
+        "command": ".venv\\Scripts\\python -c \"import torch, transformers, spacy, mapie, captum; nlp=spacy.load('en_core_web_sm'); print('BOOTSTRAP SUCCESS')\"",
+        "task_id": "2230e8d9-e4d9-47b1-b12c-c2e1be42cdf4/task-58",
+        "exit_code": 0,
+        "stdout": "BOOTSTRAP SUCCESS",
+        "provenance": "REAL RUN - executed in this session"
+      }
+    }
+  ],
+
+  "additional_verification": {
+    "description": "pytest run on tests/test_cuad_order.py",
+    "command": ".venv\\Scripts\\python -m pytest tests/test_cuad_order.py -v",
+    "task_id": "2230e8d9-e4d9-47b1-b12c-c2e1be42cdf4/task-81",
+    "exit_code": 0,
+    "results": {
+      "passed": 4,
+      "skipped": 2,
+      "failed": 0,
+      "duration_seconds": 7.85,
+      "skip_reason": "2 live-data tests skipped - ingest_cuad.py not yet run - expected at this stage",
+      "tests_passed": [
+        "test_synthetic_monotone_dataset",
+        "test_synthetic_non_monotone_dataset",
+        "test_synthetic_empty_answers_ignored",
+        "test_verification_report_keys"
+      ],
+      "tests_skipped": [
+        "test_live_cuad_order_report_exists",
+        "test_live_cuad_report_has_verdict"
+      ]
+    },
+    "provenance": "REAL RUN - executed in this session"
+  },
+
+  "python_environment": {
+    "python_version": "3.10.11",
+    "venv_path": "c:\\project\\legal contarct\\.venv",
+    "pip_version": "23.0.1",
+    "os": "Windows",
+    "gpu": "none - CPU-only torch wheel"
+  },
+
+  "key_package_versions_installed": {
+    "torch": "2.13.0",
+    "transformers": "5.15.1",
+    "sentence-transformers": "6.0.0",
+    "scikit-learn": "1.7.2",
+    "scipy": "1.15.3",
+    "spacy": "3.8.15",
+    "en_core_web_sm": "3.8.0",
+    "dateparser": "1.4.2",
+    "MAPIE": "1.5.0",
+    "crepes": "0.9.1",
+    "captum": "0.9.0",
+    "datasets": "5.0.1",
+    "huggingface_hub": "1.8.0",
+    "fastapi": "0.135.2",
+    "uvicorn": "0.42.0",
+    "pydantic": "2.12.5",
+    "httpx": "0.28.1",
+    "streamlit": "1.56.0",
+    "numpy": "1.26.4",
+    "pandas": "2.3.2",
+    "requests": "2.32.5",
+    "tqdm": "4.67.1",
+    "pytest": "9.1.1"
+  },
+
+  "dependency_licensing": {
+    "note": "All packages free/open-source. No paid API dependency introduced.",
+    "torch": "BSD-3-Clause (CPU-only)",
+    "transformers": "Apache-2.0",
+    "sentence-transformers": "Apache-2.0",
+    "scikit-learn": "BSD-3-Clause",
+    "spacy": "MIT",
+    "en_core_web_sm": "MIT",
+    "MAPIE": "BSD-3-Clause",
+    "crepes": "BSD-3-Clause",
+    "captum": "BSD-3-Clause",
+    "fastapi": "MIT",
+    "streamlit": "Apache-2.0",
+    "datasets": "Apache-2.0"
+  },
+
+  "files_created_or_modified": [
+    {
+      "path": "c:\\project\\legal contarct\\requirements.txt",
+      "action": "OVERWRITTEN",
+      "description": "Replaced range-pinned versions with exact pinned versions matching verified venv state"
+    },
+    {
+      "path": "c:\\project\\legal contarct\\handoff_prompt_01.json",
+      "action": "CREATED"
+    },
+    {
+      "path": "c:\\project\\legal contarct\\handoff_prompt_01_summary.md",
+      "action": "CREATED"
+    }
+  ],
+
+  "metrics": {
+    "note": "No ML metrics in this prompt - environment bootstrap only. All numbers provenance-labeled.",
+    "pip_install_exit_code": {"value": 0, "provenance": "REAL RUN"},
+    "spacy_download_exit_code": {"value": 0, "provenance": "REAL RUN"},
+    "bootstrap_one_liner_exit_code": {"value": 0, "provenance": "REAL RUN"},
+    "pytest_passed": {"value": 4, "provenance": "REAL RUN"},
+    "pytest_skipped": {"value": 2, "provenance": "REAL RUN"},
+    "pytest_failed": {"value": 0, "provenance": "REAL RUN"},
+    "pytest_duration_seconds": {"value": 7.85, "provenance": "REAL RUN"}
+  },
+
+  "known_gaps_and_deferred_work": [
+    {
+      "id": "GAP-01",
+      "description": "pip 23.0.1 installed; 26.2.1 available. Optional upgrade.",
+      "severity": "low",
+      "deferred_to": "optional"
+    },
+    {
+      "id": "GAP-02",
+      "description": "requirements-lock.txt references editable 'aethergrid-sovereign' from another project in same venv. Unrelated to this project; not in requirements.txt - correct.",
+      "severity": "info",
+      "deferred_to": "no action needed"
+    },
+    {
+      "id": "GAP-03",
+      "description": "2 live-data pytest tests SKIPPED - ingest_cuad.py not yet run. Will pass after Prompt 02 ingestion.",
+      "severity": "expected",
+      "deferred_to": "Prompt 02"
+    },
+    {
+      "id": "GAP-04",
+      "description": "Contract §4 confidentiality constraints (no plaintext in logs, encryption at rest, retention policy, privacy notice) documented in data_governance.md. No upload/storage code exists yet - forward requirement.",
+      "severity": "forward-requirement",
+      "deferred_to": "Prompt 15+"
+    },
+    {
+      "id": "GAP-05",
+      "description": "No ML training or evaluation performed. All future accuracy/Kendall Tau/coverage metrics must come from real runs per Contract §1.",
+      "severity": "forward-requirement",
+      "deferred_to": "Prompt 04+"
+    }
+  ],
+
+  "contract_compliance": {
+    "1_no_fabricated_results": "COMPLIANT - all numbers from real runs, provenance-labeled",
+    "2_human_in_loop": "COMPLIANT - no feedback loop built or simulated",
+    "3_case_study_integrity": "COMPLIANT - no case studies referenced",
+    "4_confidentiality": "COMPLIANT - no upload/storage code; forward requirement in GAP-04",
+    "5_claim_discipline": "COMPLIANT - no production-ready or performance claims",
+    "6_free_tooling": "COMPLIANT - all packages free/open-source, CPU-only torch",
+    "7_deployment_target": "COMPLIANT - no Kubernetes/Terraform introduced",
+    "8_handoff_artifact": "COMPLIANT - this file and summary.md written before session end"
+  },
+
+  "starting_point_for_next_prompt": {
+    "prompt_number": "02",
+    "suggested_focus": "Data ingestion - run ingest_cuad.py, ingest_ledgar.py, ingest_edgar.py. Populate data/raw and data/processed. Make live pytest tests pass. Produce clause_order_verification.json.",
+    "preconditions_met": [
+      "Python 3.10.11 venv fully operational",
+      "All ML/NLP/API/test packages installed and importable",
+      "en_core_web_sm-3.8.0 loaded successfully",
+      "4/4 synthetic pytest tests passing"
+    ],
+    "first_command_to_run": ".venv\\Scripts\\python -m src.data.ingest_cuad"
+  }
+}
