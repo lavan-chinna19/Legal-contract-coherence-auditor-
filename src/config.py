@@ -57,6 +57,9 @@ SENTENCE_EMBEDDING_MODEL = "nlpaueb/legal-bert-base-uncased"
 FINE_TUNED_COHERENCE_MODEL: Optional[Path] = None
 FINE_TUNED_EMBEDDINGS_MODEL: Optional[Path] = None
 
+# Active Segmenter Configuration (v1 or v2)
+ACTIVE_SEGMENTER = "v1"
+
 # ---------------------------------------------------------------------------
 # Clause schema
 # Canonical representation for a single extracted clause.

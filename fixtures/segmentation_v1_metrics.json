@@ -1,0 +1,12 @@
+{
+  "dataset": "UNIT_TEST_SYNTHETIC_GOLD",
+  "sample_size": 1,
+  "model": "v1_rule_based",
+  "evaluation_method": "offset_tolerance_10",
+  "metrics": {
+    "precision": 0.9615384615384616,
+    "recall": 1.0,
+    "f1": 0.9803921568627451
+  },
+  "status": "UNVERIFIED"
+}
