@@ -1,0 +1,8 @@
+{
+  "dataset": "ledgar_val",
+  "sample_size": 2000,
+  "num_classes": 98,
+  "embedding_dim": 768,
+  "distance_metric": "cosine",
+  "silhouette_score": 0.0354708731174469
+}

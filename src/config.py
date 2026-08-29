@@ -61,6 +61,15 @@ FINE_TUNED_EMBEDDINGS_MODEL: Optional[Path] = None
 ACTIVE_SEGMENTER = "v1"
 
 # ---------------------------------------------------------------------------
+# Embeddings Configuration
+# ---------------------------------------------------------------------------
+EMBEDDINGS_CACHE_DIR = PROCESSED_DIR / "embeddings_cache"
+EMBEDDINGS_CACHE_DIR.mkdir(parents=True, exist_ok=True)
+
+# Active Embedding Source Configuration ("frozen" or "fine_tuned")
+ACTIVE_EMBEDDING_SOURCE = "frozen"
+
+# ---------------------------------------------------------------------------
 # Clause schema
 # Canonical representation for a single extracted clause.
 # ---------------------------------------------------------------------------

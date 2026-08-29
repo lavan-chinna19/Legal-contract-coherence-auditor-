@@ -1,0 +1,47 @@
+{
+  "prompt": 4,
+  "status": "COMPLETED_WITH_KNOWN_GAPS",
+  "repository": "lavan-chinna19/Legal-contract-coherence-auditor-",
+  "embedding_model": "nlpaueb/legal-bert-base-uncased",
+  "embedding_dimension": 768,
+  "cache_location": "data/processed/embeddings_cache/",
+  "frozen_pipeline": {
+    "status": "VERIFIED",
+    "ledgar_sample": 5000,
+    "sec_edgar_sample": 3785,
+    "cache_hit_verified": true
+  },
+  "silhouette_evaluation": {
+    "status": "VERIFIED",
+    "dataset": "ledgar_val",
+    "sample_size": 2000,
+    "distance_metric": "cosine",
+    "frozen_score_path": "fixtures/silhouette_score_frozen.json"
+  },
+  "contrastive_fine_tuning": {
+    "status": "NOT COMPLETED / PARTIAL",
+    "reason": "CPU constraints prevent feasible contrastive loss training on a 768-dim Transformer over thousands of pairs. Implementation preserved in src/embeddings/fine_tune.py."
+  },
+  "registry": {
+    "status": "VERIFIED",
+    "interface": "src/embeddings/factory.py::get_embedder(source: str)",
+    "demonstrated_in": "demo_registry.py"
+  },
+  "files_created": [
+    "src/embeddings/__init__.py",
+    "src/embeddings/base.py",
+    "src/embeddings/cache.py",
+    "src/embeddings/frozen.py",
+    "src/embeddings/fine_tune.py",
+    "src/embeddings/eval.py",
+    "src/embeddings/factory.py",
+    "tests/test_embeddings.py",
+    "verify_frozen_cache.py",
+    "demo_registry.py",
+    "gate_validation_prompt_04.py"
+  ],
+  "files_modified": [
+    "src/config.py"
+  ],
+  "starting_point_for_prompt_5": "Prompt 5 can use `src.embeddings.factory.get_embedder('frozen')` to retrieve reliable 768-dimensional Legal-BERT clause embeddings with built-in caching for fast retrieval."
+}
