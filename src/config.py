@@ -70,6 +70,7 @@ ACTIVE_SEGMENTER = "v1"
 # ---------------------------------------------------------------------------
 EMBEDDINGS_CACHE_DIR = PROCESSED_DIR / "embeddings_cache"
 EMBEDDINGS_CACHE_DIR.mkdir(parents=True, exist_ok=True)
+LEDGAR_CENTROIDS_PATH = FIXTURES_DIR / "ledgar_centroids.npz"
 
 # Active Embedding Source Configuration ("frozen" or "fine_tuned")
 ACTIVE_EMBEDDING_SOURCE = "frozen"
