@@ -54,8 +54,13 @@ ZERO_SHOT_NLI_MODEL = "facebook/bart-large-mnli"        # HuggingFace model ID; 
 SENTENCE_EMBEDDING_MODEL = "nlpaueb/legal-bert-base-uncased"
 
 # Fine-tuned model paths (populated by Prompts 4 and 5)
-FINE_TUNED_COHERENCE_MODEL: Optional[Path] = None
+COHERENCE_CHECKPOINT_PATH: Path = MODEL_DIR / "coherence_classifier.pt"
+COHERENCE_TRAINING_CURVES_PATH: Path = FIXTURES_DIR / "coherence_training_curves.json"
+FINE_TUNED_COHERENCE_MODEL: Optional[Path] = COHERENCE_CHECKPOINT_PATH
 FINE_TUNED_EMBEDDINGS_MODEL: Optional[Path] = None
+
+# Active Coherence Model Configuration ("fine_tuned" or "zero_shot")
+ACTIVE_COHERENCE_MODEL = "fine_tuned"
 
 # Active Segmenter Configuration (v1 or v2)
 ACTIVE_SEGMENTER = "v1"

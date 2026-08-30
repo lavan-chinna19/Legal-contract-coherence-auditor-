@@ -1,0 +1,136 @@
+{
+  "metadata": {
+    "num_total_pairs": 894,
+    "num_train_pairs": 716,
+    "num_val_pairs": 178,
+    "embedding_dim": 768,
+    "epochs": 12,
+    "batch_size": 32,
+    "learning_rate": 0.001,
+    "timestamp": "2026-08-30 04:32:55 UTC",
+    "provenance": "REAL_MEASURED_RUN",
+    "checkpoint_saved_to": "C:\\project\\legal contarct\\models\\coherence_classifier.pt"
+  },
+  "epochs": [
+    {
+      "epoch": 1,
+      "train_loss": 0.647443,
+      "val_loss": 0.620028,
+      "val_accuracy": 0.6854,
+      "val_precision": 0.0,
+      "val_recall": 0.0,
+      "val_f1": 0.0,
+      "val_roc_auc": 0.5205
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.639765,
+      "val_loss": 0.62709,
+      "val_accuracy": 0.6854,
+      "val_precision": 0.0,
+      "val_recall": 0.0,
+      "val_f1": 0.0,
+      "val_roc_auc": 0.5429
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.62688,
+      "val_loss": 0.618818,
+      "val_accuracy": 0.6854,
+      "val_precision": 0.0,
+      "val_recall": 0.0,
+      "val_f1": 0.0,
+      "val_roc_auc": 0.5422
+    },
+    {
+      "epoch": 4,
+      "train_loss": 0.614028,
+      "val_loss": 0.617255,
+      "val_accuracy": 0.6854,
+      "val_precision": 0.5,
+      "val_recall": 0.0179,
+      "val_f1": 0.0345,
+      "val_roc_auc": 0.5764
+    },
+    {
+      "epoch": 5,
+      "train_loss": 0.568292,
+      "val_loss": 0.659927,
+      "val_accuracy": 0.6348,
+      "val_precision": 0.4308,
+      "val_recall": 0.5,
+      "val_f1": 0.4628,
+      "val_roc_auc": 0.5934
+    },
+    {
+      "epoch": 6,
+      "train_loss": 0.558121,
+      "val_loss": 0.641362,
+      "val_accuracy": 0.6629,
+      "val_precision": 0.25,
+      "val_recall": 0.0357,
+      "val_f1": 0.0625,
+      "val_roc_auc": 0.6127
+    },
+    {
+      "epoch": 7,
+      "train_loss": 0.510774,
+      "val_loss": 0.657054,
+      "val_accuracy": 0.6124,
+      "val_precision": 0.1905,
+      "val_recall": 0.0714,
+      "val_f1": 0.1039,
+      "val_roc_auc": 0.6408
+    },
+    {
+      "epoch": 8,
+      "train_loss": 0.429119,
+      "val_loss": 0.706326,
+      "val_accuracy": 0.6124,
+      "val_precision": 0.4085,
+      "val_recall": 0.5179,
+      "val_f1": 0.4567,
+      "val_roc_auc": 0.6221
+    },
+    {
+      "epoch": 9,
+      "train_loss": 0.39678,
+      "val_loss": 0.738203,
+      "val_accuracy": 0.6124,
+      "val_precision": 0.3415,
+      "val_recall": 0.25,
+      "val_f1": 0.2887,
+      "val_roc_auc": 0.6367
+    },
+    {
+      "epoch": 10,
+      "train_loss": 0.362152,
+      "val_loss": 0.775517,
+      "val_accuracy": 0.5955,
+      "val_precision": 0.2778,
+      "val_recall": 0.1786,
+      "val_f1": 0.2174,
+      "val_roc_auc": 0.635
+    },
+    {
+      "epoch": 11,
+      "train_loss": 0.327901,
+      "val_loss": 0.833083,
+      "val_accuracy": 0.6011,
+      "val_precision": 0.2857,
+      "val_recall": 0.1786,
+      "val_f1": 0.2198,
+      "val_roc_auc": 0.6408
+    },
+    {
+      "epoch": 12,
+      "train_loss": 0.339695,
+      "val_loss": 0.8856,
+      "val_accuracy": 0.6236,
+      "val_precision": 0.3721,
+      "val_recall": 0.2857,
+      "val_f1": 0.3232,
+      "val_roc_auc": 0.6446
+    }
+  ]
+}

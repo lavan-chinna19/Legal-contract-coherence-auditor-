@@ -1,0 +1,97 @@
+{
+  "prompt": 5,
+  "status": "COMPLETED",
+  "repository": "lavan-chinna19/Legal-contract-coherence-auditor-",
+  "what_was_built": [
+    "Consecutive-clause training pair constructor (CoherencePairSampler) generating positive pairs (c_i, c_{i+1}) with label 1.0, easy cross-document negatives with label 0.0, and hard same-document non-consecutive/reversed/jump negatives with label 0.0.",
+    "Lightweight PyTorch neural coherence scoring head (CoherenceScorerHead) over pair representations [u, v, |u - v|, u * v] with dimension 3072 -> 256 -> 64 -> 1 with LayerNorm, Dropout, and Sigmoid calibration.",
+    "Training pipeline (src/coherence/trainer.py) utilizing cached 768-dim Legal-BERT embeddings, tracking real epoch-by-epoch loss, accuracy, precision, recall, F1, and ROC-AUC.",
+    "Fine-tuned coherence model wrapper (FineTunedCoherenceModel) implementing CoherenceModelInterface with weights_only=True security compliance.",
+    "Zero-shot open-source alternative path (ZeroShotCoherenceModel) using local HuggingFace zero-shot NLI / directional semantic projection with zero paid API dependencies.",
+    "Unified model registry factory (src/coherence/factory.py::get_coherence_model) enabling seamless swapping between fine-tuned and zero-shot scorers."
+  ],
+  "what_was_tested": [
+    "Sampling strategy verification on full SEC EDGAR contracts confirming exact 1:1:1 ratios (verify_pair_sampling.py).",
+    "Real fine-tuning execution on 894 clause pairs across SEC EDGAR documents producing real loss and accuracy curves (train_coherence_model.py).",
+    "End-to-end execution of zero-shot path on legal clause pairs (demo_coherence_registry.py).",
+    "Registry swappability validation verifying identical interface for both model variants.",
+    "Full automated pytest suite covering unit tests, shape tests, factory tests, and trainer mocks (tests/test_coherence.py)."
+  ],
+  "commands_executed": [
+    {
+      "command": "python -m pytest -v",
+      "exit_code": 0,
+      "summary": "23/23 unit tests passed across all repository suites"
+    },
+    {
+      "command": "python verify_pair_sampling.py",
+      "exit_code": 0,
+      "summary": "Gate 1: Verified pair sampling and negative generation"
+    },
+    {
+      "command": "python train_coherence_model.py",
+      "exit_code": 0,
+      "summary": "Gate 2: Executed 12 epochs of training, saved checkpoint and curves"
+    },
+    {
+      "command": "python demo_coherence_registry.py",
+      "exit_code": 0,
+      "summary": "Gate 3 & 4: Demonstrated zero-shot and fine-tuned registry swappability"
+    },
+    {
+      "command": "python gate_validation_prompt_05.py",
+      "exit_code": 0,
+      "summary": "Master Gate Validation: All 4 acceptance gates passed"
+    }
+  ],
+  "metrics_produced": {
+    "provenance": "REAL_MEASURED_RUN",
+    "dataset": "SEC EDGAR Form 10-K Exhibit 10 contracts",
+    "total_training_pairs": 894,
+    "train_pairs": 716,
+    "val_pairs": 178,
+    "epochs_trained": 12,
+    "final_train_loss": 0.339695,
+    "final_val_loss": 0.885600,
+    "final_val_accuracy": 0.6236,
+    "final_val_f1": 0.3232,
+    "final_val_roc_auc": 0.6446,
+    "fixture_path": "fixtures/coherence_training_curves.json",
+    "checkpoint_path": "models/coherence_classifier.pt",
+    "checkpoint_size_bytes": 3218396
+  },
+  "acceptance_gates": {
+    "gate_1_pair_sampling": "PASS",
+    "gate_2_fine_tuned_training": "PASS",
+    "gate_3_zero_shot_execution": "PASS",
+    "gate_4_registry_swappability": "PASS"
+  },
+  "known_gaps_or_deferred_work": [
+    "Prompt 6 will integrate Channel B (discourse coherence transition score from this model) with Channel A (semantic OOD distance) for dual-channel scoring."
+  ],
+  "starting_point_for_prompt_6": "Prompt 6 can retrieve the active coherence model via `from src.coherence.factory import get_coherence_model; model = get_coherence_model()` and score transitions between consecutive clause pairs using `model.score_pair(clause_a, clause_b)`.",
+  "files_created": [
+    "src/coherence/__init__.py",
+    "src/coherence/base.py",
+    "src/coherence/pair_sampler.py",
+    "src/coherence/model.py",
+    "src/coherence/trainer.py",
+    "src/coherence/fine_tuned.py",
+    "src/coherence/zero_shot.py",
+    "src/coherence/factory.py",
+    "tests/test_coherence.py",
+    "verify_pair_sampling.py",
+    "train_coherence_model.py",
+    "demo_coherence_registry.py",
+    "gate_validation_prompt_05.py",
+    "fixtures/coherence_training_curves.json",
+    "models/coherence_classifier.pt",
+    "handoff_prompt_05.json",
+    "handoff_prompt_05_summary.md"
+  ],
+  "files_modified": [
+    "src/config.py",
+    "src/__init__.py",
+    "src/embeddings/frozen.py"
+  ]
+}

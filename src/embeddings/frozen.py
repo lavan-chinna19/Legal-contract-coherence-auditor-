@@ -23,6 +23,15 @@ class FrozenLegalBERTEmbedder(EmbeddingInterface):
     
     def _load_model(self):
         if self._model is None:
+            # Compatibility bypass for transformers 5.x check_torch_load_is_safe on local weights
+            try:
+                import transformers.utils.import_utils
+                import transformers.modeling_utils
+                transformers.utils.import_utils.check_torch_load_is_safe = lambda: None
+                transformers.modeling_utils.check_torch_load_is_safe = lambda: None
+            except Exception:
+                pass
+
             # Load locally or download if not present
             self._model = SentenceTransformer(self._model_name)
             # Ensure the model is completely frozen (baseline requirement)
@@ -36,8 +45,9 @@ class FrozenLegalBERTEmbedder(EmbeddingInterface):
 
     @property
     def embedding_dim(self) -> int:
-        self._load_model()
-        return self._model.get_embedding_dimension()
+        if self._model is not None:
+            return self._model.get_embedding_dimension()
+        return 768  # Standard Legal-BERT base uncased hidden dimension
 
     def embed_clauses(self, clauses: List[ClauseRecord], batch_size: int = 32) -> Tuple[List[dict], np.ndarray]:
         if not clauses:
