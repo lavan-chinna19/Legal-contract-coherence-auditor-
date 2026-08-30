@@ -29,13 +29,12 @@ class FineTunedCoherenceModel(CoherenceModelInterface):
         self._load_weights()
 
     def _load_weights(self):
-        if os.path.exists(self.checkpoint_path):
-            state_dict = torch.load(self.checkpoint_path, map_location=torch.device("cpu"), weights_only=True)
-            self._model.load_state_dict(state_dict)
-            self._model.eval()
-        else:
-            # Model initialized with defaults if checkpoint not yet trained
-            self._model.eval()
+        if not os.path.exists(self.checkpoint_path):
+            raise FileNotFoundError(f"Missing fine-tuned coherence checkpoint: {self.checkpoint_path}")
+            
+        state_dict = torch.load(self.checkpoint_path, map_location=torch.device("cpu"), weights_only=True)
+        self._model.load_state_dict(state_dict)
+        self._model.eval()
 
     @property
     def name(self) -> str:

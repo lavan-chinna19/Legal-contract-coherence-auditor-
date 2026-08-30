@@ -85,7 +85,17 @@ class CompletenessChecker:
         
         texts = [clause.text for clause in clauses]
         if not texts:
-            return CompletenessResult(doc_id=doc_id, category=category, reports=[], is_complete=False)
+            reports = [
+                CompletenessReportItem(
+                    expected_type=exp_type,
+                    is_present=False,
+                    nli_score=0.0,
+                    threshold=self.threshold,
+                    contract_category=category,
+                    checker_version=self.model_name
+                ) for exp_type in expected_types
+            ]
+            return CompletenessResult(doc_id=doc_id, category=category, reports=reports, is_complete=False)
             
         # Batch inference
         # We classify all clauses against all expected types at once

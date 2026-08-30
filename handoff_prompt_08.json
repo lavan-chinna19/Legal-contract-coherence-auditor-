@@ -1,0 +1,84 @@
+{
+  "prompt": 8,
+  "status": "COMPLETED",
+  "starting_commit": "be4670c",
+  "files_created": [
+    "src/scoring/ensemble.py",
+    "tests/test_ensemble.py",
+    "evaluate_ensemble.py",
+    "handoff_prompt_08.json",
+    "handoff_prompt_08_summary.md"
+  ],
+  "files_modified": [],
+  "evaluation_dataset": "SEC EDGAR Form 10-K Exhibit 10 & LEDGAR clause types",
+  "sample_size": 3,
+  "fine_tuned_only": {
+    "mode": "fine_tuned",
+    "alpha": 1.0,
+    "delta_anomaly": 0.0013,
+    "historical_invalid_delta": 0.005
+  },
+  "zero_shot_only": {
+    "mode": "zero_shot",
+    "alpha": 0.0,
+    "delta_anomaly": 0.0,
+    "historical_invalid_delta": 0.0
+  },
+  "combined": {
+    "mode": "combined",
+    "alpha": 0.5,
+    "delta_anomaly": 0.0007,
+    "historical_invalid_delta": 0.0025
+  },
+  "ensemble_formula": "combined_score = alpha * fine_tuned_score + (1 - alpha) * zero_shot_score",
+  "ensemble_weight": {
+    "alpha": 0.5,
+    "derivation": "INITIAL DEFAULT - NOT EMPIRICALLY TUNED"
+  },
+  "weight_tuning": {
+    "0.25": 0.0003,
+    "0.50": 0.0007,
+    "0.75": 0.0010
+  },
+  "tests": {
+    "pytest_result": "3 passed, 1 warning in 62.56s",
+    "coverage": "Unit tests cover fine-tuned-only, zero-shot-only, combined modes, weighted score calculations, and zero-shot baseline."
+  },
+  "commands": [
+    {
+      "command": "python evaluate_ensemble.py",
+      "exit_code": 0
+    },
+    {
+      "command": "pytest tests/test_ensemble.py",
+      "exit_code": 0
+    }
+  ],
+  "metrics": [
+    {
+      "name": "fine_tuned_delta",
+      "value": 0.0013,
+      "historical_invalid_value": 0.005,
+      "provenance": "evaluate_ensemble.py output (Revalidated with genuine checkpoint)"
+    },
+    {
+      "name": "zero_shot_delta",
+      "value": 0.0,
+      "historical_invalid_value": 0.0,
+      "provenance": "evaluate_ensemble.py output (Revalidated with genuine checkpoint)"
+    },
+    {
+      "name": "combined_delta",
+      "value": 0.0007,
+      "historical_invalid_value": 0.0025,
+      "provenance": "evaluate_ensemble.py output (Revalidated with genuine checkpoint)"
+    }
+  ],
+  "known_gaps": [
+    "Zero-shot completeness score is order-invariant, providing no sensitivity to shuffled transitions.",
+    "Combined ensemble did not improve over the stronger baseline (fine-tuned).",
+    "Alpha weight is unoptimized and defaults to 0.5.",
+    "Initial Prompt 8 evaluation results were invalid due to missing checkpoint. Metrics have been revalidated."
+  ],
+  "starting_point_for_prompt_9": "Ensemble architecture for Channel B is established. We have separate access to fine-tuned, zero-shot, and combined scores. Ready for downstream integration."
+}

@@ -17,9 +17,11 @@ data/raw/
 data/processed/
 
 # Model weights and caches
-models/
+models/*
+!models/coherence_classifier.pt
 .cache/
 *.pt
+!models/coherence_classifier.pt
 *.bin
 *.safetensors
 
