@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-08-31 15:36:13 UTC",
+  "target_coverage": 0.9,
+  "empirical_coverage": 0.9167,
+  "coverage_delta": 0.0167,
+  "mean_interval_width": 0.9933,
+  "calibration_sample_size": 108,
+  "test_sample_size": 84,
+  "calibration_source": "synthetic_shuffle_only",
+  "conformal_quantile": 0.7265,
+  "provenance": "evaluate_conformal.py execution over held-out synthetic EDGAR shuffle test set"
+}

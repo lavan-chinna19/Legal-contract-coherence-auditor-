@@ -15,12 +15,14 @@ from src.config import (
 from src.scoring.schema import ClauseScoringResult, DocumentScoringResult
 from src.scoring.channel_a import ChannelAScorer
 from src.scoring.channel_b import ChannelBScorer
+from src.scoring.severity import SeverityRanker
 
 
 class DualChannelScorer:
     """
     Dual-Channel Anomaly Detection Pipeline.
-    Evaluates legal documents across both semantic (Channel A) and structural (Channel B) axes.
+    Evaluates legal documents across both semantic (Channel A) and structural (Channel B) axes,
+    with calibrated severity ranking and cross-channel agreement analysis.
     """
 
     def __init__(
@@ -29,13 +31,20 @@ class DualChannelScorer:
         channel_b: Optional[ChannelBScorer] = None,
         alpha: float = ENSEMBLE_ALPHA,
         high_threshold: float = SEVERITY_HIGH_THRESHOLD,
-        med_threshold: float = SEVERITY_MED_THRESHOLD
+        med_threshold: float = SEVERITY_MED_THRESHOLD,
+        calibrator: Optional[Any] = None,
+        severity_ranker: Optional[SeverityRanker] = None
     ):
         self.channel_a = channel_a or ChannelAScorer()
         self.channel_b = channel_b or ChannelBScorer()
         self.alpha = alpha
         self.high_threshold = high_threshold
         self.med_threshold = med_threshold
+        self.calibrator = calibrator
+        self.severity_ranker = severity_ranker or SeverityRanker(
+            high_threshold=high_threshold,
+            med_threshold=med_threshold
+        )
 
     def score_document(
         self,
@@ -62,7 +71,8 @@ class DualChannelScorer:
                 medium_severity_count=0,
                 mean_combined_score=0.0,
                 max_combined_score=0.0,
-                clauses=[]
+                clauses=[],
+                calibration_source="synthetic_shuffle_only"
             )
 
         effective_doc_id = doc_id or clauses[0].doc_id
@@ -89,23 +99,27 @@ class DualChannelScorer:
             combined = self.alpha * score_a + (1.0 - self.alpha) * score_b
             combined = round(float(np.clip(combined, 0.0, 1.0)), 4)
 
-            # Severity classification
-            if combined >= self.high_threshold:
-                severity = "HIGH"
-                is_anom = True
+            # Conformal interval
+            ci = None
+            if self.calibrator is not None and getattr(self.calibrator, "is_fitted", False):
+                ci = self.calibrator.predict_interval(combined)
+
+            # Decision-Support Severity Assessment
+            assessment = self.severity_ranker.assess_clause(
+                channel_a_score=score_a,
+                channel_b_score=score_b,
+                combined_score=combined,
+                confidence_interval=ci
+            )
+
+            severity = assessment.severity
+            is_anom = assessment.is_anomaly
+            if severity == "HIGH":
                 high_count += 1
                 anomaly_count += 1
-            elif combined >= self.med_threshold:
-                severity = "MEDIUM"
-                is_anom = True
+            elif severity == "MEDIUM":
                 med_count += 1
                 anomaly_count += 1
-            elif combined >= 0.35:
-                severity = "LOW"
-                is_anom = False
-            else:
-                severity = "CLEAN"
-                is_anom = False
 
             # Preview text (bounded to max 120 chars to avoid logging full contract plaintext)
             preview = c.text[:100] + "..." if len(c.text) > 100 else c.text
@@ -122,7 +136,13 @@ class DualChannelScorer:
                 channel_b_evidence=ev_b,
                 is_anomaly=is_anom,
                 severity=severity,
-                source_label=c.label
+                source_label=c.label,
+                confidence_interval=ci,
+                calibration_source="synthetic_shuffle_only",
+                cross_channel_agreement=assessment.cross_channel_agreement,
+                agreement_type=assessment.agreement_type,
+                interval_width=assessment.interval_width,
+                severity_justification=assessment.severity_justification
             )
             clause_results.append(res)
 

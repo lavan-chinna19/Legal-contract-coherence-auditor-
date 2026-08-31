@@ -1,0 +1,29 @@
+{
+  "timestamp": "2026-08-31 16:00:54 UTC",
+  "clean_documents_evaluated": 10,
+  "total_clean_clauses": 116,
+  "clean_high_severity_count": 0,
+  "clean_medium_severity_count": 44,
+  "clean_low_severity_count": 3,
+  "clean_clean_severity_count": 69,
+  "clean_overall_anomaly_rate": 0.3793,
+  "corrupted_document": {
+    "doc_id": "corrupted_contract_demo",
+    "total_clauses": 8,
+    "known_bad_count": 5,
+    "known_clean_count": 3,
+    "bad_clauses_high_or_med_rate": 0.6,
+    "clean_clauses_high_or_med_rate": 0.3333,
+    "rate_delta": 0.2667
+  },
+  "severity_thresholds": {
+    "high_combined": 0.65,
+    "high_single_channel": 0.85,
+    "med_combined": 0.5,
+    "med_single_channel": 0.7,
+    "low_combined": 0.35,
+    "threshold_justification": "Reasoned defaults based on multi-channel corroboration and single-channel sensitivity envelopes."
+  },
+  "acceptance_gate_1": "PASSED - End-to-end execution on clean EDGAR samples without crashing",
+  "acceptance_gate_2": "PASSED - Known-bad anomaly rate (60.0%) > Clean anomaly rate (33.3%)"
+}

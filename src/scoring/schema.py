@@ -53,6 +53,12 @@ class ClauseScoringResult:
     is_anomaly: bool
     severity: str           # "HIGH" | "MEDIUM" | "LOW" | "CLEAN"
     source_label: Optional[str] = None
+    confidence_interval: Optional[tuple] = None  # (lower_bound, upper_bound) [0.0, 1.0]
+    calibration_source: str = "synthetic_shuffle_only"  # Strict constraint (Acceptance Gate 1 & 3)
+    cross_channel_agreement: float = 1.0  # [0.0, 1.0] Concordance magnitude
+    agreement_type: str = "CONCORDANT_CLEAN"  # "CONCORDANT_ANOMALY" | "CONCORDANT_CLEAN" | "CHANNEL_A_DOMINANT" | "CHANNEL_B_DOMINANT"
+    interval_width: Optional[float] = None  # Conformal prediction interval width
+    severity_justification: Optional[str] = None  # Attribution & reasoning for auditor
 
     def to_dict(self) -> Dict[str, Any]:
         d = asdict(self)
@@ -73,6 +79,7 @@ class DocumentScoringResult:
     max_combined_score: float
     clauses: List[ClauseScoringResult]
     metadata: Dict[str, Any] = field(default_factory=dict)
+    calibration_source: str = "synthetic_shuffle_only"
 
     def to_dict(self) -> Dict[str, Any]:
         return {
@@ -84,5 +91,6 @@ class DocumentScoringResult:
             "mean_combined_score": self.mean_combined_score,
             "max_combined_score": self.max_combined_score,
             "clauses": [c.to_dict() for c in self.clauses],
-            "metadata": self.metadata
+            "metadata": self.metadata,
+            "calibration_source": self.calibration_source
         }

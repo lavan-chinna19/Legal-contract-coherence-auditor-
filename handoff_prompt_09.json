@@ -1,0 +1,88 @@
+{
+  "prompt": 9,
+  "status": "COMPLETED",
+  "starting_commit": "490a429",
+  "files_created": [
+    "src/calibration/__init__.py",
+    "src/calibration/conformal.py",
+    "src/calibration/synthetic_generator.py",
+    "tests/test_conformal.py",
+    "evaluate_conformal.py",
+    "fixtures/conformal_calibration_fixture.json",
+    "fixtures/conformal_metrics.json",
+    "handoff_prompt_09.json",
+    "handoff_prompt_09_summary.md"
+  ],
+  "files_modified": [
+    "src/scoring/schema.py",
+    "src/scoring/ensemble.py",
+    "src/scoring/pipeline.py",
+    "src/evaluation/completeness.py"
+  ],
+  "tooling_and_licensing": {
+    "crepes": "0.9.1 (BSD-3-Clause, Open Source, Free tier)",
+    "mapie": "1.5.0 (BSD-3-Clause / MIT, Open Source, Free tier)"
+  },
+  "coverage_results": {
+    "target_coverage": 0.90,
+    "empirical_coverage": 0.9167,
+    "coverage_delta": 0.0167,
+    "conformal_quantile": 0.7265,
+    "mean_interval_width": 0.9933,
+    "calibration_sample_size": 108,
+    "test_sample_size": 84
+  },
+  "calibration_set_construction": "Constructed strictly from intradocument synthetic clause permutations (same-document block shuffling, reversed consecutive pairs, non-consecutive order perturbations). Enforced by assert_is_synthetic_only() to ensure zero leakage of unverified real dispute labels.",
+  "acceptance_gates": {
+    "gate_1_provably_synthetic_only": "PASSED - Validated by automated unit tests in test_acceptance_gate_1_synthetic_only_assertion and test_acceptance_gate_1_rejects_non_synthetic_data.",
+    "gate_2_empirical_coverage_reported": "PASSED - Empirical coverage of 91.67% measured on held-out test split against 90.0% target (delta +1.67%), persisted in fixtures/conformal_metrics.json.",
+    "gate_3_calibration_source_field_present": "PASSED - calibration_source: 'synthetic_shuffle_only' permanently attached to ClauseScoringResult, DocumentScoringResult, EnsembleClauseResult, and EnsembleDocumentResult, verified in test_acceptance_gate_3_calibration_source_on_schemas."
+  },
+  "tests": {
+    "pytest_result": "45 passed, 3 warnings in 524.08s",
+    "coverage": "Unit and integration tests covering synthetic dataset generator, conformal calibrator fitting/inference/serialization, dual-channel pipeline integration, schema validation, and full regression test suite across all 8 test modules."
+  },
+  "commands": [
+    {
+      "command": "python evaluate_conformal.py",
+      "exit_code": 0
+    },
+    {
+      "command": "pytest tests/",
+      "exit_code": 0
+    }
+  ],
+  "metrics": [
+    {
+      "name": "Target_Coverage",
+      "value": 0.90,
+      "provenance": "Documented configuration requirement"
+    },
+    {
+      "name": "Empirical_Test_Coverage",
+      "value": 0.9167,
+      "provenance": "evaluate_conformal.py execution over held-out synthetic EDGAR shuffle test set"
+    },
+    {
+      "name": "Coverage_Delta",
+      "value": 0.0167,
+      "provenance": "evaluate_conformal.py execution over held-out synthetic EDGAR shuffle test set"
+    },
+    {
+      "name": "Conformal_Nonconformity_Quantile",
+      "value": 0.7265,
+      "provenance": "evaluate_conformal.py fitted ConformalCalibrator state"
+    },
+    {
+      "name": "Mean_Interval_Width",
+      "value": 0.9933,
+      "provenance": "evaluate_conformal.py execution over held-out synthetic EDGAR shuffle test set"
+    }
+  ],
+  "known_gaps": [
+    "Conformal intervals are calibrated exclusively against synthetic intradocument shuffle perturbations. They provide distribution-free guarantees on shuffle detection error, but must not be misinterpreted as calibrated against real-world human legal dispute annotations.",
+    "Interval sharpness is wide (mean width 0.9933) reflecting conservative finite-sample bounds on anomaly residuals.",
+    "Calibration metadata 'synthetic_shuffle_only' must continue to be visibly propagated to UI/API layers in subsequent prompts."
+  ],
+  "starting_point_for_prompt_10": "Conformal calibration pipeline implemented in src/calibration/ with ConformalCalibrator, synthetic dataset generator, full test suite (45/45 passing), calibrated prediction intervals wired into ScoringResult schema, and calibration_source metadata attached across all results."
+}

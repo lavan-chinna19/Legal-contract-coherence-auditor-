@@ -15,6 +15,8 @@ from src.config import ClauseRecord
 logger = logging.getLogger(__name__)
 # Do not log raw text to avoid plaintext leakage.
 
+_PIPELINE_CACHE: Dict[str, Any] = {}
+
 @dataclass
 class CompletenessReportItem:
     expected_type: str
@@ -62,10 +64,11 @@ class CompletenessChecker:
         """
         self.threshold = threshold
         self.model_name = "facebook/bart-large-mnli"
-        # Load zero-shot classification pipeline
-        # Only loading on initialization.
-        logger.info(f"Loading zero-shot pipeline: {self.model_name}")
-        self.classifier = pipeline("zero-shot-classification", model=self.model_name)
+        # Load zero-shot classification pipeline (cached to avoid redundant 1.6GB reloads)
+        if self.model_name not in _PIPELINE_CACHE:
+            logger.info(f"Loading zero-shot pipeline: {self.model_name}")
+            _PIPELINE_CACHE[self.model_name] = pipeline("zero-shot-classification", model=self.model_name)
+        self.classifier = _PIPELINE_CACHE[self.model_name]
         
         # Expected clause-type checklists based on LEDGAR analysis
         self.checklists = {

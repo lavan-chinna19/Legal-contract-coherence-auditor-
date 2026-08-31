@@ -1,0 +1,92 @@
+{
+  "prompt": 10,
+  "status": "COMPLETED",
+  "starting_commit": "490a429",
+  "files_created": [
+    "src/scoring/severity.py",
+    "tests/test_severity.py",
+    "evaluate_severity.py",
+    "fixtures/severity_metrics.json",
+    "handoff_prompt_10.json",
+    "handoff_prompt_10_summary.md"
+  ],
+  "files_modified": [
+    "src/scoring/schema.py",
+    "src/scoring/pipeline.py",
+    "src/scoring/diagnostics.py",
+    "src/calibration/conformal.py"
+  ],
+  "tooling_and_licensing": {
+    "crepes": "0.9.1 (BSD-3-Clause, Open Source, Free tier)",
+    "mapie": "1.5.0 (BSD-3-Clause / MIT, Open Source, Free tier)"
+  },
+  "severity_thresholds_and_justification": {
+    "threshold_nature": "Reasoned defaults based on multi-channel corroboration and single-channel sensitivity envelopes (not estimated from an unverified labeled tuning set; Contract §1 & §2)",
+    "thresholds": {
+      "high_combined_concordant": 0.65,
+      "high_single_channel_extreme": 0.85,
+      "med_combined": 0.50,
+      "med_single_channel_dominant": 0.70,
+      "low_combined": 0.35,
+      "clean_upper_bound": 0.35,
+      "conformal_lower_bound_trigger": 0.40
+    },
+    "justification": "HIGH severity requires either dual-channel corroboration (both Semantic OOD and Discourse Transition flag) with composite >= 0.65, or an extreme single-channel failure (>= 0.85). MEDIUM severity captures actionable anomalies where at least one channel exhibits strong evidence (>= 0.70) or the ensemble score exceeds 0.50. LOW severity (0.35-0.50) flags mild deviations for context without interrupting audit workflows. Scores below 0.35 are classified as CLEAN."
+  },
+  "corrupted_document_test_results": {
+    "doc_id": "corrupted_contract_demo",
+    "total_clauses": 8,
+    "known_bad_count": 5,
+    "known_clean_count": 3,
+    "bad_clauses_high_or_med_rate": 0.60,
+    "clean_clauses_high_or_med_rate": 0.3333,
+    "rate_delta": 0.2667,
+    "demonstrated_result": "Known-bad clauses received High/Medium severity at 60.0% vs 33.3% for clean clauses (+26.7% delta), successfully demonstrating Acceptance Gate 2."
+  },
+  "acceptance_gates": {
+    "gate_1_runs_end_to_end_without_crashing": "PASSED - Evaluated across 10 clean SEC EDGAR sample documents (116 total clauses) with 0 errors/crashes.",
+    "gate_2_corrupted_known_bad_higher_severity": "PASSED - Corrupted clause anomaly rate (60.0%) strictly exceeds clean clause rate (33.3%).",
+    "gate_3_thresholds_and_justification_documented": "PASSED - Documented in src/scoring/severity.py, evaluate_severity.py, fixtures/severity_metrics.json, and this handoff artifact."
+  },
+  "tests": {
+    "pytest_result": "48 passed, 2 warnings in 23.59s",
+    "coverage": "Unit and integration tests covering cross-channel agreement calculation, High/Medium/Low decision logic, pipeline integration, diagnostics report formatting, conformal calibration, and complete 9-module regression suite."
+  },
+  "commands": [
+    {
+      "command": "python evaluate_severity.py",
+      "exit_code": 0
+    },
+    {
+      "command": "pytest tests/",
+      "exit_code": 0
+    }
+  ],
+  "metrics": [
+    {
+      "name": "Clean_Dataset_Clauses_Audited",
+      "value": 116,
+      "provenance": "evaluate_severity.py execution over SEC EDGAR sample set"
+    },
+    {
+      "name": "Corrupted_Known_Bad_Flag_Rate",
+      "value": 0.60,
+      "provenance": "evaluate_severity.py execution on deliberately corrupted contract"
+    },
+    {
+      "name": "Clean_Base_Flag_Rate",
+      "value": 0.3333,
+      "provenance": "evaluate_severity.py execution on deliberately corrupted contract"
+    },
+    {
+      "name": "Severity_Rate_Delta",
+      "value": 0.2667,
+      "provenance": "evaluate_severity.py execution on deliberately corrupted contract"
+    }
+  ],
+  "known_gaps": [
+    "Thresholds are reasoned analytical defaults rather than fitted on a large verified corpus of human dispute annotations (Contract §1 & §2).",
+    "Single-channel dominant anomalies (e.g. Channel B order disruption with identical vocabulary) currently receive Medium severity; further tuning may distinguish subtle semantic nuances."
+  ],
+  "starting_point_for_prompt_11": "Decision-support ranking layer implemented in src/scoring/severity.py, integrated into DualChannelScorer and ScoringResult schema, full regression test suite passing (48/48 tests), with documented thresholds and verified Acceptance Gate 2 results."
+}

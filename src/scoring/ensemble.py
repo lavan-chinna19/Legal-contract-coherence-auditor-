@@ -16,6 +16,8 @@ class EnsembleClauseResult:
     fine_tuned_score: float
     zero_shot_score: float
     combined_score: float
+    confidence_interval: Optional[tuple] = None  # (lower_bound, upper_bound)
+    calibration_source: str = "synthetic_shuffle_only"
 
 @dataclass
 class EnsembleDocumentResult:
@@ -24,6 +26,7 @@ class EnsembleDocumentResult:
     ensemble_weight: float
     clauses: List[EnsembleClauseResult]
     metadata: Dict[str, Any] = field(default_factory=dict)
+    calibration_source: str = "synthetic_shuffle_only"
 
 class ChannelBEnsembler:
     def __init__(
@@ -31,7 +34,8 @@ class ChannelBEnsembler:
         mode: str = "combined",
         alpha: float = 0.5,
         channel_b: Optional[ChannelBScorer] = None,
-        completeness_checker: Optional[CompletenessChecker] = None
+        completeness_checker: Optional[CompletenessChecker] = None,
+        calibrator: Optional[Any] = None
     ):
         """
         mode: "fine_tuned", "zero_shot", or "combined"
@@ -41,6 +45,7 @@ class ChannelBEnsembler:
         self.alpha = alpha
         self.channel_b = channel_b or ChannelBScorer()
         self.completeness_checker = completeness_checker or CompletenessChecker(threshold=0.5)
+        self.calibrator = calibrator
         
     def _get_zero_shot_score(self, clause_id: str, comp_res: CompletenessResult) -> float:
         """
@@ -79,12 +84,18 @@ class ChannelBEnsembler:
                 
             combined = float(np.clip(combined, 0.0, 1.0))
             
+            ci = None
+            if self.calibrator is not None and getattr(self.calibrator, "is_fitted", False):
+                ci = self.calibrator.predict_interval(combined)
+            
             ensemble_clauses.append(EnsembleClauseResult(
                 clause_id=clause.clause_id,
                 sequence_idx=clause.sequence_idx,
                 fine_tuned_score=ft_score,
                 zero_shot_score=zs_score,
-                combined_score=combined
+                combined_score=combined,
+                confidence_interval=ci,
+                calibration_source="synthetic_shuffle_only"
             ))
             
         return EnsembleDocumentResult(
@@ -94,6 +105,8 @@ class ChannelBEnsembler:
             clauses=ensemble_clauses,
             metadata={
                 "fine_tuned_model": "distilbert-base-uncased",
-                "zero_shot_model": self.completeness_checker.model_name
-            }
+                "zero_shot_model": self.completeness_checker.model_name,
+                "calibration_source": "synthetic_shuffle_only"
+            },
+            calibration_source="synthetic_shuffle_only"
         )
