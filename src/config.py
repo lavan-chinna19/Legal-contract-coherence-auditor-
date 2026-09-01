@@ -10,6 +10,7 @@ No hardcoded absolute paths appear anywhere else in the codebase.
 from pathlib import Path
 from dataclasses import dataclass, field
 from typing import Optional
+import json
 
 # ---------------------------------------------------------------------------
 # Repository root (always relative — never hardcoded absolute paths)
@@ -149,13 +150,25 @@ EDGAR_DATE_END = "2023-12-31"
 CUAD_HF_DATASET = "theatticusproject/cuad"         # HuggingFace dataset name
 
 # ---------------------------------------------------------------------------
-# Scoring thresholds — TARGET (not yet measured; to be set by Prompt 6+)
+# Scoring thresholds
 # ---------------------------------------------------------------------------
+THRESHOLDS_PATH = MODEL_DIR / "thresholds.json"
+FEEDBACK_DB_PATH = PROCESSED_DIR / "feedback.sqlite"
+
 CHANNEL_A_OOD_THRESHOLD: float = 0.5    # TARGET: semantic OOD distance
 CHANNEL_B_COHERENCE_THRESHOLD: float = 0.5  # TARGET: coherence transition score
 ENSEMBLE_ALPHA: float = 0.5             # TARGET: weighting between channels
 SEVERITY_HIGH_THRESHOLD: float = 0.75   # TARGET
 SEVERITY_MED_THRESHOLD: float = 0.50    # TARGET
+
+if THRESHOLDS_PATH.exists():
+    try:
+        with open(THRESHOLDS_PATH, "r") as f:
+            _thresh_data = json.load(f)
+            SEVERITY_HIGH_THRESHOLD = _thresh_data.get("SEVERITY_HIGH_THRESHOLD", SEVERITY_HIGH_THRESHOLD)
+            SEVERITY_MED_THRESHOLD = _thresh_data.get("SEVERITY_MED_THRESHOLD", SEVERITY_MED_THRESHOLD)
+    except Exception:
+        pass
 
 # ---------------------------------------------------------------------------
 # Logging — text content must NEVER appear in logs (Contract §4)

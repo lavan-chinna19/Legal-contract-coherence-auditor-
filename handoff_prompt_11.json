@@ -1,0 +1,42 @@
+{
+    "what_was_built": "Tier-2 human-feedback recalibration layer (Prompt 11).",
+    "exact_files_changed": [
+        "src/config.py",
+        "src/feedback/__init__.py",
+        "src/feedback/schema.py",
+        "src/feedback/storage.py",
+        "src/feedback/reviewer.py",
+        "src/feedback/refit.py",
+        "demo_feedback_loop.py",
+        "tests/test_feedback.py",
+        "create_handoff_11.py"
+    ],
+    "commands_executed": [
+        {
+            "command": "pytest tests/test_feedback.py -v",
+            "exit_status": 0
+        },
+        {
+            "command": "pytest tests/ -v",
+            "exit_status": 0
+        }
+    ],
+    "metrics_and_results": {
+        "thresholds": {
+            "SEVERITY_HIGH_THRESHOLD": 0.8,
+            "SEVERITY_MED_THRESHOLD": 0.45
+        },
+        "threshold_provenance": "SYNTHETIC_TEST",
+        "tests_passed": 43,
+        "tests_skipped": 2,
+        "tests_failed": 0
+    },
+    "feedback_status": {
+        "synthetic_count": 4,
+        "real_count": 0,
+        "has_real_feedback": false
+    },
+    "known_limitations": "The recalibration heuristic is rudimentary and assumes simplistic agreement mapping. It does not yet weigh reviewer confidence.",
+    "deferred_work": "Integration with the Streamlit dashboard for a true UI reviewer mechanism.",
+    "precise_starting_point_for_prompt_12": "The feedback schema is in place and basic refitting logic exists. Prompt 12 can build upon this to train a reinforcement learning or active learning model."
+}
