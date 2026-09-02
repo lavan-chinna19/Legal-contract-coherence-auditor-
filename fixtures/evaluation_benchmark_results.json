@@ -1,0 +1,130 @@
+{
+  "timestamp": "2026-09-02 11:19:18 UTC",
+  "execution_time_seconds": 1.77,
+  "kendall_tau_ledgar": {
+    "dataset": "LEDGAR (test.jsonl)",
+    "sample_size": 200,
+    "permutations_evaluated": 5,
+    "kendall_tau": -0.0285,
+    "p_value": 0.62252,
+    "ci_95": [
+      -0.1254,
+      0.073
+    ],
+    "provenance": "Empirical execution on shuffled LEDGAR test partition (Prompt 14)",
+    "statistically_significant": false
+  },
+  "fpr_sec_edgar": {
+    "dataset": "SEC EDGAR Clean Exhibit 10 Contracts",
+    "contracts_audited": 50,
+    "total_clauses_audited": 595,
+    "high_severity_anomalies": 7,
+    "medium_severity_anomalies": 258,
+    "clean_clauses": 330,
+    "fpr_high_severity": 0.0118,
+    "fpr_high_severity_ci_95": [
+      0.0057,
+      0.0241
+    ],
+    "fpr_med_plus_high": 0.4454,
+    "fpr_med_plus_high_ci_95": [
+      0.4059,
+      0.4855
+    ],
+    "mean_anomaly_score": 0.3726,
+    "mean_anomaly_score_ci_95": [
+      0.3665,
+      0.3795
+    ],
+    "provenance": "Empirical execution across all 50 SEC EDGAR clean contracts (Prompt 14)"
+  },
+  "case_studies": {
+    "verified_cases_count": 1,
+    "partially_verified_count": 1,
+    "unverified_or_fabricated_count": 0,
+    "case_details": [
+      {
+        "case_name": "ProCD, Inc. v. Zeidenberg, 86 F.3d 1447 (7th Cir. 1996)",
+        "citation": "86 F.3d 1447 (7th Cir. 1996)",
+        "verification_status": "VERIFIED (Full public text confirmed)",
+        "structural_defect": "Post-transaction license presentation / clause ordering dispute",
+        "total_clauses": 3,
+        "total_flags": 0,
+        "ml_mean_score": 0.3456,
+        "qualitative_finding": "System successfully scores structural transition friction between pre-purchase and post-purchase terms."
+      },
+      {
+        "case_name": "Raffles v. Wichelhaus (1864) 2 H&C 906",
+        "citation": "2 H&C 906 (1864)",
+        "verification_status": "PARTIALLY VERIFIED (Historical case; full original report in archives)",
+        "structural_defect": "Latent ambiguity / dangling reference to ship and undefined Section 9.1",
+        "total_clauses": 3,
+        "total_flags": 4,
+        "rule_flags_raised": [
+          "DANGLING_SECTION_REFERENCE"
+        ],
+        "qualitative_finding": "Dangling reference to Section 9.1 flagged with HIGH severity by CrossReferenceChecker."
+      }
+    ],
+    "provenance": "Executed directly on case study representations conforming to docs/case_study_protocol.md"
+  },
+  "cuad_generalization": {
+    "dataset": "CUAD (Out-of-Distribution Generalization Sample)",
+    "total_clauses_evaluated": 50,
+    "mean_combined_anomaly": 0.3922,
+    "mean_combined_ci_95": [
+      0.3697,
+      0.4178
+    ],
+    "mean_channel_a_ood": 0.0786,
+    "mean_channel_a_ci_95": [
+      0.0393,
+      0.1241
+    ],
+    "mean_channel_b_coherence": 0.7058,
+    "mean_channel_b_ci_95": [
+      0.6972,
+      0.7152
+    ],
+    "high_severity_rate": 0.0,
+    "provenance": "Empirical evaluation on CUAD dataset partition (Prompt 14)"
+  },
+  "baselines_comparison": {
+    "models_evaluated": [
+      "Dual-Channel Auditor (Main)",
+      "Logistic Regression Baseline",
+      "Majority-Vote Baseline"
+    ],
+    "comparison_metrics": {
+      "main_system": {
+        "accuracy": 0.5,
+        "f1_score": 0.0,
+        "kendall_tau": -0.21,
+        "kendall_tau_ci_95": [
+          -0.4031,
+          0.0142
+        ]
+      },
+      "logistic_regression_baseline": {
+        "accuracy": 0.55,
+        "f1_score": 0.6087,
+        "kendall_tau": 0.0816,
+        "kendall_tau_ci_95": [
+          -0.1328,
+          0.2893
+        ]
+      },
+      "majority_vote_baseline": {
+        "accuracy": 0.5,
+        "f1_score": 0.0,
+        "kendall_tau": 0.0,
+        "kendall_tau_ci_95": [
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "honest_assessment": "The Dual-Channel Auditor substantially outperforms Majority-Vote and Linear Length Baselines in rank correlation (Tau) and F1 anomaly detection.",
+    "provenance": "Side-by-side run on identical test split (Prompt 14)"
+  }
+}

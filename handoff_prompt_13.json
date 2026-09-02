@@ -1,0 +1,123 @@
+{
+    "prompt": 13,
+    "status": "COMPLETED",
+    "starting_commit": "bd728c9",
+    "files_created": [
+        "src/rules/__init__.py",
+        "src/rules/schema.py",
+        "src/rules/reference_checker.py",
+        "src/rules/date_checker.py",
+        "src/rules/unified_pipeline.py",
+        "tests/test_rules.py",
+        "demo_rules.py",
+        "gate_validation_prompt_13.py",
+        "create_handoff_13.py"
+    ],
+    "files_modified": [],
+    "tools_and_licensing": {
+        "spacy": "3.8.15 (MIT License, Free)",
+        "dateparser": "1.4.2 (BSD-3-Clause, Free)"
+    },
+    "work_packages": {
+        "A_reference_checker": {
+            "engine": "spaCy (en_core_web_sm / blank English with linguistic token matching and regex)",
+            "supported_elements": [
+                "Sections",
+                "Articles",
+                "Exhibits",
+                "Schedules",
+                "Defined Terms"
+            ],
+            "features": [
+                "Declared target indexing",
+                "Citation extraction",
+                "Normalization (e.g., 1.01 <-> 1.1, Roman <-> Arabic)",
+                "Dangling citation detection"
+            ]
+        },
+        "B_date_checker": {
+            "engine": "dateparser (ISO extraction and normalization)",
+            "supported_roles": [
+                "EFFECTIVE_DATE",
+                "TERMINATION_DATE",
+                "EXPIRATION_DATE",
+                "EXECUTION_DATE",
+                "PAYMENT_DUE_DATE",
+                "MILESTONE_DATE",
+                "NOTICE_DATE"
+            ],
+            "features": [
+                "Intra-clause inverted spans",
+                "Effective vs Termination order",
+                "Execution vs Termination order",
+                "Payment due before Effective/Execution",
+                "Notice date after Expiration"
+            ]
+        },
+        "C_unified_pipeline": {
+            "coordinator": "UnifiedAuditor",
+            "components": [
+                "DualChannelScorer (ML)",
+                "CrossReferenceChecker (Rule)",
+                "DateLogicChecker (Rule)"
+            ],
+            "output_container": "UnifiedAuditReport & DocumentScoringResult",
+            "formatters": [
+                "format_unified_audit_report (markdown & json)"
+            ]
+        },
+        "D_test_cases": {
+            "broken_reference_docs": 2,
+            "illogical_date_docs": 2,
+            "all_caught": true
+        }
+    },
+    "acceptance_gates": {
+        "gate_1_no_crashes": {
+            "passed": true,
+            "sample_docs_tested": 3,
+            "crashes": 0
+        },
+        "gate_2_broken_test_cases_flagged": {
+            "passed": true,
+            "cases_verified": 4,
+            "total_test_flags_raised": 8,
+            "breakdown": {
+                "doc_broken_ref_1": [
+                    "DANGLING_SECTION_REFERENCE (Section 8.4)",
+                    "DANGLING_EXHIBIT_REFERENCE (Exhibit C)"
+                ],
+                "doc_broken_ref_2": [
+                    "DANGLING_SECTION_REFERENCE (Section 14.1)",
+                    "DANGLING_ARTICLE_REFERENCE (Article IV)"
+                ],
+                "doc_broken_date_1": [
+                    "INVERTED_CONTRACT_TERM (Effective 2025-11-15 > Termination 2024-02-01)"
+                ],
+                "doc_broken_date_2": [
+                    "INVERTED_DATE_RANGE (2025-10-01 to 2024-01-01)",
+                    "PAYMENT_BEFORE_EFFECTIVE_DATE (2022-03-01 before 2025-01-01)"
+                ]
+            }
+        },
+        "gate_3_unified_pipeline_integration": {
+            "passed": true,
+            "verified_via": "gate_validation_prompt_13.py and demo_rules.py",
+            "features": "Integrated ML dual-channel scoring + rule-based flags in single unified diagnostics report"
+        }
+    },
+    "tests": {
+        "rules_tests_passed": 9,
+        "full_suite_passed": true
+    },
+    "commands_executed": [
+        "pytest tests/test_rules.py -v",
+        "python demo_rules.py",
+        "python gate_validation_prompt_13.py"
+    ],
+    "known_gaps": [
+        "CrossReferenceChecker checks document-internal references; does not yet resolve external appendices/annexes stored across separate files.",
+        "DateLogicChecker relies on contextual proximity heuristics for role detection; specialized financial payment schedules with complex floating-rate formulas are deferred to domain-specific plugins."
+    ],
+    "starting_point_for_prompt_14": "Prompt 14 can consume the UnifiedAuditReport data structures containing both ML dual-channel anomalies and rule-based (cross-reference and date-logic) integrity flags for dashboard visualization and reviewer workflow."
+}
