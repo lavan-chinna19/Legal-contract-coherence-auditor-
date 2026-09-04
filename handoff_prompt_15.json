@@ -1,0 +1,53 @@
+{
+  "prompt_number": 15,
+  "what_was_built": [
+    "Versioned FastAPI service with /v1/ namespace.",
+    "Typed Pydantic request/response schemas mirroring internal pipeline schemas.",
+    "In-memory async job queue (via threading) for processing long documents without blocking HTTP requests.",
+    "Feedback integration endpoint bridging to Prompt 11's SQLite storage.",
+    "Health and readiness endpoints for API liveness checks.",
+    "Integration tests spanning upload, job polling, and result comparison against direct model invocation."
+  ],
+  "api_endpoint_inventory": [
+    "GET /health - Liveness check.",
+    "GET /ready - Readiness check ensuring ML pipeline is loadable.",
+    "POST /v1/upload - Upload contract text securely.",
+    "POST /v1/analyze - Submit doc_id for asynchronous scoring pipeline processing.",
+    "GET /v1/jobs/{job_id} - Poll for job status (QUEUED, RUNNING, COMPLETED, FAILED).",
+    "GET /v1/jobs/{job_id}/results - Retrieve typed DocumentScoringResult if completed.",
+    "POST /v1/feedback - Submit human/synthetic feedback to the storage layer."
+  ],
+  "schema_inventory": [
+    "JobStatusResponse",
+    "UploadResponse",
+    "AnalyzeRequest",
+    "AnalyzeResponse",
+    "ChannelAEvidenceModel",
+    "ChannelBEvidenceModel",
+    "ClauseScoringResultModel",
+    "DocumentScoringResultModel",
+    "FeedbackRequest",
+    "FeedbackResponse"
+  ],
+  "async_job_design": "In-memory JOB_STORE dictionary mapped by job_id. Jobs run concurrently in a separate thread (threading.Thread) rather than blocking the async event loop, ensuring compatibility with testing environments (TestClient) and decoupling ML processing from the HTTP request-response cycle.",
+  "feedback_integration": "Connected POST /v1/feedback to src.feedback.storage.insert_feedback, allowing reviewer verdicts to be natively saved to SQLite without fabricating feedback.",
+  "health_readiness_behavior": "Health endpoint returns {status: 'ok'} immediately. Readiness endpoint attempts to load the segmenter and scorer dependencies (triggering lazy loading and conformal calibrator loading if they exist) and returns 503 if they fail.",
+  "tests_executed": [
+    "pytest tests/test_api_integration.py -v (Local integration)",
+    "pytest -v (Full regression suite)"
+  ],
+  "command_exit_statuses": [
+    "pytest tests/test_api_integration.py -v (Initial: Exit 1 due to PROJECT_ROOT typo and file mode)",
+    "pytest tests/test_api_integration.py -v (After fix: Exit 1 due to TestClient blocking BackgroundTasks)",
+    "pytest tests/test_api_integration.py -v (After threading fix: Exit 0)",
+    "pytest -v (Full suite: Exit 0)"
+  ],
+  "metrics_provenance": "All execution times and metrics reported originate from genuine pytest executions in the environment. API integration tested on real EDGAR SEC contract data.",
+  "integration_comparison_results": "API-retrieved DocumentScoringResult strictly matched direct DualChannelScorer.score_document() results for total_clauses, anomaly counts, and mean/max anomaly scores (asserted via pytest float matching precision).",
+  "confidentiality_logging_verification": "Verified no plaintext clause/document strings were dumped to stdout or logs during TestClient execution. Middleware only logs endpoint paths and statuses. Raw documents are safely buffered to data/uploads/.",
+  "known_gaps": [
+    "Job queue is in-memory and will be lost on server restart (acceptable per prompt scope, pending Prompts 18/19).",
+    "Temporary upload directory is not yet aggressively garbage collected."
+  ],
+  "starting_point_for_prompt_16": "The application now has a functioning local FastAPI layer. Prompt 16 can begin by targeting `src/api/main.py` and endpoints to harden security, add authentication, and apply strict rate limiting and encryption."
+}
