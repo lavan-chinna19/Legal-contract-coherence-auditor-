@@ -38,6 +38,14 @@ def get_job(job_id: str) -> Optional[Job]:
     return JOB_STORE.get(job_id)
 
 
+def delete_jobs_for_doc(doc_id: str) -> int:
+    """Removes in-memory jobs associated with a purged document."""
+    to_delete = [jid for jid, j in JOB_STORE.items() if j.doc_id == doc_id]
+    for jid in to_delete:
+        del JOB_STORE[jid]
+    return len(to_delete)
+
+
 def run_analysis_job_sync(job_id: str, doc_id: str, document_text: str, segmenter: Any, scorer: DualChannelScorer):
     """
     Background worker to process the contract using synchronous execution in a separate thread.

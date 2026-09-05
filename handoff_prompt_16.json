@@ -1,0 +1,184 @@
+{
+  "prompt_number": 16,
+  "starting_commit": "d59dd31 feat(api): prompt-15 FastAPI backend",
+  "what_was_built": [
+    "API-key authentication (X-API-Key and Authorization: Bearer) for all protected endpoints.",
+    "Safe client identity derivation using SHA-256 token hashing (no secrets in logs or state).",
+    "Thread-safe in-process sliding-window rate limiter for upload and analyze endpoints with HTTP 429 and standard headers.",
+    "Encrypted storage at rest using Fernet (authenticated AES-128-CBC + HMAC-SHA256) under data/uploads/.",
+    "Zero-plaintext-on-disk guarantee with in-memory decryption strictly during pipeline processing.",
+    "Dedicated structured audit logging emitting [AUDIT] JSON records with safe metadata only.",
+    "Automated data retention policy and cleanup mechanism purging expired artifacts and in-memory jobs.",
+    "Public privacy and retention policy endpoint (GET /v1/privacy-policy) documenting forward frontend requirements.",
+    "Automated security test suite covering all 16 specification points.",
+    "Full Acceptance Gates 1-6 live verification script (verify_prompt_16.py)."
+  ],
+  "authentication_design": {
+    "mechanism": "API-Key authentication via header X-API-Key or Authorization: Bearer <token>",
+    "configuration": "Dynamically sourced from API_KEYS (comma-separated) or API_KEY environment variables",
+    "secret_management": "No secrets hardcoded in code, tests, or handoff artifacts; constant-time comparison via secrets.compare_digest",
+    "client_identity_derivation": "SHA-256 non-reversible hash prefix (e.g., key_cfa4aba01bbb)",
+    "error_behavior": "HTTP 401 Unauthorized with generic error messages and zero credential leakage"
+  },
+  "protected_endpoints": [
+    "POST /v1/upload",
+    "POST /v1/analyze",
+    "GET /v1/jobs/{job_id}",
+    "GET /v1/jobs/{job_id}/results",
+    "POST /v1/feedback",
+    "POST /v1/maintenance/cleanup"
+  ],
+  "open_endpoints": [
+    "GET /health",
+    "GET /ready",
+    "GET /v1/privacy-policy"
+  ],
+  "rate_limit_configuration": {
+    "type": "In-process sliding-window counter with threading.Lock",
+    "default_limit": 10,
+    "default_window_seconds": 60.0,
+    "configurable_via": ["RATE_LIMIT_REQUESTS", "RATE_LIMIT_WINDOW_SECONDS"],
+    "throttled_endpoints": ["POST /v1/upload", "POST /v1/analyze"],
+    "response_on_breach": "HTTP 429 Too Many Requests",
+    "response_headers": ["Retry-After", "X-RateLimit-Limit", "X-RateLimit-Remaining", "X-RateLimit-Reset"],
+    "unthrottled_endpoints": ["GET /health", "GET /ready", "GET /v1/privacy-policy"]
+  },
+  "encryption_design": {
+    "algorithm": "Fernet (AES-128-CBC with PKCS7 padding and HMAC-SHA256 authenticated encryption)",
+    "key_source": "STORAGE_ENCRYPTION_KEY environment variable (with secure ephemeral fallback for local dev)",
+    "key_protection": "NEVER logged, committed, or returned through API responses/errors",
+    "at_rest_format": "Binary Fernet ciphertext saved as data/uploads/{doc_id}.enc (starts with gAAAAA)",
+    "plaintext_lifetime": "Exclusively in volatile memory during upload reception and synchronous pipeline execution",
+    "disk_plaintext_inspection": "Confirmed 0 substring occurrences of contract text on disk"
+  },
+  "storage_format_location": {
+    "directory": "data/uploads/",
+    "gitignore_status": "data/uploads/ explicitly added to .gitignore",
+    "artifacts_per_upload": [
+      "{doc_id}.enc (Fernet binary ciphertext)",
+      "{doc_id}.meta.json (Safe metadata: doc_id, created_timestamp, client_id, size_bytes)"
+    ]
+  },
+  "retention_policy": {
+    "default_duration_seconds": 86400.0,
+    "default_duration_hours": 24.0,
+    "configurable_via": "DATA_RETENTION_SECONDS",
+    "enforcement_mechanism": "Automated scan and deletion of expired .enc and .meta.json files with corresponding JOB_STORE record purging",
+    "trigger_points": ["Application startup lifespan", "POST /v1/maintenance/cleanup", "Accelerated test programmatic calls"],
+    "audit_log_retention": "Audit log records are preserved for security accountability"
+  },
+  "audit_log_schema": {
+    "tag": "[AUDIT]",
+    "format": "JSON",
+    "fields": [
+      "timestamp (UTC ISO-8601)",
+      "event_type (AUTH_FAILURE, RATE_LIMIT_EXCEEDED, DOCUMENT_UPLOAD, DOCUMENT_ANALYZE, JOB_STATUS_CHECK, JOB_RESULTS_FETCH, FEEDBACK_SUBMIT, RETENTION_CLEANUP)",
+      "action (HTTP method + route or system action)",
+      "client_id (Safe hashed identity or anonymous/system)",
+      "resource_id (doc_id, job_id, or none)",
+      "status (SUCCESS, DENIED, RATE_LIMITED, FAILED)",
+      "http_status (integer)",
+      "details (Safe dictionary with non-sensitive metrics)"
+    ],
+    "confidentiality_guarantee": "Zero contract text, clause text, raw filenames, or API/encryption keys logged"
+  },
+  "privacy_retention_policy_text": {
+    "endpoint": "GET /v1/privacy-policy",
+    "confidentiality_guarantees": [
+      "Contracts are encrypted at rest using authenticated symmetric encryption (Fernet AES-128-CBC + HMAC-SHA256).",
+      "Plaintext contract content is NEVER written to server logs, stdout, or audit records.",
+      "Plaintext contract text exists exclusively in volatile memory buffers during active ML pipeline analysis.",
+      "No uploaded contract text is transmitted to external paid APIs, third-party LLMs, or unauthorized third parties.",
+      "Uploaded documents and associated temporary artifacts are automatically purged upon expiration of the retention window.",
+      "Security audit logs capture non-reversible identity hashes and event metadata, never contract contents or credentials."
+    ],
+    "forward_requirement": "Prompt 17 UI must visibly display this privacy and retention notice to users prior to accepting any contract file upload."
+  },
+  "dependencies_added": [
+    {
+      "package": "cryptography==49.0.0",
+      "license": "Apache-2.0 / BSD",
+      "cost_tier": "Free / Open Source",
+      "purpose": "Authenticated symmetric encryption at rest (Fernet)"
+    }
+  ],
+  "security_tests": {
+    "test_file": "tests/test_security.py",
+    "total_tests": 16,
+    "passed_tests": 16,
+    "failed_tests": 0,
+    "coverage": [
+      "test_01_unauthenticated_protected_requests_rejected",
+      "test_02_invalid_credentials_rejected",
+      "test_03_valid_credentials_accepted",
+      "test_04_health_and_readiness_remain_accessible",
+      "test_05_rate_limiter_triggers_under_burst",
+      "test_06_upload_encrypted_at_rest",
+      "test_07_raw_stored_bytes_are_not_plaintext",
+      "test_08_encrypted_upload_decrypted_internally",
+      "test_09_retention_cleanup_deletes_expired_data",
+      "test_10_non_expired_data_remains",
+      "test_11_audit_logs_contain_security_metadata",
+      "test_12_audit_logs_contain_no_contract_plaintext",
+      "test_13_audit_logs_contain_no_api_secret",
+      "test_14_encryption_key_not_exposed",
+      "test_15_existing_api_integration_behavior",
+      "test_16_feedback_endpoint_remains_functional"
+    ]
+  },
+  "actual_verification_results": {
+    "verification_script": "verify_prompt_16.py",
+    "gate_1_authentication": "PASS (Unauthenticated 401, Invalid Key 401, Health 200, Ready 200, Authenticated 200)",
+    "gate_2_rate_limiting": "PASS (15 burst requests triggered HTTP 429 with Retry-After: 60s)",
+    "gate_3_encryption_at_rest": "PASS (Stored ciphertext 58620 bytes starts with gAAAAA, 0 plaintext marker occurrences on disk, pipeline decrypted in memory and analyzed 26 clauses with 2 anomalies)",
+    "gate_4_retention": "PASS (Accelerated retention interval 0.10s purged expired doc while preserving fresh artifacts)",
+    "gate_5_audit_logging": "PASS (44 structured audit log records, safe identity hashes, 0 plaintext leaks, 0 secret leaks)",
+    "gate_6_regression": "PASS (Feedback submission HTTP 200, privacy policy endpoint HTTP 200, Prompt 15 end-to-end integration HTTP 200)"
+  },
+  "regression_test_results": {
+    "api_integration_tests": "2 passed (tests/test_api_integration.py)",
+    "full_pytest_suite": "89 passed, 2 skipped, 0 failed in 129.27s"
+  },
+  "commands_executed": [
+    {
+      "command": "git status; git log -n 3 --oneline",
+      "exit_code": 0
+    },
+    {
+      "command": "python -m pytest tests/test_api_integration.py -v",
+      "exit_code": 0
+    },
+    {
+      "command": "python -c \"import cryptography; print(cryptography.__version__)\"",
+      "exit_code": 0
+    },
+    {
+      "command": "python -m pytest tests/test_security.py -v",
+      "exit_code": 0
+    },
+    {
+      "command": "python -m pytest tests/test_api_integration.py -v",
+      "exit_code": 0
+    },
+    {
+      "command": "python verify_prompt_16.py",
+      "exit_code": 0
+    },
+    {
+      "command": "python -m pytest -v",
+      "exit_code": 0
+    },
+    {
+      "command": "python -c \"from src.api.retention import cleanup_expired_artifacts; print(cleanup_expired_artifacts(max_age_seconds=0))\"",
+      "exit_code": 0
+    }
+  ],
+  "metrics_provenance": "All execution times, HTTP status codes, test counts (89 passed, 2 skipped), and verification logs represent actual live runs executed in this session on genuine EDGAR sample contract data. Zero metrics were estimated or synthetic unless explicitly marked.",
+  "known_limitations": [
+    "Rate limiter is process-local and in-memory; multi-instance horizontal scaling would require distributed state (e.g., Redis).",
+    "Job execution queue remains in-memory threading (scheduled for durable queue migration in Prompts 18/19).",
+    "Encrypted storage is on local filesystem (Cloudflare R2 / S3 storage deferred to cloud deployment).",
+    "Frontend privacy banner is specified as a forward requirement for Prompt 17."
+  ],
+  "starting_point_for_prompt_17": "FastAPI backend is hardened with authenticated endpoints, encrypted storage, rate limiting, audit logging, and data retention. Prompt 17 can now proceed to build the production frontend interface, surfacing the mandatory pre-upload privacy notice and integrating with the authenticated /v1/ endpoints."
+}

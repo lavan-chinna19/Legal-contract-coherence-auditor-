@@ -41,6 +41,9 @@ pydantic==2.12.5
 python-multipart==0.0.22
 httpx==0.28.1
 
+# ── Security & Cryptography (Prompt 16 - Apache-2.0 / BSD, zero cost) ──────────
+cryptography==49.0.0
+
 # ── Dashboard ──────────────────────────────────────────────────────────────────
 streamlit==1.56.0
 

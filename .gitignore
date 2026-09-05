@@ -15,6 +15,7 @@ build/
 # Data directories — never commit raw or processed dataset blobs
 data/raw/
 data/processed/
+data/uploads/
 
 # Model weights and caches
 models/*
