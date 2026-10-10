@@ -7,8 +7,7 @@ import uuid
 import pytest
 from fastapi.testclient import TestClient
 
-# Ensure a dynamic test key is configured in environment (no hardcoded secret)
-TEST_KEY = os.environ.get("API_KEY") or str(uuid.uuid4())
+TEST_KEY = "dev_auditor_key_12345"
 os.environ["API_KEY"] = TEST_KEY
 AUTH_HEADERS = {"X-API-Key": TEST_KEY}
 
@@ -84,29 +83,31 @@ def test_end_to_end_analysis_flow():
     api_result = response.json()
     
     # 5. Direct Pipeline Invocation for Comparison (GATE 3)
+    from src.api.dependencies import get_unified_auditor
     segmenter = get_ml_segmenter()
-    scorer = get_dual_channel_scorer()
+    auditor = get_unified_auditor()
     
     with open(test_file_path, "r", encoding="utf-8") as f:
         doc_text = f.read()
         
     clauses = segmenter.segment(doc_text, doc_id)
-    direct_result = scorer.score_document(clauses, doc_id)
+    direct_result = auditor.audit_document(clauses, doc_id)
     
     # Compare
     assert api_result["doc_id"] == direct_result.doc_id
     assert api_result["total_clauses"] == direct_result.total_clauses
-    assert api_result["anomaly_count"] == direct_result.anomaly_count
+    assert api_result["ml_anomaly_count"] == direct_result.ml_anomaly_count
+    assert api_result["rule_violation_count"] == direct_result.rule_violation_count
     assert api_result["high_severity_count"] == direct_result.high_severity_count
     assert api_result["medium_severity_count"] == direct_result.medium_severity_count
-    assert abs(api_result["mean_combined_score"] - direct_result.mean_combined_score) < 1e-4
-    assert abs(api_result["max_combined_score"] - direct_result.max_combined_score) < 1e-4
+    assert abs(api_result["scoring_result"]["mean_combined_score"] - direct_result.scoring_result.mean_combined_score) < 1e-4
+    assert abs(api_result["scoring_result"]["max_combined_score"] - direct_result.scoring_result.max_combined_score) < 1e-4
     
     # Check that clauses match exactly in number
-    assert len(api_result["clauses"]) == len(direct_result.clauses)
-    if len(api_result["clauses"]) > 0:
-        api_c0 = api_result["clauses"][0]
-        dir_c0 = direct_result.clauses[0]
+    assert len(api_result["scoring_result"]["clauses"]) == len(direct_result.scoring_result.clauses)
+    if len(api_result["scoring_result"]["clauses"]) > 0:
+        api_c0 = api_result["scoring_result"]["clauses"][0]
+        dir_c0 = direct_result.scoring_result.clauses[0]
         assert api_c0["clause_id"] == dir_c0.clause_id
         assert abs(api_c0["combined_score"] - dir_c0.combined_score) < 1e-4
         assert api_c0["severity"] == dir_c0.severity

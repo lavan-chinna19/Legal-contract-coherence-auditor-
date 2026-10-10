@@ -1,14 +1,14 @@
 {
-  "timestamp": "2026-10-09 16:15:52 UTC",
+  "timestamp": "2026-10-10 05:29:17 UTC",
   "total_requests": 3,
   "successful_requests": 3,
   "failed_requests": 0,
-  "total_duration_sec": 33.86,
-  "mean_latency_sec": 11.286,
-  "p50_latency_sec": 10.211,
-  "max_latency_sec": 23.034,
-  "min_latency_sec": 0.612,
-  "throughput_req_per_min": 5.32,
+  "total_duration_sec": 18.97,
+  "mean_latency_sec": 6.322,
+  "p50_latency_sec": 7.7,
+  "max_latency_sec": 10.714,
+  "min_latency_sec": 0.553,
+  "throughput_req_per_min": 9.49,
   "runs": [
     {
       "status": "SUCCESS",
@@ -16,9 +16,9 @@
       "bytes": 106,
       "total_clauses": 2,
       "anomaly_count": 2,
-      "upload_sec": 0.076,
-      "pipeline_sec": 10.121,
-      "total_latency_sec": 10.211
+      "upload_sec": 0.015,
+      "pipeline_sec": 10.693,
+      "total_latency_sec": 10.714
     },
     {
       "status": "SUCCESS",
@@ -26,9 +26,9 @@
       "bytes": 1500,
       "total_clauses": 2,
       "anomaly_count": 2,
-      "upload_sec": 0.02,
-      "pipeline_sec": 0.582,
-      "total_latency_sec": 0.612
+      "upload_sec": 0.006,
+      "pipeline_sec": 0.539,
+      "total_latency_sec": 0.553
     },
     {
       "status": "SUCCESS",
@@ -36,9 +36,9 @@
       "bytes": 58526,
       "total_clauses": 26,
       "anomaly_count": 2,
-      "upload_sec": 0.019,
-      "pipeline_sec": 22.995,
-      "total_latency_sec": 23.034
+      "upload_sec": 0.013,
+      "pipeline_sec": 7.673,
+      "total_latency_sec": 7.7
     }
   ]
 }

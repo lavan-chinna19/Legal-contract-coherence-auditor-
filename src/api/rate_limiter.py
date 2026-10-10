@@ -14,7 +14,7 @@ import math
 import threading
 from collections import defaultdict, deque
 from typing import Dict, Deque, Optional
-from fastapi import Request, HTTPException, Depends
+from fastapi import Request, Response, HTTPException, Depends
 
 from src.api.security import verify_api_key
 from src.api.audit import log_audit_event
@@ -31,6 +31,7 @@ class SlidingWindowRateLimiter:
         self.default_window = default_window
         self._records: Dict[str, Deque[float]] = defaultdict(deque)
         self._lock = threading.Lock()
+        self._last_prune_time = time.time()
 
     def check(
         self,
@@ -45,6 +46,18 @@ class SlidingWindowRateLimiter:
         cutoff = now - win_sec
 
         with self._lock:
+            # Prune occasionally
+            if now - self._last_prune_time > win_sec:
+                self._last_prune_time = now
+                empty_keys = []
+                for k, v in self._records.items():
+                    while v and v[0] <= cutoff:
+                        v.popleft()
+                    if not v:
+                        empty_keys.append(k)
+                for k in empty_keys:
+                    self._records.pop(k, None)
+
             timestamps = self._records[client_id]
             # Prune expired timestamps
             while timestamps and timestamps[0] <= cutoff:
@@ -94,12 +107,15 @@ rate_limiter = SlidingWindowRateLimiter()
 
 def rate_limit_upload_and_analyze(
     request: Request,
+    response: Response,
     client_id: str = Depends(verify_api_key)
 ) -> str:
     """FastAPI dependency enforcing rate limits on upload/analyze endpoints."""
     # Check rate limit using current configured limits
-    rate_limiter.check(
+    headers = rate_limiter.check(
         client_id=client_id,
         endpoint_action=f"{request.method} {request.url.path}"
     )
+    for k, v in headers.items():
+        response.headers[k] = v
     return client_id

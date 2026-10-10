@@ -20,8 +20,9 @@ from src.api.audit import log_audit_event
 
 logger = logging.getLogger("api")
 
-# Default retention window: 24 hours in seconds
-DEFAULT_RETENTION_SECONDS = float(os.environ.get("DATA_RETENTION_SECONDS", "86400.0"))
+# Default retention window: 24 hours
+DEFAULT_RETENTION_HOURS = float(os.environ.get("RETENTION_HOURS_MAX", "24.0"))
+DEFAULT_RETENTION_SECONDS = DEFAULT_RETENTION_HOURS * 3600.0
 
 
 def cleanup_expired_artifacts(max_age_seconds: Optional[float] = None) -> Dict[str, Any]:

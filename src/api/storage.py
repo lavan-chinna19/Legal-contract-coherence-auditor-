@@ -37,6 +37,12 @@ def get_fernet() -> Fernet:
         return _FERNET_INSTANCE
 
     raw_key = os.environ.get("STORAGE_ENCRYPTION_KEY", "").strip()
+    if not raw_key:
+        # Fallback for migration from older deployments using ENCRYPTION_KEY
+        raw_key = os.environ.get("ENCRYPTION_KEY", "").strip()
+        if raw_key:
+            logger.warning("Using legacy ENCRYPTION_KEY. Please migrate to STORAGE_ENCRYPTION_KEY.")
+            
     if raw_key:
         try:
             _FERNET_INSTANCE = Fernet(raw_key.encode("utf-8"))
@@ -44,6 +50,11 @@ def get_fernet() -> Fernet:
         except Exception as e:
             logger.error(f"Invalid STORAGE_ENCRYPTION_KEY provided: {e}")
             raise ValueError("Invalid STORAGE_ENCRYPTION_KEY format. Must be 32 url-safe base64-encoded bytes.") from e
+
+    # Fail closed in production if no key is configured
+    env = os.environ.get("ENV", os.environ.get("NODE_ENV", "development")).lower()
+    if env in ("production", "prod"):
+        raise ValueError("STORAGE_ENCRYPTION_KEY is required in production environments.")
 
     # Fallback to ephemeral in-memory key for local development/testing
     logger.warning("STORAGE_ENCRYPTION_KEY not set in environment; generating ephemeral key for session.")

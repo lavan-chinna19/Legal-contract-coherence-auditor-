@@ -16,10 +16,10 @@ from fastapi import APIRouter, Depends, HTTPException, UploadFile, File, Request
 
 from src.api.schema import (
     JobStatusResponse, UploadResponse, AnalyzeRequest, AnalyzeResponse,
-    DocumentScoringResultModel, FeedbackRequest, FeedbackResponse
+    DocumentScoringResultModel, UnifiedAuditReportModel, FeedbackRequest, FeedbackResponse
 )
 from src.api.jobs import create_job, get_job, run_analysis_job_sync, JobStatus
-from src.api.dependencies import get_segmenter_dep, get_scorer_dep
+from src.api.dependencies import get_segmenter_dep, get_auditor_dep, get_scorer_dep
 from src.api.security import verify_api_key
 from src.api.rate_limiter import rate_limit_upload_and_analyze
 from src.api.storage import (
@@ -127,7 +127,7 @@ async def analyze_document(
     request: AnalyzeRequest,
     client_id: str = Depends(rate_limit_upload_and_analyze),
     segmenter=Depends(get_segmenter_dep),
-    scorer=Depends(get_scorer_dep)
+    auditor=Depends(get_auditor_dep)
 ):
     """
     Triggers asynchronous analysis of an encrypted uploaded document.
@@ -166,7 +166,7 @@ async def analyze_document(
     # Run in separate thread to prevent blocking the async event loop
     thread = threading.Thread(
         target=run_analysis_job_sync,
-        args=(job_id, doc_id, document_text, segmenter, scorer),
+        args=(job_id, doc_id, document_text, segmenter, auditor),
         daemon=True
     )
     thread.start()
@@ -221,7 +221,7 @@ async def get_job_status(
     )
 
 
-@router.get("/jobs/{job_id}/results", response_model=DocumentScoringResultModel)
+@router.get("/jobs/{job_id}/results", response_model=UnifiedAuditReportModel)
 async def get_job_results(
     job_id: str,
     client_id: str = Depends(verify_api_key)
@@ -279,6 +279,19 @@ async def submit_feedback(
     """
     Submit reviewer feedback (Prompt 11 integration). Authenticated endpoint.
     """
+    valid_verdicts = {"CONFIRM_ANOMALY", "REJECT_ANOMALY"}
+    if request.reviewer_verdict not in valid_verdicts:
+        log_audit_event(
+            event_type="FEEDBACK_SUBMIT",
+            action="POST /v1/feedback",
+            client_id=client_id,
+            status="FAILED",
+            http_status=422,
+            resource_id=request.doc_id,
+            details={"error": "invalid_verdict"}
+        )
+        raise HTTPException(status_code=422, detail=f"Invalid reviewer_verdict. Must be one of: {valid_verdicts}")
+
     record = FeedbackRecord.create(
         doc_id=request.doc_id,
         clause_id=request.clause_id,
@@ -308,6 +321,70 @@ async def submit_feedback(
         feedback_id=record.feedback_id,
         message="Feedback successfully recorded."
     )
+
+
+@router.get("/xai/attribution", tags=["Explainability"])
+async def get_attribution(
+    doc_id: str,
+    clause_id: str,
+    client_id: str = Depends(verify_api_key),
+    segmenter=Depends(get_segmenter_dep),
+    scorer=Depends(get_scorer_dep)
+):
+    """
+    Get token-level Integrated Gradients attribution for a clause (Channel A).
+    """
+    from src.xai.ig import IntegratedGradientsExplainer
+    
+    if not document_exists(doc_id):
+        raise HTTPException(status_code=404, detail="Document not found.")
+        
+    try:
+        doc_text = load_and_decrypt_document(doc_id)
+        clauses = segmenter.segment(doc_text, doc_id)
+    except Exception as e:
+        raise HTTPException(status_code=500, detail="Failed to load document for explanation.")
+        
+    clause = next((c for c in clauses if c.clause_id == clause_id), None)
+    if not clause:
+        raise HTTPException(status_code=404, detail="Clause not found.")
+        
+    explainer = IntegratedGradientsExplainer(scorer.channel_a)
+    result = explainer.explain(clause)
+    
+    return result.to_dict()
+
+
+@router.get("/xai/sensitivity", tags=["Explainability"])
+async def get_sensitivity(
+    doc_id: str,
+    clause_id: str,
+    client_id: str = Depends(verify_api_key),
+    segmenter=Depends(get_segmenter_dep),
+    scorer=Depends(get_scorer_dep)
+):
+    """
+    Get neighborhood perturbation sensitivity for a clause (Channel B).
+    """
+    from src.xai.sensitivity import ChannelBSensitivityAnalyzer
+    
+    if not document_exists(doc_id):
+        raise HTTPException(status_code=404, detail="Document not found.")
+        
+    try:
+        doc_text = load_and_decrypt_document(doc_id)
+        clauses = segmenter.segment(doc_text, doc_id)
+    except Exception as e:
+        raise HTTPException(status_code=500, detail="Failed to load document for explanation.")
+        
+    clause = next((c for c in clauses if c.clause_id == clause_id), None)
+    if not clause:
+        raise HTTPException(status_code=404, detail="Clause not found.")
+        
+    analyzer = ChannelBSensitivityAnalyzer(scorer.channel_b)
+    result = analyzer.explain(clause, clauses)
+    
+    return result.to_dict()
 
 
 @router.post("/maintenance/cleanup", tags=["Maintenance"])

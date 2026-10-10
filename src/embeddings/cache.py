@@ -1,6 +1,7 @@
 import os
-import json
+import hashlib
 import numpy as np
+from filelock import FileLock
 from typing import List, Tuple, Dict, Any, Optional
 from src.config import EMBEDDINGS_CACHE_DIR, ClauseRecord
 
@@ -27,6 +28,10 @@ class EmbeddingCache:
         safe_doc_id = "".join(c for c in doc_id if c.isalnum() or c in ('_', '-'))
         return str(self.cache_dir / f"{safe_doc_id}.npz")
 
+    def _generate_cache_key(self, clause: ClauseRecord) -> str:
+        text_hash = hashlib.sha256(clause.text.encode("utf-8")).hexdigest()[:16]
+        return f"{clause.clause_id}_{text_hash}"
+
     def get_cached_embeddings(self, clauses: List[ClauseRecord]) -> Tuple[List[ClauseRecord], Dict[str, np.ndarray]]:
         """
         Check the cache for the given clauses.
@@ -44,16 +49,20 @@ class EmbeddingCache:
 
         for doc_id, doc_clauses in doc_id_to_clauses.items():
             cache_path = self._get_doc_cache_path(doc_id)
+            lock_path = f"{cache_path}.lock"
+            
             if os.path.exists(cache_path):
                 try:
-                    with np.load(cache_path) as data:
-                        for c in doc_clauses:
-                            if c.clause_id in data:
-                                cached_vectors[c.clause_id] = data[c.clause_id]
-                            else:
-                                missing_clauses.append(c)
+                    with FileLock(lock_path, timeout=5):
+                        with np.load(cache_path) as data:
+                            for c in doc_clauses:
+                                key = self._generate_cache_key(c)
+                                if key in data:
+                                    cached_vectors[c.clause_id] = data[key]
+                                else:
+                                    missing_clauses.append(c)
                 except Exception as e:
-                    # If cache file is corrupted, treat all as missing
+                    # If cache file is corrupted or locked, treat all as missing
                     missing_clauses.extend(doc_clauses)
             else:
                 missing_clauses.extend(doc_clauses)
@@ -70,20 +79,28 @@ class EmbeddingCache:
         # Group by doc_id
         doc_id_to_data = {}
         for i, c in enumerate(clauses):
-            doc_id_to_data.setdefault(c.doc_id, {})[c.clause_id] = embeddings[i]
+            key = self._generate_cache_key(c)
+            doc_id_to_data.setdefault(c.doc_id, {})[key] = embeddings[i]
 
         for doc_id, new_data in doc_id_to_data.items():
             cache_path = self._get_doc_cache_path(doc_id)
+            lock_path = f"{cache_path}.lock"
             existing_data = {}
-            if os.path.exists(cache_path):
-                try:
-                    with np.load(cache_path) as data:
-                        existing_data = {k: data[k] for k in data.files}
-                except Exception:
-                    pass # Overwrite if corrupted
             
-            # Update with new data
-            existing_data.update(new_data)
-            
-            # Save back to disk
-            np.savez_compressed(cache_path, **existing_data)
+            try:
+                with FileLock(lock_path, timeout=5):
+                    if os.path.exists(cache_path):
+                        try:
+                            with np.load(cache_path) as data:
+                                existing_data = {k: data[k] for k in data.files}
+                        except Exception:
+                            pass # Overwrite if corrupted
+                    
+                    # Update with new data
+                    existing_data.update(new_data)
+                    
+                    # Save back to disk
+                    np.savez_compressed(cache_path, **existing_data)
+            except Exception as e:
+                # If locking fails, skip caching
+                pass

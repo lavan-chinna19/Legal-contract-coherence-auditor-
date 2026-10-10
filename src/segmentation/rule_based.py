@@ -64,10 +64,14 @@ class RuleBasedSegmenter(SegmenterInterface):
         for i, (start_idx, label) in enumerate(splits):
             end_idx = splits[i+1][0] if i + 1 < num_splits else len(text)
             
-            clause_text = text[start_idx:end_idx].strip()
+            raw = text[start_idx:end_idx]
+            clause_text = raw.strip()
             
             if not clause_text:
                 continue
+                
+            lead_ws = len(raw) - len(raw.lstrip())
+            actual_start = start_idx + lead_ws
                 
             # Create a ClauseRecord
             record = ClauseRecord(
@@ -76,8 +80,8 @@ class RuleBasedSegmenter(SegmenterInterface):
                 text=clause_text,
                 label=label,
                 sequence_idx=len(clauses),
-                char_start=start_idx,
-                char_end=start_idx + len(clause_text),
+                char_start=actual_start,
+                char_end=actual_start + len(clause_text),
                 source="sec_edgar",
                 split="none"
             )

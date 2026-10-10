@@ -9,6 +9,7 @@ from fastapi import Depends
 from src.segmentation.factory import get_segmenter
 from src.scoring.pipeline import DualChannelScorer
 from src.calibration.conformal import ConformalCalibrator
+from src.rules.unified_pipeline import UnifiedAuditor
 from src.config import REPO_ROOT
 
 # Temporary storage for uploaded documents
@@ -44,3 +45,13 @@ def get_segmenter_dep():
 def get_scorer_dep():
     """FastAPI dependency for scoring pipeline."""
     return get_dual_channel_scorer()
+
+@lru_cache(maxsize=1)
+def get_unified_auditor():
+    """Lazily load the UnifiedAuditor with all rule checkers."""
+    scorer = get_dual_channel_scorer()
+    return UnifiedAuditor(scorer=scorer)
+
+def get_auditor_dep():
+    """FastAPI dependency for UnifiedAuditor."""
+    return get_unified_auditor()

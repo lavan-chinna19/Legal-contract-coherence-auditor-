@@ -34,12 +34,29 @@ def run_refit(provenance: str = "SYNTHETIC_TEST") -> Tuple[Dict[str, float], Dic
             0
         )
         
+    # -------------------------------------------------------------
+    # Vocabulary Mapping & Standardization
+    # Historical: VALID -> CONFIRM_ANOMALY (if HIGH/MED), OVERKILL -> REJECT_ANOMALY, MISSED -> CONFIRM_ANOMALY
+    # -------------------------------------------------------------
+    def is_confirm(r):
+        v = r.reviewer_verdict
+        if v == 'CONFIRM_ANOMALY': return True
+        if v == 'VALID' and r.original_severity in ['HIGH', 'MEDIUM']: return True
+        if v == 'MISSED': return True
+        return False
+        
+    def is_reject(r):
+        v = r.reviewer_verdict
+        if v == 'REJECT_ANOMALY': return True
+        if v == 'OVERKILL': return True
+        return False
+
     # A highly simplistic and transparent heuristic for recalibration:
-    high_overkill_count = sum(1 for r in records if r.original_severity == 'HIGH' and r.reviewer_verdict == 'OVERKILL')
-    high_valid_count = sum(1 for r in records if r.original_severity == 'HIGH' and r.reviewer_verdict == 'VALID')
+    high_overkill_count = sum(1 for r in records if r.original_severity == 'HIGH' and is_reject(r))
+    high_valid_count = sum(1 for r in records if r.original_severity == 'HIGH' and is_confirm(r))
     
-    med_missed_count = sum(1 for r in records if r.original_severity in ['CLEAN', 'LOW'] and r.reviewer_verdict == 'MISSED')
-    med_valid_count = sum(1 for r in records if r.original_severity == 'MEDIUM' and r.reviewer_verdict == 'VALID')
+    med_missed_count = sum(1 for r in records if r.original_severity in ['CLEAN', 'LOW'] and is_confirm(r))
+    med_valid_count = sum(1 for r in records if r.original_severity == 'MEDIUM' and is_confirm(r))
     
     new_high = old_high
     new_med = old_med

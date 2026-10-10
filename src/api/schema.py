@@ -60,6 +60,50 @@ class DocumentScoringResultModel(BaseModel):
     calibration_source: str
 
 
+class RuleFlagModel(BaseModel):
+    flag_id: str
+    doc_id: str
+    flag_type: str
+    category: str
+    severity: str
+    title: str
+    description: str
+    clause_id: Optional[str] = None
+    involved_clause_ids: List[str] = Field(default_factory=list)
+    evidence: Dict[str, Any] = Field(default_factory=dict)
+    claim_scope: Optional[Dict[str, Any]] = None
+
+class ReferenceTargetModel(BaseModel):
+    target_type: str
+    target_id: str
+    raw_label: str
+    clause_id: str
+    char_start: int = 0
+    char_end: int = 0
+
+class DateEntityModel(BaseModel):
+    role: str
+    raw_text: str
+    parsed_iso: str
+    clause_id: str
+    char_start: int = 0
+    char_end: int = 0
+
+class UnifiedAuditReportModel(BaseModel):
+    doc_id: str
+    total_clauses: int
+    ml_anomaly_count: int
+    rule_violation_count: int
+    total_flags: int
+    high_severity_count: int
+    medium_severity_count: int
+    low_severity_count: int
+    scoring_result: DocumentScoringResultModel
+    rule_flags: List[RuleFlagModel] = Field(default_factory=list)
+    declared_targets: List[ReferenceTargetModel] = Field(default_factory=list)
+    extracted_dates: List[DateEntityModel] = Field(default_factory=list)
+    metadata: Dict[str, Any] = Field(default_factory=dict)
+
 # -----------------------------------------------------------------------------
 # Job & API Schemas
 # -----------------------------------------------------------------------------

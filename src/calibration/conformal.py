@@ -139,7 +139,7 @@ class ConformalCalibrator:
             alpha = 1.0 - target_conf
             n = self.n_calibration_samples
             q_level = min(1.0, np.ceil((n + 1) * (1.0 - alpha)) / n)
-            q_val = float(np.quantile(self.calibration_residuals, q_level))
+            q_val = float(np.quantile(self.calibration_residuals, q_level, method="higher"))
             lowers = np.clip(y_arr - q_val, 0.0, 1.0)
             uppers = np.clip(y_arr + q_val, 0.0, 1.0)
 

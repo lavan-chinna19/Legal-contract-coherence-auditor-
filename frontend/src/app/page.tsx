@@ -37,20 +37,35 @@ interface ClauseResult {
   severity_justification?: string;
 }
 
+interface RuleFlag {
+  flag_id: string;
+  flag_type: string;
+  severity: string;
+  title: string;
+  description: string;
+  clause_id?: string;
+}
+
 interface DocumentResult {
   doc_id: string;
   total_clauses: number;
-  anomaly_count: number;
+  ml_anomaly_count: number;
+  rule_violation_count: number;
+  total_flags: number;
   high_severity_count: number;
   medium_severity_count: number;
-  mean_combined_score: number;
-  max_combined_score: number;
-  clauses: ClauseResult[];
-  calibration_source: string;
+  low_severity_count: number;
+  scoring_result: {
+    mean_combined_score: number;
+    max_combined_score: number;
+    clauses: ClauseResult[];
+    calibration_source: string;
+  };
+  rule_flags: RuleFlag[];
 }
 
 export default function AuditorDashboard() {
-  const [backendUrl, setBackendUrl] = useState("http://127.0.0.1:8000");
+  const [backendUrl, setBackendUrl] = useState(process.env.NEXT_PUBLIC_BACKEND_URL || "http://127.0.0.1:8000");
   const [apiKey, setApiKey] = useState("");
   const [backendStatus, setBackendStatus] = useState<"checking" | "online" | "offline">("checking");
   const [activeTab, setActiveTab] = useState<"upload" | "results" | "xai" | "feedback" | "transparency">("upload");
@@ -66,10 +81,13 @@ export default function AuditorDashboard() {
   const [selectedClauseId, setSelectedClauseId] = useState<string>("");
   const [feedbackVerdict, setFeedbackVerdict] = useState<string>("CONFIRM_ANOMALY");
   const [reviewerId, setReviewerId] = useState("reviewer_01");
+  const [feedbackProvenance, setFeedbackProvenance] = useState("REAL");
   const [feedbackSuccess, setFeedbackSuccess] = useState<string | null>(null);
 
   // XAI State
   const [xaiMode, setXaiMode] = useState<"attribution" | "sensitivity" | "retrieval">("attribution");
+  const [xaiData, setXaiData] = useState<any>(null);
+  const [loadingXai, setLoadingXai] = useState(false);
 
   const DISCLAIMER_TEXT =
     "⚠️ Research Prototype — Not Legal Advice: This system is an academic research prototype evaluating structural and semantic coherence. Predictions and flags do not constitute legal advice or formal document review.";
@@ -155,8 +173,8 @@ export default function AuditorDashboard() {
 
       const resData: DocumentResult = await resultsRes.json();
       setDocumentResult(resData);
-      if (resData.clauses && resData.clauses.length > 0) {
-        setSelectedClauseId(resData.clauses[0].clause_id);
+      if (resData.scoring_result.clauses && resData.scoring_result.clauses.length > 0) {
+        setSelectedClauseId(resData.scoring_result.clauses[0].clause_id);
       }
       setActiveTab("results");
     } catch (err: any) {
@@ -169,7 +187,7 @@ export default function AuditorDashboard() {
 
   const handleSubmitFeedback = async () => {
     if (!documentResult || !selectedClauseId || !apiKey.trim()) return;
-    const clause = documentResult.clauses.find((c) => c.clause_id === selectedClauseId);
+    const clause = documentResult.scoring_result.clauses.find((c) => c.clause_id === selectedClauseId);
     if (!clause) return;
 
     try {
@@ -179,7 +197,7 @@ export default function AuditorDashboard() {
         original_severity: clause.severity,
         reviewer_verdict: feedbackVerdict,
         reviewer_id: reviewerId,
-        provenance: "SYNTHETIC_TEST",
+        provenance: feedbackProvenance,
         model_version: "v1",
       };
 
@@ -200,7 +218,40 @@ export default function AuditorDashboard() {
     }
   };
 
-  const selectedClause = documentResult?.clauses.find((c) => c.clause_id === selectedClauseId) || documentResult?.clauses[0];
+  useEffect(() => {
+    if (activeTab === "xai" && documentResult && selectedClauseId && apiKey.trim()) {
+      setLoadingXai(true);
+      setXaiData(null);
+      
+      const fetchXai = async () => {
+        try {
+          if (xaiMode === "attribution") {
+            const res = await fetch(`${backendUrl}/v1/xai/attribution?doc_id=${documentResult.doc_id}&clause_id=${selectedClauseId}`, {
+              headers: { "X-API-Key": apiKey.trim() }
+            });
+            if (res.ok) setXaiData(await res.json());
+          } else if (xaiMode === "sensitivity") {
+            const res = await fetch(`${backendUrl}/v1/xai/sensitivity?doc_id=${documentResult.doc_id}&clause_id=${selectedClauseId}`, {
+              headers: { "X-API-Key": apiKey.trim() }
+            });
+            if (res.ok) setXaiData(await res.json());
+          }
+        } catch (e) {
+          console.error("Failed to fetch XAI", e);
+        } finally {
+          setLoadingXai(false);
+        }
+      };
+      
+      if (xaiMode !== "retrieval") {
+        fetchXai();
+      } else {
+        setLoadingXai(false);
+      }
+    }
+  }, [activeTab, selectedClauseId, xaiMode, documentResult, apiKey, backendUrl]);
+
+  const selectedClause = documentResult?.scoring_result.clauses.find((c) => c.clause_id === selectedClauseId) || documentResult?.scoring_result.clauses[0];
 
   return (
     <div className="container">
@@ -216,19 +267,34 @@ export default function AuditorDashboard() {
           </div>
           <span className="badge-research">Research Prototype</span>
         </div>
-        <div style={{ display: "flex", gap: "1rem", alignItems: "center" }}>
-          <div style={{ fontSize: "0.85rem", display: "flex", alignItems: "center", gap: "0.4rem" }}>
-            <span style={{ color: backendStatus === "online" ? "#10b981" : "#ef4444" }}>●</span>
-            Backend: {backendStatus}
+        <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem", alignItems: "flex-end" }}>
+          <div style={{ display: "flex", gap: "1rem", alignItems: "center" }}>
+            <div style={{ fontSize: "0.85rem", display: "flex", alignItems: "center", gap: "0.4rem" }}>
+              <span style={{ color: backendStatus === "online" ? "#10b981" : "#ef4444" }}>●</span>
+              Backend: {backendStatus}
+            </div>
+            <input
+              type="text"
+              placeholder="Backend URL"
+              value={backendUrl}
+              onChange={(e) => setBackendUrl(e.target.value)}
+              className="input-field"
+              style={{ width: "180px" }}
+              title="API Backend URL"
+            />
+            <input
+              type="password"
+              placeholder="API Key (X-API-Key)"
+              value={apiKey}
+              onChange={(e) => setApiKey(e.target.value)}
+              className="input-field"
+              style={{ width: "180px" }}
+              title="Local prototype use only"
+            />
           </div>
-          <input
-            type="password"
-            placeholder="API Key (X-API-Key)"
-            value={apiKey}
-            onChange={(e) => setApiKey(e.target.value)}
-            className="input-field"
-            style={{ width: "180px" }}
-          />
+          <small style={{ fontSize: "0.65rem", color: "var(--text-muted)" }}>
+            * Note: Browser API key entry is strictly for local/prototype testing.
+          </small>
         </div>
       </header>
 
@@ -325,7 +391,7 @@ export default function AuditorDashboard() {
             </div>
             <div className="kpi-card">
               <div className="kpi-label">Total Anomalies</div>
-              <div className="kpi-value" style={{ color: "var(--sev-med-text)" }}>{documentResult.anomaly_count}</div>
+              <div className="kpi-value" style={{ color: "var(--sev-med-text)" }}>{documentResult.total_flags}</div>
             </div>
             <div className="kpi-card">
               <div className="kpi-label">High Severity</div>
@@ -337,9 +403,33 @@ export default function AuditorDashboard() {
             </div>
             <div className="kpi-card">
               <div className="kpi-label">Mean Anomaly Score</div>
-              <div className="kpi-value">{documentResult.mean_combined_score.toFixed(3)}</div>
+              <div className="kpi-value">{documentResult.scoring_result.mean_combined_score.toFixed(3)}</div>
             </div>
           </div>
+
+          {/* Rule Flags Section */}
+          {documentResult.rule_flags && documentResult.rule_flags.length > 0 && (
+            <div className="card" style={{ marginBottom: "1.5rem" }}>
+              <h3 style={{ fontSize: "1.1rem", marginBottom: "0.5rem" }}>Rule-Based Violations</h3>
+              <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
+                {documentResult.rule_flags.map((flag) => (
+                  <div key={flag.flag_id} style={{
+                    padding: "0.75rem",
+                    borderLeft: `4px solid ${flag.severity === "HIGH" ? "var(--sev-high-border)" : "var(--sev-med-border)"}`,
+                    background: "var(--bg-secondary)",
+                    borderRadius: "4px"
+                  }}>
+                    <div style={{ fontWeight: 600, fontSize: "0.95rem", marginBottom: "0.25rem" }}>
+                      [{flag.severity}] {flag.title}
+                    </div>
+                    <div style={{ fontSize: "0.85rem", color: "var(--text-secondary)" }}>
+                      {flag.description}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
 
           <div className="card">
             <h3 style={{ fontSize: "1.1rem", marginBottom: "0.5rem" }}>Sequence Coherence Heatmap</h3>
@@ -348,7 +438,7 @@ export default function AuditorDashboard() {
             </p>
 
             <div className="heatmap-bar">
-              {documentResult.clauses.map((c) => {
+              {documentResult.scoring_result.clauses.map((c) => {
                 const bg = c.severity === "HIGH" ? "var(--sev-high-border)" : c.severity === "MEDIUM" ? "var(--sev-med-border)" : "var(--sev-low-border)";
                 return (
                   <div
@@ -372,7 +462,7 @@ export default function AuditorDashboard() {
           <div className="card">
             <h3 style={{ fontSize: "1.1rem", marginBottom: "1rem" }}>Clause Audit Findings</h3>
             <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
-              {documentResult.clauses.map((c) => (
+              {documentResult.scoring_result.clauses.map((c) => (
                 <div
                   key={c.clause_id}
                   style={{
@@ -424,29 +514,47 @@ export default function AuditorDashboard() {
             </button>
           </div>
 
-          {xaiMode === "attribution" && (
+          {loadingXai && <p style={{ color: "var(--accent-primary)", fontSize: "0.9rem", marginBottom: "1rem" }}>Loading explanation...</p>}
+
+          {!loadingXai && xaiMode === "attribution" && (
             <div>
               <div className="caveat-box" style={{ marginBottom: "1rem" }}>
                 <strong>Claim Scope (Prompt 12):</strong> What this shows: Relative gradient attribution driving Legal-BERT embedding away from reference clusters. What this does not show: Normative legal ambiguity or enforceability.
               </div>
               <h4 style={{ fontSize: "0.95rem", marginBottom: "0.5rem" }}>Attributed Tokens:</h4>
               <div style={{ display: "flex", flexWrap: "wrap", gap: "0.5rem" }}>
-                {selectedClause.text_preview.split(" ").slice(0, 12).map((t, i) => (
-                  <span key={i} style={{ background: "rgba(99, 102, 241, 0.2)", padding: "0.2rem 0.5rem", borderRadius: "4px", fontSize: "0.85rem" }}>
-                    {t} <small style={{ color: "var(--text-muted)" }}>+{(0.1 + (i % 5) * 0.15).toFixed(2)}</small>
-                  </span>
-                ))}
+                {xaiData?.ig_payload ? (
+                  xaiData.ig_payload.tokens.map((t: string, i: number) => {
+                    const attr = xaiData.ig_payload.attributions[i];
+                    return (
+                      <span key={i} style={{ background: attr > 0 ? `rgba(239, 68, 68, ${Math.min(attr*5, 0.8)})` : `rgba(16, 185, 129, ${Math.min(Math.abs(attr)*5, 0.8)})`, padding: "0.2rem 0.5rem", borderRadius: "4px", fontSize: "0.85rem", color: Math.abs(attr) > 0.2 ? "white" : "inherit" }}>
+                        {t} <small style={{ color: "inherit", opacity: 0.7 }}>{attr > 0 ? '+' : ''}{attr.toFixed(2)}</small>
+                      </span>
+                    );
+                  })
+                ) : (
+                  <span style={{ color: "var(--text-muted)", fontSize: "0.85rem" }}>No attribution data available.</span>
+                )}
               </div>
             </div>
           )}
 
-          {xaiMode === "sensitivity" && (
+          {!loadingXai && xaiMode === "sensitivity" && (
             <div>
               <div className="caveat-box" style={{ marginBottom: "1rem" }}>
                 <strong>Claim Scope (Prompt 12):</strong> What this shows: Score sensitivity under neighboring clause swap or deletion. What this does not show: Causal cross-clause drafting dependencies.
               </div>
               <p style={{ fontSize: "0.9rem" }}>Baseline Transition Score: <strong>{selectedClause.channel_b_score.toFixed(3)}</strong></p>
-              <p style={{ fontSize: "0.9rem" }}>Perturbed Neighbor Score Delta: <strong style={{ color: "#ef4444" }}>Δ = -0.142</strong> (coherence degrades under neighbor shuffling)</p>
+              {xaiData?.sensitivity_payload ? (
+                <p style={{ fontSize: "0.9rem" }}>
+                  Perturbed Neighbor Score Delta (Masking {xaiData.sensitivity_payload.neighbor_position}): 
+                  <strong style={{ color: xaiData.sensitivity_payload.score_delta > 0 ? "#ef4444" : "#10b981", marginLeft: "0.5rem" }}>
+                    Δ = {xaiData.sensitivity_payload.score_delta > 0 ? "+" : ""}{xaiData.sensitivity_payload.score_delta.toFixed(3)}
+                  </strong>
+                </p>
+              ) : (
+                <p style={{ fontSize: "0.85rem", color: "var(--text-muted)" }}>No sensitivity data available.</p>
+              )}
             </div>
           )}
 
@@ -479,7 +587,7 @@ export default function AuditorDashboard() {
                 className="input-field"
                 style={{ marginTop: "0.25rem" }}
               >
-                {documentResult.clauses.map((c) => (
+                {documentResult.scoring_result.clauses.map((c) => (
                   <option key={c.clause_id} value={c.clause_id}>
                     Clause {c.sequence_idx} ({c.clause_id}) — {c.severity}
                   </option>
@@ -513,14 +621,16 @@ export default function AuditorDashboard() {
               />
             </div>
             <div>
-              <label style={{ fontSize: "0.85rem", color: "var(--text-secondary)" }}>Provenance Tag</label>
-              <input
-                type="text"
-                disabled
-                value="SYNTHETIC_TEST (Research Test Mode)"
+              <label style={{ fontSize: "0.85rem", color: "var(--text-secondary)" }}>Provenance</label>
+              <select
+                value={feedbackProvenance}
+                onChange={(e) => setFeedbackProvenance(e.target.value)}
                 className="input-field"
-                style={{ marginTop: "0.25rem", opacity: 0.7 }}
-              />
+                style={{ marginTop: "0.25rem" }}
+              >
+                <option value="REAL">REAL (Human Reviewer)</option>
+                <option value="SYNTHETIC_TEST">SYNTHETIC_TEST (Automated/Dry Run)</option>
+              </select>
             </div>
           </div>
 

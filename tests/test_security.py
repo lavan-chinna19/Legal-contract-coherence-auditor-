@@ -243,6 +243,30 @@ def test_09_retention_cleanup_deletes_expired_data():
     assert not enc_path.exists(), "Expired artifact must be deleted"
 
 
+def test_09b_retention_dynamic_env(monkeypatch):
+    """Requirement 9b (BUG-002): Retention policy dynamically reads from RETENTION_HOURS_MAX."""
+    import importlib
+    import src.api.retention
+    import src.api.privacy
+
+    monkeypatch.setenv("RETENTION_HOURS_MAX", "12.0")
+    importlib.reload(src.api.retention)
+    importlib.reload(src.api.privacy)
+
+    assert src.api.retention.DEFAULT_RETENTION_HOURS == 12.0
+    assert src.api.retention.DEFAULT_RETENTION_SECONDS == 12.0 * 3600.0
+    
+    # Also verify privacy endpoint returns the updated value
+    policy = src.api.privacy.get_privacy_policy()
+    assert policy.retention_period_hours == 12.0
+    assert policy.retention_period_seconds == 12.0 * 3600.0
+
+    # Reset
+    monkeypatch.delenv("RETENTION_HOURS_MAX", raising=False)
+    importlib.reload(src.api.retention)
+    importlib.reload(src.api.privacy)
+
+
 def test_10_non_expired_data_remains():
     """Requirement 10: Non-expired artifacts remain intact during cleanup."""
     doc_id = f"doc_fresh_{uuid.uuid4().hex[:6]}"
@@ -371,7 +395,7 @@ def test_16_feedback_endpoint_remains_functional():
             "doc_id": "doc_test_feed",
             "clause_id": "c_feed_1",
             "original_severity": "MEDIUM",
-            "reviewer_verdict": "AGREE",
+            "reviewer_verdict": "CONFIRM_ANOMALY",
             "reviewer_id": "test_reviewer_16",
             "provenance": "SYNTHETIC_TEST",
             "corrected_severity": None,

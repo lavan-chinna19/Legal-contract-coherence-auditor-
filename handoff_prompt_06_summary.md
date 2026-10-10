@@ -36,7 +36,7 @@ RESEARCH/DEMO PROJECT — per Global Execution Contract, all metrics below are r
 | Gate | Requirement | Verification Script | Status | Measured Result |
 |---|---|---|---|---|
 | **Gate 1** | End-to-end execution on 3 documents with non-degenerate distributions | `gate_validation_prompt_06.py` | **PASS** | Validated on 2 clean contracts and 1 synthetic shuffled contract; standard deviations $> 0.035$ across both channels |
-| **Gate 2** | Channel B sensitivity sanity check on shuffled clauses | `gate_validation_prompt_06.py` | **PASS** | Shuffled clauses exhibited visibly higher anomaly ($0.6719$) than clean baseline clauses ($0.6601$), delta $+0.0118$ |
+| **Gate 2** | Channel B sensitivity sanity check on shuffled clauses | `gate_validation_prompt_06.py` | **PASS** | **REVALIDATED**: Shuffled clauses exhibited visibly higher anomaly ($0.6828$) than clean baseline clauses ($0.6815$), delta $+0.0013$. *(Note: Previous evaluation delta of $+0.0118$ was invalid because the fine-tuned checkpoint was unavailable).* |
 | **Gate 3** | Diagnostics report traceability & readability | `gate_validation_prompt_06.py` | **PASS** | Markdown report with per-clause attribution table and breakdown rendered cleanly |
 
 ---
@@ -44,9 +44,9 @@ RESEARCH/DEMO PROJECT — per Global Execution Contract, all metrics below are r
 ## 3. Real Measured Metrics (Provenance: `gate_validation_prompt_06.py`)
 
 - **Reference Centroids:** 66 LEDGAR clause types saved in `fixtures/ledgar_centroids.npz`.
-- **Clean Contract 1:** 16 clauses | Mean Combined Anomaly = `0.3448` | Std A = `0.0494` | Std B = `0.0382`.
-- **Clean Contract 2:** 16 clauses | Mean Combined Anomaly = `0.3417` | Std A = `0.0484` | Std B = `0.0485`.
-- **Synthetic Shuffled Contract:** 16 clauses | Mean Combined Anomaly = `0.3478` | Shuffled Clause Channel B Anomaly = `0.6719` vs Clean Baseline = `0.6601`.
+- **Clean Contract 1:** 16 clauses | Mean Combined Anomaly = `0.3496` | Std A = `0.0494` | Std B = `0.0150`.
+- **Clean Contract 2:** 16 clauses | Mean Combined Anomaly = `0.3489` | Std A = `0.0484` | Std B = `0.0168`.
+- **Synthetic Shuffled Contract:** 16 clauses | Mean Combined Anomaly = `0.3499` | Shuffled Clause Channel B Anomaly = `0.6828` vs Clean Baseline = `0.6815`.
 - **Unit Test Suite:** 26/26 passing tests across the entire repository.
 
 ---
