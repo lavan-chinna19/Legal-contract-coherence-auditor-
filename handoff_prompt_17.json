@@ -1,0 +1,48 @@
+{
+  "prompt": 17,
+  "status": "COMPLETED",
+  "frontend_framework": "Next.js 16 (App Router / TypeScript / Turbopack) + Streamlit Companion",
+  "rationale": "Next.js provides a decoupled production architecture with responsive React state, client-side HTTP API consumption with X-API-Key auth, interactive SVG heatmaps, and clean Docker multi-stage build support for Prompt 18. Streamlit (src/ui/app.py) is maintained as a zero-Node Python companion dashboard.",
+  "files_created": [
+    "frontend/src/app/page.tsx",
+    "frontend/src/app/globals.css",
+    "src/ui/app.py",
+    "src/ui/__init__.py",
+    "verify_prompt_17.py"
+  ],
+  "files_modified": [
+    "src/api/main.py"
+  ],
+  "acceptance_gates": {
+    "gate_1_full_journey": {
+      "passed": true,
+      "document": "data/raw/sec_edgar/0001193125-20-001234_ex10-1.txt",
+      "clauses_evaluated": 26,
+      "anomalies_detected": 2,
+      "feedback_submitted": true,
+      "feedback_id": "50d54dca-e757-49d3-a7d7-6ddfa46f6c39",
+      "command": "python verify_prompt_17.py",
+      "exit_code": 0
+    },
+    "gate_2_privacy_notice_enforcement": {
+      "passed": true,
+      "description": "Pre-upload privacy and data retention disclosure is displayed and acknowledgment is strictly required before the upload button is enabled."
+    },
+    "gate_3_disclaimer_presence": {
+      "passed": true,
+      "description": "'Research tool, not legal advice' disclaimer is surfaced across all 5 tab views (Upload, Results, XAI, Feedback, Transparency)."
+    },
+    "gate_4_claim_discipline": {
+      "passed": true,
+      "violations_found": 0,
+      "description": "Scanned all UI copy and code for prohibited claims (e.g., 'production-ready', 'enterprise-grade'). Zero violations found."
+    }
+  },
+  "nextjs_build_status": {
+    "command": "npm run build",
+    "cwd": "frontend",
+    "exit_code": 0,
+    "build_duration": "16.4s"
+  },
+  "starting_point_for_prompt_18": "Frontend and backend both run and build locally. Ready for Docker containerization (backend Dockerfile with spaCy/torch, frontend Dockerfile for Next.js, docker-compose.yml with Postgres and MinIO, feedback SQLite->Postgres migration script, and deterministic local smoke test)."
+}

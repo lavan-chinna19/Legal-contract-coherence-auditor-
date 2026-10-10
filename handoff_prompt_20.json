@@ -1,0 +1,71 @@
+{
+  "prompt": 20,
+  "status": "COMPLETED",
+  "terminal_release": true,
+  "files_created": [
+    "scripts/monitor_health.py",
+    "docs/monitoring_setup.md",
+    "scripts/backup_database.py",
+    "scripts/restore_database.py",
+    "scripts/run_load_test.py",
+    "fixtures/load_test_results.json",
+    "tests/test_security_review.py",
+    "docs/security_review.md",
+    "README.md",
+    "docs/system_card.md",
+    "scripts/demo_full_system.py",
+    "verify_prompt_20.py"
+  ],
+  "acceptance_gates": {
+    "gate_1_monitoring": {
+      "passed": true,
+      "probe_script": "scripts/monitor_health.py",
+      "simulated_failure_alert_verified": true
+    },
+    "gate_2_backup_and_restore": {
+      "passed": true,
+      "backup_script": "scripts/backup_database.py",
+      "restore_script": "scripts/restore_database.py",
+      "records_verified": 4
+    },
+    "gate_3_load_test": {
+      "passed": true,
+      "script": "scripts/run_load_test.py",
+      "fixture_path": "fixtures/load_test_results.json",
+      "total_requests": 3,
+      "success_rate": "100%",
+      "mean_latency_sec": 11.286,
+      "p50_latency_sec": 10.211,
+      "throughput_req_per_min": 5.32
+    },
+    "gate_4_security_review_checklist": {
+      "passed": true,
+      "test_suite": "tests/test_security_review.py",
+      "tests_passed": 6,
+      "checks_covered": [
+        "upload_empty_file_rejection",
+        "upload_corrupted_binary_rejection",
+        "path_traversal_on_analyze",
+        "path_traversal_direct_storage",
+        "ssrf_codebase_audit",
+        "error_payload_secret_hygiene"
+      ]
+    },
+    "gate_5_readme_self_audit": {
+      "passed": true,
+      "readme_path": "README.md",
+      "system_card_path": "docs/system_card.md",
+      "claim_discipline_violations": 0
+    },
+    "gate_6_scripted_demo": {
+      "passed": true,
+      "script": "scripts/demo_full_system.py",
+      "exit_code": 0
+    }
+  },
+  "overall_project_status": {
+    "all_prompts_completed": "1 through 20 inclusive",
+    "core_pipeline": "100% verified (Phases 0-4, Tier 1, Tier 2, XAI, Rules, Validation)",
+    "product_shell": "100% verified (API, Auth, Frontend Next.js/Streamlit, Docker, CI/CD, Production Hardening)"
+  }
+}

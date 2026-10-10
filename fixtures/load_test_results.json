@@ -1,0 +1,44 @@
+{
+  "timestamp": "2026-10-09 16:15:52 UTC",
+  "total_requests": 3,
+  "successful_requests": 3,
+  "failed_requests": 0,
+  "total_duration_sec": 33.86,
+  "mean_latency_sec": 11.286,
+  "p50_latency_sec": 10.211,
+  "max_latency_sec": 23.034,
+  "min_latency_sec": 0.612,
+  "throughput_req_per_min": 5.32,
+  "runs": [
+    {
+      "status": "SUCCESS",
+      "doc_name": "SMALL_NDA_1",
+      "bytes": 106,
+      "total_clauses": 2,
+      "anomaly_count": 2,
+      "upload_sec": 0.076,
+      "pipeline_sec": 10.121,
+      "total_latency_sec": 10.211
+    },
+    {
+      "status": "SUCCESS",
+      "doc_name": "MEDIUM_AGREEMENT_1",
+      "bytes": 1500,
+      "total_clauses": 2,
+      "anomaly_count": 2,
+      "upload_sec": 0.02,
+      "pipeline_sec": 0.582,
+      "total_latency_sec": 0.612
+    },
+    {
+      "status": "SUCCESS",
+      "doc_name": "LARGE_EDGAR_CONTRACT_1",
+      "bytes": 58526,
+      "total_clauses": 26,
+      "anomaly_count": 2,
+      "upload_sec": 0.019,
+      "pipeline_sec": 22.995,
+      "total_latency_sec": 23.034
+    }
+  ]
+}

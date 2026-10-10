@@ -1,0 +1,60 @@
+# Dockerfile.backend — Legal Contract Coherence Auditor Backend (Prompt 18)
+# Multi-stage build, pinned Debian-slim base, non-root user
+
+# ── Stage 1: Builder ──
+FROM python:3.11-slim-bookworm AS builder
+
+WORKDIR /build
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    build-essential \
+    libpq-dev \
+    curl \
+    && rm -rf /var/lib/apt/lists/*
+
+COPY requirements.txt .
+
+RUN python -m venv /opt/venv && \
+    /opt/venv/bin/pip install --no-cache-dir --upgrade pip setuptools wheel && \
+    /opt/venv/bin/pip install --no-cache-dir -r requirements.txt && \
+    /opt/venv/bin/pip install --no-cache-dir psycopg2-binary && \
+    /opt/venv/bin/python -m spacy download en_core_web_sm
+
+# ── Stage 2: Final Runtime ──
+FROM python:3.11-slim-bookworm AS runtime
+
+WORKDIR /app
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    libpq5 \
+    curl \
+    && rm -rf /var/lib/apt/lists/*
+
+# Copy virtualenv from builder
+COPY --from=builder /opt/venv /opt/venv
+ENV PATH="/opt/venv/bin:$PATH"
+ENV PYTHONPATH="/app"
+ENV PYTHONUNBUFFERED=1
+
+# Create non-root user
+RUN groupadd -g 10001 appgroup && \
+    useradd -u 10001 -g appgroup -s /bin/bash -m appuser
+
+# Copy application source and assets
+COPY src/ /app/src/
+COPY data/ /app/data/
+COPY fixtures/ /app/fixtures/
+COPY models/ /app/models/
+
+# Ensure runtime directories exist with correct permissions
+RUN mkdir -p /app/data/uploads /app/data/feedback && \
+    chown -R appuser:appgroup /app
+
+USER appuser
+
+EXPOSE 8000
+
+HEALTHCHECK --interval=15s --timeout=5s --start-period=30s --retries=3 \
+    CMD curl -f http://localhost:8000/health || exit 1
+
+CMD ["uvicorn", "src.api.main:app", "--host", "0.0.0.0", "--port", "8000"]

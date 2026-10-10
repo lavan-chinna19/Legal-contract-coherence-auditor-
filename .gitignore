@@ -16,6 +16,14 @@ build/
 data/raw/
 data/processed/
 data/uploads/
+data/backups/
+data/feedback/
+
+# Frontend builds and dependencies
+node_modules/
+.next/
+frontend/.next/
+frontend/node_modules/
 
 # Model weights and caches
 models/*
@@ -29,6 +37,7 @@ models/*
 # Environment variables
 .env
 .env.*
+!.env.example
 
 # Pytest / coverage
 .pytest_cache/

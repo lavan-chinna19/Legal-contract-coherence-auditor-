@@ -1,0 +1,63 @@
+# render.yaml — Render Infrastructure as Code Blueprint (Prompt 19)
+services:
+  # ── Backend Web Service ──
+  - type: web
+    name: legal-contract-auditor-api
+    env: python
+    region: oregon
+    plan: starter
+    buildCommand: |
+      pip install --upgrade pip
+      pip install -r requirements.txt
+      pip install psycopg2-binary
+      python -m spacy download en_core_web_sm
+    startCommand: uvicorn src.api.main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /health
+    autoDeploy: true
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.9
+      - key: API_KEY
+        generateValue: true
+      - key: DATABASE_URL
+        fromDatabase:
+          name: legal-contract-auditor-db
+          property: connectionString
+      - key: S3_ENDPOINT_URL
+        sync: false
+      - key: S3_ACCESS_KEY
+        sync: false
+      - key: S3_SECRET_KEY
+        sync: false
+      - key: S3_BUCKET_NAME
+        value: contract-uploads
+      - key: RETENTION_TTL_SECONDS
+        value: 86400
+
+  # ── Frontend Web Service ──
+  - type: web
+    name: legal-contract-auditor-ui
+    env: node
+    region: oregon
+    plan: starter
+    rootDir: frontend
+    buildCommand: npm ci && npm run build
+    startCommand: npm start
+    healthCheckPath: /
+    autoDeploy: true
+    envVars:
+      - key: NODE_VERSION
+        value: 20.12.0
+      - key: NEXT_PUBLIC_BACKEND_URL
+        fromService:
+          type: web
+          name: legal-contract-auditor-api
+          property: host
+
+databases:
+  # ── Managed PostgreSQL ──
+  - name: legal-contract-auditor-db
+    region: oregon
+    plan: starter
+    databaseName: legal_auditor
+    user: auditor_user
