@@ -83,12 +83,16 @@ def test_gate_1_full_journey():
     assert res.status_code == 200, f"Results fetch failed: {res.text}"
     results_data = res.json()
     assert results_data["total_clauses"] > 0, "No clauses returned"
-    assert "clauses" in results_data, "Clauses list missing"
-    assert results_data["calibration_source"] == "synthetic_shuffle_only", "Calibration source mismatch"
-    print(f"  [OK] Retrieved results: {results_data['total_clauses']} clauses, {results_data['anomaly_count']} anomalies")
+    scoring = results_data.get("scoring_result", results_data)
+    clauses = scoring.get("clauses", [])
+    assert len(clauses) > 0, "Clauses list missing"
+    calib_source = scoring.get("calibration_source") or results_data.get("calibration_source")
+    assert calib_source == "synthetic_shuffle_only", "Calibration source mismatch"
+    anomaly_cnt = results_data.get("ml_anomaly_count", results_data.get("anomaly_count", 0))
+    print(f"  [OK] Retrieved results: {results_data['total_clauses']} clauses, {anomaly_cnt} anomalies")
 
     # 6. Submit feedback
-    target_clause = results_data["clauses"][0]
+    target_clause = clauses[0]
     feedback_payload = {
         "doc_id": doc_id,
         "clause_id": target_clause["clause_id"],

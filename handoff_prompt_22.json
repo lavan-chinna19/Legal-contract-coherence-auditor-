@@ -1,0 +1,29 @@
+{
+  "prompt": 22,
+  "status": "COMPLETED",
+  "starting_commit": "20e7c67e1dc064d69f1dc5259a6cd7c4ce132001",
+  "completion_commit": "e24245277629ae0e2d4ba9d05e482c1c7a6a8f95",
+  "date": "2026-10-10",
+  "objective": "Controlled Defect Repair, Integration Restoration & Full Regression",
+  "defects_repaired": [
+    {"id": "BUG-001", "summary": "Encryption key environment variable standardized on STORAGE_ENCRYPTION_KEY"},
+    {"id": "BUG-002", "summary": "Retention configuration updated to RETENTION_HOURS_MAX with dynamic env handling"},
+    {"id": "BUG-003", "summary": "Reviewer verdict vocabulary mapping added in refit.py"},
+    {"id": "BUG-004", "summary": "Next.js frontend backend URL environment configuration restored"},
+    {"id": "BUG-005", "summary": "XAI attribution and sensitivity endpoints implemented and connected"},
+    {"id": "BUG-006", "summary": "UnifiedAuditor pipeline restored into jobs.py replacing DualChannelScorer"},
+    {"id": "BUG-007", "summary": "Segmentation character offset preservation repaired in rule_based.py"},
+    {"id": "BUG-008", "summary": "Embedding cache file locking and SHA-256 content keying implemented"},
+    {"id": "BUG-009", "summary": "Conformal quantile higher-bound method parameter enforced"},
+    {"id": "BUG-010", "summary": "Job store TTL eviction and rate limiter empty deque cleanup implemented"},
+    {"id": "BUG-011", "summary": ".dockerignore files created in root and frontend"},
+    {"id": "BUG-012", "summary": "Rate limit HTTP headers injected on successful 200 responses"}
+  ],
+  "regression_tests": {
+    "total": 104,
+    "passed": 102,
+    "skipped": 2,
+    "failed": 0
+  },
+  "report_file": "audit/prompt_22/repair_report.md"
+}

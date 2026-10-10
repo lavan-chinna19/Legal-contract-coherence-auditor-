@@ -16,8 +16,10 @@ def test_xai_endpoints():
     doc_id = f"doc_{uuid.uuid4().hex[:8]}"
     doc_text = "This is a test document. It contains multiple clauses. We will test XAI on it."
     
-    # Store document using the storage module
-    save_encrypted_document(doc_id, doc_text, "test_client")
+    # Store document using the storage module with the owner client_id
+    from src.api.security import get_safe_client_id
+    owner_client_id = get_safe_client_id(os.environ["API_KEY"])
+    save_encrypted_document(doc_id, doc_text, owner_client_id)
     assert document_exists(doc_id)
     
     headers = {"X-API-Key": os.environ["API_KEY"]}

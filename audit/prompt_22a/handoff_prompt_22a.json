@@ -1,0 +1,114 @@
+{
+  "phase": "Prompt 22A",
+  "title": "Security Closure, Repair Verification & Commit Hygiene",
+  "date": "2026-10-10",
+  "starting_commit": "e24245277629ae0e2d4ba9d05e482c1c7a6a8f95",
+  "status": "COMPLETED",
+  "tasks": {
+    "task_a_git_hygiene": {
+      "status": "COMPLETED",
+      "inspected_files": [
+        "demo.out",
+        "demo2.out",
+        "demo_fast.out",
+        "quick_test.py",
+        "create_handoff.py",
+        "create_handoff_08.py",
+        "fixtures/coherence_training_curves.json",
+        "fixtures/load_test_results.json",
+        "handoff_prompt_06.json",
+        "handoff_prompt_06_summary.md",
+        "verify_prompt_15.py"
+      ],
+      "secret_exposure_detected": false,
+      "remediation_plan": "REMOVE_FROM_TRACKING for scratch/out files in post-approval release commit."
+    },
+    "task_b_ownership_authorization": {
+      "status": "COMPLETED",
+      "routes_protected": [
+        "POST /v1/analyze",
+        "GET /v1/jobs/{job_id}",
+        "GET /v1/jobs/{job_id}/results",
+        "GET /v1/xai/attribution",
+        "GET /v1/xai/sensitivity",
+        "POST /v1/feedback"
+      ],
+      "error_policy": "404 Not Found (prevents resource enumeration)",
+      "persistence": "Document ownership persists across restarts via filesystem metadata (.meta.json); in-memory jobs fail safely."
+    },
+    "task_c_admin_authorization": {
+      "status": "COMPLETED",
+      "route": "POST /v1/maintenance/cleanup",
+      "config_keys": ["ADMIN_API_KEY", "ADMIN_API_KEYS"],
+      "unauthorized_user_status": 403,
+      "unauthenticated_status": 401
+    },
+    "task_d_defect_reverification": {
+      "status": "COMPLETED",
+      "defects_evaluated": 12,
+      "all_verified_fixed": true,
+      "matrix_file": "audit/prompt_22a/defect_reverification_matrix.csv"
+    },
+    "task_e_api_frontend_tracing": {
+      "status": "COMPLETED",
+      "trace_matrix": "audit/prompt_22a/integration_field_matrix.md",
+      "field_mismatches": 0
+    },
+    "task_f_regression_testing": {
+      "status": "COMPLETED",
+      "command": "python -m pytest tests/ -v -ra",
+      "collected": 118,
+      "passed": 116,
+      "skipped": 2,
+      "failed": 0,
+      "duration_seconds": 49.76,
+      "exit_code": 0,
+      "frontend_build_status": "SUCCESS (exit code 0)"
+    },
+    "task_g_documentation": {
+      "status": "COMPLETED",
+      "output_directory": "audit/prompt_22a/"
+    }
+  },
+  "acceptance_gates": {
+    "gate_1_git_baseline_hygiene": "PASS",
+    "gate_2_document_ownership": "PASS",
+    "gate_3_job_access_authorization": "PASS",
+    "gate_4_xai_feedback_authorization": "PASS",
+    "gate_5_admin_cleanup_authorization": "PASS",
+    "gate_6_defect_repairs_reverified": "PASS",
+    "gate_7_nlp_api_frontend_integration": "PASS",
+    "gate_8_full_regression_suite": "PASS",
+    "gate_9_frontend_build_config": "PASS",
+    "gate_10_security_privacy_invariants": "PASS",
+    "gate_11_evidence_handoff_generated": "PASS",
+    "gate_12_manual_acceptance_readiness": "PASS"
+  },
+  "files_created_or_modified": [
+    "src/api/security.py",
+    "src/api/jobs.py",
+    "src/api/v1/router.py",
+    ".env.example",
+    ".dockerignore",
+    "frontend/src/app/page.tsx",
+    "scripts/demo_full_system.py",
+    "verify_prompt_17.py",
+    "tests/test_bug005_xai.py",
+    "tests/test_security.py",
+    "tests/test_api_integration.py",
+    "tests/test_authorization_prompt22a.py",
+    "audit/prompt_22a/git_hygiene_report.md",
+    "audit/prompt_22a/security_closure_report.md",
+    "audit/prompt_22a/defect_reverification_matrix.csv",
+    "audit/prompt_22a/regression_test_results.json",
+    "audit/prompt_22a/integration_field_matrix.md",
+    "audit/prompt_22a/repair_execution_log.md",
+    "audit/prompt_22a/remaining_issues.md",
+    "audit/prompt_22a/manual_acceptance_readiness.md",
+    "audit/prompt_22a/handoff_prompt_22a.json",
+    "audit/prompt_22a/handoff_prompt_22a_summary.md",
+    "handoff_prompt_22.json",
+    "handoff_prompt_22_summary.md"
+  ],
+  "next_step": "Awaiting explicit human review and approval for manual acceptance testing."
+}

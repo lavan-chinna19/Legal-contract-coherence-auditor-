@@ -21,6 +21,7 @@ class JobStatus:
 class Job(BaseModel):
     job_id: str
     doc_id: str
+    client_id: Optional[str] = None
     status: str = JobStatus.QUEUED
     result: Optional[Dict[str, Any]] = None
     error: Optional[str] = None
@@ -34,15 +35,18 @@ JOB_TTL_SECONDS = 3600  # 1 hour TTL
 
 def _prune_jobs():
     now = time.time()
-    to_delete = [jid for jid, j in list(JOB_STORE.items()) if (now - j.created_at) > JOB_TTL_SECONDS]
+    to_delete = [
+        jid for jid, j in list(JOB_STORE.items())
+        if (now - j.created_at) > JOB_TTL_SECONDS and j.status in (JobStatus.COMPLETED, JobStatus.FAILED)
+    ]
     for jid in to_delete:
         JOB_STORE.pop(jid, None)
 
 
-def create_job(doc_id: str) -> str:
+def create_job(doc_id: str, client_id: Optional[str] = None) -> str:
     _prune_jobs()
     job_id = str(uuid.uuid4())
-    JOB_STORE[job_id] = Job(job_id=job_id, doc_id=doc_id)
+    JOB_STORE[job_id] = Job(job_id=job_id, doc_id=doc_id, client_id=client_id)
     return job_id
 
 

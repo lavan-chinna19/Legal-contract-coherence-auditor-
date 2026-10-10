@@ -60,7 +60,8 @@ PLAINTEXT_MARKER = "UNIQUE_PLAINTEXT_MARKER_987654321_DO_NOT_LEAK"
 
 @pytest.fixture(autouse=True)
 def reset_limiter():
-    """Reset rate limiter state between tests."""
+    """Reset rate limiter state between tests and ensure test key is present."""
+    os.environ["API_KEY"] = TEST_KEY_VALUE
     rate_limiter.reset()
     yield
     rate_limiter.reset()

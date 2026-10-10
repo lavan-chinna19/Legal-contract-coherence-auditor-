@@ -18,6 +18,12 @@ from src.api.dependencies import get_ml_segmenter, get_dual_channel_scorer
 client = TestClient(app)
 
 
+@pytest.fixture(autouse=True)
+def ensure_api_key():
+    os.environ["API_KEY"] = TEST_KEY
+    yield
+
+
 def test_health_and_readiness():
     """GATE 1: API starts locally and /health succeeds without authentication."""
     response = client.get("/health")

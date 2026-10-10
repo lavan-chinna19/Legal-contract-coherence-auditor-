@@ -1,0 +1,160 @@
+{
+  "phase": "Prompt 22A",
+  "command": "python -m pytest tests/ -v -ra",
+  "timestamp": "2026-10-10T07:06:23Z",
+  "exit_code": 0,
+  "summary": {
+    "total_collected": 118,
+    "passed": 116,
+    "failed": 0,
+    "skipped": 2,
+    "errors": 0,
+    "warnings": 4,
+    "duration_seconds": 49.76
+  },
+  "skipped_details": [
+    {
+      "test": "tests/test_cuad_order.py::test_live_cuad_order_report_exists",
+      "reason": "CUAD order report not yet generated. Run: python -m src.data.ingest_cuad first."
+    },
+    {
+      "test": "tests/test_cuad_order.py::test_live_cuad_report_has_verdict",
+      "reason": "CUAD order report not yet generated."
+    }
+  ],
+  "test_suites": {
+    "tests/test_api_integration.py": {
+      "passed": 2,
+      "failed": 0,
+      "skipped": 0
+    },
+    "tests/test_authorization_prompt22a.py": {
+      "passed": 14,
+      "failed": 0,
+      "skipped": 0
+    },
+    "tests/test_bug001_encryption.py": {
+      "passed": 4,
+      "failed": 0,
+      "skipped": 0
+    },
+    "tests/test_bug003_feedback.py": {
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0
+    },
+    "tests/test_bug005_xai.py": {
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0
+    },
+    "tests/test_coherence.py": {
+      "passed": 5,
+      "failed": 0,
+      "skipped": 0
+    },
+    "tests/test_completeness.py": {
+      "passed": 10,
+      "failed": 0,
+      "skipped": 0
+    },
+    "tests/test_conformal.py": {
+      "passed": 6,
+      "failed": 0,
+      "skipped": 0
+    },
+    "tests/test_cuad_order.py": {
+      "passed": 4,
+      "failed": 0,
+      "skipped": 2
+    },
+    "tests/test_embeddings.py": {
+      "passed": 4,
+      "failed": 0,
+      "skipped": 0
+    },
+    "tests/test_ensemble.py": {
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "tests/test_evaluation_framework.py": {
+      "passed": 5,
+      "failed": 0,
+      "skipped": 0
+    },
+    "tests/test_feedback.py": {
+      "passed": 6,
+      "failed": 0,
+      "skipped": 0
+    },
+    "tests/test_rules.py": {
+      "passed": 9,
+      "failed": 0,
+      "skipped": 0
+    },
+    "tests/test_scoring.py": {
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "tests/test_security.py": {
+      "passed": 17,
+      "failed": 0,
+      "skipped": 0
+    },
+    "tests/test_security_review.py": {
+      "passed": 6,
+      "failed": 0,
+      "skipped": 0
+    },
+    "tests/test_segmentation.py": {
+      "passed": 8,
+      "failed": 0,
+      "skipped": 0
+    },
+    "tests/test_severity.py": {
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0
+    },
+    "tests/test_xai.py": {
+      "passed": 5,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "verification_script_results": {
+    "verify_prompt_17.py": {
+      "gates_passed": 4,
+      "gates_total": 4,
+      "status": "PASS",
+      "exit_code": 0
+    },
+    "verify_prompt_18.py": {
+      "gates_passed": 4,
+      "gates_total": 4,
+      "status": "PASS",
+      "exit_code": 0
+    },
+    "verify_prompt_19.py": {
+      "gates_passed": 4,
+      "gates_total": 4,
+      "status": "PASS",
+      "exit_code": 0
+    },
+    "verify_prompt_20.py": {
+      "gates_passed": 6,
+      "gates_total": 6,
+      "status": "PASS",
+      "exit_code": 0
+    }
+  },
+  "frontend_build": {
+    "command": "npm run build",
+    "status": "SUCCESS",
+    "exit_code": 0,
+    "framework": "Next.js 16.4.0 (Turbopack)",
+    "static_pages_generated": 4
+  }
+}

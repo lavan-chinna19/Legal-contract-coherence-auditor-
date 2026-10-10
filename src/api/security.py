@@ -112,3 +112,107 @@ async def verify_api_key(
 
     client_id = get_safe_client_id(token)
     return client_id
+
+
+def get_configured_admin_keys() -> Set[str]:
+    """
+    Retrieves authorized Admin API keys from environment configuration.
+    Accepts comma-separated values in ADMIN_API_KEYS or a single ADMIN_API_KEY.
+    """
+    keys = set()
+    raw_keys = os.environ.get("ADMIN_API_KEYS", "")
+    if raw_keys:
+        for k in raw_keys.split(","):
+            k_clean = k.strip()
+            if k_clean:
+                keys.add(k_clean)
+
+    single_key = os.environ.get("ADMIN_API_KEY", "").strip()
+    if single_key:
+        keys.add(single_key)
+
+    return keys
+
+
+async def verify_admin_api_key(
+    request: Request,
+    api_key_header: Optional[str] = Security(API_KEY_HEADER),
+    authorization: Optional[str] = Header(None)
+) -> str:
+    """
+    Validates that the caller possesses administrative privileges (ADMIN_API_KEY / ADMIN_API_KEYS).
+    - Missing credentials -> 401 Unauthorized
+    - Invalid credentials -> 401 Unauthorized
+    - Valid standard user key (non-admin) -> 403 Forbidden
+    - Valid admin key -> returns safe client identifier
+    Never logs or exposes secret credentials.
+    """
+    token: Optional[str] = None
+
+    if api_key_header:
+        token = api_key_header.strip()
+    elif authorization:
+        parts = authorization.strip().split()
+        if len(parts) == 2 and parts[0].lower() == "bearer":
+            token = parts[1].strip()
+
+    if not token:
+        log_audit_event(
+            event_type="AUTH_FAILURE",
+            action=f"{request.method} {request.url.path}",
+            client_id="anonymous",
+            status="DENIED",
+            http_status=401,
+            details={"reason": "missing_credentials"}
+        )
+        raise HTTPException(
+            status_code=401,
+            detail="Authentication credentials were not provided."
+        )
+
+    admin_keys = get_configured_admin_keys()
+    is_admin = bool(admin_keys) and any(secrets.compare_digest(token, k) for k in admin_keys)
+
+    if is_admin:
+        client_id = get_safe_client_id(token)
+        log_audit_event(
+            event_type="ADMIN_AUTH_SUCCESS",
+            action=f"{request.method} {request.url.path}",
+            client_id=client_id,
+            status="SUCCESS",
+            http_status=200,
+            details={"role": "admin"}
+        )
+        return client_id
+
+    # Not an admin key. Check if it's a valid standard user key.
+    standard_keys = get_configured_api_keys()
+    is_standard_user = bool(standard_keys) and any(secrets.compare_digest(token, k) for k in standard_keys)
+
+    if is_standard_user:
+        client_id = get_safe_client_id(token)
+        log_audit_event(
+            event_type="ADMIN_AUTH_FORBIDDEN",
+            action=f"{request.method} {request.url.path}",
+            client_id=client_id,
+            status="DENIED",
+            http_status=403,
+            details={"reason": "administrative_privileges_required"}
+        )
+        raise HTTPException(
+            status_code=403,
+            detail="Administrative privileges required."
+        )
+    else:
+        log_audit_event(
+            event_type="AUTH_FAILURE",
+            action=f"{request.method} {request.url.path}",
+            client_id="anonymous",
+            status="DENIED",
+            http_status=401,
+            details={"reason": "invalid_credentials"}
+        )
+        raise HTTPException(
+            status_code=401,
+            detail="Invalid authentication credentials."
+        )

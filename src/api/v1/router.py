@@ -20,12 +20,13 @@ from src.api.schema import (
 )
 from src.api.jobs import create_job, get_job, run_analysis_job_sync, JobStatus
 from src.api.dependencies import get_segmenter_dep, get_auditor_dep, get_scorer_dep
-from src.api.security import verify_api_key
+from src.api.security import verify_api_key, verify_admin_api_key
 from src.api.rate_limiter import rate_limit_upload_and_analyze
 from src.api.storage import (
     save_encrypted_document,
     load_and_decrypt_document,
-    document_exists
+    document_exists,
+    get_document_metadata
 )
 from src.api.audit import log_audit_event
 from src.api.retention import cleanup_expired_artifacts
@@ -146,6 +147,19 @@ async def analyze_document(
         )
         raise HTTPException(status_code=404, detail="Document not found. Please upload first.")
         
+    meta = get_document_metadata(doc_id)
+    if not meta or not meta.get("client_id") or meta.get("client_id") != client_id:
+        log_audit_event(
+            event_type="DOCUMENT_ANALYZE",
+            action="POST /v1/analyze",
+            client_id=client_id,
+            status="FAILED",
+            http_status=404,
+            resource_id=doc_id,
+            details={"error": "unauthorized_document_access"}
+        )
+        raise HTTPException(status_code=404, detail="Document not found. Please upload first.")
+
     try:
         # In-memory decryption — no plaintext temp files created on disk
         document_text = load_and_decrypt_document(doc_id)
@@ -161,7 +175,7 @@ async def analyze_document(
         )
         raise HTTPException(status_code=500, detail="Failed to decrypt document for analysis.")
 
-    job_id = create_job(doc_id)
+    job_id = create_job(doc_id, client_id=client_id)
     
     # Run in separate thread to prevent blocking the async event loop
     thread = threading.Thread(
@@ -193,14 +207,15 @@ async def get_job_status(
     Retrieves the status of an analysis job. Authenticated endpoint.
     """
     job = get_job(job_id)
-    if not job:
+    if not job or not job.client_id or job.client_id != client_id:
         log_audit_event(
             event_type="JOB_STATUS_CHECK",
             action=f"GET /v1/jobs/{job_id}",
             client_id=client_id,
             status="FAILED",
             http_status=404,
-            resource_id=job_id
+            resource_id=job_id,
+            details={"error": "unauthorized_or_missing_job"}
         )
         raise HTTPException(status_code=404, detail="Job not found.")
         
@@ -230,14 +245,15 @@ async def get_job_results(
     Retrieves the full typed result of a completed analysis job. Authenticated endpoint.
     """
     job = get_job(job_id)
-    if not job:
+    if not job or not job.client_id or job.client_id != client_id:
         log_audit_event(
             event_type="JOB_RESULTS_FETCH",
             action=f"GET /v1/jobs/{job_id}/results",
             client_id=client_id,
             status="FAILED",
             http_status=404,
-            resource_id=job_id
+            resource_id=job_id,
+            details={"error": "unauthorized_or_missing_job"}
         )
         raise HTTPException(status_code=404, detail="Job not found.")
         
@@ -279,6 +295,20 @@ async def submit_feedback(
     """
     Submit reviewer feedback (Prompt 11 integration). Authenticated endpoint.
     """
+    if document_exists(request.doc_id):
+        meta = get_document_metadata(request.doc_id)
+        if not meta or not meta.get("client_id") or meta.get("client_id") != client_id:
+            log_audit_event(
+                event_type="FEEDBACK_SUBMIT",
+                action="POST /v1/feedback",
+                client_id=client_id,
+                status="FAILED",
+                http_status=404,
+                resource_id=request.doc_id,
+                details={"error": "unauthorized_document_feedback"}
+            )
+            raise HTTPException(status_code=404, detail="Document not found.")
+
     valid_verdicts = {"CONFIRM_ANOMALY", "REJECT_ANOMALY"}
     if request.reviewer_verdict not in valid_verdicts:
         log_audit_event(
@@ -338,6 +368,10 @@ async def get_attribution(
     
     if not document_exists(doc_id):
         raise HTTPException(status_code=404, detail="Document not found.")
+
+    meta = get_document_metadata(doc_id)
+    if not meta or not meta.get("client_id") or meta.get("client_id") != client_id:
+        raise HTTPException(status_code=404, detail="Document not found.")
         
     try:
         doc_text = load_and_decrypt_document(doc_id)
@@ -370,6 +404,10 @@ async def get_sensitivity(
     
     if not document_exists(doc_id):
         raise HTTPException(status_code=404, detail="Document not found.")
+
+    meta = get_document_metadata(doc_id)
+    if not meta or not meta.get("client_id") or meta.get("client_id") != client_id:
+        raise HTTPException(status_code=404, detail="Document not found.")
         
     try:
         doc_text = load_and_decrypt_document(doc_id)
@@ -389,10 +427,19 @@ async def get_sensitivity(
 
 @router.post("/maintenance/cleanup", tags=["Maintenance"])
 async def trigger_retention_cleanup(
-    client_id: str = Depends(verify_api_key)
+    client_id: str = Depends(verify_admin_api_key)
 ):
     """
     Authenticated administrative maintenance endpoint to enforce data retention cleanup.
+    Requires validated administrative privileges (ADMIN_API_KEY).
     """
     result = cleanup_expired_artifacts()
+    log_audit_event(
+        event_type="ADMIN_CLEANUP",
+        action="POST /v1/maintenance/cleanup",
+        client_id=client_id,
+        status="SUCCESS",
+        http_status=200,
+        details={"purged_count": result.get("deleted_documents_count", 0)}
+    )
     return {"status": "cleanup_complete", "result": result}

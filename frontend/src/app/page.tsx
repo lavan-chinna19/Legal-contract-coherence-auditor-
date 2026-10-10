@@ -65,7 +65,9 @@ interface DocumentResult {
 }
 
 export default function AuditorDashboard() {
-  const [backendUrl, setBackendUrl] = useState(process.env.NEXT_PUBLIC_BACKEND_URL || "http://127.0.0.1:8000");
+  const [backendUrl, setBackendUrl] = useState(
+    process.env.NEXT_PUBLIC_API_URL || process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:8000"
+  );
   const [apiKey, setApiKey] = useState("");
   const [backendStatus, setBackendStatus] = useState<"checking" | "online" | "offline">("checking");
   const [activeTab, setActiveTab] = useState<"upload" | "results" | "xai" | "feedback" | "transparency">("upload");

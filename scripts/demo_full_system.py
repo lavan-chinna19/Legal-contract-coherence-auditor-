@@ -94,13 +94,15 @@ def run_demo():
     results = res_res.json()
 
     print(f"  * Total Clauses:     {results['total_clauses']}")
-    print(f"  * Anomalies Detected:{results['anomaly_count']}")
+    anomaly_cnt = results.get('ml_anomaly_count', results.get('anomaly_count', 0))
+    print(f"  * Anomalies Detected:{anomaly_cnt}")
     print(f"  * High Severity:     {results['high_severity_count']}")
     print(f"  * Medium Severity:   {results['medium_severity_count']}")
-    print(f"  * Mean Anomaly Score:{results['mean_combined_score']:.4f}")
+    mean_score = results.get('mean_combined_score', results.get('scoring_result', {}).get('mean_combined_score', 0.0))
+    print(f"  * Mean Anomaly Score:{mean_score:.4f}")
 
     print("\n[STEP 5] ASCII Sequence Coherence Progression:")
-    clauses = results.get("clauses", [])
+    clauses = results.get("clauses") or results.get("scoring_result", {}).get("clauses", [])
     bar_symbols = ""
     for c in clauses:
         sev = c["severity"]
