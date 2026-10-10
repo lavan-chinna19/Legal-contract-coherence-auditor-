@@ -1,0 +1,22 @@
+{
+  "summary": {
+    "total": 97,
+    "passed": 95,
+    "failed": 0,
+    "skipped": 2,
+    "warnings": 4,
+    "duration_seconds": 40.66
+  },
+  "test_suites": [
+    {
+      "name": "tests/test_api_integration.py",
+      "passed": 2
+    },
+    {
+      "name": "tests/test_security.py",
+      "passed": 16
+    }
+  ],
+  "status": "PASS",
+  "baseline_commit": "32fd9d9fb8a2ca0b5fad928308079b71f3e5de5f"
+}

@@ -1,0 +1,13 @@
+Defect ID,Severity,Component,Status,Description
+BUG-001,HIGH,Backend/Storage,OPEN,Storage Encryption Key Environment Variable Mismatch
+BUG-002,MEDIUM,Backend/Retention,OPEN,Data Retention TTL Environment Variable Mismatch
+BUG-003,HIGH,Feedback/UI,OPEN,Reviewer Feedback Verdict Vocabulary Mismatch
+BUG-004,HIGH,Frontend/Next.js,OPEN,Next.js Hardcoded Backend URL
+BUG-005,HIGH,API/XAI,OPEN,Disconnected XAI Backend Endpoints
+BUG-006,HIGH,API/Pipeline,OPEN,Omission of Rule-Based Integrity Checks
+BUG-007,MEDIUM,Segmentation,OPEN,Clause Boundary Character Offset Corruption
+BUG-008,MEDIUM,Embeddings/Cache,OPEN,Embedding Cache Concurrency Race Hazard
+BUG-009,LOW,ML/Conformal,OPEN,Fallback Conformal Quantile Computation Uses Linear Interpolation
+BUG-010,MEDIUM,Backend/API,OPEN,Unbounded In-Memory Growth in Job Store
+BUG-011,MEDIUM,Infrastructure,OPEN,Missing .dockerignore
+BUG-012,LOW,Backend/API,OPEN,Discarded Rate Limit Headers
