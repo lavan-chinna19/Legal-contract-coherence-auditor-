@@ -22,7 +22,7 @@ logger = logging.getLogger("api")
 
 # Default retention window: 24 hours
 DEFAULT_RETENTION_HOURS = float(os.environ.get("RETENTION_HOURS_MAX", "24.0"))
-DEFAULT_RETENTION_SECONDS = DEFAULT_RETENTION_HOURS * 3600.0
+DEFAULT_RETENTION_SECONDS = float(os.environ.get("RETENTION_TTL_SECONDS", DEFAULT_RETENTION_HOURS * 3600.0))
 
 
 def cleanup_expired_artifacts(max_age_seconds: Optional[float] = None) -> Dict[str, Any]:

@@ -8,6 +8,7 @@ No hardcoded absolute paths appear anywhere else in the codebase.
 """
 
 from pathlib import Path
+import os
 from dataclasses import dataclass, field
 from typing import Optional
 import json
@@ -69,7 +70,7 @@ ACTIVE_SEGMENTER = "v1"
 # ---------------------------------------------------------------------------
 # Embeddings Configuration
 # ---------------------------------------------------------------------------
-EMBEDDINGS_CACHE_DIR = PROCESSED_DIR / "embeddings_cache"
+EMBEDDINGS_CACHE_DIR = Path(os.environ.get("LEXAUDIT_EMBEDDINGS_CACHE_DIR", str(PROCESSED_DIR / "embeddings_cache")))
 EMBEDDINGS_CACHE_DIR.mkdir(parents=True, exist_ok=True)
 LEDGAR_CENTROIDS_PATH = FIXTURES_DIR / "ledgar_centroids.npz"
 
@@ -152,8 +153,8 @@ CUAD_HF_DATASET = "theatticusproject/cuad"         # HuggingFace dataset name
 # ---------------------------------------------------------------------------
 # Scoring thresholds
 # ---------------------------------------------------------------------------
-THRESHOLDS_PATH = MODEL_DIR / "thresholds.json"
-FEEDBACK_DB_PATH = PROCESSED_DIR / "feedback.sqlite"
+THRESHOLDS_PATH = Path(os.environ.get("LEXAUDIT_THRESHOLDS_PATH", str(MODEL_DIR / "thresholds.json")))
+FEEDBACK_DB_PATH = Path(os.environ.get("LEXAUDIT_FEEDBACK_DB_PATH", str(PROCESSED_DIR / "feedback.sqlite")))
 
 CHANNEL_A_OOD_THRESHOLD: float = 0.5    # TARGET: semantic OOD distance
 CHANNEL_B_COHERENCE_THRESHOLD: float = 0.5  # TARGET: coherence transition score

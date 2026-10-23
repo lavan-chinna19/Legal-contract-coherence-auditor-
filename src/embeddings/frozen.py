@@ -1,10 +1,14 @@
 import numpy as np
+import os
+import threading
 from typing import List, Tuple
 from sentence_transformers import SentenceTransformer
 
 from src.config import ClauseRecord, LEGAL_BERT_MODEL
 from src.embeddings.base import EmbeddingInterface
 from src.embeddings.cache import EmbeddingCache
+
+_MODEL_LOAD_LOCK = threading.Lock()
 
 
 class FrozenLegalBERTEmbedder(EmbeddingInterface):
@@ -23,21 +27,15 @@ class FrozenLegalBERTEmbedder(EmbeddingInterface):
     
     def _load_model(self):
         if self._model is None:
-            # Compatibility bypass for transformers 5.x check_torch_load_is_safe on local weights
-            try:
-                import transformers.utils.import_utils
-                import transformers.modeling_utils
-                transformers.utils.import_utils.check_torch_load_is_safe = lambda: None
-                transformers.modeling_utils.check_torch_load_is_safe = lambda: None
-            except Exception:
-                pass
-
-            # Load locally or download if not present
-            self._model = SentenceTransformer(self._model_name)
-            # Ensure the model is completely frozen (baseline requirement)
-            for param in self._model.parameters():
-                param.requires_grad = False
-            self._model.eval()
+            with _MODEL_LOAD_LOCK:
+                if self._model is None:
+                    model = SentenceTransformer(self._model_name, device="cpu",
+                        local_files_only=os.environ.get("LEXAUDIT_ALLOW_MODEL_DOWNLOAD", "0") != "1")
+                    for param in model.parameters():
+                        param.requires_grad = False
+                    model.eval()
+                    # Publish only a completely initialized frozen model.
+                    self._model = model
 
     @property
     def model_name(self) -> str:

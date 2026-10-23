@@ -36,15 +36,15 @@ def test_upload_validation_rejects_empty_file():
 
 
 def test_upload_validation_rejects_corrupted_binary():
-    """Security Checklist 1B: Non-UTF8 binary upload must return HTTP 400."""
+    """Unsupported binary extension is rejected before text decoding."""
     corrupted_bytes = b"\xff\xfe\x00\x00\xff\xff\x80\xbf"
     res = client.post(
         "/v1/upload",
         files={"file": ("corrupted.bin", corrupted_bytes, "application/octet-stream")},
         headers=AUTH_HEADERS
     )
-    assert res.status_code == 400
-    assert "utf-8" in res.text.lower()
+    assert res.status_code == 415
+    assert "supported formats" in res.text.lower()
 
 
 def test_path_traversal_on_analyze():

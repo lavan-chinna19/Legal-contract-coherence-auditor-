@@ -26,7 +26,7 @@ class PrivacyPolicyResponse(BaseModel):
 PRIVACY_GUARANTEES = [
     "Contracts are encrypted at rest using authenticated symmetric encryption (Fernet AES-128-CBC + HMAC-SHA256).",
     "Plaintext contract content is NEVER written to server logs, stdout, or audit records.",
-    "Plaintext contract text exists exclusively in volatile memory buffers during active ML pipeline analysis.",
+    "Plaintext contract text exists in memory during authorized parsing, analysis, review and report generation; completed server-side analyses are stored encrypted.",
     "No uploaded contract text is transmitted to external paid APIs, third-party LLMs, or unauthorized third parties.",
     "Uploaded documents and associated temporary artifacts are automatically purged upon expiration of the retention window.",
     "Security audit logs capture non-reversible identity hashes and event metadata, never contract contents or credentials."

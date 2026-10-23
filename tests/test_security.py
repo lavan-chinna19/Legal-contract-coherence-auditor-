@@ -386,6 +386,18 @@ def test_15_existing_api_integration_behavior():
     r_st = client.get(f"/v1/jobs/{job_id}", headers=AUTH_HEADERS)
     assert r_st.status_code == 200
     assert r_st.json()["job_id"] == job_id
+    # Complete the asynchronous workflow before restoring this test's identity.
+    # Leaving a live worker here makes later ownership tests spuriously busy.
+    import time
+    for _ in range(60):
+        r_st = client.get(f"/v1/jobs/{job_id}", headers=AUTH_HEADERS)
+        assert r_st.status_code == 200
+        if r_st.json()["status"] in {"COMPLETED", "FAILED"}:
+            break
+        time.sleep(0.5)
+    assert r_st.json()["status"] == "COMPLETED", r_st.json()
+    result = client.get(f"/v1/jobs/{job_id}/results", headers=AUTH_HEADERS)
+    assert result.status_code == 200 and result.json()["doc_id"] == doc_id
 
 
 def test_16_feedback_endpoint_remains_functional():

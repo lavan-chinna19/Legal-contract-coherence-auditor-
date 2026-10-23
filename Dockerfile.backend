@@ -12,13 +12,13 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     curl \
     && rm -rf /var/lib/apt/lists/*
 
-COPY requirements.txt .
+COPY requirements.txt requirements-release.txt ./
 
 RUN python -m venv /opt/venv && \
     /opt/venv/bin/pip install --no-cache-dir --upgrade pip setuptools wheel && \
-    /opt/venv/bin/pip install --no-cache-dir -r requirements.txt && \
-    /opt/venv/bin/pip install --no-cache-dir psycopg2-binary && \
-    /opt/venv/bin/python -m spacy download en_core_web_sm
+    /opt/venv/bin/pip install --no-cache-dir torch==2.13.0 --index-url https://download.pytorch.org/whl/cpu && \
+    /opt/venv/bin/pip install --no-cache-dir -r requirements-release.txt && \
+    /opt/venv/bin/pip install --no-cache-dir psycopg2-binary==2.9.11
 
 # ── Stage 2: Final Runtime ──
 FROM python:3.11-slim-bookworm AS runtime
@@ -27,6 +27,7 @@ WORKDIR /app
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
     libpq5 \
+    fonts-dejavu-core \
     curl \
     && rm -rf /var/lib/apt/lists/*
 
@@ -35,6 +36,10 @@ COPY --from=builder /opt/venv /opt/venv
 ENV PATH="/opt/venv/bin:$PATH"
 ENV PYTHONPATH="/app"
 ENV PYTHONUNBUFFERED=1
+ENV HF_HOME="/opt/hf"
+ENV HF_HUB_CACHE="/opt/hf/hub"
+ENV HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 HF_HUB_DISABLE_TELEMETRY=1
+ENV OMP_NUM_THREADS=2 TOKENIZERS_PARALLELISM=false
 
 # Create non-root user
 RUN groupadd -g 10001 appgroup && \
@@ -42,19 +47,18 @@ RUN groupadd -g 10001 appgroup && \
 
 # Copy application source and assets
 COPY src/ /app/src/
-COPY data/ /app/data/
-COPY fixtures/ /app/fixtures/
-COPY models/ /app/models/
+COPY fixtures/ledgar_centroids.npz fixtures/conformal_calibration_fixture.json /app/fixtures/
+COPY models/coherence_classifier.pt /app/models/
 
 # Ensure runtime directories exist with correct permissions
-RUN mkdir -p /app/data/uploads /app/data/feedback && \
+RUN mkdir -p /app/data/uploads /app/data/feedback /app/data/processed/embeddings_cache /opt/hf/hub && \
     chown -R appuser:appgroup /app
 
 USER appuser
 
 EXPOSE 8000
 
-HEALTHCHECK --interval=15s --timeout=5s --start-period=30s --retries=3 \
-    CMD curl -f http://localhost:8000/health || exit 1
+HEALTHCHECK --interval=20s --timeout=30s --start-period=120s --retries=3 \
+    CMD curl -fsS http://127.0.0.1:8000/ready || exit 1
 
-CMD ["uvicorn", "src.api.main:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["uvicorn", "src.api.main:app", "--host", "0.0.0.0", "--port", "8000", "--workers", "1", "--no-access-log"]

@@ -95,6 +95,7 @@ class IntegratedGradientsExplainer:
             baselines=baseline_ids,
             additional_forward_args=(attention_mask,),
             n_steps=steps,
+            internal_batch_size=2,
             return_convergence_delta=True
         )
 

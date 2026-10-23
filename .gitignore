@@ -59,3 +59,23 @@ Thumbs.db
 # Logs — never store contract content in logs (Contract §4)
 logs/
 *.log
+# Local optional release dependencies (install via requirements-release.txt).
+.release-deps/
+output/
+tmp/
+/.env.docker.local
+
+# Private runtime storage and local verification output.
+/data/
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+*.sqlite
+*.sqlite3
+*.sqlite-journal
+*.sqlite-wal
+*.sqlite-shm
+*.tsbuildinfo
+/tmp-release-*
+/.env.docker.local.*

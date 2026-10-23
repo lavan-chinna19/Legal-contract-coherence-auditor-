@@ -171,7 +171,7 @@ class SeverityRanker:
         else:
             severity = "CLEAN"
             is_anomaly = False
-            justification = "Scores well within normal legal contract distribution envelope"
+            justification = "No configured statistical severity threshold triggered; legal correctness is unverified"
 
         # Add conformal note if interval is wide/tight
         if interval_width is not None and interval_width < 0.60:

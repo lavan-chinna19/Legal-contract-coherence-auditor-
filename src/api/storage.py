@@ -11,20 +11,29 @@ Implements authenticated encryption (Fernet: AES-128-CBC + HMAC-SHA256) for uplo
 import os
 import json
 import logging
+import re
+import threading
 from pathlib import Path
 from datetime import datetime, timezone
 from typing import Optional, Dict, Any
 from cryptography.fernet import Fernet
 
-from src.config import REPO_ROOT
+from src.config import REPO_ROOT, EMBEDDINGS_CACHE_DIR
 
 logger = logging.getLogger("api")
 
-UPLOAD_DIR = REPO_ROOT / "data" / "uploads"
+UPLOAD_DIR = Path(os.environ.get("LEXAUDIT_UPLOAD_DIR", str(REPO_ROOT / "data" / "uploads")))
 UPLOAD_DIR.mkdir(parents=True, exist_ok=True)
 
 # In-memory cached Fernet instance
 _FERNET_INSTANCE: Optional[Fernet] = None
+_SNAPSHOT_LOCK = threading.Lock()
+
+
+def validate_document_id(doc_id: str):
+    if not re.fullmatch(r"doc_[A-Za-z0-9_-]{1,100}", doc_id):
+        from fastapi import HTTPException
+        raise HTTPException(400, "Invalid document identifier.")
 
 
 def get_fernet() -> Fernet:
@@ -69,11 +78,12 @@ def reset_fernet():
     _FERNET_INSTANCE = None
 
 
-def save_encrypted_document(doc_id: str, document_text: str, client_id: str = "unknown") -> Path:
+def save_encrypted_document(doc_id: str, document_text: str, client_id: str = "unknown", filename: str = "contract.txt") -> Path:
     """
     Encrypts document text and writes binary ciphertext to disk.
     Plaintext is never written to persistent disk storage.
     """
+    validate_document_id(doc_id)
     fernet = get_fernet()
     ciphertext = fernet.encrypt(document_text.encode("utf-8"))
     
@@ -92,6 +102,9 @@ def save_encrypted_document(doc_id: str, document_text: str, client_id: str = "u
     meta_path = UPLOAD_DIR / f"{doc_id}.meta.json"
     with open(meta_path, "w", encoding="utf-8") as f:
         json.dump(meta, f)
+
+    # Keep potentially sensitive filenames inside encrypted storage too.
+    (UPLOAD_DIR / f"{doc_id}.name.enc").write_bytes(fernet.encrypt(filename.encode("utf-8")))
         
     return enc_path
 
@@ -101,6 +114,7 @@ def load_and_decrypt_document(doc_id: str) -> str:
     Reads ciphertext from disk and decrypts it directly into memory.
     Raises FileNotFoundError if file does not exist.
     """
+    validate_document_id(doc_id)
     enc_path = UPLOAD_DIR / f"{doc_id}.enc"
     if not enc_path.exists():
         # Fallback check for legacy .txt during migration test
@@ -120,6 +134,7 @@ def load_and_decrypt_document(doc_id: str) -> str:
 
 def get_document_metadata(doc_id: str) -> Optional[Dict[str, Any]]:
     """Retrieves metadata for an uploaded document."""
+    validate_document_id(doc_id)
     meta_path = UPLOAD_DIR / f"{doc_id}.meta.json"
     if not meta_path.exists():
         return None
@@ -129,13 +144,16 @@ def get_document_metadata(doc_id: str) -> Optional[Dict[str, Any]]:
 
 def document_exists(doc_id: str) -> bool:
     """Checks if encrypted document exists on disk."""
+    if not re.fullmatch(r"doc_[A-Za-z0-9_-]{1,100}", doc_id):
+        return False
     return (UPLOAD_DIR / f"{doc_id}.enc").exists() or (UPLOAD_DIR / f"{doc_id}.txt").exists()
 
 
 def delete_document_files(doc_id: str) -> bool:
     """Deletes all disk artifacts (.enc, .meta.json, legacy .txt) for a given document."""
     deleted = False
-    for ext in [".enc", ".meta.json", ".txt"]:
+    validate_document_id(doc_id)
+    for ext in [".enc", ".meta.json", ".txt", ".analysis.enc", ".analysis.tmp", ".name.enc"]:
         target = UPLOAD_DIR / f"{doc_id}{ext}"
         if target.exists():
             try:
@@ -143,4 +161,63 @@ def delete_document_files(doc_id: str) -> bool:
                 deleted = True
             except OSError:
                 pass
+    cache_root = EMBEDDINGS_CACHE_DIR.resolve()
+    for suffix in (".npz", ".npz.lock"):
+        for cached in EMBEDDINGS_CACHE_DIR.glob(f"*/{doc_id}{suffix}"):
+            if cached.resolve().is_relative_to(cache_root):
+                try:
+                    cached.unlink()
+                    deleted = True
+                except OSError:
+                    pass
     return deleted
+
+
+def document_name(doc_id: str) -> str:
+    validate_document_id(doc_id)
+    path = UPLOAD_DIR / f"{doc_id}.name.enc"
+    return get_fernet().decrypt(path.read_bytes()).decode("utf-8") if path.exists() else doc_id
+
+
+def save_analysis_snapshot(job: dict):
+    with _SNAPSHOT_LOCK:
+        _save_analysis_snapshot(job)
+
+
+def _save_analysis_snapshot(job: dict):
+    doc_id = job["doc_id"]
+    validate_document_id(doc_id)
+    meta = get_document_metadata(doc_id)
+    if not meta:
+        raise FileNotFoundError("Document expired before analysis could be saved.")
+    path = UPLOAD_DIR / f"{doc_id}.analysis.enc"
+    temporary = path.with_suffix(".tmp")
+    temporary.write_bytes(get_fernet().encrypt(json.dumps(job, ensure_ascii=False).encode("utf-8")))
+    temporary.replace(path)
+    if meta:
+        meta["latest_job_id"] = job["job_id"]
+        (UPLOAD_DIR / f"{doc_id}.meta.json").write_text(json.dumps(meta), encoding="utf-8")
+
+
+def load_analysis_snapshot(doc_id: str) -> Optional[dict]:
+    validate_document_id(doc_id)
+    path = UPLOAD_DIR / f"{doc_id}.analysis.enc"
+    if not path.exists():
+        return None
+    return json.loads(get_fernet().decrypt(path.read_bytes()))
+
+
+def list_owned_documents(client_id: str) -> list:
+    documents = []
+    for path in UPLOAD_DIR.glob("doc_*.meta.json"):
+        try:
+            meta = json.loads(path.read_text(encoding="utf-8"))
+            if meta.get("client_id") == client_id:
+                documents.append({"doc_id": meta["doc_id"], "name": document_name(meta["doc_id"]),
+                                  "created_at": meta["created_at"], "job_id": meta.get("latest_job_id")})
+        except (ValueError, OSError, KeyError):
+            continue
+        except Exception:
+            # An old ephemeral key may no longer decrypt a legacy upload.
+            continue
+    return sorted(documents, key=lambda d: d["created_at"], reverse=True)

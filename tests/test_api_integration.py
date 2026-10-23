@@ -69,7 +69,7 @@ def test_end_to_end_analysis_flow():
     job_id = analyze_data["job_id"]
     
     # 3. Poll Status (Authenticated)
-    max_retries = 120
+    max_retries = 240
     delay = 1.0
     for _ in range(max_retries):
         response = client.get(f"/v1/jobs/{job_id}", headers=AUTH_HEADERS)

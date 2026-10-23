@@ -1,131 +1,147 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
+import { ReleaseTools } from "../components/ReleaseTools";
+import { AppShell } from "../components/layout/AppShell";
+import { NavSection } from "../components/layout/SidebarNav";
+import { ThemeProvider } from "../components/layout/ThemeContext";
+import { EmptyState } from "../components/ui/EmptyState";
+import { ContractReviewWorkspace } from "../components/review/ContractReviewWorkspace";
+import { AnalyticsWorkspace } from "../components/analytics";
+import { ExplainabilityWorkspace } from "../components/explainability";
+import { RedTeamWorkspace } from "../components/redteam";
+import { DocumentResult } from "../components/review/types";
+import { BookOpenCheck, MessageSquareCheck, ArrowRight } from "lucide-react";
 
-interface ChannelAEvidence {
-  nearest_centroid_label: string;
-  centroid_distance: number;
-  is_ood: boolean;
-  top_k_distances?: Record<string, number>;
-}
-
-interface ChannelBEvidence {
-  incoming_prob?: number;
-  outgoing_prob?: number;
-  incoming_anomaly?: number;
-  outgoing_anomaly?: number;
-  prev_clause_id?: string;
-  next_clause_id?: string;
-}
-
-interface ClauseResult {
-  clause_id: string;
+interface ParsedContract {
   doc_id: string;
-  sequence_idx: number;
-  text_preview: string;
-  channel_a_score: number;
-  channel_b_score: number;
-  combined_score: number;
-  channel_a_evidence: ChannelAEvidence;
-  channel_b_evidence: ChannelBEvidence;
-  is_anomaly: boolean;
-  severity: "HIGH" | "MEDIUM" | "LOW";
-  confidence_interval?: [number, number];
-  calibration_source: string;
-  cross_channel_agreement: number;
-  agreement_type: string;
-  severity_justification?: string;
-}
-
-interface RuleFlag {
-  flag_id: string;
-  flag_type: string;
-  severity: string;
-  title: string;
-  description: string;
-  clause_id?: string;
-}
-
-interface DocumentResult {
-  doc_id: string;
-  total_clauses: number;
-  ml_anomaly_count: number;
-  rule_violation_count: number;
-  total_flags: number;
-  high_severity_count: number;
-  medium_severity_count: number;
-  low_severity_count: number;
-  scoring_result: {
-    mean_combined_score: number;
-    max_combined_score: number;
-    clauses: ClauseResult[];
-    calibration_source: string;
-  };
-  rule_flags: RuleFlag[];
+  source_text: string;
+  clauses: { clause_id: string; sequence_idx: number; text: string; char_start: number; char_end: number }[];
 }
 
 export default function AuditorDashboard() {
   const [backendUrl, setBackendUrl] = useState(
     process.env.NEXT_PUBLIC_API_URL || process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:8000"
   );
-  const [apiKey, setApiKey] = useState("");
+  const [apiKey, setApiKey] = useState(
+    ""
+  );
   const [backendStatus, setBackendStatus] = useState<"checking" | "online" | "offline">("checking");
-  const [activeTab, setActiveTab] = useState<"upload" | "results" | "xai" | "feedback" | "transparency">("upload");
 
-  // Privacy acknowledgment (Gate 2 enforcement)
+  // Navigation State (Primary views + Robustness Lab + Transparency)
+  const [activeSection, setActiveSection] = useState<NavSection>("overview");
+  const [activeTab, setActiveTab] = useState<"upload" | "results" | "xai" | "feedback" | "redteam" | "transparency">("upload");
+
+  // Privacy acknowledgment
   const [privacyAcknowledged, setPrivacyAcknowledged] = useState(false);
   const [file, setFile] = useState<File | null>(null);
+  const [rawContractText, setRawContractText] = useState<string>("");
   const [analyzing, setAnalyzing] = useState(false);
   const [analysisStatus, setAnalysisStatus] = useState("");
   const [documentResult, setDocumentResult] = useState<DocumentResult | null>(null);
+  const [currentJobId, setCurrentJobId] = useState("");
+  const [pipelineError, setPipelineError] = useState("");
+  const [parsedContract, setParsedContract] = useState<ParsedContract | null>(null);
+  const operationRef = useRef(0);
+
+  const clearSession = () => {
+    operationRef.current++;
+    setDocumentResult(null); setCurrentJobId(""); setRawContractText("");
+    setParsedContract(null);
+    setSelectedClauseId(""); setPipelineError(""); setFeedbackSuccess(null);
+    setActiveTab("upload"); setActiveSection("overview"); setAnalyzing(false);
+  };
+
+  const openSavedAnalysis = async (jobId: string) => {
+    const operation = ++operationRef.current;
+    const response = await fetch(`${backendUrl}/v1/jobs/${jobId}/results`, { headers: { "X-API-Key": apiKey.trim() } });
+    if (!response.ok) throw new Error("Saved analysis unavailable for this session.");
+    const result: DocumentResult = await response.json();
+    if (operation !== operationRef.current) return;
+    setDocumentResult(result); setCurrentJobId(jobId);
+    setRawContractText(result.metadata?.source_text || "");
+    setSelectedClauseId(result.scoring_result.clauses[0]?.clause_id || "");
+    setActiveTab("results"); setActiveSection("contract-review");
+  };
+
+  // Authoritative clause selection in React memory
+  const [selectedClauseId, setSelectedClauseId] = useState<string>("");
 
   // Reviewer feedback
-  const [selectedClauseId, setSelectedClauseId] = useState<string>("");
   const [feedbackVerdict, setFeedbackVerdict] = useState<string>("CONFIRM_ANOMALY");
   const [reviewerId, setReviewerId] = useState("reviewer_01");
   const [feedbackProvenance, setFeedbackProvenance] = useState("REAL");
   const [feedbackSuccess, setFeedbackSuccess] = useState<string | null>(null);
 
-  // XAI State
-  const [xaiMode, setXaiMode] = useState<"attribution" | "sensitivity" | "retrieval">("attribution");
-  const [xaiData, setXaiData] = useState<any>(null);
-  const [loadingXai, setLoadingXai] = useState(false);
-
-  const DISCLAIMER_TEXT =
-    "⚠️ Research Prototype — Not Legal Advice: This system is an academic research prototype evaluating structural and semantic coherence. Predictions and flags do not constitute legal advice or formal document review.";
-
+  // Probe Backend Connectivity
   useEffect(() => {
-    fetch(`${backendUrl}/health`)
-      .then((res) => {
-        if (res.ok) setBackendStatus("online");
-        else setBackendStatus("offline");
-      })
-      .catch(() => setBackendStatus("offline"));
+    let cancelled = false;
+    const probe = () => fetch(`${backendUrl}/health`, { signal: AbortSignal.timeout(5000) })
+      .then(res => { if (!cancelled) setBackendStatus(res.ok ? "online" : "offline"); })
+      .catch(() => { if (!cancelled) setBackendStatus("offline"); });
+    void probe();
+    const interval = setInterval(probe, 15000);
+    return () => { cancelled = true; clearInterval(interval); };
   }, [backendUrl]);
 
-  const handleUploadAndAnalyze = async () => {
-    if (!file || !privacyAcknowledged || !apiKey.trim()) return;
+  // Synchronize Section & Tab Navigation
+  const handleSelectSection = (section: NavSection) => {
+    setActiveSection(section);
+    if (section === "overview") setActiveTab("upload");
+    else if (section === "contract-review" || section === "analytics") setActiveTab("results");
+    else if (section === "explainability") setActiveTab("xai");
+    else if (section === "feedback") setActiveTab("feedback");
+    else if (section === "robustness-lab") setActiveTab("redteam");
+    else if (section === "transparency") setActiveTab("transparency");
+  };
 
+  const handleSelectTab = (tab: "upload" | "results" | "xai" | "feedback" | "redteam" | "transparency") => {
+    setActiveTab(tab);
+    if (tab === "upload") setActiveSection("overview");
+    else if (tab === "results") {
+      if (activeSection !== "analytics") setActiveSection("contract-review");
+    } else if (tab === "xai") setActiveSection("explainability");
+    else if (tab === "feedback") setActiveSection("feedback");
+    else if (tab === "redteam") setActiveSection("robustness-lab");
+    else if (tab === "transparency") setActiveSection("transparency");
+  };
+
+  const handleUploadAndAnalyze = async (previewOnly = false, existingDocId?: string) => {
+    if ((!file && !existingDocId) || !privacyAcknowledged || !apiKey.trim()) return;
+
+    const operation = ++operationRef.current;
     try {
+      setPipelineError(""); setDocumentResult(null); setCurrentJobId(""); setRawContractText("");
+      setParsedContract(null);
       setAnalyzing(true);
-      setAnalysisStatus("Encrypting & uploading document...");
-
-      const formData = new FormData();
-      formData.append("file", file);
-
-      const uploadRes = await fetch(`${backendUrl}/v1/upload`, {
-        method: "POST",
-        headers: { "X-API-Key": apiKey.trim() },
-        body: formData,
-      });
-
-      if (!uploadRes.ok) {
-        const err = await uploadRes.json();
-        throw new Error(err.detail || "Upload failed");
+      setAnalysisStatus("Parsing and securely uploading document…");
+      let doc_id = existingDocId;
+      if (!doc_id) {
+        if (!file) throw new Error("Choose a document first.");
+        if (file.size > 10 * 1024 * 1024) throw new Error("File exceeds the 10 MB limit.");
+        if (!/\.(txt|pdf|docx)$/i.test(file.name)) throw new Error("Choose a PDF, DOCX or UTF-8 TXT file.");
+        const formData = new FormData();
+        formData.append("file", file);
+        const uploadRes = await fetch(`${backendUrl}/v1/upload`, {
+          method: "POST", headers: { "X-API-Key": apiKey.trim() }, body: formData,
+        });
+        if (!uploadRes.ok) {
+          const err = await uploadRes.json();
+          throw new Error(err.detail || "Upload failed");
+        }
+        doc_id = (await uploadRes.json()).doc_id;
       }
-
-      const { doc_id } = await uploadRes.json();
-      setAnalysisStatus(`Encrypted as ${doc_id}. Triggering analysis pipeline...`);
+      if (operation !== operationRef.current) return;
+      const previewRes = await fetch(`${backendUrl}/v1/documents/${doc_id}/clauses`, { headers: { "X-API-Key": apiKey.trim() } });
+      if (!previewRes.ok) {
+        const error = await previewRes.json();
+        throw new Error(error.detail || "Clause preview unavailable.");
+      }
+      const parsed: ParsedContract = await previewRes.json();
+      if (operation !== operationRef.current) return;
+      setParsedContract(parsed); setRawContractText(parsed.source_text);
+      if (previewOnly) return;
+      setAnalysisStatus("Loading local analysis models…");
 
       const analyzeRes = await fetch(`${backendUrl}/v1/analyze`, {
         method: "POST",
@@ -142,12 +158,13 @@ export default function AuditorDashboard() {
       }
 
       const { job_id } = await analyzeRes.json();
-      setAnalysisStatus(`Analysis queued (Job ID: ${job_id}). Processing...`);
+      setAnalysisStatus("Analyzing clauses locally…");
 
       // Poll job
       let completed = false;
       let attempts = 0;
-      while (!completed && attempts < 60) {
+      while (!completed && attempts < 150) {
+        if (operation !== operationRef.current) return;
         attempts++;
         await new Promise((r) => setTimeout(r, 2000));
         const statusRes = await fetch(`${backendUrl}/v1/jobs/${job_id}`, {
@@ -161,10 +178,10 @@ export default function AuditorDashboard() {
           } else if (statusData.status === "FAILED") {
             throw new Error(statusData.error || "Analysis failed");
           }
-        }
+        } else throw new Error(`Could not check analysis status (${statusRes.status}).`);
       }
 
-      if (!completed) throw new Error("Analysis job timed out");
+      if (!completed) throw new Error("Analysis is taking longer than five minutes. Refresh saved documents later to reopen a completed result.");
 
       setAnalysisStatus("Retrieving audit report...");
       const resultsRes = await fetch(`${backendUrl}/v1/jobs/${job_id}/results`, {
@@ -174,16 +191,20 @@ export default function AuditorDashboard() {
       if (!resultsRes.ok) throw new Error("Failed to retrieve analysis results");
 
       const resData: DocumentResult = await resultsRes.json();
+      if (operation !== operationRef.current) return;
       setDocumentResult(resData);
+      setCurrentJobId(job_id);
+      setRawContractText(resData.metadata?.source_text || "");
       if (resData.scoring_result.clauses && resData.scoring_result.clauses.length > 0) {
         setSelectedClauseId(resData.scoring_result.clauses[0].clause_id);
       }
       setActiveTab("results");
-    } catch (err: any) {
-      alert(`Pipeline error: ${err.message}`);
+      setActiveSection("contract-review");
+    } catch (err: unknown) {
+      const msg = err instanceof Error ? err.message : "Pipeline error";
+      if (operation === operationRef.current) setPipelineError(msg);
     } finally {
-      setAnalyzing(false);
-      setAnalysisStatus("");
+      if (operation === operationRef.current) { setAnalyzing(false); setAnalysisStatus(""); }
     }
   };
 
@@ -215,495 +236,488 @@ export default function AuditorDashboard() {
       if (!res.ok) throw new Error("Feedback submission failed");
       const data = await res.json();
       setFeedbackSuccess(`Feedback recorded successfully! ID: ${data.feedback_id}`);
-    } catch (err: any) {
-      alert(`Error submitting feedback: ${err.message}`);
+    } catch (err: unknown) {
+      const msg = err instanceof Error ? err.message : "Error submitting feedback";
+      alert(`Error submitting feedback: ${msg}`);
     }
   };
 
-  useEffect(() => {
-    if (activeTab === "xai" && documentResult && selectedClauseId && apiKey.trim()) {
-      setLoadingXai(true);
-      setXaiData(null);
-      
-      const fetchXai = async () => {
-        try {
-          if (xaiMode === "attribution") {
-            const res = await fetch(`${backendUrl}/v1/xai/attribution?doc_id=${documentResult.doc_id}&clause_id=${selectedClauseId}`, {
-              headers: { "X-API-Key": apiKey.trim() }
-            });
-            if (res.ok) setXaiData(await res.json());
-          } else if (xaiMode === "sensitivity") {
-            const res = await fetch(`${backendUrl}/v1/xai/sensitivity?doc_id=${documentResult.doc_id}&clause_id=${selectedClauseId}`, {
-              headers: { "X-API-Key": apiKey.trim() }
-            });
-            if (res.ok) setXaiData(await res.json());
-          }
-        } catch (e) {
-          console.error("Failed to fetch XAI", e);
-        } finally {
-          setLoadingXai(false);
-        }
-      };
-      
-      if (xaiMode !== "retrieval") {
-        fetchXai();
-      } else {
-        setLoadingXai(false);
-      }
-    }
-  }, [activeTab, selectedClauseId, xaiMode, documentResult, apiKey, backendUrl]);
-
-  const selectedClause = documentResult?.scoring_result.clauses.find((c) => c.clause_id === selectedClauseId) || documentResult?.scoring_result.clauses[0];
-
   return (
-    <div className="container">
-      {/* Header */}
-      <header className="header">
-        <div className="logo-area">
-          <span style={{ fontSize: "1.75rem" }}>⚖️</span>
-          <div>
-            <h1 style={{ fontSize: "1.2rem", fontWeight: 700 }}>Legal Contract Coherence Auditor</h1>
-            <p style={{ fontSize: "0.8rem", color: "var(--text-secondary)" }}>
-              Dual-Channel Semantic & Transition Anomaly Analysis
-            </p>
-          </div>
-          <span className="badge-research">Research Prototype</span>
-        </div>
-        <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem", alignItems: "flex-end" }}>
-          <div style={{ display: "flex", gap: "1rem", alignItems: "center" }}>
-            <div style={{ fontSize: "0.85rem", display: "flex", alignItems: "center", gap: "0.4rem" }}>
-              <span style={{ color: backendStatus === "online" ? "#10b981" : "#ef4444" }}>●</span>
-              Backend: {backendStatus}
+    <ThemeProvider>
+      <AppShell
+        activeSection={activeSection}
+        onSelectSection={handleSelectSection}
+        backendStatus={backendStatus}
+        backendUrl={backendUrl}
+        onBackendUrlChange={(value) => { clearSession(); setBackendUrl(value); }}
+        apiKey={apiKey}
+        onApiKeyChange={(value) => { clearSession(); setApiKey(value); }}
+        documentLoaded={!!documentResult}
+      >
+        <ReleaseTools key={`${backendUrl}:${apiKey}:${currentJobId}`} backendUrl={backendUrl} apiKey={apiKey} jobId={currentJobId} onOpen={openSavedAnalysis} />
+        {apiKey && <button className="btn btn-secondary" onClick={() => { clearSession(); setApiKey(""); }}>Sign out and clear document</button>}
+        {pipelineError && <div className="caveat-box" role="alert">{pipelineError}</div>}
+        {/* In-Workspace Secondary Navigation Strip for 100% Selector Compatibility */}
+        <nav className="tab-nav" role="tablist" aria-label="Auditor Navigation">
+          <button
+            id="tab-upload"
+            role="tab"
+            aria-selected={activeTab === "upload"}
+            className={`tab-btn ${activeTab === "upload" ? "active" : ""}`}
+            onClick={() => handleSelectTab("upload")}
+          >
+            1. Upload &amp; Ingest
+          </button>
+          <button
+            id="tab-results"
+            role="tab"
+            aria-selected={activeTab === "results"}
+            className={`tab-btn ${activeTab === "results" ? "active" : ""}`}
+            onClick={() => handleSelectTab("results")}
+            disabled={!documentResult}
+          >
+            2. Coherence Heatmap &amp; Findings
+          </button>
+          <button
+            id="tab-xai"
+            role="tab"
+            aria-selected={activeTab === "xai"}
+            className={`tab-btn ${activeTab === "xai" ? "active" : ""}`}
+            onClick={() => handleSelectTab("xai")}
+            disabled={!documentResult}
+          >
+            3. Explainability (XAI)
+          </button>
+          <button
+            id="tab-feedback"
+            role="tab"
+            aria-selected={activeTab === "feedback"}
+            className={`tab-btn ${activeTab === "feedback" ? "active" : ""}`}
+            onClick={() => handleSelectTab("feedback")}
+            disabled={!documentResult}
+          >
+            4. Reviewer Feedback
+          </button>
+          <button
+            id="tab-redteam"
+            role="tab"
+            aria-selected={activeTab === "redteam"}
+            className={`tab-btn ${activeTab === "redteam" ? "active" : ""}`}
+            onClick={() => handleSelectTab("redteam")}
+          >
+            5. Robustness Lab
+          </button>
+          <button
+            id="tab-transparency"
+            role="tab"
+            aria-selected={activeTab === "transparency"}
+            className={`tab-btn ${activeTab === "transparency" ? "active" : ""}`}
+            onClick={() => handleSelectTab("transparency")}
+          >
+            6. Transparency &amp; Baselines
+          </button>
+        </nav>
+
+        {/* SECTION 1 / TAB 1: UPLOAD & INGEST */}
+        {activeTab === "upload" && (
+          <section className="card" role="tabpanel" aria-labelledby="tab-upload">
+            <h2 style={{ fontSize: "1.2rem", marginBottom: "1rem", color: "var(--color-text-primary)" }}>
+              Ingest Contract Document
+            </h2>
+
+            <div className="caveat-box" style={{ marginBottom: "1.25rem", padding: "1rem" }}>
+              <h3 style={{ fontSize: "0.95rem", color: "var(--color-text-primary)", marginBottom: "0.5rem" }}>
+                🔒 Confidentiality &amp; Data Retention Disclosure
+              </h3>
+              <ul style={{ paddingLeft: "1.2rem", fontSize: "0.85rem", color: "var(--color-text-secondary)", lineHeight: 1.6 }}>
+                <li><strong>Encryption at Rest:</strong> Uploads are encrypted via Fernet (AES-128-CBC + HMAC-SHA256). Zero contract plaintext is written to persistent disk.</li>
+                <li><strong>Data Retention:</strong> Encrypted uploads and saved analyses are removed by the configured retention cleanup (24 hours by default).</li>
+                <li><strong>Zero Plaintext Logging:</strong> Server audit logs strictly prohibit recording contract text or client keys.</li>
+                <li><strong>Academic Prototype:</strong> Designed for structural coherence research. Not formal legal advice.</li>
+              </ul>
             </div>
-            <input
-              type="text"
-              placeholder="Backend URL"
-              value={backendUrl}
-              onChange={(e) => setBackendUrl(e.target.value)}
-              className="input-field"
-              style={{ width: "180px" }}
-              title="API Backend URL"
-            />
-            <input
-              type="password"
-              placeholder="API Key (X-API-Key)"
-              value={apiKey}
-              onChange={(e) => setApiKey(e.target.value)}
-              className="input-field"
-              style={{ width: "180px" }}
-              title="Local prototype use only"
-            />
-          </div>
-          <small style={{ fontSize: "0.65rem", color: "var(--text-muted)" }}>
-            * Note: Browser API key entry is strictly for local/prototype testing.
-          </small>
-        </div>
-      </header>
 
-      {/* Global Disclaimer Banner on Every View (Gate 3) */}
-      <div className="disclaimer-banner">
-        <span>{DISCLAIMER_TEXT}</span>
-      </div>
+            <label htmlFor="privacy-consent" style={{ display: "flex", alignItems: "center", gap: "0.6rem", marginBottom: "1.5rem", cursor: "pointer", fontSize: "0.9rem" }}>
+              <input
+                id="privacy-consent"
+                type="checkbox"
+                checked={privacyAcknowledged}
+                onChange={(e) => setPrivacyAcknowledged(e.target.checked)}
+              />
+              <span style={{ color: "var(--color-text-primary)" }}>
+                I acknowledge the privacy &amp; retention notice and consent to encrypted temporary analysis.
+              </span>
+            </label>
 
-      {/* Tabs Navigation */}
-      <nav className="tab-nav">
-        <button className={`tab-btn ${activeTab === "upload" ? "active" : ""}`} onClick={() => setActiveTab("upload")}>
-          1. Upload & Ingest
-        </button>
-        <button
-          className={`tab-btn ${activeTab === "results" ? "active" : ""}`}
-          onClick={() => setActiveTab("results")}
-          disabled={!documentResult}
-        >
-          2. Coherence Heatmap & Findings
-        </button>
-        <button
-          className={`tab-btn ${activeTab === "xai" ? "active" : ""}`}
-          onClick={() => setActiveTab("xai")}
-          disabled={!documentResult}
-        >
-          3. Explainability (XAI)
-        </button>
-        <button
-          className={`tab-btn ${activeTab === "feedback" ? "active" : ""}`}
-          onClick={() => setActiveTab("feedback")}
-          disabled={!documentResult}
-        >
-          4. Reviewer Feedback
-        </button>
-        <button className={`tab-btn ${activeTab === "transparency" ? "active" : ""}`} onClick={() => setActiveTab("transparency")}>
-          5. Transparency & Baselines
-        </button>
-      </nav>
-
-      {/* TAB 1: UPLOAD */}
-      {activeTab === "upload" && (
-        <section className="card">
-          <h2 style={{ fontSize: "1.2rem", marginBottom: "1rem" }}>Ingest Contract Document</h2>
-          
-          <div className="caveat-box" style={{ marginBottom: "1.25rem", padding: "1rem", background: "rgba(31, 41, 55, 0.4)" }}>
-            <h3 style={{ fontSize: "0.95rem", color: "var(--text-primary)", marginBottom: "0.5rem" }}>
-              🔒 Confidentiality & Data Retention Disclosure (Global Contract Item 4)
-            </h3>
-            <ul style={{ paddingLeft: "1.2rem", fontSize: "0.85rem", color: "var(--text-secondary)", lineHeight: 1.6 }}>
-              <li><strong>Encryption at Rest:</strong> Uploads are encrypted via Fernet (AES-128-CBC + HMAC-SHA256). Zero contract plaintext is written to persistent disk.</li>
-              <li><strong>Data Retention:</strong> Stored ciphertext artifacts are expunged automatically after 24 hours.</li>
-              <li><strong>Zero Plaintext Logging:</strong> Server audit logs strictly prohibit recording contract text or client keys.</li>
-              <li><strong>Research Prototype:</strong> Designed for structural coherence research. Not formal legal advice.</li>
-            </ul>
-          </div>
-
-          <label style={{ display: "flex", alignItems: "center", gap: "0.6rem", marginBottom: "1.5rem", cursor: "pointer", fontSize: "0.9rem" }}>
-            <input
-              type="checkbox"
-              checked={privacyAcknowledged}
-              onChange={(e) => setPrivacyAcknowledged(e.target.checked)}
-            />
-            <span>I acknowledge the privacy & retention notice and consent to encrypted temporary analysis.</span>
-          </label>
-
-          <div style={{ display: "flex", gap: "1rem", alignItems: "center", marginBottom: "1.5rem" }}>
-            <input
-              type="file"
-              accept=".txt"
-              onChange={(e) => setFile(e.target.files?.[0] || null)}
-              className="input-field"
-              style={{ maxWidth: "400px" }}
-            />
-            <button
-              className="btn"
-              disabled={!privacyAcknowledged || !file || !apiKey.trim() || analyzing}
-              onClick={handleUploadAndAnalyze}
-            >
-              {analyzing ? "Analyzing..." : "🚀 Encrypt, Upload & Analyze"}
-            </button>
-          </div>
-
-          {analyzing && <p style={{ color: "var(--accent-primary)", fontSize: "0.9rem" }}>{analysisStatus}</p>}
-        </section>
-      )}
-
-      {/* TAB 2: RESULTS */}
-      {activeTab === "results" && documentResult && (
-        <section>
-          <div className="grid-kpis">
-            <div className="kpi-card">
-              <div className="kpi-label">Total Clauses</div>
-              <div className="kpi-value">{documentResult.total_clauses}</div>
+            <div style={{ display: "flex", gap: "1rem", alignItems: "center", marginBottom: "1.5rem", flexWrap: "wrap" }}>
+              <input
+                id="file-input"
+                aria-label="Upload Contract Document (.txt, .pdf, .docx)"
+                type="file"
+                accept=".txt,.pdf,.docx"
+                disabled={analyzing}
+                onChange={(e) => { setFile(e.target.files?.[0] || null); setParsedContract(null); }}
+                className="input-field"
+                style={{ maxWidth: "400px" }}
+              />
+              <button
+                id="analyze-btn"
+                aria-label="Encrypt, Upload & Analyze Contract"
+                className="btn"
+                disabled={!privacyAcknowledged || !file || !apiKey.trim() || analyzing}
+                onClick={() => void handleUploadAndAnalyze()}
+              >
+                {analyzing ? "Analyzing..." : "🚀 Encrypt, Upload & Analyze"}
+              </button>
+              <button id="preview-btn" className="btn btn-secondary" disabled={!privacyAcknowledged || !file || !apiKey.trim() || analyzing}
+                onClick={() => void handleUploadAndAnalyze(true)}>Parse and preview clauses</button>
             </div>
-            <div className="kpi-card">
-              <div className="kpi-label">Total Anomalies</div>
-              <div className="kpi-value" style={{ color: "var(--sev-med-text)" }}>{documentResult.total_flags}</div>
-            </div>
-            <div className="kpi-card">
-              <div className="kpi-label">High Severity</div>
-              <div className="kpi-value" style={{ color: "var(--sev-high-text)" }}>{documentResult.high_severity_count}</div>
-            </div>
-            <div className="kpi-card">
-              <div className="kpi-label">Medium Severity</div>
-              <div className="kpi-value" style={{ color: "var(--sev-med-text)" }}>{documentResult.medium_severity_count}</div>
-            </div>
-            <div className="kpi-card">
-              <div className="kpi-label">Mean Anomaly Score</div>
-              <div className="kpi-value">{documentResult.scoring_result.mean_combined_score.toFixed(3)}</div>
-            </div>
-          </div>
 
-          {/* Rule Flags Section */}
-          {documentResult.rule_flags && documentResult.rule_flags.length > 0 && (
-            <div className="card" style={{ marginBottom: "1.5rem" }}>
-              <h3 style={{ fontSize: "1.1rem", marginBottom: "0.5rem" }}>Rule-Based Violations</h3>
-              <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
-                {documentResult.rule_flags.map((flag) => (
-                  <div key={flag.flag_id} style={{
-                    padding: "0.75rem",
-                    borderLeft: `4px solid ${flag.severity === "HIGH" ? "var(--sev-high-border)" : "var(--sev-med-border)"}`,
-                    background: "var(--bg-secondary)",
-                    borderRadius: "4px"
-                  }}>
-                    <div style={{ fontWeight: 600, fontSize: "0.95rem", marginBottom: "0.25rem" }}>
-                      [{flag.severity}] {flag.title}
-                    </div>
-                    <div style={{ fontSize: "0.85rem", color: "var(--text-secondary)" }}>
-                      {flag.description}
-                    </div>
-                  </div>
-                ))}
+            <p>PDF, DOCX or UTF-8 TXT. Maximum 10 MB, 100 PDF pages, 250,000 extracted characters and 500 clauses. Scanned PDFs require OCR first.</p>
+            {analyzing && <p role="status" aria-live="polite" style={{ color: "var(--color-accent)", fontSize: "0.9rem" }}>{analysisStatus}</p>}
+            {parsedContract && <div aria-label="Parsed clause preview" className="card">
+              <h3>{parsedContract.clauses.length} parsed clauses</h3>
+              <p>Review the extracted text before running the local models. Locations refer to normalized source text.</p>
+              <button id="analyze-preview-btn" className="btn" disabled={analyzing || !privacyAcknowledged || !apiKey.trim()}
+                onClick={() => void handleUploadAndAnalyze(false, parsedContract.doc_id)}>Analyze this parsed document</button>
+              <div style={{ maxHeight: "400px", overflowY: "auto", overflowWrap: "anywhere" }}>
+                {parsedContract.clauses.map(c => <details key={c.clause_id}>
+                  <summary>Clause {c.sequence_idx + 1} — {c.clause_id}</summary>
+                  <p>Source offsets: {c.char_start}–{c.char_end}</p><p style={{ whiteSpace: "pre-wrap" }}>{c.text}</p>
+                </details>)}
               </div>
-            </div>
-          )}
+            </div>}
+          </section>
+        )}
 
-          <div className="card">
-            <h3 style={{ fontSize: "1.1rem", marginBottom: "0.5rem" }}>Sequence Coherence Heatmap</h3>
-            <p style={{ fontSize: "0.85rem", color: "var(--text-secondary)" }}>
-              Visual distribution of combined anomaly scores across clause sequence. Click any bar to inspect clause details.
-            </p>
-
-            <div className="heatmap-bar">
-              {documentResult.scoring_result.clauses.map((c) => {
-                const bg = c.severity === "HIGH" ? "var(--sev-high-border)" : c.severity === "MEDIUM" ? "var(--sev-med-border)" : "var(--sev-low-border)";
-                return (
-                  <div
-                    key={c.clause_id}
-                    className="heatmap-cell"
-                    style={{ background: bg }}
-                    title={`Clause ${c.sequence_idx}: ${c.combined_score.toFixed(2)} (${c.severity})`}
-                    onClick={() => setSelectedClauseId(c.clause_id)}
-                  />
-                );
-              })}
-            </div>
-
-            <div style={{ display: "flex", gap: "1.5rem", fontSize: "0.8rem", color: "var(--text-secondary)" }}>
-              <span><strong style={{ color: "var(--sev-high-border)" }}>■</strong> High Severity (≥ 0.70)</span>
-              <span><strong style={{ color: "var(--sev-med-border)" }}>■</strong> Medium Severity (≥ 0.40)</span>
-              <span><strong style={{ color: "var(--sev-low-border)" }}>■</strong> Low / Normal (&lt; 0.40)</span>
-            </div>
-          </div>
-
-          <div className="card">
-            <h3 style={{ fontSize: "1.1rem", marginBottom: "1rem" }}>Clause Audit Findings</h3>
-            <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
-              {documentResult.scoring_result.clauses.map((c) => (
-                <div
-                  key={c.clause_id}
-                  style={{
-                    background: selectedClauseId === c.clause_id ? "rgba(99, 102, 241, 0.15)" : "var(--bg-secondary)",
-                    border: `1px solid ${selectedClauseId === c.clause_id ? "var(--border-focus)" : "var(--border-color)"}`,
-                    borderRadius: "8px",
-                    padding: "1rem",
+        {/* SECTION 2 & 3 / TAB 2: RESULTS (Contract Review & Analytics) */}
+        {activeTab === "results" && !documentResult && (
+          activeSection === "analytics" ? (
+            <AnalyticsWorkspace
+              documentResult={null}
+              selectedClauseId=""
+              onSelectClauseId={() => {}}
+              onNavigateToUpload={() => {
+                setActiveSection("overview");
+                setActiveTab("upload");
+              }}
+            />
+          ) : (
+            <EmptyState
+              icon={<BookOpenCheck size={48} />}
+              title="No Active Contract in Review"
+              description="Please upload and analyze a contract document in Overview to inspect sequence coherence and clause anomalies."
+              action={
+                <button
+                  className="btn"
+                  onClick={() => {
+                    setActiveSection("overview");
+                    setActiveTab("upload");
                   }}
                 >
-                  <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "0.5rem" }}>
-                    <span style={{ fontWeight: 600 }}>Clause {c.sequence_idx} ({c.clause_id})</span>
-                    <span className={`severity-tag ${c.severity}`}>{c.severity}</span>
+                  <span>Go to Ingestion &amp; Upload</span>
+                  <ArrowRight size={16} aria-hidden="true" />
+                </button>
+              }
+            />
+          )
+        )}
+
+        {activeTab === "results" && documentResult && (
+          <section role="tabpanel" aria-labelledby="tab-results">
+            <p role="status">{documentResult.metadata?.analysis_state === "NO_FINDINGS" ?
+              "No configured detector findings. This does not establish legal correctness or completeness." :
+              "Review required. Statistical anomalies and automated rule candidates need human interpretation."}</p>
+            {activeSection !== "analytics" ? (
+              <>
+                {/* KPI Summary Cards for Contract Review Workspace */}
+                <div className="grid-kpis" style={{ marginBottom: "1rem" }}>
+                  <div className="kpi-card">
+                    <div className="kpi-label">Total Clauses</div>
+                    <div className="kpi-value">{documentResult.total_clauses}</div>
                   </div>
-                  <p style={{ fontSize: "0.9rem", color: "var(--text-secondary)", marginBottom: "0.75rem" }}>
-                    "{c.text_preview}"
-                  </p>
-                  <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0.5rem", fontSize: "0.85rem" }}>
-                    <div>Channel A (Semantic OOD): <strong>{c.channel_a_score.toFixed(3)}</strong> (Centroid: {c.channel_a_evidence.nearest_centroid_label})</div>
-                    <div>Channel B (Transition): <strong>{c.channel_b_score.toFixed(3)}</strong></div>
+                  <div className="kpi-card">
+                    <div className="kpi-label">Total Review Flags</div>
+                    <div className="kpi-value" style={{ color: "var(--sev-med-text)" }}>{documentResult.total_flags}</div>
                   </div>
-                  <div className="caveat-box">
-                    95% Conformal Confidence Interval: [{c.confidence_interval?.[0]?.toFixed(3) ?? "N/A"}, {c.confidence_interval?.[1]?.toFixed(3) ?? "N/A"}]
-                    &nbsp;|&nbsp; <strong>Calibration Source:</strong> {c.calibration_source} (Permutation baseline, not human error distribution)
+                  <div className="kpi-card">
+                    <div className="kpi-label">High Severity</div>
+                    <div className="kpi-value" style={{ color: "var(--sev-high-text)" }}>{documentResult.high_severity_count}</div>
+                  </div>
+                  <div className="kpi-card">
+                    <div className="kpi-label">Medium Severity</div>
+                    <div className="kpi-value" style={{ color: "var(--sev-med-text)" }}>{documentResult.medium_severity_count}</div>
+                  </div>
+                  <div className="kpi-card">
+                    <div className="kpi-label">Mean Anomaly Score</div>
+                    <div className="kpi-value">{documentResult.scoring_result.mean_combined_score.toFixed(3)}</div>
                   </div>
                 </div>
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
 
-      {/* TAB 3: XAI */}
-      {activeTab === "xai" && selectedClause && (
-        <section className="card">
-          <h2 style={{ fontSize: "1.2rem", marginBottom: "1rem" }}>Explainability & Evidence Layer</h2>
-          <p style={{ fontSize: "0.9rem", color: "var(--text-secondary)", marginBottom: "1.5rem" }}>
-            Inspecting Clause {selectedClause.sequence_idx} ({selectedClause.clause_id}): "{selectedClause.text_preview}"
-          </p>
-
-          <div style={{ display: "flex", gap: "1rem", marginBottom: "1.5rem" }}>
-            <button className={`btn ${xaiMode === "attribution" ? "" : "btn-secondary"}`} onClick={() => setXaiMode("attribution")}>
-              Token Attribution (IG)
-            </button>
-            <button className={`btn ${xaiMode === "sensitivity" ? "" : "btn-secondary"}`} onClick={() => setXaiMode("sensitivity")}>
-              Neighbor Sensitivity
-            </button>
-            <button className={`btn ${xaiMode === "retrieval" ? "" : "btn-secondary"}`} onClick={() => setXaiMode("retrieval")}>
-              Centroid Retrieval
-            </button>
-          </div>
-
-          {loadingXai && <p style={{ color: "var(--accent-primary)", fontSize: "0.9rem", marginBottom: "1rem" }}>Loading explanation...</p>}
-
-          {!loadingXai && xaiMode === "attribution" && (
-            <div>
-              <div className="caveat-box" style={{ marginBottom: "1rem" }}>
-                <strong>Claim Scope (Prompt 12):</strong> What this shows: Relative gradient attribution driving Legal-BERT embedding away from reference clusters. What this does not show: Normative legal ambiguity or enforceability.
-              </div>
-              <h4 style={{ fontSize: "0.95rem", marginBottom: "0.5rem" }}>Attributed Tokens:</h4>
-              <div style={{ display: "flex", flexWrap: "wrap", gap: "0.5rem" }}>
-                {xaiData?.ig_payload ? (
-                  xaiData.ig_payload.tokens.map((t: string, i: number) => {
-                    const attr = xaiData.ig_payload.attributions[i];
-                    return (
-                      <span key={i} style={{ background: attr > 0 ? `rgba(239, 68, 68, ${Math.min(attr*5, 0.8)})` : `rgba(16, 185, 129, ${Math.min(Math.abs(attr)*5, 0.8)})`, padding: "0.2rem 0.5rem", borderRadius: "4px", fontSize: "0.85rem", color: Math.abs(attr) > 0.2 ? "white" : "inherit" }}>
-                        {t} <small style={{ color: "inherit", opacity: 0.7 }}>{attr > 0 ? '+' : ''}{attr.toFixed(2)}</small>
-                      </span>
-                    );
-                  })
-                ) : (
-                  <span style={{ color: "var(--text-muted)", fontSize: "0.85rem" }}>No attribution data available.</span>
-                )}
-              </div>
-            </div>
-          )}
-
-          {!loadingXai && xaiMode === "sensitivity" && (
-            <div>
-              <div className="caveat-box" style={{ marginBottom: "1rem" }}>
-                <strong>Claim Scope (Prompt 12):</strong> What this shows: Score sensitivity under neighboring clause swap or deletion. What this does not show: Causal cross-clause drafting dependencies.
-              </div>
-              <p style={{ fontSize: "0.9rem" }}>Baseline Transition Score: <strong>{selectedClause.channel_b_score.toFixed(3)}</strong></p>
-              {xaiData?.sensitivity_payload ? (
-                <p style={{ fontSize: "0.9rem" }}>
-                  Perturbed Neighbor Score Delta (Masking {xaiData.sensitivity_payload.neighbor_position}): 
-                  <strong style={{ color: xaiData.sensitivity_payload.score_delta > 0 ? "#ef4444" : "#10b981", marginLeft: "0.5rem" }}>
-                    Δ = {xaiData.sensitivity_payload.score_delta > 0 ? "+" : ""}{xaiData.sensitivity_payload.score_delta.toFixed(3)}
-                  </strong>
-                </p>
-              ) : (
-                <p style={{ fontSize: "0.85rem", color: "var(--text-muted)" }}>No sensitivity data available.</p>
-              )}
-            </div>
-          )}
-
-          {xaiMode === "retrieval" && (
-            <div>
-              <div className="caveat-box" style={{ marginBottom: "1rem" }}>
-                <strong>Claim Scope (Prompt 12):</strong> What this shows: Closest reference clusters in the LEDGAR corpus. What this does not show: Industry consensus or market standard clause wording.
-              </div>
-              <p style={{ fontSize: "0.9rem" }}>Nearest Cluster: <strong>{selectedClause.channel_a_evidence.nearest_centroid_label}</strong></p>
-              <p style={{ fontSize: "0.9rem" }}>Centroid Distance: <strong>{selectedClause.channel_a_evidence.centroid_distance.toFixed(3)}</strong></p>
-            </div>
-          )}
-        </section>
-      )}
-
-      {/* TAB 4: FEEDBACK */}
-      {activeTab === "feedback" && documentResult && (
-        <section className="card">
-          <h2 style={{ fontSize: "1.2rem", marginBottom: "1rem" }}>Reviewer Recalibration Interface</h2>
-          <p style={{ fontSize: "0.9rem", color: "var(--text-secondary)", marginBottom: "1.5rem" }}>
-            Submit feedback verdicts to recalibrate anomaly detection models via <code>POST /v1/feedback</code>.
-          </p>
-
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem", marginBottom: "1.5rem" }}>
-            <div>
-              <label style={{ fontSize: "0.85rem", color: "var(--text-secondary)" }}>Select Anomaly Clause</label>
-              <select
-                value={selectedClauseId}
-                onChange={(e) => setSelectedClauseId(e.target.value)}
-                className="input-field"
-                style={{ marginTop: "0.25rem" }}
-              >
-                {documentResult.scoring_result.clauses.map((c) => (
-                  <option key={c.clause_id} value={c.clause_id}>
-                    Clause {c.sequence_idx} ({c.clause_id}) — {c.severity}
-                  </option>
-                ))}
-              </select>
-            </div>
-
-            <div>
-              <label style={{ fontSize: "0.85rem", color: "var(--text-secondary)" }}>Reviewer Verdict</label>
-              <select
-                value={feedbackVerdict}
-                onChange={(e) => setFeedbackVerdict(e.target.value)}
-                className="input-field"
-                style={{ marginTop: "0.25rem" }}
-              >
-                <option value="CONFIRM_ANOMALY">CONFIRM_ANOMALY (True Anomaly)</option>
-                <option value="REJECT_ANOMALY">REJECT_ANOMALY (False Alarm)</option>
-              </select>
-            </div>
-          </div>
-
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem", marginBottom: "1.5rem" }}>
-            <div>
-              <label style={{ fontSize: "0.85rem", color: "var(--text-secondary)" }}>Reviewer Signature ID</label>
-              <input
-                type="text"
-                value={reviewerId}
-                onChange={(e) => setReviewerId(e.target.value)}
-                className="input-field"
-                style={{ marginTop: "0.25rem" }}
+                {/* Split-Screen Review Workspace */}
+                <ContractReviewWorkspace
+                  documentResult={documentResult}
+                  rawContractText={rawContractText}
+                  selectedClauseId={selectedClauseId}
+                  onSelectClauseId={setSelectedClauseId}
+                  backendUrl={backendUrl}
+                  apiKey={apiKey}
+                  onNavigateToXai={() => {
+                    setActiveSection("explainability");
+                    setActiveTab("xai");
+                  }}
+                  onNavigateToFeedback={() => {
+                    setActiveSection("feedback");
+                    setActiveTab("feedback");
+                  }}
+                />
+              </>
+            ) : (
+              /* Professional Analytics & Findings Workspace (Phase 4A) */
+              <AnalyticsWorkspace
+                documentResult={documentResult}
+                selectedClauseId={selectedClauseId}
+                onSelectClauseId={setSelectedClauseId}
+                onNavigateToReview={() => {
+                  setActiveSection("contract-review");
+                  setActiveTab("results");
+                }}
+                onNavigateToUpload={() => {
+                  setActiveSection("overview");
+                  setActiveTab("upload");
+                }}
+                onNavigateToXai={() => {
+                  setActiveSection("explainability");
+                  setActiveTab("xai");
+                }}
+                onNavigateToFeedback={() => {
+                  setActiveSection("feedback");
+                  setActiveTab("feedback");
+                }}
               />
-            </div>
-            <div>
-              <label style={{ fontSize: "0.85rem", color: "var(--text-secondary)" }}>Provenance</label>
-              <select
-                value={feedbackProvenance}
-                onChange={(e) => setFeedbackProvenance(e.target.value)}
-                className="input-field"
-                style={{ marginTop: "0.25rem" }}
+            )}
+          </section>
+        )}
+
+        {/* SECTION 4 / TAB 3: EXPLAINABILITY (XAI) */}
+        {activeTab === "xai" && (
+          <section role="tabpanel" aria-labelledby="tab-xai">
+            <ExplainabilityWorkspace
+              documentResult={documentResult}
+              selectedClauseId={selectedClauseId}
+              onSelectClauseId={setSelectedClauseId}
+              backendUrl={backendUrl}
+              apiKey={apiKey}
+              onNavigateToReview={() => {
+                setActiveSection("contract-review");
+                setActiveTab("results");
+              }}
+              onNavigateToFeedback={() => {
+                setActiveSection("feedback");
+                setActiveTab("feedback");
+              }}
+              onNavigateToUpload={() => {
+                setActiveSection("overview");
+                setActiveTab("upload");
+              }}
+            />
+          </section>
+        )}
+
+        {/* SECTION 5 / TAB 4: REVIEWER FEEDBACK */}
+        {activeTab === "feedback" && !documentResult && (
+          <EmptyState
+            icon={<MessageSquareCheck size={48} />}
+            title="Feedback Interface Inactive"
+            description="Reviewer recalibration requires an analyzed document. Please ingest a contract in Overview first."
+            action={
+              <button
+                className="btn"
+                onClick={() => {
+                  setActiveSection("overview");
+                  setActiveTab("upload");
+                }}
               >
-                <option value="REAL">REAL (Human Reviewer)</option>
-                <option value="SYNTHETIC_TEST">SYNTHETIC_TEST (Automated/Dry Run)</option>
-              </select>
+                <span>Go to Ingestion &amp; Upload</span>
+                <ArrowRight size={16} aria-hidden="true" />
+              </button>
+            }
+          />
+        )}
+
+        {activeTab === "feedback" && documentResult && (
+          <section className="card" role="tabpanel" aria-labelledby="tab-feedback">
+            <h2 style={{ fontSize: "1.2rem", marginBottom: "0.5rem", color: "var(--color-text-primary)" }}>
+              Reviewer Recalibration Interface
+            </h2>
+            <p style={{ fontSize: "0.85rem", color: "var(--color-text-secondary)", marginBottom: "1.5rem" }}>
+              Record reviewer observations for later review. Credentials are self-reported; submitting feedback does not retrain models or change frozen thresholds.
+            </p>
+
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem", marginBottom: "1.5rem" }}>
+              <div>
+                <label htmlFor="clause-select-fb" style={{ fontSize: "0.85rem", color: "var(--color-text-secondary)", display: "block", marginBottom: "0.35rem" }}>
+                  Select Anomaly Clause
+                </label>
+                <select
+                  id="clause-select-fb"
+                  aria-label="Select Anomaly Clause"
+                  value={selectedClauseId}
+                  onChange={(e) => setSelectedClauseId(e.target.value)}
+                  className="input-field"
+                >
+                  {documentResult.scoring_result.clauses.map((c) => (
+                    <option key={c.clause_id} value={c.clause_id}>
+                      § {c.sequence_idx} - Score {c.combined_score.toFixed(2)} ({c.severity})
+                    </option>
+                  ))}
+                </select>
+              </div>
+
+              <div>
+                <label htmlFor="feedback-verdict-select" style={{ fontSize: "0.85rem", color: "var(--color-text-secondary)", display: "block", marginBottom: "0.35rem" }}>
+                  Reviewer Verdict
+                </label>
+                <select
+                  id="feedback-verdict-select"
+                  aria-label="Reviewer Verdict"
+                  value={feedbackVerdict}
+                  onChange={(e) => setFeedbackVerdict(e.target.value)}
+                  className="input-field"
+                >
+                  <option value="CONFIRM_ANOMALY">CONFIRM_ANOMALY (Reviewer agrees with flag)</option>
+                  <option value="REJECT_ANOMALY">REJECT_ANOMALY (Reviewer rejects flag)</option>
+                </select>
+              </div>
             </div>
-          </div>
 
-          <button className="btn" onClick={handleSubmitFeedback} disabled={!apiKey.trim()}>
-            💾 Submit Feedback to API
-          </button>
-
-          {feedbackSuccess && (
-            <p style={{ marginTop: "1rem", color: "#10b981", fontSize: "0.9rem" }}>{feedbackSuccess}</p>
-          )}
-        </section>
-      )}
-
-      {/* TAB 5: TRANSPARENCY */}
-      {activeTab === "transparency" && (
-        <section className="card">
-          <h2 style={{ fontSize: "1.2rem", marginBottom: "1rem" }}>Model Transparency & Empirical Benchmarks</h2>
-          <p style={{ fontSize: "0.9rem", color: "var(--text-secondary)", marginBottom: "1.5rem" }}>
-            Real empirical results from Prompt 14 evaluation without cherry-picking (Global Contract Items 1 & 5).
-          </p>
-
-          <div className="grid-kpis">
-            <div className="kpi-card">
-              <div className="kpi-label">Kendall's Tau (LEDGAR)</div>
-              <div className="kpi-value">-0.0285</div>
-              <div style={{ fontSize: "0.75rem", color: "var(--text-muted)" }}>95% CI: [-0.125, +0.073]</div>
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem", marginBottom: "1.5rem" }}>
+              <div>
+                <label htmlFor="reviewer-id-input" style={{ fontSize: "0.85rem", color: "var(--color-text-secondary)", display: "block", marginBottom: "0.35rem" }}>
+                  Reviewer Signature ID
+                </label>
+                <input
+                  id="reviewer-id-input"
+                  aria-label="Reviewer Signature ID"
+                  type="text"
+                  value={reviewerId}
+                  onChange={(e) => setReviewerId(e.target.value)}
+                  className="input-field"
+                />
+              </div>
+              <div>
+                <label htmlFor="feedback-provenance-select" style={{ fontSize: "0.85rem", color: "var(--color-text-secondary)", display: "block", marginBottom: "0.35rem" }}>
+                  Provenance
+                </label>
+                <select
+                  id="feedback-provenance-select"
+                  aria-label="Feedback Provenance"
+                  value={feedbackProvenance}
+                  onChange={(e) => setFeedbackProvenance(e.target.value)}
+                  className="input-field"
+                >
+                  <option value="REAL">REAL (Human feedback; credentials not verified)</option>
+                  <option value="SYNTHETIC_TEST">SYNTHETIC_TEST (Test observation)</option>
+                </select>
+              </div>
             </div>
-            <div className="kpi-card">
-              <div className="kpi-label">Clean SEC FPR (High)</div>
-              <div className="kpi-value">1.18%</div>
-              <div style={{ fontSize: "0.75rem", color: "var(--text-muted)" }}>95% CI: [0.57%, 2.41%]</div>
-            </div>
-            <div className="kpi-card">
-              <div className="kpi-label">Clean SEC FPR (Med+High)</div>
-              <div className="kpi-value">44.54%</div>
-              <div style={{ fontSize: "0.75rem", color: "var(--text-muted)" }}>95% CI: [40.59%, 48.55%]</div>
-            </div>
-          </div>
 
-          <table style={{ width: "100%", borderCollapse: "collapse", marginTop: "1rem", fontSize: "0.85rem" }}>
-            <thead>
-              <tr style={{ borderBottom: "1px solid var(--border-color)", textAlign: "left", color: "var(--text-secondary)" }}>
-                <th style={{ padding: "0.5rem" }}>Model Architecture</th>
-                <th style={{ padding: "0.5rem" }}>Accuracy</th>
-                <th style={{ padding: "0.5rem" }}>F1 Score</th>
-                <th style={{ padding: "0.5rem" }}>Kendall's Tau</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr style={{ borderBottom: "1px solid var(--border-color)" }}>
-                <td style={{ padding: "0.5rem" }}>Dual-Channel Auditor (Our Model)</td>
-                <td style={{ padding: "0.5rem" }}>50.0%</td>
-                <td style={{ padding: "0.5rem" }}>0.00</td>
-                <td style={{ padding: "0.5rem" }}>-0.2100</td>
-              </tr>
-              <tr style={{ borderBottom: "1px solid var(--border-color)" }}>
-                <td style={{ padding: "0.5rem" }}>Logistic Regression Baseline</td>
-                <td style={{ padding: "0.5rem" }}>55.0%</td>
-                <td style={{ padding: "0.5rem" }}>0.6087</td>
-                <td style={{ padding: "0.5rem" }}>+0.0816</td>
-              </tr>
-              <tr>
-                <td style={{ padding: "0.5rem" }}>Majority-Vote Baseline</td>
-                <td style={{ padding: "0.5rem" }}>50.0%</td>
-                <td style={{ padding: "0.5rem" }}>0.00</td>
-                <td style={{ padding: "0.5rem" }}>0.0000</td>
-              </tr>
-            </tbody>
-          </table>
-        </section>
-      )}
-    </div>
+            <button
+              id="submit-feedback-btn"
+              aria-label="Submit Feedback to API"
+              className="btn"
+              onClick={handleSubmitFeedback}
+              disabled={!apiKey.trim()}
+            >
+              💾 Submit Feedback to API
+            </button>
+
+            {feedbackSuccess && (
+              <p id="feedback-success-msg" role="status" aria-live="polite" style={{ marginTop: "1rem", color: "var(--color-success)", fontSize: "0.9rem" }}>
+                {feedbackSuccess}
+              </p>
+            )}
+          </section>
+        )}
+
+        {/* SECTION 5 / TAB 5: ROBUSTNESS LAB (RED-TEAM) */}
+        {activeTab === "redteam" && (
+          <section role="tabpanel" aria-labelledby="tab-redteam">
+            <RedTeamWorkspace
+              backendUrl={backendUrl}
+              apiKey={apiKey}
+              activeDocId={documentResult?.doc_id}
+              activeDocClauses={documentResult?.scoring_result?.clauses?.map((c) => ({
+                clause_id: c.clause_id,
+                sequence_idx: c.sequence_idx,
+                text: documentResult?.metadata?.clause_inventory?.find(item => item.clause_id === c.clause_id)?.text || c.text_preview,
+              }))}
+            />
+          </section>
+        )}
+
+        {/* SECTION 6 / TAB 6: TRANSPARENCY & BENCHMARKS */}
+        {activeTab === "transparency" && (
+          <section className="card" role="tabpanel" aria-labelledby="tab-transparency">
+            <h2 style={{ fontSize: "1.2rem", marginBottom: "0.5rem", color: "var(--color-text-primary)" }}>
+              Model Transparency &amp; Empirical Benchmarks
+            </h2>
+            <p style={{ fontSize: "0.85rem", color: "var(--color-text-secondary)", marginBottom: "1.5rem" }}>
+              Historical Prompt 14 development results, shown for research context. These are not independent evidence of legal correctness.
+            </p>
+            <div className="caveat-box"><strong>Exploratory evidence only.</strong> Phase 4D-C-A found compromised preregistration and invalid order transformations. Phase 4D-D-A retained 9 directional candidates and 15 eligible negatives for development. Independent human annotation and unseen-family evaluation remain pending.</div>
+
+            <div className="grid-kpis">
+              <div className="kpi-card">
+                <div className="kpi-label">Kendall&apos;s Tau (LEDGAR)</div>
+                <div className="kpi-value">-0.0285</div>
+                <div style={{ fontSize: "0.75rem", color: "var(--color-text-muted)" }}>95% CI: [-0.125, +0.073]</div>
+              </div>
+              <div className="kpi-card">
+                <div className="kpi-label">Clean SEC FPR (High)</div>
+                <div className="kpi-value">1.18%</div>
+                <div style={{ fontSize: "0.75rem", color: "var(--color-text-muted)" }}>95% CI: [0.57%, 2.41%]</div>
+              </div>
+              <div className="kpi-card">
+                <div className="kpi-label">Clean SEC FPR (Med+High)</div>
+                <div className="kpi-value">44.54%</div>
+                <div style={{ fontSize: "0.75rem", color: "var(--color-text-muted)" }}>95% CI: [40.59%, 48.55%]</div>
+              </div>
+            </div>
+
+            <table style={{ width: "100%", borderCollapse: "collapse", marginTop: "1rem", fontSize: "0.85rem" }}>
+              <thead>
+                <tr style={{ borderBottom: "1px solid var(--color-border)", textAlign: "left", color: "var(--color-text-secondary)" }}>
+                  <th style={{ padding: "0.5rem" }}>Model Architecture</th>
+                  <th style={{ padding: "0.5rem" }}>Accuracy</th>
+                  <th style={{ padding: "0.5rem" }}>F1 Score</th>
+                  <th style={{ padding: "0.5rem" }}>Kendall&apos;s Tau</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr style={{ borderBottom: "1px solid var(--color-border)" }}>
+                  <td style={{ padding: "0.5rem", color: "var(--color-text-primary)" }}>Dual-Channel Auditor (Our Model)</td>
+                  <td style={{ padding: "0.5rem", color: "var(--color-text-primary)" }}>50.0%</td>
+                  <td style={{ padding: "0.5rem", color: "var(--color-text-primary)" }}>0.00</td>
+                  <td style={{ padding: "0.5rem", color: "var(--color-text-primary)" }}>-0.2100</td>
+                </tr>
+                <tr style={{ borderBottom: "1px solid var(--color-border)" }}>
+                  <td style={{ padding: "0.5rem", color: "var(--color-text-primary)" }}>Logistic Regression Baseline</td>
+                  <td style={{ padding: "0.5rem", color: "var(--color-text-primary)" }}>55.0%</td>
+                  <td style={{ padding: "0.5rem", color: "var(--color-text-primary)" }}>0.6087</td>
+                  <td style={{ padding: "0.5rem", color: "var(--color-text-primary)" }}>+0.0816</td>
+                </tr>
+                <tr>
+                  <td style={{ padding: "0.5rem", color: "var(--color-text-primary)" }}>Majority-Vote Baseline</td>
+                  <td style={{ padding: "0.5rem", color: "var(--color-text-primary)" }}>50.0%</td>
+                  <td style={{ padding: "0.5rem", color: "var(--color-text-primary)" }}>0.00</td>
+                  <td style={{ padding: "0.5rem", color: "var(--color-text-primary)" }}>0.0000</td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+        )}
+      </AppShell>
+    </ThemeProvider>
   );
 }

@@ -11,14 +11,21 @@ Hardenings applied:
 """
 import uuid
 import threading
+from starlette.concurrency import run_in_threadpool
 from typing import Optional, Dict, Any
 from fastapi import APIRouter, Depends, HTTPException, UploadFile, File, Request
 
 from src.api.schema import (
     JobStatusResponse, UploadResponse, AnalyzeRequest, AnalyzeResponse,
-    DocumentScoringResultModel, UnifiedAuditReportModel, FeedbackRequest, FeedbackResponse
+    DocumentScoringResultModel, UnifiedAuditReportModel, FeedbackRequest, FeedbackResponse,
+    RepositionRequest, RepositionResponse, RepositionCandidateModel,
+    RedTeamScenarioRequest, RedTeamCaseResponse, RedTeamOracleResponse, RedTeamConditionResult
 )
-from src.api.jobs import create_job, get_job, run_analysis_job_sync, JobStatus
+from src.config import ClauseRecord
+from src.redteam.schema import PerturbationType, PerturbationDifficulty, PerturbationScenario
+from src.redteam.fixtures import SYNTHETIC_FIXTURE_REGISTRY
+from src.redteam.runner import RedTeamExperimentRunner
+from src.api.jobs import create_job, get_job, run_analysis_job_sync, JobStatus, run_model_operation, ANALYSIS_LOCK
 from src.api.dependencies import get_segmenter_dep, get_auditor_dep, get_scorer_dep
 from src.api.security import verify_api_key, verify_admin_api_key
 from src.api.rate_limiter import rate_limit_upload_and_analyze
@@ -31,6 +38,7 @@ from src.api.storage import (
 from src.api.audit import log_audit_event
 from src.api.retention import cleanup_expired_artifacts
 from src.api.privacy import get_privacy_policy, PrivacyPolicyResponse
+from src.api.ingestion import parse_document, MAX_UPLOAD_BYTES
 from src.feedback.storage import insert_feedback, init_db
 from src.feedback.schema import FeedbackRecord
 
@@ -69,11 +77,11 @@ async def upload_document(
         )
         raise HTTPException(status_code=400, detail="Filename missing.")
     
-    doc_id = f"doc_{uuid.uuid4().hex[:8]}"
+    doc_id = f"doc_{uuid.uuid4().hex}"
     
     try:
-        content = await file.read()
-        text_content = content.decode("utf-8")
+        content = await file.read(MAX_UPLOAD_BYTES + 1)
+        text_content = await run_in_threadpool(parse_document, content, file.filename)
         if not text_content.strip():
             log_audit_event(
                 event_type="DOCUMENT_UPLOAD",
@@ -86,7 +94,9 @@ async def upload_document(
             raise HTTPException(status_code=400, detail="Uploaded file is empty.")
 
         # Save encrypted at rest — plaintext is never written to disk
-        save_encrypted_document(doc_id=doc_id, document_text=text_content, client_id=client_id)
+        safe_name = file.filename.replace("\\", "/").rsplit("/", 1)[-1]
+        safe_name = "".join(c for c in safe_name if c.isprintable())[:180]
+        save_encrypted_document(doc_id=doc_id, document_text=text_content, client_id=client_id, filename=safe_name)
     except UnicodeDecodeError:
         log_audit_event(
             event_type="DOCUMENT_UPLOAD",
@@ -108,7 +118,7 @@ async def upload_document(
             http_status=500,
             details={"error": "storage_encryption_error"}
         )
-        raise HTTPException(status_code=500, detail=f"Failed to securely store file: {str(e)}")
+        raise HTTPException(status_code=500, detail="Failed to securely store file. Check server storage configuration.")
 
     log_audit_event(
         event_type="DOCUMENT_UPLOAD",
@@ -175,6 +185,8 @@ async def analyze_document(
         )
         raise HTTPException(status_code=500, detail="Failed to decrypt document for analysis.")
 
+    if ANALYSIS_LOCK.locked():
+        raise HTTPException(429, "Another model operation is running. Retry when it finishes.")
     job_id = create_job(doc_id, client_id=client_id)
     
     # Run in separate thread to prevent blocking the async event loop
@@ -383,8 +395,9 @@ async def get_attribution(
     if not clause:
         raise HTTPException(status_code=404, detail="Clause not found.")
         
-    explainer = IntegratedGradientsExplainer(scorer.channel_a)
-    result = explainer.explain(clause)
+    def explain():
+        return IntegratedGradientsExplainer(scorer.channel_a).explain(clause)
+    result = await run_in_threadpool(run_model_operation, explain)
     
     return result.to_dict()
 
@@ -419,8 +432,9 @@ async def get_sensitivity(
     if not clause:
         raise HTTPException(status_code=404, detail="Clause not found.")
         
-    analyzer = ChannelBSensitivityAnalyzer(scorer.channel_b)
-    result = analyzer.explain(clause, clauses)
+    def explain():
+        return ChannelBSensitivityAnalyzer(scorer.channel_b).explain(clause, clauses)
+    result = await run_in_threadpool(run_model_operation, explain)
     
     return result.to_dict()
 
@@ -443,3 +457,412 @@ async def trigger_retention_cleanup(
         details={"purged_count": result.get("deleted_documents_count", 0)}
     )
     return {"status": "cleanup_complete", "result": result}
+
+
+@router.post("/experimental/reposition", response_model=RepositionResponse, tags=["Experimental"])
+async def evaluate_repositioning(
+    request: RepositionRequest,
+    client_id: str = Depends(verify_api_key),
+    segmenter=Depends(get_segmenter_dep),
+    scorer=Depends(get_scorer_dep)
+):
+    """
+    Experimental Counterfactual Clause Repositioning endpoint (Phase 4C).
+    Evaluates alternative insertion positions for an authoritative clause ID using the frozen coherence scorer.
+    Enforces authentication, document ownership, bounds checking, and strict zero-mutation guarantees.
+    """
+    from src.scoring.repositioning import CounterfactualRepositioningEngine
+
+    if not request.experimental:
+        log_audit_event(
+            event_type="EXPERIMENTAL_REPOSITION",
+            action="POST /v1/experimental/reposition",
+            client_id=client_id,
+            status="FAILED",
+            http_status=400,
+            resource_id=request.doc_id,
+            details={"error": "missing_experimental_opt_in"}
+        )
+        raise HTTPException(
+            status_code=400,
+            detail="Counterfactual repositioning is an experimental capability. Parameter 'experimental' must be true."
+        )
+
+    if not document_exists(request.doc_id):
+        log_audit_event(
+            event_type="EXPERIMENTAL_REPOSITION",
+            action="POST /v1/experimental/reposition",
+            client_id=client_id,
+            status="FAILED",
+            http_status=404,
+            resource_id=request.doc_id,
+            details={"error": "document_not_found"}
+        )
+        raise HTTPException(status_code=404, detail="Document not found.")
+
+    meta = get_document_metadata(request.doc_id)
+    if not meta or not meta.get("client_id") or meta.get("client_id") != client_id:
+        log_audit_event(
+            event_type="EXPERIMENTAL_REPOSITION",
+            action="POST /v1/experimental/reposition",
+            client_id=client_id,
+            status="FAILED",
+            http_status=404,
+            resource_id=request.doc_id,
+            details={"error": "unauthorized_document_access"}
+        )
+        raise HTTPException(status_code=404, detail="Document not found.")
+
+    try:
+        doc_text = load_and_decrypt_document(request.doc_id)
+        clauses = segmenter.segment(doc_text, request.doc_id)
+    except Exception as e:
+        log_audit_event(
+            event_type="EXPERIMENTAL_REPOSITION",
+            action="POST /v1/experimental/reposition",
+            client_id=client_id,
+            status="FAILED",
+            http_status=500,
+            resource_id=request.doc_id,
+            details={"error": "document_load_or_segment_error"}
+        )
+        raise HTTPException(status_code=500, detail="Failed to load document for repositioning evaluation.")
+
+    # Bound document size to mitigate cost-amplification attacks
+    MAX_REPOSITION_CLAUSES = 100
+    if len(clauses) > MAX_REPOSITION_CLAUSES:
+        log_audit_event(
+            event_type="EXPERIMENTAL_REPOSITION",
+            action="POST /v1/experimental/reposition",
+            client_id=client_id,
+            status="FAILED",
+            http_status=400,
+            resource_id=request.doc_id,
+            details={"error": "document_size_exceeded", "clause_count": len(clauses)}
+        )
+        raise HTTPException(
+            status_code=400,
+            detail=f"Document exceeds maximum supported size for experimental repositioning ({len(clauses)} > {MAX_REPOSITION_CLAUSES} clauses)."
+        )
+
+    target_clause = next((c for c in clauses if c.clause_id == request.clause_id), None)
+    if not target_clause:
+        log_audit_event(
+            event_type="EXPERIMENTAL_REPOSITION",
+            action="POST /v1/experimental/reposition",
+            client_id=client_id,
+            status="FAILED",
+            http_status=404,
+            resource_id=request.doc_id,
+            details={"error": "clause_not_found", "clause_id": request.clause_id}
+        )
+        raise HTTPException(status_code=404, detail=f"Clause '{request.clause_id}' not found in document.")
+
+    engine = CounterfactualRepositioningEngine(scorer=scorer)
+    result = await run_in_threadpool(run_model_operation, engine.evaluate,
+        clauses=clauses,
+        target_clause_id=request.clause_id,
+        use_optimization=True,
+        min_delta_threshold=request.min_delta_threshold,
+        verify_parity=True
+    )
+
+    log_audit_event(
+        event_type="EXPERIMENTAL_REPOSITION",
+        action="POST /v1/experimental/reposition",
+        client_id=client_id,
+        status="SUCCESS",
+        http_status=200,
+        resource_id=request.doc_id,
+        details={
+            "clause_id": request.clause_id,
+            "is_abstaining": result.is_abstaining,
+            "abstention_reason": result.abstention_reason,
+            "best_candidate_idx": result.best_candidate_idx,
+            "best_objective_delta": result.best_objective_delta,
+            "evaluation_time_ms": round(result.evaluation_time_ms, 2)
+        }
+    )
+
+    candidate_models = [
+        RepositionCandidateModel(
+            position_idx=c.position_idx,
+            rank=c.rank,
+            relative_placement=c.relative_placement,
+            preceding_clause_id=c.preceding_clause_id,
+            succeeding_clause_id=c.succeeding_clause_id,
+            mean_combined_score=c.mean_combined_score,
+            mean_channel_b_score=c.mean_channel_b_score,
+            clause_channel_b_score=c.clause_channel_b_score,
+            objective_delta=c.objective_delta,
+            is_current_position=c.is_current_position,
+            is_recommended=c.is_recommended
+        )
+        for c in result.candidates
+    ]
+
+    response = RepositionResponse(
+        doc_id=result.doc_id,
+        target_clause_id=result.target_clause_id,
+        target_clause_idx=result.target_clause_idx,
+        total_clauses=result.total_clauses,
+        original_mean_combined_score=result.original_mean_combined_score,
+        original_target_sb=result.original_target_sb,
+        best_candidate_idx=result.best_candidate_idx,
+        best_objective_delta=result.best_objective_delta,
+        is_abstaining=result.is_abstaining,
+        abstention_reason=result.abstention_reason,
+        warning_notice=result.warning_notice,
+        model_provenance=result.model_provenance,
+        primary_objective_name=result.primary_objective_name,
+        candidates=candidate_models,
+        optimization_verified=result.optimization_verified,
+        evaluation_time_ms=result.evaluation_time_ms
+    )
+    if meta.get("latest_job_id"):
+        saved_job = get_job(meta["latest_job_id"])
+        if saved_job and saved_job.result and saved_job.client_id == client_id:
+            from src.api.storage import save_analysis_snapshot
+            saved_job.result.setdefault("metadata", {})["counterfactual"] = response.model_dump()
+            save_analysis_snapshot(saved_job.model_dump())
+    return response
+
+
+# -----------------------------------------------------------------------------
+# Phase 4D Self Red-Team Robustness Laboratory Endpoint (Experimental)
+# -----------------------------------------------------------------------------
+
+@router.post("/experimental/redteam", response_model=RedTeamCaseResponse, tags=["Experimental Red-Team"])
+async def evaluate_redteam_scenario(
+    request: RedTeamScenarioRequest,
+    client_id: str = Depends(verify_api_key),
+    segmenter=Depends(get_segmenter_dep),
+    auditor=Depends(get_auditor_dep)
+):
+    """
+    Experimental Self Red-Team Robustness Laboratory endpoint (Phase 4D).
+    Generates controlled, reversible perturbations and measures existing detector sensitivity in memory.
+    Enforces authentication, document ownership, strict experimental opt-in, bounds checking, and zero document mutation.
+    """
+    if not request.experimental:
+        log_audit_event(
+            event_type="EXPERIMENTAL_REDTEAM",
+            action="POST /v1/experimental/redteam",
+            client_id=client_id,
+            status="FAILED",
+            http_status=400,
+            resource_id=request.doc_id or request.fixture_id or "unknown",
+            details={"error": "missing_experimental_opt_in"}
+        )
+        raise HTTPException(
+            status_code=400,
+            detail="Red-team robustness evaluation is an experimental capability. Parameter 'experimental' must be true."
+        )
+
+    # Validate perturbation type
+    valid_types = {pt.value for pt in PerturbationType}
+    if request.perturbation_type not in valid_types:
+        log_audit_event(
+            event_type="EXPERIMENTAL_REDTEAM",
+            action="POST /v1/experimental/redteam",
+            client_id=client_id,
+            status="FAILED",
+            http_status=400,
+            resource_id=request.doc_id or request.fixture_id or "unknown",
+            details={"error": "unsupported_perturbation_type", "type": request.perturbation_type}
+        )
+        raise HTTPException(
+            status_code=400,
+            detail=f"Unsupported perturbation type: '{request.perturbation_type}'. Valid types: {sorted(list(valid_types))}"
+        )
+
+    # Load clauses: either from synthetic fixture or authenticated client document
+    clauses: List[ClauseRecord] = []
+    source_doc_id = ""
+
+    if request.fixture_id:
+        if request.fixture_id not in SYNTHETIC_FIXTURE_REGISTRY:
+            log_audit_event(
+                event_type="EXPERIMENTAL_REDTEAM",
+                action="POST /v1/experimental/redteam",
+                client_id=client_id,
+                status="FAILED",
+                http_status=404,
+                resource_id=request.fixture_id,
+                details={"error": "fixture_not_found"}
+            )
+            raise HTTPException(status_code=404, detail=f"Synthetic fixture '{request.fixture_id}' not found.")
+        clauses = SYNTHETIC_FIXTURE_REGISTRY[request.fixture_id]()
+        source_doc_id = request.fixture_id
+    elif request.doc_id:
+        if not document_exists(request.doc_id):
+            log_audit_event(
+                event_type="EXPERIMENTAL_REDTEAM",
+                action="POST /v1/experimental/redteam",
+                client_id=client_id,
+                status="FAILED",
+                http_status=404,
+                resource_id=request.doc_id,
+                details={"error": "document_not_found"}
+            )
+            raise HTTPException(status_code=404, detail="Document not found.")
+
+        meta = get_document_metadata(request.doc_id)
+        if not meta or not meta.get("client_id") or meta.get("client_id") != client_id:
+            log_audit_event(
+                event_type="EXPERIMENTAL_REDTEAM",
+                action="POST /v1/experimental/redteam",
+                client_id=client_id,
+                status="FAILED",
+                http_status=404,
+                resource_id=request.doc_id,
+                details={"error": "unauthorized_document_access"}
+            )
+            raise HTTPException(status_code=404, detail="Document not found.")
+
+        try:
+            doc_text = load_and_decrypt_document(request.doc_id)
+            clauses = segmenter.segment(doc_text, request.doc_id)
+            source_doc_id = request.doc_id
+        except Exception as e:
+            log_audit_event(
+                event_type="EXPERIMENTAL_REDTEAM",
+                action="POST /v1/experimental/redteam",
+                client_id=client_id,
+                status="FAILED",
+                http_status=500,
+                resource_id=request.doc_id,
+                details={"error": "document_load_or_segment_error"}
+            )
+            raise HTTPException(status_code=500, detail="Failed to load document for red-team evaluation.")
+    else:
+        raise HTTPException(status_code=400, detail="Either 'fixture_id' or 'doc_id' must be provided.")
+
+    # Bound document size to mitigate resource exhaustion
+    MAX_REDTEAM_CLAUSES = 100
+    if len(clauses) > MAX_REDTEAM_CLAUSES:
+        log_audit_event(
+            event_type="EXPERIMENTAL_REDTEAM",
+            action="POST /v1/experimental/redteam",
+            client_id=client_id,
+            status="FAILED",
+            http_status=400,
+            resource_id=source_doc_id,
+            details={"error": "document_size_exceeded", "clause_count": len(clauses)}
+        )
+        raise HTTPException(
+            status_code=400,
+            detail=f"Document exceeds maximum supported size for experimental red-team ({len(clauses)} > {MAX_REDTEAM_CLAUSES} clauses)."
+        )
+
+    # Validate target clause IDs if supplied
+    all_clause_ids = {c.clause_id for c in clauses}
+    for cid in request.target_clause_ids:
+        if cid not in all_clause_ids:
+            log_audit_event(
+                event_type="EXPERIMENTAL_REDTEAM",
+                action="POST /v1/experimental/redteam",
+                client_id=client_id,
+                status="FAILED",
+                http_status=404,
+                resource_id=source_doc_id,
+                details={"error": "target_clause_not_found", "clause_id": cid}
+            )
+            raise HTTPException(status_code=404, detail=f"Target clause '{cid}' not found in document.")
+
+    # Build scenario and run pure in-memory experiment
+    scenario_id = request.scenario_id or f"SCEN_{request.perturbation_type}_{uuid.uuid4().hex[:6]}"
+    scenario = PerturbationScenario(
+        scenario_id=scenario_id,
+        perturbation_type=PerturbationType(request.perturbation_type),
+        difficulty=PerturbationDifficulty.LEVEL_2_MODERATE,
+        source_doc_id=source_doc_id,
+        title=f"Ad-hoc {request.perturbation_type} Evaluation",
+        description=f"Interactive red-team test for {request.perturbation_type}",
+        target_clause_ids=request.target_clause_ids,
+        parameters=request.parameters,
+        expected_detector="UNIFIED_AUDITOR"
+    )
+
+    runner = RedTeamExperimentRunner(auditor=auditor)
+    case_res = await run_in_threadpool(run_model_operation, runner.run_scenario, scenario, clauses)
+
+    # Re-apply pure transformation to capture previews
+    try:
+        pert_clauses, _ = runner._apply_transformation(scenario, clauses) if case_res.oracle_result.valid_transformation else (clauses, {})
+    except Exception:
+        pert_clauses = clauses
+
+    log_audit_event(
+        event_type="EXPERIMENTAL_REDTEAM",
+        action="POST /v1/experimental/redteam",
+        client_id=client_id,
+        status="SUCCESS",
+        http_status=200,
+        resource_id=source_doc_id,
+        details={
+            "scenario_id": case_res.scenario_id,
+            "perturbation_type": case_res.perturbation_type.value,
+            "detection_status": case_res.detection_status.value,
+            "execution_time_ms": case_res.execution_time_ms
+        }
+    )
+
+    oracle_conditions = [
+        RedTeamConditionResult(
+            condition_name=c.condition_name,
+            target_property=c.target_property,
+            expected_value=c.expected_value,
+            observed_value=c.observed_value,
+            is_satisfied=c.is_satisfied,
+            description=c.description
+        )
+        for c in case_res.oracle_result.conditions
+    ]
+
+    oracle_model = RedTeamOracleResponse(
+        valid_transformation=case_res.oracle_result.valid_transformation,
+        oracle_condition=case_res.oracle_result.oracle_condition,
+        expected_detector=case_res.oracle_result.expected_detector,
+        ground_truth_supported=case_res.oracle_result.ground_truth_supported,
+        ground_truth_reason=case_res.oracle_result.ground_truth_reason,
+        affected_clause_ids=case_res.oracle_result.affected_clause_ids,
+        eligible_for_strict_evaluation=case_res.oracle_result.eligible_for_strict_evaluation,
+        conditions=oracle_conditions
+    )
+
+    orig_preview = [{"clause_id": c.clause_id, "sequence_idx": c.sequence_idx, "text": c.text[:140], "label": c.label} for c in clauses]
+    pert_preview = [{"clause_id": c.clause_id, "sequence_idx": c.sequence_idx, "text": c.text[:140], "label": c.label} for c in pert_clauses]
+
+    return RedTeamCaseResponse(
+        scenario_id=case_res.scenario_id,
+        perturbation_type=case_res.perturbation_type.value,
+        difficulty=case_res.difficulty.value,
+        source_doc_id=case_res.source_doc_id,
+        original_checksum=case_res.original_checksum,
+        perturbed_checksum=case_res.perturbed_checksum,
+        detection_status=case_res.detection_status.value,
+        attribution_valid=case_res.attribution_valid,
+        original_mean_combined=case_res.original_mean_combined,
+        perturbed_mean_combined=case_res.perturbed_mean_combined,
+        delta_mean_combined=case_res.delta_mean_combined,
+        original_anomaly_count=case_res.original_anomaly_count,
+        perturbed_anomaly_count=case_res.perturbed_anomaly_count,
+        delta_anomaly_count=case_res.delta_anomaly_count,
+        original_rule_flag_count=case_res.original_rule_flag_count,
+        perturbed_rule_flag_count=case_res.perturbed_rule_flag_count,
+        new_rule_flags=case_res.new_rule_flags,
+        mean_channel_a_delta=case_res.mean_channel_a_delta,
+        mean_channel_b_delta=case_res.mean_channel_b_delta,
+        max_affected_clause_b_delta=case_res.max_affected_clause_b_delta,
+        channel_a_only_delta=case_res.ablations.channel_a_only_anomaly_delta,
+        channel_b_only_delta=case_res.ablations.channel_b_only_anomaly_delta,
+        dual_channel_combined_delta=case_res.ablations.dual_channel_combined_delta,
+        affected_clause_ids=case_res.affected_clause_ids,
+        oracle_result=oracle_model,
+        failure_category=case_res.failure_category,
+        failure_explanation=case_res.failure_explanation,
+        execution_time_ms=case_res.execution_time_ms,
+        original_clauses_preview=orig_preview,
+        perturbed_clauses_preview=pert_preview
+    )
