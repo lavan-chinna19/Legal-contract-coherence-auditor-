@@ -49,7 +49,12 @@ def parsed_clauses(doc_id: str, client_id: str = Depends(verify_api_key), segmen
     if len(clauses) > 500:
         raise HTTPException(413, "Document exceeds the 500 clause analysis limit.")
     normalized = segmenter._clean_html(source) if hasattr(segmenter, "_clean_html") else source
-    return {"doc_id": doc_id, "source_text": normalized, "clauses": [c.to_dict() for c in clauses]}
+    from src.structure import parse_contract, resolve_references
+    structure = parse_contract(clauses, doc_id, source_text=source)
+    return {"doc_id": doc_id, "source_text": normalized, "clauses": [c.to_dict() for c in clauses],
+            "original_source_text": source, "structural_document": structure.to_dict(),
+            "reference_resolutions": resolve_references(structure),
+            "neural_input_coordinate_space": "legacy_normalized_extracted_text"}
 
 
 @router.get("/jobs/{job_id}/report/{format}")
@@ -79,7 +84,10 @@ def dependency_graph(request: DependencyRequest, client_id: str = Depends(verify
     if inventory is None:
         raise HTTPException(409, "Reanalyze this legacy document to establish authoritative clause evidence.")
     from src.rules.dependency_graph import detect_dependencies
-    graph = detect_dependencies(inventory)
+    source = job.result.get("metadata", {}).get("original_source_text")
+    graph = detect_dependencies(inventory, source_text=source)
+    if source is None:
+        graph["evidence_limit"] = "Legacy saved analysis: only assembled scoring clauses are available; reanalyze for original extracted evidence."
     job.result["metadata"]["dependency_graph"] = graph
     save_analysis_snapshot(job.model_dump())
     return graph

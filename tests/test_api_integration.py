@@ -93,11 +93,17 @@ def test_end_to_end_analysis_flow():
     segmenter = get_ml_segmenter()
     auditor = get_unified_auditor()
     
-    with open(test_file_path, "r", encoding="utf-8") as f:
-        doc_text = f.read()
+    from src.api.ingestion import parse_document
+    # Use the upload decoder itself: universal-newline text reads change CRLF offsets.
+    doc_text = parse_document(test_file_path.read_bytes(), test_file_path.name)
         
     clauses = segmenter.segment(doc_text, doc_id)
-    direct_result = auditor.audit_document(clauses, doc_id)
+    # Compare identical extraction evidence. Supplying only legacy-normalized clauses
+    # cannot recover text removed before structural parsing (notably raw EDGAR HTML).
+    direct_result = auditor.audit_document(clauses, doc_id, source_text=doc_text)
+    assert api_result['metadata']['original_source_text'] == doc_text
+    assert api_result['metadata']['structural_document']['source_text'] == doc_text
+    assert api_result['metadata']['clause_inventory'] == [c.to_dict() for c in clauses]
     
     # Compare
     assert api_result["doc_id"] == direct_result.doc_id

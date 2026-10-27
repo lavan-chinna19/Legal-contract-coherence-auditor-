@@ -84,3 +84,42 @@ Docker-specific files: `.dockerignore`, `frontend/.dockerignore`, `Dockerfile.ba
 Actual build exit 0; backend/frontend/gateway/PostgreSQL healthy; 103 runtime checks, 14 image/storage checks, 10 browser assertions and 20 Linux release tests passed. Original private configuration and research data were not included in images. Runtime internet egress is blocked; public Legal-BERT is mounted read-only and CPU inference is real. Stable encryption keys and named volumes preserve exact snapshots across restart and fresh application containers. The scoring denominator remains 24; all rows now earn COMPLETE. External scientific/legal/security validation remains BLOCKED and is not implied by this application score.
 
 Final Docker follow-up files also include `deploy/nginx.conf`, `src/deployment/seed_model_cache.py`, `src/deployment/__init__.py`, `scripts/test_docker_release_image.py`, `scripts/finalize_docker_completion.py` and `docs/DOCKER_VALIDATION_REPORT.md`. Serialized lazy model initialization in `src/embeddings/frozen.py` and its new concurrent regression case in `tests/test_final_release.py` were verified by 5 targeted native tests and the 20-test offline Linux release suite.
+
+## UI refactor follow-up — 2026-10-26
+
+The four-section UI, optional Research Tools and Settings-only connection flow
+are implemented and verified in the native production frontend. Current checks:
+66 affected backend passes, 20 workflow unit passes, all 17 original alignment
+cases, production browser 81 passes and responsive/accessibility 70 passes;
+lint, types and build pass. These suites overlap. Full details and failures
+corrected are in [UI_REDESIGN_COMPLETION_REPORT.md](UI_REDESIGN_COMPLETION_REPORT.md).
+
+The 24-component score above records the previously completed release. It is not
+a new Docker-runtime award for this UI revision. Current Compose configuration
+passes, but Docker UI runtime revalidation is **BLOCKED** by the absent host
+Linux-engine pipe. Earlier Docker acceptance is not represented as a fresh
+container run. Scientific/legal/external security blockers remain unchanged.
+No backend/model source, frozen assets, historical research or Git history was
+changed, and no commit/push/deployment was performed.
+
+## Phase 2 structural parser — 2026-10-26
+
+Native source-preserving structure/reference integration is COMPLETE within its
+tested scope. The existing neural/date input segmentation, model checkpoints,
+ensemble thresholds and Phase 1 files remain unchanged. Final native regression:
+298 passed / 0 failed / 2 optional CUAD-report skips. Frontend lint/build, 20
+workflow and 17 alignment checks pass without frontend source changes.
+
+Paired evaluation reran old/new implementations on the frozen 70 exposed
+development documents (148 modes each): all 148 legacy predictions reproduced,
+neural/date parity and exact structural source/offset preservation passed. TXT
+missing-reference counts improved from 3/1/6/18 to 9/0/0/19 (TP/FP/FN/TN);
+directional graph from 4/0/2/9 to 6/0/0/9. These are development task metrics,
+not real-world legal accuracy or independent adjudication. See
+[PHASE2_IMPLEMENTATION_REPORT.md](PHASE2_IMPLEMENTATION_REPORT.md).
+
+Current Docker integration is **NOT VERIFIED**: the host Linux-engine pipe is
+absent. The historical 24-component release score is not a fresh Docker
+verification for Phase 2. Independent legal annotation, unseen-family evaluation
+and external security validation remain external blockers. No commit, push or
+deployment occurred.

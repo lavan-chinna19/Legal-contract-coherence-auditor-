@@ -127,7 +127,7 @@ def run_analysis_job_sync(job_id: str, doc_id: str, document_text: str, segmente
             raise ValueError("Document exceeds the 500 clause analysis limit")
         
         # Run unified scoring pipeline
-        result = auditor.audit_document(clauses, doc_id)
+        result = auditor.audit_document(clauses, doc_id, source_text=document_text)
         if job.status == JobStatus.FAILED:
             return
         
@@ -142,7 +142,9 @@ def run_analysis_job_sync(job_id: str, doc_id: str, document_text: str, segmente
             "checkpoint_sha256": hashlib.sha256(COHERENCE_CHECKPOINT_PATH.read_bytes()).hexdigest(),
             "clause_inventory": [c.to_dict() for c in clauses],
             "source_text": segmenter._clean_html(document_text) if hasattr(segmenter, "_clean_html") else document_text,
-            "analysis_state": "REVIEW_REQUIRED" if job.result.get("total_flags") else "NO_FINDINGS",
+            "original_source_text": document_text,
+            "neural_input_coordinate_space": "legacy_normalized_extracted_text",
+            "analysis_state": "REVIEW_REQUIRED" if job.result.get("total_flags") or job.result['metadata'].get('reference_review_count') or job.result['metadata'].get('temporal_review_count') else "NO_FINDINGS",
         })
         job.status = JobStatus.COMPLETED
         save_analysis_snapshot(job.model_dump())

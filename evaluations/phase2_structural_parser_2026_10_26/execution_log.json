@@ -1,0 +1,26 @@
+{
+  "date": "2026-10-26",
+  "environment": "Existing clean CPU Python; offline models; isolated test storage; approved local TestClient communication",
+  "commands": [
+    {"command": "python -m pytest tests/test_structural_parser.py tests/test_rules.py tests/test_final_release.py -q -k <non-HTTP subset> --junitxml=parser_initial_tests.xml", "exit_code": 1, "passed": 56, "failed": 2, "deselected": 14, "seconds": 35.02, "explanation": "Parenthesized direction misclassified as uncertain heading; bare-marker test specimen was inherently ambiguous. Grammar fixed; ordinary-reference specimen clarified without weakening RESOLVED expectation; added explicit bare-marker abstention test."},
+    {"command": "python -m pytest tests/test_structural_parser.py -q --junitxml=parser_tests.xml", "exit_code": 0, "passed": 44, "failed": 0, "seconds": 17.18, "note": "Intermediate grammar suite before additional scope/bounds/title tests"},
+    {"command": "python -m pytest tests/test_structural_parser.py tests/test_structural_integration.py tests/test_rules.py tests/test_final_release.py -q --junitxml=integration_tests.xml", "exit_code": 0, "passed": 79, "failed": 0, "seconds": 30.74, "warnings": 3},
+    {"command": "python run_paired.py --run-id paired_v1", "exit_code": 1, "explanation": "Legacy relative-import context error before evaluating cases; fixed loader, preserved exact legacy module"},
+    {"command": "python run_paired.py --run-id paired_v2", "exit_code": 1, "analyses_per_implementation": 148, "explanation": "Numerical outputs matched, but old Python interval tuples compared directly to saved JSON arrays failed reproduction gate. Retained outputs; comparison normalized serialization only, without removing numerical evidence."},
+    {"command": "python -m pytest tests -q --junitxml=full_native_tests.xml", "exit_code": 1, "passed": 294, "failed": 1, "skipped": 2, "seconds": 132.44, "explanation": "API parity direct call supplied legacy clauses without original extraction; fixed input alignment and added preservation assertions"},
+    {"command": "python run_paired.py --run-id paired_v3", "exit_code": 0, "analyses_per_implementation": 148, "phase1_reproduced": 148, "neural_parity": 148, "date_parity": 148, "seconds": 38.094, "note": "Coverage review identified unnecessary Schedule of Fees title notices; later fixed generically and retained this run"},
+    {"command": "python -m pytest tests -q --junitxml=full_native_final.xml", "exit_code": 1, "passed": 296, "failed": 1, "skipped": 2, "seconds": 132.28, "explanation": "New preservation assertion caught universal-newline conversion in direct test file read; switched to actual upload decoder, retaining all assertions"},
+    {"command": "python run_paired.py --run-id paired_v4", "exit_code": 0, "analyses_per_implementation": 148, "phase1_reproduced": 148, "neural_parity": 148, "date_parity": 148, "source_preservation": 148, "offset_preservation": 148, "labelled_regressions": 0, "seconds": 38.734, "authoritative_final_run": true},
+    {"command": "python -m pytest tests -q --junitxml=full_native_verified.xml", "exit_code": 0, "passed": 298, "failed": 0, "skipped": 2, "warnings": 9, "seconds": 131.15, "authoritative_final_native_suite": true},
+    {"command": "npm run lint", "working_directory": "frontend", "exit_code": 0},
+    {"command": "npm run build", "working_directory": "frontend", "exit_code": 0, "result": "Production compilation, TypeScript and static generation succeeded"},
+    {"command": "npm run test:workflow", "working_directory": "frontend", "exit_code": 0, "passed": 20, "failed": 0},
+    {"command": "npm run test:alignment", "working_directory": "frontend", "exit_code": 0, "passed": 17, "failed": 0},
+    {"command": "docker version --format '{{json .}}'", "exit_code": 1, "result": "Client 29.6.1; Server null; dockerDesktopLinuxEngine named pipe absent", "runtime_status": "NOT VERIFIED"},
+    {"command": "python summarize_phase2.py", "exit_code": 0, "result": "All-case comparison and preservation/test summaries generated; no unexpected existing-file changes; original model/Phase 1/frontend/research evidence retained"}
+  ],
+  "python_command_prefix": "tmp/final-release/clean-env/Scripts/python.exe",
+  "evaluation_script_directory": "evaluations/phase2_structural_parser_2026_10_26",
+  "logs_and_xml": "Paths above are relative to evaluation directory unless tests/ is specified. Full commands/options and warnings are also retained in run console/XML artifacts and README.",
+  "git_commit_push_deploy": "None"
+}

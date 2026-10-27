@@ -39,6 +39,34 @@ def report_blocks(result: dict) -> list[tuple[str, str]]:
                        ("text", f"Clause evidence: {flag.get('clause_id')}; involved: {', '.join(flag.get('involved_clause_ids', []))}"),
                        ("text", "Evidence: " + json.dumps(flag.get("evidence", {}), ensure_ascii=False)),
                        ("text", "Claim scope: automated textual check; human review required.")])
+    structure = meta.get("structural_document")
+    if structure:
+        blocks.extend([("heading", "Source-preserving structural evidence"),
+                       ("text", f"Parser: {structure.get('version')}; offsets: {structure.get('coordinate_space')}. "
+                        "Unicode code points in extracted text, not PDF page coordinates. Neural scoring uses its unchanged legacy inventory."),
+                       ("text", f"Source SHA-256: {structure.get('source_sha256')}.")])
+        for section in structure.get("sections", []):
+            blocks.append(("text", f"{section['target_type']} {section['identity']}; parent: {section.get('parent_identity')}; "
+                           f"source offsets {section['heading_start']} to {section['heading_end']}: {section['heading_text']}"))
+        for review in meta.get("reference_reviews", []):
+            blocks.append(("text", f"REVIEW_REQUIRED: {review.get('text', review.get('heading_text', ''))}. "
+                           f"{review.get('reason')}; offsets {review.get('char_start', review.get('heading_start'))} "
+                           f"to {review.get('char_end', review.get('heading_end'))}."))
+    temporal = meta.get('temporal_analysis')
+    if temporal:
+        blocks.extend([('heading','Temporal analysis'),
+            ('text',f"State: {temporal.get('status')}; version: {temporal.get('version')}; coordinates: {temporal.get('coordinate_space')}. "
+             'Confirmed means a supported deterministic textual contradiction. Potential differences, uncertainty and unsupported syntax are separate; severity is review priority, not legal certainty.')])
+        for statement in temporal.get('statements',[]):
+            blocks.append(('text',f"{statement['statement_id']} — scope {statement.get('scope')}; phase {statement.get('phase')}; "
+                f"actor {statement.get('actor') or 'not stated'}; action {statement.get('action') or 'not stated'}; "
+                f"trigger {statement.get('triggering_event') or 'not stated'}; date {statement.get('absolute_date')}; "
+                f"duration {statement.get('duration_value')} {statement.get('duration_unit')}; basis {statement.get('timing_basis')}; "
+                f"operator {statement.get('deadline_type')}; qualifiers {statement.get('qualifiers')}; "
+                f"source {statement['char_start']} to {statement['char_end']}: {statement['raw_text']}"))
+        for decision in temporal.get('decisions',[]):
+            blocks.append(('text',f"{decision['category']} / {decision.get('check', 'bounded parse')}: {decision['reason']} "
+                f"Statements: {', '.join(decision.get('statement_ids', []))}."))
     blocks.append(("heading", "Statistical anomalies"))
     anomalies = [c for c in clauses if c["is_anomaly"]]
     if not anomalies:
@@ -66,7 +94,10 @@ def report_blocks(result: dict) -> list[tuple[str, str]]:
             blocks.extend([("subheading", f"{finding.get('status')} - {finding.get('source_clause_id')}"),
                            ("text", f"Reference: {finding.get('reference')}. {finding.get('reason')}. "
                             f"Target section: {target.get('section_id', 'unresolved')}; clause: {target.get('clause_id', 'unresolved')}. "
-                            f"Reference offsets within source clause: {finding.get('char_start', 'unavailable')} to {finding.get('char_end', 'unavailable')}.")])
+                            f"Reference offsets: {finding.get('source_char_start', finding.get('char_start', 'unavailable'))} "
+                            f"to {finding.get('source_char_end', finding.get('char_end', 'unavailable'))}; "
+                            f"coordinate space: {finding.get('coordinate_space', 'legacy source clause')}. "
+                            f"Clause association: {finding.get('clause_offset_mapping', 'legacy')}.")])
         if not graph.get("findings") and not graph.get("reviews"):
             blocks.append(("text", "No explicit directional conflicts or unresolved targets found."))
     else:

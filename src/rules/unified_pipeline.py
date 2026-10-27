@@ -43,7 +43,8 @@ class UnifiedAuditor:
     def audit_document(
         self,
         clauses: List[ClauseRecord],
-        doc_id: Optional[str] = None
+        doc_id: Optional[str] = None,
+        *, source_text: Optional[str] = None
     ) -> UnifiedAuditReport:
         """
         Executes end-to-end audit across both ML and rule-based pipelines.
@@ -71,11 +72,16 @@ class UnifiedAuditor:
         # 1. Run ML Dual-Channel Anomaly Scoring Pipeline
         ml_result: DocumentScoringResult = self.scorer.score_document(clauses, doc_id=effective_doc_id)
 
-        # 2. Run spaCy Cross-Reference Validation
-        ref_flags, declared_targets = self.reference_checker.check_document(clauses, doc_id=effective_doc_id)
+        # Structural checks receive unchanged extraction separately. Never replace ML/date inputs.
+        reference_analysis = self.reference_checker.analyze_document(
+            clauses, doc_id=effective_doc_id, source_text=source_text)
+        ref_flags = reference_analysis['flags']
+        declared_targets = reference_analysis['declared_targets']
 
-        # 3. Run dateparser Date-Logic Validation
-        date_flags, extracted_dates = self.date_checker.check_document(clauses, doc_id=effective_doc_id)
+        # Temporal rules reuse exact Phase 2 structure; neural input clauses remain unchanged.
+        temporal_analysis = self.date_checker.analyze_document(
+            clauses, doc_id=effective_doc_id, structure=reference_analysis['structure'])
+        date_flags, extracted_dates = temporal_analysis['flags'], temporal_analysis['dates']
 
         all_rule_flags: List[RuleFlag] = ref_flags + date_flags
 
@@ -117,7 +123,13 @@ class UnifiedAuditor:
                 "ref_flags_count": len(ref_flags),
                 "date_flags_count": len(date_flags),
                 "declared_targets_count": len(declared_targets),
-                "extracted_dates_count": len(extracted_dates)
+                "extracted_dates_count": len(extracted_dates),
+                "structural_document": reference_analysis['structure'].to_dict(),
+                "reference_resolutions": reference_analysis['resolutions'],
+                "reference_reviews": reference_analysis['reviews'],
+                "reference_review_count": len(reference_analysis['reviews']),
+                "temporal_analysis": temporal_analysis['metadata'],
+                "temporal_review_count": temporal_analysis['metadata']['review_count'] + temporal_analysis['metadata']['unsupported_count']
             }
         )
 
