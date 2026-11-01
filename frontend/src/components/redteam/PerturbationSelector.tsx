@@ -171,7 +171,7 @@ export function PerturbationSelector({
 
               <div style={{ marginTop: "0.6rem", paddingTop: "0.4rem", borderTop: "1px solid var(--color-border-subtle)" }}>
                 <span style={{ fontSize: "0.68rem", color: "var(--color-text-muted)", fontFamily: "monospace", display: "block" }}>
-                  🎯 {item.expectedDetector}
+                   {item.expectedDetector}
                 </span>
               </div>
             </button>

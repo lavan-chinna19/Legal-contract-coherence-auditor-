@@ -1,0 +1,33 @@
+test_id,section,scenario,expected,actual,status,evidence_file,severity_if_failed
+ENV-01,Environment,Backend /health liveness check,200 OK with status: ok,200 {'status': 'ok'},PASS,,NONE
+ENV-02,Environment,Backend /ready dependency readiness check,200 OK with status: ready,200 {'status': 'ready'},PASS,,NONE
+UPL-01,Phase B: Upload,Valid small UTF-8 contract upload,200 OK with valid doc_id,200 OK (doc_id=doc_4e8d6c21),PASS,,NONE
+UPL-02,Phase B: Upload,Valid multi-clause contract upload,200 OK with valid doc_id,200 OK (doc_id=doc_1b63ad99),PASS,,NONE
+UPL-03,Phase B: Upload,Empty file rejection,400 Bad Request (Uploaded file is empty),400 Bad Request: Uploaded file is empty.,PASS,,NONE
+UPL-04,Phase B: Upload,Non-UTF8 binary upload rejection,400 Bad Request (UTF-8 requirement),400 Bad Request: Uploaded file must be valid UTF-8 text.,PASS,,NONE
+UPL-05,Phase B: Upload,Ciphertext at rest verification,Disk file is Fernet ciphertext,"Verified 888 encrypted bytes, starts with Fernet header",PASS,,NONE
+ANL-01,Phase C: Analysis,Small contract end-to-end analysis,Job completed successfully,COMPLETED in 0.52s (job_id=829ecfb2-eccd-4b5d-b36e-7b14932367a4),PASS,,NONE
+ANL-02,Phase C: Analysis,Multi-clause contract end-to-end analysis,Job completed successfully,COMPLETED in 0.51s (job_id=febb1473-7359-4a92-a342-8fff484309d9),PASS,,NONE
+SEG-01,Phase D: Segmentation,Clause count correctness,5 distinct clauses extracted,Found 5 clauses,PASS,,NONE
+SEG-02,Phase D: Segmentation,Clause ID uniqueness,All clause IDs unique,5 unique IDs out of 5,PASS,,NONE
+COH-01,Phase E: Coherence,Dual-channel evidence integrity,Both Channel A and B evidence computed,Channel A & B evidence present on all clauses,PASS,,NONE
+COH-02,Phase E: Coherence,Conformal intervals & severity levels,Valid intervals and severity classifications,All clauses contain calibrated intervals and valid severity,PASS,,NONE
+COH-03,Phase E: Coherence,Behavioral probe: Abrupt topic shift anomaly detection,Outlier clause produces high anomaly score,Outlier clause score: 0.3568 (Severity: MEDIUM),PASS,,NONE
+RUL-01,Phase G: Rules,Deterministic reference & date inconsistency detection,Both broken reference and date violation detected,"Detected flags: ['DANGLING_SECTION_REFERENCE', 'DANGLING_SCHEDULE_REFERENCE', 'INVERTED_CONTRACT_TERM']",PASS,,NONE
+XAI-01,Phase H: XAI,Channel A Integrated Gradients token attribution,Real tokens and finite attribution values returned,"Returned 26 tokens with computed attribution scores (sample: ['[CLS]', '1', '.', 'term'])",PASS,,NONE
+XAI-02,Phase H: XAI,Channel B neighborhood perturbation sensitivity,Perturbation sensitivity computed,"Returned neighbor=doc_1b63ad99_1, delta=0.0752",PASS,,NONE
+XAI-03,Phase H: XAI,Nonexistent clause XAI query rejection,404 Not Found,404 Not Found,PASS,,NONE
+FDB-01,Phase I: Feedback,Valid reviewer feedback submission,200 OK with feedback_id,200 OK (feedback_id=2687b1b1-4016-4c6a-b4a2-9ffcf749ff13),PASS,,NONE
+FDB-02,Phase I: Feedback,Invalid reviewer verdict rejection,422 Unprocessable Entity,422 Unprocessable Entity,PASS,,NONE
+SEC-01,Phase J: Security,Cross-client document analyze rejection,404 Not Found (prevents enumeration),404 Not Found,PASS,,NONE
+SEC-02,Phase J: Security,Cross-client job status access rejection,404 Not Found,404 Not Found,PASS,,NONE
+SEC-03,Phase J: Security,Cross-client job results access rejection,404 Not Found,404 Not Found,PASS,,NONE
+SEC-04,Phase J: Security,Cross-client XAI explanation access rejection,404 Not Found,404 Not Found,PASS,,NONE
+SEC-05,Phase J: Security,Cross-client feedback submission rejection,404 Not Found,404 Not Found,PASS,,NONE
+SEC-06,Phase J: Security,Ordinary user key rejected from administrative cleanup,403 Forbidden,403 Forbidden,PASS,,NONE
+SEC-07,Phase J: Security,Unauthenticated request rejected from cleanup,401 Unauthorized,401 Unauthorized,PASS,,NONE
+SEC-08,Phase J: Security,Admin key authorized for administrative cleanup,200 OK (cleanup_complete),"200 OK: {'deleted_documents_count': 0, 'retained_documents_count': 20, 'jobs_purged_count': 0, 'max_age_seconds': 86400.0, 'timestamp': '2026-10-10T08:21:33.871644+00:00'}",PASS,,NONE
+NEG-01,Phase K: Negative,Missing authentication header,401 Unauthorized,401 Unauthorized,PASS,,NONE
+NEG-02,Phase K: Negative,Invalid authentication token,401 Unauthorized,401 Unauthorized,PASS,,NONE
+NEG-03,Phase K: Negative,Non-existent document analysis request,404 Not Found,404 Not Found,PASS,,NONE
+NEG-04,Phase K: Negative,Non-existent job polling request,404 Not Found,404 Not Found,PASS,,NONE

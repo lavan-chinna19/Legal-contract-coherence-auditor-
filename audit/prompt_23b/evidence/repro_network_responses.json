@@ -1,0 +1,177 @@
+[
+  {
+    "url": "http://localhost:3000/",
+    "status": 200,
+    "timestamp": 187871.952563
+  },
+  {
+    "url": "http://localhost:3000/_next/static/media/797e433ab948586e-s.p.0r6juujl39pe6.woff2",
+    "status": 200,
+    "timestamp": 187871.974102
+  },
+  {
+    "url": "http://localhost:3000/_next/static/chunks/%5Broot-of-the-server%5D__04kpziuograah._.css",
+    "status": 200,
+    "timestamp": 187871.976108
+  },
+  {
+    "url": "http://localhost:3000/_next/static/media/caa3a2e1cccd8315-s.p.0wgildi0cnwt9.woff2",
+    "status": 200,
+    "timestamp": 187871.980738
+  },
+  {
+    "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_0grqycjrj6mju._.js",
+    "status": 200,
+    "timestamp": 187872.01562
+  },
+  {
+    "url": "http://localhost:3000/_next/static/chunks/%5Bturbopack%5D_browser_dev_hmr-client_hmr-client_ts_03l4kld1mrwfx._.js",
+    "status": 200,
+    "timestamp": 187872.016387
+  },
+  {
+    "url": "http://localhost:3000/_next/static/chunks/1q96_modules_next_dist_compiled_react-dom_cjs_react-dom_development_1sqry0_53krp4.js",
+    "status": 200,
+    "timestamp": 187872.017481
+  },
+  {
+    "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_1amofcmz--cdp._.js",
+    "status": 200,
+    "timestamp": 187872.017849
+  },
+  {
+    "url": "http://localhost:3000/_next/static/chunks/node_modules_%40swc_helpers_cjs_1r9vbqwj2323d._.js",
+    "status": 200,
+    "timestamp": 187872.018768
+  },
+  {
+    "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-server-dom-turbopack_164kp-67asdr9._.js",
+    "status": 200,
+    "timestamp": 187872.019479
+  },
+  {
+    "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_1bjkg68unqmjx._.js",
+    "status": 200,
+    "timestamp": 187872.022706
+  },
+  {
+    "url": "http://localhost:3000/_next/static/chunks/_1anvha4rlo79g._.js",
+    "status": 200,
+    "timestamp": 187872.026576
+  },
+  {
+    "url": "http://localhost:3000/_next/static/chunks/1daa_next_dist_compiled_react-dom_cjs_react-dom-client_development_0mp0cp_t-ezj9.js",
+    "status": 200,
+    "timestamp": 187872.02688
+  },
+  {
+    "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_next-devtools_index_090k2jmam7qwg.js",
+    "status": 200,
+    "timestamp": 187872.028632
+  },
+  {
+    "url": "http://localhost:3000/_next/static/chunks/turbopack-_00pkkjbg3g3xr._.js",
+    "status": 200,
+    "timestamp": 187872.029896
+  },
+  {
+    "url": "http://localhost:3000/_next/static/chunks/_219uq1sj0q91c._.js",
+    "status": 200,
+    "timestamp": 187872.031768
+  },
+  {
+    "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_14zvornz047l2._.js",
+    "status": 200,
+    "timestamp": 187872.033444
+  },
+  {
+    "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_20wefz_f1k6jn._.js",
+    "status": 200,
+    "timestamp": 187872.06561
+  },
+  {
+    "url": "http://localhost:3000/_next/static/chunks/src_app_page_tsx_1gecvfkkh4nqg._.js",
+    "status": 200,
+    "timestamp": 187872.066736
+  },
+  {
+    "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react_0qox21c46arid._.js",
+    "status": 200,
+    "timestamp": 187872.067497
+  },
+  {
+    "url": "http://localhost:3000/_next/static/chunks/%5Bturbopack%5D_browser_dev_hmr-client_hmr-client_ts_1mojsayzyj2p6._.js",
+    "status": 200,
+    "timestamp": 187872.078786
+  },
+  {
+    "url": "http://localhost:8000/health",
+    "status": 200,
+    "timestamp": 187872.129938
+  },
+  {
+    "url": "http://localhost:8000/health",
+    "status": 200,
+    "timestamp": 187872.13956
+  },
+  {
+    "url": "http://localhost:8000/v1/upload",
+    "status": 200,
+    "timestamp": 187875.848958
+  },
+  {
+    "url": "http://localhost:8000/v1/analyze",
+    "status": 200,
+    "timestamp": 187875.91891
+  },
+  {
+    "url": "http://localhost:8000/v1/jobs/a08663a2-7901-49ba-8e11-a20dc7f922e3",
+    "status": 200,
+    "timestamp": 187877.928997
+  },
+  {
+    "url": "http://localhost:8000/v1/jobs/a08663a2-7901-49ba-8e11-a20dc7f922e3",
+    "status": 200,
+    "timestamp": 187877.933713
+  },
+  {
+    "url": "http://localhost:8000/v1/jobs/a08663a2-7901-49ba-8e11-a20dc7f922e3/results",
+    "status": 200,
+    "timestamp": 187877.939791
+  },
+  {
+    "url": "http://localhost:8000/v1/jobs/a08663a2-7901-49ba-8e11-a20dc7f922e3/results",
+    "status": 200,
+    "timestamp": 187877.942288
+  },
+  {
+    "url": "http://localhost:8000/v1/xai/attribution?doc_id=doc_8d948268&clause_id=doc_8d948268_0",
+    "status": 200,
+    "timestamp": 187878.985987
+  },
+  {
+    "url": "http://localhost:8000/v1/xai/attribution?doc_id=doc_8d948268&clause_id=doc_8d948268_0",
+    "status": 200,
+    "timestamp": 187885.184897
+  },
+  {
+    "url": "http://localhost:8000/v1/xai/sensitivity?doc_id=doc_8d948268&clause_id=doc_8d948268_0",
+    "status": 200,
+    "timestamp": 187885.758834
+  },
+  {
+    "url": "http://localhost:8000/v1/xai/sensitivity?doc_id=doc_8d948268&clause_id=doc_8d948268_0",
+    "status": 200,
+    "timestamp": 187886.093913
+  },
+  {
+    "url": "http://localhost:8000/v1/feedback",
+    "status": 200,
+    "timestamp": 187888.954843
+  },
+  {
+    "url": "http://localhost:8000/v1/feedback",
+    "status": 200,
+    "timestamp": 187888.981208
+  }
+]

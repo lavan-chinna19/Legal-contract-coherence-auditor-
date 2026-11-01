@@ -1,0 +1,12 @@
+Claimed Route,Frontend Route,FastAPI Registered Route,Network Evidence,Runtime Response,Verdict
+POST /v1/audit/contracts,POST /v1/upload,POST /v1/upload,POST http://localhost:8000/v1/upload,200 OK,CONFIRMED_REPORT_ERROR
+POST /v1/audit/contracts,POST /v1/analyze,POST /v1/analyze,POST http://localhost:8000/v1/analyze,200 OK,CONFIRMED_REPORT_ERROR
+GET /v1/jobs/{job_id},GET /v1/jobs/{job_id},GET /v1/jobs/{job_id},GET http://localhost:8000/v1/jobs/{id},200 OK,RECONCILED
+GET /v1/jobs/{job_id}/results,GET /v1/jobs/{job_id}/results,GET /v1/jobs/{job_id}/results,GET http://localhost:8000/v1/jobs/{id}/results,200 OK,RECONCILED
+GET /v1/xai/attribution,GET /v1/xai/attribution,GET /v1/xai/attribution,GET http://localhost:8000/v1/xai/attribution?doc_id={d}&clause_id={c},200 OK,RECONCILED
+GET /v1/xai/sensitivity,GET /v1/xai/sensitivity,GET /v1/xai/sensitivity,GET http://localhost:8000/v1/xai/sensitivity?doc_id={d}&clause_id={c},200 OK,RECONCILED
+POST /v1/feedback/verdicts,POST /v1/feedback,POST /v1/feedback,POST http://localhost:8000/v1/feedback,200 OK,CONFIRMED_REPORT_ERROR
+N/A,N/A,GET /v1/privacy-policy,N/A,200 OK,RECONCILED
+GET /health,GET /health,GET /health,GET http://localhost:8000/health,200 OK,RECONCILED
+GET /ready,N/A,GET /ready,N/A,200 OK,RECONCILED
+POST /v1/maintenance/cleanup,N/A,POST /v1/maintenance/cleanup,N/A,200 OK,RECONCILED

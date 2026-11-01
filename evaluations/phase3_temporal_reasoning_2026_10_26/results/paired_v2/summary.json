@@ -1,0 +1,177 @@
+{
+  "original_chronology_screen": {
+    "old": {
+      "n": 14,
+      "TP": 6,
+      "FP": 2,
+      "FN": 2,
+      "TN": 4,
+      "precision": 0.75,
+      "recall": 0.75,
+      "F1": 0.75,
+      "false_positive_rate": 0.3333333333333333
+    },
+    "new": {
+      "n": 14,
+      "TP": 8,
+      "FP": 0,
+      "FN": 0,
+      "TN": 6,
+      "precision": 1.0,
+      "recall": 1.0,
+      "F1": 1.0,
+      "false_positive_rate": 0.0
+    }
+  },
+  "NEW_MECHANICAL_SYNTHETIC": {
+    "documents": 50,
+    "independently_adjudicated": 0,
+    "legacy_alert_proxy": {
+      "n": 50,
+      "TP": 4,
+      "FP": 5,
+      "FN": 9,
+      "TN": 32,
+      "precision": 0.4444444444444444,
+      "recall": 0.3076923076923077,
+      "F1": 0.36363636363636365,
+      "false_positive_rate": 0.13513513513513514
+    },
+    "new_confirmed_screen": {
+      "n": 50,
+      "TP": 13,
+      "FP": 0,
+      "FN": 0,
+      "TN": 37,
+      "precision": 1.0,
+      "recall": 1.0,
+      "F1": 1.0,
+      "false_positive_rate": 0.0
+    },
+    "selective_supported_relation": {
+      "n": 22,
+      "TP": 13,
+      "FP": 0,
+      "FN": 0,
+      "TN": 9,
+      "precision": 1.0,
+      "recall": 1.0,
+      "F1": 1.0,
+      "false_positive_rate": 0.0
+    },
+    "candidate_alert_documents": 17,
+    "review_documents": 16,
+    "unsupported_documents": 5,
+    "abstention_documents": 21,
+    "supported_relation_documents": 22,
+    "recognized_statements": 118,
+    "supported_statements": 94,
+    "statuses": {
+      "CONSISTENT": 14,
+      "CONFIRMED_TEMPORAL_CONFLICT": 13,
+      "REVIEW_REQUIRED": 14,
+      "POTENTIAL_INCONSISTENCY": 4,
+      "UNSUPPORTED": 5
+    }
+  },
+  "POST_IMPLEMENTATION_MECHANICAL_CHALLENGE": {
+    "documents": 12,
+    "independently_adjudicated": 0,
+    "legacy_alert_proxy": {
+      "n": 12,
+      "TP": 0,
+      "FP": 1,
+      "FN": 2,
+      "TN": 9,
+      "precision": 0.0,
+      "recall": 0.0,
+      "F1": 0.0,
+      "false_positive_rate": 0.1
+    },
+    "new_confirmed_screen": {
+      "n": 12,
+      "TP": 2,
+      "FP": 0,
+      "FN": 0,
+      "TN": 10,
+      "precision": 1.0,
+      "recall": 1.0,
+      "F1": 1.0,
+      "false_positive_rate": 0.0
+    },
+    "selective_supported_relation": {
+      "n": 3,
+      "TP": 2,
+      "FP": 0,
+      "FN": 0,
+      "TN": 1,
+      "precision": 1.0,
+      "recall": 1.0,
+      "F1": 1.0,
+      "false_positive_rate": 0.0
+    },
+    "candidate_alert_documents": 3,
+    "review_documents": 5,
+    "unsupported_documents": 1,
+    "abstention_documents": 6,
+    "supported_relation_documents": 3,
+    "recognized_statements": 28,
+    "supported_statements": 20,
+    "statuses": {
+      "REVIEW_REQUIRED": 4,
+      "CONSISTENT": 4,
+      "CONFIRMED_TEMPORAL_CONFLICT": 2,
+      "POTENTIAL_INCONSISTENCY": 1,
+      "UNSUPPORTED": 1
+    }
+  },
+  "PROVISIONAL_INTERPRETATION": {
+    "documents": 8,
+    "independently_adjudicated": 0,
+    "legacy_alert_proxy": {
+      "n": 0,
+      "TP": 0,
+      "FP": 0,
+      "FN": 0,
+      "TN": 0,
+      "precision": null,
+      "recall": null,
+      "F1": null,
+      "false_positive_rate": null
+    },
+    "new_confirmed_screen": {
+      "n": 0,
+      "TP": 0,
+      "FP": 0,
+      "FN": 0,
+      "TN": 0,
+      "precision": null,
+      "recall": null,
+      "F1": null,
+      "false_positive_rate": null
+    },
+    "selective_supported_relation": {
+      "n": 0,
+      "TP": 0,
+      "FP": 0,
+      "FN": 0,
+      "TN": 0,
+      "precision": null,
+      "recall": null,
+      "F1": null,
+      "false_positive_rate": null
+    },
+    "candidate_alert_documents": 2,
+    "review_documents": 1,
+    "unsupported_documents": 6,
+    "abstention_documents": 6,
+    "supported_relation_documents": 0,
+    "recognized_statements": 11,
+    "supported_statements": 4,
+    "statuses": {
+      "POTENTIAL_INCONSISTENCY": 2,
+      "REVIEW_REQUIRED": 1,
+      "UNSUPPORTED": 5
+    }
+  }
+}

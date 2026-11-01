@@ -100,20 +100,11 @@ export function FindingsInspector({
         <div>
           <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
             <h3 style={{ fontSize: "1.05rem", fontWeight: 700, color: "var(--color-text-primary)", margin: 0 }}>
-              Clause § {selectedClause.sequence_idx}
+              Clause {selectedClause.sequence_idx + 1}
             </h3>
             <Badge variant={severityVariant} className="inspector-severity-badge" />
           </div>
-          <div
-            style={{
-              fontSize: "0.72rem",
-              color: "var(--color-text-muted)",
-              marginTop: "0.2rem",
-              fontFamily: "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace",
-            }}
-          >
-            ID: {selectedClause.clause_id}
-          </div>
+          <details className="source-details"><summary>Source details</summary><p>Clause identity: {selectedClause.clause_id}</p><p>Normalized source offsets: {selectedClause.source_start ?? "unverified"}–{selectedClause.source_end ?? "unverified"}</p></details>
         </div>
 
         {/* Clause Previous/Next Navigator */}
@@ -259,7 +250,7 @@ export function FindingsInspector({
         }}
       >
         <div style={{ fontSize: "0.75rem", color: "var(--color-text-secondary)" }}>
-          Cross-Workspace Actions:
+          Actions
         </div>
         <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap" }}>
           {onExploreRepositioning && (
@@ -270,9 +261,9 @@ export function FindingsInspector({
               onClick={onExploreRepositioning}
               icon={<ArrowRightLeft size={14} />}
               style={{ fontSize: "0.78rem", padding: "0.35rem 0.65rem" }}
-              aria-label={`Explore alternative positions for clause § ${selectedClause.sequence_idx}`}
+              aria-label={`Suggested positions (Experimental) for clause § ${selectedClause.sequence_idx}`}
             >
-              Explore alternative positions
+              Suggested positions (Experimental)
             </Button>
           )}
 
@@ -284,9 +275,9 @@ export function FindingsInspector({
               onClick={onNavigateToXai}
               icon={<BrainCircuit size={14} />}
               style={{ fontSize: "0.78rem", padding: "0.35rem 0.65rem" }}
-              aria-label={`Investigate XAI for clause § ${selectedClause.sequence_idx}`}
+              aria-label={`Explain clause § ${selectedClause.sequence_idx}`}
             >
-              Explain Clause (XAI)
+              Explain clause
             </Button>
           )}
 

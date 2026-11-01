@@ -1,0 +1,45 @@
+{
+  "timestamp": "2026-10-10 14:31:00 UTC",
+  "phase": "Phase 2 Regression Check",
+  "command": "python -m pytest tests/ -v -ra",
+  "exit_code": 0,
+  "summary": {
+    "total_collected": 118,
+    "passed": 116,
+    "skipped": 2,
+    "failed": 0,
+    "duration_seconds": 65.22,
+    "status": "PASS"
+  },
+  "skipped_tests": [
+    {
+      "test": "tests/test_cuad_order.py::test_live_cuad_order_report_exists",
+      "reason": "CUAD order report not yet generated. Run: python -m src.data.ingest_cuad first."
+    },
+    {
+      "test": "tests/test_cuad_order.py::test_live_cuad_report_has_verdict",
+      "reason": "CUAD order report not yet generated."
+    }
+  ],
+  "verified_modules": [
+    "tests/test_api_integration.py",
+    "tests/test_bug001_encryption.py",
+    "tests/test_bug003_feedback.py",
+    "tests/test_bug005_xai.py",
+    "tests/test_coherence.py",
+    "tests/test_completeness.py",
+    "tests/test_conformal.py",
+    "tests/test_cuad_order.py",
+    "tests/test_embeddings.py",
+    "tests/test_ensemble.py",
+    "tests/test_evaluation_framework.py",
+    "tests/test_feedback.py",
+    "tests/test_rules.py",
+    "tests/test_scoring.py",
+    "tests/test_security.py",
+    "tests/test_security_review.py",
+    "tests/test_segmentation.py",
+    "tests/test_severity.py",
+    "tests/test_xai.py"
+  ]
+}

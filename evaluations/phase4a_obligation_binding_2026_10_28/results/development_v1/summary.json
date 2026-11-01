@@ -1,0 +1,129 @@
+{
+  "split": "development",
+  "documents": 28,
+  "labelled_states": 27,
+  "provisional_unscored": 1,
+  "independent_annotation_count": 0,
+  "full_binary_screen": {
+    "n": 14,
+    "TP": 7,
+    "FP": 0,
+    "FN": 0,
+    "TN": 7,
+    "precision": 1.0,
+    "recall": 1.0,
+    "F1": 1.0,
+    "false_positive_rate": 0.0,
+    "false_negative_rate": 0.0
+  },
+  "selective_binary_screen": {
+    "n": 14,
+    "TP": 7,
+    "FP": 0,
+    "FN": 0,
+    "TN": 7,
+    "precision": 1.0,
+    "recall": 1.0,
+    "F1": 1.0,
+    "false_positive_rate": 0.0,
+    "false_negative_rate": 0.0
+  },
+  "guard_ablation_binary": {
+    "n": 14,
+    "TP": 7,
+    "FP": 3,
+    "FN": 0,
+    "TN": 4,
+    "precision": 0.7,
+    "recall": 1.0,
+    "F1": 0.8235294117647058,
+    "false_positive_rate": 0.42857142857142855,
+    "false_negative_rate": 0.0
+  },
+  "coverage_numerator": 14,
+  "coverage_denominator": 28,
+  "coverage": 0.5,
+  "abstention_numerator": 14,
+  "abstention_rate": 0.5,
+  "state_confusion": {
+    "MATCHED -> MATCHED": 7,
+    "DIFFERENT -> DIFFERENT": 7,
+    "UNCERTAIN -> UNCERTAIN": 12,
+    "UNSUPPORTED -> UNSUPPORTED": 1
+  },
+  "correct_state_count": 27,
+  "state_accuracy": 1.0,
+  "unsafe_confirmation_count": 0,
+  "field_metrics": {
+    "actor": {
+      "denominator": 55,
+      "exact": 55,
+      "gold_nonnull": 53,
+      "predicted_nonnull": 53,
+      "correct_nonnull": 53,
+      "exact_rate": 1.0,
+      "nonnull_precision": 1.0,
+      "nonnull_recall": 1.0
+    },
+    "action": {
+      "denominator": 55,
+      "exact": 54,
+      "gold_nonnull": 55,
+      "predicted_nonnull": 54,
+      "correct_nonnull": 54,
+      "exact_rate": 0.9818181818181818,
+      "nonnull_precision": 1.0,
+      "nonnull_recall": 0.9818181818181818
+    },
+    "object": {
+      "denominator": 55,
+      "exact": 50,
+      "gold_nonnull": 55,
+      "predicted_nonnull": 50,
+      "correct_nonnull": 50,
+      "exact_rate": 0.9090909090909091,
+      "nonnull_precision": 1.0,
+      "nonnull_recall": 0.9090909090909091
+    },
+    "recipient": {
+      "denominator": 55,
+      "exact": 55,
+      "gold_nonnull": 5,
+      "predicted_nonnull": 5,
+      "correct_nonnull": 5,
+      "exact_rate": 1.0,
+      "nonnull_precision": 1.0,
+      "nonnull_recall": 1.0
+    },
+    "trigger": {
+      "denominator": 55,
+      "exact": 55,
+      "gold_nonnull": 46,
+      "predicted_nonnull": 46,
+      "correct_nonnull": 46,
+      "exact_rate": 1.0,
+      "nonnull_precision": 1.0,
+      "nonnull_recall": 1.0
+    },
+    "event_instance": {
+      "denominator": 55,
+      "exact": 53,
+      "gold_nonnull": 50,
+      "predicted_nonnull": 48,
+      "correct_nonnull": 48,
+      "exact_rate": 0.9636363636363636,
+      "nonnull_precision": 1.0,
+      "nonnull_recall": 0.96
+    }
+  },
+  "record_counts": {
+    "expected": 55,
+    "extracted": 55,
+    "missing": 0,
+    "extra": 0
+  },
+  "elapsed_seconds": 0.014999999999417923,
+  "label_scope": "Mechanical explicit-field comparability only. Reserved synthetic families are author-controlled, not independent real-world legal validation.",
+  "parser_exceptions": 0,
+  "source_manifest_unchanged": true
+}

@@ -1,0 +1,472 @@
+{
+  "passed": true,
+  "existing_snapshot_files": 1465,
+  "changed_existing_files": [
+    "src/obligations/binding.py",
+    "docs/FINAL_COMPLETION_TRACKER.md"
+  ],
+  "root_changed_files": [
+    "README.md"
+  ],
+  "missing_existing_files": [],
+  "unexpected_changes": [],
+  "preserved_frontend_files": 107,
+  "preserved_historical_files": 1142,
+  "single_executable_line_patch_verified": true,
+  "git_head_before": "e5436ea4da3fcaeb7f000a0c06a95a3a125514b8",
+  "git_head_after": "e5436ea4da3fcaeb7f000a0c06a95a3a125514b8",
+  "git_branch": "codex/lexaudit-personal-release",
+  "legalbert_cache_checks": {
+    "config.json": true,
+    "pytorch_model.bin": true,
+    "special_tokens_map.json": true,
+    "tokenizer_config.json": true,
+    "vocab.txt": true
+  },
+  "core_parity": {
+    "neural_same": 148,
+    "structure_same": 148,
+    "references_same": 148,
+    "graph_same": 148,
+    "direct_preserved_date_integration_same": 148,
+    "historical_phase3_date_same": 38
+  },
+  "test_runs": [
+    {
+      "file": "reproduction_before.xml",
+      "tests": 13,
+      "failures": 10,
+      "errors": 0,
+      "skipped": 0,
+      "skips": [],
+      "passed": 3
+    },
+    {
+      "file": "affected_after.xml",
+      "tests": 127,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "skips": [],
+      "passed": 127
+    },
+    {
+      "file": "full_native_v1.xml",
+      "tests": 486,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 2,
+      "skips": [
+        {
+          "test": "test_live_cuad_order_report_exists",
+          "reason": "CUAD order report not yet generated. Run: python -m src.data.ingest_cuad first."
+        },
+        {
+          "test": "test_live_cuad_report_has_verdict",
+          "reason": "CUAD order report not yet generated."
+        }
+      ],
+      "passed": 484
+    }
+  ],
+  "public_verification": {
+    "verification_scope": "Source-consumption regression only; no new benchmark, labels or accuracy claim",
+    "documents": 3,
+    "observations": 6,
+    "contracts": [
+      {
+        "path": "data/raw/sec_edgar/0000737758_23_000034_EX-10_27.txt",
+        "url": "https://www.sec.gov/Archives/edgar/data/737758/000073775823000034/ttc-10312023xex1027.htm",
+        "clauses": 26,
+        "before": {
+          "records": 2,
+          "emitted_pairs": 1,
+          "candidate_pairs": 1,
+          "pair_counts": {
+            "UNSUPPORTED": 1
+          },
+          "decided_pairs": 0,
+          "abstained_pairs": 1,
+          "lexical_modal_cues": 26,
+          "unrepresented_modal_cues": [
+            {
+              "char_start": 2261,
+              "char_end": 2271,
+              "text": "shall read"
+            },
+            {
+              "char_start": 3460,
+              "char_end": 3470,
+              "text": "shall read"
+            },
+            {
+              "char_start": 3912,
+              "char_end": 3924,
+              "text": "shall become"
+            },
+            {
+              "char_start": 4093,
+              "char_end": 4103,
+              "text": "shall have"
+            },
+            {
+              "char_start": 4904,
+              "char_end": 4920,
+              "text": "shall constitute"
+            },
+            {
+              "char_start": 5042,
+              "char_end": 5052,
+              "text": "shall have"
+            },
+            {
+              "char_start": 5104,
+              "char_end": 5113,
+              "text": "shall not"
+            },
+            {
+              "char_start": 6155,
+              "char_end": 6163,
+              "text": "shall be"
+            },
+            {
+              "char_start": 6374,
+              "char_end": 6382,
+              "text": "shall be"
+            },
+            {
+              "char_start": 9155,
+              "char_end": 9163,
+              "text": "shall be"
+            },
+            {
+              "char_start": 9268,
+              "char_end": 9276,
+              "text": "shall in"
+            },
+            {
+              "char_start": 9379,
+              "char_end": 9387,
+              "text": "shall be"
+            },
+            {
+              "char_start": 9689,
+              "char_end": 9698,
+              "text": "shall not"
+            },
+            {
+              "char_start": 9751,
+              "char_end": 9765,
+              "text": "shall endeavor"
+            },
+            {
+              "char_start": 10052,
+              "char_end": 10061,
+              "text": "shall not"
+            },
+            {
+              "char_start": 10251,
+              "char_end": 10261,
+              "text": "shall mean"
+            },
+            {
+              "char_start": 10319,
+              "char_end": 10327,
+              "text": "shall be"
+            },
+            {
+              "char_start": 10395,
+              "char_end": 10411,
+              "text": "shall constitute"
+            },
+            {
+              "char_start": 10559,
+              "char_end": 10567,
+              "text": "shall be"
+            },
+            {
+              "char_start": 10651,
+              "char_end": 10659,
+              "text": "shall be"
+            },
+            {
+              "char_start": 11461,
+              "char_end": 11475,
+              "text": "shall continue"
+            },
+            {
+              "char_start": 11613,
+              "char_end": 11621,
+              "text": "shall be"
+            },
+            {
+              "char_start": 11712,
+              "char_end": 11726,
+              "text": "shall together"
+            },
+            {
+              "char_start": 11896,
+              "char_end": 11904,
+              "text": "shall be"
+            }
+          ],
+          "issues": [],
+          "complete": true
+        },
+        "after": {
+          "records": 20,
+          "emitted_pairs": 190,
+          "candidate_pairs": 190,
+          "pair_counts": {
+            "UNSUPPORTED": 190
+          },
+          "decided_pairs": 0,
+          "abstained_pairs": 190,
+          "lexical_modal_cues": 26,
+          "unrepresented_modal_cues": [],
+          "issues": [],
+          "complete": true
+        }
+      },
+      {
+        "path": "data/raw/sec_edgar/0000737758_23_000034_EX-10_29.txt",
+        "url": "https://www.sec.gov/Archives/edgar/data/737758/000073775823000034/ttc-10312023xex1029.htm",
+        "clauses": 25,
+        "before": {
+          "records": 1,
+          "emitted_pairs": 0,
+          "candidate_pairs": 0,
+          "pair_counts": {},
+          "decided_pairs": 0,
+          "abstained_pairs": 0,
+          "lexical_modal_cues": 26,
+          "unrepresented_modal_cues": [
+            {
+              "char_start": 1606,
+              "char_end": 1616,
+              "text": "shall read"
+            },
+            {
+              "char_start": 2805,
+              "char_end": 2815,
+              "text": "shall read"
+            },
+            {
+              "char_start": 3256,
+              "char_end": 3268,
+              "text": "shall become"
+            },
+            {
+              "char_start": 3438,
+              "char_end": 3448,
+              "text": "shall have"
+            },
+            {
+              "char_start": 4248,
+              "char_end": 4264,
+              "text": "shall constitute"
+            },
+            {
+              "char_start": 4386,
+              "char_end": 4396,
+              "text": "shall have"
+            },
+            {
+              "char_start": 4448,
+              "char_end": 4457,
+              "text": "shall not"
+            },
+            {
+              "char_start": 5505,
+              "char_end": 5513,
+              "text": "shall be"
+            },
+            {
+              "char_start": 5724,
+              "char_end": 5732,
+              "text": "shall be"
+            },
+            {
+              "char_start": 7694,
+              "char_end": 7704,
+              "text": "shall bind"
+            },
+            {
+              "char_start": 8498,
+              "char_end": 8506,
+              "text": "shall be"
+            },
+            {
+              "char_start": 8611,
+              "char_end": 8619,
+              "text": "shall in"
+            },
+            {
+              "char_start": 8722,
+              "char_end": 8730,
+              "text": "shall be"
+            },
+            {
+              "char_start": 9032,
+              "char_end": 9041,
+              "text": "shall not"
+            },
+            {
+              "char_start": 9094,
+              "char_end": 9108,
+              "text": "shall endeavor"
+            },
+            {
+              "char_start": 9395,
+              "char_end": 9404,
+              "text": "shall not"
+            },
+            {
+              "char_start": 9594,
+              "char_end": 9604,
+              "text": "shall mean"
+            },
+            {
+              "char_start": 9662,
+              "char_end": 9670,
+              "text": "shall be"
+            },
+            {
+              "char_start": 9738,
+              "char_end": 9754,
+              "text": "shall constitute"
+            },
+            {
+              "char_start": 9902,
+              "char_end": 9910,
+              "text": "shall be"
+            },
+            {
+              "char_start": 9994,
+              "char_end": 10002,
+              "text": "shall be"
+            },
+            {
+              "char_start": 10803,
+              "char_end": 10817,
+              "text": "shall continue"
+            },
+            {
+              "char_start": 10955,
+              "char_end": 10963,
+              "text": "shall be"
+            },
+            {
+              "char_start": 11054,
+              "char_end": 11068,
+              "text": "shall together"
+            },
+            {
+              "char_start": 11238,
+              "char_end": 11246,
+              "text": "shall be"
+            }
+          ],
+          "issues": [],
+          "complete": true
+        },
+        "after": {
+          "records": 20,
+          "emitted_pairs": 190,
+          "candidate_pairs": 190,
+          "pair_counts": {
+            "UNSUPPORTED": 190
+          },
+          "decided_pairs": 0,
+          "abstained_pairs": 190,
+          "lexical_modal_cues": 26,
+          "unrepresented_modal_cues": [],
+          "issues": [],
+          "complete": true
+        }
+      },
+      {
+        "path": "data/raw/sec_edgar/0000737758_23_000034_EX-10_34.txt",
+        "url": "https://www.sec.gov/Archives/edgar/data/737758/000073775823000034/ttc-10312023xex1034.htm",
+        "clauses": 19,
+        "before": {
+          "records": 5,
+          "emitted_pairs": 10,
+          "candidate_pairs": 10,
+          "pair_counts": {
+            "UNSUPPORTED": 10
+          },
+          "decided_pairs": 0,
+          "abstained_pairs": 10,
+          "lexical_modal_cues": 10,
+          "unrepresented_modal_cues": [
+            {
+              "char_start": 3916,
+              "char_end": 3928,
+              "text": "shall remain"
+            },
+            {
+              "char_start": 4610,
+              "char_end": 4623,
+              "text": "shall control"
+            },
+            {
+              "char_start": 4773,
+              "char_end": 4781,
+              "text": "shall be"
+            },
+            {
+              "char_start": 4828,
+              "char_end": 4844,
+              "text": "shall constitute"
+            },
+            {
+              "char_start": 5011,
+              "char_end": 5019,
+              "text": "shall be"
+            }
+          ],
+          "issues": [],
+          "complete": true
+        },
+        "after": {
+          "records": 9,
+          "emitted_pairs": 36,
+          "candidate_pairs": 36,
+          "pair_counts": {
+            "UNSUPPORTED": 36
+          },
+          "decided_pairs": 0,
+          "abstained_pairs": 36,
+          "lexical_modal_cues": 10,
+          "unrepresented_modal_cues": [],
+          "issues": [],
+          "complete": true
+        }
+      }
+    ],
+    "all_source_preserved": true,
+    "all_structures_identical": true,
+    "all_references_identical": true,
+    "all_clause_inventories_identical": true,
+    "normalized_modal_cues": 62,
+    "skipped_normalized_modal_cues_before": 54,
+    "skipped_normalized_modal_cues_after": 0,
+    "qualified_legal_labels": 0,
+    "legal_accuracy": "NOT_ASSESSED"
+  },
+  "archive_receipt": {
+    "archive": "audit/final_source_freeze_2026_10_28/LexAudit-research-prototype-source.zip",
+    "sha256": "2654fd55aba3ed00e320251252b03bbc686f0206bdf387879b9ad0b198da6b20",
+    "bytes": 3539385,
+    "included_files": 809,
+    "manifest": "audit/final_source_freeze_2026_10_28/RESEARCH_FREEZE_MANIFEST.json",
+    "manifest_sha256": "500ea6faea687b7dc705af232cba811edab34cfa4fb0f0fc73594bd2dffd8d39",
+    "purpose": "Local source/evidence freeze only; no Git commit, public publication or deployment"
+  },
+  "source_manifest_matches": true,
+  "archive_members_and_hashes_verified": true,
+  "docker_runtime": "UNVERIFIED: missing host engine pipe",
+  "final_classification": "Frozen reproducible native research prototype with documented limitations; NO-GO for authentic-contract contradiction detection",
+  "implementation_stopped": true
+}

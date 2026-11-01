@@ -67,7 +67,7 @@ export function ChannelEvidenceComparison({ selectedClause }: ChannelEvidenceCom
           lineHeight: 1.5,
         }}
       >
-        <strong style={{ color: "var(--color-text-primary)" }}>⚠️ Scale &amp; Metric Distinction Notice:</strong>{" "}
+        <strong style={{ color: "var(--color-text-primary)" }}> Scale &amp; Metric Distinction Notice:</strong>{" "}
         Channel A and Channel B operate in distinct mathematical domains. Channel A is a{" "}
         <strong>geometric cosine distance</strong> in R&sup7;&sup6;&sup8; Legal-BERT space (domain [0, 2]), whereas
         Channel B evaluates <strong>sequential discourse transition likelihoods</strong> (domain [0, 1]). They are

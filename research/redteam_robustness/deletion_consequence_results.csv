@@ -1,0 +1,3 @@
+scenario_id,eligible_for_strict_eval,detection_status,new_rule_flags_count,evaluation_mode
+SCEN_P8_01_DELETION_WITH_CONSEQUENCE,True,DETECTED,1,STRICT_CONSEQUENCE
+SCEN_P8_02_DELETION_DESCRIPTIVE,False,NOT_APPLICABLE,0,DESCRIPTIVE_ONLY

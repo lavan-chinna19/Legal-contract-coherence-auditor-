@@ -1,0 +1,11 @@
+{
+  "executed_before_new_temporal_code": true,
+  "analyses": 38,
+  "legacy_sha256": "b796398289111e96af81e1e2ad70fafa058ceb41142d10cbb3d5336337b20313",
+  "txt_confusion": {
+    "TN": 4,
+    "TP": 6,
+    "FP": 2,
+    "FN": 2
+  }
+}

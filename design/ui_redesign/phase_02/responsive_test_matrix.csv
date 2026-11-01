@@ -1,0 +1,5 @@
+Viewport Name,Resolution (WxH),Orientation,Device Category,Navigation Layout,Content Arrangement,Horizontal Overflow,Status,Evidence File
+Desktop,1440x900,Landscape,Desktop / Monitor,Persistent 240px Sidebar,Expansive 2-Column Grid / Card Canvas,None (0px),PASS,viewport_01_desktop_1440x900_light.png
+Laptop,1024x768,Landscape,Laptop / Ultraportable,Adaptable 200px Sidebar,Responsive Content Canvas,None (0px),PASS,viewport_02_laptop_1024x768.png
+Tablet,768x1024,Portrait,Tablet (iPad / Touch),Collapsible Lateral Drawer + Header Toggle,Fluid Single Column Stack,None (0px),PASS,viewport_03_tablet_768x1024.png
+Mobile,390x844,Portrait,Smartphone (iPhone 14 / OLED),Off-Canvas Sliding Drawer + Hamburger Menu,Stacked Mobile Cards & Wrap Grids,None (0px),PASS,viewport_04_mobile_390x844.png

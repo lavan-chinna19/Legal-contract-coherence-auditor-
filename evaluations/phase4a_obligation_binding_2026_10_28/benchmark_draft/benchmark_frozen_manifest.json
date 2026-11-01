@@ -1,0 +1,10 @@
+{
+  "before_implementation": true,
+  "files": {
+    "development.json": "a0c7f37e37bf5d4332f15a45fdc6bc12a923be7602e94bfcbf0db2de1aa91cbf",
+    "evaluation.json": "15b18ddbaf2419855069d577cb0ad394698cefacefecc6f508e8b37440744771",
+    "PROTOCOL.md": "befa059bbd78c391a25d00955b62197c7f1c308fe95e3a0510ea71d7edd9b3eb",
+    "build_benchmark.py": "cb93ad110bcf1fd59a006b028c55fcf0be27bee010b9cbd54f5b4f5fe6da7f26"
+  },
+  "policy": "Evaluation split not executed until source freeze. Distinct document/template families; author-controlled synthetic labels, not independent legal holdout."
+}

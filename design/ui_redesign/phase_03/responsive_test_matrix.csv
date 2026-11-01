@@ -1,0 +1,6 @@
+Viewport,Theme,Layout Mode,Inspection Panel,Status,Screenshot
+1440x900,Light,Split-Screen (55/45 Grid),Side-by-side Inspector,PASS,01_desktop_1440x900_light_review.png
+1440x900,Dark,Split-Screen (55/45 Grid),Side-by-side Inspector,PASS,02_desktop_1440x900_dark_review.png
+1024x768,Light,Adaptive Split (55/45),Side-by-side Inspector,PASS,03_laptop_1024x768_review.png
+768x1024,Light,Stacked Column (Drawer/Stack),Stacked Below Viewer,PASS,04_tablet_768x1024_review.png
+390x844,Light,Single-Column Mobile Stack,Stacked Below Viewer,PASS,05_mobile_390x844_review.png

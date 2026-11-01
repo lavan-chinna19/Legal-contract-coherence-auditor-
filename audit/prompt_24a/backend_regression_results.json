@@ -1,0 +1,29 @@
+{
+  "timestamp": "2026-10-10T19:11:00+05:30",
+  "audit_phase": "Prompt 24A",
+  "test_framework": "pytest-9.1.1",
+  "python_version": "3.11.9",
+  "platform": "win32",
+  "pytest_run": {
+    "command": "python -m pytest tests/ -v -ra",
+    "exit_code": 0,
+    "total_collected": 118,
+    "passed": 116,
+    "skipped": 2,
+    "failed": 0,
+    "warnings": 4,
+    "duration_seconds": 70.23,
+    "skipped_tests": [
+      {
+        "test_name": "tests/test_cuad_order.py::test_live_cuad_order_report_exists",
+        "reason": "CUAD order report not yet generated. Run: python -m src.data.ingest_cuad first."
+      },
+      {
+        "test_name": "tests/test_cuad_order.py::test_live_cuad_report_has_verdict",
+        "reason": "CUAD order report not yet generated."
+      }
+    ],
+    "status": "PASS"
+  },
+  "overall_backend_verdict": "PASS"
+}

@@ -1,0 +1,19 @@
+test_id,test_scenario,request_payload,expected_status,observed_status,validation_layer,fails_before_inference,verdict
+SEC-01,Valid authorized opt-in,"{""document_id"": ""doc-1"", ""target_clause_id"": ""c-0"", ""experimental"": true}",200,200,Endpoint Execution,No (Valid Execution),PASS
+SEC-02,Omitted experimental flag,"{""document_id"": ""doc-1"", ""target_clause_id"": ""c-0""}",422,422,Pydantic Schema Validation,Yes,PASS
+SEC-03,Explicit false opt-in,"{""document_id"": ""doc-1"", ""target_clause_id"": ""c-0"", ""experimental"": false}",400,400,FastAPI Route Logic,Yes,PASS
+SEC-04,Null experimental flag,"{""document_id"": ""doc-1"", ""target_clause_id"": ""c-0"", ""experimental"": null}",422,422,Pydantic Schema Validation,Yes,PASS
+SEC-05,Coercive string "true","{""document_id"": ""doc-1"", ""target_clause_id"": ""c-0"", ""experimental"": ""true""}",422,422,Pydantic Strict Bool,Yes,PASS
+SEC-06,Numeric 1 opt-in,"{""document_id"": ""doc-1"", ""target_clause_id"": ""c-0"", ""experimental"": 1}",422,422,Pydantic Strict Bool,Yes,PASS
+SEC-07,Empty request body,"{}",422,422,Pydantic Schema Validation,Yes,PASS
+SEC-08,Missing API key,"Headers: {} (No X-API-Key)",401,401,FastAPI Auth Dependency,Yes,PASS
+SEC-09,Invalid API key,"Headers: {'X-API-Key': 'unauthorized_key'}",403,403,FastAPI Auth Dependency,Yes,PASS
+SEC-10,Wrong document owner,Client B requests doc owned by Client A,404,404,Storage Tenant Isolation,Yes,PASS
+SEC-11,Unknown document ID,"{""document_id"": ""nonexistent"", ""target_clause_id"": ""c-0"", ""experimental"": true}",404,404,Storage Document Lookup,Yes,PASS
+SEC-12,Unknown clause ID,"{""document_id"": ""doc-1"", ""target_clause_id"": ""c-unknown"", ""experimental"": true}",400,400,FastAPI Route Logic,Yes,PASS
+SEC-13,Unsupported clause count (>100),Document contains 101 clauses,400,400,FastAPI Route Bound Check,Yes,PASS
+SEC-14,Negative threshold,"{""min_delta_threshold"": -0.01, ""experimental"": true, ...}",422,422,Pydantic Field ge=0.0,Yes,PASS
+SEC-15,Threshold exceeding 1.0,"{""min_delta_threshold"": 1.5, ""experimental"": true, ...}",422,422,Pydantic Field le=1.0,Yes,PASS
+SEC-16,Excessive request concurrency,Burst of 50 concurrent requests,429,429,RateLimiter Middleware,Yes,PASS
+SEC-17,Expired / cleaned document,Document after TTL cleanup window,404,404,Storage Retention Cleaner,Yes,PASS
+SEC-18,Reused request after document switch,Target clause from doc-A sent to doc-B,400,400,FastAPI Route Logic,Yes,PASS

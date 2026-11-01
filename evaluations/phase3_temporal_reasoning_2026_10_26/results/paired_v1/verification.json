@@ -1,0 +1,15 @@
+{
+  "analyses": 108,
+  "neural_parity_cases": 148,
+  "old_baseline_reproduced": false,
+  "parity_counts": {
+    "neural_identical": 148,
+    "structure_identical": 148,
+    "references_identical": 148,
+    "graph_identical": 148
+  },
+  "exact_temporal_spans_verified": true,
+  "parser_exceptions": 0,
+  "source_manifest_unchanged": true,
+  "elapsed_seconds": 42.84400000000096
+}

@@ -1,0 +1,113 @@
+{
+  "dataset_role": "POST_IMPLEMENTATION_EXPOSED_CHALLENGES_NOT_HOLDOUT",
+  "cases": [
+    {
+      "case_id": "C01",
+      "text": "Section 1. Term\nThe Effective Date is not 2026-06-01.\nSection 2. Term\nThe Effective Date is 2026-07-01.",
+      "confirmed_conflict_gold": false,
+      "construction_rule": "Negated date is not a positive singleton fact",
+      "provenance": "POST_IMPLEMENTATION_MECHANICAL_CHALLENGE",
+      "independently_adjudicated": false,
+      "split": "EXPOSED_DEVELOPMENT"
+    },
+    {
+      "case_id": "C02",
+      "text": "Section 1. Events\nEvent Completion occurs on 2026-06-01 and Event Inspection occurs on 2026-07-01.",
+      "confirmed_conflict_gold": false,
+      "construction_rule": "Two distinct named events in one sentence",
+      "provenance": "POST_IMPLEMENTATION_MECHANICAL_CHALLENGE",
+      "independently_adjudicated": false,
+      "split": "EXPOSED_DEVELOPMENT"
+    },
+    {
+      "case_id": "C03",
+      "text": "Section 1. Event\nFor Buyer, Event Completion occurs on 2026-06-01.\nSection 2. Event\nFor Seller, Event Completion occurs on 2026-07-01.",
+      "confirmed_conflict_gold": false,
+      "construction_rule": "Explicit different responsible actors for same event label",
+      "provenance": "POST_IMPLEMENTATION_MECHANICAL_CHALLENGE",
+      "independently_adjudicated": false,
+      "split": "EXPOSED_DEVELOPMENT"
+    },
+    {
+      "case_id": "C04",
+      "text": "Section 1. Invoice\nInvoice Alpha is received on 2026-01-01.\nSection 2. Payment\nBuyer shall pay Invoice Alpha within thirty-one calendar days after receipt of Invoice Alpha.\nSection 3. Payment\nBuyer shall pay Invoice Alpha on 2026-01-20.",
+      "confirmed_conflict_gold": false,
+      "construction_rule": "31-day bound permits offset19",
+      "provenance": "POST_IMPLEMENTATION_MECHANICAL_CHALLENGE",
+      "independently_adjudicated": false,
+      "split": "EXPOSED_DEVELOPMENT"
+    },
+    {
+      "case_id": "C05",
+      "text": "Section 1. Invoice\nInvoice Alpha is received on 2026-01-01.\nSection 2. Payment\nBuyer shall pay Invoice Alpha within thirty-one calendar days after receipt of Invoice Alpha.\nSection 3. Payment\nBuyer shall pay Invoice Alpha on 2026-02-15.",
+      "confirmed_conflict_gold": true,
+      "construction_rule": "31-day bound excludes offset45",
+      "provenance": "POST_IMPLEMENTATION_MECHANICAL_CHALLENGE",
+      "independently_adjudicated": false,
+      "split": "EXPOSED_DEVELOPMENT"
+    },
+    {
+      "case_id": "C06",
+      "text": "Section 1. Invoice\nInvoice Alpha is received on 2026-01-01.\nSection 2. Payment\nIf approved, Buyer shall pay Invoice Alpha exactly 10 calendar days after receipt of Invoice Alpha.\nSection 3. Payment\nBuyer shall pay Invoice Alpha exactly 20 calendar days after receipt of Invoice Alpha.",
+      "confirmed_conflict_gold": false,
+      "construction_rule": "Conditional alternative does not define unconditional incompatible bounds",
+      "provenance": "POST_IMPLEMENTATION_MECHANICAL_CHALLENGE",
+      "independently_adjudicated": false,
+      "split": "EXPOSED_DEVELOPMENT"
+    },
+    {
+      "case_id": "C07",
+      "text": "Section 1. Period\nService runs between 2026-06-10 and 2026-06-01.",
+      "confirmed_conflict_gold": true,
+      "construction_rule": "Explicit between-and endpoint ordering inverted; syntax challenge",
+      "provenance": "POST_IMPLEMENTATION_MECHANICAL_CHALLENGE",
+      "independently_adjudicated": false,
+      "split": "EXPOSED_DEVELOPMENT"
+    },
+    {
+      "case_id": "C08",
+      "text": "Section 1. Payment\nBuyer shall pay Invoice Alpha before 2026-06-20.\nSection 2. Payment\nBuyer shall pay Invoice Alpha after 2026-06-10.",
+      "confirmed_conflict_gold": false,
+      "construction_rule": "Absolute before/after constraints overlap; not disjoint singleton dates",
+      "provenance": "POST_IMPLEMENTATION_MECHANICAL_CHALLENGE",
+      "independently_adjudicated": false,
+      "split": "EXPOSED_DEVELOPMENT"
+    },
+    {
+      "case_id": "C09",
+      "text": "Section 1. Invoice\nInvoice Alpha is received on 2026-01-01.\nSection 2. Payment\nBuyer shall pay Invoice Alpha exactly 5 business days after receipt of Invoice Alpha.\nSection 3. Payment\nBuyer shall pay Invoice Alpha exactly 10 calendar days after receipt of Invoice Alpha.",
+      "confirmed_conflict_gold": false,
+      "construction_rule": "No provided business calendar or equivalent timing basis",
+      "provenance": "POST_IMPLEMENTATION_MECHANICAL_CHALLENGE",
+      "independently_adjudicated": false,
+      "split": "EXPOSED_DEVELOPMENT"
+    },
+    {
+      "case_id": "C10",
+      "text": "Section 1. Payment\nBuyer shall pay Invoice Alpha on 2026-06-01 and Seller shall pay Invoice Alpha on 2026-07-01.",
+      "confirmed_conflict_gold": false,
+      "construction_rule": "Multiple actors in one sentence cannot be assigned to first actor",
+      "provenance": "POST_IMPLEMENTATION_MECHANICAL_CHALLENGE",
+      "independently_adjudicated": false,
+      "split": "EXPOSED_DEVELOPMENT"
+    },
+    {
+      "case_id": "C11",
+      "text": "Section 1. Event\nFor Phase 1, Event Completion occurs on 2026-06-01.\nSection 2. Event\nFor Phase 2, Event Completion occurs on 2026-07-01.",
+      "confirmed_conflict_gold": false,
+      "construction_rule": "Different explicitly named phases",
+      "provenance": "POST_IMPLEMENTATION_MECHANICAL_CHALLENGE",
+      "independently_adjudicated": false,
+      "split": "EXPOSED_DEVELOPMENT"
+    },
+    {
+      "case_id": "C12",
+      "text": "Section 1. Period\nService runs from approximately 2026-06-10 to 2026-06-01.",
+      "confirmed_conflict_gold": false,
+      "construction_rule": "Approximation prevents exact reversed-interval claim",
+      "provenance": "POST_IMPLEMENTATION_MECHANICAL_CHALLENGE",
+      "independently_adjudicated": false,
+      "split": "EXPOSED_DEVELOPMENT"
+    }
+  ]
+}

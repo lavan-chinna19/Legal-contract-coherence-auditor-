@@ -166,7 +166,7 @@ export function ContractReviewWorkspace({
         width: "100%",
       }}
     >
-      {/* Sequence Coherence Heatmap Bar (Interactive mini-map) */}
+      {/* Clause review priority Bar (Interactive mini-map) */}
       <div
         className="card"
         style={{
@@ -178,7 +178,7 @@ export function ContractReviewWorkspace({
       >
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "0.5rem" }}>
           <div style={{ fontSize: "0.82rem", fontWeight: 700, color: "var(--color-text-primary)" }}>
-            Sequence Coherence Heatmap
+            Clause review priority
           </div>
           <div style={{ display: "flex", gap: "1rem", fontSize: "0.75rem", color: "var(--color-text-secondary)" }}>
             <span><strong style={{ color: "var(--color-danger)" }}>■</strong> High</span>
@@ -237,7 +237,7 @@ export function ContractReviewWorkspace({
           />
         </div>
 
-        {/* Right Panel: Findings Inspector or Counterfactual Repositioning (45%) */}
+        {/* Right Panel: Findings Inspector or Suggested Clause Positions (45%) */}
         <div className="review-right-column">
           {showRepositionWorkspace ? (
             <CounterfactualRepairWorkspace

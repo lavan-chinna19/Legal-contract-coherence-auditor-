@@ -1,0 +1,38 @@
+{
+  "timestamp": "2026-10-11T15:21:31Z",
+  "outcomes": {
+    "analytics_empty_state": true,
+    "pipeline_analysis_completed": true,
+    "kpi_values_match": true,
+    "score_distribution_bars": true,
+    "severity_distribution_table": true,
+    "channel_panels_verified": true,
+    "safeguards_and_limitations_verified": true,
+    "dark_theme_verified": true,
+    "review_sync_verified": true,
+    "xai_sync_verified": true,
+    "feedback_sync_verified": true,
+    "viewport_1440x900_no_overflow": true,
+    "viewport_1024x768_no_overflow": true,
+    "viewport_768x1024_no_overflow": true,
+    "viewport_390x844_no_overflow": true,
+    "zero_storage_leakage": true,
+    "zero_console_errors": true
+  },
+  "overall_status": "PASS",
+  "kpis": {
+    "totalClauses": "5",
+    "mlAnomalies": "0",
+    "highSeverity": "0",
+    "ruleViolations": "0",
+    "meanScore": "0.338"
+  },
+  "storage_audit": {
+    "localKeys": [
+      "lexaudit_theme"
+    ],
+    "sessionKeys": [],
+    "leaks": [],
+    "compliant": true
+  }
+}

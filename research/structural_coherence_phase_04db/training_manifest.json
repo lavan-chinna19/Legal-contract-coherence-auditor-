@@ -1,0 +1,35 @@
+{
+  "model_id": "Candidate_C2_SequenceBiLSTM",
+  "task": "Sequential Structural Anomaly Detection",
+  "hardware": {
+    "device": "cpu",
+    "processor": "Intel(R) Core(TM) i7-1360P",
+    "cores_logical": 16,
+    "ram_total_gb": 15.65,
+    "pytorch_version": "2.13.0+cpu"
+  },
+  "training_parameters": {
+    "epochs_max": 20,
+    "epochs_executed": 6,
+    "early_stopping_patience": 4,
+    "batch_size": 1,
+    "learning_rate": 0.001,
+    "weight_decay": 0.0001,
+    "loss_function": "BCEWithLogitsLoss",
+    "random_seed": 42
+  },
+  "data_manifest": {
+    "training_samples": 8,
+    "validation_samples": 4,
+    "input_dim": 385,
+    "sequence_length": 11
+  },
+  "checkpoint": {
+    "filename": "contextual_sequence_coherence.pt",
+    "relative_path": "models/experimental/phase_04db/contextual_sequence_coherence.pt",
+    "file_size_bytes": 5464777,
+    "sha256": "cac804594959a419126463191c3c520206f00244540133492ffd98bbd4a4c9aa",
+    "best_val_loss": 0.2966,
+    "training_duration_seconds": 3.04
+  }
+}

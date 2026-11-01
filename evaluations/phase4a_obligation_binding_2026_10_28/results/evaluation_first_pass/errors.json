@@ -1,0 +1,2598 @@
+[
+  {
+    "case_id": "evaluation_same_recurring_type",
+    "family_id": "evaluation_same_recurring_type",
+    "gold_state": "UNCERTAIN",
+    "gold_match": null,
+    "prediction": "UNCERTAIN",
+    "ablation": "MATCHED",
+    "selected_pair": {
+      "left_id": "evaluation_same_recurring_type:obligation:0",
+      "right_id": "evaluation_same_recurring_type:obligation:1",
+      "status": "UNCERTAIN",
+      "reasons": [
+        "MISSING_EVENT_INSTANCE",
+        "RECURRING_EVENT_INSTANCE_UNESTABLISHED"
+      ],
+      "compared_fields": {
+        "actor": {
+          "left": "purchaser",
+          "right": "purchaser"
+        },
+        "action": {
+          "left": "PAY",
+          "right": "PAY"
+        },
+        "object": {
+          "left": "invoice cedar",
+          "right": "invoice cedar"
+        },
+        "event_instance": {
+          "left": null,
+          "right": null
+        },
+        "recipient": {
+          "left": null,
+          "right": null
+        },
+        "scope": {
+          "left": "document",
+          "right": "document"
+        },
+        "phase": {
+          "left": "current",
+          "right": "current"
+        },
+        "trigger": {
+          "left": "receipt of invoice cedar",
+          "right": "receipt of invoice cedar"
+        },
+        "conditions": {
+          "left": [],
+          "right": []
+        }
+      },
+      "evidence": [
+        {
+          "record_id": "evaluation_same_recurring_type:obligation:0",
+          "char_start": 16,
+          "char_end": 124,
+          "section_uid": "evaluation_same_recurring_type:section:0"
+        },
+        {
+          "record_id": "evaluation_same_recurring_type:obligation:1",
+          "char_start": 143,
+          "char_end": 243,
+          "section_uid": "evaluation_same_recurring_type:section:1"
+        }
+      ]
+    },
+    "field_errors": [
+      {
+        "side": "left",
+        "index": 0,
+        "field": "event_instance",
+        "expected": "invoice cedar",
+        "predicted": null
+      },
+      {
+        "side": "right",
+        "index": 0,
+        "field": "event_instance",
+        "expected": "invoice cedar",
+        "predicted": null
+      }
+    ],
+    "outcome_correct": true,
+    "case": {
+      "case_id": "evaluation_same_recurring_type",
+      "family_id": "evaluation_same_recurring_type",
+      "split": "evaluation",
+      "text": "Section 7. Duty\nPurchaser is required to pay Invoice Cedar within 10 calendar days after receipt of Invoice Cedar each month.\n\nSection 9. Duty\nPurchaser must remit Invoice Cedar within 10 calendar days after receipt of Invoice Cedar each month.",
+      "gold_state": "UNCERTAIN",
+      "gold_match": null,
+      "mechanical_rule": "Same type, no uniquely established occurrence",
+      "label_provenance": "AUTHOR_CONSTRUCTED_MECHANICAL",
+      "independently_adjudicated": false,
+      "left_section": "7",
+      "right_section": "9",
+      "left_index": 0,
+      "right_index": 0,
+      "expected_left": [
+        {
+          "actor": "purchaser",
+          "action": "PAY",
+          "object": "invoice cedar",
+          "recipient": null,
+          "trigger": "receipt of invoice cedar",
+          "event_instance": "invoice cedar"
+        }
+      ],
+      "expected_right": [
+        {
+          "actor": "purchaser",
+          "action": "PAY",
+          "object": "invoice cedar",
+          "recipient": null,
+          "trigger": "receipt of invoice cedar",
+          "event_instance": "invoice cedar"
+        }
+      ]
+    },
+    "result": {
+      "version": "experimental-obligation-binding-v1",
+      "experimental": true,
+      "doc_id": "evaluation_same_recurring_type",
+      "coordinate_space": "original_extracted_text",
+      "source_sha256": "3219ba85a68a856290ffc85afde11533ce6218eb4c02eb76d37a0e903d34926e",
+      "records": [
+        {
+          "record_id": "evaluation_same_recurring_type:obligation:0",
+          "raw_text": "Purchaser is required to pay Invoice Cedar within 10 calendar days after receipt of Invoice Cedar each month",
+          "char_start": 16,
+          "char_end": 124,
+          "coordinate_space": "original_extracted_text",
+          "section_uid": "evaluation_same_recurring_type:section:0",
+          "section_identity": "7",
+          "clause_id": "evaluation_same_recurring_type:source:0",
+          "actor": "purchaser",
+          "action": "PAY",
+          "object": "invoice cedar",
+          "recipient": null,
+          "trigger": "receipt of invoice cedar",
+          "event_instance": null,
+          "deadline": "within 10 calendar days",
+          "scope": "document",
+          "phase": "current",
+          "conditions": [],
+          "exceptions": [],
+          "evidence": {
+            "actor": [
+              {
+                "text": "Purchaser",
+                "char_start": 16,
+                "char_end": 25
+              }
+            ],
+            "action": [
+              {
+                "text": "pay",
+                "char_start": 41,
+                "char_end": 44
+              }
+            ],
+            "object": [
+              {
+                "text": "Invoice Cedar",
+                "char_start": 45,
+                "char_end": 58
+              }
+            ],
+            "event_instance": [
+              {
+                "text": "Invoice Cedar",
+                "char_start": 45,
+                "char_end": 58
+              }
+            ],
+            "trigger": [
+              {
+                "text": "receipt of Invoice Cedar",
+                "char_start": 89,
+                "char_end": 113
+              }
+            ],
+            "deadline": [
+              {
+                "text": "within 10 calendar days",
+                "char_start": 59,
+                "char_end": 82
+              }
+            ]
+          },
+          "reference_target": null,
+          "missing_fields": [
+            "event_instance"
+          ],
+          "uncertainty": [
+            "RECURRING_EVENT_INSTANCE_UNESTABLISHED"
+          ],
+          "unsupported": []
+        },
+        {
+          "record_id": "evaluation_same_recurring_type:obligation:1",
+          "raw_text": "Purchaser must remit Invoice Cedar within 10 calendar days after receipt of Invoice Cedar each month",
+          "char_start": 143,
+          "char_end": 243,
+          "coordinate_space": "original_extracted_text",
+          "section_uid": "evaluation_same_recurring_type:section:1",
+          "section_identity": "9",
+          "clause_id": "evaluation_same_recurring_type:source:1",
+          "actor": "purchaser",
+          "action": "PAY",
+          "object": "invoice cedar",
+          "recipient": null,
+          "trigger": "receipt of invoice cedar",
+          "event_instance": null,
+          "deadline": "within 10 calendar days",
+          "scope": "document",
+          "phase": "current",
+          "conditions": [],
+          "exceptions": [],
+          "evidence": {
+            "actor": [
+              {
+                "text": "Purchaser",
+                "char_start": 143,
+                "char_end": 152
+              }
+            ],
+            "action": [
+              {
+                "text": "remit",
+                "char_start": 158,
+                "char_end": 163
+              }
+            ],
+            "object": [
+              {
+                "text": "Invoice Cedar",
+                "char_start": 164,
+                "char_end": 177
+              }
+            ],
+            "event_instance": [
+              {
+                "text": "Invoice Cedar",
+                "char_start": 164,
+                "char_end": 177
+              }
+            ],
+            "trigger": [
+              {
+                "text": "receipt of Invoice Cedar",
+                "char_start": 208,
+                "char_end": 232
+              }
+            ],
+            "deadline": [
+              {
+                "text": "within 10 calendar days",
+                "char_start": 178,
+                "char_end": 201
+              }
+            ]
+          },
+          "reference_target": null,
+          "missing_fields": [
+            "event_instance"
+          ],
+          "uncertainty": [
+            "RECURRING_EVENT_INSTANCE_UNESTABLISHED"
+          ],
+          "unsupported": []
+        }
+      ],
+      "pairs": [
+        {
+          "left_id": "evaluation_same_recurring_type:obligation:0",
+          "right_id": "evaluation_same_recurring_type:obligation:1",
+          "status": "UNCERTAIN",
+          "reasons": [
+            "MISSING_EVENT_INSTANCE",
+            "RECURRING_EVENT_INSTANCE_UNESTABLISHED"
+          ],
+          "compared_fields": {
+            "actor": {
+              "left": "purchaser",
+              "right": "purchaser"
+            },
+            "action": {
+              "left": "PAY",
+              "right": "PAY"
+            },
+            "object": {
+              "left": "invoice cedar",
+              "right": "invoice cedar"
+            },
+            "event_instance": {
+              "left": null,
+              "right": null
+            },
+            "recipient": {
+              "left": null,
+              "right": null
+            },
+            "scope": {
+              "left": "document",
+              "right": "document"
+            },
+            "phase": {
+              "left": "current",
+              "right": "current"
+            },
+            "trigger": {
+              "left": "receipt of invoice cedar",
+              "right": "receipt of invoice cedar"
+            },
+            "conditions": {
+              "left": [],
+              "right": []
+            }
+          },
+          "evidence": [
+            {
+              "record_id": "evaluation_same_recurring_type:obligation:0",
+              "char_start": 16,
+              "char_end": 124,
+              "section_uid": "evaluation_same_recurring_type:section:0"
+            },
+            {
+              "record_id": "evaluation_same_recurring_type:obligation:1",
+              "char_start": 143,
+              "char_end": 243,
+              "section_uid": "evaluation_same_recurring_type:section:1"
+            }
+          ]
+        }
+      ],
+      "pair_counts": {
+        "UNCERTAIN": 1
+      },
+      "candidate_pair_count": 1,
+      "evaluated_pair_count": 1,
+      "complete": true,
+      "issues": [],
+      "record_count": 2,
+      "status": "ANALYZED",
+      "limits": {
+        "max_records": 100,
+        "max_pairs": 1000,
+        "max_statement_chars": 8192
+      },
+      "interpretation": "Experimental explicit-field binding only. MATCHED means potentially comparable, never legal equivalence or contradiction. No neural/date scores are changed."
+    }
+  },
+  {
+    "case_id": "evaluation_generic_object",
+    "family_id": "evaluation_generic_object",
+    "gold_state": "UNCERTAIN",
+    "gold_match": null,
+    "prediction": "UNCERTAIN",
+    "ablation": "UNCERTAIN",
+    "selected_pair": {
+      "left_id": "evaluation_generic_object:obligation:0",
+      "right_id": "evaluation_generic_object:obligation:1",
+      "status": "UNCERTAIN",
+      "reasons": [
+        "MISSING_EVENT_INSTANCE",
+        "MISSING_OBJECT",
+        "NO_EXPLICIT_NAMED_OBJECT_INSTANCE"
+      ],
+      "compared_fields": {
+        "actor": {
+          "left": "purchaser",
+          "right": "purchaser"
+        },
+        "action": {
+          "left": "PAY",
+          "right": "PAY"
+        },
+        "object": {
+          "left": null,
+          "right": null
+        },
+        "event_instance": {
+          "left": null,
+          "right": null
+        },
+        "recipient": {
+          "left": null,
+          "right": null
+        },
+        "scope": {
+          "left": "document",
+          "right": "document"
+        },
+        "phase": {
+          "left": "current",
+          "right": "current"
+        },
+        "trigger": {
+          "left": "receipt of invoice cedar",
+          "right": "receipt of invoice cedar"
+        },
+        "conditions": {
+          "left": [],
+          "right": []
+        }
+      },
+      "evidence": [
+        {
+          "record_id": "evaluation_generic_object:obligation:0",
+          "char_start": 16,
+          "char_end": 111,
+          "section_uid": "evaluation_generic_object:section:0"
+        },
+        {
+          "record_id": "evaluation_generic_object:obligation:1",
+          "char_start": 130,
+          "char_end": 217,
+          "section_uid": "evaluation_generic_object:section:1"
+        }
+      ]
+    },
+    "field_errors": [
+      {
+        "side": "left",
+        "index": 0,
+        "field": "object",
+        "expected": "the invoice",
+        "predicted": null
+      },
+      {
+        "side": "right",
+        "index": 0,
+        "field": "object",
+        "expected": "the invoice",
+        "predicted": null
+      }
+    ],
+    "outcome_correct": true,
+    "case": {
+      "case_id": "evaluation_generic_object",
+      "family_id": "evaluation_generic_object",
+      "split": "evaluation",
+      "text": "Section 7. Duty\nPurchaser is required to pay the invoice within 10 calendar days after receipt of Invoice Cedar.\n\nSection 9. Duty\nPurchaser must remit the invoice within 10 calendar days after receipt of Invoice Cedar.",
+      "gold_state": "UNCERTAIN",
+      "gold_match": null,
+      "mechanical_rule": "generic_object",
+      "label_provenance": "AUTHOR_CONSTRUCTED_MECHANICAL",
+      "independently_adjudicated": false,
+      "left_section": "7",
+      "right_section": "9",
+      "left_index": 0,
+      "right_index": 0,
+      "expected_left": [
+        {
+          "actor": "purchaser",
+          "action": "PAY",
+          "object": "the invoice",
+          "recipient": null,
+          "trigger": "receipt of invoice cedar",
+          "event_instance": null
+        }
+      ],
+      "expected_right": [
+        {
+          "actor": "purchaser",
+          "action": "PAY",
+          "object": "the invoice",
+          "recipient": null,
+          "trigger": "receipt of invoice cedar",
+          "event_instance": null
+        }
+      ]
+    },
+    "result": {
+      "version": "experimental-obligation-binding-v1",
+      "experimental": true,
+      "doc_id": "evaluation_generic_object",
+      "coordinate_space": "original_extracted_text",
+      "source_sha256": "77dd1185893c0b4b05f454cb8329aa0b7e047e8ff59e4c20d32a52b698ba42e1",
+      "records": [
+        {
+          "record_id": "evaluation_generic_object:obligation:0",
+          "raw_text": "Purchaser is required to pay the invoice within 10 calendar days after receipt of Invoice Cedar",
+          "char_start": 16,
+          "char_end": 111,
+          "coordinate_space": "original_extracted_text",
+          "section_uid": "evaluation_generic_object:section:0",
+          "section_identity": "7",
+          "clause_id": "evaluation_generic_object:source:0",
+          "actor": "purchaser",
+          "action": "PAY",
+          "object": null,
+          "recipient": null,
+          "trigger": "receipt of invoice cedar",
+          "event_instance": null,
+          "deadline": "within 10 calendar days",
+          "scope": "document",
+          "phase": "current",
+          "conditions": [],
+          "exceptions": [],
+          "evidence": {
+            "actor": [
+              {
+                "text": "Purchaser",
+                "char_start": 16,
+                "char_end": 25
+              }
+            ],
+            "action": [
+              {
+                "text": "pay",
+                "char_start": 41,
+                "char_end": 44
+              }
+            ],
+            "trigger": [
+              {
+                "text": "receipt of Invoice Cedar",
+                "char_start": 87,
+                "char_end": 111
+              }
+            ],
+            "deadline": [
+              {
+                "text": "within 10 calendar days",
+                "char_start": 57,
+                "char_end": 80
+              }
+            ]
+          },
+          "reference_target": null,
+          "missing_fields": [
+            "event_instance",
+            "object"
+          ],
+          "uncertainty": [
+            "NO_EXPLICIT_NAMED_OBJECT_INSTANCE"
+          ],
+          "unsupported": []
+        },
+        {
+          "record_id": "evaluation_generic_object:obligation:1",
+          "raw_text": "Purchaser must remit the invoice within 10 calendar days after receipt of Invoice Cedar",
+          "char_start": 130,
+          "char_end": 217,
+          "coordinate_space": "original_extracted_text",
+          "section_uid": "evaluation_generic_object:section:1",
+          "section_identity": "9",
+          "clause_id": "evaluation_generic_object:source:1",
+          "actor": "purchaser",
+          "action": "PAY",
+          "object": null,
+          "recipient": null,
+          "trigger": "receipt of invoice cedar",
+          "event_instance": null,
+          "deadline": "within 10 calendar days",
+          "scope": "document",
+          "phase": "current",
+          "conditions": [],
+          "exceptions": [],
+          "evidence": {
+            "actor": [
+              {
+                "text": "Purchaser",
+                "char_start": 130,
+                "char_end": 139
+              }
+            ],
+            "action": [
+              {
+                "text": "remit",
+                "char_start": 145,
+                "char_end": 150
+              }
+            ],
+            "trigger": [
+              {
+                "text": "receipt of Invoice Cedar",
+                "char_start": 193,
+                "char_end": 217
+              }
+            ],
+            "deadline": [
+              {
+                "text": "within 10 calendar days",
+                "char_start": 163,
+                "char_end": 186
+              }
+            ]
+          },
+          "reference_target": null,
+          "missing_fields": [
+            "event_instance",
+            "object"
+          ],
+          "uncertainty": [
+            "NO_EXPLICIT_NAMED_OBJECT_INSTANCE"
+          ],
+          "unsupported": []
+        }
+      ],
+      "pairs": [
+        {
+          "left_id": "evaluation_generic_object:obligation:0",
+          "right_id": "evaluation_generic_object:obligation:1",
+          "status": "UNCERTAIN",
+          "reasons": [
+            "MISSING_EVENT_INSTANCE",
+            "MISSING_OBJECT",
+            "NO_EXPLICIT_NAMED_OBJECT_INSTANCE"
+          ],
+          "compared_fields": {
+            "actor": {
+              "left": "purchaser",
+              "right": "purchaser"
+            },
+            "action": {
+              "left": "PAY",
+              "right": "PAY"
+            },
+            "object": {
+              "left": null,
+              "right": null
+            },
+            "event_instance": {
+              "left": null,
+              "right": null
+            },
+            "recipient": {
+              "left": null,
+              "right": null
+            },
+            "scope": {
+              "left": "document",
+              "right": "document"
+            },
+            "phase": {
+              "left": "current",
+              "right": "current"
+            },
+            "trigger": {
+              "left": "receipt of invoice cedar",
+              "right": "receipt of invoice cedar"
+            },
+            "conditions": {
+              "left": [],
+              "right": []
+            }
+          },
+          "evidence": [
+            {
+              "record_id": "evaluation_generic_object:obligation:0",
+              "char_start": 16,
+              "char_end": 111,
+              "section_uid": "evaluation_generic_object:section:0"
+            },
+            {
+              "record_id": "evaluation_generic_object:obligation:1",
+              "char_start": 130,
+              "char_end": 217,
+              "section_uid": "evaluation_generic_object:section:1"
+            }
+          ]
+        }
+      ],
+      "pair_counts": {
+        "UNCERTAIN": 1
+      },
+      "candidate_pair_count": 1,
+      "evaluated_pair_count": 1,
+      "complete": true,
+      "issues": [],
+      "record_count": 2,
+      "status": "ANALYZED",
+      "limits": {
+        "max_records": 100,
+        "max_pairs": 1000,
+        "max_statement_chars": 8192
+      },
+      "interpretation": "Experimental explicit-field binding only. MATCHED means potentially comparable, never legal equivalence or contradiction. No neural/date scores are changed."
+    }
+  },
+  {
+    "case_id": "evaluation_unsupported_action",
+    "family_id": "evaluation_unsupported_action",
+    "gold_state": "UNSUPPORTED",
+    "gold_match": null,
+    "prediction": "UNSUPPORTED",
+    "ablation": "UNCERTAIN",
+    "selected_pair": {
+      "left_id": "evaluation_unsupported_action:obligation:0",
+      "right_id": "evaluation_unsupported_action:obligation:1",
+      "status": "UNSUPPORTED",
+      "reasons": [
+        "INCOMPLETE_OR_UNSUPPORTED_PARSE",
+        "ACTION_OUTSIDE_LEXICON"
+      ],
+      "compared_fields": {},
+      "evidence": [
+        {
+          "record_id": "evaluation_unsupported_action:obligation:0",
+          "char_start": 16,
+          "char_end": 113,
+          "section_uid": "evaluation_unsupported_action:section:0"
+        },
+        {
+          "record_id": "evaluation_unsupported_action:obligation:1",
+          "char_start": 132,
+          "char_end": 170,
+          "section_uid": "evaluation_unsupported_action:section:1"
+        }
+      ]
+    },
+    "field_errors": [
+      {
+        "side": "right",
+        "index": 0,
+        "field": "action",
+        "expected": "RECONCILE",
+        "predicted": null
+      },
+      {
+        "side": "right",
+        "index": 0,
+        "field": "object",
+        "expected": "the accounts",
+        "predicted": null
+      }
+    ],
+    "outcome_correct": true,
+    "case": {
+      "case_id": "evaluation_unsupported_action",
+      "family_id": "evaluation_unsupported_action",
+      "split": "evaluation",
+      "text": "Section 7. Duty\nPurchaser is required to pay Invoice Cedar within 10 calendar days after receipt of Invoice Cedar.\n\nSection 9. Duty\nPurchaser shall reconcile the accounts.",
+      "gold_state": "UNSUPPORTED",
+      "gold_match": null,
+      "mechanical_rule": "unsupported_action",
+      "label_provenance": "AUTHOR_CONSTRUCTED_MECHANICAL",
+      "independently_adjudicated": false,
+      "left_section": "7",
+      "right_section": "9",
+      "left_index": 0,
+      "right_index": 0,
+      "expected_left": [
+        {
+          "actor": "purchaser",
+          "action": "PAY",
+          "object": "invoice cedar",
+          "recipient": null,
+          "trigger": "receipt of invoice cedar",
+          "event_instance": "invoice cedar"
+        }
+      ],
+      "expected_right": [
+        {
+          "actor": "purchaser",
+          "action": "RECONCILE",
+          "object": "the accounts",
+          "recipient": null,
+          "trigger": null,
+          "event_instance": null
+        }
+      ]
+    },
+    "result": {
+      "version": "experimental-obligation-binding-v1",
+      "experimental": true,
+      "doc_id": "evaluation_unsupported_action",
+      "coordinate_space": "original_extracted_text",
+      "source_sha256": "80fd77b12534b6d7a412efd780d6c7eef13faaff3bdb5ab32cbb881d8b9a34f4",
+      "records": [
+        {
+          "record_id": "evaluation_unsupported_action:obligation:0",
+          "raw_text": "Purchaser is required to pay Invoice Cedar within 10 calendar days after receipt of Invoice Cedar",
+          "char_start": 16,
+          "char_end": 113,
+          "coordinate_space": "original_extracted_text",
+          "section_uid": "evaluation_unsupported_action:section:0",
+          "section_identity": "7",
+          "clause_id": "evaluation_unsupported_action:source:0",
+          "actor": "purchaser",
+          "action": "PAY",
+          "object": "invoice cedar",
+          "recipient": null,
+          "trigger": "receipt of invoice cedar",
+          "event_instance": "invoice cedar",
+          "deadline": "within 10 calendar days",
+          "scope": "document",
+          "phase": "current",
+          "conditions": [],
+          "exceptions": [],
+          "evidence": {
+            "actor": [
+              {
+                "text": "Purchaser",
+                "char_start": 16,
+                "char_end": 25
+              }
+            ],
+            "action": [
+              {
+                "text": "pay",
+                "char_start": 41,
+                "char_end": 44
+              }
+            ],
+            "object": [
+              {
+                "text": "Invoice Cedar",
+                "char_start": 45,
+                "char_end": 58
+              }
+            ],
+            "event_instance": [
+              {
+                "text": "Invoice Cedar",
+                "char_start": 45,
+                "char_end": 58
+              }
+            ],
+            "trigger": [
+              {
+                "text": "receipt of Invoice Cedar",
+                "char_start": 89,
+                "char_end": 113
+              }
+            ],
+            "deadline": [
+              {
+                "text": "within 10 calendar days",
+                "char_start": 59,
+                "char_end": 82
+              }
+            ]
+          },
+          "reference_target": null,
+          "missing_fields": [],
+          "uncertainty": [],
+          "unsupported": []
+        },
+        {
+          "record_id": "evaluation_unsupported_action:obligation:1",
+          "raw_text": "Purchaser shall reconcile the accounts",
+          "char_start": 132,
+          "char_end": 170,
+          "coordinate_space": "original_extracted_text",
+          "section_uid": "evaluation_unsupported_action:section:1",
+          "section_identity": "9",
+          "clause_id": "evaluation_unsupported_action:source:1",
+          "actor": "purchaser",
+          "action": null,
+          "object": null,
+          "recipient": null,
+          "trigger": null,
+          "event_instance": null,
+          "deadline": null,
+          "scope": "document",
+          "phase": "current",
+          "conditions": [],
+          "exceptions": [],
+          "evidence": {
+            "actor": [
+              {
+                "text": "Purchaser",
+                "char_start": 132,
+                "char_end": 141
+              }
+            ],
+            "action": [
+              {
+                "text": "reconcile",
+                "char_start": 148,
+                "char_end": 157
+              }
+            ]
+          },
+          "reference_target": null,
+          "missing_fields": [
+            "deadline",
+            "event_instance",
+            "object"
+          ],
+          "uncertainty": [
+            "NO_EXPLICIT_NAMED_OBJECT_INSTANCE"
+          ],
+          "unsupported": [
+            "ACTION_OUTSIDE_LEXICON"
+          ]
+        }
+      ],
+      "pairs": [
+        {
+          "left_id": "evaluation_unsupported_action:obligation:0",
+          "right_id": "evaluation_unsupported_action:obligation:1",
+          "status": "UNSUPPORTED",
+          "reasons": [
+            "INCOMPLETE_OR_UNSUPPORTED_PARSE",
+            "ACTION_OUTSIDE_LEXICON"
+          ],
+          "compared_fields": {},
+          "evidence": [
+            {
+              "record_id": "evaluation_unsupported_action:obligation:0",
+              "char_start": 16,
+              "char_end": 113,
+              "section_uid": "evaluation_unsupported_action:section:0"
+            },
+            {
+              "record_id": "evaluation_unsupported_action:obligation:1",
+              "char_start": 132,
+              "char_end": 170,
+              "section_uid": "evaluation_unsupported_action:section:1"
+            }
+          ]
+        }
+      ],
+      "pair_counts": {
+        "UNSUPPORTED": 1
+      },
+      "candidate_pair_count": 1,
+      "evaluated_pair_count": 1,
+      "complete": true,
+      "issues": [],
+      "record_count": 2,
+      "status": "ANALYZED",
+      "limits": {
+        "max_records": 100,
+        "max_pairs": 1000,
+        "max_statement_chars": 8192
+      },
+      "interpretation": "Experimental explicit-field binding only. MATCHED means potentially comparable, never legal equivalence or contradiction. No neural/date scores are changed."
+    }
+  },
+  {
+    "case_id": "evaluation_missing_reference",
+    "family_id": "evaluation_missing_reference",
+    "gold_state": "UNCERTAIN",
+    "gold_match": null,
+    "prediction": "UNCERTAIN",
+    "ablation": "UNCERTAIN",
+    "selected_pair": {
+      "left_id": "evaluation_missing_reference:obligation:0",
+      "right_id": "evaluation_missing_reference:obligation:1",
+      "status": "UNCERTAIN",
+      "reasons": [
+        "MISSING_EVENT_INSTANCE",
+        "MISSING_OBJECT",
+        "REFERENCE_OBJECT_UNRESOLVED_OR_AMBIGUOUS"
+      ],
+      "compared_fields": {
+        "actor": {
+          "left": "purchaser",
+          "right": "purchaser"
+        },
+        "action": {
+          "left": "PAY",
+          "right": "PAY"
+        },
+        "object": {
+          "left": "invoice cedar",
+          "right": null
+        },
+        "event_instance": {
+          "left": "invoice cedar",
+          "right": null
+        },
+        "recipient": {
+          "left": null,
+          "right": null
+        },
+        "scope": {
+          "left": "document",
+          "right": "document"
+        },
+        "phase": {
+          "left": "current",
+          "right": "current"
+        },
+        "trigger": {
+          "left": null,
+          "right": null
+        },
+        "conditions": {
+          "left": [],
+          "right": []
+        }
+      },
+      "evidence": [
+        {
+          "record_id": "evaluation_missing_reference:obligation:0",
+          "char_start": 16,
+          "char_end": 82,
+          "section_uid": "evaluation_missing_reference:section:0"
+        },
+        {
+          "record_id": "evaluation_missing_reference:obligation:1",
+          "char_start": 101,
+          "char_end": 174,
+          "section_uid": "evaluation_missing_reference:section:1"
+        }
+      ]
+    },
+    "field_errors": [
+      {
+        "side": "right",
+        "index": 0,
+        "field": "object",
+        "expected": "the obligation in section 99",
+        "predicted": null
+      }
+    ],
+    "outcome_correct": true,
+    "case": {
+      "case_id": "evaluation_missing_reference",
+      "family_id": "evaluation_missing_reference",
+      "split": "evaluation",
+      "text": "Section 7. Duty\nPurchaser is required to pay Invoice Cedar within 10 calendar days.\n\nSection 9. Duty\nPurchaser must remit the obligation in Section 99 within 10 calendar days.",
+      "gold_state": "UNCERTAIN",
+      "gold_match": null,
+      "mechanical_rule": "missing_reference",
+      "label_provenance": "AUTHOR_CONSTRUCTED_MECHANICAL",
+      "independently_adjudicated": false,
+      "left_section": "7",
+      "right_section": "9",
+      "left_index": 0,
+      "right_index": 0,
+      "expected_left": [
+        {
+          "actor": "purchaser",
+          "action": "PAY",
+          "object": "invoice cedar",
+          "recipient": null,
+          "trigger": null,
+          "event_instance": "invoice cedar"
+        }
+      ],
+      "expected_right": [
+        {
+          "actor": "purchaser",
+          "action": "PAY",
+          "object": "the obligation in section 99",
+          "recipient": null,
+          "trigger": null,
+          "event_instance": null
+        }
+      ]
+    },
+    "result": {
+      "version": "experimental-obligation-binding-v1",
+      "experimental": true,
+      "doc_id": "evaluation_missing_reference",
+      "coordinate_space": "original_extracted_text",
+      "source_sha256": "1e5ab24bf01bf07aa78e1b90b36fe3d9afdc35365d7913f647e254a0226d63ed",
+      "records": [
+        {
+          "record_id": "evaluation_missing_reference:obligation:0",
+          "raw_text": "Purchaser is required to pay Invoice Cedar within 10 calendar days",
+          "char_start": 16,
+          "char_end": 82,
+          "coordinate_space": "original_extracted_text",
+          "section_uid": "evaluation_missing_reference:section:0",
+          "section_identity": "7",
+          "clause_id": "evaluation_missing_reference:source:0",
+          "actor": "purchaser",
+          "action": "PAY",
+          "object": "invoice cedar",
+          "recipient": null,
+          "trigger": null,
+          "event_instance": "invoice cedar",
+          "deadline": "within 10 calendar days",
+          "scope": "document",
+          "phase": "current",
+          "conditions": [],
+          "exceptions": [],
+          "evidence": {
+            "actor": [
+              {
+                "text": "Purchaser",
+                "char_start": 16,
+                "char_end": 25
+              }
+            ],
+            "action": [
+              {
+                "text": "pay",
+                "char_start": 41,
+                "char_end": 44
+              }
+            ],
+            "object": [
+              {
+                "text": "Invoice Cedar",
+                "char_start": 45,
+                "char_end": 58
+              }
+            ],
+            "event_instance": [
+              {
+                "text": "Invoice Cedar",
+                "char_start": 45,
+                "char_end": 58
+              }
+            ],
+            "deadline": [
+              {
+                "text": "within 10 calendar days",
+                "char_start": 59,
+                "char_end": 82
+              }
+            ]
+          },
+          "reference_target": null,
+          "missing_fields": [],
+          "uncertainty": [],
+          "unsupported": []
+        },
+        {
+          "record_id": "evaluation_missing_reference:obligation:1",
+          "raw_text": "Purchaser must remit the obligation in Section 99 within 10 calendar days",
+          "char_start": 101,
+          "char_end": 174,
+          "coordinate_space": "original_extracted_text",
+          "section_uid": "evaluation_missing_reference:section:1",
+          "section_identity": "9",
+          "clause_id": "evaluation_missing_reference:source:1",
+          "actor": "purchaser",
+          "action": "PAY",
+          "object": null,
+          "recipient": null,
+          "trigger": null,
+          "event_instance": null,
+          "deadline": "within 10 calendar days",
+          "scope": "document",
+          "phase": "current",
+          "conditions": [],
+          "exceptions": [],
+          "evidence": {
+            "actor": [
+              {
+                "text": "Purchaser",
+                "char_start": 101,
+                "char_end": 110
+              }
+            ],
+            "action": [
+              {
+                "text": "remit",
+                "char_start": 116,
+                "char_end": 121
+              }
+            ],
+            "reference": [
+              {
+                "text": "the obligation in Section 99",
+                "char_start": 122,
+                "char_end": 150
+              }
+            ],
+            "deadline": [
+              {
+                "text": "within 10 calendar days",
+                "char_start": 151,
+                "char_end": 174
+              }
+            ]
+          },
+          "reference_target": "99",
+          "missing_fields": [
+            "object",
+            "event_instance"
+          ],
+          "uncertainty": [
+            "REFERENCE_OBJECT_UNRESOLVED_OR_AMBIGUOUS"
+          ],
+          "unsupported": []
+        }
+      ],
+      "pairs": [
+        {
+          "left_id": "evaluation_missing_reference:obligation:0",
+          "right_id": "evaluation_missing_reference:obligation:1",
+          "status": "UNCERTAIN",
+          "reasons": [
+            "MISSING_EVENT_INSTANCE",
+            "MISSING_OBJECT",
+            "REFERENCE_OBJECT_UNRESOLVED_OR_AMBIGUOUS"
+          ],
+          "compared_fields": {
+            "actor": {
+              "left": "purchaser",
+              "right": "purchaser"
+            },
+            "action": {
+              "left": "PAY",
+              "right": "PAY"
+            },
+            "object": {
+              "left": "invoice cedar",
+              "right": null
+            },
+            "event_instance": {
+              "left": "invoice cedar",
+              "right": null
+            },
+            "recipient": {
+              "left": null,
+              "right": null
+            },
+            "scope": {
+              "left": "document",
+              "right": "document"
+            },
+            "phase": {
+              "left": "current",
+              "right": "current"
+            },
+            "trigger": {
+              "left": null,
+              "right": null
+            },
+            "conditions": {
+              "left": [],
+              "right": []
+            }
+          },
+          "evidence": [
+            {
+              "record_id": "evaluation_missing_reference:obligation:0",
+              "char_start": 16,
+              "char_end": 82,
+              "section_uid": "evaluation_missing_reference:section:0"
+            },
+            {
+              "record_id": "evaluation_missing_reference:obligation:1",
+              "char_start": 101,
+              "char_end": 174,
+              "section_uid": "evaluation_missing_reference:section:1"
+            }
+          ]
+        }
+      ],
+      "pair_counts": {
+        "UNCERTAIN": 1
+      },
+      "candidate_pair_count": 1,
+      "evaluated_pair_count": 1,
+      "complete": true,
+      "issues": [],
+      "record_count": 2,
+      "status": "ANALYZED",
+      "limits": {
+        "max_records": 100,
+        "max_pairs": 1000,
+        "max_statement_chars": 8192
+      },
+      "interpretation": "Experimental explicit-field binding only. MATCHED means potentially comparable, never legal equivalence or contradiction. No neural/date scores are changed."
+    }
+  },
+  {
+    "case_id": "evaluation_ambiguous_reference",
+    "family_id": "evaluation_ambiguous_reference",
+    "gold_state": "UNCERTAIN",
+    "gold_match": null,
+    "prediction": "UNCERTAIN",
+    "ablation": "UNCERTAIN",
+    "selected_pair": {
+      "left_id": "evaluation_ambiguous_reference:obligation:0",
+      "right_id": "evaluation_ambiguous_reference:obligation:1",
+      "status": "UNCERTAIN",
+      "reasons": [
+        "MISSING_EVENT_INSTANCE",
+        "MISSING_OBJECT",
+        "REFERENCE_OBJECT_UNRESOLVED_OR_AMBIGUOUS"
+      ],
+      "compared_fields": {
+        "actor": {
+          "left": "purchaser",
+          "right": "purchaser"
+        },
+        "action": {
+          "left": "PAY",
+          "right": "PAY"
+        },
+        "object": {
+          "left": "invoice cedar",
+          "right": null
+        },
+        "event_instance": {
+          "left": "invoice cedar",
+          "right": null
+        },
+        "recipient": {
+          "left": null,
+          "right": null
+        },
+        "scope": {
+          "left": "document",
+          "right": "document"
+        },
+        "phase": {
+          "left": "current",
+          "right": "current"
+        },
+        "trigger": {
+          "left": null,
+          "right": null
+        },
+        "conditions": {
+          "left": [],
+          "right": []
+        }
+      },
+      "evidence": [
+        {
+          "record_id": "evaluation_ambiguous_reference:obligation:0",
+          "char_start": 16,
+          "char_end": 82,
+          "section_uid": "evaluation_ambiguous_reference:section:0"
+        },
+        {
+          "record_id": "evaluation_ambiguous_reference:obligation:1",
+          "char_start": 101,
+          "char_end": 173,
+          "section_uid": "evaluation_ambiguous_reference:section:1"
+        }
+      ]
+    },
+    "field_errors": [
+      {
+        "side": "right",
+        "index": 0,
+        "field": "object",
+        "expected": "the obligation in section 5",
+        "predicted": null
+      }
+    ],
+    "outcome_correct": true,
+    "case": {
+      "case_id": "evaluation_ambiguous_reference",
+      "family_id": "evaluation_ambiguous_reference",
+      "split": "evaluation",
+      "text": "Section 7. Duty\nPurchaser is required to pay Invoice Cedar within 10 calendar days.\n\nSection 9. Duty\nPurchaser must remit the obligation in Section 5 within 10 calendar days.\nSection 5. Extra\nPurchaser is required to pay Invoice Cedar within 10 calendar days after receipt of Invoice Cedar.\nSection 5. Duplicate\nPurchaser is required to pay Invoice Cedar within 10 calendar days after receipt of Invoice Cedar.",
+      "gold_state": "UNCERTAIN",
+      "gold_match": null,
+      "mechanical_rule": "ambiguous_reference",
+      "label_provenance": "AUTHOR_CONSTRUCTED_MECHANICAL",
+      "independently_adjudicated": false,
+      "left_section": "7",
+      "right_section": "9",
+      "left_index": 0,
+      "right_index": 0,
+      "expected_left": [
+        {
+          "actor": "purchaser",
+          "action": "PAY",
+          "object": "invoice cedar",
+          "recipient": null,
+          "trigger": null,
+          "event_instance": "invoice cedar"
+        }
+      ],
+      "expected_right": [
+        {
+          "actor": "purchaser",
+          "action": "PAY",
+          "object": "the obligation in section 5",
+          "recipient": null,
+          "trigger": null,
+          "event_instance": null
+        }
+      ]
+    },
+    "result": {
+      "version": "experimental-obligation-binding-v1",
+      "experimental": true,
+      "doc_id": "evaluation_ambiguous_reference",
+      "coordinate_space": "original_extracted_text",
+      "source_sha256": "dc80cda165a0a52812783f9b9c55563c72495e1fff5e140369d7f8daf0220dd8",
+      "records": [
+        {
+          "record_id": "evaluation_ambiguous_reference:obligation:0",
+          "raw_text": "Purchaser is required to pay Invoice Cedar within 10 calendar days",
+          "char_start": 16,
+          "char_end": 82,
+          "coordinate_space": "original_extracted_text",
+          "section_uid": "evaluation_ambiguous_reference:section:0",
+          "section_identity": "7",
+          "clause_id": "evaluation_ambiguous_reference:source:0",
+          "actor": "purchaser",
+          "action": "PAY",
+          "object": "invoice cedar",
+          "recipient": null,
+          "trigger": null,
+          "event_instance": "invoice cedar",
+          "deadline": "within 10 calendar days",
+          "scope": "document",
+          "phase": "current",
+          "conditions": [],
+          "exceptions": [],
+          "evidence": {
+            "actor": [
+              {
+                "text": "Purchaser",
+                "char_start": 16,
+                "char_end": 25
+              }
+            ],
+            "action": [
+              {
+                "text": "pay",
+                "char_start": 41,
+                "char_end": 44
+              }
+            ],
+            "object": [
+              {
+                "text": "Invoice Cedar",
+                "char_start": 45,
+                "char_end": 58
+              }
+            ],
+            "event_instance": [
+              {
+                "text": "Invoice Cedar",
+                "char_start": 45,
+                "char_end": 58
+              }
+            ],
+            "deadline": [
+              {
+                "text": "within 10 calendar days",
+                "char_start": 59,
+                "char_end": 82
+              }
+            ]
+          },
+          "reference_target": null,
+          "missing_fields": [],
+          "uncertainty": [],
+          "unsupported": []
+        },
+        {
+          "record_id": "evaluation_ambiguous_reference:obligation:1",
+          "raw_text": "Purchaser must remit the obligation in Section 5 within 10 calendar days",
+          "char_start": 101,
+          "char_end": 173,
+          "coordinate_space": "original_extracted_text",
+          "section_uid": "evaluation_ambiguous_reference:section:1",
+          "section_identity": "9",
+          "clause_id": "evaluation_ambiguous_reference:source:1",
+          "actor": "purchaser",
+          "action": "PAY",
+          "object": null,
+          "recipient": null,
+          "trigger": null,
+          "event_instance": null,
+          "deadline": "within 10 calendar days",
+          "scope": "document",
+          "phase": "current",
+          "conditions": [],
+          "exceptions": [],
+          "evidence": {
+            "actor": [
+              {
+                "text": "Purchaser",
+                "char_start": 101,
+                "char_end": 110
+              }
+            ],
+            "action": [
+              {
+                "text": "remit",
+                "char_start": 116,
+                "char_end": 121
+              }
+            ],
+            "reference": [
+              {
+                "text": "the obligation in Section 5",
+                "char_start": 122,
+                "char_end": 149
+              }
+            ],
+            "deadline": [
+              {
+                "text": "within 10 calendar days",
+                "char_start": 150,
+                "char_end": 173
+              }
+            ]
+          },
+          "reference_target": "5",
+          "missing_fields": [
+            "object",
+            "event_instance"
+          ],
+          "uncertainty": [
+            "REFERENCE_OBJECT_UNRESOLVED_OR_AMBIGUOUS"
+          ],
+          "unsupported": []
+        },
+        {
+          "record_id": "evaluation_ambiguous_reference:obligation:2",
+          "raw_text": "Purchaser is required to pay Invoice Cedar within 10 calendar days after receipt of Invoice Cedar",
+          "char_start": 192,
+          "char_end": 289,
+          "coordinate_space": "original_extracted_text",
+          "section_uid": "evaluation_ambiguous_reference:section:2",
+          "section_identity": "5",
+          "clause_id": "evaluation_ambiguous_reference:source:2",
+          "actor": "purchaser",
+          "action": "PAY",
+          "object": "invoice cedar",
+          "recipient": null,
+          "trigger": "receipt of invoice cedar",
+          "event_instance": "invoice cedar",
+          "deadline": "within 10 calendar days",
+          "scope": "document",
+          "phase": "current",
+          "conditions": [],
+          "exceptions": [],
+          "evidence": {
+            "actor": [
+              {
+                "text": "Purchaser",
+                "char_start": 192,
+                "char_end": 201
+              }
+            ],
+            "action": [
+              {
+                "text": "pay",
+                "char_start": 217,
+                "char_end": 220
+              }
+            ],
+            "object": [
+              {
+                "text": "Invoice Cedar",
+                "char_start": 221,
+                "char_end": 234
+              }
+            ],
+            "event_instance": [
+              {
+                "text": "Invoice Cedar",
+                "char_start": 221,
+                "char_end": 234
+              }
+            ],
+            "trigger": [
+              {
+                "text": "receipt of Invoice Cedar",
+                "char_start": 265,
+                "char_end": 289
+              }
+            ],
+            "deadline": [
+              {
+                "text": "within 10 calendar days",
+                "char_start": 235,
+                "char_end": 258
+              }
+            ]
+          },
+          "reference_target": null,
+          "missing_fields": [],
+          "uncertainty": [],
+          "unsupported": []
+        },
+        {
+          "record_id": "evaluation_ambiguous_reference:obligation:3",
+          "raw_text": "Purchaser is required to pay Invoice Cedar within 10 calendar days after receipt of Invoice Cedar",
+          "char_start": 312,
+          "char_end": 409,
+          "coordinate_space": "original_extracted_text",
+          "section_uid": "evaluation_ambiguous_reference:section:3",
+          "section_identity": "5",
+          "clause_id": "evaluation_ambiguous_reference:source:3",
+          "actor": "purchaser",
+          "action": "PAY",
+          "object": "invoice cedar",
+          "recipient": null,
+          "trigger": "receipt of invoice cedar",
+          "event_instance": "invoice cedar",
+          "deadline": "within 10 calendar days",
+          "scope": "document",
+          "phase": "current",
+          "conditions": [],
+          "exceptions": [],
+          "evidence": {
+            "actor": [
+              {
+                "text": "Purchaser",
+                "char_start": 312,
+                "char_end": 321
+              }
+            ],
+            "action": [
+              {
+                "text": "pay",
+                "char_start": 337,
+                "char_end": 340
+              }
+            ],
+            "object": [
+              {
+                "text": "Invoice Cedar",
+                "char_start": 341,
+                "char_end": 354
+              }
+            ],
+            "event_instance": [
+              {
+                "text": "Invoice Cedar",
+                "char_start": 341,
+                "char_end": 354
+              }
+            ],
+            "trigger": [
+              {
+                "text": "receipt of Invoice Cedar",
+                "char_start": 385,
+                "char_end": 409
+              }
+            ],
+            "deadline": [
+              {
+                "text": "within 10 calendar days",
+                "char_start": 355,
+                "char_end": 378
+              }
+            ]
+          },
+          "reference_target": null,
+          "missing_fields": [],
+          "uncertainty": [],
+          "unsupported": []
+        }
+      ],
+      "pairs": [
+        {
+          "left_id": "evaluation_ambiguous_reference:obligation:0",
+          "right_id": "evaluation_ambiguous_reference:obligation:1",
+          "status": "UNCERTAIN",
+          "reasons": [
+            "MISSING_EVENT_INSTANCE",
+            "MISSING_OBJECT",
+            "REFERENCE_OBJECT_UNRESOLVED_OR_AMBIGUOUS"
+          ],
+          "compared_fields": {
+            "actor": {
+              "left": "purchaser",
+              "right": "purchaser"
+            },
+            "action": {
+              "left": "PAY",
+              "right": "PAY"
+            },
+            "object": {
+              "left": "invoice cedar",
+              "right": null
+            },
+            "event_instance": {
+              "left": "invoice cedar",
+              "right": null
+            },
+            "recipient": {
+              "left": null,
+              "right": null
+            },
+            "scope": {
+              "left": "document",
+              "right": "document"
+            },
+            "phase": {
+              "left": "current",
+              "right": "current"
+            },
+            "trigger": {
+              "left": null,
+              "right": null
+            },
+            "conditions": {
+              "left": [],
+              "right": []
+            }
+          },
+          "evidence": [
+            {
+              "record_id": "evaluation_ambiguous_reference:obligation:0",
+              "char_start": 16,
+              "char_end": 82,
+              "section_uid": "evaluation_ambiguous_reference:section:0"
+            },
+            {
+              "record_id": "evaluation_ambiguous_reference:obligation:1",
+              "char_start": 101,
+              "char_end": 173,
+              "section_uid": "evaluation_ambiguous_reference:section:1"
+            }
+          ]
+        },
+        {
+          "left_id": "evaluation_ambiguous_reference:obligation:0",
+          "right_id": "evaluation_ambiguous_reference:obligation:2",
+          "status": "UNCERTAIN",
+          "reasons": [
+            "TRIGGER_RELATION_UNESTABLISHED"
+          ],
+          "compared_fields": {
+            "actor": {
+              "left": "purchaser",
+              "right": "purchaser"
+            },
+            "action": {
+              "left": "PAY",
+              "right": "PAY"
+            },
+            "object": {
+              "left": "invoice cedar",
+              "right": "invoice cedar"
+            },
+            "event_instance": {
+              "left": "invoice cedar",
+              "right": "invoice cedar"
+            },
+            "recipient": {
+              "left": null,
+              "right": null
+            },
+            "scope": {
+              "left": "document",
+              "right": "document"
+            },
+            "phase": {
+              "left": "current",
+              "right": "current"
+            },
+            "trigger": {
+              "left": null,
+              "right": "receipt of invoice cedar"
+            },
+            "conditions": {
+              "left": [],
+              "right": []
+            }
+          },
+          "evidence": [
+            {
+              "record_id": "evaluation_ambiguous_reference:obligation:0",
+              "char_start": 16,
+              "char_end": 82,
+              "section_uid": "evaluation_ambiguous_reference:section:0"
+            },
+            {
+              "record_id": "evaluation_ambiguous_reference:obligation:2",
+              "char_start": 192,
+              "char_end": 289,
+              "section_uid": "evaluation_ambiguous_reference:section:2"
+            }
+          ]
+        },
+        {
+          "left_id": "evaluation_ambiguous_reference:obligation:0",
+          "right_id": "evaluation_ambiguous_reference:obligation:3",
+          "status": "UNCERTAIN",
+          "reasons": [
+            "TRIGGER_RELATION_UNESTABLISHED"
+          ],
+          "compared_fields": {
+            "actor": {
+              "left": "purchaser",
+              "right": "purchaser"
+            },
+            "action": {
+              "left": "PAY",
+              "right": "PAY"
+            },
+            "object": {
+              "left": "invoice cedar",
+              "right": "invoice cedar"
+            },
+            "event_instance": {
+              "left": "invoice cedar",
+              "right": "invoice cedar"
+            },
+            "recipient": {
+              "left": null,
+              "right": null
+            },
+            "scope": {
+              "left": "document",
+              "right": "document"
+            },
+            "phase": {
+              "left": "current",
+              "right": "current"
+            },
+            "trigger": {
+              "left": null,
+              "right": "receipt of invoice cedar"
+            },
+            "conditions": {
+              "left": [],
+              "right": []
+            }
+          },
+          "evidence": [
+            {
+              "record_id": "evaluation_ambiguous_reference:obligation:0",
+              "char_start": 16,
+              "char_end": 82,
+              "section_uid": "evaluation_ambiguous_reference:section:0"
+            },
+            {
+              "record_id": "evaluation_ambiguous_reference:obligation:3",
+              "char_start": 312,
+              "char_end": 409,
+              "section_uid": "evaluation_ambiguous_reference:section:3"
+            }
+          ]
+        },
+        {
+          "left_id": "evaluation_ambiguous_reference:obligation:1",
+          "right_id": "evaluation_ambiguous_reference:obligation:2",
+          "status": "UNCERTAIN",
+          "reasons": [
+            "MISSING_EVENT_INSTANCE",
+            "MISSING_OBJECT",
+            "REFERENCE_OBJECT_UNRESOLVED_OR_AMBIGUOUS",
+            "TRIGGER_RELATION_UNESTABLISHED"
+          ],
+          "compared_fields": {
+            "actor": {
+              "left": "purchaser",
+              "right": "purchaser"
+            },
+            "action": {
+              "left": "PAY",
+              "right": "PAY"
+            },
+            "object": {
+              "left": null,
+              "right": "invoice cedar"
+            },
+            "event_instance": {
+              "left": null,
+              "right": "invoice cedar"
+            },
+            "recipient": {
+              "left": null,
+              "right": null
+            },
+            "scope": {
+              "left": "document",
+              "right": "document"
+            },
+            "phase": {
+              "left": "current",
+              "right": "current"
+            },
+            "trigger": {
+              "left": null,
+              "right": "receipt of invoice cedar"
+            },
+            "conditions": {
+              "left": [],
+              "right": []
+            }
+          },
+          "evidence": [
+            {
+              "record_id": "evaluation_ambiguous_reference:obligation:1",
+              "char_start": 101,
+              "char_end": 173,
+              "section_uid": "evaluation_ambiguous_reference:section:1"
+            },
+            {
+              "record_id": "evaluation_ambiguous_reference:obligation:2",
+              "char_start": 192,
+              "char_end": 289,
+              "section_uid": "evaluation_ambiguous_reference:section:2"
+            }
+          ]
+        },
+        {
+          "left_id": "evaluation_ambiguous_reference:obligation:1",
+          "right_id": "evaluation_ambiguous_reference:obligation:3",
+          "status": "UNCERTAIN",
+          "reasons": [
+            "MISSING_EVENT_INSTANCE",
+            "MISSING_OBJECT",
+            "REFERENCE_OBJECT_UNRESOLVED_OR_AMBIGUOUS",
+            "TRIGGER_RELATION_UNESTABLISHED"
+          ],
+          "compared_fields": {
+            "actor": {
+              "left": "purchaser",
+              "right": "purchaser"
+            },
+            "action": {
+              "left": "PAY",
+              "right": "PAY"
+            },
+            "object": {
+              "left": null,
+              "right": "invoice cedar"
+            },
+            "event_instance": {
+              "left": null,
+              "right": "invoice cedar"
+            },
+            "recipient": {
+              "left": null,
+              "right": null
+            },
+            "scope": {
+              "left": "document",
+              "right": "document"
+            },
+            "phase": {
+              "left": "current",
+              "right": "current"
+            },
+            "trigger": {
+              "left": null,
+              "right": "receipt of invoice cedar"
+            },
+            "conditions": {
+              "left": [],
+              "right": []
+            }
+          },
+          "evidence": [
+            {
+              "record_id": "evaluation_ambiguous_reference:obligation:1",
+              "char_start": 101,
+              "char_end": 173,
+              "section_uid": "evaluation_ambiguous_reference:section:1"
+            },
+            {
+              "record_id": "evaluation_ambiguous_reference:obligation:3",
+              "char_start": 312,
+              "char_end": 409,
+              "section_uid": "evaluation_ambiguous_reference:section:3"
+            }
+          ]
+        },
+        {
+          "left_id": "evaluation_ambiguous_reference:obligation:2",
+          "right_id": "evaluation_ambiguous_reference:obligation:3",
+          "status": "MATCHED",
+          "reasons": [
+            "EXPLICIT_FIELDS_MATCH_POTENTIALLY_COMPARABLE"
+          ],
+          "compared_fields": {
+            "actor": {
+              "left": "purchaser",
+              "right": "purchaser"
+            },
+            "action": {
+              "left": "PAY",
+              "right": "PAY"
+            },
+            "object": {
+              "left": "invoice cedar",
+              "right": "invoice cedar"
+            },
+            "event_instance": {
+              "left": "invoice cedar",
+              "right": "invoice cedar"
+            },
+            "recipient": {
+              "left": null,
+              "right": null
+            },
+            "scope": {
+              "left": "document",
+              "right": "document"
+            },
+            "phase": {
+              "left": "current",
+              "right": "current"
+            },
+            "trigger": {
+              "left": "receipt of invoice cedar",
+              "right": "receipt of invoice cedar"
+            },
+            "conditions": {
+              "left": [],
+              "right": []
+            }
+          },
+          "evidence": [
+            {
+              "record_id": "evaluation_ambiguous_reference:obligation:2",
+              "char_start": 192,
+              "char_end": 289,
+              "section_uid": "evaluation_ambiguous_reference:section:2"
+            },
+            {
+              "record_id": "evaluation_ambiguous_reference:obligation:3",
+              "char_start": 312,
+              "char_end": 409,
+              "section_uid": "evaluation_ambiguous_reference:section:3"
+            }
+          ]
+        }
+      ],
+      "pair_counts": {
+        "UNCERTAIN": 5,
+        "MATCHED": 1
+      },
+      "candidate_pair_count": 6,
+      "evaluated_pair_count": 6,
+      "complete": true,
+      "issues": [],
+      "record_count": 4,
+      "status": "ANALYZED",
+      "limits": {
+        "max_records": 100,
+        "max_pairs": 1000,
+        "max_statement_chars": 8192
+      },
+      "interpretation": "Experimental explicit-field binding only. MATCHED means potentially comparable, never legal equivalence or contradiction. No neural/date scores are changed."
+    }
+  },
+  {
+    "case_id": "evaluation_passive_identity",
+    "family_id": "evaluation_passive_identity",
+    "gold_state": "MATCHED",
+    "gold_match": true,
+    "prediction": "UNSUPPORTED",
+    "ablation": "UNCERTAIN",
+    "selected_pair": {
+      "left_id": "evaluation_passive_identity:obligation:0",
+      "right_id": "evaluation_passive_identity:obligation:1",
+      "status": "UNSUPPORTED",
+      "reasons": [
+        "INCOMPLETE_OR_UNSUPPORTED_PARSE",
+        "ACTION_OUTSIDE_LEXICON",
+        "ACTION_OUTSIDE_LEXICON"
+      ],
+      "compared_fields": {},
+      "evidence": [
+        {
+          "record_id": "evaluation_passive_identity:obligation:0",
+          "char_start": 16,
+          "char_end": 110,
+          "section_uid": "evaluation_passive_identity:section:0"
+        },
+        {
+          "record_id": "evaluation_passive_identity:obligation:1",
+          "char_start": 129,
+          "char_end": 223,
+          "section_uid": "evaluation_passive_identity:section:1"
+        }
+      ]
+    },
+    "field_errors": [
+      {
+        "side": "left",
+        "index": 0,
+        "field": "actor",
+        "expected": "purchaser",
+        "predicted": null
+      },
+      {
+        "side": "left",
+        "index": 0,
+        "field": "action",
+        "expected": "PAY",
+        "predicted": null
+      },
+      {
+        "side": "left",
+        "index": 0,
+        "field": "object",
+        "expected": "invoice cedar",
+        "predicted": null
+      },
+      {
+        "side": "left",
+        "index": 0,
+        "field": "event_instance",
+        "expected": "invoice cedar",
+        "predicted": null
+      },
+      {
+        "side": "right",
+        "index": 0,
+        "field": "actor",
+        "expected": "purchaser",
+        "predicted": null
+      },
+      {
+        "side": "right",
+        "index": 0,
+        "field": "action",
+        "expected": "PAY",
+        "predicted": null
+      },
+      {
+        "side": "right",
+        "index": 0,
+        "field": "object",
+        "expected": "invoice cedar",
+        "predicted": null
+      },
+      {
+        "side": "right",
+        "index": 0,
+        "field": "event_instance",
+        "expected": "invoice cedar",
+        "predicted": null
+      }
+    ],
+    "outcome_correct": false,
+    "case": {
+      "case_id": "evaluation_passive_identity",
+      "family_id": "evaluation_passive_identity",
+      "split": "evaluation",
+      "text": "Section 7. Duty\nInvoice Cedar must be paid by Purchaser within 10 calendar days after receipt of Invoice Cedar.\n\nSection 9. Duty\nInvoice Cedar must be paid by Purchaser within 10 calendar days after receipt of Invoice Cedar.",
+      "gold_state": "MATCHED",
+      "gold_match": true,
+      "mechanical_rule": "Explicit by-agent passive grammar, same named invoice and trigger; no inference needed by annotator",
+      "label_provenance": "AUTHOR_CONSTRUCTED_MECHANICAL",
+      "independently_adjudicated": false,
+      "left_section": "7",
+      "right_section": "9",
+      "left_index": 0,
+      "right_index": 0,
+      "expected_left": [
+        {
+          "actor": "purchaser",
+          "action": "PAY",
+          "object": "invoice cedar",
+          "recipient": null,
+          "trigger": "receipt of invoice cedar",
+          "event_instance": "invoice cedar"
+        }
+      ],
+      "expected_right": [
+        {
+          "actor": "purchaser",
+          "action": "PAY",
+          "object": "invoice cedar",
+          "recipient": null,
+          "trigger": "receipt of invoice cedar",
+          "event_instance": "invoice cedar"
+        }
+      ]
+    },
+    "result": {
+      "version": "experimental-obligation-binding-v1",
+      "experimental": true,
+      "doc_id": "evaluation_passive_identity",
+      "coordinate_space": "original_extracted_text",
+      "source_sha256": "36818be41735ebfa2895410b549c9edbd39c7ec871bc4e4902900a01a13a05a5",
+      "records": [
+        {
+          "record_id": "evaluation_passive_identity:obligation:0",
+          "raw_text": "Invoice Cedar must be paid by Purchaser within 10 calendar days after receipt of Invoice Cedar",
+          "char_start": 16,
+          "char_end": 110,
+          "coordinate_space": "original_extracted_text",
+          "section_uid": "evaluation_passive_identity:section:0",
+          "section_identity": "7",
+          "clause_id": "evaluation_passive_identity:source:0",
+          "actor": null,
+          "action": null,
+          "object": null,
+          "recipient": null,
+          "trigger": "receipt of invoice cedar",
+          "event_instance": null,
+          "deadline": "within 10 calendar days",
+          "scope": "document",
+          "phase": "current",
+          "conditions": [],
+          "exceptions": [],
+          "evidence": {
+            "action": [
+              {
+                "text": "be",
+                "char_start": 35,
+                "char_end": 37
+              }
+            ],
+            "trigger": [
+              {
+                "text": "receipt of Invoice Cedar",
+                "char_start": 86,
+                "char_end": 110
+              }
+            ],
+            "deadline": [
+              {
+                "text": "within 10 calendar days",
+                "char_start": 56,
+                "char_end": 79
+              }
+            ]
+          },
+          "reference_target": null,
+          "missing_fields": [
+            "actor",
+            "event_instance",
+            "object"
+          ],
+          "uncertainty": [
+            "AMBIGUOUS_OR_NONPARTY_SUBJECT",
+            "NO_EXPLICIT_NAMED_OBJECT_INSTANCE"
+          ],
+          "unsupported": [
+            "ACTION_OUTSIDE_LEXICON"
+          ]
+        },
+        {
+          "record_id": "evaluation_passive_identity:obligation:1",
+          "raw_text": "Invoice Cedar must be paid by Purchaser within 10 calendar days after receipt of Invoice Cedar",
+          "char_start": 129,
+          "char_end": 223,
+          "coordinate_space": "original_extracted_text",
+          "section_uid": "evaluation_passive_identity:section:1",
+          "section_identity": "9",
+          "clause_id": "evaluation_passive_identity:source:1",
+          "actor": null,
+          "action": null,
+          "object": null,
+          "recipient": null,
+          "trigger": "receipt of invoice cedar",
+          "event_instance": null,
+          "deadline": "within 10 calendar days",
+          "scope": "document",
+          "phase": "current",
+          "conditions": [],
+          "exceptions": [],
+          "evidence": {
+            "action": [
+              {
+                "text": "be",
+                "char_start": 148,
+                "char_end": 150
+              }
+            ],
+            "trigger": [
+              {
+                "text": "receipt of Invoice Cedar",
+                "char_start": 199,
+                "char_end": 223
+              }
+            ],
+            "deadline": [
+              {
+                "text": "within 10 calendar days",
+                "char_start": 169,
+                "char_end": 192
+              }
+            ]
+          },
+          "reference_target": null,
+          "missing_fields": [
+            "actor",
+            "event_instance",
+            "object"
+          ],
+          "uncertainty": [
+            "AMBIGUOUS_OR_NONPARTY_SUBJECT",
+            "NO_EXPLICIT_NAMED_OBJECT_INSTANCE"
+          ],
+          "unsupported": [
+            "ACTION_OUTSIDE_LEXICON"
+          ]
+        }
+      ],
+      "pairs": [
+        {
+          "left_id": "evaluation_passive_identity:obligation:0",
+          "right_id": "evaluation_passive_identity:obligation:1",
+          "status": "UNSUPPORTED",
+          "reasons": [
+            "INCOMPLETE_OR_UNSUPPORTED_PARSE",
+            "ACTION_OUTSIDE_LEXICON",
+            "ACTION_OUTSIDE_LEXICON"
+          ],
+          "compared_fields": {},
+          "evidence": [
+            {
+              "record_id": "evaluation_passive_identity:obligation:0",
+              "char_start": 16,
+              "char_end": 110,
+              "section_uid": "evaluation_passive_identity:section:0"
+            },
+            {
+              "record_id": "evaluation_passive_identity:obligation:1",
+              "char_start": 129,
+              "char_end": 223,
+              "section_uid": "evaluation_passive_identity:section:1"
+            }
+          ]
+        }
+      ],
+      "pair_counts": {
+        "UNSUPPORTED": 1
+      },
+      "candidate_pair_count": 1,
+      "evaluated_pair_count": 1,
+      "complete": true,
+      "issues": [],
+      "record_count": 2,
+      "status": "ANALYZED",
+      "limits": {
+        "max_records": 100,
+        "max_pairs": 1000,
+        "max_statement_chars": 8192
+      },
+      "interpretation": "Experimental explicit-field binding only. MATCHED means potentially comparable, never legal equivalence or contradiction. No neural/date scores are changed."
+    }
+  },
+  {
+    "case_id": "evaluation_coordinated_subject",
+    "family_id": "evaluation_coordinated_subject",
+    "gold_state": "DIFFERENT",
+    "gold_match": false,
+    "prediction": "DIFFERENT",
+    "ablation": "DIFFERENT",
+    "selected_pair": {
+      "left_id": "evaluation_coordinated_subject:obligation:0",
+      "right_id": "evaluation_coordinated_subject:obligation:1",
+      "status": "DIFFERENT",
+      "reasons": [
+        "EXPLICIT_DIFFERENT_ACTOR"
+      ],
+      "compared_fields": {
+        "actor": {
+          "left": "purchaser",
+          "right": "vendor"
+        }
+      },
+      "evidence": [
+        {
+          "record_id": "evaluation_coordinated_subject:obligation:0",
+          "char_start": 16,
+          "char_end": 113,
+          "section_uid": "evaluation_coordinated_subject:section:0"
+        },
+        {
+          "record_id": "evaluation_coordinated_subject:obligation:1",
+          "char_start": 146,
+          "char_end": 232,
+          "section_uid": "evaluation_coordinated_subject:section:1"
+        }
+      ]
+    },
+    "field_errors": [
+      {
+        "side": "right",
+        "index": 0,
+        "field": "actor",
+        "expected": "purchaser and vendor",
+        "predicted": "vendor"
+      }
+    ],
+    "outcome_correct": true,
+    "case": {
+      "case_id": "evaluation_coordinated_subject",
+      "family_id": "evaluation_coordinated_subject",
+      "split": "evaluation",
+      "text": "Section 7. Duty\nPurchaser is required to pay Invoice Cedar within 10 calendar days after receipt of Invoice Cedar.\n\nSection 9. Duty\nPurchaser and Vendor must remit Invoice Cedar within 10 calendar days after receipt of Invoice Cedar.",
+      "gold_state": "DIFFERENT",
+      "gold_match": false,
+      "mechanical_rule": "Explicit joint subject differs from sole subject; unsupported grammar may abstain",
+      "label_provenance": "AUTHOR_CONSTRUCTED_MECHANICAL",
+      "independently_adjudicated": false,
+      "left_section": "7",
+      "right_section": "9",
+      "left_index": 0,
+      "right_index": 0,
+      "expected_left": [
+        {
+          "actor": "purchaser",
+          "action": "PAY",
+          "object": "invoice cedar",
+          "recipient": null,
+          "trigger": "receipt of invoice cedar",
+          "event_instance": "invoice cedar"
+        }
+      ],
+      "expected_right": [
+        {
+          "actor": "purchaser and vendor",
+          "action": "PAY",
+          "object": "invoice cedar",
+          "recipient": null,
+          "trigger": "receipt of invoice cedar",
+          "event_instance": "invoice cedar"
+        }
+      ]
+    },
+    "result": {
+      "version": "experimental-obligation-binding-v1",
+      "experimental": true,
+      "doc_id": "evaluation_coordinated_subject",
+      "coordinate_space": "original_extracted_text",
+      "source_sha256": "b12624388b78d1bf7b4111690249c2f9dbd89e2ac4385c962e1c475ed9d6c9a4",
+      "records": [
+        {
+          "record_id": "evaluation_coordinated_subject:obligation:0",
+          "raw_text": "Purchaser is required to pay Invoice Cedar within 10 calendar days after receipt of Invoice Cedar",
+          "char_start": 16,
+          "char_end": 113,
+          "coordinate_space": "original_extracted_text",
+          "section_uid": "evaluation_coordinated_subject:section:0",
+          "section_identity": "7",
+          "clause_id": "evaluation_coordinated_subject:source:0",
+          "actor": "purchaser",
+          "action": "PAY",
+          "object": "invoice cedar",
+          "recipient": null,
+          "trigger": "receipt of invoice cedar",
+          "event_instance": "invoice cedar",
+          "deadline": "within 10 calendar days",
+          "scope": "document",
+          "phase": "current",
+          "conditions": [],
+          "exceptions": [],
+          "evidence": {
+            "actor": [
+              {
+                "text": "Purchaser",
+                "char_start": 16,
+                "char_end": 25
+              }
+            ],
+            "action": [
+              {
+                "text": "pay",
+                "char_start": 41,
+                "char_end": 44
+              }
+            ],
+            "object": [
+              {
+                "text": "Invoice Cedar",
+                "char_start": 45,
+                "char_end": 58
+              }
+            ],
+            "event_instance": [
+              {
+                "text": "Invoice Cedar",
+                "char_start": 45,
+                "char_end": 58
+              }
+            ],
+            "trigger": [
+              {
+                "text": "receipt of Invoice Cedar",
+                "char_start": 89,
+                "char_end": 113
+              }
+            ],
+            "deadline": [
+              {
+                "text": "within 10 calendar days",
+                "char_start": 59,
+                "char_end": 82
+              }
+            ]
+          },
+          "reference_target": null,
+          "missing_fields": [],
+          "uncertainty": [],
+          "unsupported": []
+        },
+        {
+          "record_id": "evaluation_coordinated_subject:obligation:1",
+          "raw_text": "Vendor must remit Invoice Cedar within 10 calendar days after receipt of Invoice Cedar",
+          "char_start": 146,
+          "char_end": 232,
+          "coordinate_space": "original_extracted_text",
+          "section_uid": "evaluation_coordinated_subject:section:1",
+          "section_identity": "9",
+          "clause_id": "evaluation_coordinated_subject:source:1",
+          "actor": "vendor",
+          "action": "PAY",
+          "object": "invoice cedar",
+          "recipient": null,
+          "trigger": "receipt of invoice cedar",
+          "event_instance": "invoice cedar",
+          "deadline": "within 10 calendar days",
+          "scope": "document",
+          "phase": "current",
+          "conditions": [],
+          "exceptions": [],
+          "evidence": {
+            "actor": [
+              {
+                "text": "Vendor",
+                "char_start": 146,
+                "char_end": 152
+              }
+            ],
+            "action": [
+              {
+                "text": "remit",
+                "char_start": 158,
+                "char_end": 163
+              }
+            ],
+            "object": [
+              {
+                "text": "Invoice Cedar",
+                "char_start": 164,
+                "char_end": 177
+              }
+            ],
+            "event_instance": [
+              {
+                "text": "Invoice Cedar",
+                "char_start": 164,
+                "char_end": 177
+              }
+            ],
+            "trigger": [
+              {
+                "text": "receipt of Invoice Cedar",
+                "char_start": 208,
+                "char_end": 232
+              }
+            ],
+            "deadline": [
+              {
+                "text": "within 10 calendar days",
+                "char_start": 178,
+                "char_end": 201
+              }
+            ]
+          },
+          "reference_target": null,
+          "missing_fields": [],
+          "uncertainty": [],
+          "unsupported": []
+        }
+      ],
+      "pairs": [
+        {
+          "left_id": "evaluation_coordinated_subject:obligation:0",
+          "right_id": "evaluation_coordinated_subject:obligation:1",
+          "status": "DIFFERENT",
+          "reasons": [
+            "EXPLICIT_DIFFERENT_ACTOR"
+          ],
+          "compared_fields": {
+            "actor": {
+              "left": "purchaser",
+              "right": "vendor"
+            }
+          },
+          "evidence": [
+            {
+              "record_id": "evaluation_coordinated_subject:obligation:0",
+              "char_start": 16,
+              "char_end": 113,
+              "section_uid": "evaluation_coordinated_subject:section:0"
+            },
+            {
+              "record_id": "evaluation_coordinated_subject:obligation:1",
+              "char_start": 146,
+              "char_end": 232,
+              "section_uid": "evaluation_coordinated_subject:section:1"
+            }
+          ]
+        }
+      ],
+      "pair_counts": {
+        "DIFFERENT": 1
+      },
+      "candidate_pair_count": 1,
+      "evaluated_pair_count": 1,
+      "complete": true,
+      "issues": [],
+      "record_count": 2,
+      "status": "ANALYZED",
+      "limits": {
+        "max_records": 100,
+        "max_pairs": 1000,
+        "max_statement_chars": 8192
+      },
+      "interpretation": "Experimental explicit-field binding only. MATCHED means potentially comparable, never legal equivalence or contradiction. No neural/date scores are changed."
+    }
+  }
+]

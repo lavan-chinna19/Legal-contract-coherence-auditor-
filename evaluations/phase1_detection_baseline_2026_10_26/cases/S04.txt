@@ -1,0 +1,2 @@
+Section 1. Payment
+If price < 100, payment follows Section 9; if volume > 20, delivery is expedited.

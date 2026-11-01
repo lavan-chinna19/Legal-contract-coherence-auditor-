@@ -1,0 +1,1046 @@
+[
+  {
+    "case_id": "T01",
+    "stratum": "ORIGINAL_PHASE1",
+    "gold": false,
+    "old_prediction": false,
+    "new_prediction": false,
+    "old_outcome": "TN",
+    "new_outcome": "TN",
+    "new_status": "CONSISTENT",
+    "checks": [
+      "CONTRACT_TERM"
+    ]
+  },
+  {
+    "case_id": "T02",
+    "stratum": "ORIGINAL_PHASE1",
+    "gold": true,
+    "old_prediction": true,
+    "new_prediction": true,
+    "old_outcome": "TP",
+    "new_outcome": "TP",
+    "new_status": "CONFIRMED_TEMPORAL_CONFLICT",
+    "checks": [
+      "CONTRACT_TERM"
+    ]
+  },
+  {
+    "case_id": "T03",
+    "stratum": "ORIGINAL_PHASE1",
+    "gold": false,
+    "old_prediction": false,
+    "new_prediction": false,
+    "old_outcome": "TN",
+    "new_outcome": "TN",
+    "new_status": "CONSISTENT",
+    "checks": [
+      "CONTRACT_TERM"
+    ]
+  },
+  {
+    "case_id": "T04",
+    "stratum": "ORIGINAL_PHASE1",
+    "gold": true,
+    "old_prediction": true,
+    "new_prediction": true,
+    "old_outcome": "TP",
+    "new_outcome": "TP",
+    "new_status": "CONFIRMED_TEMPORAL_CONFLICT",
+    "checks": [
+      "CONTRACT_TERM"
+    ]
+  },
+  {
+    "case_id": "T05",
+    "stratum": "ORIGINAL_PHASE1",
+    "gold": false,
+    "old_prediction": false,
+    "new_prediction": false,
+    "old_outcome": "TN",
+    "new_outcome": "TN",
+    "new_status": "REVIEW_REQUIRED",
+    "checks": [
+      "PARSE_UNCERTAINTY",
+      "PARSE_UNCERTAINTY",
+      "EXPLICIT_DATE_RANGE"
+    ]
+  },
+  {
+    "case_id": "T06",
+    "stratum": "ORIGINAL_PHASE1",
+    "gold": true,
+    "old_prediction": true,
+    "new_prediction": true,
+    "old_outcome": "TP",
+    "new_outcome": "TP",
+    "new_status": "CONFIRMED_TEMPORAL_CONFLICT",
+    "checks": [
+      "PARSE_UNCERTAINTY",
+      "PARSE_UNCERTAINTY",
+      "EXPLICIT_DATE_RANGE"
+    ]
+  },
+  {
+    "case_id": "T07",
+    "stratum": "ORIGINAL_PHASE1",
+    "gold": false,
+    "old_prediction": false,
+    "new_prediction": false,
+    "old_outcome": "TN",
+    "new_outcome": "TN",
+    "new_status": "REVIEW_REQUIRED",
+    "checks": [
+      "PARSE_UNCERTAINTY",
+      "PARSE_UNCERTAINTY"
+    ]
+  },
+  {
+    "case_id": "T08",
+    "stratum": "ORIGINAL_PHASE1",
+    "gold": false,
+    "old_prediction": true,
+    "new_prediction": false,
+    "old_outcome": "FP",
+    "new_outcome": "TN",
+    "new_status": "REVIEW_REQUIRED",
+    "checks": [
+      "PARSE_UNCERTAINTY",
+      "PARSE_UNCERTAINTY"
+    ]
+  },
+  {
+    "case_id": "T09",
+    "stratum": "ORIGINAL_PHASE1",
+    "gold": true,
+    "old_prediction": true,
+    "new_prediction": true,
+    "old_outcome": "TP",
+    "new_outcome": "TP",
+    "new_status": "POTENTIAL_INCONSISTENCY",
+    "checks": [
+      "PREPAYMENT_CANDIDATE"
+    ]
+  },
+  {
+    "case_id": "T10",
+    "stratum": "ORIGINAL_PHASE1",
+    "gold": true,
+    "old_prediction": true,
+    "new_prediction": true,
+    "old_outcome": "TP",
+    "new_outcome": "TP",
+    "new_status": "POTENTIAL_INCONSISTENCY",
+    "checks": [
+      "NOTICE_AFTER_END"
+    ]
+  },
+  {
+    "case_id": "T12",
+    "stratum": "ORIGINAL_PHASE1",
+    "gold": false,
+    "old_prediction": true,
+    "new_prediction": false,
+    "old_outcome": "FP",
+    "new_outcome": "TN",
+    "new_status": "CONSISTENT",
+    "checks": [
+      "CONTRACT_TERM",
+      "CONTRACT_TERM"
+    ]
+  },
+  {
+    "case_id": "T13",
+    "stratum": "ORIGINAL_PHASE1",
+    "gold": true,
+    "old_prediction": false,
+    "new_prediction": true,
+    "old_outcome": "FN",
+    "new_outcome": "TP",
+    "new_status": "CONFIRMED_TEMPORAL_CONFLICT",
+    "checks": [
+      "CONTRACT_TERM"
+    ]
+  },
+  {
+    "case_id": "T16",
+    "stratum": "ORIGINAL_PHASE1",
+    "gold": true,
+    "old_prediction": false,
+    "new_prediction": true,
+    "old_outcome": "FN",
+    "new_outcome": "TP",
+    "new_status": "CONFIRMED_TEMPORAL_CONFLICT",
+    "checks": [
+      "PARSE_UNCERTAINTY",
+      "CONTRACT_TERM"
+    ]
+  },
+  {
+    "case_id": "T17",
+    "stratum": "ORIGINAL_PHASE1",
+    "gold": true,
+    "old_prediction": true,
+    "new_prediction": true,
+    "old_outcome": "TP",
+    "new_outcome": "TP",
+    "new_status": "CONFIRMED_TEMPORAL_CONFLICT",
+    "checks": [
+      "CONTRACT_TERM"
+    ]
+  },
+  {
+    "case_id": "N01",
+    "stratum": "NEW_MECHANICAL_SYNTHETIC",
+    "gold": false,
+    "old_prediction": false,
+    "new_prediction": false,
+    "old_outcome": "TN",
+    "new_outcome": "TN",
+    "new_status": "CONSISTENT",
+    "checks": [
+      "CONTRACT_TERM"
+    ]
+  },
+  {
+    "case_id": "N02",
+    "stratum": "NEW_MECHANICAL_SYNTHETIC",
+    "gold": true,
+    "old_prediction": true,
+    "new_prediction": true,
+    "old_outcome": "TP",
+    "new_outcome": "TP",
+    "new_status": "CONFIRMED_TEMPORAL_CONFLICT",
+    "checks": [
+      "CONTRACT_TERM"
+    ]
+  },
+  {
+    "case_id": "N03",
+    "stratum": "NEW_MECHANICAL_SYNTHETIC",
+    "gold": false,
+    "old_prediction": true,
+    "new_prediction": false,
+    "old_outcome": "FP",
+    "new_outcome": "TN",
+    "new_status": "CONSISTENT",
+    "checks": [
+      "CONTRACT_TERM",
+      "CONTRACT_TERM"
+    ]
+  },
+  {
+    "case_id": "N04",
+    "stratum": "NEW_MECHANICAL_SYNTHETIC",
+    "gold": false,
+    "old_prediction": false,
+    "new_prediction": false,
+    "old_outcome": "TN",
+    "new_outcome": "TN",
+    "new_status": "CONSISTENT",
+    "checks": [
+      "UNCOMPARED_STATEMENT",
+      "UNCOMPARED_STATEMENT"
+    ]
+  },
+  {
+    "case_id": "N05",
+    "stratum": "NEW_MECHANICAL_SYNTHETIC",
+    "gold": true,
+    "old_prediction": false,
+    "new_prediction": true,
+    "old_outcome": "FN",
+    "new_outcome": "TP",
+    "new_status": "CONFIRMED_TEMPORAL_CONFLICT",
+    "checks": [
+      "SAME_EVENT_DATE"
+    ]
+  },
+  {
+    "case_id": "N06",
+    "stratum": "NEW_MECHANICAL_SYNTHETIC",
+    "gold": false,
+    "old_prediction": false,
+    "new_prediction": false,
+    "old_outcome": "TN",
+    "new_outcome": "TN",
+    "new_status": "CONSISTENT",
+    "checks": [
+      "SAME_EVENT_DATE"
+    ]
+  },
+  {
+    "case_id": "N07",
+    "stratum": "NEW_MECHANICAL_SYNTHETIC",
+    "gold": false,
+    "old_prediction": false,
+    "new_prediction": false,
+    "old_outcome": "TN",
+    "new_outcome": "TN",
+    "new_status": "CONSISTENT",
+    "checks": [
+      "UNCOMPARED_STATEMENT",
+      "UNCOMPARED_STATEMENT"
+    ]
+  },
+  {
+    "case_id": "N09",
+    "stratum": "NEW_MECHANICAL_SYNTHETIC",
+    "gold": false,
+    "old_prediction": false,
+    "new_prediction": false,
+    "old_outcome": "TN",
+    "new_outcome": "TN",
+    "new_status": "CONSISTENT",
+    "checks": [
+      "RELATIVE_DEADLINE"
+    ]
+  },
+  {
+    "case_id": "N10",
+    "stratum": "NEW_MECHANICAL_SYNTHETIC",
+    "gold": true,
+    "old_prediction": false,
+    "new_prediction": true,
+    "old_outcome": "FN",
+    "new_outcome": "TP",
+    "new_status": "CONFIRMED_TEMPORAL_CONFLICT",
+    "checks": [
+      "RELATIVE_DEADLINE"
+    ]
+  },
+  {
+    "case_id": "N11",
+    "stratum": "NEW_MECHANICAL_SYNTHETIC",
+    "gold": true,
+    "old_prediction": false,
+    "new_prediction": true,
+    "old_outcome": "FN",
+    "new_outcome": "TP",
+    "new_status": "CONFIRMED_TEMPORAL_CONFLICT",
+    "checks": [
+      "RELATIVE_DEADLINE"
+    ]
+  },
+  {
+    "case_id": "N12",
+    "stratum": "NEW_MECHANICAL_SYNTHETIC",
+    "gold": false,
+    "old_prediction": false,
+    "new_prediction": false,
+    "old_outcome": "TN",
+    "new_outcome": "TN",
+    "new_status": "REVIEW_REQUIRED",
+    "checks": [
+      "DIFFERENT_TRIGGER_BASES",
+      "UNCOMPARED_STATEMENT",
+      "UNCOMPARED_STATEMENT"
+    ]
+  },
+  {
+    "case_id": "N13",
+    "stratum": "NEW_MECHANICAL_SYNTHETIC",
+    "gold": false,
+    "old_prediction": false,
+    "new_prediction": false,
+    "old_outcome": "TN",
+    "new_outcome": "TN",
+    "new_status": "POTENTIAL_INCONSISTENCY",
+    "checks": [
+      "DEADLINE_COMPATIBILITY",
+      "UNCOMPARED_STATEMENT"
+    ]
+  },
+  {
+    "case_id": "N14",
+    "stratum": "NEW_MECHANICAL_SYNTHETIC",
+    "gold": true,
+    "old_prediction": false,
+    "new_prediction": true,
+    "old_outcome": "FN",
+    "new_outcome": "TP",
+    "new_status": "CONFIRMED_TEMPORAL_CONFLICT",
+    "checks": [
+      "DEADLINE_COMPATIBILITY",
+      "UNCOMPARED_STATEMENT"
+    ]
+  },
+  {
+    "case_id": "N15",
+    "stratum": "NEW_MECHANICAL_SYNTHETIC",
+    "gold": true,
+    "old_prediction": false,
+    "new_prediction": true,
+    "old_outcome": "FN",
+    "new_outcome": "TP",
+    "new_status": "CONFIRMED_TEMPORAL_CONFLICT",
+    "checks": [
+      "DEADLINE_COMPATIBILITY",
+      "UNCOMPARED_STATEMENT"
+    ]
+  },
+  {
+    "case_id": "N16",
+    "stratum": "NEW_MECHANICAL_SYNTHETIC",
+    "gold": false,
+    "old_prediction": false,
+    "new_prediction": false,
+    "old_outcome": "TN",
+    "new_outcome": "TN",
+    "new_status": "POTENTIAL_INCONSISTENCY",
+    "checks": [
+      "DEADLINE_COMPATIBILITY",
+      "UNCOMPARED_STATEMENT"
+    ]
+  },
+  {
+    "case_id": "N17",
+    "stratum": "NEW_MECHANICAL_SYNTHETIC",
+    "gold": false,
+    "old_prediction": false,
+    "new_prediction": false,
+    "old_outcome": "TN",
+    "new_outcome": "TN",
+    "new_status": "UNSUPPORTED",
+    "checks": [
+      "PARSE_UNCERTAINTY",
+      "UNCOMPARED_STATEMENT",
+      "UNCOMPARED_STATEMENT"
+    ]
+  },
+  {
+    "case_id": "N18",
+    "stratum": "NEW_MECHANICAL_SYNTHETIC",
+    "gold": false,
+    "old_prediction": false,
+    "new_prediction": false,
+    "old_outcome": "TN",
+    "new_outcome": "TN",
+    "new_status": "REVIEW_REQUIRED",
+    "checks": [
+      "UNRESOLVED_TRIGGER"
+    ]
+  },
+  {
+    "case_id": "N19",
+    "stratum": "NEW_MECHANICAL_SYNTHETIC",
+    "gold": false,
+    "old_prediction": false,
+    "new_prediction": false,
+    "old_outcome": "TN",
+    "new_outcome": "TN",
+    "new_status": "REVIEW_REQUIRED",
+    "checks": [
+      "PARSE_UNCERTAINTY",
+      "UNCOMPARED_STATEMENT"
+    ]
+  },
+  {
+    "case_id": "N20",
+    "stratum": "NEW_MECHANICAL_SYNTHETIC",
+    "gold": false,
+    "old_prediction": false,
+    "new_prediction": false,
+    "old_outcome": "TN",
+    "new_outcome": "TN",
+    "new_status": "REVIEW_REQUIRED",
+    "checks": [
+      "PARSE_UNCERTAINTY",
+      "PARSE_UNCERTAINTY"
+    ]
+  },
+  {
+    "case_id": "N21",
+    "stratum": "NEW_MECHANICAL_SYNTHETIC",
+    "gold": false,
+    "old_prediction": false,
+    "new_prediction": false,
+    "old_outcome": "TN",
+    "new_outcome": "TN",
+    "new_status": "REVIEW_REQUIRED",
+    "checks": [
+      "PARSE_UNCERTAINTY"
+    ]
+  },
+  {
+    "case_id": "N22",
+    "stratum": "NEW_MECHANICAL_SYNTHETIC",
+    "gold": false,
+    "old_prediction": true,
+    "new_prediction": false,
+    "old_outcome": "FP",
+    "new_outcome": "TN",
+    "new_status": "REVIEW_REQUIRED",
+    "checks": [
+      "PARSE_UNCERTAINTY",
+      "PARSE_UNCERTAINTY"
+    ]
+  },
+  {
+    "case_id": "N23",
+    "stratum": "NEW_MECHANICAL_SYNTHETIC",
+    "gold": false,
+    "old_prediction": false,
+    "new_prediction": false,
+    "old_outcome": "TN",
+    "new_outcome": "TN",
+    "new_status": "CONSISTENT",
+    "checks": [
+      "UNCOMPARED_STATEMENT",
+      "UNCOMPARED_STATEMENT"
+    ]
+  },
+  {
+    "case_id": "N25",
+    "stratum": "NEW_MECHANICAL_SYNTHETIC",
+    "gold": false,
+    "old_prediction": true,
+    "new_prediction": false,
+    "old_outcome": "FP",
+    "new_outcome": "TN",
+    "new_status": "CONSISTENT",
+    "checks": [
+      "CONTRACT_TERM",
+      "CONTRACT_TERM"
+    ]
+  },
+  {
+    "case_id": "N26",
+    "stratum": "NEW_MECHANICAL_SYNTHETIC",
+    "gold": false,
+    "old_prediction": false,
+    "new_prediction": false,
+    "old_outcome": "TN",
+    "new_outcome": "TN",
+    "new_status": "POTENTIAL_INCONSISTENCY",
+    "checks": [
+      "SAME_EVENT_DATE"
+    ]
+  },
+  {
+    "case_id": "N27",
+    "stratum": "NEW_MECHANICAL_SYNTHETIC",
+    "gold": false,
+    "old_prediction": false,
+    "new_prediction": false,
+    "old_outcome": "TN",
+    "new_outcome": "TN",
+    "new_status": "REVIEW_REQUIRED",
+    "checks": [
+      "PARSE_UNCERTAINTY",
+      "UNCOMPARED_STATEMENT"
+    ]
+  },
+  {
+    "case_id": "N28",
+    "stratum": "NEW_MECHANICAL_SYNTHETIC",
+    "gold": true,
+    "old_prediction": true,
+    "new_prediction": true,
+    "old_outcome": "TP",
+    "new_outcome": "TP",
+    "new_status": "CONFIRMED_TEMPORAL_CONFLICT",
+    "checks": [
+      "PARSE_UNCERTAINTY",
+      "PARSE_UNCERTAINTY",
+      "EXPLICIT_DATE_RANGE"
+    ]
+  },
+  {
+    "case_id": "N29",
+    "stratum": "NEW_MECHANICAL_SYNTHETIC",
+    "gold": false,
+    "old_prediction": false,
+    "new_prediction": false,
+    "old_outcome": "TN",
+    "new_outcome": "TN",
+    "new_status": "REVIEW_REQUIRED",
+    "checks": [
+      "PARSE_UNCERTAINTY",
+      "PARSE_UNCERTAINTY"
+    ]
+  },
+  {
+    "case_id": "N30",
+    "stratum": "NEW_MECHANICAL_SYNTHETIC",
+    "gold": false,
+    "old_prediction": true,
+    "new_prediction": false,
+    "old_outcome": "FP",
+    "new_outcome": "TN",
+    "new_status": "CONSISTENT",
+    "checks": [
+      "PREPAYMENT_CANDIDATE"
+    ]
+  },
+  {
+    "case_id": "N31",
+    "stratum": "NEW_MECHANICAL_SYNTHETIC",
+    "gold": true,
+    "old_prediction": false,
+    "new_prediction": true,
+    "old_outcome": "FN",
+    "new_outcome": "TP",
+    "new_status": "CONFIRMED_TEMPORAL_CONFLICT",
+    "checks": [
+      "MILESTONE_SEQUENCE"
+    ]
+  },
+  {
+    "case_id": "N32",
+    "stratum": "NEW_MECHANICAL_SYNTHETIC",
+    "gold": false,
+    "old_prediction": false,
+    "new_prediction": false,
+    "old_outcome": "TN",
+    "new_outcome": "TN",
+    "new_status": "CONSISTENT",
+    "checks": [
+      "UNCOMPARED_STATEMENT",
+      "UNCOMPARED_STATEMENT"
+    ]
+  },
+  {
+    "case_id": "N33",
+    "stratum": "NEW_MECHANICAL_SYNTHETIC",
+    "gold": false,
+    "old_prediction": false,
+    "new_prediction": false,
+    "old_outcome": "TN",
+    "new_outcome": "TN",
+    "new_status": "UNSUPPORTED",
+    "checks": [
+      "PARSE_UNCERTAINTY",
+      "UNCOMPARED_STATEMENT",
+      "UNCOMPARED_STATEMENT"
+    ]
+  },
+  {
+    "case_id": "N34",
+    "stratum": "NEW_MECHANICAL_SYNTHETIC",
+    "gold": false,
+    "old_prediction": false,
+    "new_prediction": false,
+    "old_outcome": "TN",
+    "new_outcome": "TN",
+    "new_status": "CONSISTENT",
+    "checks": [
+      "DEADLINE_COMPATIBILITY",
+      "UNCOMPARED_STATEMENT"
+    ]
+  },
+  {
+    "case_id": "N35",
+    "stratum": "NEW_MECHANICAL_SYNTHETIC",
+    "gold": false,
+    "old_prediction": false,
+    "new_prediction": false,
+    "old_outcome": "TN",
+    "new_outcome": "TN",
+    "new_status": "UNSUPPORTED",
+    "checks": [
+      "PARSE_UNCERTAINTY",
+      "UNCOMPARED_STATEMENT"
+    ]
+  },
+  {
+    "case_id": "N36",
+    "stratum": "NEW_MECHANICAL_SYNTHETIC",
+    "gold": true,
+    "old_prediction": false,
+    "new_prediction": true,
+    "old_outcome": "FN",
+    "new_outcome": "TP",
+    "new_status": "CONFIRMED_TEMPORAL_CONFLICT",
+    "checks": [
+      "RELATIVE_DEADLINE"
+    ]
+  },
+  {
+    "case_id": "N37",
+    "stratum": "NEW_MECHANICAL_SYNTHETIC",
+    "gold": false,
+    "old_prediction": false,
+    "new_prediction": false,
+    "old_outcome": "TN",
+    "new_outcome": "TN",
+    "new_status": "REVIEW_REQUIRED",
+    "checks": [
+      "DIFFERENT_TRIGGER_BASES",
+      "UNCOMPARED_STATEMENT",
+      "UNCOMPARED_STATEMENT"
+    ]
+  },
+  {
+    "case_id": "N38",
+    "stratum": "NEW_MECHANICAL_SYNTHETIC",
+    "gold": true,
+    "old_prediction": false,
+    "new_prediction": true,
+    "old_outcome": "FN",
+    "new_outcome": "TP",
+    "new_status": "CONFIRMED_TEMPORAL_CONFLICT",
+    "checks": [
+      "CONTRACT_TERM"
+    ]
+  },
+  {
+    "case_id": "N39",
+    "stratum": "NEW_MECHANICAL_SYNTHETIC",
+    "gold": false,
+    "old_prediction": false,
+    "new_prediction": false,
+    "old_outcome": "TN",
+    "new_outcome": "TN",
+    "new_status": "REVIEW_REQUIRED",
+    "checks": [
+      "PARSE_UNCERTAINTY"
+    ]
+  },
+  {
+    "case_id": "N40",
+    "stratum": "NEW_MECHANICAL_SYNTHETIC",
+    "gold": false,
+    "old_prediction": false,
+    "new_prediction": false,
+    "old_outcome": "TN",
+    "new_outcome": "TN",
+    "new_status": "CONSISTENT",
+    "checks": [
+      "CONTRACT_TERM"
+    ]
+  },
+  {
+    "case_id": "N41",
+    "stratum": "NEW_MECHANICAL_SYNTHETIC",
+    "gold": false,
+    "old_prediction": true,
+    "new_prediction": false,
+    "old_outcome": "FP",
+    "new_outcome": "TN",
+    "new_status": "REVIEW_REQUIRED",
+    "checks": [
+      "PARSE_UNCERTAINTY",
+      "UNCOMPARED_STATEMENT"
+    ]
+  },
+  {
+    "case_id": "N42",
+    "stratum": "NEW_MECHANICAL_SYNTHETIC",
+    "gold": true,
+    "old_prediction": true,
+    "new_prediction": true,
+    "old_outcome": "TP",
+    "new_outcome": "TP",
+    "new_status": "CONFIRMED_TEMPORAL_CONFLICT",
+    "checks": [
+      "CONTRACT_TERM"
+    ]
+  },
+  {
+    "case_id": "N43",
+    "stratum": "NEW_MECHANICAL_SYNTHETIC",
+    "gold": true,
+    "old_prediction": false,
+    "new_prediction": true,
+    "old_outcome": "FN",
+    "new_outcome": "TP",
+    "new_status": "CONFIRMED_TEMPORAL_CONFLICT",
+    "checks": [
+      "RELATIVE_DEADLINE"
+    ]
+  },
+  {
+    "case_id": "N44",
+    "stratum": "NEW_MECHANICAL_SYNTHETIC",
+    "gold": false,
+    "old_prediction": false,
+    "new_prediction": false,
+    "old_outcome": "TN",
+    "new_outcome": "TN",
+    "new_status": "REVIEW_REQUIRED",
+    "checks": [
+      "PARSE_UNCERTAINTY",
+      "UNCOMPARED_STATEMENT"
+    ]
+  },
+  {
+    "case_id": "N45",
+    "stratum": "NEW_MECHANICAL_SYNTHETIC",
+    "gold": false,
+    "old_prediction": false,
+    "new_prediction": false,
+    "old_outcome": "TN",
+    "new_outcome": "TN",
+    "new_status": "CONSISTENT",
+    "checks": [
+      "SAME_EVENT_DATE"
+    ]
+  },
+  {
+    "case_id": "N46",
+    "stratum": "NEW_MECHANICAL_SYNTHETIC",
+    "gold": false,
+    "old_prediction": false,
+    "new_prediction": false,
+    "old_outcome": "TN",
+    "new_outcome": "TN",
+    "new_status": "REVIEW_REQUIRED",
+    "checks": [
+      "PARSE_UNCERTAINTY",
+      "PARSE_UNCERTAINTY"
+    ]
+  },
+  {
+    "case_id": "N47",
+    "stratum": "NEW_MECHANICAL_SYNTHETIC",
+    "gold": false,
+    "old_prediction": false,
+    "new_prediction": false,
+    "old_outcome": "TN",
+    "new_outcome": "TN",
+    "new_status": "CONSISTENT",
+    "checks": [
+      "UNCOMPARED_STATEMENT",
+      "UNCOMPARED_STATEMENT"
+    ]
+  },
+  {
+    "case_id": "N48",
+    "stratum": "NEW_MECHANICAL_SYNTHETIC",
+    "gold": false,
+    "old_prediction": false,
+    "new_prediction": false,
+    "old_outcome": "TN",
+    "new_outcome": "TN",
+    "new_status": "POTENTIAL_INCONSISTENCY",
+    "checks": [
+      "DEADLINE_COMPATIBILITY",
+      "UNCOMPARED_STATEMENT"
+    ]
+  },
+  {
+    "case_id": "N49",
+    "stratum": "NEW_MECHANICAL_SYNTHETIC",
+    "gold": true,
+    "old_prediction": true,
+    "new_prediction": true,
+    "old_outcome": "TP",
+    "new_outcome": "TP",
+    "new_status": "CONFIRMED_TEMPORAL_CONFLICT",
+    "checks": [
+      "PARSE_UNCERTAINTY",
+      "PARSE_UNCERTAINTY",
+      "EXPLICIT_DATE_RANGE"
+    ]
+  },
+  {
+    "case_id": "N50",
+    "stratum": "NEW_MECHANICAL_SYNTHETIC",
+    "gold": false,
+    "old_prediction": false,
+    "new_prediction": false,
+    "old_outcome": "TN",
+    "new_outcome": "TN",
+    "new_status": "UNSUPPORTED",
+    "checks": [
+      "PARSE_UNCERTAINTY",
+      "UNCOMPARED_STATEMENT"
+    ]
+  },
+  {
+    "case_id": "N51",
+    "stratum": "NEW_MECHANICAL_SYNTHETIC",
+    "gold": false,
+    "old_prediction": false,
+    "new_prediction": false,
+    "old_outcome": "TN",
+    "new_outcome": "TN",
+    "new_status": "UNSUPPORTED",
+    "checks": [
+      "PARSE_UNCERTAINTY",
+      "PARSE_UNCERTAINTY"
+    ]
+  },
+  {
+    "case_id": "N52",
+    "stratum": "NEW_MECHANICAL_SYNTHETIC",
+    "gold": false,
+    "old_prediction": false,
+    "new_prediction": false,
+    "old_outcome": "TN",
+    "new_outcome": "TN",
+    "new_status": "REVIEW_REQUIRED",
+    "checks": [
+      "QUALIFIED_DEADLINE"
+    ]
+  },
+  {
+    "case_id": "C01",
+    "stratum": "POST_IMPLEMENTATION_MECHANICAL_CHALLENGE",
+    "gold": false,
+    "old_prediction": false,
+    "new_prediction": false,
+    "old_outcome": "TN",
+    "new_outcome": "TN",
+    "new_status": "REVIEW_REQUIRED",
+    "checks": [
+      "PARSE_UNCERTAINTY",
+      "UNCOMPARED_STATEMENT"
+    ]
+  },
+  {
+    "case_id": "C02",
+    "stratum": "POST_IMPLEMENTATION_MECHANICAL_CHALLENGE",
+    "gold": false,
+    "old_prediction": false,
+    "new_prediction": false,
+    "old_outcome": "TN",
+    "new_outcome": "TN",
+    "new_status": "CONSISTENT",
+    "checks": [
+      "UNCOMPARED_STATEMENT",
+      "UNCOMPARED_STATEMENT"
+    ]
+  },
+  {
+    "case_id": "C03",
+    "stratum": "POST_IMPLEMENTATION_MECHANICAL_CHALLENGE",
+    "gold": false,
+    "old_prediction": false,
+    "new_prediction": false,
+    "old_outcome": "TN",
+    "new_outcome": "TN",
+    "new_status": "CONSISTENT",
+    "checks": [
+      "UNCOMPARED_STATEMENT",
+      "UNCOMPARED_STATEMENT"
+    ]
+  },
+  {
+    "case_id": "C04",
+    "stratum": "POST_IMPLEMENTATION_MECHANICAL_CHALLENGE",
+    "gold": false,
+    "old_prediction": false,
+    "new_prediction": false,
+    "old_outcome": "TN",
+    "new_outcome": "TN",
+    "new_status": "CONSISTENT",
+    "checks": [
+      "RELATIVE_DEADLINE"
+    ]
+  },
+  {
+    "case_id": "C05",
+    "stratum": "POST_IMPLEMENTATION_MECHANICAL_CHALLENGE",
+    "gold": true,
+    "old_prediction": false,
+    "new_prediction": true,
+    "old_outcome": "FN",
+    "new_outcome": "TP",
+    "new_status": "CONFIRMED_TEMPORAL_CONFLICT",
+    "checks": [
+      "RELATIVE_DEADLINE"
+    ]
+  },
+  {
+    "case_id": "C06",
+    "stratum": "POST_IMPLEMENTATION_MECHANICAL_CHALLENGE",
+    "gold": false,
+    "old_prediction": false,
+    "new_prediction": false,
+    "old_outcome": "TN",
+    "new_outcome": "TN",
+    "new_status": "REVIEW_REQUIRED",
+    "checks": [
+      "QUALIFIED_DEADLINE",
+      "UNCOMPARED_STATEMENT",
+      "UNCOMPARED_STATEMENT"
+    ]
+  },
+  {
+    "case_id": "C07",
+    "stratum": "POST_IMPLEMENTATION_MECHANICAL_CHALLENGE",
+    "gold": true,
+    "old_prediction": false,
+    "new_prediction": true,
+    "old_outcome": "FN",
+    "new_outcome": "TP",
+    "new_status": "CONFIRMED_TEMPORAL_CONFLICT",
+    "checks": [
+      "PARSE_UNCERTAINTY",
+      "PARSE_UNCERTAINTY",
+      "EXPLICIT_DATE_RANGE"
+    ]
+  },
+  {
+    "case_id": "C08",
+    "stratum": "POST_IMPLEMENTATION_MECHANICAL_CHALLENGE",
+    "gold": false,
+    "old_prediction": false,
+    "new_prediction": false,
+    "old_outcome": "TN",
+    "new_outcome": "TN",
+    "new_status": "POTENTIAL_INCONSISTENCY",
+    "checks": [
+      "SAME_EVENT_DATE"
+    ]
+  },
+  {
+    "case_id": "C09",
+    "stratum": "POST_IMPLEMENTATION_MECHANICAL_CHALLENGE",
+    "gold": false,
+    "old_prediction": false,
+    "new_prediction": false,
+    "old_outcome": "TN",
+    "new_outcome": "TN",
+    "new_status": "UNSUPPORTED",
+    "checks": [
+      "PARSE_UNCERTAINTY",
+      "UNCOMPARED_STATEMENT",
+      "UNCOMPARED_STATEMENT"
+    ]
+  },
+  {
+    "case_id": "C10",
+    "stratum": "POST_IMPLEMENTATION_MECHANICAL_CHALLENGE",
+    "gold": false,
+    "old_prediction": false,
+    "new_prediction": false,
+    "old_outcome": "TN",
+    "new_outcome": "TN",
+    "new_status": "REVIEW_REQUIRED",
+    "checks": [
+      "PARSE_UNCERTAINTY",
+      "PARSE_UNCERTAINTY"
+    ]
+  },
+  {
+    "case_id": "C11",
+    "stratum": "POST_IMPLEMENTATION_MECHANICAL_CHALLENGE",
+    "gold": false,
+    "old_prediction": false,
+    "new_prediction": false,
+    "old_outcome": "TN",
+    "new_outcome": "TN",
+    "new_status": "CONSISTENT",
+    "checks": [
+      "UNCOMPARED_STATEMENT",
+      "UNCOMPARED_STATEMENT"
+    ]
+  },
+  {
+    "case_id": "C12",
+    "stratum": "POST_IMPLEMENTATION_MECHANICAL_CHALLENGE",
+    "gold": false,
+    "old_prediction": true,
+    "new_prediction": false,
+    "old_outcome": "FP",
+    "new_outcome": "TN",
+    "new_status": "REVIEW_REQUIRED",
+    "checks": [
+      "PARSE_UNCERTAINTY",
+      "PARSE_UNCERTAINTY"
+    ]
+  }
+]

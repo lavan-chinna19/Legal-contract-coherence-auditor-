@@ -86,25 +86,11 @@ export function ClauseDocumentViewer({
           <h3 style={{ fontSize: "0.95rem", fontWeight: 700, color: "var(--color-text-primary)", margin: 0 }}>
             Contract Document
           </h3>
-          <span
-            style={{
-              fontSize: "0.72rem",
-              padding: "0.15rem 0.45rem",
-              borderRadius: "4px",
-              background: "var(--color-surface)",
-              border: "1px solid var(--color-border)",
-              color: "var(--color-text-secondary)",
-              fontFamily: "ui-monospace, monospace",
-              maxWidth: "100%",
-              overflowWrap: "anywhere",
-            }}
-          >
-            {docId}
-          </span>
+          <details className="source-details"><summary>Document details</summary><code>{docId}</code></details>
         </div>
 
         <div style={{ fontSize: "0.75rem", color: "var(--color-text-muted)" }}>
-          {clauses.length} Continuous Clauses
+          {clauses.length} clauses
         </div>
       </div>
 

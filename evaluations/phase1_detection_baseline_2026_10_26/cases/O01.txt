@@ -1,0 +1,21 @@
+Section 1. Preamble and Parties. This Master Services Agreement is entered into as of January 1, 2025 by and between Client Inc. and Provider LLC.
+
+Section 2. Scope of Services. Provider agrees to provide software development and consulting services as described in Exhibit A attached hereto.
+
+Section 3. Payment Terms. Invoices shall be payable within thirty (30) days of receipt. Payment due date shall be on or after the Effective Date.
+
+Section 4. Intellectual Property. All work product developed pursuant to Section 2 shall be deemed work made for hire owned by Client.
+
+Section 5. Confidentiality. Each party agrees to maintain in strict confidence all proprietary information disclosed under this Agreement.
+
+Section 6. Term and Termination. The effective date of this Agreement is January 1, 2025 and the termination date shall be December 31, 2025.
+
+Section 7. Indemnification. Provider shall defend and indemnify Client against any third-party claims arising from a breach of Section 5.
+
+Section 8. Limitation of Liability. Neither party shall be liable for indirect or consequential damages arising under this Agreement.
+
+Section 9. Governing Law. This Agreement shall be governed by and construed in accordance with the laws of the State of Delaware.
+
+Section 10. Miscellaneous. This Agreement, including Exhibit A, constitutes the entire understanding between the parties.
+
+Exhibit A. Statement of Work. Scope details, technical deliverables, and milestone specifications.

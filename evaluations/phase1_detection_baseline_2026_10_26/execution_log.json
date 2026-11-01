@@ -1,0 +1,23 @@
+{
+  "scope": "Commands actually executed in Phase 1; no invented test results. Times in metadata/XML are measured separately.",
+  "commands": [
+    {"command": "tmp/final-release/clean-env/Scripts/python.exe evaluations/phase1_detection_baseline_2026_10_26/build_dataset.py", "exit_code": 0, "result": "70 cases, 59 mechanical, 11 provisional, 0 independent"},
+    {"command": "tmp/final-release/clean-env/Scripts/python.exe -m py_compile evaluations/phase1_detection_baseline_2026_10_26/run_baseline.py", "exit_code": 0},
+    {"command": "tmp/final-release/clean-env/Scripts/python.exe evaluations/phase1_detection_baseline_2026_10_26/run_baseline.py --freeze", "exit_code": 0, "result": "Manifest frozen before any predictions"},
+    {"command": "tmp/final-release/clean-env/Scripts/python.exe evaluations/phase1_detection_baseline_2026_10_26/run_baseline.py --run-id frozen_primary", "exit_code": 0, "analyses_successful": 148, "analyses_failed": 0, "parser_rejection_probes_passed": 4},
+    {"command": "tmp/final-release/clean-env/Scripts/python.exe -m pytest tests/test_rules.py tests/test_final_release.py tests/test_ensemble.py tests/test_severity.py tests/test_segmentation.py -q", "exit_code": 1, "result": "Restricted sandbox attempt stalled at first HTTP test after 15 progress dots; interrupted with Ctrl-C. No completed suite result. Not counted as pass."},
+    {"command": "tmp/final-release/clean-env/Scripts/python.exe -m pytest evaluations/phase1_detection_baseline_2026_10_26/test_evaluation_contract.py -q", "exit_code": 1, "passed": 9, "failed": 1, "result": "New harness assertion incorrectly expected trailing newline in case files. Assertion fixed to existing generator contract; frozen corpus and predictions unchanged."},
+    {"command": "tmp/final-release/clean-env/Scripts/python.exe -m pytest evaluations/phase1_detection_baseline_2026_10_26/test_evaluation_contract.py -q --junitxml=evaluations/phase1_detection_baseline_2026_10_26/evaluation_tests.xml", "exit_code": 0, "passed": 10, "failed": 0, "skipped": 0, "seconds": 0.25},
+    {"command": "tmp/final-release/clean-env/Scripts/python.exe evaluations/phase1_detection_baseline_2026_10_26/run_baseline.py --run-id frozen_replication", "exit_code": 0, "analyses_successful": 148, "analyses_failed": 0, "parser_rejection_probes_passed": 4},
+    {"command": "tmp/final-release/clean-env/Scripts/python.exe -m pytest tests/test_rules.py tests/test_final_release.py tests/test_ensemble.py tests/test_severity.py tests/test_segmentation.py -q --junitxml=evaluations/phase1_detection_baseline_2026_10_26/regression_tests.xml", "environment": "Approved local execution with TestClient socket communication; offline models; isolated storage", "exit_code": 0, "passed": 43, "failed": 0, "skipped": 0, "warnings": 4, "seconds": 79.70},
+    {"command": "tmp/final-release/clean-env/Scripts/python.exe evaluations/phase1_detection_baseline_2026_10_26/analyze_results.py", "exit_code": 0, "result": "148/148 scientific prediction records equal after canonicalizing specifically identified unordered evidence fields; raw evidence order equality 3/148. Both raw runs preserved."},
+    {"command": "tmp/final-release/clean-env/Scripts/python.exe evaluations/phase1_detection_baseline_2026_10_26/verify_preservation.py", "exit_code": 0, "result": "1040 existing files unchanged; none missing; Git HEAD unchanged"},
+    {"command": "tmp/final-release/clean-env/Scripts/python.exe evaluations/phase1_detection_baseline_2026_10_26/build_dataset.py --output evaluations/phase1_detection_baseline_2026_10_26/runtime/corpus_reproduction", "exit_code": 0, "result": "Regenerated 70 cases; separate byte comparison matched 71/71 corpus and case files"},
+    {"command": "tmp/final-release/clean-env/Scripts/python.exe -m pytest evaluations/phase1_detection_baseline_2026_10_26/test_evaluation_contract.py -q --junitxml=evaluations/phase1_detection_baseline_2026_10_26/evaluation_tests.xml", "exit_code": 0, "passed": 12, "failed": 0, "skipped": 0, "seconds": 0.45, "result": "Final suite includes two additional evidence comparison/coverage invariants; saved XML now corresponds to this final run"}
+  ],
+  "warnings": [
+    "Encoder load reports unused pretraining task-head keys when loading BertModel embeddings; actual encoder weights loaded and evaluated.",
+    "Existing libraries emit FastAPI/Starlette HTTP client, WordPiece and SentenceTransformer method deprecations. Warnings were not suppressed.",
+    "The initial repeatability comparison flagged evidence-list iteration order. Inspection showed no numerical prediction differences; explicitly canonicalized only unordered fields, recorded raw order differences and retained both runs."
+  ]
+}

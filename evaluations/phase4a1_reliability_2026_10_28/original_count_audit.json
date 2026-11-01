@@ -1,0 +1,37 @@
+{
+  "unit": "One preselected obligation pair per synthetic document; all emitted pairs are a separate workload denominator",
+  "checks": [
+    {
+      "run": "development_v1",
+      "documents": 28,
+      "annotated_pair_decisions": 28,
+      "binary_labelled": 14,
+      "binary_decided": 14,
+      "binary_abstained": 0,
+      "all_decided": 14,
+      "all_abstained": 14,
+      "abstained_binary_positives": [],
+      "provisional": [
+        "development_complex_semantics"
+      ]
+    },
+    {
+      "run": "evaluation_first_pass",
+      "documents": 30,
+      "annotated_pair_decisions": 30,
+      "binary_labelled": 16,
+      "binary_decided": 15,
+      "binary_abstained": 1,
+      "all_decided": 15,
+      "all_abstained": 15,
+      "abstained_binary_positives": [
+        "evaluation_passive_identity"
+      ],
+      "provisional": [
+        "evaluation_complex_semantics"
+      ]
+    }
+  ],
+  "explanation": "Reserved binary n16 includes 15 decided cases and one positive abstention, counted FN. Coverage15/30 uses every document including 13 null-binary uncertainty/provisional cases plus the explicit unsupported diagnostic. These denominators measure different things.",
+  "recurrence_correction": "Two field cells per split: copy of named invoice type is invalid as unique monthly occurrence. Corrected annotation overlay is separate; original labels/predictions remain untouched."
+}

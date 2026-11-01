@@ -1,0 +1,21 @@
+{
+  "benchmark_title": "LexAudit Phase 4D Self Red-Team Robustness Benchmark",
+  "timestamp": "2026-10-21T09:21:13.408429+00:00",
+  "frozen_pipeline_version": "LexAudit 4C-A Frozen Baseline",
+  "total_scenarios": 20,
+  "valid_transformations": 20,
+  "strict_eligible_scenarios": 16,
+  "metric_summaries": {
+    "structural_detection_rate": 0.0,
+    "mean_structural_channel_b_delta": 0.004,
+    "rule_precision": 1.0,
+    "rule_recall": 1.0,
+    "rule_f1": 1.0,
+    "duplicate_detector_available": false,
+    "mean_duplicate_channel_b_delta": 0.6809,
+    "deletion_consequence_detection_rate": 1.0,
+    "clean_control_false_positive_rate": 0.0,
+    "clean_control_mean_anomaly": 0.0,
+    "combined_detection_rate": 1.0
+  }
+}

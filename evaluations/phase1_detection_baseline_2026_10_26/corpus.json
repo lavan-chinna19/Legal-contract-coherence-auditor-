@@ -1,0 +1,3021 @@
+{
+  "schema_version": "1.0",
+  "dataset_role": "DETECTOR_AWARE_EXPOSED_DEVELOPMENT_DIAGNOSTIC",
+  "created_client_date": "2026-10-26",
+  "author": "AI-assisted case construction; no independent annotation",
+  "cases": [
+    {
+      "case_id": "R01",
+      "family": "valid_directional",
+      "split": "EXPOSED_DEVELOPMENT",
+      "label_provenance": "MECHANICALLY_VERIFIABLE_SYNTHETIC",
+      "independently_adjudicated": false,
+      "source_document": "cases/R01.txt",
+      "clauses": [
+        "Section 1. Definitions\nServices means the example work.",
+        "Section 2. Payment\nPayment follows Section 1 above."
+      ],
+      "expected_authored_units": 2,
+      "task_labels": {
+        "reference_presence": false,
+        "directional_position": false
+      },
+      "facts": {
+        "declarations": [
+          {
+            "identity": "1",
+            "clause_index": 0,
+            "anchor": "Section 1.",
+            "position": [
+              0,
+              0
+            ]
+          },
+          {
+            "identity": "2",
+            "clause_index": 1,
+            "anchor": "Section 2.",
+            "position": [
+              1,
+              0
+            ]
+          }
+        ],
+        "references": [
+          {
+            "target": "1",
+            "clause_index": 1,
+            "anchor": "Section 1 above",
+            "relation": "above",
+            "source_position": [
+              1,
+              35
+            ],
+            "target_count": 1,
+            "directional_conflict": false
+          }
+        ],
+        "date_scopes": null,
+        "range_pairs": null
+      },
+      "expected_graph_review": null,
+      "stratum": "canonical",
+      "interpretation": "",
+      "origin": "Agent-authored controlled synthetic text; no expert legal review."
+    },
+    {
+      "case_id": "R02",
+      "family": "incorrect_directional",
+      "split": "EXPOSED_DEVELOPMENT",
+      "label_provenance": "MECHANICALLY_VERIFIABLE_SYNTHETIC",
+      "independently_adjudicated": false,
+      "source_document": "cases/R02.txt",
+      "clauses": [
+        "Section 2. Payment\nPayment follows Section 1 above.",
+        "Section 1. Definitions\nServices means the example work."
+      ],
+      "expected_authored_units": 2,
+      "task_labels": {
+        "reference_presence": false,
+        "directional_position": true
+      },
+      "facts": {
+        "declarations": [
+          {
+            "identity": "2",
+            "clause_index": 0,
+            "anchor": "Section 2.",
+            "position": [
+              0,
+              0
+            ]
+          },
+          {
+            "identity": "1",
+            "clause_index": 1,
+            "anchor": "Section 1.",
+            "position": [
+              1,
+              0
+            ]
+          }
+        ],
+        "references": [
+          {
+            "target": "1",
+            "clause_index": 0,
+            "anchor": "Section 1 above",
+            "relation": "above",
+            "source_position": [
+              0,
+              35
+            ],
+            "target_count": 1,
+            "directional_conflict": true
+          }
+        ],
+        "date_scopes": null,
+        "range_pairs": null
+      },
+      "expected_graph_review": null,
+      "stratum": "canonical",
+      "interpretation": "",
+      "origin": "Agent-authored controlled synthetic text; no expert legal review."
+    },
+    {
+      "case_id": "R03",
+      "family": "valid_directional",
+      "split": "EXPOSED_DEVELOPMENT",
+      "label_provenance": "MECHANICALLY_VERIFIABLE_SYNTHETIC",
+      "independently_adjudicated": false,
+      "source_document": "cases/R03.txt",
+      "clauses": [
+        "Section 1. Payment\nPayment follows Section 2 below.",
+        "Section 2. Services\nThe services are defined here."
+      ],
+      "expected_authored_units": 2,
+      "task_labels": {
+        "reference_presence": false,
+        "directional_position": false
+      },
+      "facts": {
+        "declarations": [
+          {
+            "identity": "1",
+            "clause_index": 0,
+            "anchor": "Section 1.",
+            "position": [
+              0,
+              0
+            ]
+          },
+          {
+            "identity": "2",
+            "clause_index": 1,
+            "anchor": "Section 2.",
+            "position": [
+              1,
+              0
+            ]
+          }
+        ],
+        "references": [
+          {
+            "target": "2",
+            "clause_index": 0,
+            "anchor": "Section 2 below",
+            "relation": "below",
+            "source_position": [
+              0,
+              35
+            ],
+            "target_count": 1,
+            "directional_conflict": false
+          }
+        ],
+        "date_scopes": null,
+        "range_pairs": null
+      },
+      "expected_graph_review": null,
+      "stratum": "canonical",
+      "interpretation": "",
+      "origin": "Agent-authored controlled synthetic text; no expert legal review."
+    },
+    {
+      "case_id": "R04",
+      "family": "incorrect_directional",
+      "split": "EXPOSED_DEVELOPMENT",
+      "label_provenance": "MECHANICALLY_VERIFIABLE_SYNTHETIC",
+      "independently_adjudicated": false,
+      "source_document": "cases/R04.txt",
+      "clauses": [
+        "Section 2. Services\nThe services are defined here.",
+        "Section 1. Payment\nPayment follows Section 2 below."
+      ],
+      "expected_authored_units": 2,
+      "task_labels": {
+        "reference_presence": false,
+        "directional_position": true
+      },
+      "facts": {
+        "declarations": [
+          {
+            "identity": "2",
+            "clause_index": 0,
+            "anchor": "Section 2.",
+            "position": [
+              0,
+              0
+            ]
+          },
+          {
+            "identity": "1",
+            "clause_index": 1,
+            "anchor": "Section 1.",
+            "position": [
+              1,
+              0
+            ]
+          }
+        ],
+        "references": [
+          {
+            "target": "2",
+            "clause_index": 1,
+            "anchor": "Section 2 below",
+            "relation": "below",
+            "source_position": [
+              1,
+              35
+            ],
+            "target_count": 1,
+            "directional_conflict": true
+          }
+        ],
+        "date_scopes": null,
+        "range_pairs": null
+      },
+      "expected_graph_review": null,
+      "stratum": "canonical",
+      "interpretation": "",
+      "origin": "Agent-authored controlled synthetic text; no expert legal review."
+    },
+    {
+      "case_id": "R05",
+      "family": "valid_nondirectional",
+      "split": "EXPOSED_DEVELOPMENT",
+      "label_provenance": "MECHANICALLY_VERIFIABLE_SYNTHETIC",
+      "independently_adjudicated": false,
+      "source_document": "cases/R05.txt",
+      "clauses": [
+        "Section 1. Definitions\nServices means the example work.",
+        "Section 2. Payment\nSee Section 1."
+      ],
+      "expected_authored_units": 2,
+      "task_labels": {
+        "reference_presence": false,
+        "directional_position": false
+      },
+      "facts": {
+        "declarations": [
+          {
+            "identity": "1",
+            "clause_index": 0,
+            "anchor": "Section 1.",
+            "position": [
+              0,
+              0
+            ]
+          },
+          {
+            "identity": "2",
+            "clause_index": 1,
+            "anchor": "Section 2.",
+            "position": [
+              1,
+              0
+            ]
+          }
+        ],
+        "references": [
+          {
+            "target": "1",
+            "clause_index": 1,
+            "anchor": "Section 1.",
+            "relation": "nondirectional",
+            "source_position": [
+              1,
+              23
+            ],
+            "target_count": 1,
+            "directional_conflict": false
+          }
+        ],
+        "date_scopes": null,
+        "range_pairs": null
+      },
+      "expected_graph_review": null,
+      "stratum": "canonical",
+      "interpretation": "Moving an intact non-directional reference does not create a location defect.",
+      "origin": "Agent-authored controlled synthetic text; no expert legal review."
+    },
+    {
+      "case_id": "R06",
+      "family": "valid_nondirectional",
+      "split": "EXPOSED_DEVELOPMENT",
+      "label_provenance": "MECHANICALLY_VERIFIABLE_SYNTHETIC",
+      "independently_adjudicated": false,
+      "source_document": "cases/R06.txt",
+      "clauses": [
+        "Section 2. Payment\nSee Section 1.",
+        "Section 1. Definitions\nServices means the example work."
+      ],
+      "expected_authored_units": 2,
+      "task_labels": {
+        "reference_presence": false,
+        "directional_position": false
+      },
+      "facts": {
+        "declarations": [
+          {
+            "identity": "1",
+            "clause_index": 1,
+            "anchor": "Section 1.",
+            "position": [
+              1,
+              0
+            ]
+          },
+          {
+            "identity": "2",
+            "clause_index": 0,
+            "anchor": "Section 2.",
+            "position": [
+              0,
+              0
+            ]
+          }
+        ],
+        "references": [
+          {
+            "target": "1",
+            "clause_index": 0,
+            "anchor": "Section 1.",
+            "relation": "nondirectional",
+            "source_position": [
+              0,
+              23
+            ],
+            "target_count": 1,
+            "directional_conflict": false
+          }
+        ],
+        "date_scopes": null,
+        "range_pairs": null
+      },
+      "expected_graph_review": null,
+      "stratum": "canonical",
+      "interpretation": "Moving an intact non-directional reference does not create a location defect.",
+      "origin": "Agent-authored controlled synthetic text; no expert legal review."
+    },
+    {
+      "case_id": "R07",
+      "family": "valid_nondirectional",
+      "split": "EXPOSED_DEVELOPMENT",
+      "label_provenance": "MECHANICALLY_VERIFIABLE_SYNTHETIC",
+      "independently_adjudicated": false,
+      "source_document": "cases/R07.txt",
+      "clauses": [
+        "Section 3. Notices\nNotices must be written.",
+        "Section 1. Definitions\nServices means the example work.",
+        "Section 2. Payment\nSee Section 1."
+      ],
+      "expected_authored_units": 3,
+      "task_labels": {
+        "reference_presence": false,
+        "directional_position": false
+      },
+      "facts": {
+        "declarations": [
+          {
+            "identity": "3",
+            "clause_index": 0,
+            "anchor": "Section 3.",
+            "position": [
+              0,
+              0
+            ]
+          },
+          {
+            "identity": "1",
+            "clause_index": 1,
+            "anchor": "Section 1.",
+            "position": [
+              1,
+              0
+            ]
+          },
+          {
+            "identity": "2",
+            "clause_index": 2,
+            "anchor": "Section 2.",
+            "position": [
+              2,
+              0
+            ]
+          }
+        ],
+        "references": [
+          {
+            "target": "1",
+            "clause_index": 2,
+            "anchor": "Section 1.",
+            "relation": "nondirectional",
+            "source_position": [
+              2,
+              23
+            ],
+            "target_count": 1,
+            "directional_conflict": false
+          }
+        ],
+        "date_scopes": null,
+        "range_pairs": null
+      },
+      "expected_graph_review": null,
+      "stratum": "canonical",
+      "interpretation": "",
+      "origin": "Agent-authored controlled synthetic text; no expert legal review."
+    },
+    {
+      "case_id": "R08",
+      "family": "valid_directional",
+      "split": "EXPOSED_DEVELOPMENT",
+      "label_provenance": "MECHANICALLY_VERIFIABLE_SYNTHETIC",
+      "independently_adjudicated": false,
+      "source_document": "cases/R08.txt",
+      "clauses": [
+        "Section 1.2. Services\nThe services are stated here.",
+        "Section 2. Payment\nSee Section 1.2 above."
+      ],
+      "expected_authored_units": 2,
+      "task_labels": {
+        "reference_presence": false,
+        "directional_position": false
+      },
+      "facts": {
+        "declarations": [
+          {
+            "identity": "1.2",
+            "clause_index": 0,
+            "anchor": "Section 1.2.",
+            "position": [
+              0,
+              0
+            ]
+          },
+          {
+            "identity": "2",
+            "clause_index": 1,
+            "anchor": "Section 2.",
+            "position": [
+              1,
+              0
+            ]
+          }
+        ],
+        "references": [
+          {
+            "target": "1.2",
+            "clause_index": 1,
+            "anchor": "Section 1.2 above",
+            "relation": "above",
+            "source_position": [
+              1,
+              23
+            ],
+            "target_count": 1,
+            "directional_conflict": false
+          }
+        ],
+        "date_scopes": null,
+        "range_pairs": null
+      },
+      "expected_graph_review": null,
+      "stratum": "canonical",
+      "interpretation": "",
+      "origin": "Agent-authored controlled synthetic text; no expert legal review."
+    },
+    {
+      "case_id": "R09",
+      "family": "incorrect_directional",
+      "split": "EXPOSED_DEVELOPMENT",
+      "label_provenance": "MECHANICALLY_VERIFIABLE_SYNTHETIC",
+      "independently_adjudicated": false,
+      "source_document": "cases/R09.txt",
+      "clauses": [
+        "Section 2. Payment\nSee Section 1.2 above.",
+        "Section 1.2. Services\nThe services are stated here."
+      ],
+      "expected_authored_units": 2,
+      "task_labels": {
+        "reference_presence": false,
+        "directional_position": true
+      },
+      "facts": {
+        "declarations": [
+          {
+            "identity": "2",
+            "clause_index": 0,
+            "anchor": "Section 2.",
+            "position": [
+              0,
+              0
+            ]
+          },
+          {
+            "identity": "1.2",
+            "clause_index": 1,
+            "anchor": "Section 1.2.",
+            "position": [
+              1,
+              0
+            ]
+          }
+        ],
+        "references": [
+          {
+            "target": "1.2",
+            "clause_index": 0,
+            "anchor": "Section 1.2 above",
+            "relation": "above",
+            "source_position": [
+              0,
+              23
+            ],
+            "target_count": 1,
+            "directional_conflict": true
+          }
+        ],
+        "date_scopes": null,
+        "range_pairs": null
+      },
+      "expected_graph_review": null,
+      "stratum": "canonical",
+      "interpretation": "",
+      "origin": "Agent-authored controlled synthetic text; no expert legal review."
+    },
+    {
+      "case_id": "R10",
+      "family": "missing_targets",
+      "split": "EXPOSED_DEVELOPMENT",
+      "label_provenance": "MECHANICALLY_VERIFIABLE_SYNTHETIC",
+      "independently_adjudicated": false,
+      "source_document": "cases/R10.txt",
+      "clauses": [
+        "Section 1. Payment\nPayment is governed by Section 9."
+      ],
+      "expected_authored_units": 1,
+      "task_labels": {
+        "reference_presence": true
+      },
+      "facts": {
+        "declarations": [
+          {
+            "identity": "1",
+            "clause_index": 0,
+            "anchor": "Section 1.",
+            "position": [
+              0,
+              0
+            ]
+          }
+        ],
+        "references": [
+          {
+            "target": "9",
+            "clause_index": 0,
+            "anchor": "Section 9.",
+            "relation": "nondirectional",
+            "source_position": [
+              0,
+              42
+            ],
+            "target_count": 0
+          }
+        ],
+        "date_scopes": null,
+        "range_pairs": null
+      },
+      "expected_graph_review": true,
+      "stratum": "canonical",
+      "interpretation": "",
+      "origin": "Agent-authored controlled synthetic text; no expert legal review."
+    },
+    {
+      "case_id": "R11",
+      "family": "missing_targets",
+      "split": "EXPOSED_DEVELOPMENT",
+      "label_provenance": "MECHANICALLY_VERIFIABLE_SYNTHETIC",
+      "independently_adjudicated": false,
+      "source_document": "cases/R11.txt",
+      "clauses": [
+        "Section 1. Payment\nSection 9 above applies to payment."
+      ],
+      "expected_authored_units": 1,
+      "task_labels": {
+        "reference_presence": true
+      },
+      "facts": {
+        "declarations": [
+          {
+            "identity": "1",
+            "clause_index": 0,
+            "anchor": "Section 1.",
+            "position": [
+              0,
+              0
+            ]
+          }
+        ],
+        "references": [
+          {
+            "target": "9",
+            "clause_index": 0,
+            "anchor": "Section 9 above",
+            "relation": "above",
+            "source_position": [
+              0,
+              19
+            ],
+            "target_count": 0
+          }
+        ],
+        "date_scopes": null,
+        "range_pairs": null
+      },
+      "expected_graph_review": true,
+      "stratum": "challenge",
+      "interpretation": "A sentence-start citation is not a declaration; no actual Section 9 heading exists.",
+      "origin": "Agent-authored controlled synthetic text; no expert legal review."
+    },
+    {
+      "case_id": "R12",
+      "family": "missing_targets",
+      "split": "EXPOSED_DEVELOPMENT",
+      "label_provenance": "MECHANICALLY_VERIFIABLE_SYNTHETIC",
+      "independently_adjudicated": false,
+      "source_document": "cases/R12.txt",
+      "clauses": [
+        "Section 1. Payment\nSection 9 shall apply to the invoice."
+      ],
+      "expected_authored_units": 1,
+      "task_labels": {
+        "reference_presence": true
+      },
+      "facts": {
+        "declarations": [
+          {
+            "identity": "1",
+            "clause_index": 0,
+            "anchor": "Section 1.",
+            "position": [
+              0,
+              0
+            ]
+          }
+        ],
+        "references": [
+          {
+            "target": "9",
+            "clause_index": 0,
+            "anchor": "Section 9 shall",
+            "relation": "nondirectional",
+            "source_position": [
+              0,
+              19
+            ],
+            "target_count": 0
+          }
+        ],
+        "date_scopes": null,
+        "range_pairs": null
+      },
+      "expected_graph_review": true,
+      "stratum": "challenge",
+      "interpretation": "",
+      "origin": "Agent-authored controlled synthetic text; no expert legal review."
+    },
+    {
+      "case_id": "R13",
+      "family": "duplicate_targets",
+      "split": "EXPOSED_DEVELOPMENT",
+      "label_provenance": "MECHANICALLY_VERIFIABLE_SYNTHETIC",
+      "independently_adjudicated": false,
+      "source_document": "cases/R13.txt",
+      "clauses": [
+        "Section 1. Definitions\nServices means the example work.",
+        "Section 1. Different definition\nGoods means example goods.",
+        "Section 2. Payment\nSee Section 1 above."
+      ],
+      "expected_authored_units": 3,
+      "task_labels": {
+        "reference_presence": false
+      },
+      "facts": {
+        "declarations": [
+          {
+            "identity": "1",
+            "clause_index": 0,
+            "anchor": "Section 1.",
+            "position": [
+              0,
+              0
+            ]
+          },
+          {
+            "identity": "1",
+            "clause_index": 1,
+            "anchor": "Section 1.",
+            "position": [
+              1,
+              0
+            ]
+          },
+          {
+            "identity": "2",
+            "clause_index": 2,
+            "anchor": "Section 2.",
+            "position": [
+              2,
+              0
+            ]
+          }
+        ],
+        "references": [
+          {
+            "target": "1",
+            "clause_index": 2,
+            "anchor": "Section 1 above",
+            "relation": "above",
+            "source_position": [
+              2,
+              23
+            ],
+            "target_count": 2
+          }
+        ],
+        "date_scopes": null,
+        "range_pairs": null
+      },
+      "expected_graph_review": true,
+      "stratum": "canonical",
+      "interpretation": "Target exists but intended identity is ambiguous. No directional binary label is assigned.",
+      "origin": "Agent-authored controlled synthetic text; no expert legal review."
+    },
+    {
+      "case_id": "R14",
+      "family": "duplicate_targets",
+      "split": "EXPOSED_DEVELOPMENT",
+      "label_provenance": "MECHANICALLY_VERIFIABLE_SYNTHETIC",
+      "independently_adjudicated": false,
+      "source_document": "cases/R14.txt",
+      "clauses": [
+        "Section 1. First meaning\nFirst text.\nSection 1. Second meaning\nSecond text.",
+        "Section 2. Payment\nSee Section 1 above."
+      ],
+      "expected_authored_units": 2,
+      "task_labels": {
+        "reference_presence": false
+      },
+      "facts": {
+        "declarations": [
+          {
+            "identity": "1",
+            "clause_index": 0,
+            "anchor": "Section 1. First",
+            "position": [
+              0,
+              0
+            ]
+          },
+          {
+            "identity": "1",
+            "clause_index": 0,
+            "anchor": "Section 1. Second",
+            "position": [
+              0,
+              37
+            ]
+          },
+          {
+            "identity": "2",
+            "clause_index": 1,
+            "anchor": "Section 2.",
+            "position": [
+              1,
+              0
+            ]
+          }
+        ],
+        "references": [
+          {
+            "target": "1",
+            "clause_index": 1,
+            "anchor": "Section 1 above",
+            "relation": "above",
+            "source_position": [
+              1,
+              23
+            ],
+            "target_count": 2
+          }
+        ],
+        "date_scopes": null,
+        "range_pairs": null
+      },
+      "expected_graph_review": true,
+      "stratum": "canonical",
+      "interpretation": "",
+      "origin": "Agent-authored controlled synthetic text; no expert legal review."
+    },
+    {
+      "case_id": "R15",
+      "family": "missing_targets",
+      "split": "EXPOSED_DEVELOPMENT",
+      "label_provenance": "MECHANICALLY_VERIFIABLE_SYNTHETIC",
+      "independently_adjudicated": false,
+      "source_document": "cases/R15.txt",
+      "clauses": [
+        "Section 1.1. Meaning\nThe numbered identity is exactly 1.1.",
+        "Section 2. Payment\nPayment is governed by Section 1.01."
+      ],
+      "expected_authored_units": 2,
+      "task_labels": {
+        "reference_presence": true
+      },
+      "facts": {
+        "declarations": [
+          {
+            "identity": "1.1",
+            "clause_index": 0,
+            "anchor": "Section 1.1.",
+            "position": [
+              0,
+              0
+            ]
+          },
+          {
+            "identity": "2",
+            "clause_index": 1,
+            "anchor": "Section 2.",
+            "position": [
+              1,
+              0
+            ]
+          }
+        ],
+        "references": [
+          {
+            "target": "1.01",
+            "clause_index": 1,
+            "anchor": "Section 1.01.",
+            "relation": "nondirectional",
+            "source_position": [
+              1,
+              42
+            ],
+            "target_count": 0
+          }
+        ],
+        "date_scopes": null,
+        "range_pairs": null
+      },
+      "expected_graph_review": true,
+      "stratum": "challenge",
+      "interpretation": "Controlled namespace uses exact identity strings; equivalence of 1.01 and 1.1 is not assumed. Policy-sensitive challenge, not universal legal numbering guidance.",
+      "origin": "Agent-authored controlled synthetic text; no expert legal review."
+    },
+    {
+      "case_id": "R16",
+      "family": "missing_targets",
+      "split": "EXPOSED_DEVELOPMENT",
+      "label_provenance": "MECHANICALLY_VERIFIABLE_SYNTHETIC",
+      "independently_adjudicated": false,
+      "source_document": "cases/R16.txt",
+      "clauses": [
+        "Section 1.1(a). Services\nOnly subclause (a) is declared.",
+        "Section 2. Payment\nSee Section 1.1(b)."
+      ],
+      "expected_authored_units": 2,
+      "task_labels": {
+        "reference_presence": true
+      },
+      "facts": {
+        "declarations": [
+          {
+            "identity": "1.1(a)",
+            "clause_index": 0,
+            "anchor": "Section 1.1(a).",
+            "position": [
+              0,
+              0
+            ]
+          },
+          {
+            "identity": "2",
+            "clause_index": 1,
+            "anchor": "Section 2.",
+            "position": [
+              1,
+              0
+            ]
+          }
+        ],
+        "references": [
+          {
+            "target": "1.1(b)",
+            "clause_index": 1,
+            "anchor": "Section 1.1(b).",
+            "relation": "nondirectional",
+            "source_position": [
+              1,
+              23
+            ],
+            "target_count": 0
+          }
+        ],
+        "date_scopes": null,
+        "range_pairs": null
+      },
+      "expected_graph_review": true,
+      "stratum": "challenge",
+      "interpretation": "",
+      "origin": "Agent-authored controlled synthetic text; no expert legal review."
+    },
+    {
+      "case_id": "R17",
+      "family": "valid_directional",
+      "split": "EXPOSED_DEVELOPMENT",
+      "label_provenance": "MECHANICALLY_VERIFIABLE_SYNTHETIC",
+      "independently_adjudicated": false,
+      "source_document": "cases/R17.txt",
+      "clauses": [
+        "Section 1.1(a). Services\nSubclause text.",
+        "Section 2. Payment\nSee Section 1.1(a) above."
+      ],
+      "expected_authored_units": 2,
+      "task_labels": {
+        "reference_presence": false,
+        "directional_position": false
+      },
+      "facts": {
+        "declarations": [
+          {
+            "identity": "1.1(a)",
+            "clause_index": 0,
+            "anchor": "Section 1.1(a).",
+            "position": [
+              0,
+              0
+            ]
+          },
+          {
+            "identity": "2",
+            "clause_index": 1,
+            "anchor": "Section 2.",
+            "position": [
+              1,
+              0
+            ]
+          }
+        ],
+        "references": [
+          {
+            "target": "1.1(a)",
+            "clause_index": 1,
+            "anchor": "Section 1.1(a) above",
+            "relation": "above",
+            "source_position": [
+              1,
+              23
+            ],
+            "target_count": 1,
+            "directional_conflict": false
+          }
+        ],
+        "date_scopes": null,
+        "range_pairs": null
+      },
+      "expected_graph_review": null,
+      "stratum": "canonical",
+      "interpretation": "",
+      "origin": "Agent-authored controlled synthetic text; no expert legal review."
+    },
+    {
+      "case_id": "R18",
+      "family": "unsupported_roman",
+      "split": "EXPOSED_DEVELOPMENT",
+      "label_provenance": "MECHANICALLY_VERIFIABLE_SYNTHETIC",
+      "independently_adjudicated": false,
+      "source_document": "cases/R18.txt",
+      "clauses": [
+        "Section III. Meaning\nDefined text.",
+        "Section 2. Payment\nSee Section III above."
+      ],
+      "expected_authored_units": 2,
+      "task_labels": {
+        "reference_presence": false
+      },
+      "facts": {
+        "declarations": [
+          {
+            "identity": "III",
+            "clause_index": 0,
+            "anchor": "Section III.",
+            "position": [
+              0,
+              0
+            ]
+          },
+          {
+            "identity": "2",
+            "clause_index": 1,
+            "anchor": "Section 2.",
+            "position": [
+              1,
+              0
+            ]
+          }
+        ],
+        "references": [
+          {
+            "target": "III",
+            "clause_index": 1,
+            "anchor": "Section III above",
+            "relation": "above",
+            "source_position": [
+              1,
+              23
+            ],
+            "target_count": 1,
+            "directional_conflict": false
+          }
+        ],
+        "date_scopes": null,
+        "range_pairs": null
+      },
+      "expected_graph_review": true,
+      "stratum": "unsupported_identity",
+      "interpretation": "Roman graph identities are outside declared graph scope; expected conservative abstention, not a directional accuracy denominator.",
+      "origin": "Agent-authored controlled synthetic text; no expert legal review."
+    },
+    {
+      "case_id": "R19",
+      "family": "unsupported_roman",
+      "split": "EXPOSED_DEVELOPMENT",
+      "label_provenance": "MECHANICALLY_VERIFIABLE_SYNTHETIC",
+      "independently_adjudicated": false,
+      "source_document": "cases/R19.txt",
+      "clauses": [
+        "Section 2. Payment\nSee Section III above.",
+        "Section III. Meaning\nDefined text."
+      ],
+      "expected_authored_units": 2,
+      "task_labels": {
+        "reference_presence": false
+      },
+      "facts": {
+        "declarations": [
+          {
+            "identity": "III",
+            "clause_index": 1,
+            "anchor": "Section III.",
+            "position": [
+              1,
+              0
+            ]
+          },
+          {
+            "identity": "2",
+            "clause_index": 0,
+            "anchor": "Section 2.",
+            "position": [
+              0,
+              0
+            ]
+          }
+        ],
+        "references": [
+          {
+            "target": "III",
+            "clause_index": 0,
+            "anchor": "Section III above",
+            "relation": "above",
+            "source_position": [
+              0,
+              23
+            ],
+            "target_count": 1,
+            "directional_conflict": true
+          }
+        ],
+        "date_scopes": null,
+        "range_pairs": null
+      },
+      "expected_graph_review": true,
+      "stratum": "unsupported_identity",
+      "interpretation": "Roman graph identities are outside declared graph scope; expected conservative abstention, not a directional accuracy denominator.",
+      "origin": "Agent-authored controlled synthetic text; no expert legal review."
+    },
+    {
+      "case_id": "R20",
+      "family": "vague_antecedent",
+      "split": "EXPOSED_DEVELOPMENT",
+      "label_provenance": "PROVISIONAL_HUMAN_REVIEW",
+      "independently_adjudicated": false,
+      "source_document": "cases/R20.txt",
+      "clauses": [
+        "Section 1. Definitions\nServices means the example work.",
+        "Section 2. Qualification\nThe foregoing obligation applies here."
+      ],
+      "expected_authored_units": 2,
+      "task_labels": {},
+      "facts": {
+        "declarations": [],
+        "references": [],
+        "date_scopes": null,
+        "range_pairs": null
+      },
+      "expected_graph_review": true,
+      "stratum": "canonical",
+      "interpretation": "Antecedent resolution requires review. This is not an independently established legal defect.",
+      "origin": "Agent-authored controlled synthetic text; no expert legal review."
+    },
+    {
+      "case_id": "R21",
+      "family": "valid_directional",
+      "split": "EXPOSED_DEVELOPMENT",
+      "label_provenance": "MECHANICALLY_VERIFIABLE_SYNTHETIC",
+      "independently_adjudicated": false,
+      "source_document": "cases/R21.txt",
+      "clauses": [
+        "Section 1. Definitions\nServices means the example work.",
+        "Section 2. Payment\nPayment follows the immediately preceding Section 1."
+      ],
+      "expected_authored_units": 2,
+      "task_labels": {
+        "reference_presence": false,
+        "directional_position": false
+      },
+      "facts": {
+        "declarations": [
+          {
+            "identity": "1",
+            "clause_index": 0,
+            "anchor": "Section 1.",
+            "position": [
+              0,
+              0
+            ]
+          },
+          {
+            "identity": "2",
+            "clause_index": 1,
+            "anchor": "Section 2.",
+            "position": [
+              1,
+              0
+            ]
+          }
+        ],
+        "references": [
+          {
+            "target": "1",
+            "clause_index": 1,
+            "anchor": "Section 1.",
+            "relation": "immediately_preceding",
+            "source_position": [
+              1,
+              61
+            ],
+            "target_count": 1,
+            "directional_conflict": false
+          }
+        ],
+        "date_scopes": null,
+        "range_pairs": null
+      },
+      "expected_graph_review": null,
+      "stratum": "canonical",
+      "interpretation": "",
+      "origin": "Agent-authored controlled synthetic text; no expert legal review."
+    },
+    {
+      "case_id": "R22",
+      "family": "incorrect_directional",
+      "split": "EXPOSED_DEVELOPMENT",
+      "label_provenance": "MECHANICALLY_VERIFIABLE_SYNTHETIC",
+      "independently_adjudicated": false,
+      "source_document": "cases/R22.txt",
+      "clauses": [
+        "Section 1. Definitions\nServices means the example work.",
+        "Section 2. Goods\nGoods are specified here.",
+        "Section 3. Payment\nPayment follows the immediately preceding Section 1."
+      ],
+      "expected_authored_units": 3,
+      "task_labels": {
+        "reference_presence": false,
+        "directional_position": true
+      },
+      "facts": {
+        "declarations": [
+          {
+            "identity": "1",
+            "clause_index": 0,
+            "anchor": "Section 1.",
+            "position": [
+              0,
+              0
+            ]
+          },
+          {
+            "identity": "2",
+            "clause_index": 1,
+            "anchor": "Section 2.",
+            "position": [
+              1,
+              0
+            ]
+          },
+          {
+            "identity": "3",
+            "clause_index": 2,
+            "anchor": "Section 3.",
+            "position": [
+              2,
+              0
+            ]
+          }
+        ],
+        "references": [
+          {
+            "target": "1",
+            "clause_index": 2,
+            "anchor": "Section 1.",
+            "relation": "immediately_preceding",
+            "source_position": [
+              2,
+              61
+            ],
+            "target_count": 1,
+            "directional_conflict": true
+          }
+        ],
+        "date_scopes": null,
+        "range_pairs": null
+      },
+      "expected_graph_review": null,
+      "stratum": "canonical",
+      "interpretation": "",
+      "origin": "Agent-authored controlled synthetic text; no expert legal review."
+    },
+    {
+      "case_id": "R23",
+      "family": "incorrect_directional",
+      "split": "EXPOSED_DEVELOPMENT",
+      "label_provenance": "MECHANICALLY_VERIFIABLE_SYNTHETIC",
+      "independently_adjudicated": false,
+      "source_document": "cases/R23.txt",
+      "clauses": [
+        "Section 2. Payment\nSee Section 1, above.",
+        "Section 1. Definitions\nServices means the example work."
+      ],
+      "expected_authored_units": 2,
+      "task_labels": {
+        "reference_presence": false,
+        "directional_position": true
+      },
+      "facts": {
+        "declarations": [
+          {
+            "identity": "2",
+            "clause_index": 0,
+            "anchor": "Section 2.",
+            "position": [
+              0,
+              0
+            ]
+          },
+          {
+            "identity": "1",
+            "clause_index": 1,
+            "anchor": "Section 1.",
+            "position": [
+              1,
+              0
+            ]
+          }
+        ],
+        "references": [
+          {
+            "target": "1",
+            "clause_index": 0,
+            "anchor": "Section 1, above",
+            "relation": "above",
+            "source_position": [
+              0,
+              23
+            ],
+            "target_count": 1,
+            "directional_conflict": true
+          }
+        ],
+        "date_scopes": null,
+        "range_pairs": null
+      },
+      "expected_graph_review": null,
+      "stratum": "challenge",
+      "interpretation": "Punctuation variation retains the explicit above relationship.",
+      "origin": "Agent-authored controlled synthetic text; no expert legal review."
+    },
+    {
+      "case_id": "R24",
+      "family": "incorrect_directional",
+      "split": "EXPOSED_DEVELOPMENT",
+      "label_provenance": "MECHANICALLY_VERIFIABLE_SYNTHETIC",
+      "independently_adjudicated": false,
+      "source_document": "cases/R24.txt",
+      "clauses": [
+        "Section 2. Payment\nSee above Section 1 for the definition.",
+        "Section 1. Definitions\nServices means the example work."
+      ],
+      "expected_authored_units": 2,
+      "task_labels": {
+        "reference_presence": false,
+        "directional_position": true
+      },
+      "facts": {
+        "declarations": [
+          {
+            "identity": "2",
+            "clause_index": 0,
+            "anchor": "Section 2.",
+            "position": [
+              0,
+              0
+            ]
+          },
+          {
+            "identity": "1",
+            "clause_index": 1,
+            "anchor": "Section 1.",
+            "position": [
+              1,
+              0
+            ]
+          }
+        ],
+        "references": [
+          {
+            "target": "1",
+            "clause_index": 0,
+            "anchor": "above Section 1",
+            "relation": "above",
+            "source_position": [
+              0,
+              23
+            ],
+            "target_count": 1,
+            "directional_conflict": true
+          }
+        ],
+        "date_scopes": null,
+        "range_pairs": null
+      },
+      "expected_graph_review": null,
+      "stratum": "challenge",
+      "interpretation": "",
+      "origin": "Agent-authored controlled synthetic text; no expert legal review."
+    },
+    {
+      "case_id": "R25",
+      "family": "missing_targets",
+      "split": "EXPOSED_DEVELOPMENT",
+      "label_provenance": "MECHANICALLY_VERIFIABLE_SYNTHETIC",
+      "independently_adjudicated": false,
+      "source_document": "cases/R25.txt",
+      "clauses": [
+        "Section 1. Payment\nPayment follows Sections 8 and 9."
+      ],
+      "expected_authored_units": 1,
+      "task_labels": {
+        "reference_presence": true
+      },
+      "facts": {
+        "declarations": [
+          {
+            "identity": "1",
+            "clause_index": 0,
+            "anchor": "Section 1.",
+            "position": [
+              0,
+              0
+            ]
+          }
+        ],
+        "references": [
+          {
+            "target": "8",
+            "clause_index": 0,
+            "anchor": "Sections 8 and 9",
+            "relation": "nondirectional",
+            "source_position": [
+              0,
+              35
+            ],
+            "target_count": 0
+          },
+          {
+            "target": "9",
+            "clause_index": 0,
+            "anchor": "Sections 8 and 9",
+            "relation": "nondirectional",
+            "source_position": [
+              0,
+              35
+            ],
+            "target_count": 0
+          }
+        ],
+        "date_scopes": null,
+        "range_pairs": null
+      },
+      "expected_graph_review": true,
+      "stratum": "challenge",
+      "interpretation": "",
+      "origin": "Agent-authored controlled synthetic text; no expert legal review."
+    },
+    {
+      "case_id": "R26",
+      "family": "valid_directional",
+      "split": "EXPOSED_DEVELOPMENT",
+      "label_provenance": "MECHANICALLY_VERIFIABLE_SYNTHETIC",
+      "independently_adjudicated": false,
+      "source_document": "cases/R26.txt",
+      "clauses": [
+        "Section 1. Definition\nThe definition stated in Section 1 above applies throughout."
+      ],
+      "expected_authored_units": 1,
+      "task_labels": {
+        "reference_presence": false,
+        "directional_position": false
+      },
+      "facts": {
+        "declarations": [
+          {
+            "identity": "1",
+            "clause_index": 0,
+            "anchor": "Section 1. Definition",
+            "position": [
+              0,
+              0
+            ]
+          }
+        ],
+        "references": [
+          {
+            "target": "1",
+            "clause_index": 0,
+            "anchor": "Section 1 above",
+            "relation": "above",
+            "source_position": [
+              0,
+              47
+            ],
+            "target_count": 1,
+            "directional_conflict": false
+          }
+        ],
+        "date_scopes": null,
+        "range_pairs": null
+      },
+      "expected_graph_review": null,
+      "stratum": "canonical",
+      "interpretation": "Same-clause earlier declaration is valid; do not use clause indices alone as position.",
+      "origin": "Agent-authored controlled synthetic text; no expert legal review."
+    },
+    {
+      "case_id": "R27",
+      "family": "missing_exhibit",
+      "split": "EXPOSED_DEVELOPMENT",
+      "label_provenance": "MECHANICALLY_VERIFIABLE_SYNTHETIC",
+      "independently_adjudicated": false,
+      "source_document": "cases/R27.txt",
+      "clauses": [
+        "Section 1. Scope\nSpecifications follow Exhibit Z."
+      ],
+      "expected_authored_units": 1,
+      "task_labels": {
+        "reference_presence": true
+      },
+      "facts": {
+        "declarations": [
+          {
+            "identity": "1",
+            "clause_index": 0,
+            "anchor": "Section 1.",
+            "position": [
+              0,
+              0
+            ]
+          }
+        ],
+        "references": [
+          {
+            "target": "EXHIBIT:Z",
+            "clause_index": 0,
+            "anchor": "Exhibit Z.",
+            "relation": "nondirectional",
+            "source_position": [
+              0,
+              39
+            ],
+            "target_count": 0
+          }
+        ],
+        "date_scopes": null,
+        "range_pairs": null
+      },
+      "expected_graph_review": null,
+      "stratum": "canonical",
+      "interpretation": "Exhibit resolution belongs to the reference checker; graph does not claim exhibit support.",
+      "origin": "Agent-authored controlled synthetic text; no expert legal review."
+    },
+    {
+      "case_id": "R28",
+      "family": "missing_exhibit",
+      "split": "EXPOSED_DEVELOPMENT",
+      "label_provenance": "MECHANICALLY_VERIFIABLE_SYNTHETIC",
+      "independently_adjudicated": false,
+      "source_document": "cases/R28.txt",
+      "clauses": [
+        "Section 1. Scope\nExhibit Z supplies the specifications."
+      ],
+      "expected_authored_units": 1,
+      "task_labels": {
+        "reference_presence": true
+      },
+      "facts": {
+        "declarations": [
+          {
+            "identity": "1",
+            "clause_index": 0,
+            "anchor": "Section 1.",
+            "position": [
+              0,
+              0
+            ]
+          }
+        ],
+        "references": [
+          {
+            "target": "EXHIBIT:Z",
+            "clause_index": 0,
+            "anchor": "Exhibit Z supplies",
+            "relation": "nondirectional",
+            "source_position": [
+              0,
+              17
+            ],
+            "target_count": 0
+          }
+        ],
+        "date_scopes": null,
+        "range_pairs": null
+      },
+      "expected_graph_review": null,
+      "stratum": "challenge",
+      "interpretation": "Sentence-start exhibit citation is not an attached exhibit heading.",
+      "origin": "Agent-authored controlled synthetic text; no expert legal review."
+    },
+    {
+      "case_id": "T01",
+      "family": "date_term",
+      "split": "EXPOSED_DEVELOPMENT",
+      "label_provenance": "MECHANICALLY_VERIFIABLE_SYNTHETIC",
+      "independently_adjudicated": false,
+      "source_document": "cases/T01.txt",
+      "clauses": [
+        "Section 1. Term\nThe Effective Date is 2026-01-01.",
+        "Section 2. End\nThe Termination Date is 2026-12-31."
+      ],
+      "expected_authored_units": 2,
+      "task_labels": {
+        "date_chronology": false
+      },
+      "facts": {
+        "declarations": [],
+        "references": [],
+        "date_scopes": [
+          [
+            "one_agreement",
+            "2026-01-01",
+            "2026-12-31"
+          ]
+        ],
+        "range_pairs": null
+      },
+      "expected_graph_review": null,
+      "stratum": "canonical",
+      "interpretation": "",
+      "origin": "Agent-authored controlled synthetic text; no expert legal review."
+    },
+    {
+      "case_id": "T02",
+      "family": "date_term",
+      "split": "EXPOSED_DEVELOPMENT",
+      "label_provenance": "MECHANICALLY_VERIFIABLE_SYNTHETIC",
+      "independently_adjudicated": false,
+      "source_document": "cases/T02.txt",
+      "clauses": [
+        "Section 1. Term\nThe Effective Date is 2026-12-31.",
+        "Section 2. End\nThe Termination Date is 2026-01-01."
+      ],
+      "expected_authored_units": 2,
+      "task_labels": {
+        "date_chronology": true
+      },
+      "facts": {
+        "declarations": [],
+        "references": [],
+        "date_scopes": [
+          [
+            "one_agreement",
+            "2026-12-31",
+            "2026-01-01"
+          ]
+        ],
+        "range_pairs": null
+      },
+      "expected_graph_review": null,
+      "stratum": "canonical",
+      "interpretation": "",
+      "origin": "Agent-authored controlled synthetic text; no expert legal review."
+    },
+    {
+      "case_id": "T03",
+      "family": "date_term",
+      "split": "EXPOSED_DEVELOPMENT",
+      "label_provenance": "MECHANICALLY_VERIFIABLE_SYNTHETIC",
+      "independently_adjudicated": false,
+      "source_document": "cases/T03.txt",
+      "clauses": [
+        "Section 1. Term\nThe Effective Date is January 01, 2026.",
+        "Section 2. End\nThe Termination Date is December 31, 2026."
+      ],
+      "expected_authored_units": 2,
+      "task_labels": {
+        "date_chronology": false
+      },
+      "facts": {
+        "declarations": [],
+        "references": [],
+        "date_scopes": [
+          [
+            "one_agreement",
+            "2026-01-01",
+            "2026-12-31"
+          ]
+        ],
+        "range_pairs": null
+      },
+      "expected_graph_review": null,
+      "stratum": "canonical",
+      "interpretation": "",
+      "origin": "Agent-authored controlled synthetic text; no expert legal review."
+    },
+    {
+      "case_id": "T04",
+      "family": "date_term",
+      "split": "EXPOSED_DEVELOPMENT",
+      "label_provenance": "MECHANICALLY_VERIFIABLE_SYNTHETIC",
+      "independently_adjudicated": false,
+      "source_document": "cases/T04.txt",
+      "clauses": [
+        "Section 1. Term\nThe Effective Date is December 31, 2026.",
+        "Section 2. End\nThe Termination Date is January 01, 2026."
+      ],
+      "expected_authored_units": 2,
+      "task_labels": {
+        "date_chronology": true
+      },
+      "facts": {
+        "declarations": [],
+        "references": [],
+        "date_scopes": [
+          [
+            "one_agreement",
+            "2026-12-31",
+            "2026-01-01"
+          ]
+        ],
+        "range_pairs": null
+      },
+      "expected_graph_review": null,
+      "stratum": "canonical",
+      "interpretation": "",
+      "origin": "Agent-authored controlled synthetic text; no expert legal review."
+    },
+    {
+      "case_id": "T05",
+      "family": "date_range",
+      "split": "EXPOSED_DEVELOPMENT",
+      "label_provenance": "MECHANICALLY_VERIFIABLE_SYNTHETIC",
+      "independently_adjudicated": false,
+      "source_document": "cases/T05.txt",
+      "clauses": [
+        "Section 1. Service period\nService runs from 2026-01-01 to 2026-12-31."
+      ],
+      "expected_authored_units": 1,
+      "task_labels": {
+        "date_chronology": false
+      },
+      "facts": {
+        "declarations": [],
+        "references": [],
+        "date_scopes": null,
+        "range_pairs": [
+          [
+            "2026-01-01",
+            "2026-12-31"
+          ]
+        ]
+      },
+      "expected_graph_review": null,
+      "stratum": "canonical",
+      "interpretation": "",
+      "origin": "Agent-authored controlled synthetic text; no expert legal review."
+    },
+    {
+      "case_id": "T06",
+      "family": "date_range",
+      "split": "EXPOSED_DEVELOPMENT",
+      "label_provenance": "MECHANICALLY_VERIFIABLE_SYNTHETIC",
+      "independently_adjudicated": false,
+      "source_document": "cases/T06.txt",
+      "clauses": [
+        "Section 1. Service period\nService runs from 2026-12-31 to 2026-01-01."
+      ],
+      "expected_authored_units": 1,
+      "task_labels": {
+        "date_chronology": true
+      },
+      "facts": {
+        "declarations": [],
+        "references": [],
+        "date_scopes": null,
+        "range_pairs": [
+          [
+            "2026-12-31",
+            "2026-01-01"
+          ]
+        ]
+      },
+      "expected_graph_review": null,
+      "stratum": "canonical",
+      "interpretation": "",
+      "origin": "Agent-authored controlled synthetic text; no expert legal review."
+    },
+    {
+      "case_id": "T07",
+      "family": "date_independent_events",
+      "split": "EXPOSED_DEVELOPMENT",
+      "label_provenance": "MECHANICALLY_VERIFIABLE_SYNTHETIC",
+      "independently_adjudicated": false,
+      "source_document": "cases/T07.txt",
+      "clauses": [
+        "Section 1. Archive\nThe archive records December 31, 2026 and October 1, 2026 as independent review dates, without an ordered service interval."
+      ],
+      "expected_authored_units": 1,
+      "task_labels": {
+        "date_chronology": false
+      },
+      "facts": {
+        "declarations": [],
+        "references": [],
+        "date_scopes": null,
+        "range_pairs": []
+      },
+      "expected_graph_review": null,
+      "stratum": "canonical",
+      "interpretation": "",
+      "origin": "Agent-authored controlled synthetic text; no expert legal review."
+    },
+    {
+      "case_id": "T08",
+      "family": "date_independent_events",
+      "split": "EXPOSED_DEVELOPMENT",
+      "label_provenance": "MECHANICALLY_VERIFIABLE_SYNTHETIC",
+      "independently_adjudicated": false,
+      "source_document": "cases/T08.txt",
+      "clauses": [
+        "Section 1. Archive\nThe record dated December 31, 2026 relates to a separate historical entry dated January 1, 2026."
+      ],
+      "expected_authored_units": 1,
+      "task_labels": {
+        "date_chronology": false
+      },
+      "facts": {
+        "declarations": [],
+        "references": [],
+        "date_scopes": null,
+        "range_pairs": []
+      },
+      "expected_graph_review": null,
+      "stratum": "challenge",
+      "interpretation": "The substring \"to\" is not evidence of an ordered date range.",
+      "origin": "Agent-authored controlled synthetic text; no expert legal review."
+    },
+    {
+      "case_id": "T09",
+      "family": "date_payment",
+      "split": "EXPOSED_DEVELOPMENT",
+      "label_provenance": "MECHANICALLY_VERIFIABLE_SYNTHETIC",
+      "independently_adjudicated": false,
+      "source_document": "cases/T09.txt",
+      "clauses": [
+        "Section 1. Effective date\nThe Effective Date is 2026-06-01.",
+        "Section 2. Payment\nPayment due on 2026-05-01."
+      ],
+      "expected_authored_units": 2,
+      "task_labels": {
+        "date_chronology": true
+      },
+      "facts": {
+        "declarations": [],
+        "references": [],
+        "date_scopes": [
+          [
+            "payment_before_effective_predicate",
+            "2026-06-01",
+            "2026-05-01"
+          ]
+        ],
+        "range_pairs": null
+      },
+      "expected_graph_review": null,
+      "stratum": "canonical",
+      "interpretation": "Task is the stated arithmetic predicate only, not legal invalidity of prepayments.",
+      "origin": "Agent-authored controlled synthetic text; no expert legal review."
+    },
+    {
+      "case_id": "T10",
+      "family": "date_notice",
+      "split": "EXPOSED_DEVELOPMENT",
+      "label_provenance": "MECHANICALLY_VERIFIABLE_SYNTHETIC",
+      "independently_adjudicated": false,
+      "source_document": "cases/T10.txt",
+      "clauses": [
+        "Section 1. End\nThe Expiration Date is 2026-06-01.",
+        "Section 2. Notice\nNotice required by 2026-07-01."
+      ],
+      "expected_authored_units": 2,
+      "task_labels": {
+        "date_chronology": true
+      },
+      "facts": {
+        "declarations": [],
+        "references": [],
+        "date_scopes": [
+          [
+            "notice_before_end_predicate",
+            "2026-07-01",
+            "2026-06-01"
+          ]
+        ],
+        "range_pairs": null
+      },
+      "expected_graph_review": null,
+      "stratum": "canonical",
+      "interpretation": "",
+      "origin": "Agent-authored controlled synthetic text; no expert legal review."
+    },
+    {
+      "case_id": "T11",
+      "family": "ambiguous_date_format",
+      "split": "EXPOSED_DEVELOPMENT",
+      "label_provenance": "PROVISIONAL_HUMAN_REVIEW",
+      "independently_adjudicated": false,
+      "source_document": "cases/T11.txt",
+      "clauses": [
+        "Section 1. Term\nThe Effective Date is 03/04/2026.",
+        "Section 2. End\nThe Termination Date is 04/03/2026."
+      ],
+      "expected_authored_units": 2,
+      "task_labels": {},
+      "facts": {
+        "declarations": [],
+        "references": [],
+        "date_scopes": null,
+        "range_pairs": null
+      },
+      "expected_graph_review": null,
+      "stratum": "canonical",
+      "interpretation": "No locale specified: month/day interpretation is ambiguous. No binary chronology label.",
+      "origin": "Agent-authored controlled synthetic text; no expert legal review."
+    },
+    {
+      "case_id": "T12",
+      "family": "date_separate_scopes",
+      "split": "EXPOSED_DEVELOPMENT",
+      "label_provenance": "MECHANICALLY_VERIFIABLE_SYNTHETIC",
+      "independently_adjudicated": false,
+      "source_document": "cases/T12.txt",
+      "clauses": [
+        "Section 1. Agreement A\nFor Agreement A, the Effective Date is 2026-06-01.",
+        "Section 2. Agreement A\nFor Agreement A, the Termination Date is 2026-12-31.",
+        "Section 3. Agreement B\nFor Agreement B, the Effective Date is 2026-01-01.",
+        "Section 4. Agreement B\nFor Agreement B, the Termination Date is 2026-03-01."
+      ],
+      "expected_authored_units": 4,
+      "task_labels": {
+        "date_chronology": false
+      },
+      "facts": {
+        "declarations": [],
+        "references": [],
+        "date_scopes": [
+          [
+            "A",
+            "2026-06-01",
+            "2026-12-31"
+          ],
+          [
+            "B",
+            "2026-01-01",
+            "2026-03-01"
+          ]
+        ],
+        "range_pairs": null
+      },
+      "expected_graph_review": null,
+      "stratum": "challenge",
+      "interpretation": "",
+      "origin": "Agent-authored controlled synthetic text; no expert legal review."
+    },
+    {
+      "case_id": "T13",
+      "family": "date_linewrap",
+      "split": "EXPOSED_DEVELOPMENT",
+      "label_provenance": "MECHANICALLY_VERIFIABLE_SYNTHETIC",
+      "independently_adjudicated": false,
+      "source_document": "cases/T13.txt",
+      "clauses": [
+        "Section 1. Term\nThe Effective Date is\n2026-06-01.\nThe Termination Date is\n2026-05-01."
+      ],
+      "expected_authored_units": 1,
+      "task_labels": {
+        "date_chronology": true
+      },
+      "facts": {
+        "declarations": [],
+        "references": [],
+        "date_scopes": [
+          [
+            "one_agreement",
+            "2026-06-01",
+            "2026-05-01"
+          ]
+        ],
+        "range_pairs": null
+      },
+      "expected_graph_review": null,
+      "stratum": "challenge",
+      "interpretation": "",
+      "origin": "Agent-authored controlled synthetic text; no expert legal review."
+    },
+    {
+      "case_id": "T14",
+      "family": "invalid_calendar_date",
+      "split": "EXPOSED_DEVELOPMENT",
+      "label_provenance": "MECHANICALLY_VERIFIABLE_SYNTHETIC",
+      "independently_adjudicated": false,
+      "source_document": "cases/T14.txt",
+      "clauses": [
+        "Section 1. Term\nThe Effective Date is February 30, 2026."
+      ],
+      "expected_authored_units": 1,
+      "task_labels": {
+        "calendar_invalid": true
+      },
+      "facts": {
+        "declarations": [],
+        "references": [],
+        "date_scopes": null,
+        "range_pairs": null
+      },
+      "expected_graph_review": null,
+      "stratum": "canonical",
+      "interpretation": "Calendar-invalid date is mechanically known; calendar validity is a separate unsupported detector task, not chronology F1.",
+      "origin": "Agent-authored controlled synthetic text; no expert legal review."
+    },
+    {
+      "case_id": "T15",
+      "family": "intentional_prepayment",
+      "split": "EXPOSED_DEVELOPMENT",
+      "label_provenance": "PROVISIONAL_HUMAN_REVIEW",
+      "independently_adjudicated": false,
+      "source_document": "cases/T15.txt",
+      "clauses": [
+        "Section 1. Effective\nThe Effective Date is 2026-06-01.",
+        "Section 2. Deposit\nPayment due on 2026-05-01 is an expressly permitted refundable advance deposit before effectiveness."
+      ],
+      "expected_authored_units": 2,
+      "task_labels": {},
+      "facts": {
+        "declarations": [],
+        "references": [],
+        "date_scopes": null,
+        "range_pairs": null
+      },
+      "expected_graph_review": null,
+      "stratum": "canonical",
+      "interpretation": "Potential legal false alarm if an arithmetic warning is treated as a defect. No expert legal label assigned.",
+      "origin": "Agent-authored controlled synthetic text; no expert legal review."
+    },
+    {
+      "case_id": "T16",
+      "family": "date_far_role",
+      "split": "EXPOSED_DEVELOPMENT",
+      "label_provenance": "MECHANICALLY_VERIFIABLE_SYNTHETIC",
+      "independently_adjudicated": false,
+      "source_document": "cases/T16.txt",
+      "clauses": [
+        "Section 1. Term\nThe Effective Date is specified for the sole synthetic agreement with no other date roles in this passage. specified for the sole synthetic agreement with no other date roles in this passage. 2026-06-01.",
+        "Section 2. End\nThe Termination Date is 2026-05-01."
+      ],
+      "expected_authored_units": 2,
+      "task_labels": {
+        "date_chronology": true
+      },
+      "facts": {
+        "declarations": [],
+        "references": [],
+        "date_scopes": [
+          [
+            "one_agreement",
+            "2026-06-01",
+            "2026-05-01"
+          ]
+        ],
+        "range_pairs": null
+      },
+      "expected_graph_review": null,
+      "stratum": "challenge",
+      "interpretation": "",
+      "origin": "Agent-authored controlled synthetic text; no expert legal review."
+    },
+    {
+      "case_id": "T17",
+      "family": "date_trailing_role",
+      "split": "EXPOSED_DEVELOPMENT",
+      "label_provenance": "MECHANICALLY_VERIFIABLE_SYNTHETIC",
+      "independently_adjudicated": false,
+      "source_document": "cases/T17.txt",
+      "clauses": [
+        "Section 1. Term\n2026-12-31 is the Effective Date.",
+        "Section 2. End\n2026-01-01 is the Termination Date."
+      ],
+      "expected_authored_units": 2,
+      "task_labels": {
+        "date_chronology": true
+      },
+      "facts": {
+        "declarations": [],
+        "references": [],
+        "date_scopes": [
+          [
+            "one_agreement",
+            "2026-12-31",
+            "2026-01-01"
+          ]
+        ],
+        "range_pairs": null
+      },
+      "expected_graph_review": null,
+      "stratum": "challenge",
+      "interpretation": "",
+      "origin": "Agent-authored controlled synthetic text; no expert legal review."
+    },
+    {
+      "case_id": "S01",
+      "family": "segmentation_plain_paragraphs",
+      "split": "EXPOSED_DEVELOPMENT",
+      "label_provenance": "MECHANICALLY_VERIFIABLE_SYNTHETIC",
+      "independently_adjudicated": false,
+      "source_document": "cases/S01.txt",
+      "clauses": [
+        "The buyer shall pay within thirty days.",
+        "The supplier shall deliver conforming goods."
+      ],
+      "expected_authored_units": 2,
+      "task_labels": {},
+      "facts": {
+        "declarations": [],
+        "references": [],
+        "date_scopes": null,
+        "range_pairs": null
+      },
+      "expected_graph_review": null,
+      "stratum": "canonical",
+      "interpretation": "Author-defined paragraph units; this is not an expert legal segmentation standard.",
+      "origin": "Agent-authored controlled synthetic text; no expert legal review."
+    },
+    {
+      "case_id": "S02",
+      "family": "segmentation_linewrapped_numbers",
+      "split": "EXPOSED_DEVELOPMENT",
+      "label_provenance": "MECHANICALLY_VERIFIABLE_SYNTHETIC",
+      "independently_adjudicated": false,
+      "source_document": "cases/S02.txt",
+      "clauses": [
+        "Section 1. Prices\nThe amount is\n100 dollars payable after delivery."
+      ],
+      "expected_authored_units": 1,
+      "task_labels": {},
+      "facts": {
+        "declarations": [],
+        "references": [],
+        "date_scopes": null,
+        "range_pairs": null
+      },
+      "expected_graph_review": null,
+      "stratum": "challenge",
+      "interpretation": "A line-wrapped amount is body text, not a new numbered provision.",
+      "origin": "Agent-authored controlled synthetic text; no expert legal review."
+    },
+    {
+      "case_id": "S03",
+      "family": "segmentation_uppercase_body",
+      "split": "EXPOSED_DEVELOPMENT",
+      "label_provenance": "MECHANICALLY_VERIFIABLE_SYNTHETIC",
+      "independently_adjudicated": false,
+      "source_document": "cases/S03.txt",
+      "clauses": [
+        "Section 1. Notices\nNOTICE ONLY\nThis uppercase line belongs to this authored clause."
+      ],
+      "expected_authored_units": 1,
+      "task_labels": {},
+      "facts": {
+        "declarations": [],
+        "references": [],
+        "date_scopes": null,
+        "range_pairs": null
+      },
+      "expected_graph_review": null,
+      "stratum": "challenge",
+      "interpretation": "Controlled authored unit includes an internal uppercase line; legal segmentation may admit other conventions.",
+      "origin": "Agent-authored controlled synthetic text; no expert legal review."
+    },
+    {
+      "case_id": "S04",
+      "family": "literal_angle_text",
+      "split": "EXPOSED_DEVELOPMENT",
+      "label_provenance": "MECHANICALLY_VERIFIABLE_SYNTHETIC",
+      "independently_adjudicated": false,
+      "source_document": "cases/S04.txt",
+      "clauses": [
+        "Section 1. Payment\nIf price < 100, payment follows Section 9; if volume > 20, delivery is expedited."
+      ],
+      "expected_authored_units": 1,
+      "task_labels": {
+        "reference_presence": true
+      },
+      "facts": {
+        "declarations": [
+          {
+            "identity": "1",
+            "clause_index": 0,
+            "anchor": "Section 1.",
+            "position": [
+              0,
+              0
+            ]
+          }
+        ],
+        "references": [
+          {
+            "target": "9",
+            "clause_index": 0,
+            "anchor": "Section 9;",
+            "relation": "nondirectional",
+            "source_position": [
+              0,
+              51
+            ],
+            "target_count": 0
+          }
+        ],
+        "date_scopes": null,
+        "range_pairs": null
+      },
+      "expected_graph_review": true,
+      "stratum": "challenge",
+      "interpretation": "Plain-text comparison signs are not HTML tags; the missing citation must not disappear.",
+      "origin": "Agent-authored controlled synthetic text; no expert legal review."
+    },
+    {
+      "case_id": "S05",
+      "family": "normalized_html",
+      "split": "EXPOSED_DEVELOPMENT",
+      "label_provenance": "MECHANICALLY_VERIFIABLE_SYNTHETIC",
+      "independently_adjudicated": false,
+      "source_document": "cases/S05.txt",
+      "clauses": [
+        "<p>Section 1. Definitions</p><p>Services means example work.</p>",
+        "<p>Section 2. Payment</p><p>Payment follows Section 1 above.</p>"
+      ],
+      "expected_authored_units": 2,
+      "task_labels": {},
+      "facts": {
+        "declarations": [],
+        "references": [],
+        "date_scopes": null,
+        "range_pairs": null
+      },
+      "expected_graph_review": null,
+      "stratum": "canonical",
+      "interpretation": "HTML normalization is an existing behavior; raw offsets are not normalized offsets. No legal/task binary score.",
+      "origin": "Agent-authored controlled synthetic text; no expert legal review."
+    },
+    {
+      "case_id": "W01",
+      "family": "unusual_wording",
+      "split": "EXPOSED_DEVELOPMENT",
+      "label_provenance": "PROVISIONAL_HUMAN_REVIEW",
+      "independently_adjudicated": false,
+      "source_document": "cases/W01.txt",
+      "clauses": [
+        "Section 1. Payment\nThe buyer shall remit payment within thirty days after receipt of an invoice.",
+        "Section 2. Notices\nAll notices must be in writing."
+      ],
+      "expected_authored_units": 2,
+      "task_labels": {},
+      "facts": {
+        "declarations": [],
+        "references": [],
+        "date_scopes": null,
+        "range_pairs": null
+      },
+      "expected_graph_review": null,
+      "stratum": "canonical",
+      "interpretation": "Intended benign paraphrase, not independently adjudicated legal validity. Neural flag frequency only; no legal FP/TN assigned.",
+      "origin": "Agent-authored controlled synthetic text; no expert legal review."
+    },
+    {
+      "case_id": "W02",
+      "family": "unusual_wording",
+      "split": "EXPOSED_DEVELOPMENT",
+      "label_provenance": "PROVISIONAL_HUMAN_REVIEW",
+      "independently_adjudicated": false,
+      "source_document": "cases/W02.txt",
+      "clauses": [
+        "Section 1. Payment\nWhensoever an invoice is received, the obligor shall discharge the pecuniary sum within thirty days.",
+        "Section 2. Notices\nAll notices must be in writing."
+      ],
+      "expected_authored_units": 2,
+      "task_labels": {},
+      "facts": {
+        "declarations": [],
+        "references": [],
+        "date_scopes": null,
+        "range_pairs": null
+      },
+      "expected_graph_review": null,
+      "stratum": "canonical",
+      "interpretation": "Intended benign paraphrase, not independently adjudicated legal validity. Neural flag frequency only; no legal FP/TN assigned.",
+      "origin": "Agent-authored controlled synthetic text; no expert legal review."
+    },
+    {
+      "case_id": "W03",
+      "family": "unusual_wording",
+      "split": "EXPOSED_DEVELOPMENT",
+      "label_provenance": "PROVISIONAL_HUMAN_REVIEW",
+      "independently_adjudicated": false,
+      "source_document": "cases/W03.txt",
+      "clauses": [
+        "Section 1. Payment\nOn receipt of the billing instrument, remittance shall occur within a thirty-day period.",
+        "Section 2. Notices\nAll notices must be in writing."
+      ],
+      "expected_authored_units": 2,
+      "task_labels": {},
+      "facts": {
+        "declarations": [],
+        "references": [],
+        "date_scopes": null,
+        "range_pairs": null
+      },
+      "expected_graph_review": null,
+      "stratum": "canonical",
+      "interpretation": "Intended benign paraphrase, not independently adjudicated legal validity. Neural flag frequency only; no legal FP/TN assigned.",
+      "origin": "Agent-authored controlled synthetic text; no expert legal review."
+    },
+    {
+      "case_id": "W04",
+      "family": "unusual_wording",
+      "split": "EXPOSED_DEVELOPMENT",
+      "label_provenance": "PROVISIONAL_HUMAN_REVIEW",
+      "independently_adjudicated": false,
+      "source_document": "cases/W04.txt",
+      "clauses": [
+        "Section 1. Payment\nThe invoice-receiving party undertakes timely satisfaction of the stated monetary obligation.",
+        "Section 2. Notices\nAll notices must be in writing."
+      ],
+      "expected_authored_units": 2,
+      "task_labels": {},
+      "facts": {
+        "declarations": [],
+        "references": [],
+        "date_scopes": null,
+        "range_pairs": null
+      },
+      "expected_graph_review": null,
+      "stratum": "canonical",
+      "interpretation": "Intended benign paraphrase, not independently adjudicated legal validity. Neural flag frequency only; no legal FP/TN assigned.",
+      "origin": "Agent-authored controlled synthetic text; no expert legal review."
+    },
+    {
+      "case_id": "O01",
+      "family": "clause_order_proxy",
+      "split": "EXPOSED_DEVELOPMENT",
+      "label_provenance": "MECHANICALLY_VERIFIABLE_SYNTHETIC",
+      "independently_adjudicated": false,
+      "source_document": "cases/O01.txt",
+      "clauses": [
+        "Section 1. Preamble and Parties. This Master Services Agreement is entered into as of January 1, 2025 by and between Client Inc. and Provider LLC.",
+        "Section 2. Scope of Services. Provider agrees to provide software development and consulting services as described in Exhibit A attached hereto.",
+        "Section 3. Payment Terms. Invoices shall be payable within thirty (30) days of receipt. Payment due date shall be on or after the Effective Date.",
+        "Section 4. Intellectual Property. All work product developed pursuant to Section 2 shall be deemed work made for hire owned by Client.",
+        "Section 5. Confidentiality. Each party agrees to maintain in strict confidence all proprietary information disclosed under this Agreement.",
+        "Section 6. Term and Termination. The effective date of this Agreement is January 1, 2025 and the termination date shall be December 31, 2025.",
+        "Section 7. Indemnification. Provider shall defend and indemnify Client against any third-party claims arising from a breach of Section 5.",
+        "Section 8. Limitation of Liability. Neither party shall be liable for indirect or consequential damages arising under this Agreement.",
+        "Section 9. Governing Law. This Agreement shall be governed by and construed in accordance with the laws of the State of Delaware.",
+        "Section 10. Miscellaneous. This Agreement, including Exhibit A, constitutes the entire understanding between the parties.",
+        "Exhibit A. Statement of Work. Scope details, technical deliverables, and milestone specifications."
+      ],
+      "expected_authored_units": 11,
+      "task_labels": {
+        "order_changed_proxy": false
+      },
+      "facts": {
+        "declarations": [],
+        "references": [],
+        "date_scopes": null,
+        "range_pairs": null
+      },
+      "expected_graph_review": null,
+      "stratum": "canonical",
+      "interpretation": "Mechanical order-change proxy ONLY. Reordering is not labelled a legal defect. Original and perturbed texts are exposed development evidence.",
+      "origin": {
+        "fixture": "get_synthetic_msa_clauses",
+        "source_file": "src/redteam/fixtures.py",
+        "source_sha256": "de240348906f81b9666994b9d0edbe78684157aab83c34f5721e0fdcaf17a759",
+        "operation": "original",
+        "permutation": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "family_id": "get_synthetic_msa_clauses"
+      }
+    },
+    {
+      "case_id": "O02",
+      "family": "clause_order_proxy",
+      "split": "EXPOSED_DEVELOPMENT",
+      "label_provenance": "MECHANICALLY_VERIFIABLE_SYNTHETIC",
+      "independently_adjudicated": false,
+      "source_document": "cases/O02.txt",
+      "clauses": [
+        "Section 1. Preamble and Parties. This Master Services Agreement is entered into as of January 1, 2025 by and between Client Inc. and Provider LLC.",
+        "Section 2. Scope of Services. Provider agrees to provide software development and consulting services as described in Exhibit A attached hereto.",
+        "Section 4. Intellectual Property. All work product developed pursuant to Section 2 shall be deemed work made for hire owned by Client.",
+        "Section 3. Payment Terms. Invoices shall be payable within thirty (30) days of receipt. Payment due date shall be on or after the Effective Date.",
+        "Section 5. Confidentiality. Each party agrees to maintain in strict confidence all proprietary information disclosed under this Agreement.",
+        "Section 6. Term and Termination. The effective date of this Agreement is January 1, 2025 and the termination date shall be December 31, 2025.",
+        "Section 7. Indemnification. Provider shall defend and indemnify Client against any third-party claims arising from a breach of Section 5.",
+        "Section 8. Limitation of Liability. Neither party shall be liable for indirect or consequential damages arising under this Agreement.",
+        "Section 9. Governing Law. This Agreement shall be governed by and construed in accordance with the laws of the State of Delaware.",
+        "Section 10. Miscellaneous. This Agreement, including Exhibit A, constitutes the entire understanding between the parties.",
+        "Exhibit A. Statement of Work. Scope details, technical deliverables, and milestone specifications."
+      ],
+      "expected_authored_units": 11,
+      "task_labels": {
+        "order_changed_proxy": true
+      },
+      "facts": {
+        "declarations": [],
+        "references": [],
+        "date_scopes": null,
+        "range_pairs": null
+      },
+      "expected_graph_review": null,
+      "stratum": "canonical",
+      "interpretation": "Mechanical order-change proxy ONLY. Reordering is not labelled a legal defect. Original and perturbed texts are exposed development evidence.",
+      "origin": {
+        "fixture": "get_synthetic_msa_clauses",
+        "source_file": "src/redteam/fixtures.py",
+        "source_sha256": "de240348906f81b9666994b9d0edbe78684157aab83c34f5721e0fdcaf17a759",
+        "operation": "swap_middle",
+        "permutation": [
+          0,
+          1,
+          3,
+          2,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "family_id": "get_synthetic_msa_clauses"
+      }
+    },
+    {
+      "case_id": "O03",
+      "family": "clause_order_proxy",
+      "split": "EXPOSED_DEVELOPMENT",
+      "label_provenance": "MECHANICALLY_VERIFIABLE_SYNTHETIC",
+      "independently_adjudicated": false,
+      "source_document": "cases/O03.txt",
+      "clauses": [
+        "Exhibit A. Statement of Work. Scope details, technical deliverables, and milestone specifications.",
+        "Section 10. Miscellaneous. This Agreement, including Exhibit A, constitutes the entire understanding between the parties.",
+        "Section 9. Governing Law. This Agreement shall be governed by and construed in accordance with the laws of the State of Delaware.",
+        "Section 8. Limitation of Liability. Neither party shall be liable for indirect or consequential damages arising under this Agreement.",
+        "Section 7. Indemnification. Provider shall defend and indemnify Client against any third-party claims arising from a breach of Section 5.",
+        "Section 6. Term and Termination. The effective date of this Agreement is January 1, 2025 and the termination date shall be December 31, 2025.",
+        "Section 5. Confidentiality. Each party agrees to maintain in strict confidence all proprietary information disclosed under this Agreement.",
+        "Section 4. Intellectual Property. All work product developed pursuant to Section 2 shall be deemed work made for hire owned by Client.",
+        "Section 3. Payment Terms. Invoices shall be payable within thirty (30) days of receipt. Payment due date shall be on or after the Effective Date.",
+        "Section 2. Scope of Services. Provider agrees to provide software development and consulting services as described in Exhibit A attached hereto.",
+        "Section 1. Preamble and Parties. This Master Services Agreement is entered into as of January 1, 2025 by and between Client Inc. and Provider LLC."
+      ],
+      "expected_authored_units": 11,
+      "task_labels": {
+        "order_changed_proxy": true
+      },
+      "facts": {
+        "declarations": [],
+        "references": [],
+        "date_scopes": null,
+        "range_pairs": null
+      },
+      "expected_graph_review": null,
+      "stratum": "canonical",
+      "interpretation": "Mechanical order-change proxy ONLY. Reordering is not labelled a legal defect. Original and perturbed texts are exposed development evidence.",
+      "origin": {
+        "fixture": "get_synthetic_msa_clauses",
+        "source_file": "src/redteam/fixtures.py",
+        "source_sha256": "de240348906f81b9666994b9d0edbe78684157aab83c34f5721e0fdcaf17a759",
+        "operation": "reverse",
+        "permutation": [
+          10,
+          9,
+          8,
+          7,
+          6,
+          5,
+          4,
+          3,
+          2,
+          1,
+          0
+        ],
+        "family_id": "get_synthetic_msa_clauses"
+      }
+    },
+    {
+      "case_id": "O04",
+      "family": "clause_order_proxy",
+      "split": "EXPOSED_DEVELOPMENT",
+      "label_provenance": "MECHANICALLY_VERIFIABLE_SYNTHETIC",
+      "independently_adjudicated": false,
+      "source_document": "cases/O04.txt",
+      "clauses": [
+        "Section 3. Payment Terms. Invoices shall be payable within thirty (30) days of receipt. Payment due date shall be on or after the Effective Date.",
+        "Section 4. Intellectual Property. All work product developed pursuant to Section 2 shall be deemed work made for hire owned by Client.",
+        "Section 5. Confidentiality. Each party agrees to maintain in strict confidence all proprietary information disclosed under this Agreement.",
+        "Section 6. Term and Termination. The effective date of this Agreement is January 1, 2025 and the termination date shall be December 31, 2025.",
+        "Section 7. Indemnification. Provider shall defend and indemnify Client against any third-party claims arising from a breach of Section 5.",
+        "Section 8. Limitation of Liability. Neither party shall be liable for indirect or consequential damages arising under this Agreement.",
+        "Section 9. Governing Law. This Agreement shall be governed by and construed in accordance with the laws of the State of Delaware.",
+        "Section 10. Miscellaneous. This Agreement, including Exhibit A, constitutes the entire understanding between the parties.",
+        "Exhibit A. Statement of Work. Scope details, technical deliverables, and milestone specifications.",
+        "Section 1. Preamble and Parties. This Master Services Agreement is entered into as of January 1, 2025 by and between Client Inc. and Provider LLC.",
+        "Section 2. Scope of Services. Provider agrees to provide software development and consulting services as described in Exhibit A attached hereto."
+      ],
+      "expected_authored_units": 11,
+      "task_labels": {
+        "order_changed_proxy": true
+      },
+      "facts": {
+        "declarations": [],
+        "references": [],
+        "date_scopes": null,
+        "range_pairs": null
+      },
+      "expected_graph_review": null,
+      "stratum": "canonical",
+      "interpretation": "Mechanical order-change proxy ONLY. Reordering is not labelled a legal defect. Original and perturbed texts are exposed development evidence.",
+      "origin": {
+        "fixture": "get_synthetic_msa_clauses",
+        "source_file": "src/redteam/fixtures.py",
+        "source_sha256": "de240348906f81b9666994b9d0edbe78684157aab83c34f5721e0fdcaf17a759",
+        "operation": "move_block",
+        "permutation": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          0,
+          1
+        ],
+        "family_id": "get_synthetic_msa_clauses"
+      }
+    },
+    {
+      "case_id": "O05",
+      "family": "clause_order_proxy",
+      "split": "EXPOSED_DEVELOPMENT",
+      "label_provenance": "MECHANICALLY_VERIFIABLE_SYNTHETIC",
+      "independently_adjudicated": false,
+      "source_document": "cases/O05.txt",
+      "clauses": [
+        "Section 1. Grant of License. Licensor grants Licensee a non-exclusive, non-transferable license to use the Software.",
+        "Section 2. Permitted Users. Use of the Software is limited to authorized employees pursuant to Section 1.",
+        "Section 3. Fees and Taxes. Licensee shall pay the annual subscription fees set forth in Section 4.",
+        "Section 4. Schedule of Fees. Annual subscription fee shall be $50,000 payable upon execution.",
+        "Section 5. Warranty Disclaimer. Licensor disclaims all implied warranties of merchantability and fitness for a particular purpose.",
+        "Section 6. Audit Rights. Licensor may audit Licensee's software deployment once annually upon reasonable notice.",
+        "Section 7. Term. The initial term begins on March 1, 2025 and expires on February 28, 2026.",
+        "Section 8. Dispute Resolution. Any dispute under this Agreement shall be resolved through binding arbitration."
+      ],
+      "expected_authored_units": 8,
+      "task_labels": {
+        "order_changed_proxy": false
+      },
+      "facts": {
+        "declarations": [],
+        "references": [],
+        "date_scopes": null,
+        "range_pairs": null
+      },
+      "expected_graph_review": null,
+      "stratum": "canonical",
+      "interpretation": "Mechanical order-change proxy ONLY. Reordering is not labelled a legal defect. Original and perturbed texts are exposed development evidence.",
+      "origin": {
+        "fixture": "get_synthetic_sla_clauses",
+        "source_file": "src/redteam/fixtures.py",
+        "source_sha256": "de240348906f81b9666994b9d0edbe78684157aab83c34f5721e0fdcaf17a759",
+        "operation": "original",
+        "permutation": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "family_id": "get_synthetic_sla_clauses"
+      }
+    },
+    {
+      "case_id": "O06",
+      "family": "clause_order_proxy",
+      "split": "EXPOSED_DEVELOPMENT",
+      "label_provenance": "MECHANICALLY_VERIFIABLE_SYNTHETIC",
+      "independently_adjudicated": false,
+      "source_document": "cases/O06.txt",
+      "clauses": [
+        "Section 1. Grant of License. Licensor grants Licensee a non-exclusive, non-transferable license to use the Software.",
+        "Section 2. Permitted Users. Use of the Software is limited to authorized employees pursuant to Section 1.",
+        "Section 4. Schedule of Fees. Annual subscription fee shall be $50,000 payable upon execution.",
+        "Section 3. Fees and Taxes. Licensee shall pay the annual subscription fees set forth in Section 4.",
+        "Section 5. Warranty Disclaimer. Licensor disclaims all implied warranties of merchantability and fitness for a particular purpose.",
+        "Section 6. Audit Rights. Licensor may audit Licensee's software deployment once annually upon reasonable notice.",
+        "Section 7. Term. The initial term begins on March 1, 2025 and expires on February 28, 2026.",
+        "Section 8. Dispute Resolution. Any dispute under this Agreement shall be resolved through binding arbitration."
+      ],
+      "expected_authored_units": 8,
+      "task_labels": {
+        "order_changed_proxy": true
+      },
+      "facts": {
+        "declarations": [],
+        "references": [],
+        "date_scopes": null,
+        "range_pairs": null
+      },
+      "expected_graph_review": null,
+      "stratum": "canonical",
+      "interpretation": "Mechanical order-change proxy ONLY. Reordering is not labelled a legal defect. Original and perturbed texts are exposed development evidence.",
+      "origin": {
+        "fixture": "get_synthetic_sla_clauses",
+        "source_file": "src/redteam/fixtures.py",
+        "source_sha256": "de240348906f81b9666994b9d0edbe78684157aab83c34f5721e0fdcaf17a759",
+        "operation": "swap_middle",
+        "permutation": [
+          0,
+          1,
+          3,
+          2,
+          4,
+          5,
+          6,
+          7
+        ],
+        "family_id": "get_synthetic_sla_clauses"
+      }
+    },
+    {
+      "case_id": "O07",
+      "family": "clause_order_proxy",
+      "split": "EXPOSED_DEVELOPMENT",
+      "label_provenance": "MECHANICALLY_VERIFIABLE_SYNTHETIC",
+      "independently_adjudicated": false,
+      "source_document": "cases/O07.txt",
+      "clauses": [
+        "Section 8. Dispute Resolution. Any dispute under this Agreement shall be resolved through binding arbitration.",
+        "Section 7. Term. The initial term begins on March 1, 2025 and expires on February 28, 2026.",
+        "Section 6. Audit Rights. Licensor may audit Licensee's software deployment once annually upon reasonable notice.",
+        "Section 5. Warranty Disclaimer. Licensor disclaims all implied warranties of merchantability and fitness for a particular purpose.",
+        "Section 4. Schedule of Fees. Annual subscription fee shall be $50,000 payable upon execution.",
+        "Section 3. Fees and Taxes. Licensee shall pay the annual subscription fees set forth in Section 4.",
+        "Section 2. Permitted Users. Use of the Software is limited to authorized employees pursuant to Section 1.",
+        "Section 1. Grant of License. Licensor grants Licensee a non-exclusive, non-transferable license to use the Software."
+      ],
+      "expected_authored_units": 8,
+      "task_labels": {
+        "order_changed_proxy": true
+      },
+      "facts": {
+        "declarations": [],
+        "references": [],
+        "date_scopes": null,
+        "range_pairs": null
+      },
+      "expected_graph_review": null,
+      "stratum": "canonical",
+      "interpretation": "Mechanical order-change proxy ONLY. Reordering is not labelled a legal defect. Original and perturbed texts are exposed development evidence.",
+      "origin": {
+        "fixture": "get_synthetic_sla_clauses",
+        "source_file": "src/redteam/fixtures.py",
+        "source_sha256": "de240348906f81b9666994b9d0edbe78684157aab83c34f5721e0fdcaf17a759",
+        "operation": "reverse",
+        "permutation": [
+          7,
+          6,
+          5,
+          4,
+          3,
+          2,
+          1,
+          0
+        ],
+        "family_id": "get_synthetic_sla_clauses"
+      }
+    },
+    {
+      "case_id": "O08",
+      "family": "clause_order_proxy",
+      "split": "EXPOSED_DEVELOPMENT",
+      "label_provenance": "MECHANICALLY_VERIFIABLE_SYNTHETIC",
+      "independently_adjudicated": false,
+      "source_document": "cases/O08.txt",
+      "clauses": [
+        "Section 3. Fees and Taxes. Licensee shall pay the annual subscription fees set forth in Section 4.",
+        "Section 4. Schedule of Fees. Annual subscription fee shall be $50,000 payable upon execution.",
+        "Section 5. Warranty Disclaimer. Licensor disclaims all implied warranties of merchantability and fitness for a particular purpose.",
+        "Section 6. Audit Rights. Licensor may audit Licensee's software deployment once annually upon reasonable notice.",
+        "Section 7. Term. The initial term begins on March 1, 2025 and expires on February 28, 2026.",
+        "Section 8. Dispute Resolution. Any dispute under this Agreement shall be resolved through binding arbitration.",
+        "Section 1. Grant of License. Licensor grants Licensee a non-exclusive, non-transferable license to use the Software.",
+        "Section 2. Permitted Users. Use of the Software is limited to authorized employees pursuant to Section 1."
+      ],
+      "expected_authored_units": 8,
+      "task_labels": {
+        "order_changed_proxy": true
+      },
+      "facts": {
+        "declarations": [],
+        "references": [],
+        "date_scopes": null,
+        "range_pairs": null
+      },
+      "expected_graph_review": null,
+      "stratum": "canonical",
+      "interpretation": "Mechanical order-change proxy ONLY. Reordering is not labelled a legal defect. Original and perturbed texts are exposed development evidence.",
+      "origin": {
+        "fixture": "get_synthetic_sla_clauses",
+        "source_file": "src/redteam/fixtures.py",
+        "source_sha256": "de240348906f81b9666994b9d0edbe78684157aab83c34f5721e0fdcaf17a759",
+        "operation": "move_block",
+        "permutation": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          0,
+          1
+        ],
+        "family_id": "get_synthetic_sla_clauses"
+      }
+    },
+    {
+      "case_id": "O09",
+      "family": "clause_order_proxy",
+      "split": "EXPOSED_DEVELOPMENT",
+      "label_provenance": "MECHANICALLY_VERIFIABLE_SYNTHETIC",
+      "independently_adjudicated": false,
+      "source_document": "cases/O09.txt",
+      "clauses": [
+        "Section 1. Definitions\nGoods means the example products.",
+        "Section 2. Supply\nThe supplier shall deliver the goods.",
+        "Section 3. Payment\nThe buyer shall pay after delivery.",
+        "Section 4. Confidentiality\nEach party shall protect confidential information.",
+        "Section 5. Term\nThe parties may terminate by written notice.",
+        "Section 6. Notices\nNotices must be in writing."
+      ],
+      "expected_authored_units": 6,
+      "task_labels": {
+        "order_changed_proxy": false
+      },
+      "facts": {
+        "declarations": [],
+        "references": [],
+        "date_scopes": null,
+        "range_pairs": null
+      },
+      "expected_graph_review": null,
+      "stratum": "canonical",
+      "interpretation": "Mechanical order-change proxy ONLY. Reordering is not labelled a legal defect. Original and perturbed texts are exposed development evidence.",
+      "origin": {
+        "fixture": "new_generic_template",
+        "source_file": null,
+        "source_sha256": null,
+        "operation": "original",
+        "permutation": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "family_id": "new_generic_template"
+      }
+    },
+    {
+      "case_id": "O10",
+      "family": "clause_order_proxy",
+      "split": "EXPOSED_DEVELOPMENT",
+      "label_provenance": "MECHANICALLY_VERIFIABLE_SYNTHETIC",
+      "independently_adjudicated": false,
+      "source_document": "cases/O10.txt",
+      "clauses": [
+        "Section 1. Definitions\nGoods means the example products.",
+        "Section 2. Supply\nThe supplier shall deliver the goods.",
+        "Section 4. Confidentiality\nEach party shall protect confidential information.",
+        "Section 3. Payment\nThe buyer shall pay after delivery.",
+        "Section 5. Term\nThe parties may terminate by written notice.",
+        "Section 6. Notices\nNotices must be in writing."
+      ],
+      "expected_authored_units": 6,
+      "task_labels": {
+        "order_changed_proxy": true
+      },
+      "facts": {
+        "declarations": [],
+        "references": [],
+        "date_scopes": null,
+        "range_pairs": null
+      },
+      "expected_graph_review": null,
+      "stratum": "canonical",
+      "interpretation": "Mechanical order-change proxy ONLY. Reordering is not labelled a legal defect. Original and perturbed texts are exposed development evidence.",
+      "origin": {
+        "fixture": "new_generic_template",
+        "source_file": null,
+        "source_sha256": null,
+        "operation": "swap_middle",
+        "permutation": [
+          0,
+          1,
+          3,
+          2,
+          4,
+          5
+        ],
+        "family_id": "new_generic_template"
+      }
+    },
+    {
+      "case_id": "O11",
+      "family": "clause_order_proxy",
+      "split": "EXPOSED_DEVELOPMENT",
+      "label_provenance": "MECHANICALLY_VERIFIABLE_SYNTHETIC",
+      "independently_adjudicated": false,
+      "source_document": "cases/O11.txt",
+      "clauses": [
+        "Section 6. Notices\nNotices must be in writing.",
+        "Section 5. Term\nThe parties may terminate by written notice.",
+        "Section 4. Confidentiality\nEach party shall protect confidential information.",
+        "Section 3. Payment\nThe buyer shall pay after delivery.",
+        "Section 2. Supply\nThe supplier shall deliver the goods.",
+        "Section 1. Definitions\nGoods means the example products."
+      ],
+      "expected_authored_units": 6,
+      "task_labels": {
+        "order_changed_proxy": true
+      },
+      "facts": {
+        "declarations": [],
+        "references": [],
+        "date_scopes": null,
+        "range_pairs": null
+      },
+      "expected_graph_review": null,
+      "stratum": "canonical",
+      "interpretation": "Mechanical order-change proxy ONLY. Reordering is not labelled a legal defect. Original and perturbed texts are exposed development evidence.",
+      "origin": {
+        "fixture": "new_generic_template",
+        "source_file": null,
+        "source_sha256": null,
+        "operation": "reverse",
+        "permutation": [
+          5,
+          4,
+          3,
+          2,
+          1,
+          0
+        ],
+        "family_id": "new_generic_template"
+      }
+    },
+    {
+      "case_id": "O12",
+      "family": "clause_order_proxy",
+      "split": "EXPOSED_DEVELOPMENT",
+      "label_provenance": "MECHANICALLY_VERIFIABLE_SYNTHETIC",
+      "independently_adjudicated": false,
+      "source_document": "cases/O12.txt",
+      "clauses": [
+        "Section 3. Payment\nThe buyer shall pay after delivery.",
+        "Section 4. Confidentiality\nEach party shall protect confidential information.",
+        "Section 5. Term\nThe parties may terminate by written notice.",
+        "Section 6. Notices\nNotices must be in writing.",
+        "Section 1. Definitions\nGoods means the example products.",
+        "Section 2. Supply\nThe supplier shall deliver the goods."
+      ],
+      "expected_authored_units": 6,
+      "task_labels": {
+        "order_changed_proxy": true
+      },
+      "facts": {
+        "declarations": [],
+        "references": [],
+        "date_scopes": null,
+        "range_pairs": null
+      },
+      "expected_graph_review": null,
+      "stratum": "canonical",
+      "interpretation": "Mechanical order-change proxy ONLY. Reordering is not labelled a legal defect. Original and perturbed texts are exposed development evidence.",
+      "origin": {
+        "fixture": "new_generic_template",
+        "source_file": null,
+        "source_sha256": null,
+        "operation": "move_block",
+        "permutation": [
+          2,
+          3,
+          4,
+          5,
+          0,
+          1
+        ],
+        "family_id": "new_generic_template"
+      }
+    },
+    {
+      "case_id": "C01",
+      "family": "distant_contradiction_candidates",
+      "split": "EXPOSED_DEVELOPMENT",
+      "label_provenance": "PROVISIONAL_HUMAN_REVIEW",
+      "independently_adjudicated": false,
+      "source_document": "cases/C01.txt",
+      "clauses": [
+        "Section 1. Obligation\nThe buyer must pay each invoice exactly thirty days after receipt.",
+        "Section 2. Delivery\nDelivery occurs on request.",
+        "Section 3. Notices\nNotices must be in writing.",
+        "Section 4. Definitions\nInvoice means the written billing document.",
+        "Section 5. Obligation\nThe buyer must pay each same invoice exactly sixty days after receipt."
+      ],
+      "expected_authored_units": 5,
+      "task_labels": {},
+      "facts": {
+        "declarations": [],
+        "references": [],
+        "date_scopes": null,
+        "range_pairs": null
+      },
+      "expected_graph_review": null,
+      "stratum": "canonical",
+      "interpretation": "Potential incompatible same-invoice deadlines; scope and precedence need independent review.",
+      "origin": "Agent-authored controlled synthetic text; no expert legal review."
+    },
+    {
+      "case_id": "C02",
+      "family": "distant_contradiction_candidates",
+      "split": "EXPOSED_DEVELOPMENT",
+      "label_provenance": "PROVISIONAL_HUMAN_REVIEW",
+      "independently_adjudicated": false,
+      "source_document": "cases/C02.txt",
+      "clauses": [
+        "Section 1. Obligation\nStandard invoices are payable within thirty days.",
+        "Section 2. Delivery\nDelivery occurs on request.",
+        "Section 3. Notices\nNotices must be in writing.",
+        "Section 4. Definitions\nInvoice means the written billing document.",
+        "Section 5. Obligation\nDisputed invoices are payable within sixty days."
+      ],
+      "expected_authored_units": 5,
+      "task_labels": {},
+      "facts": {
+        "declarations": [],
+        "references": [],
+        "date_scopes": null,
+        "range_pairs": null
+      },
+      "expected_graph_review": null,
+      "stratum": "canonical",
+      "interpretation": "Different invoice classes can explain different deadlines; no legal correctness label.",
+      "origin": "Agent-authored controlled synthetic text; no expert legal review."
+    },
+    {
+      "case_id": "C03",
+      "family": "distant_contradiction_candidates",
+      "split": "EXPOSED_DEVELOPMENT",
+      "label_provenance": "PROVISIONAL_HUMAN_REVIEW",
+      "independently_adjudicated": false,
+      "source_document": "cases/C03.txt",
+      "clauses": [
+        "Section 1. Obligation\nThe recipient must never disclose the confidential information to any third party.",
+        "Section 2. Delivery\nDelivery occurs on request.",
+        "Section 3. Notices\nNotices must be in writing.",
+        "Section 4. Definitions\nInvoice means the written billing document.",
+        "Section 5. Obligation\nThe recipient must disclose that confidential information to the named third-party auditor."
+      ],
+      "expected_authored_units": 5,
+      "task_labels": {},
+      "facts": {
+        "declarations": [],
+        "references": [],
+        "date_scopes": null,
+        "range_pairs": null
+      },
+      "expected_graph_review": null,
+      "stratum": "canonical",
+      "interpretation": "Potential disclosure exception/contradiction requires scope and precedence interpretation.",
+      "origin": "Agent-authored controlled synthetic text; no expert legal review."
+    },
+    {
+      "case_id": "C04",
+      "family": "distant_contradiction_candidates",
+      "split": "EXPOSED_DEVELOPMENT",
+      "label_provenance": "PROVISIONAL_HUMAN_REVIEW",
+      "independently_adjudicated": false,
+      "source_document": "cases/C04.txt",
+      "clauses": [
+        "Section 1. Obligation\nThe monthly service fee is one hundred dollars.",
+        "Section 2. Delivery\nDelivery occurs on request.",
+        "Section 3. Notices\nNotices must be in writing.",
+        "Section 4. Definitions\nInvoice means the written billing document.",
+        "Section 5. Obligation\nThe annual service fee is twelve hundred dollars."
+      ],
+      "expected_authored_units": 5,
+      "task_labels": {},
+      "facts": {
+        "declarations": [],
+        "references": [],
+        "date_scopes": null,
+        "range_pairs": null
+      },
+      "expected_graph_review": null,
+      "stratum": "canonical",
+      "interpretation": "Potentially compatible statements; no adjudicated legal label.",
+      "origin": "Agent-authored controlled synthetic text; no expert legal review."
+    }
+  ]
+}

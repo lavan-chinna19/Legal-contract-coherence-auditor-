@@ -1,0 +1,759 @@
+case_id,mode,clause_id,source_document,text,char_start,char_end,channel_a,raw_centroid_distance,is_ood,channel_b,incoming_probability,outgoing_probability,combined,severity,ml_flag
+R01,authored,baseline_R01_authored_0,cases/R01.txt,"Section 1. Definitions
+Services means the example work.",0,55,0.0,0.1697,False,0.7017,,0.2983,0.3508,MEDIUM,True
+R01,authored,baseline_R01_authored_1,cases/R01.txt,"Section 2. Payment
+Payment follows Section 1 above.",57,108,0.0,0.185,False,0.7017,0.2983,,0.3508,MEDIUM,True
+R01,txt,baseline_R01_txt_0,cases/R01.txt,"Section 1. Definitions
+Services means the example work.",0,55,0.0,0.1697,False,0.7017,,0.2983,0.3508,MEDIUM,True
+R01,txt,baseline_R01_txt_1,cases/R01.txt,"Section 2. Payment
+Payment follows Section 1 above.",57,108,0.0,0.185,False,0.7017,0.2983,,0.3508,MEDIUM,True
+R02,authored,baseline_R02_authored_0,cases/R02.txt,"Section 2. Payment
+Payment follows Section 1 above.",0,51,0.0,0.185,False,0.7002,,0.2998,0.3501,MEDIUM,True
+R02,authored,baseline_R02_authored_1,cases/R02.txt,"Section 1. Definitions
+Services means the example work.",53,108,0.0,0.1697,False,0.7002,0.2998,,0.3501,MEDIUM,True
+R02,txt,baseline_R02_txt_0,cases/R02.txt,"Section 2. Payment
+Payment follows Section 1 above.",0,51,0.0,0.185,False,0.7002,,0.2998,0.3501,MEDIUM,True
+R02,txt,baseline_R02_txt_1,cases/R02.txt,"Section 1. Definitions
+Services means the example work.",53,108,0.0,0.1697,False,0.7002,0.2998,,0.3501,MEDIUM,True
+R02,pdf,baseline_R02_pdf_0,cases/R02.txt,"Section 2. Payment
+Payment follows Section 1 above.",0,51,0.0,0.185,False,0.7002,,0.2998,0.3501,MEDIUM,True
+R02,pdf,baseline_R02_pdf_1,cases/R02.txt,"Section 1. Definitions
+Services means the example work.",52,107,0.0,0.1697,False,0.7002,0.2998,,0.3501,MEDIUM,True
+R02,docx,baseline_R02_docx_0,cases/R02.txt,"Section 2. Payment
+Payment follows Section 1 above.",0,51,0.0,0.185,False,0.7002,,0.2998,0.3501,MEDIUM,True
+R02,docx,baseline_R02_docx_1,cases/R02.txt,"Section 1. Definitions
+Services means the example work.",53,108,0.0,0.1697,False,0.7002,0.2998,,0.3501,MEDIUM,True
+R03,authored,baseline_R03_authored_0,cases/R03.txt,"Section 1. Payment
+Payment follows Section 2 below.",0,51,0.0,0.1349,False,0.6777,,0.3223,0.3388,CLEAN,False
+R03,authored,baseline_R03_authored_1,cases/R03.txt,"Section 2. Services
+The services are defined here.",53,103,0.0,0.1505,False,0.6777,0.3223,,0.3388,CLEAN,False
+R03,txt,baseline_R03_txt_0,cases/R03.txt,"Section 1. Payment
+Payment follows Section 2 below.",0,51,0.0,0.1349,False,0.6777,,0.3223,0.3388,CLEAN,False
+R03,txt,baseline_R03_txt_1,cases/R03.txt,"Section 2. Services
+The services are defined here.",53,103,0.0,0.1505,False,0.6777,0.3223,,0.3388,CLEAN,False
+R04,authored,baseline_R04_authored_0,cases/R04.txt,"Section 2. Services
+The services are defined here.",0,50,0.0,0.1505,False,0.6795,,0.3205,0.3397,CLEAN,False
+R04,authored,baseline_R04_authored_1,cases/R04.txt,"Section 1. Payment
+Payment follows Section 2 below.",52,103,0.0,0.1349,False,0.6795,0.3205,,0.3397,CLEAN,False
+R04,txt,baseline_R04_txt_0,cases/R04.txt,"Section 2. Services
+The services are defined here.",0,50,0.0,0.1505,False,0.6795,,0.3205,0.3397,CLEAN,False
+R04,txt,baseline_R04_txt_1,cases/R04.txt,"Section 1. Payment
+Payment follows Section 2 below.",52,103,0.0,0.1349,False,0.6795,0.3205,,0.3397,CLEAN,False
+R05,authored,baseline_R05_authored_0,cases/R05.txt,"Section 1. Definitions
+Services means the example work.",0,55,0.0,0.1697,False,0.6932,,0.3068,0.3466,CLEAN,False
+R05,authored,baseline_R05_authored_1,cases/R05.txt,"Section 2. Payment
+See Section 1.",57,90,0.0,0.1547,False,0.6932,0.3068,,0.3466,CLEAN,False
+R05,txt,baseline_R05_txt_0,cases/R05.txt,"Section 1. Definitions
+Services means the example work.",0,55,0.0,0.1697,False,0.6932,,0.3068,0.3466,CLEAN,False
+R05,txt,baseline_R05_txt_1,cases/R05.txt,"Section 2. Payment
+See Section 1.",57,90,0.0,0.1547,False,0.6932,0.3068,,0.3466,CLEAN,False
+R06,authored,baseline_R06_authored_0,cases/R06.txt,"Section 2. Payment
+See Section 1.",0,33,0.0,0.1547,False,0.6973,,0.3027,0.3487,CLEAN,False
+R06,authored,baseline_R06_authored_1,cases/R06.txt,"Section 1. Definitions
+Services means the example work.",35,90,0.0,0.1697,False,0.6973,0.3027,,0.3487,CLEAN,False
+R06,txt,baseline_R06_txt_0,cases/R06.txt,"Section 2. Payment
+See Section 1.",0,33,0.0,0.1547,False,0.6973,,0.3027,0.3487,CLEAN,False
+R06,txt,baseline_R06_txt_1,cases/R06.txt,"Section 1. Definitions
+Services means the example work.",35,90,0.0,0.1697,False,0.6973,0.3027,,0.3487,CLEAN,False
+R07,authored,baseline_R07_authored_0,cases/R07.txt,"Section 3. Notices
+Notices must be written.",0,43,0.0,0.1611,False,0.7001,,0.2999,0.35,MEDIUM,True
+R07,authored,baseline_R07_authored_1,cases/R07.txt,"Section 1. Definitions
+Services means the example work.",45,100,0.0,0.1697,False,0.7001,0.2999,0.3068,0.35,MEDIUM,True
+R07,authored,baseline_R07_authored_2,cases/R07.txt,"Section 2. Payment
+See Section 1.",102,135,0.0,0.1547,False,0.6932,0.3068,,0.3466,CLEAN,False
+R07,txt,baseline_R07_txt_0,cases/R07.txt,"Section 3. Notices
+Notices must be written.",0,43,0.0,0.1611,False,0.7001,,0.2999,0.35,MEDIUM,True
+R07,txt,baseline_R07_txt_1,cases/R07.txt,"Section 1. Definitions
+Services means the example work.",45,100,0.0,0.1697,False,0.7001,0.2999,0.3068,0.35,MEDIUM,True
+R07,txt,baseline_R07_txt_2,cases/R07.txt,"Section 2. Payment
+See Section 1.",102,135,0.0,0.1547,False,0.6932,0.3068,,0.3466,CLEAN,False
+R08,authored,baseline_R08_authored_0,cases/R08.txt,"Section 1.2. Services
+The services are stated here.",0,51,0.0,0.139,False,0.7334,,0.2666,0.3667,MEDIUM,True
+R08,authored,baseline_R08_authored_1,cases/R08.txt,"Section 2. Payment
+See Section 1.2 above.",53,94,0.1761,0.3057,False,0.7334,0.2666,,0.4548,MEDIUM,True
+R08,txt,baseline_R08_txt_0,cases/R08.txt,"Section 1.2. Services
+The services are stated here.",0,51,0.0,0.139,False,0.7334,,0.2666,0.3667,MEDIUM,True
+R08,txt,baseline_R08_txt_1,cases/R08.txt,"Section 2. Payment
+See Section 1.2 above.",53,94,0.1761,0.3057,False,0.7334,0.2666,,0.4548,MEDIUM,True
+R09,authored,baseline_R09_authored_0,cases/R09.txt,"Section 2. Payment
+See Section 1.2 above.",0,41,0.1761,0.3057,False,0.715,,0.285,0.4456,MEDIUM,True
+R09,authored,baseline_R09_authored_1,cases/R09.txt,"Section 1.2. Services
+The services are stated here.",43,94,0.0,0.139,False,0.715,0.285,,0.3575,MEDIUM,True
+R09,txt,baseline_R09_txt_0,cases/R09.txt,"Section 2. Payment
+See Section 1.2 above.",0,41,0.1761,0.3057,False,0.715,,0.285,0.4456,MEDIUM,True
+R09,txt,baseline_R09_txt_1,cases/R09.txt,"Section 1.2. Services
+The services are stated here.",43,94,0.0,0.139,False,0.715,0.285,,0.3575,MEDIUM,True
+R10,authored,baseline_R10_authored_0,cases/R10.txt,"Section 1. Payment
+Payment is governed by Section 9.",0,52,0.0,0.1166,False,0.0,1.0,1.0,0.0,CLEAN,False
+R10,txt,baseline_R10_txt_0,cases/R10.txt,"Section 1. Payment
+Payment is governed by Section 9.",0,52,0.0,0.1166,False,0.0,1.0,1.0,0.0,CLEAN,False
+R11,authored,baseline_R11_authored_0,cases/R11.txt,"Section 1. Payment
+Section 9 above applies to payment.",0,54,0.0,0.1749,False,0.0,1.0,1.0,0.0,CLEAN,False
+R11,txt,baseline_R11_txt_0,cases/R11.txt,Section 1. Payment,0,18,0.0816,0.2489,False,0.7218,,0.2782,0.4017,MEDIUM,True
+R11,txt,baseline_R11_txt_1,cases/R11.txt,Section 9 above applies to payment.,19,54,0.0325,0.2195,False,0.7218,0.2782,,0.3771,MEDIUM,True
+R12,authored,baseline_R12_authored_0,cases/R12.txt,"Section 1. Payment
+Section 9 shall apply to the invoice.",0,56,0.0,0.1411,False,0.0,1.0,1.0,0.0,CLEAN,False
+R12,txt,baseline_R12_txt_0,cases/R12.txt,Section 1. Payment,0,18,0.0816,0.2489,False,0.7202,,0.2798,0.4009,MEDIUM,True
+R12,txt,baseline_R12_txt_1,cases/R12.txt,Section 9 shall apply to the invoice.,19,56,0.0,0.1753,False,0.7202,0.2798,,0.3601,MEDIUM,True
+R13,authored,baseline_R13_authored_0,cases/R13.txt,"Section 1. Definitions
+Services means the example work.",0,55,0.0,0.1697,False,0.7108,,0.2892,0.3554,MEDIUM,True
+R13,authored,baseline_R13_authored_1,cases/R13.txt,"Section 1. Different definition
+Goods means example goods.",57,115,0.0807,0.2484,False,0.7187,0.2892,0.2813,0.3997,MEDIUM,True
+R13,authored,baseline_R13_authored_2,cases/R13.txt,"Section 2. Payment
+See Section 1 above.",117,156,0.0461,0.2277,False,0.7187,0.2813,,0.3824,MEDIUM,True
+R13,txt,baseline_R13_txt_0,cases/R13.txt,"Section 1. Definitions
+Services means the example work.",0,55,0.0,0.1697,False,0.7108,,0.2892,0.3554,MEDIUM,True
+R13,txt,baseline_R13_txt_1,cases/R13.txt,"Section 1. Different definition
+Goods means example goods.",57,115,0.0807,0.2484,False,0.7187,0.2892,0.2813,0.3997,MEDIUM,True
+R13,txt,baseline_R13_txt_2,cases/R13.txt,"Section 2. Payment
+See Section 1 above.",117,156,0.0461,0.2277,False,0.7187,0.2813,,0.3824,MEDIUM,True
+R14,authored,baseline_R14_authored_0,cases/R14.txt,"Section 1. First meaning
+First text.
+Section 1. Second meaning
+Second text.",0,75,0.0,0.1719,False,0.714,,0.286,0.357,MEDIUM,True
+R14,authored,baseline_R14_authored_1,cases/R14.txt,"Section 2. Payment
+See Section 1 above.",77,116,0.0461,0.2277,False,0.714,0.286,,0.38,MEDIUM,True
+R14,txt,baseline_R14_txt_0,cases/R14.txt,"Section 1. First meaning
+First text.",0,36,0.0,0.1998,False,0.6552,,0.3448,0.3276,CLEAN,False
+R14,txt,baseline_R14_txt_1,cases/R14.txt,"Section 1. Second meaning
+Second text.",37,75,0.0,0.1958,False,0.7113,0.3448,0.2887,0.3557,MEDIUM,True
+R14,txt,baseline_R14_txt_2,cases/R14.txt,"Section 2. Payment
+See Section 1 above.",77,116,0.0461,0.2277,False,0.7113,0.2887,,0.3787,MEDIUM,True
+R15,authored,baseline_R15_authored_0,cases/R15.txt,"Section 1.1. Meaning
+The numbered identity is exactly 1.1.",0,58,0.0,0.1285,False,0.6767,,0.3233,0.3383,CLEAN,False
+R15,authored,baseline_R15_authored_1,cases/R15.txt,"Section 2. Payment
+Payment is governed by Section 1.01.",60,115,0.0,0.1173,False,0.6767,0.3233,,0.3383,CLEAN,False
+R15,txt,baseline_R15_txt_0,cases/R15.txt,"Section 1.1. Meaning
+The numbered identity is exactly 1.1.",0,58,0.0,0.1285,False,0.6767,,0.3233,0.3383,CLEAN,False
+R15,txt,baseline_R15_txt_1,cases/R15.txt,"Section 2. Payment
+Payment is governed by Section 1.01.",60,115,0.0,0.1173,False,0.6767,0.3233,,0.3383,CLEAN,False
+R16,authored,baseline_R16_authored_0,cases/R16.txt,"Section 1.1(a). Services
+Only subclause (a) is declared.",0,56,0.0107,0.2064,False,0.6947,,0.3053,0.3527,LOW,False
+R16,authored,baseline_R16_authored_1,cases/R16.txt,"Section 2. Payment
+See Section 1.1(b).",58,96,0.0,0.1426,False,0.6947,0.3053,,0.3473,CLEAN,False
+R16,txt,baseline_R16_txt_0,cases/R16.txt,"Section 1.1(a). Services
+Only subclause (a) is declared.",0,56,0.0107,0.2064,False,0.6947,,0.3053,0.3527,LOW,False
+R16,txt,baseline_R16_txt_1,cases/R16.txt,"Section 2. Payment
+See Section 1.1(b).",58,96,0.0,0.1426,False,0.6947,0.3053,,0.3473,CLEAN,False
+R17,authored,baseline_R17_authored_0,cases/R17.txt,"Section 1.1(a). Services
+Subclause text.",0,40,0.0,0.1432,False,0.6809,,0.3191,0.3404,CLEAN,False
+R17,authored,baseline_R17_authored_1,cases/R17.txt,"Section 2. Payment
+See Section 1.1(a) above.",42,86,0.0,0.1364,False,0.6809,0.3191,,0.3404,CLEAN,False
+R17,txt,baseline_R17_txt_0,cases/R17.txt,"Section 1.1(a). Services
+Subclause text.",0,40,0.0,0.1432,False,0.6809,,0.3191,0.3404,CLEAN,False
+R17,txt,baseline_R17_txt_1,cases/R17.txt,"Section 2. Payment
+See Section 1.1(a) above.",42,86,0.0,0.1364,False,0.6809,0.3191,,0.3404,CLEAN,False
+R18,authored,baseline_R18_authored_0,cases/R18.txt,"Section III. Meaning
+Defined text.",0,34,0.0043,0.2026,False,0.6943,,0.3057,0.3493,CLEAN,False
+R18,authored,baseline_R18_authored_1,cases/R18.txt,"Section 2. Payment
+See Section III above.",36,77,0.0,0.1767,False,0.6943,0.3057,,0.3472,CLEAN,False
+R18,txt,baseline_R18_txt_0,cases/R18.txt,"Section III. Meaning
+Defined text.",0,34,0.0043,0.2026,False,0.6943,,0.3057,0.3493,CLEAN,False
+R18,txt,baseline_R18_txt_1,cases/R18.txt,"Section 2. Payment
+See Section III above.",36,77,0.0,0.1767,False,0.6943,0.3057,,0.3472,CLEAN,False
+R19,authored,baseline_R19_authored_0,cases/R19.txt,"Section 2. Payment
+See Section III above.",0,41,0.0,0.1767,False,0.6934,,0.3066,0.3467,CLEAN,False
+R19,authored,baseline_R19_authored_1,cases/R19.txt,"Section III. Meaning
+Defined text.",43,77,0.0043,0.2026,False,0.6934,0.3066,,0.3488,CLEAN,False
+R19,txt,baseline_R19_txt_0,cases/R19.txt,"Section 2. Payment
+See Section III above.",0,41,0.0,0.1767,False,0.6934,,0.3066,0.3467,CLEAN,False
+R19,txt,baseline_R19_txt_1,cases/R19.txt,"Section III. Meaning
+Defined text.",43,77,0.0043,0.2026,False,0.6934,0.3066,,0.3488,CLEAN,False
+R20,authored,baseline_R20_authored_0,cases/R20.txt,"Section 1. Definitions
+Services means the example work.",0,55,0.0,0.1697,False,0.7021,,0.2979,0.351,MEDIUM,True
+R20,authored,baseline_R20_authored_1,cases/R20.txt,"Section 2. Qualification
+The foregoing obligation applies here.",57,120,0.0,0.1745,False,0.7021,0.2979,,0.351,MEDIUM,True
+R20,txt,baseline_R20_txt_0,cases/R20.txt,"Section 1. Definitions
+Services means the example work.",0,55,0.0,0.1697,False,0.7021,,0.2979,0.351,MEDIUM,True
+R20,txt,baseline_R20_txt_1,cases/R20.txt,"Section 2. Qualification
+The foregoing obligation applies here.",57,120,0.0,0.1745,False,0.7021,0.2979,,0.351,MEDIUM,True
+R21,authored,baseline_R21_authored_0,cases/R21.txt,"Section 1. Definitions
+Services means the example work.",0,55,0.0,0.1697,False,0.6971,,0.3029,0.3486,CLEAN,False
+R21,authored,baseline_R21_authored_1,cases/R21.txt,"Section 2. Payment
+Payment follows the immediately preceding Section 1.",57,128,0.0,0.1473,False,0.6971,0.3029,,0.3486,CLEAN,False
+R21,txt,baseline_R21_txt_0,cases/R21.txt,"Section 1. Definitions
+Services means the example work.",0,55,0.0,0.1697,False,0.6971,,0.3029,0.3486,CLEAN,False
+R21,txt,baseline_R21_txt_1,cases/R21.txt,"Section 2. Payment
+Payment follows the immediately preceding Section 1.",57,128,0.0,0.1473,False,0.6971,0.3029,,0.3486,CLEAN,False
+R22,authored,baseline_R22_authored_0,cases/R22.txt,"Section 1. Definitions
+Services means the example work.",0,55,0.0,0.1697,False,0.7166,,0.2834,0.3583,MEDIUM,True
+R22,authored,baseline_R22_authored_1,cases/R22.txt,"Section 2. Goods
+Goods are specified here.",57,99,0.0629,0.2377,False,0.7166,0.2834,0.2913,0.3897,MEDIUM,True
+R22,authored,baseline_R22_authored_2,cases/R22.txt,"Section 3. Payment
+Payment follows the immediately preceding Section 1.",101,172,0.0,0.1479,False,0.7087,0.2913,,0.3543,MEDIUM,True
+R22,txt,baseline_R22_txt_0,cases/R22.txt,"Section 1. Definitions
+Services means the example work.",0,55,0.0,0.1697,False,0.7166,,0.2834,0.3583,MEDIUM,True
+R22,txt,baseline_R22_txt_1,cases/R22.txt,"Section 2. Goods
+Goods are specified here.",57,99,0.0629,0.2377,False,0.7166,0.2834,0.2913,0.3897,MEDIUM,True
+R22,txt,baseline_R22_txt_2,cases/R22.txt,"Section 3. Payment
+Payment follows the immediately preceding Section 1.",101,172,0.0,0.1479,False,0.7087,0.2913,,0.3543,MEDIUM,True
+R23,authored,baseline_R23_authored_0,cases/R23.txt,"Section 2. Payment
+See Section 1, above.",0,40,0.0,0.1614,False,0.7016,,0.2984,0.3508,MEDIUM,True
+R23,authored,baseline_R23_authored_1,cases/R23.txt,"Section 1. Definitions
+Services means the example work.",42,97,0.0,0.1697,False,0.7016,0.2984,,0.3508,MEDIUM,True
+R23,txt,baseline_R23_txt_0,cases/R23.txt,"Section 2. Payment
+See Section 1, above.",0,40,0.0,0.1614,False,0.7016,,0.2984,0.3508,MEDIUM,True
+R23,txt,baseline_R23_txt_1,cases/R23.txt,"Section 1. Definitions
+Services means the example work.",42,97,0.0,0.1697,False,0.7016,0.2984,,0.3508,MEDIUM,True
+R24,authored,baseline_R24_authored_0,cases/R24.txt,"Section 2. Payment
+See above Section 1 for the definition.",0,58,0.0,0.1476,False,0.7015,,0.2985,0.3508,MEDIUM,True
+R24,authored,baseline_R24_authored_1,cases/R24.txt,"Section 1. Definitions
+Services means the example work.",60,115,0.0,0.1697,False,0.7015,0.2985,,0.3508,MEDIUM,True
+R24,txt,baseline_R24_txt_0,cases/R24.txt,"Section 2. Payment
+See above Section 1 for the definition.",0,58,0.0,0.1476,False,0.7015,,0.2985,0.3508,MEDIUM,True
+R24,txt,baseline_R24_txt_1,cases/R24.txt,"Section 1. Definitions
+Services means the example work.",60,115,0.0,0.1697,False,0.7015,0.2985,,0.3508,MEDIUM,True
+R25,authored,baseline_R25_authored_0,cases/R25.txt,"Section 1. Payment
+Payment follows Sections 8 and 9.",0,52,0.0,0.1312,False,0.0,1.0,1.0,0.0,CLEAN,False
+R25,txt,baseline_R25_txt_0,cases/R25.txt,"Section 1. Payment
+Payment follows Sections 8 and 9.",0,52,0.0,0.1312,False,0.0,1.0,1.0,0.0,CLEAN,False
+R26,authored,baseline_R26_authored_0,cases/R26.txt,"Section 1. Definition
+The definition stated in Section 1 above applies throughout.",0,82,0.0,0.1459,False,0.0,1.0,1.0,0.0,CLEAN,False
+R26,txt,baseline_R26_txt_0,cases/R26.txt,"Section 1. Definition
+The definition stated in Section 1 above applies throughout.",0,82,0.0,0.1459,False,0.0,1.0,1.0,0.0,CLEAN,False
+R27,authored,baseline_R27_authored_0,cases/R27.txt,"Section 1. Scope
+Specifications follow Exhibit Z.",0,49,0.0,0.1247,False,0.0,1.0,1.0,0.0,CLEAN,False
+R27,txt,baseline_R27_txt_0,cases/R27.txt,"Section 1. Scope
+Specifications follow Exhibit Z.",0,49,0.0,0.1247,False,0.0,1.0,1.0,0.0,CLEAN,False
+R28,authored,baseline_R28_authored_0,cases/R28.txt,"Section 1. Scope
+Exhibit Z supplies the specifications.",0,55,0.0,0.157,False,0.0,1.0,1.0,0.0,CLEAN,False
+R28,txt,baseline_R28_txt_0,cases/R28.txt,"Section 1. Scope
+Exhibit Z supplies the specifications.",0,55,0.0,0.157,False,0.0,1.0,1.0,0.0,CLEAN,False
+T01,authored,baseline_T01_authored_0,cases/T01.txt,"Section 1. Term
+The Effective Date is 2026-01-01.",0,49,0.0,0.1289,False,0.6787,,0.3213,0.3393,CLEAN,False
+T01,authored,baseline_T01_authored_1,cases/T01.txt,"Section 2. End
+The Termination Date is 2026-12-31.",51,101,0.0,0.1328,False,0.6787,0.3213,,0.3393,CLEAN,False
+T01,txt,baseline_T01_txt_0,cases/T01.txt,"Section 1. Term
+The Effective Date is 2026-01-01.",0,49,0.0,0.1289,False,0.6787,,0.3213,0.3393,CLEAN,False
+T01,txt,baseline_T01_txt_1,cases/T01.txt,"Section 2. End
+The Termination Date is 2026-12-31.",51,101,0.0,0.1328,False,0.6787,0.3213,,0.3393,CLEAN,False
+T02,authored,baseline_T02_authored_0,cases/T02.txt,"Section 1. Term
+The Effective Date is 2026-12-31.",0,49,0.0,0.1131,False,0.6732,,0.3268,0.3366,CLEAN,False
+T02,authored,baseline_T02_authored_1,cases/T02.txt,"Section 2. End
+The Termination Date is 2026-01-01.",51,101,0.0,0.1479,False,0.6732,0.3268,,0.3366,CLEAN,False
+T02,txt,baseline_T02_txt_0,cases/T02.txt,"Section 1. Term
+The Effective Date is 2026-12-31.",0,49,0.0,0.1131,False,0.6732,,0.3268,0.3366,CLEAN,False
+T02,txt,baseline_T02_txt_1,cases/T02.txt,"Section 2. End
+The Termination Date is 2026-01-01.",51,101,0.0,0.1479,False,0.6732,0.3268,,0.3366,CLEAN,False
+T02,pdf,baseline_T02_pdf_0,cases/T02.txt,"Section 1. Term
+The Effective Date is 2026-12-31.",0,49,0.0,0.1131,False,0.6732,,0.3268,0.3366,CLEAN,False
+T02,pdf,baseline_T02_pdf_1,cases/T02.txt,"Section 2. End
+The Termination Date is 2026-01-01.",50,100,0.0,0.1479,False,0.6732,0.3268,,0.3366,CLEAN,False
+T02,docx,baseline_T02_docx_0,cases/T02.txt,"Section 1. Term
+The Effective Date is 2026-12-31.",0,49,0.0,0.1131,False,0.6732,,0.3268,0.3366,CLEAN,False
+T02,docx,baseline_T02_docx_1,cases/T02.txt,"Section 2. End
+The Termination Date is 2026-01-01.",51,101,0.0,0.1479,False,0.6732,0.3268,,0.3366,CLEAN,False
+T03,authored,baseline_T03_authored_0,cases/T03.txt,"Section 1. Term
+The Effective Date is January 01, 2026.",0,55,0.0,0.1217,False,0.6732,,0.3268,0.3366,CLEAN,False
+T03,authored,baseline_T03_authored_1,cases/T03.txt,"Section 2. End
+The Termination Date is December 31, 2026.",57,114,0.0,0.1263,False,0.6732,0.3268,,0.3366,CLEAN,False
+T03,txt,baseline_T03_txt_0,cases/T03.txt,"Section 1. Term
+The Effective Date is January 01, 2026.",0,55,0.0,0.1217,False,0.6732,,0.3268,0.3366,CLEAN,False
+T03,txt,baseline_T03_txt_1,cases/T03.txt,"Section 2. End
+The Termination Date is December 31, 2026.",57,114,0.0,0.1263,False,0.6732,0.3268,,0.3366,CLEAN,False
+T04,authored,baseline_T04_authored_0,cases/T04.txt,"Section 1. Term
+The Effective Date is December 31, 2026.",0,56,0.0,0.1227,False,0.6668,,0.3332,0.3334,CLEAN,False
+T04,authored,baseline_T04_authored_1,cases/T04.txt,"Section 2. End
+The Termination Date is January 01, 2026.",58,114,0.0,0.1239,False,0.6668,0.3332,,0.3334,CLEAN,False
+T04,txt,baseline_T04_txt_0,cases/T04.txt,"Section 1. Term
+The Effective Date is December 31, 2026.",0,56,0.0,0.1227,False,0.6668,,0.3332,0.3334,CLEAN,False
+T04,txt,baseline_T04_txt_1,cases/T04.txt,"Section 2. End
+The Termination Date is January 01, 2026.",58,114,0.0,0.1239,False,0.6668,0.3332,,0.3334,CLEAN,False
+T05,authored,baseline_T05_authored_0,cases/T05.txt,"Section 1. Service period
+Service runs from 2026-01-01 to 2026-12-31.",0,69,0.0,0.1274,False,0.0,1.0,1.0,0.0,CLEAN,False
+T05,txt,baseline_T05_txt_0,cases/T05.txt,"Section 1. Service period
+Service runs from 2026-01-01 to 2026-12-31.",0,69,0.0,0.1274,False,0.0,1.0,1.0,0.0,CLEAN,False
+T06,authored,baseline_T06_authored_0,cases/T06.txt,"Section 1. Service period
+Service runs from 2026-12-31 to 2026-01-01.",0,69,0.0,0.1244,False,0.0,1.0,1.0,0.0,CLEAN,False
+T06,txt,baseline_T06_txt_0,cases/T06.txt,"Section 1. Service period
+Service runs from 2026-12-31 to 2026-01-01.",0,69,0.0,0.1244,False,0.0,1.0,1.0,0.0,CLEAN,False
+T07,authored,baseline_T07_authored_0,cases/T07.txt,"Section 1. Archive
+The archive records December 31, 2026 and October 1, 2026 as independent review dates, without an ordered service interval.",0,142,0.0,0.1185,False,0.0,1.0,1.0,0.0,CLEAN,False
+T07,txt,baseline_T07_txt_0,cases/T07.txt,"Section 1. Archive
+The archive records December 31, 2026 and October 1, 2026 as independent review dates, without an ordered service interval.",0,142,0.0,0.1185,False,0.0,1.0,1.0,0.0,CLEAN,False
+T08,authored,baseline_T08_authored_0,cases/T08.txt,"Section 1. Archive
+The record dated December 31, 2026 relates to a separate historical entry dated January 1, 2026.",0,115,0.0,0.1192,False,0.0,1.0,1.0,0.0,CLEAN,False
+T08,txt,baseline_T08_txt_0,cases/T08.txt,"Section 1. Archive
+The record dated December 31, 2026 relates to a separate historical entry dated January 1, 2026.",0,115,0.0,0.1192,False,0.0,1.0,1.0,0.0,CLEAN,False
+T09,authored,baseline_T09_authored_0,cases/T09.txt,"Section 1. Effective date
+The Effective Date is 2026-06-01.",0,59,0.0,0.1416,False,0.7093,,0.2907,0.3547,MEDIUM,True
+T09,authored,baseline_T09_authored_1,cases/T09.txt,"Section 2. Payment
+Payment due on 2026-05-01.",61,106,0.0,0.1622,False,0.7093,0.2907,,0.3547,MEDIUM,True
+T09,txt,baseline_T09_txt_0,cases/T09.txt,"Section 1. Effective date
+The Effective Date is 2026-06-01.",0,59,0.0,0.1416,False,0.7093,,0.2907,0.3547,MEDIUM,True
+T09,txt,baseline_T09_txt_1,cases/T09.txt,"Section 2. Payment
+Payment due on 2026-05-01.",61,106,0.0,0.1622,False,0.7093,0.2907,,0.3547,MEDIUM,True
+T10,authored,baseline_T10_authored_0,cases/T10.txt,"Section 1. End
+The Expiration Date is 2026-06-01.",0,49,0.0,0.1533,False,0.7068,,0.2932,0.3534,MEDIUM,True
+T10,authored,baseline_T10_authored_1,cases/T10.txt,"Section 2. Notice
+Notice required by 2026-07-01.",51,99,0.0,0.1771,False,0.7068,0.2932,,0.3534,MEDIUM,True
+T10,txt,baseline_T10_txt_0,cases/T10.txt,"Section 1. End
+The Expiration Date is 2026-06-01.",0,49,0.0,0.1533,False,0.7068,,0.2932,0.3534,MEDIUM,True
+T10,txt,baseline_T10_txt_1,cases/T10.txt,"Section 2. Notice
+Notice required by 2026-07-01.",51,99,0.0,0.1771,False,0.7068,0.2932,,0.3534,MEDIUM,True
+T11,authored,baseline_T11_authored_0,cases/T11.txt,"Section 1. Term
+The Effective Date is 03/04/2026.",0,49,0.0,0.1285,False,0.6767,,0.3233,0.3383,CLEAN,False
+T11,authored,baseline_T11_authored_1,cases/T11.txt,"Section 2. End
+The Termination Date is 04/03/2026.",51,101,0.0,0.1379,False,0.6767,0.3233,,0.3383,CLEAN,False
+T11,txt,baseline_T11_txt_0,cases/T11.txt,"Section 1. Term
+The Effective Date is 03/04/2026.",0,49,0.0,0.1285,False,0.6767,,0.3233,0.3383,CLEAN,False
+T11,txt,baseline_T11_txt_1,cases/T11.txt,"Section 2. End
+The Termination Date is 04/03/2026.",51,101,0.0,0.1379,False,0.6767,0.3233,,0.3383,CLEAN,False
+T12,authored,baseline_T12_authored_0,cases/T12.txt,"Section 1. Agreement A
+For Agreement A, the Effective Date is 2026-06-01.",0,73,0.0,0.1159,False,0.654,,0.346,0.327,CLEAN,False
+T12,authored,baseline_T12_authored_1,cases/T12.txt,"Section 2. Agreement A
+For Agreement A, the Termination Date is 2026-12-31.",75,150,0.0,0.1076,False,0.662,0.346,0.338,0.331,CLEAN,False
+T12,authored,baseline_T12_authored_2,cases/T12.txt,"Section 3. Agreement B
+For Agreement B, the Effective Date is 2026-01-01.",152,225,0.0,0.1112,False,0.662,0.338,0.3571,0.331,CLEAN,False
+T12,authored,baseline_T12_authored_3,cases/T12.txt,"Section 4. Agreement B
+For Agreement B, the Termination Date is 2026-03-01.",227,302,0.0,0.1128,False,0.6429,0.3571,,0.3215,CLEAN,False
+T12,txt,baseline_T12_txt_0,cases/T12.txt,"Section 1. Agreement A
+For Agreement A, the Effective Date is 2026-06-01.",0,73,0.0,0.1159,False,0.654,,0.346,0.327,CLEAN,False
+T12,txt,baseline_T12_txt_1,cases/T12.txt,"Section 2. Agreement A
+For Agreement A, the Termination Date is 2026-12-31.",75,150,0.0,0.1076,False,0.662,0.346,0.338,0.331,CLEAN,False
+T12,txt,baseline_T12_txt_2,cases/T12.txt,"Section 3. Agreement B
+For Agreement B, the Effective Date is 2026-01-01.",152,225,0.0,0.1112,False,0.662,0.338,0.3571,0.331,CLEAN,False
+T12,txt,baseline_T12_txt_3,cases/T12.txt,"Section 4. Agreement B
+For Agreement B, the Termination Date is 2026-03-01.",227,302,0.0,0.1128,False,0.6429,0.3571,,0.3215,CLEAN,False
+T13,authored,baseline_T13_authored_0,cases/T13.txt,"Section 1. Term
+The Effective Date is
+2026-06-01.
+The Termination Date is
+2026-05-01.",0,85,0.0,0.1233,False,0.0,1.0,1.0,0.0,CLEAN,False
+T13,txt,baseline_T13_txt_0,cases/T13.txt,"Section 1. Term
+The Effective Date is",0,37,0.0,0.1762,False,0.7442,,0.2558,0.3721,MEDIUM,True
+T13,txt,baseline_T13_txt_1,cases/T13.txt,"2026-06-01.
+The Termination Date is",38,73,0.1982,0.3189,False,0.7442,0.2558,0.2709,0.4712,MEDIUM,True
+T13,txt,baseline_T13_txt_2,cases/T13.txt,2026-05-01.,74,85,0.2154,0.3292,False,0.7291,0.2709,,0.4723,MEDIUM,True
+T13,pdf,baseline_T13_pdf_0,cases/T13.txt,"Section 1. Term
+The Effective Date is",0,37,0.0,0.1762,False,0.7442,,0.2558,0.3721,MEDIUM,True
+T13,pdf,baseline_T13_pdf_1,cases/T13.txt,"2026-06-01.
+The Termination Date is",38,73,0.1982,0.3189,False,0.7442,0.2558,0.2709,0.4712,MEDIUM,True
+T13,pdf,baseline_T13_pdf_2,cases/T13.txt,2026-05-01.,74,85,0.2154,0.3292,False,0.7291,0.2709,,0.4723,MEDIUM,True
+T13,docx,baseline_T13_docx_0,cases/T13.txt,"Section 1. Term
+The Effective Date is",0,37,0.0,0.1762,False,0.7442,,0.2558,0.3721,MEDIUM,True
+T13,docx,baseline_T13_docx_1,cases/T13.txt,"2026-06-01.
+The Termination Date is",38,73,0.1982,0.3189,False,0.7442,0.2558,0.2709,0.4712,MEDIUM,True
+T13,docx,baseline_T13_docx_2,cases/T13.txt,2026-05-01.,74,85,0.2154,0.3292,False,0.7291,0.2709,,0.4723,MEDIUM,True
+T14,authored,baseline_T14_authored_0,cases/T14.txt,"Section 1. Term
+The Effective Date is February 30, 2026.",0,56,0.0,0.1164,False,0.0,1.0,1.0,0.0,CLEAN,False
+T14,txt,baseline_T14_txt_0,cases/T14.txt,"Section 1. Term
+The Effective Date is February 30, 2026.",0,56,0.0,0.1164,False,0.0,1.0,1.0,0.0,CLEAN,False
+T15,authored,baseline_T15_authored_0,cases/T15.txt,"Section 1. Effective
+The Effective Date is 2026-06-01.",0,54,0.0,0.1433,False,0.6918,,0.3082,0.3459,CLEAN,False
+T15,authored,baseline_T15_authored_1,cases/T15.txt,"Section 2. Deposit
+Payment due on 2026-05-01 is an expressly permitted refundable advance deposit before effectiveness.",56,175,0.0,0.1212,False,0.6918,0.3082,,0.3459,CLEAN,False
+T15,txt,baseline_T15_txt_0,cases/T15.txt,"Section 1. Effective
+The Effective Date is 2026-06-01.",0,54,0.0,0.1433,False,0.6918,,0.3082,0.3459,CLEAN,False
+T15,txt,baseline_T15_txt_1,cases/T15.txt,"Section 2. Deposit
+Payment due on 2026-05-01 is an expressly permitted refundable advance deposit before effectiveness.",56,175,0.0,0.1212,False,0.6918,0.3082,,0.3459,CLEAN,False
+T16,authored,baseline_T16_authored_0,cases/T16.txt,"Section 1. Term
+The Effective Date is specified for the sole synthetic agreement with no other date roles in this passage. specified for the sole synthetic agreement with no other date roles in this passage. 2026-06-01.",0,219,0.0,0.0932,False,0.7064,,0.2936,0.3532,MEDIUM,True
+T16,authored,baseline_T16_authored_1,cases/T16.txt,"Section 2. End
+The Termination Date is 2026-05-01.",221,271,0.0,0.1543,False,0.7064,0.2936,,0.3532,MEDIUM,True
+T16,txt,baseline_T16_txt_0,cases/T16.txt,"Section 1. Term
+The Effective Date is specified for the sole synthetic agreement with no other date roles in this passage. specified for the sole synthetic agreement with no other date roles in this passage. 2026-06-01.",0,219,0.0,0.0932,False,0.7064,,0.2936,0.3532,MEDIUM,True
+T16,txt,baseline_T16_txt_1,cases/T16.txt,"Section 2. End
+The Termination Date is 2026-05-01.",221,271,0.0,0.1543,False,0.7064,0.2936,,0.3532,MEDIUM,True
+T17,authored,baseline_T17_authored_0,cases/T17.txt,"Section 1. Term
+2026-12-31 is the Effective Date.",0,49,0.0,0.1235,False,0.6859,,0.3141,0.3429,CLEAN,False
+T17,authored,baseline_T17_authored_1,cases/T17.txt,"Section 2. End
+2026-01-01 is the Termination Date.",51,101,0.0,0.1373,False,0.6859,0.3141,,0.3429,CLEAN,False
+T17,txt,baseline_T17_txt_0,cases/T17.txt,Section 1. Term,0,15,0.0597,0.2358,False,0.7264,,0.2736,0.3931,MEDIUM,True
+T17,txt,baseline_T17_txt_1,cases/T17.txt,2026-12-31 is the Effective Date.,16,49,0.0,0.1874,False,0.7264,0.2736,0.2825,0.3632,MEDIUM,True
+T17,txt,baseline_T17_txt_2,cases/T17.txt,Section 2. End,51,65,0.0252,0.2151,False,0.7272,0.2825,0.2728,0.3762,MEDIUM,True
+T17,txt,baseline_T17_txt_3,cases/T17.txt,2026-01-01 is the Termination Date.,66,101,0.0372,0.2223,False,0.7272,0.2728,,0.3822,MEDIUM,True
+S01,authored,baseline_S01_authored_0,cases/S01.txt,The buyer shall pay within thirty days.,0,39,0.0,0.1827,False,0.7167,,0.2833,0.3584,MEDIUM,True
+S01,authored,baseline_S01_authored_1,cases/S01.txt,The supplier shall deliver conforming goods.,41,85,0.0202,0.2121,False,0.7167,0.2833,,0.3684,MEDIUM,True
+S01,txt,baseline_S01_txt_0,cases/S01.txt,"The buyer shall pay within thirty days.
+
+The supplier shall deliver conforming goods.",0,85,0.0,0.1389,False,0.0,1.0,1.0,0.0,CLEAN,False
+S02,authored,baseline_S02_authored_0,cases/S02.txt,"Section 1. Prices
+The amount is
+100 dollars payable after delivery.",0,67,0.0,0.1436,False,0.0,1.0,1.0,0.0,CLEAN,False
+S02,txt,baseline_S02_txt_0,cases/S02.txt,"Section 1. Prices
+The amount is",0,31,0.0383,0.223,False,0.7158,,0.2842,0.377,MEDIUM,True
+S02,txt,baseline_S02_txt_1,cases/S02.txt,100 dollars payable after delivery.,32,67,0.0879,0.2527,False,0.7158,0.2842,,0.4018,MEDIUM,True
+S03,authored,baseline_S03_authored_0,cases/S03.txt,"Section 1. Notices
+NOTICE ONLY
+This uppercase line belongs to this authored clause.",0,83,0.0,0.1139,False,0.0,1.0,1.0,0.0,CLEAN,False
+S03,txt,baseline_S03_txt_0,cases/S03.txt,Section 1. Notices,0,18,0.3476,0.4086,False,0.727,,0.273,0.5373,MEDIUM,True
+S03,txt,baseline_S03_txt_1,cases/S03.txt,"NOTICE ONLY
+This uppercase line belongs to this authored clause.",19,83,0.0,0.1278,False,0.727,0.273,,0.3635,MEDIUM,True
+S04,authored,baseline_S04_authored_0,cases/S04.txt,"Section 1. Payment
+If price < 100, payment follows Section 9; if volume > 20, delivery is expedited.",0,100,0.0,0.1356,False,0.0,1.0,1.0,0.0,CLEAN,False
+S04,txt,baseline_S04_txt_0,cases/S04.txt,"Section 1. Payment
+If price   20, delivery is expedited.",0,56,0.0,0.1401,False,0.0,1.0,1.0,0.0,CLEAN,False
+S04,pdf,baseline_S04_pdf_0,cases/S04.txt,"Section 1. Payment
+If price   20, delivery is expedited.",0,56,0.0,0.1401,False,0.0,1.0,1.0,0.0,CLEAN,False
+S04,docx,baseline_S04_docx_0,cases/S04.txt,"Section 1. Payment
+If price   20, delivery is expedited.",0,56,0.0,0.1401,False,0.0,1.0,1.0,0.0,CLEAN,False
+S05,authored,baseline_S05_authored_0,cases/S05.txt,<p>Section 1. Definitions</p><p>Services means example work.</p>,0,64,0.0,0.1962,False,0.6476,,0.3524,0.3238,CLEAN,False
+S05,authored,baseline_S05_authored_1,cases/S05.txt,<p>Section 2. Payment</p><p>Payment follows Section 1 above.</p>,66,130,0.0,0.1828,False,0.6476,0.3524,,0.3238,CLEAN,False
+S05,txt,baseline_S05_txt_0,cases/S05.txt,"Section 1. Definitions 
+Services means example work.",1,53,0.0022,0.2013,False,0.7005,,0.2995,0.3513,MEDIUM,True
+S05,txt,baseline_S05_txt_1,cases/S05.txt,"Section 2. Payment 
+Payment follows Section 1 above.",56,108,0.0,0.185,False,0.7005,0.2995,,0.3503,MEDIUM,True
+W01,authored,baseline_W01_authored_0,cases/W01.txt,"Section 1. Payment
+The buyer shall remit payment within thirty days after receipt of an invoice.",0,96,0.0,0.1108,False,0.6934,,0.3066,0.3467,CLEAN,False
+W01,authored,baseline_W01_authored_1,cases/W01.txt,"Section 2. Notices
+All notices must be in writing.",98,148,0.0,0.1652,False,0.6934,0.3066,,0.3467,CLEAN,False
+W01,txt,baseline_W01_txt_0,cases/W01.txt,"Section 1. Payment
+The buyer shall remit payment within thirty days after receipt of an invoice.",0,96,0.0,0.1108,False,0.6934,,0.3066,0.3467,CLEAN,False
+W01,txt,baseline_W01_txt_1,cases/W01.txt,"Section 2. Notices
+All notices must be in writing.",98,148,0.0,0.1652,False,0.6934,0.3066,,0.3467,CLEAN,False
+W02,authored,baseline_W02_authored_0,cases/W02.txt,"Section 1. Payment
+Whensoever an invoice is received, the obligor shall discharge the pecuniary sum within thirty days.",0,119,0.0,0.1412,False,0.7019,,0.2981,0.3509,MEDIUM,True
+W02,authored,baseline_W02_authored_1,cases/W02.txt,"Section 2. Notices
+All notices must be in writing.",121,171,0.0,0.1652,False,0.7019,0.2981,,0.3509,MEDIUM,True
+W02,txt,baseline_W02_txt_0,cases/W02.txt,"Section 1. Payment
+Whensoever an invoice is received, the obligor shall discharge the pecuniary sum within thirty days.",0,119,0.0,0.1412,False,0.7019,,0.2981,0.3509,MEDIUM,True
+W02,txt,baseline_W02_txt_1,cases/W02.txt,"Section 2. Notices
+All notices must be in writing.",121,171,0.0,0.1652,False,0.7019,0.2981,,0.3509,MEDIUM,True
+W03,authored,baseline_W03_authored_0,cases/W03.txt,"Section 1. Payment
+On receipt of the billing instrument, remittance shall occur within a thirty-day period.",0,107,0.0,0.1052,False,0.6952,,0.3048,0.3476,CLEAN,False
+W03,authored,baseline_W03_authored_1,cases/W03.txt,"Section 2. Notices
+All notices must be in writing.",109,159,0.0,0.1652,False,0.6952,0.3048,,0.3476,CLEAN,False
+W03,txt,baseline_W03_txt_0,cases/W03.txt,"Section 1. Payment
+On receipt of the billing instrument, remittance shall occur within a thirty-day period.",0,107,0.0,0.1052,False,0.6952,,0.3048,0.3476,CLEAN,False
+W03,txt,baseline_W03_txt_1,cases/W03.txt,"Section 2. Notices
+All notices must be in writing.",109,159,0.0,0.1652,False,0.6952,0.3048,,0.3476,CLEAN,False
+W04,authored,baseline_W04_authored_0,cases/W04.txt,"Section 1. Payment
+The invoice-receiving party undertakes timely satisfaction of the stated monetary obligation.",0,112,0.0,0.1543,False,0.7074,,0.2926,0.3537,MEDIUM,True
+W04,authored,baseline_W04_authored_1,cases/W04.txt,"Section 2. Notices
+All notices must be in writing.",114,164,0.0,0.1652,False,0.7074,0.2926,,0.3537,MEDIUM,True
+W04,txt,baseline_W04_txt_0,cases/W04.txt,"Section 1. Payment
+The invoice-receiving party undertakes timely satisfaction of the stated monetary obligation.",0,112,0.0,0.1543,False,0.7074,,0.2926,0.3537,MEDIUM,True
+W04,txt,baseline_W04_txt_1,cases/W04.txt,"Section 2. Notices
+All notices must be in writing.",114,164,0.0,0.1652,False,0.7074,0.2926,,0.3537,MEDIUM,True
+O01,authored,baseline_O01_authored_0,cases/O01.txt,"Section 1. Preamble and Parties. This Master Services Agreement is entered into as of January 1, 2025 by and between Client Inc. and Provider LLC.",0,146,0.0,0.1014,False,0.6728,,0.3272,0.3364,CLEAN,False
+O01,authored,baseline_O01_authored_1,cases/O01.txt,Section 2. Scope of Services. Provider agrees to provide software development and consulting services as described in Exhibit A attached hereto.,148,292,0.0,0.1018,False,0.6842,0.3272,0.3158,0.3421,CLEAN,False
+O01,authored,baseline_O01_authored_2,cases/O01.txt,Section 3. Payment Terms. Invoices shall be payable within thirty (30) days of receipt. Payment due date shall be on or after the Effective Date.,294,439,0.0,0.0787,False,0.6842,0.3158,0.3238,0.3421,CLEAN,False
+O01,authored,baseline_O01_authored_3,cases/O01.txt,Section 4. Intellectual Property. All work product developed pursuant to Section 2 shall be deemed work made for hire owned by Client.,441,575,0.0,0.0953,False,0.6762,0.3238,0.3296,0.3381,CLEAN,False
+O01,authored,baseline_O01_authored_4,cases/O01.txt,Section 5. Confidentiality. Each party agrees to maintain in strict confidence all proprietary information disclosed under this Agreement.,577,715,0.0,0.0831,False,0.6849,0.3296,0.3151,0.3424,CLEAN,False
+O01,authored,baseline_O01_authored_5,cases/O01.txt,"Section 6. Term and Termination. The effective date of this Agreement is January 1, 2025 and the termination date shall be December 31, 2025.",717,858,0.0,0.0656,False,0.6849,0.3151,0.3206,0.3424,CLEAN,False
+O01,authored,baseline_O01_authored_6,cases/O01.txt,Section 7. Indemnification. Provider shall defend and indemnify Client against any third-party claims arising from a breach of Section 5.,860,997,0.0,0.0817,False,0.6794,0.3206,0.3389,0.3397,CLEAN,False
+O01,authored,baseline_O01_authored_7,cases/O01.txt,Section 8. Limitation of Liability. Neither party shall be liable for indirect or consequential damages arising under this Agreement.,999,1132,0.0,0.102,False,0.6679,0.3389,0.3321,0.334,CLEAN,False
+O01,authored,baseline_O01_authored_8,cases/O01.txt,Section 9. Governing Law. This Agreement shall be governed by and construed in accordance with the laws of the State of Delaware.,1134,1263,0.0,0.0743,False,0.6731,0.3321,0.3269,0.3366,CLEAN,False
+O01,authored,baseline_O01_authored_9,cases/O01.txt,"Section 10. Miscellaneous. This Agreement, including Exhibit A, constitutes the entire understanding between the parties.",1265,1386,0.0,0.0815,False,0.6898,0.3269,0.3102,0.3449,CLEAN,False
+O01,authored,baseline_O01_authored_10,cases/O01.txt,"Exhibit A. Statement of Work. Scope details, technical deliverables, and milestone specifications.",1388,1486,0.0,0.1483,False,0.6898,0.3102,,0.3449,CLEAN,False
+O01,txt,baseline_O01_txt_0,cases/O01.txt,"Section 1. Preamble and Parties. This Master Services Agreement is entered into as of January 1, 2025 by and between Client Inc. and Provider LLC.",0,146,0.0,0.1014,False,0.6728,,0.3272,0.3364,CLEAN,False
+O01,txt,baseline_O01_txt_1,cases/O01.txt,Section 2. Scope of Services. Provider agrees to provide software development and consulting services as described in Exhibit A attached hereto.,148,292,0.0,0.1018,False,0.6842,0.3272,0.3158,0.3421,CLEAN,False
+O01,txt,baseline_O01_txt_2,cases/O01.txt,Section 3. Payment Terms. Invoices shall be payable within thirty (30) days of receipt. Payment due date shall be on or after the Effective Date.,294,439,0.0,0.0787,False,0.6842,0.3158,0.3238,0.3421,CLEAN,False
+O01,txt,baseline_O01_txt_3,cases/O01.txt,Section 4. Intellectual Property. All work product developed pursuant to Section 2 shall be deemed work made for hire owned by Client.,441,575,0.0,0.0953,False,0.6762,0.3238,0.3296,0.3381,CLEAN,False
+O01,txt,baseline_O01_txt_4,cases/O01.txt,Section 5. Confidentiality. Each party agrees to maintain in strict confidence all proprietary information disclosed under this Agreement.,577,715,0.0,0.0831,False,0.6849,0.3296,0.3151,0.3424,CLEAN,False
+O01,txt,baseline_O01_txt_5,cases/O01.txt,"Section 6. Term and Termination. The effective date of this Agreement is January 1, 2025 and the termination date shall be December 31, 2025.",717,858,0.0,0.0656,False,0.6849,0.3151,0.3206,0.3424,CLEAN,False
+O01,txt,baseline_O01_txt_6,cases/O01.txt,Section 7. Indemnification. Provider shall defend and indemnify Client against any third-party claims arising from a breach of Section 5.,860,997,0.0,0.0817,False,0.6794,0.3206,0.3389,0.3397,CLEAN,False
+O01,txt,baseline_O01_txt_7,cases/O01.txt,Section 8. Limitation of Liability. Neither party shall be liable for indirect or consequential damages arising under this Agreement.,999,1132,0.0,0.102,False,0.6679,0.3389,0.3321,0.334,CLEAN,False
+O01,txt,baseline_O01_txt_8,cases/O01.txt,Section 9. Governing Law. This Agreement shall be governed by and construed in accordance with the laws of the State of Delaware.,1134,1263,0.0,0.0743,False,0.6826,0.3321,0.3174,0.3413,CLEAN,False
+O01,txt,baseline_O01_txt_9,cases/O01.txt,"Section 10. Miscellaneous. This Agreement, including Exhibit A, constitutes the entire understanding between the parties.
+
+Exhibit A. Statement of Work. Scope details, technical deliverables, and milestone specifications.",1265,1486,0.0,0.0863,False,0.6826,0.3174,,0.3413,CLEAN,False
+O02,authored,baseline_O02_authored_0,cases/O02.txt,"Section 1. Preamble and Parties. This Master Services Agreement is entered into as of January 1, 2025 by and between Client Inc. and Provider LLC.",0,146,0.0,0.1014,False,0.6728,,0.3272,0.3364,CLEAN,False
+O02,authored,baseline_O02_authored_1,cases/O02.txt,Section 2. Scope of Services. Provider agrees to provide software development and consulting services as described in Exhibit A attached hereto.,148,292,0.0,0.1018,False,0.683,0.3272,0.317,0.3415,CLEAN,False
+O02,authored,baseline_O02_authored_2,cases/O02.txt,Section 4. Intellectual Property. All work product developed pursuant to Section 2 shall be deemed work made for hire owned by Client.,294,428,0.0,0.0953,False,0.683,0.317,0.3186,0.3415,CLEAN,False
+O02,authored,baseline_O02_authored_3,cases/O02.txt,Section 3. Payment Terms. Invoices shall be payable within thirty (30) days of receipt. Payment due date shall be on or after the Effective Date.,430,575,0.0,0.0787,False,0.6831,0.3186,0.3169,0.3416,CLEAN,False
+O02,authored,baseline_O02_authored_4,cases/O02.txt,Section 5. Confidentiality. Each party agrees to maintain in strict confidence all proprietary information disclosed under this Agreement.,577,715,0.0,0.0831,False,0.6849,0.3169,0.3151,0.3424,CLEAN,False
+O02,authored,baseline_O02_authored_5,cases/O02.txt,"Section 6. Term and Termination. The effective date of this Agreement is January 1, 2025 and the termination date shall be December 31, 2025.",717,858,0.0,0.0656,False,0.6849,0.3151,0.3206,0.3424,CLEAN,False
+O02,authored,baseline_O02_authored_6,cases/O02.txt,Section 7. Indemnification. Provider shall defend and indemnify Client against any third-party claims arising from a breach of Section 5.,860,997,0.0,0.0817,False,0.6794,0.3206,0.3389,0.3397,CLEAN,False
+O02,authored,baseline_O02_authored_7,cases/O02.txt,Section 8. Limitation of Liability. Neither party shall be liable for indirect or consequential damages arising under this Agreement.,999,1132,0.0,0.102,False,0.6679,0.3389,0.3321,0.334,CLEAN,False
+O02,authored,baseline_O02_authored_8,cases/O02.txt,Section 9. Governing Law. This Agreement shall be governed by and construed in accordance with the laws of the State of Delaware.,1134,1263,0.0,0.0743,False,0.6731,0.3321,0.3269,0.3366,CLEAN,False
+O02,authored,baseline_O02_authored_9,cases/O02.txt,"Section 10. Miscellaneous. This Agreement, including Exhibit A, constitutes the entire understanding between the parties.",1265,1386,0.0,0.0815,False,0.6898,0.3269,0.3102,0.3449,CLEAN,False
+O02,authored,baseline_O02_authored_10,cases/O02.txt,"Exhibit A. Statement of Work. Scope details, technical deliverables, and milestone specifications.",1388,1486,0.0,0.1483,False,0.6898,0.3102,,0.3449,CLEAN,False
+O02,txt,baseline_O02_txt_0,cases/O02.txt,"Section 1. Preamble and Parties. This Master Services Agreement is entered into as of January 1, 2025 by and between Client Inc. and Provider LLC.",0,146,0.0,0.1014,False,0.6728,,0.3272,0.3364,CLEAN,False
+O02,txt,baseline_O02_txt_1,cases/O02.txt,Section 2. Scope of Services. Provider agrees to provide software development and consulting services as described in Exhibit A attached hereto.,148,292,0.0,0.1018,False,0.683,0.3272,0.317,0.3415,CLEAN,False
+O02,txt,baseline_O02_txt_2,cases/O02.txt,Section 4. Intellectual Property. All work product developed pursuant to Section 2 shall be deemed work made for hire owned by Client.,294,428,0.0,0.0953,False,0.683,0.317,0.3186,0.3415,CLEAN,False
+O02,txt,baseline_O02_txt_3,cases/O02.txt,Section 3. Payment Terms. Invoices shall be payable within thirty (30) days of receipt. Payment due date shall be on or after the Effective Date.,430,575,0.0,0.0787,False,0.6831,0.3186,0.3169,0.3416,CLEAN,False
+O02,txt,baseline_O02_txt_4,cases/O02.txt,Section 5. Confidentiality. Each party agrees to maintain in strict confidence all proprietary information disclosed under this Agreement.,577,715,0.0,0.0831,False,0.6849,0.3169,0.3151,0.3424,CLEAN,False
+O02,txt,baseline_O02_txt_5,cases/O02.txt,"Section 6. Term and Termination. The effective date of this Agreement is January 1, 2025 and the termination date shall be December 31, 2025.",717,858,0.0,0.0656,False,0.6849,0.3151,0.3206,0.3424,CLEAN,False
+O02,txt,baseline_O02_txt_6,cases/O02.txt,Section 7. Indemnification. Provider shall defend and indemnify Client against any third-party claims arising from a breach of Section 5.,860,997,0.0,0.0817,False,0.6794,0.3206,0.3389,0.3397,CLEAN,False
+O02,txt,baseline_O02_txt_7,cases/O02.txt,Section 8. Limitation of Liability. Neither party shall be liable for indirect or consequential damages arising under this Agreement.,999,1132,0.0,0.102,False,0.6679,0.3389,0.3321,0.334,CLEAN,False
+O02,txt,baseline_O02_txt_8,cases/O02.txt,Section 9. Governing Law. This Agreement shall be governed by and construed in accordance with the laws of the State of Delaware.,1134,1263,0.0,0.0743,False,0.6826,0.3321,0.3174,0.3413,CLEAN,False
+O02,txt,baseline_O02_txt_9,cases/O02.txt,"Section 10. Miscellaneous. This Agreement, including Exhibit A, constitutes the entire understanding between the parties.
+
+Exhibit A. Statement of Work. Scope details, technical deliverables, and milestone specifications.",1265,1486,0.0,0.0863,False,0.6826,0.3174,,0.3413,CLEAN,False
+O03,authored,baseline_O03_authored_0,cases/O03.txt,"Exhibit A. Statement of Work. Scope details, technical deliverables, and milestone specifications.",0,98,0.0,0.1483,False,0.6837,,0.3163,0.3418,CLEAN,False
+O03,authored,baseline_O03_authored_1,cases/O03.txt,"Section 10. Miscellaneous. This Agreement, including Exhibit A, constitutes the entire understanding between the parties.",100,221,0.0,0.0815,False,0.6837,0.3163,0.3394,0.3418,CLEAN,False
+O03,authored,baseline_O03_authored_2,cases/O03.txt,Section 9. Governing Law. This Agreement shall be governed by and construed in accordance with the laws of the State of Delaware.,223,352,0.0,0.0743,False,0.6752,0.3394,0.3248,0.3376,CLEAN,False
+O03,authored,baseline_O03_authored_3,cases/O03.txt,Section 8. Limitation of Liability. Neither party shall be liable for indirect or consequential damages arising under this Agreement.,354,487,0.0,0.102,False,0.6752,0.3248,0.3383,0.3376,CLEAN,False
+O03,authored,baseline_O03_authored_4,cases/O03.txt,Section 7. Indemnification. Provider shall defend and indemnify Client against any third-party claims arising from a breach of Section 5.,489,626,0.0,0.0817,False,0.6827,0.3383,0.3173,0.3413,CLEAN,False
+O03,authored,baseline_O03_authored_5,cases/O03.txt,"Section 6. Term and Termination. The effective date of this Agreement is January 1, 2025 and the termination date shall be December 31, 2025.",628,769,0.0,0.0656,False,0.6846,0.3173,0.3154,0.3423,CLEAN,False
+O03,authored,baseline_O03_authored_6,cases/O03.txt,Section 5. Confidentiality. Each party agrees to maintain in strict confidence all proprietary information disclosed under this Agreement.,771,909,0.0,0.0831,False,0.6846,0.3154,0.3266,0.3423,CLEAN,False
+O03,authored,baseline_O03_authored_7,cases/O03.txt,Section 4. Intellectual Property. All work product developed pursuant to Section 2 shall be deemed work made for hire owned by Client.,911,1045,0.0,0.0953,False,0.6814,0.3266,0.3186,0.3407,CLEAN,False
+O03,authored,baseline_O03_authored_8,cases/O03.txt,Section 3. Payment Terms. Invoices shall be payable within thirty (30) days of receipt. Payment due date shall be on or after the Effective Date.,1047,1192,0.0,0.0787,False,0.6814,0.3186,0.3266,0.3407,CLEAN,False
+O03,authored,baseline_O03_authored_9,cases/O03.txt,Section 2. Scope of Services. Provider agrees to provide software development and consulting services as described in Exhibit A attached hereto.,1194,1338,0.0,0.1018,False,0.6794,0.3266,0.3206,0.3397,CLEAN,False
+O03,authored,baseline_O03_authored_10,cases/O03.txt,"Section 1. Preamble and Parties. This Master Services Agreement is entered into as of January 1, 2025 by and between Client Inc. and Provider LLC.",1340,1486,0.0,0.1014,False,0.6794,0.3206,,0.3397,CLEAN,False
+O03,txt,baseline_O03_txt_0,cases/O03.txt,"Exhibit A. Statement of Work. Scope details, technical deliverables, and milestone specifications.",0,98,0.0,0.1483,False,0.6837,,0.3163,0.3418,CLEAN,False
+O03,txt,baseline_O03_txt_1,cases/O03.txt,"Section 10. Miscellaneous. This Agreement, including Exhibit A, constitutes the entire understanding between the parties.",100,221,0.0,0.0815,False,0.6837,0.3163,0.3394,0.3418,CLEAN,False
+O03,txt,baseline_O03_txt_2,cases/O03.txt,Section 9. Governing Law. This Agreement shall be governed by and construed in accordance with the laws of the State of Delaware.,223,352,0.0,0.0743,False,0.6752,0.3394,0.3248,0.3376,CLEAN,False
+O03,txt,baseline_O03_txt_3,cases/O03.txt,Section 8. Limitation of Liability. Neither party shall be liable for indirect or consequential damages arising under this Agreement.,354,487,0.0,0.102,False,0.6752,0.3248,0.3383,0.3376,CLEAN,False
+O03,txt,baseline_O03_txt_4,cases/O03.txt,Section 7. Indemnification. Provider shall defend and indemnify Client against any third-party claims arising from a breach of Section 5.,489,626,0.0,0.0817,False,0.6827,0.3383,0.3173,0.3413,CLEAN,False
+O03,txt,baseline_O03_txt_5,cases/O03.txt,"Section 6. Term and Termination. The effective date of this Agreement is January 1, 2025 and the termination date shall be December 31, 2025.",628,769,0.0,0.0656,False,0.6846,0.3173,0.3154,0.3423,CLEAN,False
+O03,txt,baseline_O03_txt_6,cases/O03.txt,Section 5. Confidentiality. Each party agrees to maintain in strict confidence all proprietary information disclosed under this Agreement.,771,909,0.0,0.0831,False,0.6846,0.3154,0.3266,0.3423,CLEAN,False
+O03,txt,baseline_O03_txt_7,cases/O03.txt,Section 4. Intellectual Property. All work product developed pursuant to Section 2 shall be deemed work made for hire owned by Client.,911,1045,0.0,0.0953,False,0.6814,0.3266,0.3186,0.3407,CLEAN,False
+O03,txt,baseline_O03_txt_8,cases/O03.txt,Section 3. Payment Terms. Invoices shall be payable within thirty (30) days of receipt. Payment due date shall be on or after the Effective Date.,1047,1192,0.0,0.0787,False,0.6814,0.3186,0.3266,0.3407,CLEAN,False
+O03,txt,baseline_O03_txt_9,cases/O03.txt,Section 2. Scope of Services. Provider agrees to provide software development and consulting services as described in Exhibit A attached hereto.,1194,1338,0.0,0.1018,False,0.6794,0.3266,0.3206,0.3397,CLEAN,False
+O03,txt,baseline_O03_txt_10,cases/O03.txt,"Section 1. Preamble and Parties. This Master Services Agreement is entered into as of January 1, 2025 by and between Client Inc. and Provider LLC.",1340,1486,0.0,0.1014,False,0.6794,0.3206,,0.3397,CLEAN,False
+O04,authored,baseline_O04_authored_0,cases/O04.txt,Section 3. Payment Terms. Invoices shall be payable within thirty (30) days of receipt. Payment due date shall be on or after the Effective Date.,0,145,0.0,0.0787,False,0.6762,,0.3238,0.3381,CLEAN,False
+O04,authored,baseline_O04_authored_1,cases/O04.txt,Section 4. Intellectual Property. All work product developed pursuant to Section 2 shall be deemed work made for hire owned by Client.,147,281,0.0,0.0953,False,0.6762,0.3238,0.3296,0.3381,CLEAN,False
+O04,authored,baseline_O04_authored_2,cases/O04.txt,Section 5. Confidentiality. Each party agrees to maintain in strict confidence all proprietary information disclosed under this Agreement.,283,421,0.0,0.0831,False,0.6849,0.3296,0.3151,0.3424,CLEAN,False
+O04,authored,baseline_O04_authored_3,cases/O04.txt,"Section 6. Term and Termination. The effective date of this Agreement is January 1, 2025 and the termination date shall be December 31, 2025.",423,564,0.0,0.0656,False,0.6849,0.3151,0.3206,0.3424,CLEAN,False
+O04,authored,baseline_O04_authored_4,cases/O04.txt,Section 7. Indemnification. Provider shall defend and indemnify Client against any third-party claims arising from a breach of Section 5.,566,703,0.0,0.0817,False,0.6794,0.3206,0.3389,0.3397,CLEAN,False
+O04,authored,baseline_O04_authored_5,cases/O04.txt,Section 8. Limitation of Liability. Neither party shall be liable for indirect or consequential damages arising under this Agreement.,705,838,0.0,0.102,False,0.6679,0.3389,0.3321,0.334,CLEAN,False
+O04,authored,baseline_O04_authored_6,cases/O04.txt,Section 9. Governing Law. This Agreement shall be governed by and construed in accordance with the laws of the State of Delaware.,840,969,0.0,0.0743,False,0.6731,0.3321,0.3269,0.3366,CLEAN,False
+O04,authored,baseline_O04_authored_7,cases/O04.txt,"Section 10. Miscellaneous. This Agreement, including Exhibit A, constitutes the entire understanding between the parties.",971,1092,0.0,0.0815,False,0.6898,0.3269,0.3102,0.3449,CLEAN,False
+O04,authored,baseline_O04_authored_8,cases/O04.txt,"Exhibit A. Statement of Work. Scope details, technical deliverables, and milestone specifications.",1094,1192,0.0,0.1483,False,0.6909,0.3102,0.3091,0.3454,CLEAN,False
+O04,authored,baseline_O04_authored_9,cases/O04.txt,"Section 1. Preamble and Parties. This Master Services Agreement is entered into as of January 1, 2025 by and between Client Inc. and Provider LLC.",1194,1340,0.0,0.1014,False,0.6909,0.3091,0.3272,0.3454,CLEAN,False
+O04,authored,baseline_O04_authored_10,cases/O04.txt,Section 2. Scope of Services. Provider agrees to provide software development and consulting services as described in Exhibit A attached hereto.,1342,1486,0.0,0.1018,False,0.6728,0.3272,,0.3364,CLEAN,False
+O04,txt,baseline_O04_txt_0,cases/O04.txt,Section 3. Payment Terms. Invoices shall be payable within thirty (30) days of receipt. Payment due date shall be on or after the Effective Date.,0,145,0.0,0.0787,False,0.6762,,0.3238,0.3381,CLEAN,False
+O04,txt,baseline_O04_txt_1,cases/O04.txt,Section 4. Intellectual Property. All work product developed pursuant to Section 2 shall be deemed work made for hire owned by Client.,147,281,0.0,0.0953,False,0.6762,0.3238,0.3296,0.3381,CLEAN,False
+O04,txt,baseline_O04_txt_2,cases/O04.txt,Section 5. Confidentiality. Each party agrees to maintain in strict confidence all proprietary information disclosed under this Agreement.,283,421,0.0,0.0831,False,0.6849,0.3296,0.3151,0.3424,CLEAN,False
+O04,txt,baseline_O04_txt_3,cases/O04.txt,"Section 6. Term and Termination. The effective date of this Agreement is January 1, 2025 and the termination date shall be December 31, 2025.",423,564,0.0,0.0656,False,0.6849,0.3151,0.3206,0.3424,CLEAN,False
+O04,txt,baseline_O04_txt_4,cases/O04.txt,Section 7. Indemnification. Provider shall defend and indemnify Client against any third-party claims arising from a breach of Section 5.,566,703,0.0,0.0817,False,0.6794,0.3206,0.3389,0.3397,CLEAN,False
+O04,txt,baseline_O04_txt_5,cases/O04.txt,Section 8. Limitation of Liability. Neither party shall be liable for indirect or consequential damages arising under this Agreement.,705,838,0.0,0.102,False,0.6679,0.3389,0.3321,0.334,CLEAN,False
+O04,txt,baseline_O04_txt_6,cases/O04.txt,Section 9. Governing Law. This Agreement shall be governed by and construed in accordance with the laws of the State of Delaware.,840,969,0.0,0.0743,False,0.6826,0.3321,0.3174,0.3413,CLEAN,False
+O04,txt,baseline_O04_txt_7,cases/O04.txt,"Section 10. Miscellaneous. This Agreement, including Exhibit A, constitutes the entire understanding between the parties.
+
+Exhibit A. Statement of Work. Scope details, technical deliverables, and milestone specifications.",971,1192,0.0,0.0863,False,0.6826,0.3174,0.3233,0.3413,CLEAN,False
+O04,txt,baseline_O04_txt_8,cases/O04.txt,"Section 1. Preamble and Parties. This Master Services Agreement is entered into as of January 1, 2025 by and between Client Inc. and Provider LLC.",1194,1340,0.0,0.1014,False,0.6767,0.3233,0.3272,0.3383,CLEAN,False
+O04,txt,baseline_O04_txt_9,cases/O04.txt,Section 2. Scope of Services. Provider agrees to provide software development and consulting services as described in Exhibit A attached hereto.,1342,1486,0.0,0.1018,False,0.6728,0.3272,,0.3364,CLEAN,False
+O05,authored,baseline_O05_authored_0,cases/O05.txt,"Section 1. Grant of License. Licensor grants Licensee a non-exclusive, non-transferable license to use the Software.",0,116,0.0,0.1217,False,0.6654,,0.3346,0.3327,CLEAN,False
+O05,authored,baseline_O05_authored_1,cases/O05.txt,Section 2. Permitted Users. Use of the Software is limited to authorized employees pursuant to Section 1.,118,223,0.0,0.0933,False,0.6654,0.3346,0.337,0.3327,CLEAN,False
+O05,authored,baseline_O05_authored_2,cases/O05.txt,Section 3. Fees and Taxes. Licensee shall pay the annual subscription fees set forth in Section 4.,225,323,0.0,0.0774,False,0.663,0.337,0.3504,0.3315,CLEAN,False
+O05,authored,baseline_O05_authored_3,cases/O05.txt,"Section 4. Schedule of Fees. Annual subscription fee shall be $50,000 payable upon execution.",325,418,0.0,0.086,False,0.6864,0.3504,0.3136,0.3432,CLEAN,False
+O05,authored,baseline_O05_authored_4,cases/O05.txt,Section 5. Warranty Disclaimer. Licensor disclaims all implied warranties of merchantability and fitness for a particular purpose.,420,550,0.0,0.1273,False,0.6958,0.3136,0.3042,0.3479,CLEAN,False
+O05,authored,baseline_O05_authored_5,cases/O05.txt,Section 6. Audit Rights. Licensor may audit Licensee's software deployment once annually upon reasonable notice.,552,664,0.0,0.0999,False,0.6958,0.3042,0.309,0.3479,CLEAN,False
+O05,authored,baseline_O05_authored_6,cases/O05.txt,"Section 7. Term. The initial term begins on March 1, 2025 and expires on February 28, 2026.",666,757,0.0,0.0799,False,0.691,0.309,0.3198,0.3455,CLEAN,False
+O05,authored,baseline_O05_authored_7,cases/O05.txt,Section 8. Dispute Resolution. Any dispute under this Agreement shall be resolved through binding arbitration.,759,869,0.0,0.0856,False,0.6802,0.3198,,0.3401,CLEAN,False
+O05,txt,baseline_O05_txt_0,cases/O05.txt,"Section 1. Grant of License. Licensor grants Licensee a non-exclusive, non-transferable license to use the Software.",0,116,0.0,0.1217,False,0.6654,,0.3346,0.3327,CLEAN,False
+O05,txt,baseline_O05_txt_1,cases/O05.txt,Section 2. Permitted Users. Use of the Software is limited to authorized employees pursuant to Section 1.,118,223,0.0,0.0933,False,0.6654,0.3346,0.337,0.3327,CLEAN,False
+O05,txt,baseline_O05_txt_2,cases/O05.txt,Section 3. Fees and Taxes. Licensee shall pay the annual subscription fees set forth in Section 4.,225,323,0.0,0.0774,False,0.663,0.337,0.3504,0.3315,CLEAN,False
+O05,txt,baseline_O05_txt_3,cases/O05.txt,"Section 4. Schedule of Fees. Annual subscription fee shall be $50,000 payable upon execution.",325,418,0.0,0.086,False,0.6864,0.3504,0.3136,0.3432,CLEAN,False
+O05,txt,baseline_O05_txt_4,cases/O05.txt,Section 5. Warranty Disclaimer. Licensor disclaims all implied warranties of merchantability and fitness for a particular purpose.,420,550,0.0,0.1273,False,0.6958,0.3136,0.3042,0.3479,CLEAN,False
+O05,txt,baseline_O05_txt_5,cases/O05.txt,Section 6. Audit Rights. Licensor may audit Licensee's software deployment once annually upon reasonable notice.,552,664,0.0,0.0999,False,0.6958,0.3042,0.309,0.3479,CLEAN,False
+O05,txt,baseline_O05_txt_6,cases/O05.txt,"Section 7. Term. The initial term begins on March 1, 2025 and expires on February 28, 2026.",666,757,0.0,0.0799,False,0.691,0.309,0.3198,0.3455,CLEAN,False
+O05,txt,baseline_O05_txt_7,cases/O05.txt,Section 8. Dispute Resolution. Any dispute under this Agreement shall be resolved through binding arbitration.,759,869,0.0,0.0856,False,0.6802,0.3198,,0.3401,CLEAN,False
+O06,authored,baseline_O06_authored_0,cases/O06.txt,"Section 1. Grant of License. Licensor grants Licensee a non-exclusive, non-transferable license to use the Software.",0,116,0.0,0.1217,False,0.6654,,0.3346,0.3327,CLEAN,False
+O06,authored,baseline_O06_authored_1,cases/O06.txt,Section 2. Permitted Users. Use of the Software is limited to authorized employees pursuant to Section 1.,118,223,0.0,0.0933,False,0.675,0.3346,0.325,0.3375,CLEAN,False
+O06,authored,baseline_O06_authored_2,cases/O06.txt,"Section 4. Schedule of Fees. Annual subscription fee shall be $50,000 payable upon execution.",225,318,0.0,0.086,False,0.675,0.325,0.3574,0.3375,CLEAN,False
+O06,authored,baseline_O06_authored_3,cases/O06.txt,Section 3. Fees and Taxes. Licensee shall pay the annual subscription fees set forth in Section 4.,320,418,0.0,0.0774,False,0.6835,0.3574,0.3165,0.3417,CLEAN,False
+O06,authored,baseline_O06_authored_4,cases/O06.txt,Section 5. Warranty Disclaimer. Licensor disclaims all implied warranties of merchantability and fitness for a particular purpose.,420,550,0.0,0.1273,False,0.6958,0.3165,0.3042,0.3479,CLEAN,False
+O06,authored,baseline_O06_authored_5,cases/O06.txt,Section 6. Audit Rights. Licensor may audit Licensee's software deployment once annually upon reasonable notice.,552,664,0.0,0.0999,False,0.6958,0.3042,0.309,0.3479,CLEAN,False
+O06,authored,baseline_O06_authored_6,cases/O06.txt,"Section 7. Term. The initial term begins on March 1, 2025 and expires on February 28, 2026.",666,757,0.0,0.0799,False,0.691,0.309,0.3198,0.3455,CLEAN,False
+O06,authored,baseline_O06_authored_7,cases/O06.txt,Section 8. Dispute Resolution. Any dispute under this Agreement shall be resolved through binding arbitration.,759,869,0.0,0.0856,False,0.6802,0.3198,,0.3401,CLEAN,False
+O06,txt,baseline_O06_txt_0,cases/O06.txt,"Section 1. Grant of License. Licensor grants Licensee a non-exclusive, non-transferable license to use the Software.",0,116,0.0,0.1217,False,0.6654,,0.3346,0.3327,CLEAN,False
+O06,txt,baseline_O06_txt_1,cases/O06.txt,Section 2. Permitted Users. Use of the Software is limited to authorized employees pursuant to Section 1.,118,223,0.0,0.0933,False,0.675,0.3346,0.325,0.3375,CLEAN,False
+O06,txt,baseline_O06_txt_2,cases/O06.txt,"Section 4. Schedule of Fees. Annual subscription fee shall be $50,000 payable upon execution.",225,318,0.0,0.086,False,0.675,0.325,0.3574,0.3375,CLEAN,False
+O06,txt,baseline_O06_txt_3,cases/O06.txt,Section 3. Fees and Taxes. Licensee shall pay the annual subscription fees set forth in Section 4.,320,418,0.0,0.0774,False,0.6835,0.3574,0.3165,0.3417,CLEAN,False
+O06,txt,baseline_O06_txt_4,cases/O06.txt,Section 5. Warranty Disclaimer. Licensor disclaims all implied warranties of merchantability and fitness for a particular purpose.,420,550,0.0,0.1273,False,0.6958,0.3165,0.3042,0.3479,CLEAN,False
+O06,txt,baseline_O06_txt_5,cases/O06.txt,Section 6. Audit Rights. Licensor may audit Licensee's software deployment once annually upon reasonable notice.,552,664,0.0,0.0999,False,0.6958,0.3042,0.309,0.3479,CLEAN,False
+O06,txt,baseline_O06_txt_6,cases/O06.txt,"Section 7. Term. The initial term begins on March 1, 2025 and expires on February 28, 2026.",666,757,0.0,0.0799,False,0.691,0.309,0.3198,0.3455,CLEAN,False
+O06,txt,baseline_O06_txt_7,cases/O06.txt,Section 8. Dispute Resolution. Any dispute under this Agreement shall be resolved through binding arbitration.,759,869,0.0,0.0856,False,0.6802,0.3198,,0.3401,CLEAN,False
+O07,authored,baseline_O07_authored_0,cases/O07.txt,Section 8. Dispute Resolution. Any dispute under this Agreement shall be resolved through binding arbitration.,0,110,0.0,0.0856,False,0.6848,,0.3152,0.3424,CLEAN,False
+O07,authored,baseline_O07_authored_1,cases/O07.txt,"Section 7. Term. The initial term begins on March 1, 2025 and expires on February 28, 2026.",112,203,0.0,0.0799,False,0.6917,0.3152,0.3083,0.3458,CLEAN,False
+O07,authored,baseline_O07_authored_2,cases/O07.txt,Section 6. Audit Rights. Licensor may audit Licensee's software deployment once annually upon reasonable notice.,205,317,0.0,0.0999,False,0.6917,0.3083,0.3098,0.3458,CLEAN,False
+O07,authored,baseline_O07_authored_3,cases/O07.txt,Section 5. Warranty Disclaimer. Licensor disclaims all implied warranties of merchantability and fitness for a particular purpose.,319,449,0.0,0.1273,False,0.6927,0.3098,0.3073,0.3463,CLEAN,False
+O07,authored,baseline_O07_authored_4,cases/O07.txt,"Section 4. Schedule of Fees. Annual subscription fee shall be $50,000 payable upon execution.",451,544,0.0,0.086,False,0.6927,0.3073,0.3574,0.3463,CLEAN,False
+O07,authored,baseline_O07_authored_5,cases/O07.txt,Section 3. Fees and Taxes. Licensee shall pay the annual subscription fees set forth in Section 4.,546,644,0.0,0.0774,False,0.6641,0.3574,0.3359,0.3321,CLEAN,False
+O07,authored,baseline_O07_authored_6,cases/O07.txt,Section 2. Permitted Users. Use of the Software is limited to authorized employees pursuant to Section 1.,646,751,0.0,0.0933,False,0.6655,0.3359,0.3345,0.3327,CLEAN,False
+O07,authored,baseline_O07_authored_7,cases/O07.txt,"Section 1. Grant of License. Licensor grants Licensee a non-exclusive, non-transferable license to use the Software.",753,869,0.0,0.1217,False,0.6655,0.3345,,0.3327,CLEAN,False
+O07,txt,baseline_O07_txt_0,cases/O07.txt,Section 8. Dispute Resolution. Any dispute under this Agreement shall be resolved through binding arbitration.,0,110,0.0,0.0856,False,0.6848,,0.3152,0.3424,CLEAN,False
+O07,txt,baseline_O07_txt_1,cases/O07.txt,"Section 7. Term. The initial term begins on March 1, 2025 and expires on February 28, 2026.",112,203,0.0,0.0799,False,0.6917,0.3152,0.3083,0.3458,CLEAN,False
+O07,txt,baseline_O07_txt_2,cases/O07.txt,Section 6. Audit Rights. Licensor may audit Licensee's software deployment once annually upon reasonable notice.,205,317,0.0,0.0999,False,0.6917,0.3083,0.3098,0.3458,CLEAN,False
+O07,txt,baseline_O07_txt_3,cases/O07.txt,Section 5. Warranty Disclaimer. Licensor disclaims all implied warranties of merchantability and fitness for a particular purpose.,319,449,0.0,0.1273,False,0.6927,0.3098,0.3073,0.3463,CLEAN,False
+O07,txt,baseline_O07_txt_4,cases/O07.txt,"Section 4. Schedule of Fees. Annual subscription fee shall be $50,000 payable upon execution.",451,544,0.0,0.086,False,0.6927,0.3073,0.3574,0.3463,CLEAN,False
+O07,txt,baseline_O07_txt_5,cases/O07.txt,Section 3. Fees and Taxes. Licensee shall pay the annual subscription fees set forth in Section 4.,546,644,0.0,0.0774,False,0.6641,0.3574,0.3359,0.3321,CLEAN,False
+O07,txt,baseline_O07_txt_6,cases/O07.txt,Section 2. Permitted Users. Use of the Software is limited to authorized employees pursuant to Section 1.,646,751,0.0,0.0933,False,0.6655,0.3359,0.3345,0.3327,CLEAN,False
+O07,txt,baseline_O07_txt_7,cases/O07.txt,"Section 1. Grant of License. Licensor grants Licensee a non-exclusive, non-transferable license to use the Software.",753,869,0.0,0.1217,False,0.6655,0.3345,,0.3327,CLEAN,False
+O08,authored,baseline_O08_authored_0,cases/O08.txt,Section 3. Fees and Taxes. Licensee shall pay the annual subscription fees set forth in Section 4.,0,98,0.0,0.0774,False,0.6496,,0.3504,0.3248,CLEAN,False
+O08,authored,baseline_O08_authored_1,cases/O08.txt,"Section 4. Schedule of Fees. Annual subscription fee shall be $50,000 payable upon execution.",100,193,0.0,0.086,False,0.6864,0.3504,0.3136,0.3432,CLEAN,False
+O08,authored,baseline_O08_authored_2,cases/O08.txt,Section 5. Warranty Disclaimer. Licensor disclaims all implied warranties of merchantability and fitness for a particular purpose.,195,325,0.0,0.1273,False,0.6958,0.3136,0.3042,0.3479,CLEAN,False
+O08,authored,baseline_O08_authored_3,cases/O08.txt,Section 6. Audit Rights. Licensor may audit Licensee's software deployment once annually upon reasonable notice.,327,439,0.0,0.0999,False,0.6958,0.3042,0.309,0.3479,CLEAN,False
+O08,authored,baseline_O08_authored_4,cases/O08.txt,"Section 7. Term. The initial term begins on March 1, 2025 and expires on February 28, 2026.",441,532,0.0,0.0799,False,0.691,0.309,0.3198,0.3455,CLEAN,False
+O08,authored,baseline_O08_authored_5,cases/O08.txt,Section 8. Dispute Resolution. Any dispute under this Agreement shall be resolved through binding arbitration.,534,644,0.0,0.0856,False,0.6835,0.3198,0.3165,0.3417,CLEAN,False
+O08,authored,baseline_O08_authored_6,cases/O08.txt,"Section 1. Grant of License. Licensor grants Licensee a non-exclusive, non-transferable license to use the Software.",646,762,0.0,0.1217,False,0.6835,0.3165,0.3346,0.3417,CLEAN,False
+O08,authored,baseline_O08_authored_7,cases/O08.txt,Section 2. Permitted Users. Use of the Software is limited to authorized employees pursuant to Section 1.,764,869,0.0,0.0933,False,0.6654,0.3346,,0.3327,CLEAN,False
+O08,txt,baseline_O08_txt_0,cases/O08.txt,Section 3. Fees and Taxes. Licensee shall pay the annual subscription fees set forth in Section 4.,0,98,0.0,0.0774,False,0.6496,,0.3504,0.3248,CLEAN,False
+O08,txt,baseline_O08_txt_1,cases/O08.txt,"Section 4. Schedule of Fees. Annual subscription fee shall be $50,000 payable upon execution.",100,193,0.0,0.086,False,0.6864,0.3504,0.3136,0.3432,CLEAN,False
+O08,txt,baseline_O08_txt_2,cases/O08.txt,Section 5. Warranty Disclaimer. Licensor disclaims all implied warranties of merchantability and fitness for a particular purpose.,195,325,0.0,0.1273,False,0.6958,0.3136,0.3042,0.3479,CLEAN,False
+O08,txt,baseline_O08_txt_3,cases/O08.txt,Section 6. Audit Rights. Licensor may audit Licensee's software deployment once annually upon reasonable notice.,327,439,0.0,0.0999,False,0.6958,0.3042,0.309,0.3479,CLEAN,False
+O08,txt,baseline_O08_txt_4,cases/O08.txt,"Section 7. Term. The initial term begins on March 1, 2025 and expires on February 28, 2026.",441,532,0.0,0.0799,False,0.691,0.309,0.3198,0.3455,CLEAN,False
+O08,txt,baseline_O08_txt_5,cases/O08.txt,Section 8. Dispute Resolution. Any dispute under this Agreement shall be resolved through binding arbitration.,534,644,0.0,0.0856,False,0.6835,0.3198,0.3165,0.3417,CLEAN,False
+O08,txt,baseline_O08_txt_6,cases/O08.txt,"Section 1. Grant of License. Licensor grants Licensee a non-exclusive, non-transferable license to use the Software.",646,762,0.0,0.1217,False,0.6835,0.3165,0.3346,0.3417,CLEAN,False
+O08,txt,baseline_O08_txt_7,cases/O08.txt,Section 2. Permitted Users. Use of the Software is limited to authorized employees pursuant to Section 1.,764,869,0.0,0.0933,False,0.6654,0.3346,,0.3327,CLEAN,False
+O09,authored,baseline_O09_authored_0,cases/O09.txt,"Section 1. Definitions
+Goods means the example products.",0,56,0.0,0.1866,False,0.7053,,0.2947,0.3527,MEDIUM,True
+O09,authored,baseline_O09_authored_1,cases/O09.txt,"Section 2. Supply
+The supplier shall deliver the goods.",58,113,0.0,0.1773,False,0.7053,0.2947,0.3077,0.3527,MEDIUM,True
+O09,authored,baseline_O09_authored_2,cases/O09.txt,"Section 3. Payment
+The buyer shall pay after delivery.",115,169,0.0,0.162,False,0.702,0.3077,0.298,0.351,MEDIUM,True
+O09,authored,baseline_O09_authored_3,cases/O09.txt,"Section 4. Confidentiality
+Each party shall protect confidential information.",171,248,0.0,0.18,False,0.7025,0.298,0.2975,0.3513,MEDIUM,True
+O09,authored,baseline_O09_authored_4,cases/O09.txt,"Section 5. Term
+The parties may terminate by written notice.",250,310,0.0,0.1306,False,0.7025,0.2975,0.2998,0.3513,MEDIUM,True
+O09,authored,baseline_O09_authored_5,cases/O09.txt,"Section 6. Notices
+Notices must be in writing.",312,358,0.0,0.1539,False,0.7002,0.2998,,0.3501,MEDIUM,True
+O09,txt,baseline_O09_txt_0,cases/O09.txt,"Section 1. Definitions
+Goods means the example products.",0,56,0.0,0.1866,False,0.7053,,0.2947,0.3527,MEDIUM,True
+O09,txt,baseline_O09_txt_1,cases/O09.txt,"Section 2. Supply
+The supplier shall deliver the goods.",58,113,0.0,0.1773,False,0.7053,0.2947,0.3077,0.3527,MEDIUM,True
+O09,txt,baseline_O09_txt_2,cases/O09.txt,"Section 3. Payment
+The buyer shall pay after delivery.",115,169,0.0,0.162,False,0.702,0.3077,0.298,0.351,MEDIUM,True
+O09,txt,baseline_O09_txt_3,cases/O09.txt,"Section 4. Confidentiality
+Each party shall protect confidential information.",171,248,0.0,0.18,False,0.7025,0.298,0.2975,0.3513,MEDIUM,True
+O09,txt,baseline_O09_txt_4,cases/O09.txt,"Section 5. Term
+The parties may terminate by written notice.",250,310,0.0,0.1306,False,0.7025,0.2975,0.2998,0.3513,MEDIUM,True
+O09,txt,baseline_O09_txt_5,cases/O09.txt,"Section 6. Notices
+Notices must be in writing.",312,358,0.0,0.1539,False,0.7002,0.2998,,0.3501,MEDIUM,True
+O10,authored,baseline_O10_authored_0,cases/O10.txt,"Section 1. Definitions
+Goods means the example products.",0,56,0.0,0.1866,False,0.7053,,0.2947,0.3527,MEDIUM,True
+O10,authored,baseline_O10_authored_1,cases/O10.txt,"Section 2. Supply
+The supplier shall deliver the goods.",58,113,0.0,0.1773,False,0.7053,0.2947,0.2967,0.3527,MEDIUM,True
+O10,authored,baseline_O10_authored_2,cases/O10.txt,"Section 4. Confidentiality
+Each party shall protect confidential information.",115,192,0.0,0.18,False,0.7069,0.2967,0.2931,0.3534,MEDIUM,True
+O10,authored,baseline_O10_authored_3,cases/O10.txt,"Section 3. Payment
+The buyer shall pay after delivery.",194,248,0.0,0.162,False,0.7069,0.2931,0.2987,0.3534,MEDIUM,True
+O10,authored,baseline_O10_authored_4,cases/O10.txt,"Section 5. Term
+The parties may terminate by written notice.",250,310,0.0,0.1306,False,0.7013,0.2987,0.2998,0.3507,MEDIUM,True
+O10,authored,baseline_O10_authored_5,cases/O10.txt,"Section 6. Notices
+Notices must be in writing.",312,358,0.0,0.1539,False,0.7002,0.2998,,0.3501,MEDIUM,True
+O10,txt,baseline_O10_txt_0,cases/O10.txt,"Section 1. Definitions
+Goods means the example products.",0,56,0.0,0.1866,False,0.7053,,0.2947,0.3527,MEDIUM,True
+O10,txt,baseline_O10_txt_1,cases/O10.txt,"Section 2. Supply
+The supplier shall deliver the goods.",58,113,0.0,0.1773,False,0.7053,0.2947,0.2967,0.3527,MEDIUM,True
+O10,txt,baseline_O10_txt_2,cases/O10.txt,"Section 4. Confidentiality
+Each party shall protect confidential information.",115,192,0.0,0.18,False,0.7069,0.2967,0.2931,0.3534,MEDIUM,True
+O10,txt,baseline_O10_txt_3,cases/O10.txt,"Section 3. Payment
+The buyer shall pay after delivery.",194,248,0.0,0.162,False,0.7069,0.2931,0.2987,0.3534,MEDIUM,True
+O10,txt,baseline_O10_txt_4,cases/O10.txt,"Section 5. Term
+The parties may terminate by written notice.",250,310,0.0,0.1306,False,0.7013,0.2987,0.2998,0.3507,MEDIUM,True
+O10,txt,baseline_O10_txt_5,cases/O10.txt,"Section 6. Notices
+Notices must be in writing.",312,358,0.0,0.1539,False,0.7002,0.2998,,0.3501,MEDIUM,True
+O11,authored,baseline_O11_authored_0,cases/O11.txt,"Section 6. Notices
+Notices must be in writing.",0,46,0.0,0.1539,False,0.6953,,0.3047,0.3477,CLEAN,False
+O11,authored,baseline_O11_authored_1,cases/O11.txt,"Section 5. Term
+The parties may terminate by written notice.",48,108,0.0,0.1306,False,0.7069,0.3047,0.2931,0.3534,MEDIUM,True
+O11,authored,baseline_O11_authored_2,cases/O11.txt,"Section 4. Confidentiality
+Each party shall protect confidential information.",110,187,0.0,0.18,False,0.7069,0.2931,0.2931,0.3534,MEDIUM,True
+O11,authored,baseline_O11_authored_3,cases/O11.txt,"Section 3. Payment
+The buyer shall pay after delivery.",189,243,0.0,0.162,False,0.7069,0.2931,0.2998,0.3534,MEDIUM,True
+O11,authored,baseline_O11_authored_4,cases/O11.txt,"Section 2. Supply
+The supplier shall deliver the goods.",245,300,0.0,0.1773,False,0.7019,0.2998,0.2981,0.3509,MEDIUM,True
+O11,authored,baseline_O11_authored_5,cases/O11.txt,"Section 1. Definitions
+Goods means the example products.",302,358,0.0,0.1866,False,0.7019,0.2981,,0.3509,MEDIUM,True
+O11,txt,baseline_O11_txt_0,cases/O11.txt,"Section 6. Notices
+Notices must be in writing.",0,46,0.0,0.1539,False,0.6953,,0.3047,0.3477,CLEAN,False
+O11,txt,baseline_O11_txt_1,cases/O11.txt,"Section 5. Term
+The parties may terminate by written notice.",48,108,0.0,0.1306,False,0.7069,0.3047,0.2931,0.3534,MEDIUM,True
+O11,txt,baseline_O11_txt_2,cases/O11.txt,"Section 4. Confidentiality
+Each party shall protect confidential information.",110,187,0.0,0.18,False,0.7069,0.2931,0.2931,0.3534,MEDIUM,True
+O11,txt,baseline_O11_txt_3,cases/O11.txt,"Section 3. Payment
+The buyer shall pay after delivery.",189,243,0.0,0.162,False,0.7069,0.2931,0.2998,0.3534,MEDIUM,True
+O11,txt,baseline_O11_txt_4,cases/O11.txt,"Section 2. Supply
+The supplier shall deliver the goods.",245,300,0.0,0.1773,False,0.7019,0.2998,0.2981,0.3509,MEDIUM,True
+O11,txt,baseline_O11_txt_5,cases/O11.txt,"Section 1. Definitions
+Goods means the example products.",302,358,0.0,0.1866,False,0.7019,0.2981,,0.3509,MEDIUM,True
+O12,authored,baseline_O12_authored_0,cases/O12.txt,"Section 3. Payment
+The buyer shall pay after delivery.",0,54,0.0,0.162,False,0.702,,0.298,0.351,MEDIUM,True
+O12,authored,baseline_O12_authored_1,cases/O12.txt,"Section 4. Confidentiality
+Each party shall protect confidential information.",56,133,0.0,0.18,False,0.7025,0.298,0.2975,0.3513,MEDIUM,True
+O12,authored,baseline_O12_authored_2,cases/O12.txt,"Section 5. Term
+The parties may terminate by written notice.",135,195,0.0,0.1306,False,0.7025,0.2975,0.2998,0.3513,MEDIUM,True
+O12,authored,baseline_O12_authored_3,cases/O12.txt,"Section 6. Notices
+Notices must be in writing.",197,243,0.0,0.1539,False,0.7034,0.2998,0.2966,0.3517,MEDIUM,True
+O12,authored,baseline_O12_authored_4,cases/O12.txt,"Section 1. Definitions
+Goods means the example products.",245,301,0.0,0.1866,False,0.7053,0.2966,0.2947,0.3527,MEDIUM,True
+O12,authored,baseline_O12_authored_5,cases/O12.txt,"Section 2. Supply
+The supplier shall deliver the goods.",303,358,0.0,0.1773,False,0.7053,0.2947,,0.3527,MEDIUM,True
+O12,txt,baseline_O12_txt_0,cases/O12.txt,"Section 3. Payment
+The buyer shall pay after delivery.",0,54,0.0,0.162,False,0.702,,0.298,0.351,MEDIUM,True
+O12,txt,baseline_O12_txt_1,cases/O12.txt,"Section 4. Confidentiality
+Each party shall protect confidential information.",56,133,0.0,0.18,False,0.7025,0.298,0.2975,0.3513,MEDIUM,True
+O12,txt,baseline_O12_txt_2,cases/O12.txt,"Section 5. Term
+The parties may terminate by written notice.",135,195,0.0,0.1306,False,0.7025,0.2975,0.2998,0.3513,MEDIUM,True
+O12,txt,baseline_O12_txt_3,cases/O12.txt,"Section 6. Notices
+Notices must be in writing.",197,243,0.0,0.1539,False,0.7034,0.2998,0.2966,0.3517,MEDIUM,True
+O12,txt,baseline_O12_txt_4,cases/O12.txt,"Section 1. Definitions
+Goods means the example products.",245,301,0.0,0.1866,False,0.7053,0.2966,0.2947,0.3527,MEDIUM,True
+O12,txt,baseline_O12_txt_5,cases/O12.txt,"Section 2. Supply
+The supplier shall deliver the goods.",303,358,0.0,0.1773,False,0.7053,0.2947,,0.3527,MEDIUM,True
+C01,authored,baseline_C01_authored_0,cases/C01.txt,"Section 1. Obligation
+The buyer must pay each invoice exactly thirty days after receipt.",0,88,0.0,0.1079,False,0.693,,0.307,0.3465,CLEAN,False
+C01,authored,baseline_C01_authored_1,cases/C01.txt,"Section 2. Delivery
+Delivery occurs on request.",90,137,0.0,0.142,False,0.693,0.307,0.3104,0.3465,CLEAN,False
+C01,authored,baseline_C01_authored_2,cases/C01.txt,"Section 3. Notices
+Notices must be in writing.",139,185,0.0,0.1556,False,0.7009,0.3104,0.2991,0.3504,MEDIUM,True
+C01,authored,baseline_C01_authored_3,cases/C01.txt,"Section 4. Definitions
+Invoice means the written billing document.",187,253,0.0,0.1625,False,0.7019,0.2991,0.2981,0.3509,MEDIUM,True
+C01,authored,baseline_C01_authored_4,cases/C01.txt,"Section 5. Obligation
+The buyer must pay each same invoice exactly sixty days after receipt.",255,347,0.0,0.1164,False,0.7019,0.2981,,0.3509,MEDIUM,True
+C01,txt,baseline_C01_txt_0,cases/C01.txt,"Section 1. Obligation
+The buyer must pay each invoice exactly thirty days after receipt.",0,88,0.0,0.1079,False,0.693,,0.307,0.3465,CLEAN,False
+C01,txt,baseline_C01_txt_1,cases/C01.txt,"Section 2. Delivery
+Delivery occurs on request.",90,137,0.0,0.142,False,0.693,0.307,0.3104,0.3465,CLEAN,False
+C01,txt,baseline_C01_txt_2,cases/C01.txt,"Section 3. Notices
+Notices must be in writing.",139,185,0.0,0.1556,False,0.7009,0.3104,0.2991,0.3504,MEDIUM,True
+C01,txt,baseline_C01_txt_3,cases/C01.txt,"Section 4. Definitions
+Invoice means the written billing document.",187,253,0.0,0.1625,False,0.7019,0.2991,0.2981,0.3509,MEDIUM,True
+C01,txt,baseline_C01_txt_4,cases/C01.txt,"Section 5. Obligation
+The buyer must pay each same invoice exactly sixty days after receipt.",255,347,0.0,0.1164,False,0.7019,0.2981,,0.3509,MEDIUM,True
+C02,authored,baseline_C02_authored_0,cases/C02.txt,"Section 1. Obligation
+Standard invoices are payable within thirty days.",0,71,0.0,0.1128,False,0.6851,,0.3149,0.3426,CLEAN,False
+C02,authored,baseline_C02_authored_1,cases/C02.txt,"Section 2. Delivery
+Delivery occurs on request.",73,120,0.0,0.142,False,0.6896,0.3149,0.3104,0.3448,CLEAN,False
+C02,authored,baseline_C02_authored_2,cases/C02.txt,"Section 3. Notices
+Notices must be in writing.",122,168,0.0,0.1556,False,0.7009,0.3104,0.2991,0.3504,MEDIUM,True
+C02,authored,baseline_C02_authored_3,cases/C02.txt,"Section 4. Definitions
+Invoice means the written billing document.",170,236,0.0,0.1625,False,0.7035,0.2991,0.2965,0.3518,MEDIUM,True
+C02,authored,baseline_C02_authored_4,cases/C02.txt,"Section 5. Obligation
+Disputed invoices are payable within sixty days.",238,308,0.0,0.1404,False,0.7035,0.2965,,0.3518,MEDIUM,True
+C02,txt,baseline_C02_txt_0,cases/C02.txt,"Section 1. Obligation
+Standard invoices are payable within thirty days.",0,71,0.0,0.1128,False,0.6851,,0.3149,0.3426,CLEAN,False
+C02,txt,baseline_C02_txt_1,cases/C02.txt,"Section 2. Delivery
+Delivery occurs on request.",73,120,0.0,0.142,False,0.6896,0.3149,0.3104,0.3448,CLEAN,False
+C02,txt,baseline_C02_txt_2,cases/C02.txt,"Section 3. Notices
+Notices must be in writing.",122,168,0.0,0.1556,False,0.7009,0.3104,0.2991,0.3504,MEDIUM,True
+C02,txt,baseline_C02_txt_3,cases/C02.txt,"Section 4. Definitions
+Invoice means the written billing document.",170,236,0.0,0.1625,False,0.7035,0.2991,0.2965,0.3518,MEDIUM,True
+C02,txt,baseline_C02_txt_4,cases/C02.txt,"Section 5. Obligation
+Disputed invoices are payable within sixty days.",238,308,0.0,0.1404,False,0.7035,0.2965,,0.3518,MEDIUM,True
+C03,authored,baseline_C03_authored_0,cases/C03.txt,"Section 1. Obligation
+The recipient must never disclose the confidential information to any third party.",0,104,0.0,0.1222,False,0.703,,0.297,0.3515,MEDIUM,True
+C03,authored,baseline_C03_authored_1,cases/C03.txt,"Section 2. Delivery
+Delivery occurs on request.",106,153,0.0,0.142,False,0.703,0.297,0.3104,0.3515,MEDIUM,True
+C03,authored,baseline_C03_authored_2,cases/C03.txt,"Section 3. Notices
+Notices must be in writing.",155,201,0.0,0.1556,False,0.7009,0.3104,0.2991,0.3504,MEDIUM,True
+C03,authored,baseline_C03_authored_3,cases/C03.txt,"Section 4. Definitions
+Invoice means the written billing document.",203,269,0.0,0.1625,False,0.7009,0.2991,0.3006,0.3504,MEDIUM,True
+C03,authored,baseline_C03_authored_4,cases/C03.txt,"Section 5. Obligation
+The recipient must disclose that confidential information to the named third-party auditor.",271,384,0.0,0.1232,False,0.6994,0.3006,,0.3497,CLEAN,False
+C03,txt,baseline_C03_txt_0,cases/C03.txt,"Section 1. Obligation
+The recipient must never disclose the confidential information to any third party.",0,104,0.0,0.1222,False,0.703,,0.297,0.3515,MEDIUM,True
+C03,txt,baseline_C03_txt_1,cases/C03.txt,"Section 2. Delivery
+Delivery occurs on request.",106,153,0.0,0.142,False,0.703,0.297,0.3104,0.3515,MEDIUM,True
+C03,txt,baseline_C03_txt_2,cases/C03.txt,"Section 3. Notices
+Notices must be in writing.",155,201,0.0,0.1556,False,0.7009,0.3104,0.2991,0.3504,MEDIUM,True
+C03,txt,baseline_C03_txt_3,cases/C03.txt,"Section 4. Definitions
+Invoice means the written billing document.",203,269,0.0,0.1625,False,0.7009,0.2991,0.3006,0.3504,MEDIUM,True
+C03,txt,baseline_C03_txt_4,cases/C03.txt,"Section 5. Obligation
+The recipient must disclose that confidential information to the named third-party auditor.",271,384,0.0,0.1232,False,0.6994,0.3006,,0.3497,CLEAN,False
+C04,authored,baseline_C04_authored_0,cases/C04.txt,"Section 1. Obligation
+The monthly service fee is one hundred dollars.",0,69,0.0,0.1067,False,0.6937,,0.3063,0.3468,CLEAN,False
+C04,authored,baseline_C04_authored_1,cases/C04.txt,"Section 2. Delivery
+Delivery occurs on request.",71,118,0.0,0.142,False,0.6937,0.3063,0.3104,0.3468,CLEAN,False
+C04,authored,baseline_C04_authored_2,cases/C04.txt,"Section 3. Notices
+Notices must be in writing.",120,166,0.0,0.1556,False,0.7009,0.3104,0.2991,0.3504,MEDIUM,True
+C04,authored,baseline_C04_authored_3,cases/C04.txt,"Section 4. Definitions
+Invoice means the written billing document.",168,234,0.0,0.1625,False,0.7009,0.2991,0.3103,0.3504,MEDIUM,True
+C04,authored,baseline_C04_authored_4,cases/C04.txt,"Section 5. Obligation
+The annual service fee is twelve hundred dollars.",236,307,0.0,0.1023,False,0.6897,0.3103,,0.3448,CLEAN,False
+C04,txt,baseline_C04_txt_0,cases/C04.txt,"Section 1. Obligation
+The monthly service fee is one hundred dollars.",0,69,0.0,0.1067,False,0.6937,,0.3063,0.3468,CLEAN,False
+C04,txt,baseline_C04_txt_1,cases/C04.txt,"Section 2. Delivery
+Delivery occurs on request.",71,118,0.0,0.142,False,0.6937,0.3063,0.3104,0.3468,CLEAN,False
+C04,txt,baseline_C04_txt_2,cases/C04.txt,"Section 3. Notices
+Notices must be in writing.",120,166,0.0,0.1556,False,0.7009,0.3104,0.2991,0.3504,MEDIUM,True
+C04,txt,baseline_C04_txt_3,cases/C04.txt,"Section 4. Definitions
+Invoice means the written billing document.",168,234,0.0,0.1625,False,0.7009,0.2991,0.3103,0.3504,MEDIUM,True
+C04,txt,baseline_C04_txt_4,cases/C04.txt,"Section 5. Obligation
+The annual service fee is twelve hundred dollars.",236,307,0.0,0.1023,False,0.6897,0.3103,,0.3448,CLEAN,False

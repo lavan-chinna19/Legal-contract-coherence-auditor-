@@ -1,0 +1,6 @@
+test_condition,tested_category,sample_count,candidate_c1_recall,candidate_c1_spec,candidate_c3_recall,candidate_c3_spec,baseline_b0_recall,baseline_b0_spec,robustness_assessment
+Cross_Template_Generalization,Master Services Agreement (MSA),10,0.67 (4/6),0.50 (1/2),0.50 (3/6),1.00 (2/2),0.00 (0/6),1.00 (2/2),C3 preserves 100% specificity across MSA; C1 exhibits false positives when covenants are swapped.
+Cross_Template_Generalization,Software License Agreement (SLA),5,1.00 (3/3),0.00 (0/2),0.33 (1/3),1.00 (2/2),0.00 (0/3),1.00 (2/2),C3 transfers cleanly to SLA with 100% specificity; C1 suffers 100% FPR on SLA hard negatives.
+Adversarial_Hard_Negatives,Independent Clause Swaps,2,N/A,0.00 (0/2),N/A,1.00 (2/2),N/A,1.00 (2/2),C3 robustly ignores coherent independent covenant reordering; C1 fails by treating all swaps as anomalies.
+Boundary_Inversions,Preamble/Scope Inversion,3,1.00 (3/3),N/A,0.67 (2/3),N/A,0.00 (0/3),N/A,Both C1 and C3 detect severe structural dislocations at document boundaries.
+Clean_Controls,Canonical Contract Sequences,2,N/A,1.00 (2/2),N/A,1.00 (2/2),N/A,1.00 (2/2),Both C1 and C3 produce zero false positives on standard clean contracts.

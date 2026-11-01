@@ -1,0 +1,7 @@
+defect_id,category,severity,description,root_cause,remediation,verification_status
+DEF-01,Syntax / Hygiene,LOW,Trailing whitespace in globals.css and page.tsx,Formatter and manual edits during prompt 24/Phase 2,Cleaned trailing whitespace; git diff --check verified clean,CLOSED
+DEF-02,Accessibility / Lint,LOW,Missing role='tab' and role='tablist' on FindingsInspector tabs,jsx-a11y/role-supports-aria-props flagged button with aria-selected without explicit tab role,Added role='tablist' to container and role='tab' to tabs; eslint passed 0 warnings,CLOSED
+DEF-03,Type Safety / Lint,LOW,Unused AlertCircle import in ScoreEvidencePanel.tsx,@typescript-eslint/no-unused-vars,Removed unused import; eslint passed 0 warnings,CLOSED
+DEF-04,Runtime / Null Safety,HIGH,Uncaught TypeError: Cannot read properties of null (reading 'toFixed') on boundary clauses,Python None serializes to JSON null; x !== undefined evaluated true for null,Changed numeric guards to x != null across all ScoreEvidencePanel metrics,CLOSED
+DEF-05,Test Automation / Selector,MEDIUM,Zero search results selector mismatch in test script,Script queried .search-empty-state while component had .empty-state,Added .search-empty-state class to ReviewEmptyState; test script passed,CLOSED
+DEF-06,Test Automation / API,MEDIUM,Backend upload response key mismatch in test baseline query,Script queried upload_data['document_id'] while backend schema returns doc_id,Updated script to read upload_data['doc_id'] and payload {'doc_id': doc_id}; test passed,CLOSED

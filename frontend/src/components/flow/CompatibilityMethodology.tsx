@@ -44,7 +44,7 @@ export function CompatibilityMethodology({ artifact }: CompatibilityMethodologyP
         <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
           <BookOpen size={18} style={{ color: "var(--color-accent)" }} aria-hidden="true" />
           <h4 style={{ margin: 0, fontSize: "0.95rem", color: "var(--color-text-primary)" }}>
-            Scientific Methodology & Model Provenance (Phase 4B)
+            Methodology and model provenance
           </h4>
         </div>
         <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", fontSize: "0.8rem", color: "var(--color-text-secondary)" }}>

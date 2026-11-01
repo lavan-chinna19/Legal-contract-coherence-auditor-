@@ -1,0 +1,36 @@
+
+> frontend@0.1.0 test:workflow
+> node --experimental-strip-types --test scripts/test_workflow_suite.ts
+
+(node:37692) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///F:/projects/nlp/Legal-contract-coherence-auditor-/frontend/scripts/test_workflow_suite.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to F:\projects\nlp\Legal-contract-coherence-auditor-\frontend\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ accepted engine address: http://127.0.0.1:8010/ (0.693ms)
+✔ accepted engine address: http://localhost:8012 (0.1287ms)
+✔ accepted engine address: http://[::1]:8000/ (0.6467ms)
+✔ accepted engine address: https://engine.example.test/api/ (0.1021ms)
+✔ unsafe address rejected: javascript:alert(1) (0.2184ms)
+✔ unsafe address rejected: file:///etc/passwd (0.0718ms)
+✔ unsafe address rejected: http://engine.example.test (0.0608ms)
+✔ unsafe address rejected: https://name:password@localhost/ (0.0528ms)
+✔ unsafe address rejected: http://localhost:8010?key=secret (0.0728ms)
+✔ unsafe address rejected: https://localhost/#fragment (0.1034ms)
+✔ unsafe address rejected: http://localhost.attacker.test:8010 (0.0759ms)
+✔ unsafe address rejected: /api (0.0626ms)
+✔ unsafe address rejected: not a url (0.048ms)
+✔ loopback status never labels a remote host local (0.0943ms)
+✔ authentication failures have actionable setup guidance (14.1394ms)
+✔ malformed errors remain understandable without leaking response HTML (0.2736ms)
+✔ structured errors preserve actual supported file validation guidance (0.2068ms)
+✔ A reference conflict requires review even when primary detectors have no findings (0.0721ms)
+✔ Unresolved references require review rather than a clean bill of health (0.0344ms)
+✔ No-finding and missing-state summaries retain honest scope (0.0318ms)
+ℹ tests 20
+ℹ suites 0
+ℹ pass 20
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 109.2596

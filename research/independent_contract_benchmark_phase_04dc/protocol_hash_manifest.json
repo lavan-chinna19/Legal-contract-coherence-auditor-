@@ -1,0 +1,24 @@
+{
+  "phase": "PHASE_4D_C",
+  "protocol_name": "LexAudit Independent Contract Coherence Evaluation Protocol",
+  "version": "1.0.0_frozen",
+  "timestamp": "2026-10-23T00:00:00Z",
+  "source_corpus_hash": "336df681b1160c446e628df045e870d2620302bc76ea40254ceabc5b6bcfa623",
+  "models_evaluated": [
+    "B0_ChannelB",
+    "B1_ProductionEnsemble",
+    "B2_CosineSimilarity",
+    "C1_BoundaryContrast",
+    "C2_SequenceBiLSTM",
+    "C3_TopologicalDAG"
+  ],
+  "frozen_checkpoint_hashes": {
+    "coherence_classifier.pt": "9c0a5a096cdf03a63615134500a64f4bc559314be64366812d6a6f1762d4017f",
+    "ledgar_centroids.npz": "2ea33ac1cb8430e720be85cd501f11539c143901b2173b63b942b34b9d31ce07"
+  },
+  "split_case_counts": {
+    "development": 106,
+    "validation": 45,
+    "sealed_test": 23
+  }
+}

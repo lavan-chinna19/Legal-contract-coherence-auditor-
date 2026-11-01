@@ -1,0 +1,68 @@
+{
+  "phase": "Phase 4C — Counterfactual Clause Repositioning & Synthetic Recovery Benchmark",
+  "project": "LexAudit (Legal Contract Coherence Auditor)",
+  "timestamp": "2026-10-15T14:30:00Z",
+  "git_baseline": {
+    "head_commit": "23dbcf536f2fb3dce1611e2d2ae71e9ca8c86f55",
+    "branch": "main",
+    "uncommitted_changes_preserved": true,
+    "commits_made": 0,
+    "staged_files": 0,
+    "external_snapshot_path": "C:\\Users\\gowth\\.gemini\\antigravity-ide\\brain\\69e9beaf-b94a-4f84-8c17-05ea3face92e\\scratch\\phase4c_backup_snapshot"
+  },
+  "scientific_evaluation": {
+    "dataset": "SEC EDGAR Clean Exhibit 10 Commercial Contracts",
+    "held_out_test_contracts": 38,
+    "train_split_contracts": 12,
+    "contamination_rate": 0.0,
+    "trials_evaluated": 9,
+    "top1_recovery_rate": 0.3333,
+    "top1_ci95": [0.1111, 0.6667],
+    "top3_recovery_rate": 0.7778,
+    "mean_reciprocal_rank": 0.5448,
+    "mrr_ci95": [0.3318, 0.7731],
+    "negative_control_abstention_rate": 1.0,
+    "false_repair_rate": 0.0,
+    "mean_per_contract_latency_ms": 14.75,
+    "baselines": {
+      "random_eligible_insertion_mrr": 0.2662,
+      "cosine_similarity_heuristic_mrr": 0.4028,
+      "mrr_relative_gain_over_random": 1.047
+    }
+  },
+  "optimization_and_parity": {
+    "test_scenarios_evaluated": 8,
+    "tolerance_threshold": 1e-6,
+    "max_absolute_difference": 0.0,
+    "parity_status": "EXACT_BITWISE_PARITY_PASS",
+    "scaling_speedup_at_n20": 21.3
+  },
+  "backend_status": {
+    "experimental_route": "POST /v1/experimental/reposition",
+    "authentication": "X-API-Key enforced",
+    "resource_bounds": "Max 100 clauses per request",
+    "sensitive_logging": "Zero plaintext or embeddings logged",
+    "regression_tests_total": 133,
+    "passed": 131,
+    "skipped": 2,
+    "failed": 0
+  },
+  "frontend_status": {
+    "components_directory": "frontend/src/components/repair/",
+    "typescript_errors": 0,
+    "eslint_errors": 0,
+    "eslint_warnings": 0,
+    "alignment_tests_passed": 17,
+    "production_build": "SUCCESS",
+    "contract_mutation": "STRICTLY_PROHIBITED",
+    "qualified_language": "ENFORCED"
+  },
+  "browser_acceptance": {
+    "engine": "Headless Chrome via CDP",
+    "tests_total": 14,
+    "tests_passed": 14,
+    "evidence_screenshots_captured": 8,
+    "storage_confidentiality_audit": "PASS (0 leaks, only lexaudit_theme persisted)"
+  },
+  "verdict": "READY FOR PHASE 4D"
+}

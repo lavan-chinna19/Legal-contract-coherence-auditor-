@@ -1,0 +1,2033 @@
+[
+  {
+    "case_id": "development_same_recurring_type",
+    "family_id": "development_same_recurring_type",
+    "gold_state": "UNCERTAIN",
+    "gold_match": null,
+    "prediction": "UNCERTAIN",
+    "ablation": "MATCHED",
+    "selected_pair": {
+      "left_id": "development_same_recurring_type:obligation:0",
+      "right_id": "development_same_recurring_type:obligation:1",
+      "status": "UNCERTAIN",
+      "reasons": [
+        "MISSING_EVENT_INSTANCE",
+        "RECURRING_EVENT_INSTANCE_UNESTABLISHED"
+      ],
+      "compared_fields": {
+        "actor": {
+          "left": "buyer",
+          "right": "buyer"
+        },
+        "action": {
+          "left": "PAY",
+          "right": "PAY"
+        },
+        "object": {
+          "left": "invoice alpha",
+          "right": "invoice alpha"
+        },
+        "event_instance": {
+          "left": null,
+          "right": null
+        },
+        "recipient": {
+          "left": null,
+          "right": null
+        },
+        "scope": {
+          "left": "document",
+          "right": "document"
+        },
+        "phase": {
+          "left": "current",
+          "right": "current"
+        },
+        "trigger": {
+          "left": "receipt of invoice alpha",
+          "right": "receipt of invoice alpha"
+        },
+        "conditions": {
+          "left": [],
+          "right": []
+        }
+      },
+      "evidence": [
+        {
+          "record_id": "development_same_recurring_type:obligation:0",
+          "char_start": 16,
+          "char_end": 111,
+          "section_uid": "development_same_recurring_type:section:0"
+        },
+        {
+          "record_id": "development_same_recurring_type:obligation:1",
+          "char_start": 130,
+          "char_end": 227,
+          "section_uid": "development_same_recurring_type:section:1"
+        }
+      ]
+    },
+    "field_errors": [
+      {
+        "side": "left",
+        "index": 0,
+        "field": "event_instance",
+        "expected": "invoice alpha",
+        "predicted": null
+      },
+      {
+        "side": "right",
+        "index": 0,
+        "field": "event_instance",
+        "expected": "invoice alpha",
+        "predicted": null
+      }
+    ],
+    "outcome_correct": true,
+    "case": {
+      "case_id": "development_same_recurring_type",
+      "family_id": "development_same_recurring_type",
+      "split": "development",
+      "text": "Section 1. Duty\nBuyer shall pay Invoice Alpha within 10 calendar days after receipt of Invoice Alpha each month.\n\nSection 2. Duty\nBuyer shall remit Invoice Alpha within 10 calendar days after receipt of Invoice Alpha each month.",
+      "gold_state": "UNCERTAIN",
+      "gold_match": null,
+      "mechanical_rule": "Same type, no uniquely established occurrence",
+      "label_provenance": "AUTHOR_CONSTRUCTED_MECHANICAL",
+      "independently_adjudicated": false,
+      "left_section": "1",
+      "right_section": "2",
+      "left_index": 0,
+      "right_index": 0,
+      "expected_left": [
+        {
+          "actor": "buyer",
+          "action": "PAY",
+          "object": "invoice alpha",
+          "recipient": null,
+          "trigger": "receipt of invoice alpha",
+          "event_instance": "invoice alpha"
+        }
+      ],
+      "expected_right": [
+        {
+          "actor": "buyer",
+          "action": "PAY",
+          "object": "invoice alpha",
+          "recipient": null,
+          "trigger": "receipt of invoice alpha",
+          "event_instance": "invoice alpha"
+        }
+      ]
+    },
+    "result": {
+      "version": "experimental-obligation-binding-v1",
+      "experimental": true,
+      "doc_id": "development_same_recurring_type",
+      "coordinate_space": "original_extracted_text",
+      "source_sha256": "83e95fd29600df8d5e78014ab9dd685aad406a17fb746fa79764966e9b486bfb",
+      "records": [
+        {
+          "record_id": "development_same_recurring_type:obligation:0",
+          "raw_text": "Buyer shall pay Invoice Alpha within 10 calendar days after receipt of Invoice Alpha each month",
+          "char_start": 16,
+          "char_end": 111,
+          "coordinate_space": "original_extracted_text",
+          "section_uid": "development_same_recurring_type:section:0",
+          "section_identity": "1",
+          "clause_id": "development_same_recurring_type:source:0",
+          "actor": "buyer",
+          "action": "PAY",
+          "object": "invoice alpha",
+          "recipient": null,
+          "trigger": "receipt of invoice alpha",
+          "event_instance": null,
+          "deadline": "within 10 calendar days",
+          "scope": "document",
+          "phase": "current",
+          "conditions": [],
+          "exceptions": [],
+          "evidence": {
+            "actor": [
+              {
+                "text": "Buyer",
+                "char_start": 16,
+                "char_end": 21
+              }
+            ],
+            "action": [
+              {
+                "text": "pay",
+                "char_start": 28,
+                "char_end": 31
+              }
+            ],
+            "object": [
+              {
+                "text": "Invoice Alpha",
+                "char_start": 32,
+                "char_end": 45
+              }
+            ],
+            "event_instance": [
+              {
+                "text": "Invoice Alpha",
+                "char_start": 32,
+                "char_end": 45
+              }
+            ],
+            "trigger": [
+              {
+                "text": "receipt of Invoice Alpha",
+                "char_start": 76,
+                "char_end": 100
+              }
+            ],
+            "deadline": [
+              {
+                "text": "within 10 calendar days",
+                "char_start": 46,
+                "char_end": 69
+              }
+            ]
+          },
+          "reference_target": null,
+          "missing_fields": [
+            "event_instance"
+          ],
+          "uncertainty": [
+            "RECURRING_EVENT_INSTANCE_UNESTABLISHED"
+          ],
+          "unsupported": []
+        },
+        {
+          "record_id": "development_same_recurring_type:obligation:1",
+          "raw_text": "Buyer shall remit Invoice Alpha within 10 calendar days after receipt of Invoice Alpha each month",
+          "char_start": 130,
+          "char_end": 227,
+          "coordinate_space": "original_extracted_text",
+          "section_uid": "development_same_recurring_type:section:1",
+          "section_identity": "2",
+          "clause_id": "development_same_recurring_type:source:1",
+          "actor": "buyer",
+          "action": "PAY",
+          "object": "invoice alpha",
+          "recipient": null,
+          "trigger": "receipt of invoice alpha",
+          "event_instance": null,
+          "deadline": "within 10 calendar days",
+          "scope": "document",
+          "phase": "current",
+          "conditions": [],
+          "exceptions": [],
+          "evidence": {
+            "actor": [
+              {
+                "text": "Buyer",
+                "char_start": 130,
+                "char_end": 135
+              }
+            ],
+            "action": [
+              {
+                "text": "remit",
+                "char_start": 142,
+                "char_end": 147
+              }
+            ],
+            "object": [
+              {
+                "text": "Invoice Alpha",
+                "char_start": 148,
+                "char_end": 161
+              }
+            ],
+            "event_instance": [
+              {
+                "text": "Invoice Alpha",
+                "char_start": 148,
+                "char_end": 161
+              }
+            ],
+            "trigger": [
+              {
+                "text": "receipt of Invoice Alpha",
+                "char_start": 192,
+                "char_end": 216
+              }
+            ],
+            "deadline": [
+              {
+                "text": "within 10 calendar days",
+                "char_start": 162,
+                "char_end": 185
+              }
+            ]
+          },
+          "reference_target": null,
+          "missing_fields": [
+            "event_instance"
+          ],
+          "uncertainty": [
+            "RECURRING_EVENT_INSTANCE_UNESTABLISHED"
+          ],
+          "unsupported": []
+        }
+      ],
+      "pairs": [
+        {
+          "left_id": "development_same_recurring_type:obligation:0",
+          "right_id": "development_same_recurring_type:obligation:1",
+          "status": "UNCERTAIN",
+          "reasons": [
+            "MISSING_EVENT_INSTANCE",
+            "RECURRING_EVENT_INSTANCE_UNESTABLISHED"
+          ],
+          "compared_fields": {
+            "actor": {
+              "left": "buyer",
+              "right": "buyer"
+            },
+            "action": {
+              "left": "PAY",
+              "right": "PAY"
+            },
+            "object": {
+              "left": "invoice alpha",
+              "right": "invoice alpha"
+            },
+            "event_instance": {
+              "left": null,
+              "right": null
+            },
+            "recipient": {
+              "left": null,
+              "right": null
+            },
+            "scope": {
+              "left": "document",
+              "right": "document"
+            },
+            "phase": {
+              "left": "current",
+              "right": "current"
+            },
+            "trigger": {
+              "left": "receipt of invoice alpha",
+              "right": "receipt of invoice alpha"
+            },
+            "conditions": {
+              "left": [],
+              "right": []
+            }
+          },
+          "evidence": [
+            {
+              "record_id": "development_same_recurring_type:obligation:0",
+              "char_start": 16,
+              "char_end": 111,
+              "section_uid": "development_same_recurring_type:section:0"
+            },
+            {
+              "record_id": "development_same_recurring_type:obligation:1",
+              "char_start": 130,
+              "char_end": 227,
+              "section_uid": "development_same_recurring_type:section:1"
+            }
+          ]
+        }
+      ],
+      "pair_counts": {
+        "UNCERTAIN": 1
+      },
+      "candidate_pair_count": 1,
+      "evaluated_pair_count": 1,
+      "complete": true,
+      "issues": [],
+      "record_count": 2,
+      "status": "ANALYZED",
+      "limits": {
+        "max_records": 100,
+        "max_pairs": 1000,
+        "max_statement_chars": 8192
+      },
+      "interpretation": "Experimental explicit-field binding only. MATCHED means potentially comparable, never legal equivalence or contradiction. No neural/date scores are changed."
+    }
+  },
+  {
+    "case_id": "development_generic_object",
+    "family_id": "development_generic_object",
+    "gold_state": "UNCERTAIN",
+    "gold_match": null,
+    "prediction": "UNCERTAIN",
+    "ablation": "UNCERTAIN",
+    "selected_pair": {
+      "left_id": "development_generic_object:obligation:0",
+      "right_id": "development_generic_object:obligation:1",
+      "status": "UNCERTAIN",
+      "reasons": [
+        "MISSING_EVENT_INSTANCE",
+        "MISSING_OBJECT",
+        "NO_EXPLICIT_NAMED_OBJECT_INSTANCE"
+      ],
+      "compared_fields": {
+        "actor": {
+          "left": "buyer",
+          "right": "buyer"
+        },
+        "action": {
+          "left": "PAY",
+          "right": "PAY"
+        },
+        "object": {
+          "left": null,
+          "right": null
+        },
+        "event_instance": {
+          "left": null,
+          "right": null
+        },
+        "recipient": {
+          "left": null,
+          "right": null
+        },
+        "scope": {
+          "left": "document",
+          "right": "document"
+        },
+        "phase": {
+          "left": "current",
+          "right": "current"
+        },
+        "trigger": {
+          "left": "receipt of invoice alpha",
+          "right": "receipt of invoice alpha"
+        },
+        "conditions": {
+          "left": [],
+          "right": []
+        }
+      },
+      "evidence": [
+        {
+          "record_id": "development_generic_object:obligation:0",
+          "char_start": 16,
+          "char_end": 98,
+          "section_uid": "development_generic_object:section:0"
+        },
+        {
+          "record_id": "development_generic_object:obligation:1",
+          "char_start": 117,
+          "char_end": 201,
+          "section_uid": "development_generic_object:section:1"
+        }
+      ]
+    },
+    "field_errors": [
+      {
+        "side": "left",
+        "index": 0,
+        "field": "object",
+        "expected": "the invoice",
+        "predicted": null
+      },
+      {
+        "side": "right",
+        "index": 0,
+        "field": "object",
+        "expected": "the invoice",
+        "predicted": null
+      }
+    ],
+    "outcome_correct": true,
+    "case": {
+      "case_id": "development_generic_object",
+      "family_id": "development_generic_object",
+      "split": "development",
+      "text": "Section 1. Duty\nBuyer shall pay the invoice within 10 calendar days after receipt of Invoice Alpha.\n\nSection 2. Duty\nBuyer shall remit the invoice within 10 calendar days after receipt of Invoice Alpha.",
+      "gold_state": "UNCERTAIN",
+      "gold_match": null,
+      "mechanical_rule": "generic_object",
+      "label_provenance": "AUTHOR_CONSTRUCTED_MECHANICAL",
+      "independently_adjudicated": false,
+      "left_section": "1",
+      "right_section": "2",
+      "left_index": 0,
+      "right_index": 0,
+      "expected_left": [
+        {
+          "actor": "buyer",
+          "action": "PAY",
+          "object": "the invoice",
+          "recipient": null,
+          "trigger": "receipt of invoice alpha",
+          "event_instance": null
+        }
+      ],
+      "expected_right": [
+        {
+          "actor": "buyer",
+          "action": "PAY",
+          "object": "the invoice",
+          "recipient": null,
+          "trigger": "receipt of invoice alpha",
+          "event_instance": null
+        }
+      ]
+    },
+    "result": {
+      "version": "experimental-obligation-binding-v1",
+      "experimental": true,
+      "doc_id": "development_generic_object",
+      "coordinate_space": "original_extracted_text",
+      "source_sha256": "44eb0a8dc9fced8095912c847583cfcb7b577c307926a659116422ff27e286bc",
+      "records": [
+        {
+          "record_id": "development_generic_object:obligation:0",
+          "raw_text": "Buyer shall pay the invoice within 10 calendar days after receipt of Invoice Alpha",
+          "char_start": 16,
+          "char_end": 98,
+          "coordinate_space": "original_extracted_text",
+          "section_uid": "development_generic_object:section:0",
+          "section_identity": "1",
+          "clause_id": "development_generic_object:source:0",
+          "actor": "buyer",
+          "action": "PAY",
+          "object": null,
+          "recipient": null,
+          "trigger": "receipt of invoice alpha",
+          "event_instance": null,
+          "deadline": "within 10 calendar days",
+          "scope": "document",
+          "phase": "current",
+          "conditions": [],
+          "exceptions": [],
+          "evidence": {
+            "actor": [
+              {
+                "text": "Buyer",
+                "char_start": 16,
+                "char_end": 21
+              }
+            ],
+            "action": [
+              {
+                "text": "pay",
+                "char_start": 28,
+                "char_end": 31
+              }
+            ],
+            "trigger": [
+              {
+                "text": "receipt of Invoice Alpha",
+                "char_start": 74,
+                "char_end": 98
+              }
+            ],
+            "deadline": [
+              {
+                "text": "within 10 calendar days",
+                "char_start": 44,
+                "char_end": 67
+              }
+            ]
+          },
+          "reference_target": null,
+          "missing_fields": [
+            "event_instance",
+            "object"
+          ],
+          "uncertainty": [
+            "NO_EXPLICIT_NAMED_OBJECT_INSTANCE"
+          ],
+          "unsupported": []
+        },
+        {
+          "record_id": "development_generic_object:obligation:1",
+          "raw_text": "Buyer shall remit the invoice within 10 calendar days after receipt of Invoice Alpha",
+          "char_start": 117,
+          "char_end": 201,
+          "coordinate_space": "original_extracted_text",
+          "section_uid": "development_generic_object:section:1",
+          "section_identity": "2",
+          "clause_id": "development_generic_object:source:1",
+          "actor": "buyer",
+          "action": "PAY",
+          "object": null,
+          "recipient": null,
+          "trigger": "receipt of invoice alpha",
+          "event_instance": null,
+          "deadline": "within 10 calendar days",
+          "scope": "document",
+          "phase": "current",
+          "conditions": [],
+          "exceptions": [],
+          "evidence": {
+            "actor": [
+              {
+                "text": "Buyer",
+                "char_start": 117,
+                "char_end": 122
+              }
+            ],
+            "action": [
+              {
+                "text": "remit",
+                "char_start": 129,
+                "char_end": 134
+              }
+            ],
+            "trigger": [
+              {
+                "text": "receipt of Invoice Alpha",
+                "char_start": 177,
+                "char_end": 201
+              }
+            ],
+            "deadline": [
+              {
+                "text": "within 10 calendar days",
+                "char_start": 147,
+                "char_end": 170
+              }
+            ]
+          },
+          "reference_target": null,
+          "missing_fields": [
+            "event_instance",
+            "object"
+          ],
+          "uncertainty": [
+            "NO_EXPLICIT_NAMED_OBJECT_INSTANCE"
+          ],
+          "unsupported": []
+        }
+      ],
+      "pairs": [
+        {
+          "left_id": "development_generic_object:obligation:0",
+          "right_id": "development_generic_object:obligation:1",
+          "status": "UNCERTAIN",
+          "reasons": [
+            "MISSING_EVENT_INSTANCE",
+            "MISSING_OBJECT",
+            "NO_EXPLICIT_NAMED_OBJECT_INSTANCE"
+          ],
+          "compared_fields": {
+            "actor": {
+              "left": "buyer",
+              "right": "buyer"
+            },
+            "action": {
+              "left": "PAY",
+              "right": "PAY"
+            },
+            "object": {
+              "left": null,
+              "right": null
+            },
+            "event_instance": {
+              "left": null,
+              "right": null
+            },
+            "recipient": {
+              "left": null,
+              "right": null
+            },
+            "scope": {
+              "left": "document",
+              "right": "document"
+            },
+            "phase": {
+              "left": "current",
+              "right": "current"
+            },
+            "trigger": {
+              "left": "receipt of invoice alpha",
+              "right": "receipt of invoice alpha"
+            },
+            "conditions": {
+              "left": [],
+              "right": []
+            }
+          },
+          "evidence": [
+            {
+              "record_id": "development_generic_object:obligation:0",
+              "char_start": 16,
+              "char_end": 98,
+              "section_uid": "development_generic_object:section:0"
+            },
+            {
+              "record_id": "development_generic_object:obligation:1",
+              "char_start": 117,
+              "char_end": 201,
+              "section_uid": "development_generic_object:section:1"
+            }
+          ]
+        }
+      ],
+      "pair_counts": {
+        "UNCERTAIN": 1
+      },
+      "candidate_pair_count": 1,
+      "evaluated_pair_count": 1,
+      "complete": true,
+      "issues": [],
+      "record_count": 2,
+      "status": "ANALYZED",
+      "limits": {
+        "max_records": 100,
+        "max_pairs": 1000,
+        "max_statement_chars": 8192
+      },
+      "interpretation": "Experimental explicit-field binding only. MATCHED means potentially comparable, never legal equivalence or contradiction. No neural/date scores are changed."
+    }
+  },
+  {
+    "case_id": "development_unsupported_action",
+    "family_id": "development_unsupported_action",
+    "gold_state": "UNSUPPORTED",
+    "gold_match": null,
+    "prediction": "UNSUPPORTED",
+    "ablation": "UNCERTAIN",
+    "selected_pair": {
+      "left_id": "development_unsupported_action:obligation:0",
+      "right_id": "development_unsupported_action:obligation:1",
+      "status": "UNSUPPORTED",
+      "reasons": [
+        "INCOMPLETE_OR_UNSUPPORTED_PARSE",
+        "ACTION_OUTSIDE_LEXICON"
+      ],
+      "compared_fields": {},
+      "evidence": [
+        {
+          "record_id": "development_unsupported_action:obligation:0",
+          "char_start": 16,
+          "char_end": 100,
+          "section_uid": "development_unsupported_action:section:0"
+        },
+        {
+          "record_id": "development_unsupported_action:obligation:1",
+          "char_start": 119,
+          "char_end": 153,
+          "section_uid": "development_unsupported_action:section:1"
+        }
+      ]
+    },
+    "field_errors": [
+      {
+        "side": "right",
+        "index": 0,
+        "field": "action",
+        "expected": "RECONCILE",
+        "predicted": null
+      },
+      {
+        "side": "right",
+        "index": 0,
+        "field": "object",
+        "expected": "the accounts",
+        "predicted": null
+      }
+    ],
+    "outcome_correct": true,
+    "case": {
+      "case_id": "development_unsupported_action",
+      "family_id": "development_unsupported_action",
+      "split": "development",
+      "text": "Section 1. Duty\nBuyer shall pay Invoice Alpha within 10 calendar days after receipt of Invoice Alpha.\n\nSection 2. Duty\nBuyer shall reconcile the accounts.",
+      "gold_state": "UNSUPPORTED",
+      "gold_match": null,
+      "mechanical_rule": "unsupported_action",
+      "label_provenance": "AUTHOR_CONSTRUCTED_MECHANICAL",
+      "independently_adjudicated": false,
+      "left_section": "1",
+      "right_section": "2",
+      "left_index": 0,
+      "right_index": 0,
+      "expected_left": [
+        {
+          "actor": "buyer",
+          "action": "PAY",
+          "object": "invoice alpha",
+          "recipient": null,
+          "trigger": "receipt of invoice alpha",
+          "event_instance": "invoice alpha"
+        }
+      ],
+      "expected_right": [
+        {
+          "actor": "buyer",
+          "action": "RECONCILE",
+          "object": "the accounts",
+          "recipient": null,
+          "trigger": null,
+          "event_instance": null
+        }
+      ]
+    },
+    "result": {
+      "version": "experimental-obligation-binding-v1",
+      "experimental": true,
+      "doc_id": "development_unsupported_action",
+      "coordinate_space": "original_extracted_text",
+      "source_sha256": "542bfa990d2edd7a9dc8202f5bffee6735385afc7260444bdafce058aee7276c",
+      "records": [
+        {
+          "record_id": "development_unsupported_action:obligation:0",
+          "raw_text": "Buyer shall pay Invoice Alpha within 10 calendar days after receipt of Invoice Alpha",
+          "char_start": 16,
+          "char_end": 100,
+          "coordinate_space": "original_extracted_text",
+          "section_uid": "development_unsupported_action:section:0",
+          "section_identity": "1",
+          "clause_id": "development_unsupported_action:source:0",
+          "actor": "buyer",
+          "action": "PAY",
+          "object": "invoice alpha",
+          "recipient": null,
+          "trigger": "receipt of invoice alpha",
+          "event_instance": "invoice alpha",
+          "deadline": "within 10 calendar days",
+          "scope": "document",
+          "phase": "current",
+          "conditions": [],
+          "exceptions": [],
+          "evidence": {
+            "actor": [
+              {
+                "text": "Buyer",
+                "char_start": 16,
+                "char_end": 21
+              }
+            ],
+            "action": [
+              {
+                "text": "pay",
+                "char_start": 28,
+                "char_end": 31
+              }
+            ],
+            "object": [
+              {
+                "text": "Invoice Alpha",
+                "char_start": 32,
+                "char_end": 45
+              }
+            ],
+            "event_instance": [
+              {
+                "text": "Invoice Alpha",
+                "char_start": 32,
+                "char_end": 45
+              }
+            ],
+            "trigger": [
+              {
+                "text": "receipt of Invoice Alpha",
+                "char_start": 76,
+                "char_end": 100
+              }
+            ],
+            "deadline": [
+              {
+                "text": "within 10 calendar days",
+                "char_start": 46,
+                "char_end": 69
+              }
+            ]
+          },
+          "reference_target": null,
+          "missing_fields": [],
+          "uncertainty": [],
+          "unsupported": []
+        },
+        {
+          "record_id": "development_unsupported_action:obligation:1",
+          "raw_text": "Buyer shall reconcile the accounts",
+          "char_start": 119,
+          "char_end": 153,
+          "coordinate_space": "original_extracted_text",
+          "section_uid": "development_unsupported_action:section:1",
+          "section_identity": "2",
+          "clause_id": "development_unsupported_action:source:1",
+          "actor": "buyer",
+          "action": null,
+          "object": null,
+          "recipient": null,
+          "trigger": null,
+          "event_instance": null,
+          "deadline": null,
+          "scope": "document",
+          "phase": "current",
+          "conditions": [],
+          "exceptions": [],
+          "evidence": {
+            "actor": [
+              {
+                "text": "Buyer",
+                "char_start": 119,
+                "char_end": 124
+              }
+            ],
+            "action": [
+              {
+                "text": "reconcile",
+                "char_start": 131,
+                "char_end": 140
+              }
+            ]
+          },
+          "reference_target": null,
+          "missing_fields": [
+            "deadline",
+            "event_instance",
+            "object"
+          ],
+          "uncertainty": [
+            "NO_EXPLICIT_NAMED_OBJECT_INSTANCE"
+          ],
+          "unsupported": [
+            "ACTION_OUTSIDE_LEXICON"
+          ]
+        }
+      ],
+      "pairs": [
+        {
+          "left_id": "development_unsupported_action:obligation:0",
+          "right_id": "development_unsupported_action:obligation:1",
+          "status": "UNSUPPORTED",
+          "reasons": [
+            "INCOMPLETE_OR_UNSUPPORTED_PARSE",
+            "ACTION_OUTSIDE_LEXICON"
+          ],
+          "compared_fields": {},
+          "evidence": [
+            {
+              "record_id": "development_unsupported_action:obligation:0",
+              "char_start": 16,
+              "char_end": 100,
+              "section_uid": "development_unsupported_action:section:0"
+            },
+            {
+              "record_id": "development_unsupported_action:obligation:1",
+              "char_start": 119,
+              "char_end": 153,
+              "section_uid": "development_unsupported_action:section:1"
+            }
+          ]
+        }
+      ],
+      "pair_counts": {
+        "UNSUPPORTED": 1
+      },
+      "candidate_pair_count": 1,
+      "evaluated_pair_count": 1,
+      "complete": true,
+      "issues": [],
+      "record_count": 2,
+      "status": "ANALYZED",
+      "limits": {
+        "max_records": 100,
+        "max_pairs": 1000,
+        "max_statement_chars": 8192
+      },
+      "interpretation": "Experimental explicit-field binding only. MATCHED means potentially comparable, never legal equivalence or contradiction. No neural/date scores are changed."
+    }
+  },
+  {
+    "case_id": "development_missing_reference",
+    "family_id": "development_missing_reference",
+    "gold_state": "UNCERTAIN",
+    "gold_match": null,
+    "prediction": "UNCERTAIN",
+    "ablation": "UNCERTAIN",
+    "selected_pair": {
+      "left_id": "development_missing_reference:obligation:0",
+      "right_id": "development_missing_reference:obligation:1",
+      "status": "UNCERTAIN",
+      "reasons": [
+        "MISSING_EVENT_INSTANCE",
+        "MISSING_OBJECT",
+        "REFERENCE_OBJECT_UNRESOLVED_OR_AMBIGUOUS"
+      ],
+      "compared_fields": {
+        "actor": {
+          "left": "buyer",
+          "right": "buyer"
+        },
+        "action": {
+          "left": "PAY",
+          "right": "PAY"
+        },
+        "object": {
+          "left": "invoice alpha",
+          "right": null
+        },
+        "event_instance": {
+          "left": "invoice alpha",
+          "right": null
+        },
+        "recipient": {
+          "left": null,
+          "right": null
+        },
+        "scope": {
+          "left": "document",
+          "right": "document"
+        },
+        "phase": {
+          "left": "current",
+          "right": "current"
+        },
+        "trigger": {
+          "left": null,
+          "right": null
+        },
+        "conditions": {
+          "left": [],
+          "right": []
+        }
+      },
+      "evidence": [
+        {
+          "record_id": "development_missing_reference:obligation:0",
+          "char_start": 16,
+          "char_end": 69,
+          "section_uid": "development_missing_reference:section:0"
+        },
+        {
+          "record_id": "development_missing_reference:obligation:1",
+          "char_start": 88,
+          "char_end": 158,
+          "section_uid": "development_missing_reference:section:1"
+        }
+      ]
+    },
+    "field_errors": [
+      {
+        "side": "right",
+        "index": 0,
+        "field": "object",
+        "expected": "the obligation in section 99",
+        "predicted": null
+      }
+    ],
+    "outcome_correct": true,
+    "case": {
+      "case_id": "development_missing_reference",
+      "family_id": "development_missing_reference",
+      "split": "development",
+      "text": "Section 1. Duty\nBuyer shall pay Invoice Alpha within 10 calendar days.\n\nSection 2. Duty\nBuyer shall remit the obligation in Section 99 within 10 calendar days.",
+      "gold_state": "UNCERTAIN",
+      "gold_match": null,
+      "mechanical_rule": "missing_reference",
+      "label_provenance": "AUTHOR_CONSTRUCTED_MECHANICAL",
+      "independently_adjudicated": false,
+      "left_section": "1",
+      "right_section": "2",
+      "left_index": 0,
+      "right_index": 0,
+      "expected_left": [
+        {
+          "actor": "buyer",
+          "action": "PAY",
+          "object": "invoice alpha",
+          "recipient": null,
+          "trigger": null,
+          "event_instance": "invoice alpha"
+        }
+      ],
+      "expected_right": [
+        {
+          "actor": "buyer",
+          "action": "PAY",
+          "object": "the obligation in section 99",
+          "recipient": null,
+          "trigger": null,
+          "event_instance": null
+        }
+      ]
+    },
+    "result": {
+      "version": "experimental-obligation-binding-v1",
+      "experimental": true,
+      "doc_id": "development_missing_reference",
+      "coordinate_space": "original_extracted_text",
+      "source_sha256": "c7827e3250ac9af468e57d737985369f9c4b044b226c0763e99dc377cd257f53",
+      "records": [
+        {
+          "record_id": "development_missing_reference:obligation:0",
+          "raw_text": "Buyer shall pay Invoice Alpha within 10 calendar days",
+          "char_start": 16,
+          "char_end": 69,
+          "coordinate_space": "original_extracted_text",
+          "section_uid": "development_missing_reference:section:0",
+          "section_identity": "1",
+          "clause_id": "development_missing_reference:source:0",
+          "actor": "buyer",
+          "action": "PAY",
+          "object": "invoice alpha",
+          "recipient": null,
+          "trigger": null,
+          "event_instance": "invoice alpha",
+          "deadline": "within 10 calendar days",
+          "scope": "document",
+          "phase": "current",
+          "conditions": [],
+          "exceptions": [],
+          "evidence": {
+            "actor": [
+              {
+                "text": "Buyer",
+                "char_start": 16,
+                "char_end": 21
+              }
+            ],
+            "action": [
+              {
+                "text": "pay",
+                "char_start": 28,
+                "char_end": 31
+              }
+            ],
+            "object": [
+              {
+                "text": "Invoice Alpha",
+                "char_start": 32,
+                "char_end": 45
+              }
+            ],
+            "event_instance": [
+              {
+                "text": "Invoice Alpha",
+                "char_start": 32,
+                "char_end": 45
+              }
+            ],
+            "deadline": [
+              {
+                "text": "within 10 calendar days",
+                "char_start": 46,
+                "char_end": 69
+              }
+            ]
+          },
+          "reference_target": null,
+          "missing_fields": [],
+          "uncertainty": [],
+          "unsupported": []
+        },
+        {
+          "record_id": "development_missing_reference:obligation:1",
+          "raw_text": "Buyer shall remit the obligation in Section 99 within 10 calendar days",
+          "char_start": 88,
+          "char_end": 158,
+          "coordinate_space": "original_extracted_text",
+          "section_uid": "development_missing_reference:section:1",
+          "section_identity": "2",
+          "clause_id": "development_missing_reference:source:1",
+          "actor": "buyer",
+          "action": "PAY",
+          "object": null,
+          "recipient": null,
+          "trigger": null,
+          "event_instance": null,
+          "deadline": "within 10 calendar days",
+          "scope": "document",
+          "phase": "current",
+          "conditions": [],
+          "exceptions": [],
+          "evidence": {
+            "actor": [
+              {
+                "text": "Buyer",
+                "char_start": 88,
+                "char_end": 93
+              }
+            ],
+            "action": [
+              {
+                "text": "remit",
+                "char_start": 100,
+                "char_end": 105
+              }
+            ],
+            "reference": [
+              {
+                "text": "the obligation in Section 99",
+                "char_start": 106,
+                "char_end": 134
+              }
+            ],
+            "deadline": [
+              {
+                "text": "within 10 calendar days",
+                "char_start": 135,
+                "char_end": 158
+              }
+            ]
+          },
+          "reference_target": "99",
+          "missing_fields": [
+            "object",
+            "event_instance"
+          ],
+          "uncertainty": [
+            "REFERENCE_OBJECT_UNRESOLVED_OR_AMBIGUOUS"
+          ],
+          "unsupported": []
+        }
+      ],
+      "pairs": [
+        {
+          "left_id": "development_missing_reference:obligation:0",
+          "right_id": "development_missing_reference:obligation:1",
+          "status": "UNCERTAIN",
+          "reasons": [
+            "MISSING_EVENT_INSTANCE",
+            "MISSING_OBJECT",
+            "REFERENCE_OBJECT_UNRESOLVED_OR_AMBIGUOUS"
+          ],
+          "compared_fields": {
+            "actor": {
+              "left": "buyer",
+              "right": "buyer"
+            },
+            "action": {
+              "left": "PAY",
+              "right": "PAY"
+            },
+            "object": {
+              "left": "invoice alpha",
+              "right": null
+            },
+            "event_instance": {
+              "left": "invoice alpha",
+              "right": null
+            },
+            "recipient": {
+              "left": null,
+              "right": null
+            },
+            "scope": {
+              "left": "document",
+              "right": "document"
+            },
+            "phase": {
+              "left": "current",
+              "right": "current"
+            },
+            "trigger": {
+              "left": null,
+              "right": null
+            },
+            "conditions": {
+              "left": [],
+              "right": []
+            }
+          },
+          "evidence": [
+            {
+              "record_id": "development_missing_reference:obligation:0",
+              "char_start": 16,
+              "char_end": 69,
+              "section_uid": "development_missing_reference:section:0"
+            },
+            {
+              "record_id": "development_missing_reference:obligation:1",
+              "char_start": 88,
+              "char_end": 158,
+              "section_uid": "development_missing_reference:section:1"
+            }
+          ]
+        }
+      ],
+      "pair_counts": {
+        "UNCERTAIN": 1
+      },
+      "candidate_pair_count": 1,
+      "evaluated_pair_count": 1,
+      "complete": true,
+      "issues": [],
+      "record_count": 2,
+      "status": "ANALYZED",
+      "limits": {
+        "max_records": 100,
+        "max_pairs": 1000,
+        "max_statement_chars": 8192
+      },
+      "interpretation": "Experimental explicit-field binding only. MATCHED means potentially comparable, never legal equivalence or contradiction. No neural/date scores are changed."
+    }
+  },
+  {
+    "case_id": "development_ambiguous_reference",
+    "family_id": "development_ambiguous_reference",
+    "gold_state": "UNCERTAIN",
+    "gold_match": null,
+    "prediction": "UNCERTAIN",
+    "ablation": "UNCERTAIN",
+    "selected_pair": {
+      "left_id": "development_ambiguous_reference:obligation:0",
+      "right_id": "development_ambiguous_reference:obligation:1",
+      "status": "UNCERTAIN",
+      "reasons": [
+        "MISSING_EVENT_INSTANCE",
+        "MISSING_OBJECT",
+        "REFERENCE_OBJECT_UNRESOLVED_OR_AMBIGUOUS"
+      ],
+      "compared_fields": {
+        "actor": {
+          "left": "buyer",
+          "right": "buyer"
+        },
+        "action": {
+          "left": "PAY",
+          "right": "PAY"
+        },
+        "object": {
+          "left": "invoice alpha",
+          "right": null
+        },
+        "event_instance": {
+          "left": "invoice alpha",
+          "right": null
+        },
+        "recipient": {
+          "left": null,
+          "right": null
+        },
+        "scope": {
+          "left": "document",
+          "right": "document"
+        },
+        "phase": {
+          "left": "current",
+          "right": "current"
+        },
+        "trigger": {
+          "left": null,
+          "right": null
+        },
+        "conditions": {
+          "left": [],
+          "right": []
+        }
+      },
+      "evidence": [
+        {
+          "record_id": "development_ambiguous_reference:obligation:0",
+          "char_start": 16,
+          "char_end": 69,
+          "section_uid": "development_ambiguous_reference:section:0"
+        },
+        {
+          "record_id": "development_ambiguous_reference:obligation:1",
+          "char_start": 88,
+          "char_end": 157,
+          "section_uid": "development_ambiguous_reference:section:1"
+        }
+      ]
+    },
+    "field_errors": [
+      {
+        "side": "right",
+        "index": 0,
+        "field": "object",
+        "expected": "the obligation in section 5",
+        "predicted": null
+      }
+    ],
+    "outcome_correct": true,
+    "case": {
+      "case_id": "development_ambiguous_reference",
+      "family_id": "development_ambiguous_reference",
+      "split": "development",
+      "text": "Section 1. Duty\nBuyer shall pay Invoice Alpha within 10 calendar days.\n\nSection 2. Duty\nBuyer shall remit the obligation in Section 5 within 10 calendar days.\nSection 5. Extra\nBuyer shall pay Invoice Alpha within 10 calendar days after receipt of Invoice Alpha.\nSection 5. Duplicate\nBuyer shall pay Invoice Alpha within 10 calendar days after receipt of Invoice Alpha.",
+      "gold_state": "UNCERTAIN",
+      "gold_match": null,
+      "mechanical_rule": "ambiguous_reference",
+      "label_provenance": "AUTHOR_CONSTRUCTED_MECHANICAL",
+      "independently_adjudicated": false,
+      "left_section": "1",
+      "right_section": "2",
+      "left_index": 0,
+      "right_index": 0,
+      "expected_left": [
+        {
+          "actor": "buyer",
+          "action": "PAY",
+          "object": "invoice alpha",
+          "recipient": null,
+          "trigger": null,
+          "event_instance": "invoice alpha"
+        }
+      ],
+      "expected_right": [
+        {
+          "actor": "buyer",
+          "action": "PAY",
+          "object": "the obligation in section 5",
+          "recipient": null,
+          "trigger": null,
+          "event_instance": null
+        }
+      ]
+    },
+    "result": {
+      "version": "experimental-obligation-binding-v1",
+      "experimental": true,
+      "doc_id": "development_ambiguous_reference",
+      "coordinate_space": "original_extracted_text",
+      "source_sha256": "f841c4072f99b6ecbdd54965fd32981b0bd718b3cf6b690f97878485e2a78cc7",
+      "records": [
+        {
+          "record_id": "development_ambiguous_reference:obligation:0",
+          "raw_text": "Buyer shall pay Invoice Alpha within 10 calendar days",
+          "char_start": 16,
+          "char_end": 69,
+          "coordinate_space": "original_extracted_text",
+          "section_uid": "development_ambiguous_reference:section:0",
+          "section_identity": "1",
+          "clause_id": "development_ambiguous_reference:source:0",
+          "actor": "buyer",
+          "action": "PAY",
+          "object": "invoice alpha",
+          "recipient": null,
+          "trigger": null,
+          "event_instance": "invoice alpha",
+          "deadline": "within 10 calendar days",
+          "scope": "document",
+          "phase": "current",
+          "conditions": [],
+          "exceptions": [],
+          "evidence": {
+            "actor": [
+              {
+                "text": "Buyer",
+                "char_start": 16,
+                "char_end": 21
+              }
+            ],
+            "action": [
+              {
+                "text": "pay",
+                "char_start": 28,
+                "char_end": 31
+              }
+            ],
+            "object": [
+              {
+                "text": "Invoice Alpha",
+                "char_start": 32,
+                "char_end": 45
+              }
+            ],
+            "event_instance": [
+              {
+                "text": "Invoice Alpha",
+                "char_start": 32,
+                "char_end": 45
+              }
+            ],
+            "deadline": [
+              {
+                "text": "within 10 calendar days",
+                "char_start": 46,
+                "char_end": 69
+              }
+            ]
+          },
+          "reference_target": null,
+          "missing_fields": [],
+          "uncertainty": [],
+          "unsupported": []
+        },
+        {
+          "record_id": "development_ambiguous_reference:obligation:1",
+          "raw_text": "Buyer shall remit the obligation in Section 5 within 10 calendar days",
+          "char_start": 88,
+          "char_end": 157,
+          "coordinate_space": "original_extracted_text",
+          "section_uid": "development_ambiguous_reference:section:1",
+          "section_identity": "2",
+          "clause_id": "development_ambiguous_reference:source:1",
+          "actor": "buyer",
+          "action": "PAY",
+          "object": null,
+          "recipient": null,
+          "trigger": null,
+          "event_instance": null,
+          "deadline": "within 10 calendar days",
+          "scope": "document",
+          "phase": "current",
+          "conditions": [],
+          "exceptions": [],
+          "evidence": {
+            "actor": [
+              {
+                "text": "Buyer",
+                "char_start": 88,
+                "char_end": 93
+              }
+            ],
+            "action": [
+              {
+                "text": "remit",
+                "char_start": 100,
+                "char_end": 105
+              }
+            ],
+            "reference": [
+              {
+                "text": "the obligation in Section 5",
+                "char_start": 106,
+                "char_end": 133
+              }
+            ],
+            "deadline": [
+              {
+                "text": "within 10 calendar days",
+                "char_start": 134,
+                "char_end": 157
+              }
+            ]
+          },
+          "reference_target": "5",
+          "missing_fields": [
+            "object",
+            "event_instance"
+          ],
+          "uncertainty": [
+            "REFERENCE_OBJECT_UNRESOLVED_OR_AMBIGUOUS"
+          ],
+          "unsupported": []
+        },
+        {
+          "record_id": "development_ambiguous_reference:obligation:2",
+          "raw_text": "Buyer shall pay Invoice Alpha within 10 calendar days after receipt of Invoice Alpha",
+          "char_start": 176,
+          "char_end": 260,
+          "coordinate_space": "original_extracted_text",
+          "section_uid": "development_ambiguous_reference:section:2",
+          "section_identity": "5",
+          "clause_id": "development_ambiguous_reference:source:2",
+          "actor": "buyer",
+          "action": "PAY",
+          "object": "invoice alpha",
+          "recipient": null,
+          "trigger": "receipt of invoice alpha",
+          "event_instance": "invoice alpha",
+          "deadline": "within 10 calendar days",
+          "scope": "document",
+          "phase": "current",
+          "conditions": [],
+          "exceptions": [],
+          "evidence": {
+            "actor": [
+              {
+                "text": "Buyer",
+                "char_start": 176,
+                "char_end": 181
+              }
+            ],
+            "action": [
+              {
+                "text": "pay",
+                "char_start": 188,
+                "char_end": 191
+              }
+            ],
+            "object": [
+              {
+                "text": "Invoice Alpha",
+                "char_start": 192,
+                "char_end": 205
+              }
+            ],
+            "event_instance": [
+              {
+                "text": "Invoice Alpha",
+                "char_start": 192,
+                "char_end": 205
+              }
+            ],
+            "trigger": [
+              {
+                "text": "receipt of Invoice Alpha",
+                "char_start": 236,
+                "char_end": 260
+              }
+            ],
+            "deadline": [
+              {
+                "text": "within 10 calendar days",
+                "char_start": 206,
+                "char_end": 229
+              }
+            ]
+          },
+          "reference_target": null,
+          "missing_fields": [],
+          "uncertainty": [],
+          "unsupported": []
+        },
+        {
+          "record_id": "development_ambiguous_reference:obligation:3",
+          "raw_text": "Buyer shall pay Invoice Alpha within 10 calendar days after receipt of Invoice Alpha",
+          "char_start": 283,
+          "char_end": 367,
+          "coordinate_space": "original_extracted_text",
+          "section_uid": "development_ambiguous_reference:section:3",
+          "section_identity": "5",
+          "clause_id": "development_ambiguous_reference:source:3",
+          "actor": "buyer",
+          "action": "PAY",
+          "object": "invoice alpha",
+          "recipient": null,
+          "trigger": "receipt of invoice alpha",
+          "event_instance": "invoice alpha",
+          "deadline": "within 10 calendar days",
+          "scope": "document",
+          "phase": "current",
+          "conditions": [],
+          "exceptions": [],
+          "evidence": {
+            "actor": [
+              {
+                "text": "Buyer",
+                "char_start": 283,
+                "char_end": 288
+              }
+            ],
+            "action": [
+              {
+                "text": "pay",
+                "char_start": 295,
+                "char_end": 298
+              }
+            ],
+            "object": [
+              {
+                "text": "Invoice Alpha",
+                "char_start": 299,
+                "char_end": 312
+              }
+            ],
+            "event_instance": [
+              {
+                "text": "Invoice Alpha",
+                "char_start": 299,
+                "char_end": 312
+              }
+            ],
+            "trigger": [
+              {
+                "text": "receipt of Invoice Alpha",
+                "char_start": 343,
+                "char_end": 367
+              }
+            ],
+            "deadline": [
+              {
+                "text": "within 10 calendar days",
+                "char_start": 313,
+                "char_end": 336
+              }
+            ]
+          },
+          "reference_target": null,
+          "missing_fields": [],
+          "uncertainty": [],
+          "unsupported": []
+        }
+      ],
+      "pairs": [
+        {
+          "left_id": "development_ambiguous_reference:obligation:0",
+          "right_id": "development_ambiguous_reference:obligation:1",
+          "status": "UNCERTAIN",
+          "reasons": [
+            "MISSING_EVENT_INSTANCE",
+            "MISSING_OBJECT",
+            "REFERENCE_OBJECT_UNRESOLVED_OR_AMBIGUOUS"
+          ],
+          "compared_fields": {
+            "actor": {
+              "left": "buyer",
+              "right": "buyer"
+            },
+            "action": {
+              "left": "PAY",
+              "right": "PAY"
+            },
+            "object": {
+              "left": "invoice alpha",
+              "right": null
+            },
+            "event_instance": {
+              "left": "invoice alpha",
+              "right": null
+            },
+            "recipient": {
+              "left": null,
+              "right": null
+            },
+            "scope": {
+              "left": "document",
+              "right": "document"
+            },
+            "phase": {
+              "left": "current",
+              "right": "current"
+            },
+            "trigger": {
+              "left": null,
+              "right": null
+            },
+            "conditions": {
+              "left": [],
+              "right": []
+            }
+          },
+          "evidence": [
+            {
+              "record_id": "development_ambiguous_reference:obligation:0",
+              "char_start": 16,
+              "char_end": 69,
+              "section_uid": "development_ambiguous_reference:section:0"
+            },
+            {
+              "record_id": "development_ambiguous_reference:obligation:1",
+              "char_start": 88,
+              "char_end": 157,
+              "section_uid": "development_ambiguous_reference:section:1"
+            }
+          ]
+        },
+        {
+          "left_id": "development_ambiguous_reference:obligation:0",
+          "right_id": "development_ambiguous_reference:obligation:2",
+          "status": "UNCERTAIN",
+          "reasons": [
+            "TRIGGER_RELATION_UNESTABLISHED"
+          ],
+          "compared_fields": {
+            "actor": {
+              "left": "buyer",
+              "right": "buyer"
+            },
+            "action": {
+              "left": "PAY",
+              "right": "PAY"
+            },
+            "object": {
+              "left": "invoice alpha",
+              "right": "invoice alpha"
+            },
+            "event_instance": {
+              "left": "invoice alpha",
+              "right": "invoice alpha"
+            },
+            "recipient": {
+              "left": null,
+              "right": null
+            },
+            "scope": {
+              "left": "document",
+              "right": "document"
+            },
+            "phase": {
+              "left": "current",
+              "right": "current"
+            },
+            "trigger": {
+              "left": null,
+              "right": "receipt of invoice alpha"
+            },
+            "conditions": {
+              "left": [],
+              "right": []
+            }
+          },
+          "evidence": [
+            {
+              "record_id": "development_ambiguous_reference:obligation:0",
+              "char_start": 16,
+              "char_end": 69,
+              "section_uid": "development_ambiguous_reference:section:0"
+            },
+            {
+              "record_id": "development_ambiguous_reference:obligation:2",
+              "char_start": 176,
+              "char_end": 260,
+              "section_uid": "development_ambiguous_reference:section:2"
+            }
+          ]
+        },
+        {
+          "left_id": "development_ambiguous_reference:obligation:0",
+          "right_id": "development_ambiguous_reference:obligation:3",
+          "status": "UNCERTAIN",
+          "reasons": [
+            "TRIGGER_RELATION_UNESTABLISHED"
+          ],
+          "compared_fields": {
+            "actor": {
+              "left": "buyer",
+              "right": "buyer"
+            },
+            "action": {
+              "left": "PAY",
+              "right": "PAY"
+            },
+            "object": {
+              "left": "invoice alpha",
+              "right": "invoice alpha"
+            },
+            "event_instance": {
+              "left": "invoice alpha",
+              "right": "invoice alpha"
+            },
+            "recipient": {
+              "left": null,
+              "right": null
+            },
+            "scope": {
+              "left": "document",
+              "right": "document"
+            },
+            "phase": {
+              "left": "current",
+              "right": "current"
+            },
+            "trigger": {
+              "left": null,
+              "right": "receipt of invoice alpha"
+            },
+            "conditions": {
+              "left": [],
+              "right": []
+            }
+          },
+          "evidence": [
+            {
+              "record_id": "development_ambiguous_reference:obligation:0",
+              "char_start": 16,
+              "char_end": 69,
+              "section_uid": "development_ambiguous_reference:section:0"
+            },
+            {
+              "record_id": "development_ambiguous_reference:obligation:3",
+              "char_start": 283,
+              "char_end": 367,
+              "section_uid": "development_ambiguous_reference:section:3"
+            }
+          ]
+        },
+        {
+          "left_id": "development_ambiguous_reference:obligation:1",
+          "right_id": "development_ambiguous_reference:obligation:2",
+          "status": "UNCERTAIN",
+          "reasons": [
+            "MISSING_EVENT_INSTANCE",
+            "MISSING_OBJECT",
+            "REFERENCE_OBJECT_UNRESOLVED_OR_AMBIGUOUS",
+            "TRIGGER_RELATION_UNESTABLISHED"
+          ],
+          "compared_fields": {
+            "actor": {
+              "left": "buyer",
+              "right": "buyer"
+            },
+            "action": {
+              "left": "PAY",
+              "right": "PAY"
+            },
+            "object": {
+              "left": null,
+              "right": "invoice alpha"
+            },
+            "event_instance": {
+              "left": null,
+              "right": "invoice alpha"
+            },
+            "recipient": {
+              "left": null,
+              "right": null
+            },
+            "scope": {
+              "left": "document",
+              "right": "document"
+            },
+            "phase": {
+              "left": "current",
+              "right": "current"
+            },
+            "trigger": {
+              "left": null,
+              "right": "receipt of invoice alpha"
+            },
+            "conditions": {
+              "left": [],
+              "right": []
+            }
+          },
+          "evidence": [
+            {
+              "record_id": "development_ambiguous_reference:obligation:1",
+              "char_start": 88,
+              "char_end": 157,
+              "section_uid": "development_ambiguous_reference:section:1"
+            },
+            {
+              "record_id": "development_ambiguous_reference:obligation:2",
+              "char_start": 176,
+              "char_end": 260,
+              "section_uid": "development_ambiguous_reference:section:2"
+            }
+          ]
+        },
+        {
+          "left_id": "development_ambiguous_reference:obligation:1",
+          "right_id": "development_ambiguous_reference:obligation:3",
+          "status": "UNCERTAIN",
+          "reasons": [
+            "MISSING_EVENT_INSTANCE",
+            "MISSING_OBJECT",
+            "REFERENCE_OBJECT_UNRESOLVED_OR_AMBIGUOUS",
+            "TRIGGER_RELATION_UNESTABLISHED"
+          ],
+          "compared_fields": {
+            "actor": {
+              "left": "buyer",
+              "right": "buyer"
+            },
+            "action": {
+              "left": "PAY",
+              "right": "PAY"
+            },
+            "object": {
+              "left": null,
+              "right": "invoice alpha"
+            },
+            "event_instance": {
+              "left": null,
+              "right": "invoice alpha"
+            },
+            "recipient": {
+              "left": null,
+              "right": null
+            },
+            "scope": {
+              "left": "document",
+              "right": "document"
+            },
+            "phase": {
+              "left": "current",
+              "right": "current"
+            },
+            "trigger": {
+              "left": null,
+              "right": "receipt of invoice alpha"
+            },
+            "conditions": {
+              "left": [],
+              "right": []
+            }
+          },
+          "evidence": [
+            {
+              "record_id": "development_ambiguous_reference:obligation:1",
+              "char_start": 88,
+              "char_end": 157,
+              "section_uid": "development_ambiguous_reference:section:1"
+            },
+            {
+              "record_id": "development_ambiguous_reference:obligation:3",
+              "char_start": 283,
+              "char_end": 367,
+              "section_uid": "development_ambiguous_reference:section:3"
+            }
+          ]
+        },
+        {
+          "left_id": "development_ambiguous_reference:obligation:2",
+          "right_id": "development_ambiguous_reference:obligation:3",
+          "status": "MATCHED",
+          "reasons": [
+            "EXPLICIT_FIELDS_MATCH_POTENTIALLY_COMPARABLE"
+          ],
+          "compared_fields": {
+            "actor": {
+              "left": "buyer",
+              "right": "buyer"
+            },
+            "action": {
+              "left": "PAY",
+              "right": "PAY"
+            },
+            "object": {
+              "left": "invoice alpha",
+              "right": "invoice alpha"
+            },
+            "event_instance": {
+              "left": "invoice alpha",
+              "right": "invoice alpha"
+            },
+            "recipient": {
+              "left": null,
+              "right": null
+            },
+            "scope": {
+              "left": "document",
+              "right": "document"
+            },
+            "phase": {
+              "left": "current",
+              "right": "current"
+            },
+            "trigger": {
+              "left": "receipt of invoice alpha",
+              "right": "receipt of invoice alpha"
+            },
+            "conditions": {
+              "left": [],
+              "right": []
+            }
+          },
+          "evidence": [
+            {
+              "record_id": "development_ambiguous_reference:obligation:2",
+              "char_start": 176,
+              "char_end": 260,
+              "section_uid": "development_ambiguous_reference:section:2"
+            },
+            {
+              "record_id": "development_ambiguous_reference:obligation:3",
+              "char_start": 283,
+              "char_end": 367,
+              "section_uid": "development_ambiguous_reference:section:3"
+            }
+          ]
+        }
+      ],
+      "pair_counts": {
+        "UNCERTAIN": 5,
+        "MATCHED": 1
+      },
+      "candidate_pair_count": 6,
+      "evaluated_pair_count": 6,
+      "complete": true,
+      "issues": [],
+      "record_count": 4,
+      "status": "ANALYZED",
+      "limits": {
+        "max_records": 100,
+        "max_pairs": 1000,
+        "max_statement_chars": 8192
+      },
+      "interpretation": "Experimental explicit-field binding only. MATCHED means potentially comparable, never legal equivalence or contradiction. No neural/date scores are changed."
+    }
+  }
+]

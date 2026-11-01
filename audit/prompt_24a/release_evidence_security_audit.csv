@@ -1,0 +1,68 @@
+EvidencePath,FileType,SecurityClassification,ContainsSecrets,ContainsUserPaths,ContainsCustomerData,Recommendation,AuditNotes
+audit/prompt_23/acceptance_summary.md,Markdown,SAFE_TO_COMMIT,NO,NO,NO,INCLUDE,Verified acceptance summary document
+audit/prompt_23/acceptance_execution_log.md,Markdown,SAFE_TO_COMMIT,NO,NO,NO,INCLUDE,Chronological acceptance run log
+audit/prompt_23/defect_register.csv,CSV,SAFE_TO_COMMIT,NO,NO,NO,INCLUDE,Inventory of resolved and open defects
+audit/prompt_23/end_to_end_workflow_report.md,Markdown,SAFE_TO_COMMIT,NO,NO,NO,INCLUDE,HTTP level workflow execution analysis
+audit/prompt_23/evidence_index.md,Markdown,SAFE_TO_COMMIT,NO,NO,NO,INCLUDE,Catalog of Prompt 23 acceptance evidence
+audit/prompt_23/frontend_backend_field_matrix.md,Markdown,SAFE_TO_COMMIT,NO,NO,NO,INCLUDE,Field-level schema alignment matrix
+audit/prompt_23/handoff_prompt_23.json,JSON,SAFE_TO_COMMIT,NO,NO,NO,INCLUDE,Prompt 23 handoff metadata
+audit/prompt_23/handoff_prompt_23_summary.md,Markdown,SAFE_TO_COMMIT,NO,NO,NO,INCLUDE,Executive summary of Prompt 23
+audit/prompt_23/manual_acceptance_test_matrix.csv,CSV,SAFE_TO_COMMIT,NO,NO,NO,INCLUDE,Manual test cases and results
+audit/prompt_23/performance_observations.json,JSON,SAFE_TO_COMMIT,NO,NO,NO,INCLUDE,Latency telemetry data
+audit/prompt_23/rules_validation_report.md,Markdown,SAFE_TO_COMMIT,NO,NO,NO,INCLUDE,Reference and date rule validation
+audit/prompt_23/security_acceptance_report.md,Markdown,SAFE_TO_COMMIT,NO,NO,NO,INCLUDE,Security review findings
+audit/prompt_23/ui_component_inventory.csv,CSV,SAFE_TO_COMMIT,NO,NO,NO,INCLUDE,Frontend UI component analysis
+audit/prompt_23/xai_validation_report.md,Markdown,SAFE_TO_COMMIT,NO,NO,NO,INCLUDE,XAI endpoint verification
+audit/prompt_23/evidence/fixtures/valid_multiclause.txt,Text,SAFE_TO_COMMIT,NO,NO,NO,INCLUDE,Synthetic nonconfidential demo contract fixture
+audit/prompt_23/evidence/fixtures/abrupt_shift.txt,Text,SAFE_TO_COMMIT,NO,NO,NO,INCLUDE,Synthetic shift test fixture
+audit/prompt_23/evidence/fixtures/empty.txt,Text,SAFE_TO_COMMIT,NO,NO,NO,INCLUDE,Zero-byte upload edge-case fixture
+audit/prompt_23/evidence/fixtures/invalid_binary.bin,Binary,SAFE_TO_COMMIT,NO,NO,NO,INCLUDE,Invalid binary upload fixture
+audit/prompt_23/evidence/fixtures/rule_violations.txt,Text,SAFE_TO_COMMIT,NO,NO,NO,INCLUDE,Synthetic rule violation test fixture
+audit/prompt_23/evidence/fixtures/valid_small.txt,Text,SAFE_TO_COMMIT,NO,NO,NO,INCLUDE,Small single-clause test fixture
+audit/prompt_23/evidence/acceptance_test_results.json,JSON,SAFE_TO_COMMIT,NO,NO,NO,INCLUDE,Structured acceptance test output
+audit/prompt_23/evidence/initial_page_load.png,Image,SAFE_TO_COMMIT,NO,NO,NO,INCLUDE,Screenshot of initial dashboard load
+audit/prompt_23/evidence/sample_analysis_result_multiclause.json,JSON,SAFE_TO_COMMIT,NO,NO,NO,INCLUDE,API analysis response capture
+audit/prompt_23a/accessibility_report.md,Markdown,SAFE_TO_COMMIT,NO,NO,NO,INCLUDE,Prompt 23A accessibility audit
+audit/prompt_23a/browser_acceptance_summary.md,Markdown,SAFE_TO_COMMIT,NO,NO,NO,INCLUDE,Browser automation summary
+audit/prompt_23a/evidence/browser_console_events.json,JSON,SAFE_TO_COMMIT,NO,NO,NO,INCLUDE,Captured browser console events (clean)
+audit/prompt_23a/evidence/browser_network_requests.json,JSON,SAFE_TO_COMMIT,NO,NO,NO,INCLUDE,Captured network request URLs and methods only
+audit/prompt_23a/evidence/browser_network_responses.json,JSON,SAFE_TO_COMMIT,NO,NO,NO,INCLUDE,Captured network response URLs and status codes only
+audit/prompt_23b/audit_integrity_summary.md,Markdown,SAFE_TO_COMMIT,NO,NO,NO,INCLUDE,Independent Prompt 23B integrity summary
+audit/prompt_23b/independent_browser_reproduction.md,Markdown,SAFE_TO_COMMIT,NO,NO,NO,INCLUDE,Independent browser reproduction report
+audit/prompt_23b/evidence/repro_01_app_identity.png,Image,SAFE_TO_COMMIT,NO,NO,NO,INCLUDE,CDP browser identity screenshot
+audit/prompt_23b/evidence/repro_03_analysis_completed.png,Image,SAFE_TO_COMMIT,NO,NO,NO,INCLUDE,CDP analysis completion screenshot
+audit/prompt_23b/evidence/repro_05_xai_attribution.png,Image,SAFE_TO_COMMIT,NO,NO,NO,INCLUDE,CDP XAI badge view screenshot
+audit/prompt_23b/evidence/repro_06_feedback_success.png,Image,SAFE_TO_COMMIT,NO,NO,NO,INCLUDE,CDP feedback submission screenshot
+audit/prompt_23b/evidence/repro_network_requests.json,JSON,SAFE_TO_COMMIT,NO,NO,NO,INCLUDE,Reconciled network request traces
+audit/prompt_23b/evidence/repro_network_responses.json,JSON,SAFE_TO_COMMIT,NO,NO,NO,INCLUDE,Reconciled network response traces
+audit/prompt_24/release_readiness_report.md,Markdown,SAFE_TO_COMMIT,NO,NO,NO,INCLUDE,Release readiness audit report
+audit/prompt_24/frontend_quality_report.md,Markdown,SAFE_TO_COMMIT,NO,NO,NO,INCLUDE,ESLint and TypeScript build report
+audit/prompt_24/accessibility_validation.md,Markdown,SAFE_TO_COMMIT,NO,NO,NO,INCLUDE,WCAG 2.1 AA validation
+audit/prompt_24/final_api_contract_matrix.md,Markdown,SAFE_TO_COMMIT,NO,NO,NO,INCLUDE,Reconciled API matrix with verified FeedbackRequest
+audit/prompt_24/scientific_claims_review.md,Markdown,SAFE_TO_COMMIT,NO,NO,NO,INCLUDE,Research integrity review
+audit/prompt_24/demo_environment_setup.md,Markdown,SAFE_TO_COMMIT,NO,NO,NO,INCLUDE,Demo setup with canonical STORAGE_ENCRYPTION_KEY
+audit/prompt_24/five_minute_demo_script.md,Markdown,SAFE_TO_COMMIT,NO,NO,NO,INCLUDE,Corrected 5-min demo with CONFIRM_ANOMALY
+audit/prompt_24/ten_minute_technical_demo.md,Markdown,SAFE_TO_COMMIT,NO,NO,NO,INCLUDE,Corrected 10-min demo with CONFIRM_ANOMALY
+audit/prompt_24/faculty_viva_questions.md,Markdown,SAFE_TO_COMMIT,NO,NO,NO,INCLUDE,Corrected viva questions with CONFIRM_ANOMALY
+audit/prompt_24/architecture_explanation.md,Markdown,SAFE_TO_COMMIT,NO,NO,NO,INCLUDE,System architecture description
+audit/prompt_24/known_limitations.md,Markdown,SAFE_TO_COMMIT,NO,NO,NO,INCLUDE,Documented single-worker & conformal limitations
+audit/prompt_24/final_execution_log.md,Markdown,SAFE_TO_COMMIT,NO,NO,NO,INCLUDE,Prompt 24 execution trace
+audit/prompt_24/evidence_index.md,Markdown,SAFE_TO_COMMIT,NO,NO,NO,INCLUDE,Catalog of Prompt 24 release deliverables
+audit/prompt_24/handoff_prompt_24.json,JSON,SAFE_TO_COMMIT,NO,NO,NO,INCLUDE,Handoff metadata
+audit/prompt_24/handoff_prompt_24_summary.md,Markdown,SAFE_TO_COMMIT,NO,NO,NO,INCLUDE,Prompt 24 executive summary
+audit/prompt_24a/final_verification_summary.md,Markdown,SAFE_TO_COMMIT,NO,NO,NO,INCLUDE,Prompt 24A comprehensive summary
+audit/prompt_24a/demo_corrections_report.md,Markdown,SAFE_TO_COMMIT,NO,NO,NO,INCLUDE,Documentation of feedback verdict corrections
+audit/prompt_24a/encryption_configuration_audit.md,Markdown,SAFE_TO_COMMIT,NO,NO,NO,INCLUDE,Audit of STORAGE_ENCRYPTION_KEY
+audit/prompt_24a/demo_fixture_validation.md,Markdown,SAFE_TO_COMMIT,NO,NO,NO,INCLUDE,Validation of valid_multiclause.txt
+audit/prompt_24a/xai_react_effect_validation.md,Markdown,SAFE_TO_COMMIT,NO,NO,NO,INCLUDE,Validation of React effect lifecycle
+audit/prompt_24a/agent_guidance_file_review.md,Markdown,SAFE_TO_COMMIT,NO,NO,NO,INCLUDE,Assessment of frontend/AGENTS.md
+audit/prompt_24a/reproduction_scripts_review.csv,CSV,SAFE_TO_COMMIT,NO,NO,NO,INCLUDE,Review of 6 reproduction scripts
+audit/prompt_24a/frontend_final_results.json,JSON,SAFE_TO_COMMIT,NO,NO,NO,INCLUDE,ESLint and Next.js build metrics
+audit/prompt_24a/backend_regression_results.json,JSON,SAFE_TO_COMMIT,NO,NO,NO,INCLUDE,Pytest regression metrics
+audit/prompt_24a/git_release_manifest_final.csv,CSV,SAFE_TO_COMMIT,NO,NO,NO,INCLUDE,Security-reviewed release manifest
+audit/prompt_24a/scientific_integrity_review.md,Markdown,SAFE_TO_COMMIT,NO,NO,NO,INCLUDE,Academic claims review
+audit/prompt_24a/final_staging_commands.md,Markdown,SAFE_TO_COMMIT,NO,NO,NO,INCLUDE,Explicit-path staging commands
+audit/prompt_24a/execution_log.md,Markdown,SAFE_TO_COMMIT,NO,NO,NO,INCLUDE,Chronological log of Prompt 24A
+audit/prompt_24a/evidence_index.md,Markdown,SAFE_TO_COMMIT,NO,NO,NO,INCLUDE,Catalog of Prompt 24A deliverables
+audit/prompt_24a/handoff_prompt_24a.json,JSON,SAFE_TO_COMMIT,NO,NO,NO,INCLUDE,Prompt 24A handoff metadata
+audit/prompt_24a/handoff_prompt_24a_summary.md,Markdown,SAFE_TO_COMMIT,NO,NO,NO,INCLUDE,Executive summary of Prompt 24A

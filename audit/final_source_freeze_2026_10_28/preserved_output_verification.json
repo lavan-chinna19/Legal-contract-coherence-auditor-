@@ -1,0 +1,1388 @@
+{
+  "records": [
+    {
+      "case_id": "R01",
+      "mode": "authored",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true
+    },
+    {
+      "case_id": "R01",
+      "mode": "txt",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true
+    },
+    {
+      "case_id": "R02",
+      "mode": "authored",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true
+    },
+    {
+      "case_id": "R02",
+      "mode": "txt",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true
+    },
+    {
+      "case_id": "R02",
+      "mode": "pdf",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true
+    },
+    {
+      "case_id": "R02",
+      "mode": "docx",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true
+    },
+    {
+      "case_id": "R03",
+      "mode": "authored",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true
+    },
+    {
+      "case_id": "R03",
+      "mode": "txt",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true
+    },
+    {
+      "case_id": "R04",
+      "mode": "authored",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true
+    },
+    {
+      "case_id": "R04",
+      "mode": "txt",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true
+    },
+    {
+      "case_id": "R05",
+      "mode": "authored",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true
+    },
+    {
+      "case_id": "R05",
+      "mode": "txt",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true
+    },
+    {
+      "case_id": "R06",
+      "mode": "authored",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true
+    },
+    {
+      "case_id": "R06",
+      "mode": "txt",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true
+    },
+    {
+      "case_id": "R07",
+      "mode": "authored",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true
+    },
+    {
+      "case_id": "R07",
+      "mode": "txt",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true
+    },
+    {
+      "case_id": "R08",
+      "mode": "authored",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true
+    },
+    {
+      "case_id": "R08",
+      "mode": "txt",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true
+    },
+    {
+      "case_id": "R09",
+      "mode": "authored",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true
+    },
+    {
+      "case_id": "R09",
+      "mode": "txt",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true
+    },
+    {
+      "case_id": "R10",
+      "mode": "authored",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true
+    },
+    {
+      "case_id": "R10",
+      "mode": "txt",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true
+    },
+    {
+      "case_id": "R11",
+      "mode": "authored",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true
+    },
+    {
+      "case_id": "R11",
+      "mode": "txt",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true
+    },
+    {
+      "case_id": "R12",
+      "mode": "authored",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true
+    },
+    {
+      "case_id": "R12",
+      "mode": "txt",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true
+    },
+    {
+      "case_id": "R13",
+      "mode": "authored",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true
+    },
+    {
+      "case_id": "R13",
+      "mode": "txt",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true
+    },
+    {
+      "case_id": "R14",
+      "mode": "authored",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true
+    },
+    {
+      "case_id": "R14",
+      "mode": "txt",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true
+    },
+    {
+      "case_id": "R15",
+      "mode": "authored",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true
+    },
+    {
+      "case_id": "R15",
+      "mode": "txt",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true
+    },
+    {
+      "case_id": "R16",
+      "mode": "authored",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true
+    },
+    {
+      "case_id": "R16",
+      "mode": "txt",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true
+    },
+    {
+      "case_id": "R17",
+      "mode": "authored",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true
+    },
+    {
+      "case_id": "R17",
+      "mode": "txt",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true
+    },
+    {
+      "case_id": "R18",
+      "mode": "authored",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true
+    },
+    {
+      "case_id": "R18",
+      "mode": "txt",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true
+    },
+    {
+      "case_id": "R19",
+      "mode": "authored",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true
+    },
+    {
+      "case_id": "R19",
+      "mode": "txt",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true
+    },
+    {
+      "case_id": "R20",
+      "mode": "authored",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true
+    },
+    {
+      "case_id": "R20",
+      "mode": "txt",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true
+    },
+    {
+      "case_id": "R21",
+      "mode": "authored",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true
+    },
+    {
+      "case_id": "R21",
+      "mode": "txt",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true
+    },
+    {
+      "case_id": "R22",
+      "mode": "authored",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true
+    },
+    {
+      "case_id": "R22",
+      "mode": "txt",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true
+    },
+    {
+      "case_id": "R23",
+      "mode": "authored",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true
+    },
+    {
+      "case_id": "R23",
+      "mode": "txt",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true
+    },
+    {
+      "case_id": "R24",
+      "mode": "authored",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true
+    },
+    {
+      "case_id": "R24",
+      "mode": "txt",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true
+    },
+    {
+      "case_id": "R25",
+      "mode": "authored",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true
+    },
+    {
+      "case_id": "R25",
+      "mode": "txt",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true
+    },
+    {
+      "case_id": "R26",
+      "mode": "authored",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true
+    },
+    {
+      "case_id": "R26",
+      "mode": "txt",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true
+    },
+    {
+      "case_id": "R27",
+      "mode": "authored",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true
+    },
+    {
+      "case_id": "R27",
+      "mode": "txt",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true
+    },
+    {
+      "case_id": "R28",
+      "mode": "authored",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true
+    },
+    {
+      "case_id": "R28",
+      "mode": "txt",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true
+    },
+    {
+      "case_id": "T01",
+      "mode": "authored",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true,
+      "historical_phase3_date_same": true
+    },
+    {
+      "case_id": "T01",
+      "mode": "txt",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true,
+      "historical_phase3_date_same": true
+    },
+    {
+      "case_id": "T02",
+      "mode": "authored",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true,
+      "historical_phase3_date_same": true
+    },
+    {
+      "case_id": "T02",
+      "mode": "txt",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true,
+      "historical_phase3_date_same": true
+    },
+    {
+      "case_id": "T02",
+      "mode": "pdf",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true,
+      "historical_phase3_date_same": true
+    },
+    {
+      "case_id": "T02",
+      "mode": "docx",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true,
+      "historical_phase3_date_same": true
+    },
+    {
+      "case_id": "T03",
+      "mode": "authored",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true,
+      "historical_phase3_date_same": true
+    },
+    {
+      "case_id": "T03",
+      "mode": "txt",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true,
+      "historical_phase3_date_same": true
+    },
+    {
+      "case_id": "T04",
+      "mode": "authored",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true,
+      "historical_phase3_date_same": true
+    },
+    {
+      "case_id": "T04",
+      "mode": "txt",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true,
+      "historical_phase3_date_same": true
+    },
+    {
+      "case_id": "T05",
+      "mode": "authored",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true,
+      "historical_phase3_date_same": true
+    },
+    {
+      "case_id": "T05",
+      "mode": "txt",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true,
+      "historical_phase3_date_same": true
+    },
+    {
+      "case_id": "T06",
+      "mode": "authored",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true,
+      "historical_phase3_date_same": true
+    },
+    {
+      "case_id": "T06",
+      "mode": "txt",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true,
+      "historical_phase3_date_same": true
+    },
+    {
+      "case_id": "T07",
+      "mode": "authored",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true,
+      "historical_phase3_date_same": true
+    },
+    {
+      "case_id": "T07",
+      "mode": "txt",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true,
+      "historical_phase3_date_same": true
+    },
+    {
+      "case_id": "T08",
+      "mode": "authored",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true,
+      "historical_phase3_date_same": true
+    },
+    {
+      "case_id": "T08",
+      "mode": "txt",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true,
+      "historical_phase3_date_same": true
+    },
+    {
+      "case_id": "T09",
+      "mode": "authored",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true,
+      "historical_phase3_date_same": true
+    },
+    {
+      "case_id": "T09",
+      "mode": "txt",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true,
+      "historical_phase3_date_same": true
+    },
+    {
+      "case_id": "T10",
+      "mode": "authored",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true,
+      "historical_phase3_date_same": true
+    },
+    {
+      "case_id": "T10",
+      "mode": "txt",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true,
+      "historical_phase3_date_same": true
+    },
+    {
+      "case_id": "T11",
+      "mode": "authored",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true,
+      "historical_phase3_date_same": true
+    },
+    {
+      "case_id": "T11",
+      "mode": "txt",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true,
+      "historical_phase3_date_same": true
+    },
+    {
+      "case_id": "T12",
+      "mode": "authored",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true,
+      "historical_phase3_date_same": true
+    },
+    {
+      "case_id": "T12",
+      "mode": "txt",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true,
+      "historical_phase3_date_same": true
+    },
+    {
+      "case_id": "T13",
+      "mode": "authored",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true,
+      "historical_phase3_date_same": true
+    },
+    {
+      "case_id": "T13",
+      "mode": "txt",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true,
+      "historical_phase3_date_same": true
+    },
+    {
+      "case_id": "T13",
+      "mode": "pdf",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true,
+      "historical_phase3_date_same": true
+    },
+    {
+      "case_id": "T13",
+      "mode": "docx",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true,
+      "historical_phase3_date_same": true
+    },
+    {
+      "case_id": "T14",
+      "mode": "authored",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true,
+      "historical_phase3_date_same": true
+    },
+    {
+      "case_id": "T14",
+      "mode": "txt",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true,
+      "historical_phase3_date_same": true
+    },
+    {
+      "case_id": "T15",
+      "mode": "authored",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true,
+      "historical_phase3_date_same": true
+    },
+    {
+      "case_id": "T15",
+      "mode": "txt",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true,
+      "historical_phase3_date_same": true
+    },
+    {
+      "case_id": "T16",
+      "mode": "authored",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true,
+      "historical_phase3_date_same": true
+    },
+    {
+      "case_id": "T16",
+      "mode": "txt",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true,
+      "historical_phase3_date_same": true
+    },
+    {
+      "case_id": "T17",
+      "mode": "authored",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true,
+      "historical_phase3_date_same": true
+    },
+    {
+      "case_id": "T17",
+      "mode": "txt",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true,
+      "historical_phase3_date_same": true
+    },
+    {
+      "case_id": "S01",
+      "mode": "authored",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true
+    },
+    {
+      "case_id": "S01",
+      "mode": "txt",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true
+    },
+    {
+      "case_id": "S02",
+      "mode": "authored",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true
+    },
+    {
+      "case_id": "S02",
+      "mode": "txt",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true
+    },
+    {
+      "case_id": "S03",
+      "mode": "authored",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true
+    },
+    {
+      "case_id": "S03",
+      "mode": "txt",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true
+    },
+    {
+      "case_id": "S04",
+      "mode": "authored",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true
+    },
+    {
+      "case_id": "S04",
+      "mode": "txt",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true
+    },
+    {
+      "case_id": "S04",
+      "mode": "pdf",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true
+    },
+    {
+      "case_id": "S04",
+      "mode": "docx",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true
+    },
+    {
+      "case_id": "S05",
+      "mode": "authored",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true
+    },
+    {
+      "case_id": "S05",
+      "mode": "txt",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true
+    },
+    {
+      "case_id": "W01",
+      "mode": "authored",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true
+    },
+    {
+      "case_id": "W01",
+      "mode": "txt",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true
+    },
+    {
+      "case_id": "W02",
+      "mode": "authored",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true
+    },
+    {
+      "case_id": "W02",
+      "mode": "txt",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true
+    },
+    {
+      "case_id": "W03",
+      "mode": "authored",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true
+    },
+    {
+      "case_id": "W03",
+      "mode": "txt",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true
+    },
+    {
+      "case_id": "W04",
+      "mode": "authored",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true
+    },
+    {
+      "case_id": "W04",
+      "mode": "txt",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true
+    },
+    {
+      "case_id": "O01",
+      "mode": "authored",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true
+    },
+    {
+      "case_id": "O01",
+      "mode": "txt",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true
+    },
+    {
+      "case_id": "O02",
+      "mode": "authored",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true
+    },
+    {
+      "case_id": "O02",
+      "mode": "txt",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true
+    },
+    {
+      "case_id": "O03",
+      "mode": "authored",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true
+    },
+    {
+      "case_id": "O03",
+      "mode": "txt",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true
+    },
+    {
+      "case_id": "O04",
+      "mode": "authored",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true
+    },
+    {
+      "case_id": "O04",
+      "mode": "txt",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true
+    },
+    {
+      "case_id": "O05",
+      "mode": "authored",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true
+    },
+    {
+      "case_id": "O05",
+      "mode": "txt",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true
+    },
+    {
+      "case_id": "O06",
+      "mode": "authored",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true
+    },
+    {
+      "case_id": "O06",
+      "mode": "txt",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true
+    },
+    {
+      "case_id": "O07",
+      "mode": "authored",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true
+    },
+    {
+      "case_id": "O07",
+      "mode": "txt",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true
+    },
+    {
+      "case_id": "O08",
+      "mode": "authored",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true
+    },
+    {
+      "case_id": "O08",
+      "mode": "txt",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true
+    },
+    {
+      "case_id": "O09",
+      "mode": "authored",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true
+    },
+    {
+      "case_id": "O09",
+      "mode": "txt",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true
+    },
+    {
+      "case_id": "O10",
+      "mode": "authored",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true
+    },
+    {
+      "case_id": "O10",
+      "mode": "txt",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true
+    },
+    {
+      "case_id": "O11",
+      "mode": "authored",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true
+    },
+    {
+      "case_id": "O11",
+      "mode": "txt",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true
+    },
+    {
+      "case_id": "O12",
+      "mode": "authored",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true
+    },
+    {
+      "case_id": "O12",
+      "mode": "txt",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true
+    },
+    {
+      "case_id": "C01",
+      "mode": "authored",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true
+    },
+    {
+      "case_id": "C01",
+      "mode": "txt",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true
+    },
+    {
+      "case_id": "C02",
+      "mode": "authored",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true
+    },
+    {
+      "case_id": "C02",
+      "mode": "txt",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true
+    },
+    {
+      "case_id": "C03",
+      "mode": "authored",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true
+    },
+    {
+      "case_id": "C03",
+      "mode": "txt",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true
+    },
+    {
+      "case_id": "C04",
+      "mode": "authored",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true
+    },
+    {
+      "case_id": "C04",
+      "mode": "txt",
+      "neural_same": true,
+      "structure_same": true,
+      "references_same": true,
+      "graph_same": true,
+      "direct_preserved_date_integration_same": true
+    }
+  ],
+  "counts": {
+    "neural_same": 148,
+    "structure_same": 148,
+    "references_same": 148,
+    "graph_same": 148,
+    "direct_preserved_date_integration_same": 148,
+    "historical_phase3_date_same": 38
+  },
+  "case_modes": 148,
+  "frozen_core_files": 43,
+  "core_hashes_unchanged": true,
+  "date_method": "38 modes match saved Phase 3 dates/flags exactly; all 148 modes match direct unchanged Phase 3 checker and its source hashes.",
+  "elapsed_seconds": 35.71800000000076,
+  "passed": true
+}

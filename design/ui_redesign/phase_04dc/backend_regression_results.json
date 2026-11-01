@@ -1,0 +1,33 @@
+{
+  "phase": "PHASE_4D_C",
+  "pytest_version": "9.1.1",
+  "python_version": "3.11.9",
+  "platform": "win32",
+  "timestamp": "2026-10-23T00:32:50Z",
+  "summary": {
+    "total_collected": 195,
+    "passed": 193,
+    "skipped": 2,
+    "failed": 0,
+    "warnings": 4,
+    "duration_seconds": 188.14
+  },
+  "skipped_tests": [
+    "tests/test_cuad_order.py::test_live_cuad_order_report_exists",
+    "tests/test_cuad_order.py::test_live_cuad_report_has_verdict"
+  ],
+  "new_phase_tests": [
+    "tests/test_independent_benchmark.py::test_provenance_hashing_and_fingerprinting",
+    "tests/test_independent_benchmark.py::test_jaccard_similarity_calculation",
+    "tests/test_independent_benchmark.py::test_source_family_split_disjointness",
+    "tests/test_independent_benchmark.py::test_oracle_discourse_inversion_positive",
+    "tests/test_independent_benchmark.py::test_oracle_commutative_covenant_swap_negative",
+    "tests/test_independent_benchmark.py::test_oracle_hard_negative_dispute_notice",
+    "tests/test_independent_benchmark.py::test_perturbation_copy_on_write",
+    "tests/test_independent_benchmark.py::test_wilson_confidence_intervals",
+    "tests/test_independent_benchmark.py::test_metric_calculation_consistency",
+    "tests/test_independent_benchmark.py::test_frozen_model_hashes_unchanged"
+  ],
+  "exit_code": 0,
+  "verdict": "FULL_BACKEND_REGRESSION_PASSED"
+}

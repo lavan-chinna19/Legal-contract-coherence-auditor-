@@ -28,7 +28,7 @@ export function CalibrationTransparency({
         <div>
           <h3 style={{ fontSize: "1.05rem", fontWeight: 600, color: "var(--color-text-primary)", margin: 0, display: "flex", alignItems: "center", gap: "0.5rem" }}>
             <Layers size={18} style={{ color: "var(--color-accent)" }} aria-hidden="true" />
-            <span>Calibration Transparency &amp; Uncertainty Disclosures</span>
+            <span>Calibration and uncertainty</span>
           </h3>
           <p style={{ fontSize: "0.8rem", color: "var(--color-text-secondary)", margin: "0.25rem 0 0 0" }}>
             Rigorous statistical attribution of confidence intervals, conformal thresholds, and empirical boundaries.

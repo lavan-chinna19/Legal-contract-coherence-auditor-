@@ -1,0 +1,9 @@
+Frontend Feature,Next.js Source Line (page.tsx),Outgoing Fetch Call,HTTP Method,FastAPI Destination Endpoint,Match Status,Notes
+Backend Health Check,Line 98,${backendUrl}/health,GET,/health,EXACT_MATCH,Checks backend connectivity on page mount
+Document Encryption & Upload,Line 116,${backendUrl}/v1/upload,POST,/v1/upload,EXACT_MATCH,Sends multipart/form-data with X-API-Key header
+Analysis Pipeline Trigger,Line 130,${backendUrl}/v1/analyze,POST,/v1/analyze,EXACT_MATCH,Sends JSON with doc_id and X-API-Key
+Job Status Polling,Line 153,${backendUrl}/v1/jobs/${job_id},GET,/v1/jobs/{job_id},EXACT_MATCH,Polls until COMPLETED or FAILED
+Job Results Retrieval,Line 170,${backendUrl}/v1/jobs/${job_id}/results,GET,/v1/jobs/{job_id}/results,EXACT_MATCH,Fetches full UnifiedAuditReportModel
+Reviewer Feedback Submission,Line 206,${backendUrl}/v1/feedback,POST,/v1/feedback,EXACT_MATCH,Submits FeedbackRequest payload to SQLite storage
+XAI Token Attribution (IG),Line 231,${backendUrl}/v1/xai/attribution?...doc_id&clause_id,GET,/v1/xai/attribution,EXACT_MATCH,Fetches Integrated Gradients tokens
+XAI Neighbor Sensitivity,Line 236,${backendUrl}/v1/xai/sensitivity?...doc_id&clause_id,GET,/v1/xai/sensitivity,EXACT_MATCH,Fetches perturbation sensitivity delta

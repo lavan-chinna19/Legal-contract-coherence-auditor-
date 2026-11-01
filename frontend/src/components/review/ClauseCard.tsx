@@ -40,7 +40,7 @@ export function ClauseCard({
       role="button"
       tabIndex={0}
       aria-pressed={isSelected}
-      aria-label={`Clause § ${clause.sequence_idx}, severity ${clause.severity}, anomaly score ${clause.combined_score.toFixed(3)}`}
+      aria-label={`Clause ${clause.sequence_idx + 1}, severity ${clause.severity}, anomaly score ${clause.combined_score.toFixed(3)}`}
       onClick={() => onSelect(clause.clause_id)}
       onKeyDown={handleKeyDown}
       className={`clause-card ${isSelected ? "selected" : ""}`}
@@ -82,7 +82,7 @@ export function ClauseCard({
               fontFamily: "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace",
             }}
           >
-            § {clause.sequence_idx}
+            Clause {clause.sequence_idx + 1}
           </span>
           <Badge variant={severityVariant} />
           {clause.associated_rules && clause.associated_rules.length > 0 && (
@@ -114,7 +114,7 @@ export function ClauseCard({
               color: "var(--color-text-secondary)",
             }}
           >
-            Score: <strong style={{ color: "var(--color-text-primary)" }}>{clause.combined_score.toFixed(3)}</strong>
+            Model score: <strong style={{ color: "var(--color-text-primary)" }}>{clause.combined_score.toFixed(3)}</strong>
           </span>
         </div>
       </div>
@@ -182,15 +182,13 @@ export function ClauseCard({
           color: "var(--color-text-muted)",
         }}
       >
-        <span style={{ fontFamily: "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace" }}>
-          ID: {clause.clause_id}
-        </span>
+
         <span style={{ fontStyle: "italic" }}>
           {clause.is_full_text
-            ? "Source Document Text (Verified)"
+            ? "Verified source text"
             : clause.alignment_status === "PREVIEW_ONLY_AMBIGUOUS"
-            ? "Authoritative API Preview (Ambiguous Boundary)"
-            : "Authoritative API Preview"}
+            ? "Preview · boundary requires review"
+            : "Source preview"}
         </span>
       </div>
     </div>

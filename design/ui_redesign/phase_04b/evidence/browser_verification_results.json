@@ -1,0 +1,32 @@
+{
+  "timestamp": "2026-10-14T16:25:53Z",
+  "outcomes": {
+    "flow_workspace_rendered": true,
+    "flow_heatmap_rendered": true,
+    "flow_provenance_verified": true,
+    "flow_core_preset_144_cells": true,
+    "flow_cell_details_inspected": true,
+    "flow_dark_theme_supported": true,
+    "pipeline_analysis_completed": true,
+    "xai_workspace_rendered": true,
+    "xai_signed_tokens_rendered": true,
+    "xai_token_inspector_verified": true,
+    "xai_sensitivity_card_verified": true,
+    "xai_stale_guard_verified": true,
+    "cross_workspace_sync_verified": true,
+    "zero_storage_leakage": true,
+    "viewport_1024x768_no_overflow": true,
+    "viewport_390x844_no_overflow": true,
+    "zero_console_errors": true
+  },
+  "overall_status": "PASS",
+  "storage_audit": {
+    "localKeys": [
+      "lexaudit_theme"
+    ],
+    "sessionKeys": [],
+    "leaks": [],
+    "compliant": true
+  },
+  "console_errors_count": 0
+}

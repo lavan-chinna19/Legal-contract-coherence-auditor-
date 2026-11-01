@@ -29,7 +29,7 @@ export function ExplanationLimitations({ claimScope }: ExplanationLimitationsPro
       <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", marginBottom: "0.75rem" }}>
         <ShieldAlert size={18} style={{ color: "var(--color-accent)" }} aria-hidden="true" />
         <h3 style={{ fontSize: "1rem", fontWeight: 600, margin: 0, color: "var(--color-text-primary)" }}>
-          Explainability Claim Boundaries & Scientific Scope
+          Interpretation and limits
         </h3>
       </div>
 

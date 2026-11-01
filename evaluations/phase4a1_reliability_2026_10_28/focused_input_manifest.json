@@ -1,0 +1,8 @@
+{
+  "authored_before_repairs": true,
+  "files": {
+    "focused_cases.json": "608f92389c7a2e5575ba89e093154bf66ca040997f15a133778fa05600ba06ea",
+    "build_focused_cases.py": "4a38a0139b18c71139e146b9cac73fa3edb17571b226f1d1be75203b8095764e",
+    "PROTOCOL.md": "fd5a96e3837864b7300011697b4f5479b737d296a91044004b6fa62179ba5f5c"
+  }
+}

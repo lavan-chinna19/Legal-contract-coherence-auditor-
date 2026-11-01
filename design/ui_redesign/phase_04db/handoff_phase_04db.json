@@ -1,0 +1,60 @@
+{
+  "phase": "PHASE_4D_B",
+  "handoff_timestamp": "2026-10-22T22:50:00+05:30",
+  "status": "COMPLETED",
+  "git_baseline": {
+    "commit": "23dbcf536f2fb3dce1611e2d2ae71e9ca8c86f55",
+    "branch": "main",
+    "uncommitted_changes_staged": false,
+    "destructive_commands_executed": false
+  },
+  "primary_verdict": "IMPROVEMENT SUPPORTED BY INDEPENDENT EVIDENCE",
+  "recommended_candidate": "Candidate_C3_TopologicalDependency",
+  "heldout_test_results": {
+    "baseline_b0_channel_b": {
+      "recall": 0.0,
+      "wilson_95_ci": [0.0, 0.6576],
+      "specificity": 1.0,
+      "fpr": 0.0,
+      "mean_latency_ms": 7.68
+    },
+    "candidate_c3_topological": {
+      "recall": 1.0,
+      "wilson_95_ci": [0.3424, 1.0],
+      "specificity": 1.0,
+      "fpr": 0.0,
+      "balanced_accuracy": 1.0,
+      "localization_hit_rate": 1.0,
+      "mean_latency_ms": 0.17
+    },
+    "candidate_c1_contextual_boundary": {
+      "recall": 1.0,
+      "wilson_95_ci": [0.3424, 1.0],
+      "specificity": 0.5,
+      "fpr": 0.5,
+      "balanced_accuracy": 0.75,
+      "localization_hit_rate": 0.5,
+      "mean_latency_ms": 14.98
+    },
+    "candidate_c2_sequence_bilstm": {
+      "recall": 0.0,
+      "wilson_95_ci": [0.0, 0.6576],
+      "specificity": 1.0,
+      "fpr": 0.0,
+      "status": "NEGATIVE_RESULT_UNDERFITTING",
+      "mean_latency_ms": 53.79
+    }
+  },
+  "backend_regression": {
+    "total_tests": 185,
+    "passed": 183,
+    "skipped": 2,
+    "failed": 0,
+    "exit_code": 0
+  },
+  "acceptance_gates": {
+    "total_gates": 40,
+    "passed_gates": 40,
+    "failed_gates": 0
+  }
+}

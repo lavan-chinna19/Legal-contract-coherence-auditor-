@@ -1,0 +1,35 @@
+# Phase 4D Execution Log
+
+## 1. Sequence of Completed Stages
+- **Stage A — Source Investigation & Capability Audit**:
+  - Investigated `src/segmentation/`, `src/scoring/`, `src/rules/`, `src/api/`.
+  - Audited channel sensitivities, rule grammars, and limitations.
+  - Produced `detector_capability_matrix.csv`.
+- **Stage B — Deterministic Perturbation Engine**:
+  - Implemented `src/redteam/schema.py`, `fixtures.py`, `transformations.py`, `scenarios.py`.
+  - Implemented pure deterministic transformations across P1–P10.
+- **Stage C — Independent Ground-Truth Oracle**:
+  - Built `src/redteam/oracle.py` with zero circular checker calls.
+- **Stage D — Detector Evaluation Runner & Metrics**:
+  - Implemented `src/redteam/runner.py`, `metrics.py`, `reporting.py`.
+  - Executed 20 canonical scenarios against frozen `UnifiedAuditor`.
+  - Generated all 21 research artifacts in `research/redteam_robustness/`.
+- **Stage E — Unit & Parity Testing**:
+  - Authored `tests/test_redteam_transformations.py`, `test_redteam_oracle.py`, `test_api_redteam.py`.
+  - Verified full pytest regression suite: **165 passed, 2 skipped, 0 failed**.
+- **Stage F & G — Single Perturbations & Negative Controls**:
+  - Computed quantitative metrics for P1–P9.
+  - Measured 100% precision/recall on rule checks; 0.0% false-positive rate on clean controls.
+- **Stage H — Compound Perturbations**:
+  - Evaluated compound structural + rule perturbations (P10).
+- **Stage I — Interactive Frontend Workspace**:
+  - Implemented `frontend/src/components/redteam/` (11 components).
+  - Integrated Robustness Lab into `SidebarNav.tsx`, `HeaderBar.tsx`, `page.tsx`, `globals.css`.
+  - Validated clean compilation: `tsc --noEmit` (0 errors), `npm run build` (successful).
+- **Stage J — Automated Browser Acceptance & Security Auditing**:
+  - Executed `scripts/run_phase4d_browser_verification.py`.
+  - Captured 9 verified screenshots across all viewports and themes.
+  - Verified 0 localStorage/sessionStorage leaks and 0 console errors.
+- **Stage K — Final Evidence Package & Gate Review**:
+  - Packaged all deliverables into `design/ui_redesign/phase_04d/`.
+  - Evaluated all 45 acceptance gates.

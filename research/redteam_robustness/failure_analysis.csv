@@ -1,0 +1,13 @@
+scenario_id,perturbation_type,detection_status,failure_category,failure_explanation,candidate_remediation
+SCEN_P1_01_DISP_DISTANT,P1_DISPLACEMENT,NOT_DETECTED,WEAK_TRANSITION_SCORE_RESPONSE,Channel B score delta (-0.0096) fell below anomaly threshold (0.08).,Tune boundary sensitivity or extend regex grammar
+SCEN_P1_02_DISP_MODERATE,P1_DISPLACEMENT,NOT_DETECTED,WEAK_TRANSITION_SCORE_RESPONSE,Channel B score delta (-0.0037) fell below anomaly threshold (0.08).,Tune boundary sensitivity or extend regex grammar
+SCEN_P1_03_DISP_SUBTLE,P1_DISPLACEMENT,NOT_DETECTED,WEAK_TRANSITION_SCORE_RESPONSE,Channel B score delta (0.0085) fell below anomaly threshold (0.08).,Tune boundary sensitivity or extend regex grammar
+SCEN_P2_01_SWAP_ADJACENT,P2_SWAP,NOT_DETECTED,WEAK_TRANSITION_SCORE_RESPONSE,Channel B score delta (0.0152) fell below anomaly threshold (0.08).,Tune boundary sensitivity or extend regex grammar
+SCEN_P2_02_SWAP_DISTANT,P2_SWAP,NOT_DETECTED,WEAK_TRANSITION_SCORE_RESPONSE,Channel B score delta (0.0100) fell below anomaly threshold (0.08).,Tune boundary sensitivity or extend regex grammar
+SCEN_P2_03_SWAP_SUBTLE,P2_SWAP,NOT_DETECTED,WEAK_TRANSITION_SCORE_RESPONSE,Channel B score delta (0.0033) fell below anomaly threshold (0.08).,Tune boundary sensitivity or extend regex grammar
+SCEN_P3_01_DUP_EXACT,P3_EXACT_DUPLICATION,NOT_APPLICABLE,DEDICATED_DUPLICATE_DETECTOR_UNAVAILABLE,LexAudit does not possess a dedicated duplicate clause rule checker. Channel B transition response measured descriptively.,None required (exploratory / unsupported)
+SCEN_P3_02_DUP_EXACT_SLA,P3_EXACT_DUPLICATION,NOT_APPLICABLE,DEDICATED_DUPLICATE_DETECTOR_UNAVAILABLE,LexAudit does not possess a dedicated duplicate clause rule checker. Channel B transition response measured descriptively.,None required (exploratory / unsupported)
+SCEN_P4_01_NEAR_DUP,P4_NEAR_DUPLICATION,NOT_APPLICABLE,EXPLORATORY_EVALUATION,Near-duplicate text variations are exploratory; semantic equivalence is not deterministically bound to OOD distance.,None required (exploratory / unsupported)
+SCEN_P8_02_DELETION_DESCRIPTIVE,P8_DELETION,NOT_APPLICABLE,DESCRIPTIVE_ONLY_NO_CONSEQUENCE,Arbitrary clause deletion without a surviving reference dependency lacks a universal completeness detector.,None required (exploratory / unsupported)
+SCEN_P9_01_CLEAN_CONTROL_MSA,P9_NEGATIVE_CONTROL,NOT_APPLICABLE,NONE,Clean negative control produced zero false positives.,None required (exploratory / unsupported)
+SCEN_P9_02_CLEAN_CONTROL_SLA,P9_NEGATIVE_CONTROL,NOT_APPLICABLE,NONE,Clean negative control produced zero false positives.,None required (exploratory / unsupported)

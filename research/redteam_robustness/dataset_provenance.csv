@@ -1,0 +1,3 @@
+doc_id,contract_type,clause_count,license,confidentiality_tier,purpose,split
+SYNTH_DOC_01_MSA,Master Services Agreement,10,CC0-1.0 Public Synthetic,PUBLIC_NONCONFIDENTIAL,Red-Team Robustness Benchmark,synthetic_test
+SYNTH_DOC_02_SLA,Software License Agreement,8,CC0-1.0 Public Synthetic,PUBLIC_NONCONFIDENTIAL,Red-Team Robustness Benchmark,synthetic_test

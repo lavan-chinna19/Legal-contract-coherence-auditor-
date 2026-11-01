@@ -1,0 +1,131 @@
+{
+  "existing_snapshot_files": 1416,
+  "changed_existing_files": [
+    "src/api/reports.py",
+    "src/obligations/binding.py",
+    "docs/FINAL_COMPLETION_TRACKER.md"
+  ],
+  "missing_existing_files": [],
+  "unexpected_existing_changes": [],
+  "preserved_frontend_files": 107,
+  "preserved_historical_files": 474,
+  "original_baseline_sha256": "18195475a72060c5df63c9cfed585fb793ac164d76104bcdd7e607205e030836",
+  "baseline_hash_matches": true,
+  "baseline_reproduced": 58,
+  "final_source_manifest_unchanged": true,
+  "focused_inputs_unchanged": true,
+  "legalbert_cache_checks": {
+    "config.json": true,
+    "pytorch_model.bin": true,
+    "special_tokens_map.json": true,
+    "tokenizer_config.json": true,
+    "vocab.txt": true
+  },
+  "core_parity_passed": true,
+  "git_head_before": "e5436ea4da3fcaeb7f000a0c06a95a3a125514b8",
+  "git_head_after": "e5436ea4da3fcaeb7f000a0c06a95a3a125514b8",
+  "test_runs": [
+    {
+      "file": "affected_v1.xml",
+      "tests": 63,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "skips": [],
+      "passed": 63
+    },
+    {
+      "file": "affected_v2.xml",
+      "tests": 73,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "skips": [],
+      "passed": 73
+    },
+    {
+      "file": "full_native_v1.xml",
+      "tests": 470,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 2,
+      "skips": [
+        {
+          "test": "test_live_cuad_order_report_exists",
+          "reason": "CUAD order report not yet generated. Run: python -m src.data.ingest_cuad first."
+        },
+        {
+          "test": "test_live_cuad_report_has_verdict",
+          "reason": "CUAD order report not yet generated."
+        }
+      ],
+      "passed": 468
+    }
+  ],
+  "metrics": [
+    {
+      "stratum": "EXPOSED_ORIGINAL_DEVELOPMENT",
+      "counts": {
+        "old": {
+          "TP": 7,
+          "FP": 0,
+          "FN": 0,
+          "TN": 7
+        },
+        "new": {
+          "TP": 7,
+          "FP": 0,
+          "FN": 0,
+          "TN": 7
+        }
+      },
+      "documents": 28
+    },
+    {
+      "stratum": "EXPOSED_ORIGINAL_EVALUATION",
+      "counts": {
+        "old": {
+          "TP": 7,
+          "FP": 0,
+          "FN": 1,
+          "TN": 8
+        },
+        "new": {
+          "TP": 8,
+          "FP": 0,
+          "FN": 0,
+          "TN": 8
+        }
+      },
+      "documents": 30
+    },
+    {
+      "stratum": "FOCUSED_AUTHORED_DEVELOPMENT",
+      "counts": {
+        "old": {
+          "TP": 0,
+          "FP": 0,
+          "FN": 7,
+          "TN": 3
+        },
+        "new": {
+          "TP": 7,
+          "FP": 0,
+          "FN": 0,
+          "TN": 3
+        }
+      },
+      "documents": 20
+    }
+  ],
+  "remaining_labelled_synthetic_state_errors": [],
+  "public_normalized": {
+    "documents": 3,
+    "pairs": 11,
+    "supported_pairs": 0,
+    "modal_cues": 62,
+    "skipped_inline_modal_cues": 54
+  },
+  "readiness": "NO-GO for narrow authentic-contract contradiction detection demonstration; no Phase4B",
+  "passed": true
+}

@@ -1,0 +1,2 @@
+split_name,document_count,scenario_count,leakage_risk_mitigation
+synthetic_test,2,20,Held-out non-training synthetic fixtures; pure copy-on-write transient evaluation

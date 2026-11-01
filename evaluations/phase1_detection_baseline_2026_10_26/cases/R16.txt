@@ -1,0 +1,5 @@
+Section 1.1(a). Services
+Only subclause (a) is declared.
+
+Section 2. Payment
+See Section 1.1(b).

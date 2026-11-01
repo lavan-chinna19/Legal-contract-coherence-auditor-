@@ -59,6 +59,7 @@ def report_blocks(result: dict) -> list[tuple[str, str]]:
              'Confirmed means a supported deterministic textual contradiction. Potential differences, uncertainty and unsupported syntax are separate; severity is review priority, not legal certainty.')])
         for statement in temporal.get('statements',[]):
             blocks.append(('text',f"{statement['statement_id']} — scope {statement.get('scope')}; phase {statement.get('phase')}; "
+                f"section {statement.get('section_identity')}; party context {statement.get('party_context')}; "
                 f"actor {statement.get('actor') or 'not stated'}; action {statement.get('action') or 'not stated'}; "
                 f"trigger {statement.get('triggering_event') or 'not stated'}; date {statement.get('absolute_date')}; "
                 f"duration {statement.get('duration_value')} {statement.get('duration_unit')}; basis {statement.get('timing_basis')}; "
@@ -67,6 +68,21 @@ def report_blocks(result: dict) -> list[tuple[str, str]]:
         for decision in temporal.get('decisions',[]):
             blocks.append(('text',f"{decision['category']} / {decision.get('check', 'bounded parse')}: {decision['reason']} "
                 f"Statements: {', '.join(decision.get('statement_ids', []))}."))
+    binding=meta.get('obligation_binding')
+    if binding:
+        blocks.extend([('heading','Experimental obligation binding'),
+            ('text',binding['interpretation']),
+            ('text',f"Version: {binding['version']}; source SHA-256: {binding['source_sha256']}; coordinates: {binding['coordinate_space']}; complete: {binding['complete']}; limits/issues: {binding['issues']}.")])
+        for record in binding.get('records',[]):
+            blocks.append(('text',f"{record['record_id']} / section {record.get('section_identity')}; "
+                f"actor {record.get('actor')}; actors {record.get('actors')}; responsibility {record.get('actor_mode')}; voice {record.get('voice')}; "
+                f"action {record.get('action')}; object {record.get('object')}; event type {record.get('event_type')}; instance basis {record.get('event_instance_basis')}; "
+                f"recipient {record.get('recipient')}; trigger {record.get('trigger')}; instance {record.get('event_instance')}; "
+                f"deadline {record.get('deadline')}; conditions {record.get('conditions')}; exceptions {record.get('exceptions')}; "
+                f"missing {record.get('missing_fields')}; uncertainty {record.get('uncertainty')}; unsupported {record.get('unsupported')}; "
+                f"source {record['char_start']} to {record['char_end']}: {record['raw_text']}"))
+        for pair in binding.get('pairs',[]):
+            blocks.append(('text',f"{pair['status']}: {pair['left_id']} / {pair['right_id']}; reasons: {', '.join(pair['reasons'])}."))
     blocks.append(("heading", "Statistical anomalies"))
     anomalies = [c for c in clauses if c["is_anomaly"]]
     if not anomalies:

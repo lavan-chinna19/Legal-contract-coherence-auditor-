@@ -1,0 +1,45 @@
+{
+  "timestamp": "2026-10-14T16:14:18Z",
+  "phase": "PHASE_4B",
+  "suite": "Backend Pytest Regression & Numerical Validation Suite",
+  "command": "python -m pytest tests/ -q -ra -p no:langsmith",
+  "exit_code": 0,
+  "overall_status": "PASS",
+  "summary": {
+    "total_collected": 122,
+    "passed": 120,
+    "failed": 0,
+    "skipped": 2,
+    "warnings": 4,
+    "duration_seconds": 69.04
+  },
+  "skipped_details": [
+    {
+      "test": "tests/test_cuad_order.py:154",
+      "reason": "CUAD order report not yet generated. Run: python -m src.data.ingest_cuad first."
+    },
+    {
+      "test": "tests/test_cuad_order.py:170",
+      "reason": "CUAD order report not yet generated."
+    }
+  ],
+  "phase_4b_new_tests": [
+    {
+      "file": "tests/test_matrix_numerical_validation.py",
+      "status": "PASS",
+      "description": "Validates 4,356 cells in learned compatibility matrix against frozen checkpoint inference."
+    },
+    {
+      "file": "tests/test_wordpiece_grouping.py",
+      "status": "PASS",
+      "description": "Validates 12 WordPiece subword grouping edge cases and attribution preservation."
+    }
+  ],
+  "regression_baseline_comparison": {
+    "historical_baseline_passed": 116,
+    "historical_baseline_skipped": 2,
+    "current_passed": 120,
+    "current_skipped": 2,
+    "regression_detected": false
+  }
+}

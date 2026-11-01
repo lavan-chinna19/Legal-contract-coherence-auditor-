@@ -1,0 +1,185 @@
+{
+  "original_labels_changed": false,
+  "original_predictions_changed": false,
+  "pair_labels_changed": false,
+  "corrections": [
+    {
+      "case_id": "development_same_recurring_type",
+      "side": "left",
+      "index": 0,
+      "field": "event_instance",
+      "original": "invoice alpha",
+      "corrected": null,
+      "reason": "Each-month language establishes a recurring event type, not a unique occurrence; no pair label changes.",
+      "provenance": "Explicit mechanical annotation erratum, not qualified legal review"
+    },
+    {
+      "case_id": "development_same_recurring_type",
+      "side": "right",
+      "index": 0,
+      "field": "event_instance",
+      "original": "invoice alpha",
+      "corrected": null,
+      "reason": "Each-month language establishes a recurring event type, not a unique occurrence; no pair label changes.",
+      "provenance": "Explicit mechanical annotation erratum, not qualified legal review"
+    },
+    {
+      "case_id": "evaluation_same_recurring_type",
+      "side": "left",
+      "index": 0,
+      "field": "event_instance",
+      "original": "invoice cedar",
+      "corrected": null,
+      "reason": "Each-month language establishes a recurring event type, not a unique occurrence; no pair label changes.",
+      "provenance": "Explicit mechanical annotation erratum, not qualified legal review"
+    },
+    {
+      "case_id": "evaluation_same_recurring_type",
+      "side": "right",
+      "index": 0,
+      "field": "event_instance",
+      "original": "invoice cedar",
+      "corrected": null,
+      "reason": "Each-month language establishes a recurring event type, not a unique occurrence; no pair label changes.",
+      "provenance": "Explicit mechanical annotation erratum, not qualified legal review"
+    }
+  ],
+  "field_results": [
+    {
+      "stratum": "EXPOSED_ORIGINAL_DEVELOPMENT",
+      "results": {
+        "old": {
+          "field_cells": 55,
+          "raw_event_exact": 53,
+          "corrected_overlay_event_exact": 55,
+          "actor_exact": 55
+        },
+        "new": {
+          "field_cells": 55,
+          "raw_event_exact": 53,
+          "corrected_overlay_event_exact": 55,
+          "actor_exact": 55
+        }
+      }
+    },
+    {
+      "stratum": "EXPOSED_ORIGINAL_EVALUATION",
+      "results": {
+        "old": {
+          "field_cells": 59,
+          "raw_event_exact": 55,
+          "corrected_overlay_event_exact": 57,
+          "actor_exact": 56
+        },
+        "new": {
+          "field_cells": 59,
+          "raw_event_exact": 57,
+          "corrected_overlay_event_exact": 59,
+          "actor_exact": 59
+        }
+      }
+    }
+  ],
+  "focused_field_checks": [
+    {
+      "case_id": "notification_type_only",
+      "actors_correct": true,
+      "actor_action_relationship_correct": true
+    },
+    {
+      "case_id": "named_notice_passive",
+      "actors_correct": true,
+      "actor_action_relationship_correct": true
+    },
+    {
+      "case_id": "missing_passive_agent",
+      "actors_correct": true,
+      "actor_action_relationship_correct": true
+    },
+    {
+      "case_id": "joint_active",
+      "actors_correct": true,
+      "actor_action_relationship_correct": true
+    },
+    {
+      "case_id": "joint_passive",
+      "actors_correct": true,
+      "actor_action_relationship_correct": true
+    },
+    {
+      "case_id": "joint_reordered",
+      "actors_correct": true,
+      "actor_action_relationship_correct": true
+    },
+    {
+      "case_id": "compound_three",
+      "actors_correct": true,
+      "actor_action_relationship_correct": true
+    },
+    {
+      "case_id": "alternative_subject",
+      "actors_correct": true,
+      "actor_action_relationship_correct": true
+    },
+    {
+      "case_id": "passive_payment",
+      "actors_correct": true,
+      "actor_action_relationship_correct": true
+    },
+    {
+      "case_id": "passive_delivery",
+      "actors_correct": true,
+      "actor_action_relationship_correct": true
+    },
+    {
+      "case_id": "generic_event_type",
+      "actors_correct": true,
+      "actor_action_relationship_correct": true
+    },
+    {
+      "case_id": "distinct_instances",
+      "actors_correct": true,
+      "actor_action_relationship_correct": true
+    },
+    {
+      "case_id": "recurrence",
+      "actors_correct": true,
+      "actor_action_relationship_correct": true
+    },
+    {
+      "case_id": "same_explicit_occurrence",
+      "actors_correct": true,
+      "actor_action_relationship_correct": true
+    },
+    {
+      "case_id": "different_explicit_occurrences",
+      "actors_correct": true,
+      "actor_action_relationship_correct": true
+    },
+    {
+      "case_id": "one_sided_occurrence",
+      "actors_correct": true,
+      "actor_action_relationship_correct": true
+    },
+    {
+      "case_id": "passive_condition",
+      "actors_correct": true,
+      "actor_action_relationship_correct": true
+    },
+    {
+      "case_id": "passive_exception",
+      "actors_correct": true,
+      "actor_action_relationship_correct": true
+    },
+    {
+      "case_id": "passive_negation",
+      "actors_correct": true,
+      "actor_action_relationship_correct": true
+    },
+    {
+      "case_id": "unknown_action",
+      "actors_correct": true,
+      "actor_action_relationship_correct": true
+    }
+  ]
+}

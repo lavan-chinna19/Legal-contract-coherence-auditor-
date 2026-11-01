@@ -1,0 +1,18 @@
+Path,ChangeType,Purpose,Decision,SensitiveDataCheck,EvidenceStatus,Reason
+README.md,MODIFIED,Updated documentation with reconciled routes and single-worker requirement,INCLUDE,CLEAN,VERIFIED,Accurately reflects current system architecture and PowerShell commands
+frontend/src/app/layout.tsx,MODIFIED,Updated browser tab title and application metadata,INCLUDE,CLEAN,VERIFIED,Replaces starter metadata with academic prototype branding
+frontend/src/app/page.tsx,MODIFIED,Fixed ESLint errors and added accessibility IDs and labels,INCLUDE,CLEAN,VERIFIED,Zero lint errors and zero TypeScript compile errors
+scripts/reproduce_browser_evidence.py,UNTRACKED,Deterministic Chrome CDP browser reproduction suite,INCLUDE,CLEAN,VERIFIED,Essential reproduction test script verifying 7 browser workflows
+scripts/diagnose_runtime_dom.py,UNTRACKED,Runtime DOM diagnostics utility,INCLUDE,CLEAN,VERIFIED,Acceptance testing tool for runtime DOM verification
+scripts/run_prompt23_acceptance.py,UNTRACKED,Prompt 23 Level A & B acceptance test runner,INCLUDE,CLEAN,VERIFIED,Historical automated acceptance suite
+scripts/run_prompt23a_browser_acceptance.py,UNTRACKED,Prompt 23A browser acceptance test runner,INCLUDE,CLEAN,VERIFIED,Historical browser automation suite
+scripts/run_server.py,UNTRACKED,Background test server launcher,INCLUDE,CLEAN,VERIFIED,Utility for automated headless testing
+scripts/test_cdp.py,UNTRACKED,CDP connection verification probe,INCLUDE,CLEAN,VERIFIED,DevTools Protocol connectivity diagnostic
+frontend/AGENTS.md,UNTRACKED,Frontend subagent instructions,INCLUDE,CLEAN,VERIFIED,Documentation for agentic workflows
+audit/prompt_23/,UNTRACKED,Prompt 23 full-stack acceptance evidence package,INCLUDE,CLEAN,VERIFIED,Evidence handoff package for Prompt 23
+audit/prompt_23a/,UNTRACKED,Prompt 23A browser acceptance evidence package,INCLUDE,CLEAN,VERIFIED,Evidence handoff package for Prompt 23A
+audit/prompt_23b/,UNTRACKED,Prompt 23B route & selector reconciliation evidence package,INCLUDE,CLEAN,VERIFIED,Evidence handoff package for Prompt 23B
+audit/prompt_24/,UNTRACKED,Prompt 24 final release deliverables and demonstration scripts,INCLUDE,CLEAN,VERIFIED,Official release handoff and faculty viva materials
+fixtures/load_test_results.json,MODIFIED,Performance benchmark test fixture,EXCLUDE,CLEAN,PRESERVED,Pre-existing working tree modification from prior load testing phase
+data/,UNTRACKED,Runtime databases and contract storage,EXCLUDE,CONTAINS_RUNTIME_DATA,LOCAL_ONLY,Ephemeral and persistent runtime SQLite files and uploads must never be committed
+.env,UNTRACKED,Environment variable configuration,EXCLUDE,CONTAINS_SECRETS,GITIGNORED,Secret keys and API tokens must never be committed

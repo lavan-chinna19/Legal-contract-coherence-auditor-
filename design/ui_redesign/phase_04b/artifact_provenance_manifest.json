@@ -1,0 +1,50 @@
+{
+  "schema_version": "1.0.0",
+  "milestone": "PHASE_4B",
+  "manifest_description": "Cryptographic and structural provenance manifest for frozen model checkpoints, reference centroid representations, and generated compatibility matrices in LexAudit Phase 4B.",
+  "generated_at": "2026-10-14T15:31:12.075207+00:00",
+  "audit_status": "VERIFIED_GENUINE",
+  "artifacts": {
+    "coherence_classifier_checkpoint": {
+      "file_path": "models/coherence_classifier.pt",
+      "sha256": "9c0a5a096cdf03a63615134500a64f4bc559314be64366812d6a6f1762d4017f",
+      "file_size_bytes": 3218819,
+      "model_architecture": "CoherenceScorerHead(input_dim=3072, hidden=[256, 64], output=1)",
+      "num_trainable_parameters": 803137,
+      "torch_dtype": "float32",
+      "feature_construction": "phi(u, v) = [u, v, |u - v|, u * v]",
+      "training_loss": "Binary Cross-Entropy with Logits (BCEWithLogitsLoss)",
+      "target_semantics": "1.0 = Coherent Natural Transition, 0.0 = Shuffled / Discontinuous Pair"
+    },
+    "ledgar_centroids": {
+      "file_path": "fixtures/ledgar_centroids.npz",
+      "sha256": "2ea33ac1cb8430e720be85cd501f11539c143901b2173b63b942b34b9d31ce07",
+      "file_size_bytes": 203763,
+      "num_classes": 66,
+      "embedding_dimension": 768,
+      "base_embedding_model": "nlpaueb/legal-bert-base-uncased",
+      "l2_normalization_status": "VERIFIED_UNIT_NORM_1.000000",
+      "corpus_origin": "LexGLUE LEDGAR (SEC EDGAR Filings 2016-2019)"
+    },
+    "learned_clause_pair_compatibility_matrix": {
+      "file_path": "frontend/public/research/learned_clause_pair_compatibility.json",
+      "sha256": "3cb0023023e20ddafb93ee93c8309dfcb9486c99c354784e1b8b6c00d832c3f1",
+      "file_size_bytes": 84635,
+      "script_generator": "scripts/generate_compatibility_matrix.py@v1.0",
+      "dimensions": {
+        "num_clause_types": 66,
+        "num_ordered_pairs": 4356,
+        "rows": "Antecedent Clause c_i",
+        "columns": "Successor Clause c_j"
+      },
+      "summary_statistics": {
+        "min_score": 0.304309,
+        "max_score": 0.461397,
+        "mean_score": 0.348627,
+        "diagonal_self_mean": 0.44175,
+        "mean_directional_asymmetry": 0.005203
+      },
+      "reproducibility_command": "python scripts/generate_compatibility_matrix.py"
+    }
+  }
+}

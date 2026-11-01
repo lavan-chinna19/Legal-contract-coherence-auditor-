@@ -1,0 +1,16 @@
+model_a,model_b,accuracy_a,accuracy_b,mean_difference,bootstrap_ci_lower,bootstrap_ci_upper,mcnemar_disagreements,verdict
+B0_ChannelB,B1_ProductionEnsemble,0.1111,0.1111,0.0,0.0,0.0,0,No statistically significant difference at 95% CI
+B0_ChannelB,B2_CosineSimilarity,0.1111,0.4444,-0.3491,-1.0,0.0,6,No statistically significant difference at 95% CI
+B0_ChannelB,C1_BoundaryContrast,0.1111,0.1111,0.0,0.0,0.0,0,No statistically significant difference at 95% CI
+B0_ChannelB,C2_SequenceBiLSTM,0.1111,0.1111,0.0,0.0,0.0,0,No statistically significant difference at 95% CI
+B0_ChannelB,C3_TopologicalDAG,0.1111,0.3889,-0.3318,-1.0,0.0,5,No statistically significant difference at 95% CI
+B1_ProductionEnsemble,B2_CosineSimilarity,0.1111,0.4444,-0.3491,-1.0,0.0,6,No statistically significant difference at 95% CI
+B1_ProductionEnsemble,C1_BoundaryContrast,0.1111,0.1111,0.0,0.0,0.0,0,No statistically significant difference at 95% CI
+B1_ProductionEnsemble,C2_SequenceBiLSTM,0.1111,0.1111,0.0,0.0,0.0,0,No statistically significant difference at 95% CI
+B1_ProductionEnsemble,C3_TopologicalDAG,0.1111,0.3889,-0.3318,-1.0,0.0,5,No statistically significant difference at 95% CI
+B2_CosineSimilarity,C1_BoundaryContrast,0.4444,0.1111,0.3491,0.0,1.0,6,No statistically significant difference at 95% CI
+B2_CosineSimilarity,C2_SequenceBiLSTM,0.4444,0.1111,0.3491,0.0,1.0,6,No statistically significant difference at 95% CI
+B2_CosineSimilarity,C3_TopologicalDAG,0.4444,0.3889,0.0174,-0.5,0.4,7,No statistically significant difference at 95% CI
+C1_BoundaryContrast,C2_SequenceBiLSTM,0.1111,0.1111,0.0,0.0,0.0,0,No statistically significant difference at 95% CI
+C1_BoundaryContrast,C3_TopologicalDAG,0.1111,0.3889,-0.3318,-1.0,0.0,5,No statistically significant difference at 95% CI
+C2_SequenceBiLSTM,C3_TopologicalDAG,0.1111,0.3889,-0.3318,-1.0,0.0,5,No statistically significant difference at 95% CI

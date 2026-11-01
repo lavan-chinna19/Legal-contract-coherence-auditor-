@@ -241,8 +241,10 @@ def test_multipart_limits_before_parsing(client):
 
 
 def test_no_findings_analysis_state(client):
-    from src.redteam.fixtures import SYNTHETIC_FIXTURE_REGISTRY
-    text = "\n".join(c.text for c in SYNTHETIC_FIXTURE_REGISTRY["SYNTH_DOC_01_MSA"]())
+    # A NO_FINDINGS specimen must have supported, unambiguous temporal syntax.
+    # The old MSA's unspecified-day/receipt deadline now legitimately requires
+    # review; its no-false-conflict and review behavior has separate regression tests.
+    text = 'Section 1. Timing\nThe Effective Date is 2026-01-01.\nSection 2. Timing\nThe Expiration Date is 2026-12-31.'
     uploaded = client.post("/v1/upload", files={"file": ("synthetic-no-findings.txt", text.encode())}, headers=KEY)
     assert uploaded.status_code == 200
     response = client.post("/v1/analyze", json={"doc_id": uploaded.json()["doc_id"]}, headers=KEY)

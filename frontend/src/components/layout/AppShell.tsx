@@ -1,82 +1,19 @@
 "use client";
-
-import React, { useState } from "react";
+import { useEffect, useState, type ReactNode } from "react";
 import { SidebarNav, NavSection } from "./SidebarNav";
 import { HeaderBar } from "./HeaderBar";
-import { AlertTriangle } from "lucide-react";
-
-interface AppShellProps {
-  children: React.ReactNode;
-  activeSection: NavSection;
-  onSelectSection: (section: NavSection) => void;
-  backendStatus: "online" | "offline" | "checking";
-  backendUrl: string;
-  onBackendUrlChange: (url: string) => void;
-  apiKey: string;
-  onApiKeyChange: (key: string) => void;
-  documentLoaded: boolean;
-}
-
-export function AppShell({
-  children,
-  activeSection,
-  onSelectSection,
-  backendStatus,
-  backendUrl,
-  onBackendUrlChange,
-  apiKey,
-  onApiKeyChange,
-  documentLoaded,
-}: AppShellProps) {
+export function AppShell({ children, activeSection, onSelectSection, backendStatus, authenticated, localEngine }: {
+  children: ReactNode; activeSection: NavSection; onSelectSection: (section: NavSection) => void;
+  backendStatus: "online" | "offline" | "checking"; authenticated: boolean; localEngine: boolean;
+}) {
   const [mobileOpen, setMobileOpen] = useState(false);
-
-  const DISCLAIMER_TEXT =
-    "Academic Research Prototype — Not Legal Advice: This system is an academic research prototype evaluating structural and semantic coherence in legal contracts. Predictions and anomaly scores do not constitute legal advice, enforceability certification, or formal document review.";
-
-  return (
-    <div className="app-shell">
-      {/* Lateral Persistent Sidebar */}
-      <SidebarNav
-        activeSection={activeSection}
-        onSelectSection={onSelectSection}
-        mobileOpen={mobileOpen}
-        onCloseMobile={() => setMobileOpen(false)}
-        documentLoaded={documentLoaded}
-      />
-
-      {/* Mobile Backdrop Overlay */}
-      <div
-        className={`mobile-overlay ${mobileOpen ? "mobile-open" : ""}`}
-        onClick={() => setMobileOpen(false)}
-        aria-hidden="true"
-      />
-
-      {/* Main Column */}
-      <div className="main-wrapper">
-        <HeaderBar
-          activeSection={activeSection}
-          backendStatus={backendStatus}
-          backendUrl={backendUrl}
-          onBackendUrlChange={onBackendUrlChange}
-          apiKey={apiKey}
-          onApiKeyChange={onApiKeyChange}
-          onOpenMobileNav={() => setMobileOpen(true)}
-        />
-
-        <main className="app-content" id="main-content">
-          {/* Prominent Global Disclaimer Banner on Every View */}
-          <div
-            className="disclaimer-banner"
-            role="region"
-            aria-label="Academic Research Disclaimer"
-          >
-            <AlertTriangle size={18} style={{ flexShrink: 0 }} aria-hidden="true" />
-            <span>{DISCLAIMER_TEXT}</span>
-          </div>
-
-          {children}
-        </main>
-      </div>
-    </div>
-  );
+  useEffect(() => { window.scrollTo({ top: 0, behavior: "instant" }); document.getElementById("page-title")?.focus({ preventScroll: true }); }, [activeSection]);
+  function navigate(section: NavSection) { window.scrollTo({ top: 0, behavior: "instant" }); onSelectSection(section); setMobileOpen(false); if (section === activeSection) requestAnimationFrame(() => document.getElementById("page-title")?.focus({ preventScroll: true })); }
+  function close() { setMobileOpen(false); requestAnimationFrame(() => document.querySelector<HTMLButtonElement>('button[aria-label="Open navigation"]')?.focus()); }
+  return <div className="app-shell"><a className="skip-link" href="#main-content">Skip to content</a>
+    <SidebarNav activeSection={activeSection} onSelectSection={navigate} mobileOpen={mobileOpen} onCloseMobile={close} />
+    {mobileOpen && <button className="mobile-overlay mobile-open" aria-label="Close navigation backdrop" tabIndex={-1} onClick={close} />}
+    <div className="main-wrapper" inert={mobileOpen || undefined}><HeaderBar activeSection={activeSection} backendStatus={backendStatus} authenticated={authenticated} localEngine={localEngine} onOpenMobileNav={() => setMobileOpen(true)} onSettings={() => navigate("settings")} />
+      <main className="app-content" id="main-content"><p className="compact-disclaimer">Decision support · Not legal advice. Automated findings require human review.</p>{children}</main>
+    </div></div>;
 }

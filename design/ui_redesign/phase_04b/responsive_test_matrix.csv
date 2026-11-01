@@ -1,0 +1,5 @@
+Viewport,Category,Status,Evidence
+1440x900,Desktop Baseline,PASS,01_flow_compatibility_map_light.png
+1440x900 Dark,Desktop Dark Mode,PASS,02_flow_compatibility_map_dark.png
+1024x768,Desktop,PASS,Screenshot: 07_responsive_1024x768.png
+390x844,Mobile,PASS,Screenshot: 08_responsive_390x844_mobile.png

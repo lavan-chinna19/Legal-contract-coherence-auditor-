@@ -1,0 +1,77 @@
+[
+  {
+    "file": "parser_initial_tests.xml",
+    "tests": 58,
+    "failures": 2,
+    "errors": 0,
+    "skipped": 0,
+    "skips": []
+  },
+  {
+    "file": "parser_tests.xml",
+    "tests": 44,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "skips": []
+  },
+  {
+    "file": "integration_tests.xml",
+    "tests": 79,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "skips": []
+  },
+  {
+    "file": "full_native_tests.xml",
+    "tests": 297,
+    "failures": 1,
+    "errors": 0,
+    "skipped": 2,
+    "skips": [
+      {
+        "test": "test_live_cuad_order_report_exists",
+        "reason": "CUAD order report not yet generated. Run: python -m src.data.ingest_cuad first."
+      },
+      {
+        "test": "test_live_cuad_report_has_verdict",
+        "reason": "CUAD order report not yet generated."
+      }
+    ]
+  },
+  {
+    "file": "full_native_final.xml",
+    "tests": 299,
+    "failures": 1,
+    "errors": 0,
+    "skipped": 2,
+    "skips": [
+      {
+        "test": "test_live_cuad_order_report_exists",
+        "reason": "CUAD order report not yet generated. Run: python -m src.data.ingest_cuad first."
+      },
+      {
+        "test": "test_live_cuad_report_has_verdict",
+        "reason": "CUAD order report not yet generated."
+      }
+    ]
+  },
+  {
+    "file": "full_native_verified.xml",
+    "tests": 300,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 2,
+    "skips": [
+      {
+        "test": "test_live_cuad_order_report_exists",
+        "reason": "CUAD order report not yet generated. Run: python -m src.data.ingest_cuad first."
+      },
+      {
+        "test": "test_live_cuad_report_has_verdict",
+        "reason": "CUAD order report not yet generated."
+      }
+    ]
+  }
+]

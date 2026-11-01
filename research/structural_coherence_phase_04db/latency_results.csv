@@ -1,0 +1,7 @@
+model_name,model_type,model_parameters,storage_disk_bytes,loading_time_ms,mean_inference_latency_ms,p95_inference_latency_ms,peak_ram_mb,relative_cpu_cost_vs_b0
+Baseline_B0_FrozenChannelB,Pairwise PyTorch MLP,98561,397500,45.2,12.68,24.01,42.5,1.00x
+Baseline_B1_ProductionDualChannel,Dual Channel Ensemble,98561,397500,85.6,40.78,42.09,58.2,3.22x
+Baseline_B2_AdjacentCosine,Simple Numpy Cosine,0,0,0.1,7.26,8.11,12.1,0.57x
+Candidate_C1_ContextualBoundary,Contextual Multi-Factor Scorer,0,0,0.2,22.96,29.04,38.4,1.81x
+Candidate_C2_SequenceBiLSTM,PyTorch BiLSTM Head,115457,5464777,65.4,25.64,53.79,64.8,2.02x
+Candidate_C3_TopologicalDependency,Directed Acyclic Graph Model,0,0,0.1,0.20,0.25,1.2,0.016x

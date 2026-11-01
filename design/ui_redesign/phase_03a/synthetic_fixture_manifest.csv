@@ -1,0 +1,16 @@
+fixture_id,filename,category,char_length,clause_count,primary_adversarial_feature,expected_frontend_outcome
+FIX-01,fixture_01_baseline.txt,Baseline,671,5,Five distinct standard numbered clauses,VERIFIED_FULL_TEXT
+FIX-02,fixture_02_repeated_prefix.txt,Prefix Collision,907,3,Identical 100+ character introductory preamble across clauses,VERIFIED_FULL_TEXT (Sequential disambiguation)
+FIX-03,fixture_03_identical_clauses.txt,Duplicate Clauses,746,5,Identical boilerplate text separated by distinct clauses,VERIFIED_FULL_TEXT (Section numbers disambiguate)
+FIX-04,fixture_04_long_clause.txt,Extreme Length,10135,3,Clause exceeding 5000 characters (>10KB),VERIFIED_FULL_TEXT (>5000 chars preserved intact)
+FIX-05,fixture_05_multiline_text.txt,Formatting,561,5,Wrapped lines with blank lines and sub-clause list items (a)-(c),VERIFIED_FULL_TEXT (Internal newlines preserved)
+FIX-06,fixture_06_nested_numbering.txt,Hierarchy,455,4,Hierarchical numbering: 1; 1.1; 1.1(a); 2,VERIFIED_FULL_TEXT (Strict sub-clause boundaries)
+FIX-07,fixture_07_mixed_line_endings.txt,Encoding/Linebreaks,223,3,Mixed CRLF (Windows) and LF (Unix) line terminations,VERIFIED_FULL_TEXT (Line-ending invariant)
+FIX-08,fixture_08_whitespace_variability.txt,Whitespace,278,3,Erratic indentation; multiple interior spaces; trailing whitespace,VERIFIED_FULL_TEXT (Trimmed boundary matching)
+FIX-09,fixture_09_unicode_symbols.txt,Unicode/Symbols,409,3,French accents; curly quotes; § 102; © 2026; ®; € currency,VERIFIED_FULL_TEXT (Zero character corruption)
+FIX-10,fixture_10_literal_ellipsis.txt,Punctuation Edge,361,3,Literal ellipsis (...) inside short clause (<100 chars),VERIFIED_FULL_TEXT (Literal ellipsis not stripped)
+FIX-11,fixture_11_heading_reuse.txt,Token Collision,420,6,Identical repeated heading GENERAL PROVISIONS across sections,PREVIEW_ONLY_AMBIGUOUS (Headings) / VERIFIED_FULL_TEXT (Bodies)
+FIX-12,fixture_12_short_clause.txt,Boundary Length,104,3,Clauses shorter than 50 characters without backend truncation,VERIFIED_FULL_TEXT (Exact byte boundary)
+FIX-13,fixture_13_non_unique_substring.txt,Search Ambiguity,427,3,Clause 1 preview appears inside Clause 0 body as citation,VERIFIED_FULL_TEXT (Monotonic offset prevents backward jumping)
+FIX-14,fixture_14_missing_match.txt,Desynchronization,158,2,Backend preview absent from source text entirely,PREVIEW_ONLY_UNMATCHED (Fallback to preview)
+FIX-15,fixture_15_boundary_ambiguity.txt,Boundary Collision,312,3,Subsequent boundary token cannot be verified in remaining text,PREVIEW_ONLY_AMBIGUOUS (Fallback to preview)

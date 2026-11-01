@@ -1,0 +1,13 @@
+--- pre-freeze/src/obligations/binding.py
++++ src/obligations/binding.py
+@@ -80,7 +80,9 @@
+     all_scopes={m[1] for m in SCOPE.finditer(source)};all_phases={m[1] for m in PHASE.finditer(source)}
+     for unit in structure.units:
+         node=next((s for s in reversed(structure.sections) if s['char_start']<=unit['char_start']<s['char_end']),None)
+-        body_start=node['heading_end'] if node else unit['char_start']
++        # heading_end covers the entire physical line, including any inline body.
++        # Skip only the known identifier; retain title/body text without guessing a split.
++        body_start=node['identifier_end'] if node else unit['char_start']
+         body=source[body_start:unit['char_end']]
+         for left,right in _boundaries(body):
+             raw=body[left:right];leading=len(raw)-len(raw.lstrip());text=raw.strip()

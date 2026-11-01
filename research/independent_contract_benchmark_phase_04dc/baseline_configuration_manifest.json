@@ -1,0 +1,35 @@
+{
+  "models": {
+    "B0_ChannelB": {
+      "architecture": "PairwiseFineTunedRoBERTaHead",
+      "checkpoint": "models/coherence_classifier.pt",
+      "decision_threshold": 0.7,
+      "status": "frozen_production_component"
+    },
+    "B1_ProductionEnsemble": {
+      "architecture": "DualChannelEnsemble (0.5 Channel A + 0.5 Channel B)",
+      "decision_threshold": 0.5,
+      "status": "frozen_production_pipeline"
+    },
+    "B2_CosineSimilarity": {
+      "architecture": "AdjacentLegalBERTCosineDistance",
+      "decision_threshold": 0.6,
+      "status": "frozen_adjacent_baseline"
+    },
+    "C1_BoundaryContrast": {
+      "architecture": "ContextualBoundaryContrastDetector",
+      "decision_threshold": 0.5,
+      "status": "experimental_candidate_c1"
+    },
+    "C2_SequenceBiLSTM": {
+      "architecture": "ContextualSequenceBiLSTM",
+      "decision_threshold": 0.5,
+      "status": "experimental_candidate_c2"
+    },
+    "C3_TopologicalDAG": {
+      "architecture": "HeadingLifecycleDAGModel",
+      "decision_threshold": 0.5,
+      "status": "experimental_candidate_c3"
+    }
+  }
+}

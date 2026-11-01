@@ -1,0 +1,6 @@
+{
+  "src/obligations/__init__.py": "31898b958b7d08aed392348473e934fddc98986ba99b742727d9418a079c35d6",
+  "src/obligations/binding.py": "ea92e6cbb069e765e50f801e95bf28e2fb09f1371470de557d5577fb9c11a1b0",
+  "src/api/reports.py": "cedfdf061b2201a6ec72df5deabfcd55e0fa606c74640d81c226e5f2539a3cf2",
+  "evaluations/phase4a1_reliability_2026_10_28/run_comparison.py": "0ff8cb90927af48c1256622031431d5a1507b26437f0787acb6ee78fd9720885"
+}

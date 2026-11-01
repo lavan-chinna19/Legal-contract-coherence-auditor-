@@ -1,0 +1,91 @@
+{
+  "phase": "PHASE_4D_C",
+  "metric_verification_timestamp": "2026-10-23T00:25:00Z",
+  "audit_scope": "Sealed Test Partition (18 eligible cases across 3 CIK families)",
+  "models": {
+    "BaselineB0_ChannelB": {
+      "tp": 2,
+      "fp": 16,
+      "fn": 0,
+      "tn": 0,
+      "recall": 1.0,
+      "recall_ci_95": [0.3424, 1.0],
+      "specificity": 0.0,
+      "specificity_ci_95": [0.0, 0.1936],
+      "f1": 0.20,
+      "balanced_accuracy": 0.50,
+      "consistency_check": "PASS"
+    },
+    "BaselineB1_ProductionEnsemble": {
+      "tp": 2,
+      "fp": 16,
+      "fn": 0,
+      "tn": 0,
+      "recall": 1.0,
+      "recall_ci_95": [0.3424, 1.0],
+      "specificity": 0.0,
+      "specificity_ci_95": [0.0, 0.1936],
+      "f1": 0.20,
+      "balanced_accuracy": 0.50,
+      "consistency_check": "PASS"
+    },
+    "BaselineB2_CosineDistance": {
+      "tp": 2,
+      "fp": 10,
+      "fn": 0,
+      "tn": 6,
+      "recall": 1.0,
+      "recall_ci_95": [0.3424, 1.0],
+      "specificity": 0.375,
+      "specificity_ci_95": [0.1848, 0.6136],
+      "f1": 0.2857,
+      "balanced_accuracy": 0.6875,
+      "consistency_check": "PASS"
+    },
+    "CandidateC1_ContextualBoundaryDetector": {
+      "tp": 2,
+      "fp": 16,
+      "fn": 0,
+      "tn": 0,
+      "recall": 1.0,
+      "recall_ci_95": [0.3424, 1.0],
+      "specificity": 0.0,
+      "specificity_ci_95": [0.0, 0.1936],
+      "f1": 0.20,
+      "balanced_accuracy": 0.50,
+      "consistency_check": "PASS"
+    },
+    "CandidateC2_ContextualSequenceModel": {
+      "tp": 0,
+      "fp": 0,
+      "fn": 2,
+      "tn": 16,
+      "recall": 0.0,
+      "recall_ci_95": [0.0, 0.6576],
+      "specificity": 1.0,
+      "specificity_ci_95": [0.8064, 1.0],
+      "f1": 0.0,
+      "balanced_accuracy": 0.50,
+      "consistency_check": "PASS"
+    },
+    "CandidateC3_StructureAwareDependencyModel": {
+      "tp": 2,
+      "fp": 11,
+      "fn": 0,
+      "tn": 5,
+      "recall": 1.0,
+      "recall_ci_95": [0.3424, 1.0],
+      "specificity": 0.3125,
+      "specificity_ci_95": [0.1416, 0.556],
+      "f1": 0.2667,
+      "balanced_accuracy": 0.6562,
+      "consistency_check": "PASS"
+    }
+  },
+  "invariant_assertions": {
+    "tp_plus_fn_equals_total_positives": true,
+    "fp_plus_tn_equals_total_negatives": true,
+    "exact_integer_confusion_matrices": true,
+    "zero_cross_split_family_leakage": true
+  }
+}

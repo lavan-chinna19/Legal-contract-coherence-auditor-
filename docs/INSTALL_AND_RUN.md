@@ -48,7 +48,7 @@ cd F:\projects\nlp\Legal-contract-coherence-auditor-\frontend
 npm run dev -- --hostname 127.0.0.1
 ```
 
-Open `http://127.0.0.1:3000`. In **Connection**, set the API URL to `http://127.0.0.1:8010` and enter `dev_auditor_key_12345`. Click **Sign in / Refresh saved documents**. Acknowledge the privacy notice, choose a TXT/PDF/DOCX, and analyze it. Use **Parse and preview clauses** to review extraction first, then **Analyze this parsed document**. The combined upload-and-analyze button also works. Review clauses, analytics and explanations. Report downloads and opt-in dependency checks appear in Session and reports. Counterfactual positions are available from clause review. Robustness Lab requires its own opt-in.
+Open `http://127.0.0.1:3000`. Open **Settings**, enter the explicit public demo key `dev_auditor_key_12345` and choose **Connect engine**. The native address defaults to `http://127.0.0.1:8010`; other trusted addresses are under **Connection address**. In **New Audit**, acknowledge privacy consent, choose TXT/PDF/DOCX, select **Upload and preview**, then **Analyze document**. **Audit Results** contains findings, clause review, analytics, explanations and opt-in reference checks. **Reports & History** contains saved audits, PDF/DOCX downloads and reviewer feedback. Suggested positions remain available from clause review; optional **Research Tools** contains the model evaluation, compatibility map and robustness experiments. Reconnect after reload: access keys are retained only in page memory.
 
 The demo profile uses public test credentials and a public test encryption key, prints its demo status and binds to loopback. Use synthetic documents. The model inference itself is real. Port 8010 was used during verification because another application occupied port 8000. Any free port can be selected with `--port`.
 
@@ -62,7 +62,7 @@ python -c "from cryptography.fernet import Fernet; print(Fernet.generate_key().d
 python scripts/run_server.py --port 8010
 ```
 
-Keep the encryption key stable to reopen encrypted documents after restart. Do not rotate it without a migration. Credentials remain in browser memory and are cleared by Sign out. Never put API keys in `NEXT_PUBLIC_*` variables. Configure `CORS_ORIGINS` with exact trusted frontend origins. `NEXT_PUBLIC_API_URL` / `NEXT_PUBLIC_BACKEND_URL` configure the initial browser API URL at build time; Connection can override it during the session.
+Keep the encryption key stable to reopen encrypted documents after restart. Do not rotate it without a migration. Credentials remain in browser memory and are cleared by Sign out. Never put API keys in `NEXT_PUBLIC_*` variables. Configure `CORS_ORIGINS` with exact trusted frontend origins. `NEXT_PUBLIC_API_URL` / `NEXT_PUBLIC_BACKEND_URL` configure the initial browser API URL at build time; Settings can override it explicitly during the session. Changing identity or engine clears the active document; keys are never saved in browser storage.
 
 The launcher loads `.env` without overwriting explicit environment variables and refuses unconfigured non-demo startup. `ENV=production` also makes encryption fail closed without a configured key. Do not blindly copy the example PostgreSQL URL unless that service is running: omitting `DATABASE_URL` selects local SQLite. Optional `LEXAUDIT_UPLOAD_DIR`, `LEXAUDIT_FEEDBACK_DB_PATH`, `LEXAUDIT_EMBEDDINGS_CACHE_DIR` and `LEXAUDIT_THRESHOLDS_PATH` support isolated local runs. Default storage remains compatible with the existing application.
 
@@ -84,6 +84,7 @@ cd frontend
 npm run lint
 npx tsc --noEmit
 npm run test:alignment
+npm run test:workflow
 npm run build
 npm start -- --hostname 127.0.0.1
 ```

@@ -1,0 +1,3 @@
+Section 1. Notices
+NOTICE ONLY
+This uppercase line belongs to this authored clause.

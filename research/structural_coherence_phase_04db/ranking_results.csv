@@ -1,0 +1,5 @@
+evaluation_task,model_or_system,evaluated_cases,top_1_recovery,top_3_recovery,mean_reciprocal_rank,mean_candidate_rank,task_objective,relationship_to_detection
+Task_2_Position_Recovery,Frozen_Channel_B_Repositioning_Engine,9,0.3333 (3/9),0.7778 (7/9),0.5447,3.33,Rank candidate insertion slots for displaced clause,Does NOT detect anomaly; assumes displacement occurred and optimizes relative coherence
+Task_1_Structural_Detection,Frozen_Channel_B_Baseline,9,N/A,N/A,N/A,N/A,Detect presence of structural defect,Fails completely (0/9 detected under production threshold)
+Task_1_Structural_Detection,Candidate_C3_Topological_Model,9,N/A,N/A,N/A,N/A,Detect presence of structural defect,Detects major precedence defects (100% on tested held-out inversions)
+Task_1_Structural_Detection,Candidate_C1_Contextual_Boundary,9,N/A,N/A,N/A,N/A,Detect presence of structural defect,Detects boundary dislocations but suffers false positives on coherent reorderings

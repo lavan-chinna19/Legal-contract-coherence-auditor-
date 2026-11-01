@@ -1,0 +1,46 @@
+{
+  "existing_snapshot_files": 1111,
+  "unchanged_existing_files": 1104,
+  "changed_existing_files": [
+    "src/api/jobs.py",
+    "src/api/release_routes.py",
+    "src/api/reports.py",
+    "src/rules/dependency_graph.py",
+    "src/rules/reference_checker.py",
+    "src/rules/unified_pipeline.py",
+    "docs/FINAL_COMPLETION_TRACKER.md"
+  ],
+  "authorized_existing_source_changes": [
+    "docs/FINAL_COMPLETION_TRACKER.md",
+    "src/api/jobs.py",
+    "src/api/release_routes.py",
+    "src/api/reports.py",
+    "src/rules/dependency_graph.py",
+    "src/rules/reference_checker.py",
+    "src/rules/unified_pipeline.py"
+  ],
+  "missing_existing_files": [],
+  "unexpected_changes": [],
+  "phase1_files_checked": 120,
+  "legacy_snapshots": {
+    "reference_checker.py": true,
+    "dependency_graph.py": true,
+    "unified_pipeline.py": true,
+    "rule_based.py": true,
+    "ingestion.py": true
+  },
+  "final_evaluated_source_hashes_match": true,
+  "git_head_before": "0106f32f0d2cf99a210adf5550b6abe2f66aafc9",
+  "git_head_after": "0106f32f0d2cf99a210adf5550b6abe2f66aafc9",
+  "note": "Existing test_api_integration.py was not in this original snapshot; its retained assertions now pass identical upload-decoded raw source and add three preservation assertions. New parser/integration tests and new docs/evaluation files are additions.",
+  "local_legalbert_files_unchanged": {
+    "config.json": true,
+    "pytorch_model.bin": true,
+    "special_tokens_map.json": true,
+    "tokenizer_config.json": true,
+    "vocab.txt": true
+  },
+  "raw_research_inputs_checked_against_phase1_snapshot": 51,
+  "changed_or_missing_raw_research_inputs": [],
+  "passed": true
+}

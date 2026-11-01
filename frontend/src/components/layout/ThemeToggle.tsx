@@ -37,10 +37,12 @@ export function ThemeToggle() {
                 e.preventDefault();
                 const nextIdx = (options.findIndex((o) => o.id === opt.id) + 1) % options.length;
                 setThemePreference(options[nextIdx].id);
+                document.getElementById(`theme-btn-${options[nextIdx].id}`)?.focus();
               } else if (e.key === "ArrowLeft" || e.key === "ArrowUp") {
                 e.preventDefault();
                 const prevIdx = (options.findIndex((o) => o.id === opt.id) - 1 + options.length) % options.length;
                 setThemePreference(options[prevIdx].id);
+                document.getElementById(`theme-btn-${options[prevIdx].id}`)?.focus();
               }
             }}
           >

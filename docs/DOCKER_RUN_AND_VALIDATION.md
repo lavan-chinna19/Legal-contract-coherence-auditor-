@@ -32,7 +32,7 @@ docker compose --env-file .env.docker.local -p lexaudit-release ps
 
 The initializer creates `.env.docker.local` exclusively and preserves an existing file. It generates unique API/admin/database keys and a stable encryption key without printing them. The file is Git-ignored and excluded from build contexts. Preserve it; replacing the encryption key makes retained encrypted documents unreadable. Protect a private backup outside the repository.
 
-Open `http://127.0.0.1:3001`. In Connection, set `http://127.0.0.1:8011` and copy `API_KEY` from your local `.env.docker.local` into the key field. Credentials remain in page memory. Ports are loopback-only and separate from the native release on 3000/8010. `LEXAUDIT_FRONTEND_PORT` and `LEXAUDIT_BACKEND_PORT` in that file can select other free ports; rebuild the frontend after changing its browser API URL.
+Open `http://127.0.0.1:3001`. In **Settings**, enter `API_KEY` from your local `.env.docker.local` and choose **Connect engine**. The image build configures `http://127.0.0.1:8011`; an explicit override is available under **Connection address**. Credentials remain in page memory. Ports are loopback-only and separate from the native release on 3000/8010. `LEXAUDIT_FRONTEND_PORT` and `LEXAUDIT_BACKEND_PORT` in that file can select other free ports; rebuild the frontend after changing its browser API URL.
 
 ## Services and storage
 
@@ -67,3 +67,13 @@ docker compose --env-file .env.docker.local -p lexaudit-release stop
 No factory reset, WSL unregister, volume deletion or system prune is needed for normal application use.
 
 Cold-start hardening serializes model construction and uses the Linux model volume to avoid slow repeated Windows bind-mount metadata reads. A temporary gateway health failure during planned backend maintenance is awaited with a bounded health-poll sequence in the acceptance runner. Failed attempts are retained alongside the passing final evidence. The release suite inside the Linux image now contains 20 tests, including concurrent lazy initialization.
+
+## UI refactor follow-up — 2026-10-26
+
+The UI refactor preserves these service definitions and ownership/authentication
+boundaries. Compose configuration passed again. The host Linux-engine pipe was
+unavailable during this follow-up (`docker info` exit 1), so a runtime/image smoke
+check of the redesigned frontend was BLOCKED. Earlier container acceptance in
+this document concerns the previous validated release; it is not represented as
+a new container run for the UI revision. Native production frontend/browser
+verification is recorded in UI_REDESIGN_COMPLETION_REPORT.md.

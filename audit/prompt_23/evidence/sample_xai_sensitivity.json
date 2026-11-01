@@ -1,0 +1,20 @@
+{
+  "explanation_id": "64c71096-201b-4787-bfad-3d995979eef5",
+  "doc_id": "doc_1b63ad99",
+  "clause_id": "doc_1b63ad99_0",
+  "explanation_type": "SENSITIVITY",
+  "model_version": "fine_tuned_coherence_head (dim=768)",
+  "timestamp": "2026-10-10T08:21:33.787861+00:00",
+  "claim_scope": {
+    "what_this_shows": "This perturbation measures how sensitive the model score is to this neighboring content under the tested intervention.",
+    "what_this_does_not_show": "It does not establish that the neighbor is legally responsible for the anomaly or that the observed relationship is causal."
+  },
+  "sensitivity_payload": {
+    "neighbor_clause_id": "doc_1b63ad99_1",
+    "neighbor_position": "next",
+    "original_score": 0.6854,
+    "perturbed_score": 0.7606,
+    "score_delta": 0.0752,
+    "perturbation_method": "mask_neighbor_text"
+  }
+}

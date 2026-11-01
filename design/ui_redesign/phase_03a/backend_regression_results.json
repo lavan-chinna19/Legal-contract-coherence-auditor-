@@ -1,0 +1,30 @@
+{
+  "timestamp": "2026-10-11T13:03:42Z",
+  "command": "python -m pytest tests/ -v -ra",
+  "exit_code": 0,
+  "collected": 118,
+  "passed": 116,
+  "skipped": 2,
+  "failed": 0,
+  "duration_seconds": 290.65,
+  "historical_baseline_match": true,
+  "status": "PASS",
+  "summary": {
+    "test_api_integration": "PASSED (2/2)",
+    "test_security": "PASSED (16/16)",
+    "test_security_review": "PASSED (6/6)",
+    "test_scoring": "PASSED (3/3)",
+    "test_segmentation": "PASSED (7/7)",
+    "test_coherence": "PASSED (5/5)",
+    "test_completeness": "PASSED (5/5)",
+    "test_conformal": "PASSED (8/8)",
+    "test_cuad_order": "PASSED (4/6, 2 SKIPPED for live CUAD file)",
+    "test_embeddings": "PASSED (4/4)",
+    "test_ensemble": "PASSED (3/3)",
+    "test_evaluation_framework": "PASSED (5/5)",
+    "test_feedback": "PASSED (6/6)",
+    "test_rules": "PASSED (7/7)",
+    "test_severity": "PASSED (3/3)",
+    "test_xai": "PASSED (5/5)"
+  }
+}

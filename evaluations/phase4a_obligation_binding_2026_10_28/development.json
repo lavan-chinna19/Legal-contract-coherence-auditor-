@@ -1,0 +1,994 @@
+{
+  "split": "development",
+  "independent_annotation_count": 0,
+  "cases": [
+    {
+      "case_id": "development_synonym_identity",
+      "family_id": "development_synonym_identity",
+      "split": "development",
+      "text": "Section 1. Duty\nBuyer shall pay Invoice Alpha within 10 calendar days after receipt of Invoice Alpha.\n\nSection 2. Duty\nBuyer shall remit Invoice Alpha within 10 calendar days after receipt of Invoice Alpha.",
+      "gold_state": "MATCHED",
+      "gold_match": true,
+      "mechanical_rule": "Explicit same party, payment action, named invoice occurrence and receipt trigger; controlled remit/pay paraphrase",
+      "label_provenance": "AUTHOR_CONSTRUCTED_MECHANICAL",
+      "independently_adjudicated": false,
+      "left_section": "1",
+      "right_section": "2",
+      "left_index": 0,
+      "right_index": 0,
+      "expected_left": [
+        {
+          "actor": "buyer",
+          "action": "PAY",
+          "object": "invoice alpha",
+          "recipient": null,
+          "trigger": "receipt of invoice alpha",
+          "event_instance": "invoice alpha"
+        }
+      ],
+      "expected_right": [
+        {
+          "actor": "buyer",
+          "action": "PAY",
+          "object": "invoice alpha",
+          "recipient": null,
+          "trigger": "receipt of invoice alpha",
+          "event_instance": "invoice alpha"
+        }
+      ]
+    },
+    {
+      "case_id": "development_different_actor",
+      "family_id": "development_different_actor",
+      "split": "development",
+      "text": "Section 1. Duty\nBuyer shall pay Invoice Alpha within 10 calendar days after receipt of Invoice Alpha.\n\nSection 2. Duty\nSeller shall remit Invoice Alpha within 10 calendar days after receipt of Invoice Alpha.",
+      "gold_state": "DIFFERENT",
+      "gold_match": false,
+      "mechanical_rule": "different_actor",
+      "label_provenance": "AUTHOR_CONSTRUCTED_MECHANICAL",
+      "independently_adjudicated": false,
+      "left_section": "1",
+      "right_section": "2",
+      "left_index": 0,
+      "right_index": 0,
+      "expected_left": [
+        {
+          "actor": "buyer",
+          "action": "PAY",
+          "object": "invoice alpha",
+          "recipient": null,
+          "trigger": "receipt of invoice alpha",
+          "event_instance": "invoice alpha"
+        }
+      ],
+      "expected_right": [
+        {
+          "actor": "seller",
+          "action": "PAY",
+          "object": "invoice alpha",
+          "recipient": null,
+          "trigger": "receipt of invoice alpha",
+          "event_instance": "invoice alpha"
+        }
+      ]
+    },
+    {
+      "case_id": "development_different_action",
+      "family_id": "development_different_action",
+      "split": "development",
+      "text": "Section 1. Duty\nBuyer shall pay Invoice Alpha within 10 calendar days after receipt of Invoice Alpha.\n\nSection 2. Duty\nBuyer shall provide Invoice Alpha within 10 calendar days after receipt of Invoice Alpha.",
+      "gold_state": "DIFFERENT",
+      "gold_match": false,
+      "mechanical_rule": "different_action",
+      "label_provenance": "AUTHOR_CONSTRUCTED_MECHANICAL",
+      "independently_adjudicated": false,
+      "left_section": "1",
+      "right_section": "2",
+      "left_index": 0,
+      "right_index": 0,
+      "expected_left": [
+        {
+          "actor": "buyer",
+          "action": "PAY",
+          "object": "invoice alpha",
+          "recipient": null,
+          "trigger": "receipt of invoice alpha",
+          "event_instance": "invoice alpha"
+        }
+      ],
+      "expected_right": [
+        {
+          "actor": "buyer",
+          "action": "DELIVER",
+          "object": "invoice alpha",
+          "recipient": null,
+          "trigger": "receipt of invoice alpha",
+          "event_instance": "invoice alpha"
+        }
+      ]
+    },
+    {
+      "case_id": "development_different_instance",
+      "family_id": "development_different_instance",
+      "split": "development",
+      "text": "Section 1. Duty\nBuyer shall pay Invoice Alpha within 10 calendar days after receipt of Invoice Alpha.\n\nSection 2. Duty\nBuyer shall remit Report Beta within 10 calendar days after receipt of Invoice Alpha.",
+      "gold_state": "DIFFERENT",
+      "gold_match": false,
+      "mechanical_rule": "different_instance",
+      "label_provenance": "AUTHOR_CONSTRUCTED_MECHANICAL",
+      "independently_adjudicated": false,
+      "left_section": "1",
+      "right_section": "2",
+      "left_index": 0,
+      "right_index": 0,
+      "expected_left": [
+        {
+          "actor": "buyer",
+          "action": "PAY",
+          "object": "invoice alpha",
+          "recipient": null,
+          "trigger": "receipt of invoice alpha",
+          "event_instance": "invoice alpha"
+        }
+      ],
+      "expected_right": [
+        {
+          "actor": "buyer",
+          "action": "PAY",
+          "object": "report beta",
+          "recipient": null,
+          "trigger": "receipt of invoice alpha",
+          "event_instance": "report beta"
+        }
+      ]
+    },
+    {
+      "case_id": "development_different_trigger",
+      "family_id": "development_different_trigger",
+      "split": "development",
+      "text": "Section 1. Duty\nBuyer shall pay Invoice Alpha within 10 calendar days after receipt of Invoice Alpha.\n\nSection 2. Duty\nBuyer shall remit Invoice Alpha within 10 calendar days after acceptance of Invoice Alpha.",
+      "gold_state": "UNCERTAIN",
+      "gold_match": null,
+      "mechanical_rule": "Trigger equivalence not established, not labelled legal conflict",
+      "label_provenance": "AUTHOR_CONSTRUCTED_MECHANICAL",
+      "independently_adjudicated": false,
+      "left_section": "1",
+      "right_section": "2",
+      "left_index": 0,
+      "right_index": 0,
+      "expected_left": [
+        {
+          "actor": "buyer",
+          "action": "PAY",
+          "object": "invoice alpha",
+          "recipient": null,
+          "trigger": "receipt of invoice alpha",
+          "event_instance": "invoice alpha"
+        }
+      ],
+      "expected_right": [
+        {
+          "actor": "buyer",
+          "action": "PAY",
+          "object": "invoice alpha",
+          "recipient": null,
+          "trigger": "acceptance of invoice alpha",
+          "event_instance": "invoice alpha"
+        }
+      ]
+    },
+    {
+      "case_id": "development_one_missing_trigger",
+      "family_id": "development_one_missing_trigger",
+      "split": "development",
+      "text": "Section 1. Duty\nBuyer shall pay Invoice Alpha within 10 calendar days after receipt of Invoice Alpha.\n\nSection 2. Duty\nBuyer shall remit Invoice Alpha within 10 calendar days.",
+      "gold_state": "UNCERTAIN",
+      "gold_match": null,
+      "mechanical_rule": "one_missing_trigger",
+      "label_provenance": "AUTHOR_CONSTRUCTED_MECHANICAL",
+      "independently_adjudicated": false,
+      "left_section": "1",
+      "right_section": "2",
+      "left_index": 0,
+      "right_index": 0,
+      "expected_left": [
+        {
+          "actor": "buyer",
+          "action": "PAY",
+          "object": "invoice alpha",
+          "recipient": null,
+          "trigger": "receipt of invoice alpha",
+          "event_instance": "invoice alpha"
+        }
+      ],
+      "expected_right": [
+        {
+          "actor": "buyer",
+          "action": "PAY",
+          "object": "invoice alpha",
+          "recipient": null,
+          "trigger": null,
+          "event_instance": "invoice alpha"
+        }
+      ]
+    },
+    {
+      "case_id": "development_same_condition",
+      "family_id": "development_same_condition",
+      "split": "development",
+      "text": "Section 1. Duty\nIf approved, Buyer shall pay Invoice Alpha within 10 calendar days after receipt of Invoice Alpha.\n\nSection 2. Duty\nIf approved, Buyer shall remit Invoice Alpha within 10 calendar days after receipt of Invoice Alpha.",
+      "gold_state": "MATCHED",
+      "gold_match": true,
+      "mechanical_rule": "same_condition",
+      "label_provenance": "AUTHOR_CONSTRUCTED_MECHANICAL",
+      "independently_adjudicated": false,
+      "left_section": "1",
+      "right_section": "2",
+      "left_index": 0,
+      "right_index": 0,
+      "expected_left": [
+        {
+          "actor": "buyer",
+          "action": "PAY",
+          "object": "invoice alpha",
+          "recipient": null,
+          "trigger": "receipt of invoice alpha",
+          "event_instance": "invoice alpha"
+        }
+      ],
+      "expected_right": [
+        {
+          "actor": "buyer",
+          "action": "PAY",
+          "object": "invoice alpha",
+          "recipient": null,
+          "trigger": "receipt of invoice alpha",
+          "event_instance": "invoice alpha"
+        }
+      ]
+    },
+    {
+      "case_id": "development_different_condition",
+      "family_id": "development_different_condition",
+      "split": "development",
+      "text": "Section 1. Duty\nIf requested, Buyer shall pay Invoice Alpha within 10 calendar days after receipt of Invoice Alpha.\n\nSection 2. Duty\nIf approved, Buyer shall remit Invoice Alpha within 10 calendar days after receipt of Invoice Alpha.",
+      "gold_state": "UNCERTAIN",
+      "gold_match": null,
+      "mechanical_rule": "different_condition",
+      "label_provenance": "AUTHOR_CONSTRUCTED_MECHANICAL",
+      "independently_adjudicated": false,
+      "left_section": "1",
+      "right_section": "2",
+      "left_index": 0,
+      "right_index": 0,
+      "expected_left": [
+        {
+          "actor": "buyer",
+          "action": "PAY",
+          "object": "invoice alpha",
+          "recipient": null,
+          "trigger": "receipt of invoice alpha",
+          "event_instance": "invoice alpha"
+        }
+      ],
+      "expected_right": [
+        {
+          "actor": "buyer",
+          "action": "PAY",
+          "object": "invoice alpha",
+          "recipient": null,
+          "trigger": "receipt of invoice alpha",
+          "event_instance": "invoice alpha"
+        }
+      ]
+    },
+    {
+      "case_id": "development_one_condition",
+      "family_id": "development_one_condition",
+      "split": "development",
+      "text": "Section 1. Duty\nBuyer shall pay Invoice Alpha within 10 calendar days after receipt of Invoice Alpha.\n\nSection 2. Duty\nIf approved, Buyer shall remit Invoice Alpha within 10 calendar days after receipt of Invoice Alpha.",
+      "gold_state": "UNCERTAIN",
+      "gold_match": null,
+      "mechanical_rule": "one_condition",
+      "label_provenance": "AUTHOR_CONSTRUCTED_MECHANICAL",
+      "independently_adjudicated": false,
+      "left_section": "1",
+      "right_section": "2",
+      "left_index": 0,
+      "right_index": 0,
+      "expected_left": [
+        {
+          "actor": "buyer",
+          "action": "PAY",
+          "object": "invoice alpha",
+          "recipient": null,
+          "trigger": "receipt of invoice alpha",
+          "event_instance": "invoice alpha"
+        }
+      ],
+      "expected_right": [
+        {
+          "actor": "buyer",
+          "action": "PAY",
+          "object": "invoice alpha",
+          "recipient": null,
+          "trigger": "receipt of invoice alpha",
+          "event_instance": "invoice alpha"
+        }
+      ]
+    },
+    {
+      "case_id": "development_exception",
+      "family_id": "development_exception",
+      "split": "development",
+      "text": "Section 1. Duty\nBuyer shall pay Invoice Alpha within 10 calendar days after receipt of Invoice Alpha.\n\nSection 2. Duty\nBuyer shall remit Invoice Alpha within 10 calendar days after receipt of Invoice Alpha unless disputed.",
+      "gold_state": "UNCERTAIN",
+      "gold_match": null,
+      "mechanical_rule": "exception",
+      "label_provenance": "AUTHOR_CONSTRUCTED_MECHANICAL",
+      "independently_adjudicated": false,
+      "left_section": "1",
+      "right_section": "2",
+      "left_index": 0,
+      "right_index": 0,
+      "expected_left": [
+        {
+          "actor": "buyer",
+          "action": "PAY",
+          "object": "invoice alpha",
+          "recipient": null,
+          "trigger": "receipt of invoice alpha",
+          "event_instance": "invoice alpha"
+        }
+      ],
+      "expected_right": [
+        {
+          "actor": "buyer",
+          "action": "PAY",
+          "object": "invoice alpha",
+          "recipient": null,
+          "trigger": "receipt of invoice alpha",
+          "event_instance": "invoice alpha"
+        }
+      ]
+    },
+    {
+      "case_id": "development_pronoun",
+      "family_id": "development_pronoun",
+      "split": "development",
+      "text": "Section 1. Duty\nBuyer shall pay Invoice Alpha within 10 calendar days after receipt of Invoice Alpha.\n\nSection 2. Duty\nIt shall remit Invoice Alpha within 10 calendar days after receipt of Invoice Alpha.",
+      "gold_state": "UNCERTAIN",
+      "gold_match": null,
+      "mechanical_rule": "pronoun",
+      "label_provenance": "AUTHOR_CONSTRUCTED_MECHANICAL",
+      "independently_adjudicated": false,
+      "left_section": "1",
+      "right_section": "2",
+      "left_index": 0,
+      "right_index": 0,
+      "expected_left": [
+        {
+          "actor": "buyer",
+          "action": "PAY",
+          "object": "invoice alpha",
+          "recipient": null,
+          "trigger": "receipt of invoice alpha",
+          "event_instance": "invoice alpha"
+        }
+      ],
+      "expected_right": [
+        {
+          "actor": null,
+          "action": "PAY",
+          "object": "invoice alpha",
+          "recipient": null,
+          "trigger": "receipt of invoice alpha",
+          "event_instance": "invoice alpha"
+        }
+      ]
+    },
+    {
+      "case_id": "development_missing_actor",
+      "family_id": "development_missing_actor",
+      "split": "development",
+      "text": "Section 1. Duty\nBuyer shall pay Invoice Alpha within 10 calendar days after receipt of Invoice Alpha.\n\nSection 2. Duty\nshall remit Invoice Alpha within 10 calendar days after receipt of Invoice Alpha.",
+      "gold_state": "UNCERTAIN",
+      "gold_match": null,
+      "mechanical_rule": "missing_actor",
+      "label_provenance": "AUTHOR_CONSTRUCTED_MECHANICAL",
+      "independently_adjudicated": false,
+      "left_section": "1",
+      "right_section": "2",
+      "left_index": 0,
+      "right_index": 0,
+      "expected_left": [
+        {
+          "actor": "buyer",
+          "action": "PAY",
+          "object": "invoice alpha",
+          "recipient": null,
+          "trigger": "receipt of invoice alpha",
+          "event_instance": "invoice alpha"
+        }
+      ],
+      "expected_right": [
+        {
+          "actor": null,
+          "action": "PAY",
+          "object": "invoice alpha",
+          "recipient": null,
+          "trigger": "receipt of invoice alpha",
+          "event_instance": "invoice alpha"
+        }
+      ]
+    },
+    {
+      "case_id": "development_same_recipient",
+      "family_id": "development_same_recipient",
+      "split": "development",
+      "text": "Section 1. Duty\nBuyer shall pay Invoice Alpha to Seller within 10 calendar days after receipt of Invoice Alpha.\n\nSection 2. Duty\nBuyer shall remit Invoice Alpha to Seller within 10 calendar days after receipt of Invoice Alpha.",
+      "gold_state": "MATCHED",
+      "gold_match": true,
+      "mechanical_rule": "same_recipient",
+      "label_provenance": "AUTHOR_CONSTRUCTED_MECHANICAL",
+      "independently_adjudicated": false,
+      "left_section": "1",
+      "right_section": "2",
+      "left_index": 0,
+      "right_index": 0,
+      "expected_left": [
+        {
+          "actor": "buyer",
+          "action": "PAY",
+          "object": "invoice alpha",
+          "recipient": "seller",
+          "trigger": "receipt of invoice alpha",
+          "event_instance": "invoice alpha"
+        }
+      ],
+      "expected_right": [
+        {
+          "actor": "buyer",
+          "action": "PAY",
+          "object": "invoice alpha",
+          "recipient": "seller",
+          "trigger": "receipt of invoice alpha",
+          "event_instance": "invoice alpha"
+        }
+      ]
+    },
+    {
+      "case_id": "development_different_recipient",
+      "family_id": "development_different_recipient",
+      "split": "development",
+      "text": "Section 1. Duty\nBuyer shall pay Invoice Alpha to Seller within 10 calendar days after receipt of Invoice Alpha.\n\nSection 2. Duty\nBuyer shall remit Invoice Alpha to Agent within 10 calendar days after receipt of Invoice Alpha.",
+      "gold_state": "DIFFERENT",
+      "gold_match": false,
+      "mechanical_rule": "different_recipient",
+      "label_provenance": "AUTHOR_CONSTRUCTED_MECHANICAL",
+      "independently_adjudicated": false,
+      "left_section": "1",
+      "right_section": "2",
+      "left_index": 0,
+      "right_index": 0,
+      "expected_left": [
+        {
+          "actor": "buyer",
+          "action": "PAY",
+          "object": "invoice alpha",
+          "recipient": "seller",
+          "trigger": "receipt of invoice alpha",
+          "event_instance": "invoice alpha"
+        }
+      ],
+      "expected_right": [
+        {
+          "actor": "buyer",
+          "action": "PAY",
+          "object": "invoice alpha",
+          "recipient": "agent",
+          "trigger": "receipt of invoice alpha",
+          "event_instance": "invoice alpha"
+        }
+      ]
+    },
+    {
+      "case_id": "development_one_missing_recipient",
+      "family_id": "development_one_missing_recipient",
+      "split": "development",
+      "text": "Section 1. Duty\nBuyer shall pay Invoice Alpha within 10 calendar days after receipt of Invoice Alpha.\n\nSection 2. Duty\nBuyer shall remit Invoice Alpha to Seller within 10 calendar days after receipt of Invoice Alpha.",
+      "gold_state": "UNCERTAIN",
+      "gold_match": null,
+      "mechanical_rule": "one_missing_recipient",
+      "label_provenance": "AUTHOR_CONSTRUCTED_MECHANICAL",
+      "independently_adjudicated": false,
+      "left_section": "1",
+      "right_section": "2",
+      "left_index": 0,
+      "right_index": 0,
+      "expected_left": [
+        {
+          "actor": "buyer",
+          "action": "PAY",
+          "object": "invoice alpha",
+          "recipient": null,
+          "trigger": "receipt of invoice alpha",
+          "event_instance": "invoice alpha"
+        }
+      ],
+      "expected_right": [
+        {
+          "actor": "buyer",
+          "action": "PAY",
+          "object": "invoice alpha",
+          "recipient": "seller",
+          "trigger": "receipt of invoice alpha",
+          "event_instance": "invoice alpha"
+        }
+      ]
+    },
+    {
+      "case_id": "development_no_timing",
+      "family_id": "development_no_timing",
+      "split": "development",
+      "text": "Section 1. Duty\nBuyer shall pay Invoice Alpha after receipt of Invoice Alpha.\n\nSection 2. Duty\nBuyer shall remit Invoice Alpha after receipt of Invoice Alpha.",
+      "gold_state": "MATCHED",
+      "gold_match": true,
+      "mechanical_rule": "no_timing",
+      "label_provenance": "AUTHOR_CONSTRUCTED_MECHANICAL",
+      "independently_adjudicated": false,
+      "left_section": "1",
+      "right_section": "2",
+      "left_index": 0,
+      "right_index": 0,
+      "expected_left": [
+        {
+          "actor": "buyer",
+          "action": "PAY",
+          "object": "invoice alpha",
+          "recipient": null,
+          "trigger": "receipt of invoice alpha",
+          "event_instance": "invoice alpha"
+        }
+      ],
+      "expected_right": [
+        {
+          "actor": "buyer",
+          "action": "PAY",
+          "object": "invoice alpha",
+          "recipient": null,
+          "trigger": "receipt of invoice alpha",
+          "event_instance": "invoice alpha"
+        }
+      ]
+    },
+    {
+      "case_id": "development_different_deadlines",
+      "family_id": "development_different_deadlines",
+      "split": "development",
+      "text": "Section 1. Duty\nBuyer shall pay Invoice Alpha within 10 calendar days after receipt of Invoice Alpha.\n\nSection 2. Duty\nBuyer shall remit Invoice Alpha within 20 calendar days after receipt of Invoice Alpha.",
+      "gold_state": "MATCHED",
+      "gold_match": true,
+      "mechanical_rule": "Different deadlines do not change identity; binding never classifies temporal conflict",
+      "label_provenance": "AUTHOR_CONSTRUCTED_MECHANICAL",
+      "independently_adjudicated": false,
+      "left_section": "1",
+      "right_section": "2",
+      "left_index": 0,
+      "right_index": 0,
+      "expected_left": [
+        {
+          "actor": "buyer",
+          "action": "PAY",
+          "object": "invoice alpha",
+          "recipient": null,
+          "trigger": "receipt of invoice alpha",
+          "event_instance": "invoice alpha"
+        }
+      ],
+      "expected_right": [
+        {
+          "actor": "buyer",
+          "action": "PAY",
+          "object": "invoice alpha",
+          "recipient": null,
+          "trigger": "receipt of invoice alpha",
+          "event_instance": "invoice alpha"
+        }
+      ]
+    },
+    {
+      "case_id": "development_same_recurring_type",
+      "family_id": "development_same_recurring_type",
+      "split": "development",
+      "text": "Section 1. Duty\nBuyer shall pay Invoice Alpha within 10 calendar days after receipt of Invoice Alpha each month.\n\nSection 2. Duty\nBuyer shall remit Invoice Alpha within 10 calendar days after receipt of Invoice Alpha each month.",
+      "gold_state": "UNCERTAIN",
+      "gold_match": null,
+      "mechanical_rule": "Same type, no uniquely established occurrence",
+      "label_provenance": "AUTHOR_CONSTRUCTED_MECHANICAL",
+      "independently_adjudicated": false,
+      "left_section": "1",
+      "right_section": "2",
+      "left_index": 0,
+      "right_index": 0,
+      "expected_left": [
+        {
+          "actor": "buyer",
+          "action": "PAY",
+          "object": "invoice alpha",
+          "recipient": null,
+          "trigger": "receipt of invoice alpha",
+          "event_instance": "invoice alpha"
+        }
+      ],
+      "expected_right": [
+        {
+          "actor": "buyer",
+          "action": "PAY",
+          "object": "invoice alpha",
+          "recipient": null,
+          "trigger": "receipt of invoice alpha",
+          "event_instance": "invoice alpha"
+        }
+      ]
+    },
+    {
+      "case_id": "development_different_object_same_party",
+      "family_id": "development_different_object_same_party",
+      "split": "development",
+      "text": "Section 1. Duty\nBuyer shall pay Invoice Alpha within 10 calendar days after receipt of Invoice Alpha.\n\nSection 2. Duty\nBuyer shall remit Invoice Bravo within 10 calendar days after receipt of Invoice Alpha.",
+      "gold_state": "DIFFERENT",
+      "gold_match": false,
+      "mechanical_rule": "different_object_same_party",
+      "label_provenance": "AUTHOR_CONSTRUCTED_MECHANICAL",
+      "independently_adjudicated": false,
+      "left_section": "1",
+      "right_section": "2",
+      "left_index": 0,
+      "right_index": 0,
+      "expected_left": [
+        {
+          "actor": "buyer",
+          "action": "PAY",
+          "object": "invoice alpha",
+          "recipient": null,
+          "trigger": "receipt of invoice alpha",
+          "event_instance": "invoice alpha"
+        }
+      ],
+      "expected_right": [
+        {
+          "actor": "buyer",
+          "action": "PAY",
+          "object": "invoice bravo",
+          "recipient": null,
+          "trigger": "receipt of invoice alpha",
+          "event_instance": "invoice bravo"
+        }
+      ]
+    },
+    {
+      "case_id": "development_generic_object",
+      "family_id": "development_generic_object",
+      "split": "development",
+      "text": "Section 1. Duty\nBuyer shall pay the invoice within 10 calendar days after receipt of Invoice Alpha.\n\nSection 2. Duty\nBuyer shall remit the invoice within 10 calendar days after receipt of Invoice Alpha.",
+      "gold_state": "UNCERTAIN",
+      "gold_match": null,
+      "mechanical_rule": "generic_object",
+      "label_provenance": "AUTHOR_CONSTRUCTED_MECHANICAL",
+      "independently_adjudicated": false,
+      "left_section": "1",
+      "right_section": "2",
+      "left_index": 0,
+      "right_index": 0,
+      "expected_left": [
+        {
+          "actor": "buyer",
+          "action": "PAY",
+          "object": "the invoice",
+          "recipient": null,
+          "trigger": "receipt of invoice alpha",
+          "event_instance": null
+        }
+      ],
+      "expected_right": [
+        {
+          "actor": "buyer",
+          "action": "PAY",
+          "object": "the invoice",
+          "recipient": null,
+          "trigger": "receipt of invoice alpha",
+          "event_instance": null
+        }
+      ]
+    },
+    {
+      "case_id": "development_unsupported_action",
+      "family_id": "development_unsupported_action",
+      "split": "development",
+      "text": "Section 1. Duty\nBuyer shall pay Invoice Alpha within 10 calendar days after receipt of Invoice Alpha.\n\nSection 2. Duty\nBuyer shall reconcile the accounts.",
+      "gold_state": "UNSUPPORTED",
+      "gold_match": null,
+      "mechanical_rule": "unsupported_action",
+      "label_provenance": "AUTHOR_CONSTRUCTED_MECHANICAL",
+      "independently_adjudicated": false,
+      "left_section": "1",
+      "right_section": "2",
+      "left_index": 0,
+      "right_index": 0,
+      "expected_left": [
+        {
+          "actor": "buyer",
+          "action": "PAY",
+          "object": "invoice alpha",
+          "recipient": null,
+          "trigger": "receipt of invoice alpha",
+          "event_instance": "invoice alpha"
+        }
+      ],
+      "expected_right": [
+        {
+          "actor": "buyer",
+          "action": "RECONCILE",
+          "object": "the accounts",
+          "recipient": null,
+          "trigger": null,
+          "event_instance": null
+        }
+      ]
+    },
+    {
+      "case_id": "development_complex_semantics",
+      "family_id": "development_complex_semantics",
+      "split": "development",
+      "text": "Section 1. Duty\nBuyer shall pay Invoice Alpha within 10 calendar days after receipt of Invoice Alpha.\n\nSection 2. Duty\nBuyer will perform reasonably necessary acts notwithstanding prior practice.",
+      "gold_state": null,
+      "gold_match": null,
+      "mechanical_rule": "complex_semantics",
+      "label_provenance": "PROVISIONAL_INTERPRETATION",
+      "independently_adjudicated": false,
+      "left_section": "1",
+      "right_section": "2",
+      "left_index": 0,
+      "right_index": 0,
+      "expected_left": [
+        {
+          "actor": "buyer",
+          "action": "PAY",
+          "object": "invoice alpha",
+          "recipient": null,
+          "trigger": "receipt of invoice alpha",
+          "event_instance": "invoice alpha"
+        }
+      ],
+      "expected_right": [
+        {
+          "actor": "buyer",
+          "action": "PAY",
+          "object": "invoice alpha",
+          "recipient": null,
+          "trigger": "receipt of invoice alpha",
+          "event_instance": "invoice alpha"
+        }
+      ]
+    },
+    {
+      "case_id": "development_multiple_modals",
+      "family_id": "development_multiple_modals",
+      "split": "development",
+      "text": "Section 1. Duty\nSeller shall deliver Report Beta. Buyer shall pay Invoice Alpha within 10 calendar days after receipt of Invoice Alpha.\n\nSection 2. Duty\nBuyer shall remit Invoice Alpha within 10 calendar days after receipt of Invoice Alpha.",
+      "gold_state": "MATCHED",
+      "gold_match": true,
+      "mechanical_rule": "multiple_modals",
+      "label_provenance": "AUTHOR_CONSTRUCTED_MECHANICAL",
+      "independently_adjudicated": false,
+      "left_section": "1",
+      "right_section": "2",
+      "left_index": 1,
+      "right_index": 0,
+      "expected_left": [
+        {
+          "actor": "seller",
+          "action": "DELIVER",
+          "object": "report beta",
+          "recipient": null,
+          "trigger": null,
+          "event_instance": "report beta"
+        },
+        {
+          "actor": "buyer",
+          "action": "PAY",
+          "object": "invoice alpha",
+          "recipient": null,
+          "trigger": "receipt of invoice alpha",
+          "event_instance": "invoice alpha"
+        }
+      ],
+      "expected_right": [
+        {
+          "actor": "buyer",
+          "action": "PAY",
+          "object": "invoice alpha",
+          "recipient": null,
+          "trigger": "receipt of invoice alpha",
+          "event_instance": "invoice alpha"
+        }
+      ]
+    },
+    {
+      "case_id": "development_reference_object",
+      "family_id": "development_reference_object",
+      "split": "development",
+      "text": "Section 1. Duty\nBuyer shall pay Invoice Alpha within 10 calendar days.\n\nSection 2. Duty\nBuyer shall remit the obligation in Section 1 within 10 calendar days.",
+      "gold_state": "MATCHED",
+      "gold_match": true,
+      "mechanical_rule": "reference_object",
+      "label_provenance": "AUTHOR_CONSTRUCTED_MECHANICAL",
+      "independently_adjudicated": false,
+      "left_section": "1",
+      "right_section": "2",
+      "left_index": 0,
+      "right_index": 0,
+      "expected_left": [
+        {
+          "actor": "buyer",
+          "action": "PAY",
+          "object": "invoice alpha",
+          "recipient": null,
+          "trigger": null,
+          "event_instance": "invoice alpha"
+        }
+      ],
+      "expected_right": [
+        {
+          "actor": "buyer",
+          "action": "PAY",
+          "object": "invoice alpha",
+          "recipient": null,
+          "trigger": null,
+          "event_instance": "invoice alpha"
+        }
+      ]
+    },
+    {
+      "case_id": "development_missing_reference",
+      "family_id": "development_missing_reference",
+      "split": "development",
+      "text": "Section 1. Duty\nBuyer shall pay Invoice Alpha within 10 calendar days.\n\nSection 2. Duty\nBuyer shall remit the obligation in Section 99 within 10 calendar days.",
+      "gold_state": "UNCERTAIN",
+      "gold_match": null,
+      "mechanical_rule": "missing_reference",
+      "label_provenance": "AUTHOR_CONSTRUCTED_MECHANICAL",
+      "independently_adjudicated": false,
+      "left_section": "1",
+      "right_section": "2",
+      "left_index": 0,
+      "right_index": 0,
+      "expected_left": [
+        {
+          "actor": "buyer",
+          "action": "PAY",
+          "object": "invoice alpha",
+          "recipient": null,
+          "trigger": null,
+          "event_instance": "invoice alpha"
+        }
+      ],
+      "expected_right": [
+        {
+          "actor": "buyer",
+          "action": "PAY",
+          "object": "the obligation in section 99",
+          "recipient": null,
+          "trigger": null,
+          "event_instance": null
+        }
+      ]
+    },
+    {
+      "case_id": "development_ambiguous_reference",
+      "family_id": "development_ambiguous_reference",
+      "split": "development",
+      "text": "Section 1. Duty\nBuyer shall pay Invoice Alpha within 10 calendar days.\n\nSection 2. Duty\nBuyer shall remit the obligation in Section 5 within 10 calendar days.\nSection 5. Extra\nBuyer shall pay Invoice Alpha within 10 calendar days after receipt of Invoice Alpha.\nSection 5. Duplicate\nBuyer shall pay Invoice Alpha within 10 calendar days after receipt of Invoice Alpha.",
+      "gold_state": "UNCERTAIN",
+      "gold_match": null,
+      "mechanical_rule": "ambiguous_reference",
+      "label_provenance": "AUTHOR_CONSTRUCTED_MECHANICAL",
+      "independently_adjudicated": false,
+      "left_section": "1",
+      "right_section": "2",
+      "left_index": 0,
+      "right_index": 0,
+      "expected_left": [
+        {
+          "actor": "buyer",
+          "action": "PAY",
+          "object": "invoice alpha",
+          "recipient": null,
+          "trigger": null,
+          "event_instance": "invoice alpha"
+        }
+      ],
+      "expected_right": [
+        {
+          "actor": "buyer",
+          "action": "PAY",
+          "object": "the obligation in section 5",
+          "recipient": null,
+          "trigger": null,
+          "event_instance": null
+        }
+      ]
+    },
+    {
+      "case_id": "development_different_scope",
+      "family_id": "development_different_scope",
+      "split": "development",
+      "text": "Section 1. Duty\nFor Agreement A, Buyer shall pay Invoice Alpha within 10 calendar days after receipt of Invoice Alpha.\n\nSection 2. Duty\nFor Agreement B, Buyer shall remit Invoice Alpha within 10 calendar days after receipt of Invoice Alpha.",
+      "gold_state": "DIFFERENT",
+      "gold_match": false,
+      "mechanical_rule": "different_scope",
+      "label_provenance": "AUTHOR_CONSTRUCTED_MECHANICAL",
+      "independently_adjudicated": false,
+      "left_section": "1",
+      "right_section": "2",
+      "left_index": 0,
+      "right_index": 0,
+      "expected_left": [
+        {
+          "actor": "buyer",
+          "action": "PAY",
+          "object": "invoice alpha",
+          "recipient": null,
+          "trigger": "receipt of invoice alpha",
+          "event_instance": "invoice alpha"
+        }
+      ],
+      "expected_right": [
+        {
+          "actor": "buyer",
+          "action": "PAY",
+          "object": "invoice alpha",
+          "recipient": null,
+          "trigger": "receipt of invoice alpha",
+          "event_instance": "invoice alpha"
+        }
+      ]
+    },
+    {
+      "case_id": "development_different_phase",
+      "family_id": "development_different_phase",
+      "split": "development",
+      "text": "Section 1. Duty\nFor Phase 1, Buyer shall pay Invoice Alpha within 10 calendar days after receipt of Invoice Alpha.\n\nSection 2. Duty\nFor Phase 2, Buyer shall remit Invoice Alpha within 10 calendar days after receipt of Invoice Alpha.",
+      "gold_state": "DIFFERENT",
+      "gold_match": false,
+      "mechanical_rule": "different_phase",
+      "label_provenance": "AUTHOR_CONSTRUCTED_MECHANICAL",
+      "independently_adjudicated": false,
+      "left_section": "1",
+      "right_section": "2",
+      "left_index": 0,
+      "right_index": 0,
+      "expected_left": [
+        {
+          "actor": "buyer",
+          "action": "PAY",
+          "object": "invoice alpha",
+          "recipient": null,
+          "trigger": "receipt of invoice alpha",
+          "event_instance": "invoice alpha"
+        }
+      ],
+      "expected_right": [
+        {
+          "actor": "buyer",
+          "action": "PAY",
+          "object": "invoice alpha",
+          "recipient": null,
+          "trigger": "receipt of invoice alpha",
+          "event_instance": "invoice alpha"
+        }
+      ]
+    }
+  ]
+}

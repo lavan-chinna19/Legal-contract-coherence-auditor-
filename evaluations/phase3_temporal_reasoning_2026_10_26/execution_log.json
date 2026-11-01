@@ -1,0 +1,26 @@
+{
+  "final_date": "2026-10-28",
+  "python_prefix": "tmp/final-release/clean-env/Scripts/python.exe",
+  "working_directory": "F:/projects/nlp/Legal-contract-coherence-auditor-",
+  "environment": "Offline actual CPU models; two Torch/OpenMP threads; isolated temporary storage; permitted localhost for completed HTTP regression runs",
+  "commands": [
+    {"command": "python run_old_baseline.py", "exit_code": 0, "date": "2026-10-26", "result": "38 original observations; TXT TP6 FP2 FN2 TN4; before new temporal implementation", "evidence": "old_baseline_console.log"},
+    {"command": "python -m pytest tests/test_rules.py tests/test_structural_parser.py -q", "exit_code": 0, "passed": 58, "date": "2026-10-26", "evidence": "initial_regression.xml"},
+    {"command": "python -m pytest tests/test_temporal_reasoning.py tests/test_structural_parser.py tests/test_rules.py -q --junitxml=affected_v1.xml", "exit_code": 0, "passed": 144, "seconds": 22.76, "evidence": "affected_v1.log"},
+    {"command": "python -m pytest tests/test_temporal_reasoning.py tests/test_temporal_integration.py tests/test_rules.py tests/test_structural_parser.py tests/test_structural_integration.py tests/test_final_release.py -q --junitxml=integration_v1.xml", "exit_code": 1, "status": "INTERRUPTED_INCOMPLETE", "result": "Sandbox HTTP run stalled; interrupted; no completed total is claimed", "evidence": "integration_v1.log"},
+    {"command": "python run_evaluation.py --run-id paired_v1", "exit_code": 1, "result": "148 neural/structural/reference/graph matches; legacy involved-ID set ordering failed strict list comparison; full outputs retained", "evidence": "paired_v1.log"},
+    {"command": "python run_evaluation.py --run-id paired_v2", "exit_code": 0, "result": "Legacy reproduction gate sorts only unordered involved IDs; before final MSA grammar correction", "evidence": "paired_v2.log"},
+    {"command": "python -m pytest tests -q --junitxml=full_native_v1.xml", "exit_code": 1, "passed": 391, "failed": 1, "skipped": 2, "seconds": 71.22, "result": "Real false confirmation: modal term endpoint misbound as actor/action; preserved failure and corrected grammar", "evidence": "full_native_v1.log"},
+    {"command": "python -m pytest tests/test_temporal_reasoning.py tests/test_temporal_integration.py tests/test_final_release.py -q --junitxml=affected_v2.xml", "exit_code": 0, "passed": 117, "failed": 0, "seconds": 18.71, "evidence": "affected_v2.log"},
+    {"command": "python run_evaluation.py --run-id paired_v3", "exit_code": 0, "analyses": 108, "parity_cases": 148, "seconds": 15.25, "authoritative_final_run": true, "result": "38 legacy observations reproduce; 148 neural, structure, reference and graph matches; all temporal spans verified; no parser exceptions", "evidence": "paired_v3.log"},
+    {"command": "python -m pytest tests -q --junitxml=full_native_v2.xml", "exit_code": 0, "passed": 395, "failed": 0, "skipped": 2, "warnings": 9, "seconds": 63.09, "authoritative_final_native_suite": true, "evidence": "full_native_v2.log"},
+    {"command": "npm run lint", "working_directory": "frontend", "exit_code": 0, "evidence": "frontend_lint.log"},
+    {"command": "npm run build", "working_directory": "frontend", "exit_code": 1, "result": "Restricted network could not fetch existing Geist Google Fonts", "evidence": "frontend_build.log"},
+    {"command": "npm run build", "working_directory": "frontend", "exit_code": 0, "result": "Permitted-network retry; production compilation/TypeScript/static generation pass without code changes", "evidence": "frontend_build_retry.log"},
+    {"command": "npm run test:workflow", "working_directory": "frontend", "exit_code": 0, "passed": 20, "evidence": "frontend_test_workflow.log"},
+    {"command": "npm run test:alignment", "working_directory": "frontend", "exit_code": 0, "passed": 17, "evidence": "frontend_test_alignment.log"},
+    {"command": "docker version --format '{{json .}}'", "exit_code": 1, "result": "Client 29.6.1, Server=null; dockerDesktopLinuxEngine named pipe missing", "runtime_status": "BLOCKED_NOT_VERIFIED", "evidence": "docker_engine.log"}
+  ],
+  "git_commit_push_deploy": "None",
+  "historical_results": "No overwrites; run IDs and artifact names retained"
+}

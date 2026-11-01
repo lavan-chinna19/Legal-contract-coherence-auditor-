@@ -1,0 +1,10 @@
+ablation_id,model_variant,components_active,heldout_test_recall,heldout_test_spec,heldout_test_fpr,localization_hit_rate,latency_ms,finding_and_interpretation
+ABL_00,Frozen_Channel_B,Pairwise MLP Alone,0.00 (0/2),1.00 (2/2),0.00,0.00,7.68,Complete insensitivity to document structure; pairwise logits compressed in narrow range.
+ABL_01,Frozen_Channel_A,Centroid Distance Alone,0.00 (0/2),1.00 (2/2),0.00,0.00,15.20,Exact zero delta under permutations; invariant to clause sequence changes.
+ABL_02,Production_Ensemble,0.5 Channel A + 0.5 Channel B,0.00 (0/2),1.00 (2/2),0.00,0.00,38.31,Zero production detections across all structural cases.
+ABL_03,Candidate_C1_Full,Contextual Window (0.35) + Boundary Contrast (0.25) + Progression Discordance (0.40),1.00 (2/2),0.50 (1/2),0.50,0.50,14.98,Full contextual candidate; achieves 100% recall but boundary contrast causes 50% FPR on hard negatives.
+ABL_04,Candidate_C1_NoDiscordance,Contextual Window (0.50) + Boundary Contrast (0.50),0.50 (1/2),0.50 (1/2),0.50,0.00,14.50,Without lifecycle discordance, recall drops by 50% on subtle inversions.
+ABL_05,Candidate_C1_NoContrast,Contextual Window (0.40) + Progression Discordance (0.60),1.00 (2/2),1.00 (2/2),0.00,1.00,10.20,Removing local contrast eliminates false positives on coherent hard negative swaps.
+ABL_06,Candidate_C1_NoContext,Boundary Contrast (0.40) + Progression Discordance (0.60),1.00 (2/2),0.50 (1/2),0.50,0.50,8.40,Contextual window provides smoothing but does not independently drive classification.
+ABL_07,Candidate_C2_BiLSTM,Sequence BiLSTM on Frozen Embeddings,0.00 (0/2),1.00 (2/2),0.00,0.00,53.79,Learned sequence head underfits without massive pretraining; produces scores < 0.19.
+ABL_08,Candidate_C3_Topological,Directed Acyclic Graph Precedence Checker,1.00 (2/2),1.00 (2/2),0.00,1.00,0.17,Topological precedence rules achieve perfect precision and recall on major structural inversions.

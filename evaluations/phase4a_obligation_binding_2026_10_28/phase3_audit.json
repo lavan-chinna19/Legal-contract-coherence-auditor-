@@ -1,0 +1,150 @@
+{
+  "checks": [
+    {
+      "stratum": "ORIGINAL_PHASE1",
+      "task": "old",
+      "actual": {
+        "TP": 6,
+        "FP": 2,
+        "FN": 2,
+        "TN": 4
+      },
+      "matches": true
+    },
+    {
+      "stratum": "ORIGINAL_PHASE1",
+      "task": "new",
+      "actual": {
+        "TP": 8,
+        "FP": 0,
+        "FN": 0,
+        "TN": 6
+      },
+      "matches": true
+    },
+    {
+      "stratum": "NEW_MECHANICAL_SYNTHETIC",
+      "task": "legacy_alert_proxy",
+      "actual": {
+        "TP": 4,
+        "FP": 5,
+        "FN": 9,
+        "TN": 32
+      },
+      "matches": true
+    },
+    {
+      "stratum": "NEW_MECHANICAL_SYNTHETIC",
+      "task": "new_confirmed_screen",
+      "actual": {
+        "TP": 13,
+        "FP": 0,
+        "FN": 0,
+        "TN": 37
+      },
+      "matches": true
+    },
+    {
+      "stratum": "NEW_MECHANICAL_SYNTHETIC",
+      "task": "selective_supported_relation",
+      "actual": {
+        "TP": 13,
+        "FP": 0,
+        "FN": 0,
+        "TN": 9
+      },
+      "matches": true
+    },
+    {
+      "stratum": "NEW_MECHANICAL_SYNTHETIC",
+      "coverage_numerator": 22,
+      "review_unsupported_union": 20,
+      "denominator": 50,
+      "matches": true
+    },
+    {
+      "stratum": "POST_IMPLEMENTATION_MECHANICAL_CHALLENGE",
+      "task": "legacy_alert_proxy",
+      "actual": {
+        "TP": 0,
+        "FP": 1,
+        "FN": 2,
+        "TN": 9
+      },
+      "matches": true
+    },
+    {
+      "stratum": "POST_IMPLEMENTATION_MECHANICAL_CHALLENGE",
+      "task": "new_confirmed_screen",
+      "actual": {
+        "TP": 2,
+        "FP": 0,
+        "FN": 0,
+        "TN": 10
+      },
+      "matches": true
+    },
+    {
+      "stratum": "POST_IMPLEMENTATION_MECHANICAL_CHALLENGE",
+      "task": "selective_supported_relation",
+      "actual": {
+        "TP": 2,
+        "FP": 0,
+        "FN": 0,
+        "TN": 1
+      },
+      "matches": true
+    },
+    {
+      "stratum": "POST_IMPLEMENTATION_MECHANICAL_CHALLENGE",
+      "coverage_numerator": 3,
+      "review_unsupported_union": 6,
+      "denominator": 12,
+      "matches": true
+    },
+    {
+      "stratum": "PROVISIONAL_INTERPRETATION",
+      "task": "legacy_alert_proxy",
+      "actual": {
+        "TP": 0,
+        "FP": 0,
+        "FN": 0,
+        "TN": 0
+      },
+      "matches": true
+    },
+    {
+      "stratum": "PROVISIONAL_INTERPRETATION",
+      "task": "new_confirmed_screen",
+      "actual": {
+        "TP": 0,
+        "FP": 0,
+        "FN": 0,
+        "TN": 0
+      },
+      "matches": true
+    },
+    {
+      "stratum": "PROVISIONAL_INTERPRETATION",
+      "task": "selective_supported_relation",
+      "actual": {
+        "TP": 0,
+        "FP": 0,
+        "FN": 0,
+        "TN": 0
+      },
+      "matches": true
+    },
+    {
+      "stratum": "PROVISIONAL_INTERPRETATION",
+      "coverage_numerator": 0,
+      "review_unsupported_union": 6,
+      "denominator": 8,
+      "matches": true
+    }
+  ],
+  "phase3_manifest_changes": [],
+  "discrepancies": [],
+  "passed": true,
+  "interpretation": "Full denominator includes abstention as no-confirmation: positive abstention is FN; negative abstention is screen TN, never validated consistency. 44%=22/50 supported multi-statement relations; 42%=21/50 union review/unsupported documents. Not complementary; may overlap."
+}

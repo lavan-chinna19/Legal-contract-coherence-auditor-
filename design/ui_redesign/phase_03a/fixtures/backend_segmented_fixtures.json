@@ -1,0 +1,572 @@
+{
+  "fixture_01_baseline.txt": [
+    {
+      "clause_id": "fixture_01_baseline_0",
+      "doc_id": "fixture_01_baseline",
+      "sequence_idx": 0,
+      "text_preview": "1. Term and Duration. This Agreement commences on January 15, 2026 and shall terminate on January 14...",
+      "char_start": 0,
+      "char_end": 107,
+      "text": "1. Term and Duration. This Agreement commences on January 15, 2026 and shall terminate on January 14, 2027.",
+      "label": "Numbered Clause"
+    },
+    {
+      "clause_id": "fixture_01_baseline_1",
+      "doc_id": "fixture_01_baseline",
+      "sequence_idx": 1,
+      "text_preview": "2. Confidentiality Obligations. The Receiving Party agrees to protect Confidential Information as de...",
+      "char_start": 108,
+      "char_end": 242,
+      "text": "2. Confidentiality Obligations. The Receiving Party agrees to protect Confidential Information as defined herein with reasonable care.",
+      "label": "Numbered Clause"
+    },
+    {
+      "clause_id": "fixture_01_baseline_2",
+      "doc_id": "fixture_01_baseline",
+      "sequence_idx": 2,
+      "text_preview": "3. Intellectual Property Rights. All patents, copyrights, trademarks, and trade secrets shall remain...",
+      "char_start": 243,
+      "char_end": 386,
+      "text": "3. Intellectual Property Rights. All patents, copyrights, trademarks, and trade secrets shall remain the sole property of the Disclosing Party.",
+      "label": "Numbered Clause"
+    },
+    {
+      "clause_id": "fixture_01_baseline_3",
+      "doc_id": "fixture_01_baseline",
+      "sequence_idx": 3,
+      "text_preview": "4. Indemnification and Liability. Each party agrees to defend, indemnify, and hold harmless the othe...",
+      "char_start": 387,
+      "char_end": 522,
+      "text": "4. Indemnification and Liability. Each party agrees to defend, indemnify, and hold harmless the other party against third-party claims.",
+      "label": "Numbered Clause"
+    },
+    {
+      "clause_id": "fixture_01_baseline_4",
+      "doc_id": "fixture_01_baseline",
+      "sequence_idx": 4,
+      "text_preview": "5. Governing Law and Dispute Resolution. This Agreement shall be governed by and construed in accord...",
+      "char_start": 523,
+      "char_end": 667,
+      "text": "5. Governing Law and Dispute Resolution. This Agreement shall be governed by and construed in accordance with the laws of the State of Delaware.",
+      "label": "Numbered Clause"
+    }
+  ],
+  "fixture_02_repeated_prefix.txt": [
+    {
+      "clause_id": "fixture_02_repeated_prefix_0",
+      "doc_id": "fixture_02_repeated_prefix",
+      "sequence_idx": 0,
+      "text_preview": "1. Scope of Representation. The Parties hereby agree and covenant that for the purposes of this Agre...",
+      "char_start": 0,
+      "char_end": 296,
+      "text": "1. Scope of Representation. The Parties hereby agree and covenant that for the purposes of this Agreement and any related exhibits, schedules, or transactional documents executed concurrently herewith, the Representative shall act solely within the delegated authority specified under Schedule A.",
+      "label": "Numbered Clause"
+    },
+    {
+      "clause_id": "fixture_02_repeated_prefix_1",
+      "doc_id": "fixture_02_repeated_prefix",
+      "sequence_idx": 1,
+      "text_preview": "2. Scope of Financial Audit. The Parties hereby agree and covenant that for the purposes of this Agr...",
+      "char_start": 297,
+      "char_end": 598,
+      "text": "2. Scope of Financial Audit. The Parties hereby agree and covenant that for the purposes of this Agreement and any related exhibits, schedules, or transactional documents executed concurrently herewith, the Independent Auditor shall inspect the accounting records within sixty days of fiscal year end.",
+      "label": "Numbered Clause"
+    },
+    {
+      "clause_id": "fixture_02_repeated_prefix_2",
+      "doc_id": "fixture_02_repeated_prefix",
+      "sequence_idx": 2,
+      "text_preview": "3. Scope of Regulatory Compliance. The Parties hereby agree and covenant that for the purposes of th...",
+      "char_start": 599,
+      "char_end": 905,
+      "text": "3. Scope of Regulatory Compliance. The Parties hereby agree and covenant that for the purposes of this Agreement and any related exhibits, schedules, or transactional documents executed concurrently herewith, the Compliance Officer shall report any identified statutory breaches to the Executive Committee.",
+      "label": "Numbered Clause"
+    }
+  ],
+  "fixture_03_identical_clauses.txt": [
+    {
+      "clause_id": "fixture_03_identical_clauses_0",
+      "doc_id": "fixture_03_identical_clauses",
+      "sequence_idx": 0,
+      "text_preview": "1. Initial Operational Terms. The parties shall collaborate in good faith on the initial deployment ...",
+      "char_start": 0,
+      "char_end": 109,
+      "text": "1. Initial Operational Terms. The parties shall collaborate in good faith on the initial deployment schedule.",
+      "label": "Numbered Clause"
+    },
+    {
+      "clause_id": "fixture_03_identical_clauses_1",
+      "doc_id": "fixture_03_identical_clauses",
+      "sequence_idx": 1,
+      "text_preview": "2. Assignment Restrictions. Standard Boilerplate Provision. Neither party may assign or transfer its...",
+      "char_start": 110,
+      "char_end": 309,
+      "text": "2. Assignment Restrictions. Standard Boilerplate Provision. Neither party may assign or transfer its rights or delegate its obligations hereunder without the prior written consent of the other party.",
+      "label": "Numbered Clause"
+    },
+    {
+      "clause_id": "fixture_03_identical_clauses_2",
+      "doc_id": "fixture_03_identical_clauses",
+      "sequence_idx": 2,
+      "text_preview": "3. Technology Transfer. The licensor grants a non-exclusive license to use the licensed software for...",
+      "char_start": 310,
+      "char_end": 440,
+      "text": "3. Technology Transfer. The licensor grants a non-exclusive license to use the licensed software for internal business operations.",
+      "label": "Numbered Clause"
+    },
+    {
+      "clause_id": "fixture_03_identical_clauses_3",
+      "doc_id": "fixture_03_identical_clauses",
+      "sequence_idx": 3,
+      "text_preview": "4. Secondary Assignment Clause. Standard Boilerplate Provision. Neither party may assign or transfer...",
+      "char_start": 441,
+      "char_end": 644,
+      "text": "4. Secondary Assignment Clause. Standard Boilerplate Provision. Neither party may assign or transfer its rights or delegate its obligations hereunder without the prior written consent of the other party.",
+      "label": "Numbered Clause"
+    },
+    {
+      "clause_id": "fixture_03_identical_clauses_4",
+      "doc_id": "fixture_03_identical_clauses",
+      "sequence_idx": 4,
+      "text_preview": "5. Termination for Convenience. Either party may terminate upon ninety days prior written notice.",
+      "char_start": 645,
+      "char_end": 742,
+      "text": "5. Termination for Convenience. Either party may terminate upon ninety days prior written notice.",
+      "label": "Numbered Clause"
+    }
+  ],
+  "fixture_04_long_clause.txt": [
+    {
+      "clause_id": "fixture_04_long_clause_0",
+      "doc_id": "fixture_04_long_clause",
+      "sequence_idx": 0,
+      "text_preview": "1. Master Services Overview. The service provider shall deliver the enterprise application suite.",
+      "char_start": 0,
+      "char_end": 97,
+      "text": "1. Master Services Overview. The service provider shall deliver the enterprise application suite.",
+      "label": "Numbered Clause"
+    },
+    {
+      "clause_id": "fixture_04_long_clause_1",
+      "doc_id": "fixture_04_long_clause",
+      "sequence_idx": 1,
+      "text_preview": "2. Comprehensive Service Level Specifications. The Contractor shall deliver high-performance cloud h...",
+      "char_start": 98,
+      "char_end": 10049,
+      "text": "2. Comprehensive Service Level Specifications. The Contractor shall deliver high-performance cloud hosting services, technical maintenance, infrastructure monitoring, security hardening, disaster recovery testing, and round-the-clock incident response services in accordance with the service level specifications detailed herein. The Contractor shall deliver high-performance cloud hosting services, technical maintenance, infrastructure monitoring, security hardening, disaster recovery testing, and round-the-clock incident response services in accordance with the service level specifications detailed herein. The Contractor shall deliver high-performance cloud hosting services, technical maintenance, infrastructure monitoring, security hardening, disaster recovery testing, and round-the-clock incident response services in accordance with the service level specifications detailed herein. The Contractor shall deliver high-performance cloud hosting services, technical maintenance, infrastructure monitoring, security hardening, disaster recovery testing, and round-the-clock incident response services in accordance with the service level specifications detailed herein. The Contractor shall deliver high-performance cloud hosting services, technical maintenance, infrastructure monitoring, security hardening, disaster recovery testing, and round-the-clock incident response services in accordance with the service level specifications detailed herein. The Contractor shall deliver high-performance cloud hosting services, technical maintenance, infrastructure monitoring, security hardening, disaster recovery testing, and round-the-clock incident response services in accordance with the service level specifications detailed herein. The Contractor shall deliver high-performance cloud hosting services, technical maintenance, infrastructure monitoring, security hardening, disaster recovery testing, and round-the-clock incident response services in accordance with the service level specifications detailed herein. The Contractor shall deliver high-performance cloud hosting services, technical maintenance, infrastructure monitoring, security hardening, disaster recovery testing, and round-the-clock incident response services in accordance with the service level specifications detailed herein. The Contractor shall deliver high-performance cloud hosting services, technical maintenance, infrastructure monitoring, security hardening, disaster recovery testing, and round-the-clock incident response services in accordance with the service level specifications detailed herein. The Contractor shall deliver high-performance cloud hosting services, technical maintenance, infrastructure monitoring, security hardening, disaster recovery testing, and round-the-clock incident response services in accordance with the service level specifications detailed herein. The Contractor shall deliver high-performance cloud hosting services, technical maintenance, infrastructure monitoring, security hardening, disaster recovery testing, and round-the-clock incident response services in accordance with the service level specifications detailed herein. The Contractor shall deliver high-performance cloud hosting services, technical maintenance, infrastructure monitoring, security hardening, disaster recovery testing, and round-the-clock incident response services in accordance with the service level specifications detailed herein. The Contractor shall deliver high-performance cloud hosting services, technical maintenance, infrastructure monitoring, security hardening, disaster recovery testing, and round-the-clock incident response services in accordance with the service level specifications detailed herein. The Contractor shall deliver high-performance cloud hosting services, technical maintenance, infrastructure monitoring, security hardening, disaster recovery testing, and round-the-clock incident response services in accordance with the service level specifications detailed herein. The Contractor shall deliver high-performance cloud hosting services, technical maintenance, infrastructure monitoring, security hardening, disaster recovery testing, and round-the-clock incident response services in accordance with the service level specifications detailed herein. The Contractor shall deliver high-performance cloud hosting services, technical maintenance, infrastructure monitoring, security hardening, disaster recovery testing, and round-the-clock incident response services in accordance with the service level specifications detailed herein. The Contractor shall deliver high-performance cloud hosting services, technical maintenance, infrastructure monitoring, security hardening, disaster recovery testing, and round-the-clock incident response services in accordance with the service level specifications detailed herein. The Contractor shall deliver high-performance cloud hosting services, technical maintenance, infrastructure monitoring, security hardening, disaster recovery testing, and round-the-clock incident response services in accordance with the service level specifications detailed herein. The Contractor shall deliver high-performance cloud hosting services, technical maintenance, infrastructure monitoring, security hardening, disaster recovery testing, and round-the-clock incident response services in accordance with the service level specifications detailed herein. The Contractor shall deliver high-performance cloud hosting services, technical maintenance, infrastructure monitoring, security hardening, disaster recovery testing, and round-the-clock incident response services in accordance with the service level specifications detailed herein. The Contractor shall deliver high-performance cloud hosting services, technical maintenance, infrastructure monitoring, security hardening, disaster recovery testing, and round-the-clock incident response services in accordance with the service level specifications detailed herein. The Contractor shall deliver high-performance cloud hosting services, technical maintenance, infrastructure monitoring, security hardening, disaster recovery testing, and round-the-clock incident response services in accordance with the service level specifications detailed herein. The Contractor shall deliver high-performance cloud hosting services, technical maintenance, infrastructure monitoring, security hardening, disaster recovery testing, and round-the-clock incident response services in accordance with the service level specifications detailed herein. The Contractor shall deliver high-performance cloud hosting services, technical maintenance, infrastructure monitoring, security hardening, disaster recovery testing, and round-the-clock incident response services in accordance with the service level specifications detailed herein. The Contractor shall deliver high-performance cloud hosting services, technical maintenance, infrastructure monitoring, security hardening, disaster recovery testing, and round-the-clock incident response services in accordance with the service level specifications detailed herein. The Contractor shall deliver high-performance cloud hosting services, technical maintenance, infrastructure monitoring, security hardening, disaster recovery testing, and round-the-clock incident response services in accordance with the service level specifications detailed herein. The Contractor shall deliver high-performance cloud hosting services, technical maintenance, infrastructure monitoring, security hardening, disaster recovery testing, and round-the-clock incident response services in accordance with the service level specifications detailed herein. The Contractor shall deliver high-performance cloud hosting services, technical maintenance, infrastructure monitoring, security hardening, disaster recovery testing, and round-the-clock incident response services in accordance with the service level specifications detailed herein. The Contractor shall deliver high-performance cloud hosting services, technical maintenance, infrastructure monitoring, security hardening, disaster recovery testing, and round-the-clock incident response services in accordance with the service level specifications detailed herein. The Contractor shall deliver high-performance cloud hosting services, technical maintenance, infrastructure monitoring, security hardening, disaster recovery testing, and round-the-clock incident response services in accordance with the service level specifications detailed herein. The Contractor shall deliver high-performance cloud hosting services, technical maintenance, infrastructure monitoring, security hardening, disaster recovery testing, and round-the-clock incident response services in accordance with the service level specifications detailed herein. The Contractor shall deliver high-performance cloud hosting services, technical maintenance, infrastructure monitoring, security hardening, disaster recovery testing, and round-the-clock incident response services in accordance with the service level specifications detailed herein. The Contractor shall deliver high-performance cloud hosting services, technical maintenance, infrastructure monitoring, security hardening, disaster recovery testing, and round-the-clock incident response services in accordance with the service level specifications detailed herein. The Contractor shall deliver high-performance cloud hosting services, technical maintenance, infrastructure monitoring, security hardening, disaster recovery testing, and round-the-clock incident response services in accordance with the service level specifications detailed herein. The Contractor shall deliver high-performance cloud hosting services, technical maintenance, infrastructure monitoring, security hardening, disaster recovery testing, and round-the-clock incident response services in accordance with the service level specifications detailed herein.",
+      "label": "Numbered Clause"
+    },
+    {
+      "clause_id": "fixture_04_long_clause_2",
+      "doc_id": "fixture_04_long_clause",
+      "sequence_idx": 2,
+      "text_preview": "3. Payment and Invoicing. Invoices shall be payable within thirty days of receipt.",
+      "char_start": 10051,
+      "char_end": 10133,
+      "text": "3. Payment and Invoicing. Invoices shall be payable within thirty days of receipt.",
+      "label": "Numbered Clause"
+    }
+  ],
+  "fixture_05_multiline_text.txt": [
+    {
+      "clause_id": "fixture_05_multiline_text_0",
+      "doc_id": "fixture_05_multiline_text",
+      "sequence_idx": 0,
+      "text_preview": "1. Deliverables and Specifications.\n   The Vendor shall provide the following operational components...",
+      "char_start": 0,
+      "char_end": 101,
+      "text": "1. Deliverables and Specifications.\n   The Vendor shall provide the following operational components:",
+      "label": "Numbered Clause"
+    },
+    {
+      "clause_id": "fixture_05_multiline_text_1",
+      "doc_id": "fixture_05_multiline_text",
+      "sequence_idx": 1,
+      "text_preview": "(a) Database migration scripts;",
+      "char_start": 107,
+      "char_end": 138,
+      "text": "(a) Database migration scripts;",
+      "label": "Numbered Clause"
+    },
+    {
+      "clause_id": "fixture_05_multiline_text_2",
+      "doc_id": "fixture_05_multiline_text",
+      "sequence_idx": 2,
+      "text_preview": "(b) API documentation and OpenAPI schemas;",
+      "char_start": 144,
+      "char_end": 186,
+      "text": "(b) API documentation and OpenAPI schemas;",
+      "label": "Numbered Clause"
+    },
+    {
+      "clause_id": "fixture_05_multiline_text_3",
+      "doc_id": "fixture_05_multiline_text",
+      "sequence_idx": 3,
+      "text_preview": "(c) Security penetration test reports.\n\n   All deliverables must receive written acceptance before i...",
+      "char_start": 192,
+      "char_end": 301,
+      "text": "(c) Security penetration test reports.\n\n   All deliverables must receive written acceptance before invoicing.",
+      "label": "Numbered Clause"
+    },
+    {
+      "clause_id": "fixture_05_multiline_text_4",
+      "doc_id": "fixture_05_multiline_text",
+      "sequence_idx": 4,
+      "text_preview": "2. Acceptance Criteria and Validation.\n   The Customer shall have ten business days to review:\n     ...",
+      "char_start": 303,
+      "char_end": 548,
+      "text": "2. Acceptance Criteria and Validation.\n   The Customer shall have ten business days to review:\n     - Functional compliance;\n     - Latency benchmarks under peak load.\n\n   Failure to reject within ten business days constitutes formal acceptance.",
+      "label": "Numbered Clause"
+    }
+  ],
+  "fixture_06_nested_numbering.txt": [
+    {
+      "clause_id": "fixture_06_nested_numbering_0",
+      "doc_id": "fixture_06_nested_numbering",
+      "sequence_idx": 0,
+      "text_preview": "1. Corporate Governance. The Board of Directors shall maintain supervisory authority over all corpor...",
+      "char_start": 0,
+      "char_end": 112,
+      "text": "1. Corporate Governance. The Board of Directors shall maintain supervisory authority over all corporate actions.",
+      "label": "Numbered Clause"
+    },
+    {
+      "clause_id": "fixture_06_nested_numbering_1",
+      "doc_id": "fixture_06_nested_numbering",
+      "sequence_idx": 1,
+      "text_preview": "1.1 Audit Committee Duties. The Audit Committee shall review quarterly earnings and external audit o...",
+      "char_start": 113,
+      "char_end": 221,
+      "text": "1.1 Audit Committee Duties. The Audit Committee shall review quarterly earnings and external audit opinions.",
+      "label": "Numbered Clause"
+    },
+    {
+      "clause_id": "fixture_06_nested_numbering_2",
+      "doc_id": "fixture_06_nested_numbering",
+      "sequence_idx": 2,
+      "text_preview": "1.1(a) Independence Requirements. All members of the Audit Committee must satisfy the statutory inde...",
+      "char_start": 222,
+      "char_end": 344,
+      "text": "1.1(a) Independence Requirements. All members of the Audit Committee must satisfy the statutory independence requirements.",
+      "label": "Numbered Clause"
+    },
+    {
+      "clause_id": "fixture_06_nested_numbering_3",
+      "doc_id": "fixture_06_nested_numbering",
+      "sequence_idx": 3,
+      "text_preview": "2. Executive Compensation. The Compensation Committee shall establish annual executive performance m...",
+      "char_start": 345,
+      "char_end": 452,
+      "text": "2. Executive Compensation. The Compensation Committee shall establish annual executive performance metrics.",
+      "label": "Numbered Clause"
+    }
+  ],
+  "fixture_07_mixed_line_endings.txt": [
+    {
+      "clause_id": "fixture_07_mixed_line_endings_0",
+      "doc_id": "fixture_07_mixed_line_endings",
+      "sequence_idx": 0,
+      "text_preview": "1. Section Alpha.\nThis clause uses Windows CRLF line termination format.",
+      "char_start": 0,
+      "char_end": 72,
+      "text": "1. Section Alpha.\nThis clause uses Windows CRLF line termination format.",
+      "label": "Numbered Clause"
+    },
+    {
+      "clause_id": "fixture_07_mixed_line_endings_1",
+      "doc_id": "fixture_07_mixed_line_endings",
+      "sequence_idx": 1,
+      "text_preview": "2. Section Beta.\nThis clause uses Unix LF line termination format.",
+      "char_start": 73,
+      "char_end": 139,
+      "text": "2. Section Beta.\nThis clause uses Unix LF line termination format.",
+      "label": "Numbered Clause"
+    },
+    {
+      "clause_id": "fixture_07_mixed_line_endings_2",
+      "doc_id": "fixture_07_mixed_line_endings",
+      "sequence_idx": 2,
+      "text_preview": "3. Section Gamma.\nThis clause concludes with mixed CRLF line termination format.",
+      "char_start": 140,
+      "char_end": 220,
+      "text": "3. Section Gamma.\nThis clause concludes with mixed CRLF line termination format.",
+      "label": "Numbered Clause"
+    }
+  ],
+  "fixture_08_whitespace_variability.txt": [
+    {
+      "clause_id": "fixture_08_whitespace_variability_0",
+      "doc_id": "fixture_08_whitespace_variability",
+      "sequence_idx": 0,
+      "text_preview": "1. Indented Section.    This clause begins with leading spaces    and contains multiple interior spa...",
+      "char_start": 3,
+      "char_end": 107,
+      "text": "1. Indented Section.    This clause begins with leading spaces    and contains multiple interior spaces.",
+      "label": "Numbered Clause"
+    },
+    {
+      "clause_id": "fixture_08_whitespace_variability_1",
+      "doc_id": "fixture_08_whitespace_variability",
+      "sequence_idx": 1,
+      "text_preview": "2. Spaced Section.       This clause contains erratic tab and space configurations.",
+      "char_start": 113,
+      "char_end": 196,
+      "text": "2. Spaced Section.       This clause contains erratic tab and space configurations.",
+      "label": "Numbered Clause"
+    },
+    {
+      "clause_id": "fixture_08_whitespace_variability_2",
+      "doc_id": "fixture_08_whitespace_variability",
+      "sequence_idx": 2,
+      "text_preview": "3. Compact Section. This clause maintains standard single space formatting.",
+      "char_start": 201,
+      "char_end": 276,
+      "text": "3. Compact Section. This clause maintains standard single space formatting.",
+      "label": "Numbered Clause"
+    }
+  ],
+  "fixture_09_unicode_symbols.txt": [
+    {
+      "clause_id": "fixture_09_unicode_symbols_0",
+      "doc_id": "fixture_09_unicode_symbols",
+      "sequence_idx": 0,
+      "text_preview": "1. Définitions et Force Majeure. Under French and EU jurisprudence, “force majeure” relieves obligat...",
+      "char_start": 0,
+      "char_end": 135,
+      "text": "1. Définitions et Force Majeure. Under French and EU jurisprudence, “force majeure” relieves obligations vis-à-vis catastrophic events.",
+      "label": "Numbered Clause"
+    },
+    {
+      "clause_id": "fixture_09_unicode_symbols_1",
+      "doc_id": "fixture_09_unicode_symbols",
+      "sequence_idx": 1,
+      "text_preview": "2. Statutory Intellectual Property (§ 102). Pursuant to 17 U.S.C. § 102, all copyrightable works © 2...",
+      "char_start": 136,
+      "char_end": 255,
+      "text": "2. Statutory Intellectual Property (§ 102). Pursuant to 17 U.S.C. § 102, all copyrightable works © 2026 are reserved ®.",
+      "label": "Numbered Clause"
+    },
+    {
+      "clause_id": "fixture_09_unicode_symbols_2",
+      "doc_id": "fixture_09_unicode_symbols",
+      "sequence_idx": 2,
+      "text_preview": "3. Currency and Settlement (€). All monetary disbursements shall settle in Euros (€) at the prevaili...",
+      "char_start": 256,
+      "char_end": 393,
+      "text": "3. Currency and Settlement (€). All monetary disbursements shall settle in Euros (€) at the prevailing European Central Bank fixing rate.",
+      "label": "Numbered Clause"
+    }
+  ],
+  "fixture_10_literal_ellipsis.txt": [
+    {
+      "clause_id": "fixture_10_literal_ellipsis_0",
+      "doc_id": "fixture_10_literal_ellipsis",
+      "sequence_idx": 0,
+      "text_preview": "1. Incomplete Statutory Citation... The referenced statutory provisions include 15 U.S.C. § 78a et s...",
+      "char_start": 0,
+      "char_end": 135,
+      "text": "1. Incomplete Statutory Citation... The referenced statutory provisions include 15 U.S.C. § 78a et seq... as amended from time to time.",
+      "label": "Numbered Clause"
+    },
+    {
+      "clause_id": "fixture_10_literal_ellipsis_1",
+      "doc_id": "fixture_10_literal_ellipsis",
+      "sequence_idx": 1,
+      "text_preview": "2. Standard Notice Requirements. Formal notice shall be transmitted via certified mail or electronic...",
+      "char_start": 136,
+      "char_end": 245,
+      "text": "2. Standard Notice Requirements. Formal notice shall be transmitted via certified mail or electronic courier.",
+      "label": "Numbered Clause"
+    },
+    {
+      "clause_id": "fixture_10_literal_ellipsis_2",
+      "doc_id": "fixture_10_literal_ellipsis",
+      "sequence_idx": 2,
+      "text_preview": "3. Pending Contractual Disclosures... Additional operational schedules... remain subject to regulato...",
+      "char_start": 246,
+      "char_end": 358,
+      "text": "3. Pending Contractual Disclosures... Additional operational schedules... remain subject to regulatory approval.",
+      "label": "Numbered Clause"
+    }
+  ],
+  "fixture_11_heading_reuse.txt": [
+    {
+      "clause_id": "fixture_11_heading_reuse_0",
+      "doc_id": "fixture_11_heading_reuse",
+      "sequence_idx": 0,
+      "text_preview": "GENERAL PROVISIONS",
+      "char_start": 0,
+      "char_end": 18,
+      "text": "GENERAL PROVISIONS",
+      "label": "Heading"
+    },
+    {
+      "clause_id": "fixture_11_heading_reuse_1",
+      "doc_id": "fixture_11_heading_reuse",
+      "sequence_idx": 1,
+      "text_preview": "1. The parties represent that they possess full corporate power and authority to enter into this Agr...",
+      "char_start": 19,
+      "char_end": 126,
+      "text": "1. The parties represent that they possess full corporate power and authority to enter into this Agreement.",
+      "label": "Numbered Clause"
+    },
+    {
+      "clause_id": "fixture_11_heading_reuse_2",
+      "doc_id": "fixture_11_heading_reuse",
+      "sequence_idx": 2,
+      "text_preview": "GENERAL PROVISIONS",
+      "char_start": 127,
+      "char_end": 145,
+      "text": "GENERAL PROVISIONS",
+      "label": "Heading"
+    },
+    {
+      "clause_id": "fixture_11_heading_reuse_3",
+      "doc_id": "fixture_11_heading_reuse",
+      "sequence_idx": 3,
+      "text_preview": "2. Any modification, amendment, or waiver of any provision of this Agreement must be in writing and ...",
+      "char_start": 146,
+      "char_end": 269,
+      "text": "2. Any modification, amendment, or waiver of any provision of this Agreement must be in writing and signed by both parties.",
+      "label": "Numbered Clause"
+    },
+    {
+      "clause_id": "fixture_11_heading_reuse_4",
+      "doc_id": "fixture_11_heading_reuse",
+      "sequence_idx": 4,
+      "text_preview": "GENERAL PROVISIONS",
+      "char_start": 270,
+      "char_end": 288,
+      "text": "GENERAL PROVISIONS",
+      "label": "Heading"
+    },
+    {
+      "clause_id": "fixture_11_heading_reuse_5",
+      "doc_id": "fixture_11_heading_reuse",
+      "sequence_idx": 5,
+      "text_preview": "3. If any provision of this Agreement is held invalid or unenforceable, the remaining provisions sha...",
+      "char_start": 289,
+      "char_end": 415,
+      "text": "3. If any provision of this Agreement is held invalid or unenforceable, the remaining provisions shall continue in full force.",
+      "label": "Numbered Clause"
+    }
+  ],
+  "fixture_12_short_clause.txt": [
+    {
+      "clause_id": "fixture_12_short_clause_0",
+      "doc_id": "fixture_12_short_clause",
+      "sequence_idx": 0,
+      "text_preview": "1. Term. Ends Dec 31, 2026.",
+      "char_start": 0,
+      "char_end": 27,
+      "text": "1. Term. Ends Dec 31, 2026.",
+      "label": "Numbered Clause"
+    },
+    {
+      "clause_id": "fixture_12_short_clause_1",
+      "doc_id": "fixture_12_short_clause",
+      "sequence_idx": 1,
+      "text_preview": "2. Fee. Fixed $5,000 monthly retainer.",
+      "char_start": 28,
+      "char_end": 66,
+      "text": "2. Fee. Fixed $5,000 monthly retainer.",
+      "label": "Numbered Clause"
+    },
+    {
+      "clause_id": "fixture_12_short_clause_2",
+      "doc_id": "fixture_12_short_clause",
+      "sequence_idx": 2,
+      "text_preview": "3. Law. Delaware state law governs.",
+      "char_start": 67,
+      "char_end": 102,
+      "text": "3. Law. Delaware state law governs.",
+      "label": "Numbered Clause"
+    }
+  ],
+  "fixture_13_non_unique_substring.txt": [
+    {
+      "clause_id": "fixture_13_non_unique_substring_0",
+      "doc_id": "fixture_13_non_unique_substring",
+      "sequence_idx": 0,
+      "text_preview": "1. Primary Secrecy Duty. Receiving Party shall preserve Confidential Information. This standard appl...",
+      "char_start": 0,
+      "char_end": 138,
+      "text": "1. Primary Secrecy Duty. Receiving Party shall preserve Confidential Information. This standard applies to all business records disclosed.",
+      "label": "Numbered Clause"
+    },
+    {
+      "clause_id": "fixture_13_non_unique_substring_1",
+      "doc_id": "fixture_13_non_unique_substring",
+      "sequence_idx": 1,
+      "text_preview": "2. Cumulative Obligations. In addition to any common law protections, the Receiving Party shall pres...",
+      "char_start": 139,
+      "char_end": 324,
+      "text": "2. Cumulative Obligations. In addition to any common law protections, the Receiving Party shall preserve Confidential Information. without limitation of statutory trade secret remedies.",
+      "label": "Numbered Clause"
+    },
+    {
+      "clause_id": "fixture_13_non_unique_substring_2",
+      "doc_id": "fixture_13_non_unique_substring",
+      "sequence_idx": 2,
+      "text_preview": "3. Return of Materials. Upon termination, all confidential documents shall be destroyed or returned.",
+      "char_start": 325,
+      "char_end": 425,
+      "text": "3. Return of Materials. Upon termination, all confidential documents shall be destroyed or returned.",
+      "label": "Numbered Clause"
+    }
+  ],
+  "fixture_14_missing_match.txt": [
+    {
+      "clause_id": "fixture_14_missing_match_0",
+      "doc_id": "fixture_14_missing_match",
+      "sequence_idx": 0,
+      "text_preview": "1. Existing Section One. This is the genuine source text present in the document.",
+      "char_start": 0,
+      "char_end": 81,
+      "text": "1. Existing Section One. This is the genuine source text present in the document.",
+      "label": "Numbered Clause"
+    },
+    {
+      "clause_id": "fixture_14_missing_match_1",
+      "doc_id": "fixture_14_missing_match",
+      "sequence_idx": 1,
+      "text_preview": "2. Existing Section Two. This is the second clause present in the document.",
+      "char_start": 82,
+      "char_end": 157,
+      "text": "2. Existing Section Two. This is the second clause present in the document.",
+      "label": "Numbered Clause"
+    }
+  ],
+  "fixture_15_boundary_ambiguity.txt": [
+    {
+      "clause_id": "fixture_15_boundary_ambiguity_0",
+      "doc_id": "fixture_15_boundary_ambiguity",
+      "sequence_idx": 0,
+      "text_preview": "1. First Covenant Regarding Payments. The Customer shall pay all invoices promptly on the First Day ...",
+      "char_start": 0,
+      "char_end": 114,
+      "text": "1. First Covenant Regarding Payments. The Customer shall pay all invoices promptly on the First Day of Each Month.",
+      "label": "Numbered Clause"
+    },
+    {
+      "clause_id": "fixture_15_boundary_ambiguity_1",
+      "doc_id": "fixture_15_boundary_ambiguity",
+      "sequence_idx": 1,
+      "text_preview": "2. First Day of Each Month Review Procedures. On the First Day of Each Month, the Vendor shall submi...",
+      "char_start": 115,
+      "char_end": 234,
+      "text": "2. First Day of Each Month Review Procedures. On the First Day of Each Month, the Vendor shall submit progress metrics.",
+      "label": "Numbered Clause"
+    },
+    {
+      "clause_id": "fixture_15_boundary_ambiguity_2",
+      "doc_id": "fixture_15_boundary_ambiguity",
+      "sequence_idx": 2,
+      "text_preview": "3. Quarterly Audit Standards. Audits shall occur once per calendar quarter.",
+      "char_start": 235,
+      "char_end": 310,
+      "text": "3. Quarterly Audit Standards. Audits shall occur once per calendar quarter.",
+      "label": "Numbered Clause"
+    }
+  ]
+}

@@ -1,0 +1,177 @@
+[
+  {
+    "url": "http://localhost:3000/",
+    "method": "GET",
+    "timestamp": 187871.816564
+  },
+  {
+    "url": "http://localhost:3000/_next/static/media/797e433ab948586e-s.p.0r6juujl39pe6.woff2",
+    "method": "GET",
+    "timestamp": 187871.96142
+  },
+  {
+    "url": "http://localhost:3000/_next/static/media/caa3a2e1cccd8315-s.p.0wgildi0cnwt9.woff2",
+    "method": "GET",
+    "timestamp": 187871.961693
+  },
+  {
+    "url": "http://localhost:3000/_next/static/chunks/%5Broot-of-the-server%5D__04kpziuograah._.css",
+    "method": "GET",
+    "timestamp": 187871.962413
+  },
+  {
+    "url": "http://localhost:3000/_next/static/chunks/%5Bturbopack%5D_browser_dev_hmr-client_hmr-client_ts_03l4kld1mrwfx._.js",
+    "method": "GET",
+    "timestamp": 187871.962569
+  },
+  {
+    "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_next-devtools_index_090k2jmam7qwg.js",
+    "method": "GET",
+    "timestamp": 187871.962668
+  },
+  {
+    "url": "http://localhost:3000/_next/static/chunks/1daa_next_dist_compiled_react-dom_cjs_react-dom-client_development_0mp0cp_t-ezj9.js",
+    "method": "GET",
+    "timestamp": 187871.962716
+  },
+  {
+    "url": "http://localhost:3000/_next/static/chunks/1q96_modules_next_dist_compiled_react-dom_cjs_react-dom_development_1sqry0_53krp4.js",
+    "method": "GET",
+    "timestamp": 187871.96275
+  },
+  {
+    "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_0grqycjrj6mju._.js",
+    "method": "GET",
+    "timestamp": 187871.962803
+  },
+  {
+    "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-server-dom-turbopack_164kp-67asdr9._.js",
+    "method": "GET",
+    "timestamp": 187871.962858
+  },
+  {
+    "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_1amofcmz--cdp._.js",
+    "method": "GET",
+    "timestamp": 187871.962911
+  },
+  {
+    "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_14zvornz047l2._.js",
+    "method": "GET",
+    "timestamp": 187871.962965
+  },
+  {
+    "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_1bjkg68unqmjx._.js",
+    "method": "GET",
+    "timestamp": 187871.963017
+  },
+  {
+    "url": "http://localhost:3000/_next/static/chunks/node_modules_%40swc_helpers_cjs_1r9vbqwj2323d._.js",
+    "method": "GET",
+    "timestamp": 187871.963064
+  },
+  {
+    "url": "http://localhost:3000/_next/static/chunks/_1anvha4rlo79g._.js",
+    "method": "GET",
+    "timestamp": 187871.963109
+  },
+  {
+    "url": "http://localhost:3000/_next/static/chunks/turbopack-_00pkkjbg3g3xr._.js",
+    "method": "GET",
+    "timestamp": 187871.963159
+  },
+  {
+    "url": "http://localhost:3000/_next/static/chunks/_219uq1sj0q91c._.js",
+    "method": "GET",
+    "timestamp": 187871.963214
+  },
+  {
+    "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_20wefz_f1k6jn._.js",
+    "method": "GET",
+    "timestamp": 187871.963289
+  },
+  {
+    "url": "http://localhost:3000/_next/static/chunks/src_app_page_tsx_1gecvfkkh4nqg._.js",
+    "method": "GET",
+    "timestamp": 187871.963351
+  },
+  {
+    "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react_0qox21c46arid._.js",
+    "method": "GET",
+    "timestamp": 187871.963418
+  },
+  {
+    "url": "http://localhost:3000/_next/static/chunks/%5Bturbopack%5D_browser_dev_hmr-client_hmr-client_ts_1mojsayzyj2p6._.js",
+    "method": "GET",
+    "timestamp": 187872.058711
+  },
+  {
+    "url": "http://localhost:8000/health",
+    "method": "GET",
+    "timestamp": 187872.121708
+  },
+  {
+    "url": "http://localhost:8000/health",
+    "method": "GET",
+    "timestamp": 187872.123308
+  },
+  {
+    "url": "http://localhost:8000/v1/upload",
+    "method": "POST",
+    "timestamp": 187875.822811
+  },
+  {
+    "url": "http://localhost:8000/v1/analyze",
+    "method": "POST",
+    "timestamp": 187875.851386
+  },
+  {
+    "url": "http://localhost:8000/v1/jobs/a08663a2-7901-49ba-8e11-a20dc7f922e3",
+    "method": "GET",
+    "timestamp": 187877.924744
+  },
+  {
+    "url": "http://localhost:8000/v1/jobs/a08663a2-7901-49ba-8e11-a20dc7f922e3",
+    "method": "OPTIONS",
+    "timestamp": 187877.926085
+  },
+  {
+    "url": "http://localhost:8000/v1/jobs/a08663a2-7901-49ba-8e11-a20dc7f922e3/results",
+    "method": "GET",
+    "timestamp": 187877.934549
+  },
+  {
+    "url": "http://localhost:8000/v1/jobs/a08663a2-7901-49ba-8e11-a20dc7f922e3/results",
+    "method": "OPTIONS",
+    "timestamp": 187877.935791
+  },
+  {
+    "url": "http://localhost:8000/v1/xai/attribution?doc_id=doc_8d948268&clause_id=doc_8d948268_0",
+    "method": "GET",
+    "timestamp": 187878.980045
+  },
+  {
+    "url": "http://localhost:8000/v1/xai/attribution?doc_id=doc_8d948268&clause_id=doc_8d948268_0",
+    "method": "OPTIONS",
+    "timestamp": 187878.982516
+  },
+  {
+    "url": "http://localhost:8000/v1/xai/sensitivity?doc_id=doc_8d948268&clause_id=doc_8d948268_0",
+    "method": "GET",
+    "timestamp": 187885.755727
+  },
+  {
+    "url": "http://localhost:8000/v1/xai/sensitivity?doc_id=doc_8d948268&clause_id=doc_8d948268_0",
+    "method": "OPTIONS",
+    "timestamp": 187885.756928
+  },
+  {
+    "url": "http://localhost:8000/v1/feedback",
+    "method": "POST",
+    "timestamp": 187888.949515
+  },
+  {
+    "url": "http://localhost:8000/v1/feedback",
+    "method": "OPTIONS",
+    "timestamp": 187888.950817
+  }
+]

@@ -1,0 +1,361 @@
+{
+  "existing_snapshot_files": 1345,
+  "changed_existing_files": [
+    "src/api/release_routes.py",
+    "src/api/reports.py",
+    "docs/FINAL_COMPLETION_TRACKER.md"
+  ],
+  "missing_existing_files": [],
+  "unexpected_existing_changes": [],
+  "preserved_history_files": 411,
+  "preserved_frontend_files": 107,
+  "frozen_source_still_matches": true,
+  "frozen_benchmark_still_matches": true,
+  "legalbert_cache_checks": {
+    "config.json": true,
+    "pytorch_model.bin": true,
+    "special_tokens_map.json": true,
+    "tokenizer_config.json": true,
+    "vocab.txt": true
+  },
+  "model_checkpoint_sha256": "9c0a5a096cdf03a63615134500a64f4bc559314be64366812d6a6f1762d4017f",
+  "centroids_sha256": "2ea33ac1cb8430e720be85cd501f11539c143901b2173b63b942b34b9d31ce07",
+  "git_head_before": "e5436ea4da3fcaeb7f000a0c06a95a3a125514b8",
+  "git_head_after": "e5436ea4da3fcaeb7f000a0c06a95a3a125514b8",
+  "tests": [
+    {
+      "file": "development_v1.xml",
+      "tests": 39,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "skips": [],
+      "passed": 39
+    },
+    {
+      "file": "integration_v1.xml",
+      "tests": 1,
+      "failures": 0,
+      "errors": 1,
+      "skipped": 0,
+      "skips": [],
+      "passed": 0
+    },
+    {
+      "file": "integration_v2.xml",
+      "tests": 44,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "skips": [],
+      "passed": 44
+    },
+    {
+      "file": "full_native_v1.xml",
+      "tests": 442,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 2,
+      "skips": [
+        {
+          "test": "test_live_cuad_order_report_exists",
+          "reason": "CUAD order report not yet generated. Run: python -m src.data.ingest_cuad first."
+        },
+        {
+          "test": "test_live_cuad_report_has_verdict",
+          "reason": "CUAD order report not yet generated."
+        }
+      ],
+      "passed": 440
+    }
+  ],
+  "metric_recalculation": [
+    {
+      "run": "development_v1",
+      "binary": {
+        "TP": 7,
+        "FP": 0,
+        "FN": 0,
+        "TN": 7
+      },
+      "predicted_state_counts": {
+        "MATCHED": 7,
+        "DIFFERENT": 7,
+        "UNCERTAIN": 12,
+        "UNSUPPORTED": 2
+      },
+      "covered": 14,
+      "denominator": 28,
+      "matches": true
+    },
+    {
+      "run": "evaluation_first_pass",
+      "binary": {
+        "TP": 7,
+        "FP": 0,
+        "FN": 1,
+        "TN": 8
+      },
+      "predicted_state_counts": {
+        "MATCHED": 7,
+        "DIFFERENT": 8,
+        "UNCERTAIN": 12,
+        "UNSUPPORTED": 3
+      },
+      "covered": 15,
+      "denominator": 30,
+      "matches": true
+    }
+  ],
+  "archived_reproduction": {
+    "status": "EXPOSED_REPRODUCTION_ONLY",
+    "independent_new_examples": 0,
+    "observations": 58,
+    "identical": 58,
+    "checks": [
+      {
+        "case_id": "development_synonym_identity",
+        "identical": true
+      },
+      {
+        "case_id": "development_different_actor",
+        "identical": true
+      },
+      {
+        "case_id": "development_different_action",
+        "identical": true
+      },
+      {
+        "case_id": "development_different_instance",
+        "identical": true
+      },
+      {
+        "case_id": "development_different_trigger",
+        "identical": true
+      },
+      {
+        "case_id": "development_one_missing_trigger",
+        "identical": true
+      },
+      {
+        "case_id": "development_same_condition",
+        "identical": true
+      },
+      {
+        "case_id": "development_different_condition",
+        "identical": true
+      },
+      {
+        "case_id": "development_one_condition",
+        "identical": true
+      },
+      {
+        "case_id": "development_exception",
+        "identical": true
+      },
+      {
+        "case_id": "development_pronoun",
+        "identical": true
+      },
+      {
+        "case_id": "development_missing_actor",
+        "identical": true
+      },
+      {
+        "case_id": "development_same_recipient",
+        "identical": true
+      },
+      {
+        "case_id": "development_different_recipient",
+        "identical": true
+      },
+      {
+        "case_id": "development_one_missing_recipient",
+        "identical": true
+      },
+      {
+        "case_id": "development_no_timing",
+        "identical": true
+      },
+      {
+        "case_id": "development_different_deadlines",
+        "identical": true
+      },
+      {
+        "case_id": "development_same_recurring_type",
+        "identical": true
+      },
+      {
+        "case_id": "development_different_object_same_party",
+        "identical": true
+      },
+      {
+        "case_id": "development_generic_object",
+        "identical": true
+      },
+      {
+        "case_id": "development_unsupported_action",
+        "identical": true
+      },
+      {
+        "case_id": "development_complex_semantics",
+        "identical": true
+      },
+      {
+        "case_id": "development_multiple_modals",
+        "identical": true
+      },
+      {
+        "case_id": "development_reference_object",
+        "identical": true
+      },
+      {
+        "case_id": "development_missing_reference",
+        "identical": true
+      },
+      {
+        "case_id": "development_ambiguous_reference",
+        "identical": true
+      },
+      {
+        "case_id": "development_different_scope",
+        "identical": true
+      },
+      {
+        "case_id": "development_different_phase",
+        "identical": true
+      },
+      {
+        "case_id": "evaluation_synonym_identity",
+        "identical": true
+      },
+      {
+        "case_id": "evaluation_different_actor",
+        "identical": true
+      },
+      {
+        "case_id": "evaluation_different_action",
+        "identical": true
+      },
+      {
+        "case_id": "evaluation_different_instance",
+        "identical": true
+      },
+      {
+        "case_id": "evaluation_different_trigger",
+        "identical": true
+      },
+      {
+        "case_id": "evaluation_one_missing_trigger",
+        "identical": true
+      },
+      {
+        "case_id": "evaluation_same_condition",
+        "identical": true
+      },
+      {
+        "case_id": "evaluation_different_condition",
+        "identical": true
+      },
+      {
+        "case_id": "evaluation_one_condition",
+        "identical": true
+      },
+      {
+        "case_id": "evaluation_exception",
+        "identical": true
+      },
+      {
+        "case_id": "evaluation_pronoun",
+        "identical": true
+      },
+      {
+        "case_id": "evaluation_missing_actor",
+        "identical": true
+      },
+      {
+        "case_id": "evaluation_same_recipient",
+        "identical": true
+      },
+      {
+        "case_id": "evaluation_different_recipient",
+        "identical": true
+      },
+      {
+        "case_id": "evaluation_one_missing_recipient",
+        "identical": true
+      },
+      {
+        "case_id": "evaluation_no_timing",
+        "identical": true
+      },
+      {
+        "case_id": "evaluation_different_deadlines",
+        "identical": true
+      },
+      {
+        "case_id": "evaluation_same_recurring_type",
+        "identical": true
+      },
+      {
+        "case_id": "evaluation_different_object_same_party",
+        "identical": true
+      },
+      {
+        "case_id": "evaluation_generic_object",
+        "identical": true
+      },
+      {
+        "case_id": "evaluation_unsupported_action",
+        "identical": true
+      },
+      {
+        "case_id": "evaluation_complex_semantics",
+        "identical": true
+      },
+      {
+        "case_id": "evaluation_multiple_modals",
+        "identical": true
+      },
+      {
+        "case_id": "evaluation_reference_object",
+        "identical": true
+      },
+      {
+        "case_id": "evaluation_missing_reference",
+        "identical": true
+      },
+      {
+        "case_id": "evaluation_ambiguous_reference",
+        "identical": true
+      },
+      {
+        "case_id": "evaluation_different_scope",
+        "identical": true
+      },
+      {
+        "case_id": "evaluation_different_phase",
+        "identical": true
+      },
+      {
+        "case_id": "evaluation_passive_identity",
+        "identical": true
+      },
+      {
+        "case_id": "evaluation_coordinated_subject",
+        "identical": true
+      }
+    ]
+  },
+  "preserved_output_check": true,
+  "known_open_limitations": [
+    "Joint subject actor extraction fails reserved example",
+    "Passive positive unsupported and counted FN",
+    "Recurring event field gold defect: two cells per split; raw metrics qualified",
+    "Public-source probes lack labels and supported pairs",
+    "Docker engine unavailable",
+    "Independent legal/natural-family/security validation pending"
+  ],
+  "readiness": "Experimental native research prototype; NO-GO for Phase4B automatic distant-clause contradiction detection",
+  "passed": true
+}

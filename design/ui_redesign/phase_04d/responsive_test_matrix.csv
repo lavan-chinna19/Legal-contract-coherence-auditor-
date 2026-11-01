@@ -1,0 +1,6 @@
+viewport_name,width,height,orientation,horizontal_overflow,component_wrapping,status,evidence_file
+Desktop HD,1440,900,Landscape,FALSE,Full 5-column taxonomy grid & 2-column diff,PASS,01_robustness_lab_overview.png
+Desktop Standard,1024,768,Landscape,FALSE,Adaptive 2-column wrap,PASS,Embedded CDP check
+Tablet Portrait,768,1024,Portrait,FALSE,Single column diff & stacked metric cards,PASS,Embedded CDP check
+Mobile Device,390,844,Portrait,FALSE,Full stacked cards & drawer toggle,PASS,08_responsive_mobile_390x844.png
+Small Mobile,320,568,Portrait,FALSE,Compact badges & wrapped buttons,PASS,Embedded CDP check

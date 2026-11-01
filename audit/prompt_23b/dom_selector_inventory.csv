@@ -1,0 +1,16 @@
+Selector,Source Present,Runtime Present,Alternative Locator,Browser Action Attempted,Evidence,Result
+#tab-audit,NO,NO,nav.tab-nav button:nth-child(1) ("1. Upload & Ingest"),Click,repro_01_app_identity.png,CONFIRMED_REPORT_ERROR
+#tab-results,NO,NO,nav.tab-nav button:nth-child(2) ("2. Coherence Heatmap & Findings"),Click,repro_03_analysis_completed.png,CONFIRMED_REPORT_ERROR
+#tab-xai,NO,NO,nav.tab-nav button:nth-child(3) ("3. Explainability (XAI)"),Click,repro_05_xai_attribution.png,CONFIRMED_REPORT_ERROR
+#tab-feedback,NO,NO,nav.tab-nav button:nth-child(4) ("4. Reviewer Feedback"),Click,repro_06_feedback_success.png,CONFIRMED_REPORT_ERROR
+#tab-transparency,NO,NO,nav.tab-nav button:nth-child(5) ("5. Transparency & Baselines"),Click,transparency_tab.png,CONFIRMED_REPORT_ERROR
+#api-key-input,NO,NO,input[type="password"][placeholder*="API Key"],Type text,repro_02_privacy_toggle.png,CONFIRMED_REPORT_ERROR
+#privacy-consent,NO,NO,label input[type="checkbox"],Click / Toggle,repro_02_privacy_toggle.png,CONFIRMED_REPORT_ERROR
+#file-input,NO,NO,input[type="file"][accept=".txt"],DOM.setFileInputFiles,repro_03_analysis_completed.png,CONFIRMED_REPORT_ERROR
+#analyze-btn,NO,NO,button.btn (text "🚀 Encrypt Upload & Analyze"),Click,repro_03_analysis_completed.png,CONFIRMED_REPORT_ERROR
+#clause-select-xai,NO,NO,None (Defaults to selected clause from findings),Inspect,repro_05_xai_attribution.png,CONFIRMED_REPORT_ERROR
+#clause-select-fb,NO,NO,select (first select on feedback tab),Change select,repro_06_feedback_success.png,CONFIRMED_REPORT_ERROR
+#verdict-confirm,NO,NO,select option[value="CONFIRM_ANOMALY"],Option select,repro_06_feedback_success.png,CONFIRMED_REPORT_ERROR
+#verdict-reject,NO,NO,select option[value="REJECT_ANOMALY"],Option select,repro_06_feedback_success.png,CONFIRMED_REPORT_ERROR
+#feedback-notes,NO,NO,None (Component implements Reviewer ID & Provenance),Type text,repro_06_feedback_success.png,CONFIRMED_REPORT_ERROR
+#submit-feedback-btn,NO,NO,button.btn (text "💾 Submit Feedback to API"),Click,repro_06_feedback_success.png,CONFIRMED_REPORT_ERROR

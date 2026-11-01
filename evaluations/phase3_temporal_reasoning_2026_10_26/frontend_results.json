@@ -1,0 +1,18 @@
+[
+  {
+    "command": "npm run lint",
+    "exit_code": 0
+  },
+  {
+    "command": "npm run build",
+    "exit_code": 1
+  },
+  {
+    "command": "npm run test:workflow",
+    "exit_code": 0
+  },
+  {
+    "command": "npm run test:alignment",
+    "exit_code": 0
+  }
+]

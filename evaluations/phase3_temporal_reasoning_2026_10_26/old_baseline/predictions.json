@@ -1,0 +1,2513 @@
+[
+  {
+    "case": {
+      "case_id": "T01",
+      "family": "date_term",
+      "split": "EXPOSED_DEVELOPMENT",
+      "label_provenance": "MECHANICALLY_VERIFIABLE_SYNTHETIC",
+      "independently_adjudicated": false,
+      "source_document": "cases/T01.txt",
+      "clauses": [
+        "Section 1. Term\nThe Effective Date is 2026-01-01.",
+        "Section 2. End\nThe Termination Date is 2026-12-31."
+      ],
+      "expected_authored_units": 2,
+      "task_labels": {
+        "date_chronology": false
+      },
+      "facts": {
+        "declarations": [],
+        "references": [],
+        "date_scopes": [
+          [
+            "one_agreement",
+            "2026-01-01",
+            "2026-12-31"
+          ]
+        ],
+        "range_pairs": null
+      },
+      "expected_graph_review": null,
+      "stratum": "canonical",
+      "interpretation": "",
+      "origin": "Agent-authored controlled synthetic text; no expert legal review."
+    },
+    "mode": "authored",
+    "flags": [],
+    "dates": [
+      {
+        "role": "EFFECTIVE_DATE",
+        "raw_text": "2026-01-01",
+        "parsed_iso": "2026-01-01",
+        "clause_id": "baseline_T01_authored_0",
+        "char_start": 38,
+        "char_end": 48
+      },
+      {
+        "role": "TERMINATION_DATE",
+        "raw_text": "2026-12-31",
+        "parsed_iso": "2026-12-31",
+        "clause_id": "baseline_T01_authored_1",
+        "char_start": 90,
+        "char_end": 100
+      }
+    ]
+  },
+  {
+    "case": {
+      "case_id": "T01",
+      "family": "date_term",
+      "split": "EXPOSED_DEVELOPMENT",
+      "label_provenance": "MECHANICALLY_VERIFIABLE_SYNTHETIC",
+      "independently_adjudicated": false,
+      "source_document": "cases/T01.txt",
+      "clauses": [
+        "Section 1. Term\nThe Effective Date is 2026-01-01.",
+        "Section 2. End\nThe Termination Date is 2026-12-31."
+      ],
+      "expected_authored_units": 2,
+      "task_labels": {
+        "date_chronology": false
+      },
+      "facts": {
+        "declarations": [],
+        "references": [],
+        "date_scopes": [
+          [
+            "one_agreement",
+            "2026-01-01",
+            "2026-12-31"
+          ]
+        ],
+        "range_pairs": null
+      },
+      "expected_graph_review": null,
+      "stratum": "canonical",
+      "interpretation": "",
+      "origin": "Agent-authored controlled synthetic text; no expert legal review."
+    },
+    "mode": "txt",
+    "flags": [],
+    "dates": [
+      {
+        "role": "EFFECTIVE_DATE",
+        "raw_text": "2026-01-01",
+        "parsed_iso": "2026-01-01",
+        "clause_id": "baseline_T01_txt_0",
+        "char_start": 38,
+        "char_end": 48
+      },
+      {
+        "role": "TERMINATION_DATE",
+        "raw_text": "2026-12-31",
+        "parsed_iso": "2026-12-31",
+        "clause_id": "baseline_T01_txt_1",
+        "char_start": 90,
+        "char_end": 100
+      }
+    ]
+  },
+  {
+    "case": {
+      "case_id": "T02",
+      "family": "date_term",
+      "split": "EXPOSED_DEVELOPMENT",
+      "label_provenance": "MECHANICALLY_VERIFIABLE_SYNTHETIC",
+      "independently_adjudicated": false,
+      "source_document": "cases/T02.txt",
+      "clauses": [
+        "Section 1. Term\nThe Effective Date is 2026-12-31.",
+        "Section 2. End\nThe Termination Date is 2026-01-01."
+      ],
+      "expected_authored_units": 2,
+      "task_labels": {
+        "date_chronology": true
+      },
+      "facts": {
+        "declarations": [],
+        "references": [],
+        "date_scopes": [
+          [
+            "one_agreement",
+            "2026-12-31",
+            "2026-01-01"
+          ]
+        ],
+        "range_pairs": null
+      },
+      "expected_graph_review": null,
+      "stratum": "canonical",
+      "interpretation": "",
+      "origin": "Agent-authored controlled synthetic text; no expert legal review."
+    },
+    "mode": "authored",
+    "flags": [
+      {
+        "flag_id": "FLAG_DATE_baseline_T02_authored_001",
+        "doc_id": "baseline_T02_authored",
+        "flag_type": "INVERTED_CONTRACT_TERM",
+        "category": "RULE_BASED",
+        "severity": "HIGH",
+        "title": "Illogical Term: Effective Date after Termination Date",
+        "description": "Effective Date '2026-12-31' (2026-12-31) in clause 'baseline_T02_authored_0' is 364 days after Termination Date '2026-01-01' (2026-01-01) in clause 'baseline_T02_authored_1'.",
+        "clause_id": "baseline_T02_authored_0",
+        "involved_clause_ids": [
+          "baseline_T02_authored_1",
+          "baseline_T02_authored_0"
+        ],
+        "evidence": {
+          "effective_date": "2026-12-31",
+          "termination_date": "2026-01-01",
+          "effective_raw": "2026-12-31",
+          "termination_raw": "2026-01-01",
+          "delta_days": -364
+        },
+        "claim_scope": {
+          "what_this_shows": "The parsed contract effective date is chronologically after the stated termination/expiration date.",
+          "what_this_does_not_show": "Does not evaluate if subsequent amendments or side letters extend the term."
+        }
+      }
+    ],
+    "dates": [
+      {
+        "role": "EFFECTIVE_DATE",
+        "raw_text": "2026-12-31",
+        "parsed_iso": "2026-12-31",
+        "clause_id": "baseline_T02_authored_0",
+        "char_start": 38,
+        "char_end": 48
+      },
+      {
+        "role": "TERMINATION_DATE",
+        "raw_text": "2026-01-01",
+        "parsed_iso": "2026-01-01",
+        "clause_id": "baseline_T02_authored_1",
+        "char_start": 90,
+        "char_end": 100
+      }
+    ]
+  },
+  {
+    "case": {
+      "case_id": "T02",
+      "family": "date_term",
+      "split": "EXPOSED_DEVELOPMENT",
+      "label_provenance": "MECHANICALLY_VERIFIABLE_SYNTHETIC",
+      "independently_adjudicated": false,
+      "source_document": "cases/T02.txt",
+      "clauses": [
+        "Section 1. Term\nThe Effective Date is 2026-12-31.",
+        "Section 2. End\nThe Termination Date is 2026-01-01."
+      ],
+      "expected_authored_units": 2,
+      "task_labels": {
+        "date_chronology": true
+      },
+      "facts": {
+        "declarations": [],
+        "references": [],
+        "date_scopes": [
+          [
+            "one_agreement",
+            "2026-12-31",
+            "2026-01-01"
+          ]
+        ],
+        "range_pairs": null
+      },
+      "expected_graph_review": null,
+      "stratum": "canonical",
+      "interpretation": "",
+      "origin": "Agent-authored controlled synthetic text; no expert legal review."
+    },
+    "mode": "txt",
+    "flags": [
+      {
+        "flag_id": "FLAG_DATE_baseline_T02_txt_001",
+        "doc_id": "baseline_T02_txt",
+        "flag_type": "INVERTED_CONTRACT_TERM",
+        "category": "RULE_BASED",
+        "severity": "HIGH",
+        "title": "Illogical Term: Effective Date after Termination Date",
+        "description": "Effective Date '2026-12-31' (2026-12-31) in clause 'baseline_T02_txt_0' is 364 days after Termination Date '2026-01-01' (2026-01-01) in clause 'baseline_T02_txt_1'.",
+        "clause_id": "baseline_T02_txt_0",
+        "involved_clause_ids": [
+          "baseline_T02_txt_1",
+          "baseline_T02_txt_0"
+        ],
+        "evidence": {
+          "effective_date": "2026-12-31",
+          "termination_date": "2026-01-01",
+          "effective_raw": "2026-12-31",
+          "termination_raw": "2026-01-01",
+          "delta_days": -364
+        },
+        "claim_scope": {
+          "what_this_shows": "The parsed contract effective date is chronologically after the stated termination/expiration date.",
+          "what_this_does_not_show": "Does not evaluate if subsequent amendments or side letters extend the term."
+        }
+      }
+    ],
+    "dates": [
+      {
+        "role": "EFFECTIVE_DATE",
+        "raw_text": "2026-12-31",
+        "parsed_iso": "2026-12-31",
+        "clause_id": "baseline_T02_txt_0",
+        "char_start": 38,
+        "char_end": 48
+      },
+      {
+        "role": "TERMINATION_DATE",
+        "raw_text": "2026-01-01",
+        "parsed_iso": "2026-01-01",
+        "clause_id": "baseline_T02_txt_1",
+        "char_start": 90,
+        "char_end": 100
+      }
+    ]
+  },
+  {
+    "case": {
+      "case_id": "T02",
+      "family": "date_term",
+      "split": "EXPOSED_DEVELOPMENT",
+      "label_provenance": "MECHANICALLY_VERIFIABLE_SYNTHETIC",
+      "independently_adjudicated": false,
+      "source_document": "cases/T02.txt",
+      "clauses": [
+        "Section 1. Term\nThe Effective Date is 2026-12-31.",
+        "Section 2. End\nThe Termination Date is 2026-01-01."
+      ],
+      "expected_authored_units": 2,
+      "task_labels": {
+        "date_chronology": true
+      },
+      "facts": {
+        "declarations": [],
+        "references": [],
+        "date_scopes": [
+          [
+            "one_agreement",
+            "2026-12-31",
+            "2026-01-01"
+          ]
+        ],
+        "range_pairs": null
+      },
+      "expected_graph_review": null,
+      "stratum": "canonical",
+      "interpretation": "",
+      "origin": "Agent-authored controlled synthetic text; no expert legal review."
+    },
+    "mode": "pdf",
+    "flags": [
+      {
+        "flag_id": "FLAG_DATE_baseline_T02_pdf_001",
+        "doc_id": "baseline_T02_pdf",
+        "flag_type": "INVERTED_CONTRACT_TERM",
+        "category": "RULE_BASED",
+        "severity": "HIGH",
+        "title": "Illogical Term: Effective Date after Termination Date",
+        "description": "Effective Date '2026-12-31' (2026-12-31) in clause 'baseline_T02_pdf_0' is 364 days after Termination Date '2026-01-01' (2026-01-01) in clause 'baseline_T02_pdf_1'.",
+        "clause_id": "baseline_T02_pdf_0",
+        "involved_clause_ids": [
+          "baseline_T02_pdf_0",
+          "baseline_T02_pdf_1"
+        ],
+        "evidence": {
+          "effective_date": "2026-12-31",
+          "termination_date": "2026-01-01",
+          "effective_raw": "2026-12-31",
+          "termination_raw": "2026-01-01",
+          "delta_days": -364
+        },
+        "claim_scope": {
+          "what_this_shows": "The parsed contract effective date is chronologically after the stated termination/expiration date.",
+          "what_this_does_not_show": "Does not evaluate if subsequent amendments or side letters extend the term."
+        }
+      }
+    ],
+    "dates": [
+      {
+        "role": "EFFECTIVE_DATE",
+        "raw_text": "2026-12-31",
+        "parsed_iso": "2026-12-31",
+        "clause_id": "baseline_T02_pdf_0",
+        "char_start": 38,
+        "char_end": 48
+      },
+      {
+        "role": "TERMINATION_DATE",
+        "raw_text": "2026-01-01",
+        "parsed_iso": "2026-01-01",
+        "clause_id": "baseline_T02_pdf_1",
+        "char_start": 89,
+        "char_end": 99
+      }
+    ]
+  },
+  {
+    "case": {
+      "case_id": "T02",
+      "family": "date_term",
+      "split": "EXPOSED_DEVELOPMENT",
+      "label_provenance": "MECHANICALLY_VERIFIABLE_SYNTHETIC",
+      "independently_adjudicated": false,
+      "source_document": "cases/T02.txt",
+      "clauses": [
+        "Section 1. Term\nThe Effective Date is 2026-12-31.",
+        "Section 2. End\nThe Termination Date is 2026-01-01."
+      ],
+      "expected_authored_units": 2,
+      "task_labels": {
+        "date_chronology": true
+      },
+      "facts": {
+        "declarations": [],
+        "references": [],
+        "date_scopes": [
+          [
+            "one_agreement",
+            "2026-12-31",
+            "2026-01-01"
+          ]
+        ],
+        "range_pairs": null
+      },
+      "expected_graph_review": null,
+      "stratum": "canonical",
+      "interpretation": "",
+      "origin": "Agent-authored controlled synthetic text; no expert legal review."
+    },
+    "mode": "docx",
+    "flags": [
+      {
+        "flag_id": "FLAG_DATE_baseline_T02_docx_001",
+        "doc_id": "baseline_T02_docx",
+        "flag_type": "INVERTED_CONTRACT_TERM",
+        "category": "RULE_BASED",
+        "severity": "HIGH",
+        "title": "Illogical Term: Effective Date after Termination Date",
+        "description": "Effective Date '2026-12-31' (2026-12-31) in clause 'baseline_T02_docx_0' is 364 days after Termination Date '2026-01-01' (2026-01-01) in clause 'baseline_T02_docx_1'.",
+        "clause_id": "baseline_T02_docx_0",
+        "involved_clause_ids": [
+          "baseline_T02_docx_1",
+          "baseline_T02_docx_0"
+        ],
+        "evidence": {
+          "effective_date": "2026-12-31",
+          "termination_date": "2026-01-01",
+          "effective_raw": "2026-12-31",
+          "termination_raw": "2026-01-01",
+          "delta_days": -364
+        },
+        "claim_scope": {
+          "what_this_shows": "The parsed contract effective date is chronologically after the stated termination/expiration date.",
+          "what_this_does_not_show": "Does not evaluate if subsequent amendments or side letters extend the term."
+        }
+      }
+    ],
+    "dates": [
+      {
+        "role": "EFFECTIVE_DATE",
+        "raw_text": "2026-12-31",
+        "parsed_iso": "2026-12-31",
+        "clause_id": "baseline_T02_docx_0",
+        "char_start": 38,
+        "char_end": 48
+      },
+      {
+        "role": "TERMINATION_DATE",
+        "raw_text": "2026-01-01",
+        "parsed_iso": "2026-01-01",
+        "clause_id": "baseline_T02_docx_1",
+        "char_start": 90,
+        "char_end": 100
+      }
+    ]
+  },
+  {
+    "case": {
+      "case_id": "T03",
+      "family": "date_term",
+      "split": "EXPOSED_DEVELOPMENT",
+      "label_provenance": "MECHANICALLY_VERIFIABLE_SYNTHETIC",
+      "independently_adjudicated": false,
+      "source_document": "cases/T03.txt",
+      "clauses": [
+        "Section 1. Term\nThe Effective Date is January 01, 2026.",
+        "Section 2. End\nThe Termination Date is December 31, 2026."
+      ],
+      "expected_authored_units": 2,
+      "task_labels": {
+        "date_chronology": false
+      },
+      "facts": {
+        "declarations": [],
+        "references": [],
+        "date_scopes": [
+          [
+            "one_agreement",
+            "2026-01-01",
+            "2026-12-31"
+          ]
+        ],
+        "range_pairs": null
+      },
+      "expected_graph_review": null,
+      "stratum": "canonical",
+      "interpretation": "",
+      "origin": "Agent-authored controlled synthetic text; no expert legal review."
+    },
+    "mode": "authored",
+    "flags": [],
+    "dates": [
+      {
+        "role": "EFFECTIVE_DATE",
+        "raw_text": "January 01, 2026",
+        "parsed_iso": "2026-01-01",
+        "clause_id": "baseline_T03_authored_0",
+        "char_start": 38,
+        "char_end": 54
+      },
+      {
+        "role": "TERMINATION_DATE",
+        "raw_text": "December 31, 2026",
+        "parsed_iso": "2026-12-31",
+        "clause_id": "baseline_T03_authored_1",
+        "char_start": 96,
+        "char_end": 113
+      }
+    ]
+  },
+  {
+    "case": {
+      "case_id": "T03",
+      "family": "date_term",
+      "split": "EXPOSED_DEVELOPMENT",
+      "label_provenance": "MECHANICALLY_VERIFIABLE_SYNTHETIC",
+      "independently_adjudicated": false,
+      "source_document": "cases/T03.txt",
+      "clauses": [
+        "Section 1. Term\nThe Effective Date is January 01, 2026.",
+        "Section 2. End\nThe Termination Date is December 31, 2026."
+      ],
+      "expected_authored_units": 2,
+      "task_labels": {
+        "date_chronology": false
+      },
+      "facts": {
+        "declarations": [],
+        "references": [],
+        "date_scopes": [
+          [
+            "one_agreement",
+            "2026-01-01",
+            "2026-12-31"
+          ]
+        ],
+        "range_pairs": null
+      },
+      "expected_graph_review": null,
+      "stratum": "canonical",
+      "interpretation": "",
+      "origin": "Agent-authored controlled synthetic text; no expert legal review."
+    },
+    "mode": "txt",
+    "flags": [],
+    "dates": [
+      {
+        "role": "EFFECTIVE_DATE",
+        "raw_text": "January 01, 2026",
+        "parsed_iso": "2026-01-01",
+        "clause_id": "baseline_T03_txt_0",
+        "char_start": 38,
+        "char_end": 54
+      },
+      {
+        "role": "TERMINATION_DATE",
+        "raw_text": "December 31, 2026",
+        "parsed_iso": "2026-12-31",
+        "clause_id": "baseline_T03_txt_1",
+        "char_start": 96,
+        "char_end": 113
+      }
+    ]
+  },
+  {
+    "case": {
+      "case_id": "T04",
+      "family": "date_term",
+      "split": "EXPOSED_DEVELOPMENT",
+      "label_provenance": "MECHANICALLY_VERIFIABLE_SYNTHETIC",
+      "independently_adjudicated": false,
+      "source_document": "cases/T04.txt",
+      "clauses": [
+        "Section 1. Term\nThe Effective Date is December 31, 2026.",
+        "Section 2. End\nThe Termination Date is January 01, 2026."
+      ],
+      "expected_authored_units": 2,
+      "task_labels": {
+        "date_chronology": true
+      },
+      "facts": {
+        "declarations": [],
+        "references": [],
+        "date_scopes": [
+          [
+            "one_agreement",
+            "2026-12-31",
+            "2026-01-01"
+          ]
+        ],
+        "range_pairs": null
+      },
+      "expected_graph_review": null,
+      "stratum": "canonical",
+      "interpretation": "",
+      "origin": "Agent-authored controlled synthetic text; no expert legal review."
+    },
+    "mode": "authored",
+    "flags": [
+      {
+        "flag_id": "FLAG_DATE_baseline_T04_authored_001",
+        "doc_id": "baseline_T04_authored",
+        "flag_type": "INVERTED_CONTRACT_TERM",
+        "category": "RULE_BASED",
+        "severity": "HIGH",
+        "title": "Illogical Term: Effective Date after Termination Date",
+        "description": "Effective Date 'December 31, 2026' (2026-12-31) in clause 'baseline_T04_authored_0' is 364 days after Termination Date 'January 01, 2026' (2026-01-01) in clause 'baseline_T04_authored_1'.",
+        "clause_id": "baseline_T04_authored_0",
+        "involved_clause_ids": [
+          "baseline_T04_authored_1",
+          "baseline_T04_authored_0"
+        ],
+        "evidence": {
+          "effective_date": "2026-12-31",
+          "termination_date": "2026-01-01",
+          "effective_raw": "December 31, 2026",
+          "termination_raw": "January 01, 2026",
+          "delta_days": -364
+        },
+        "claim_scope": {
+          "what_this_shows": "The parsed contract effective date is chronologically after the stated termination/expiration date.",
+          "what_this_does_not_show": "Does not evaluate if subsequent amendments or side letters extend the term."
+        }
+      }
+    ],
+    "dates": [
+      {
+        "role": "EFFECTIVE_DATE",
+        "raw_text": "December 31, 2026",
+        "parsed_iso": "2026-12-31",
+        "clause_id": "baseline_T04_authored_0",
+        "char_start": 38,
+        "char_end": 55
+      },
+      {
+        "role": "TERMINATION_DATE",
+        "raw_text": "January 01, 2026",
+        "parsed_iso": "2026-01-01",
+        "clause_id": "baseline_T04_authored_1",
+        "char_start": 97,
+        "char_end": 113
+      }
+    ]
+  },
+  {
+    "case": {
+      "case_id": "T04",
+      "family": "date_term",
+      "split": "EXPOSED_DEVELOPMENT",
+      "label_provenance": "MECHANICALLY_VERIFIABLE_SYNTHETIC",
+      "independently_adjudicated": false,
+      "source_document": "cases/T04.txt",
+      "clauses": [
+        "Section 1. Term\nThe Effective Date is December 31, 2026.",
+        "Section 2. End\nThe Termination Date is January 01, 2026."
+      ],
+      "expected_authored_units": 2,
+      "task_labels": {
+        "date_chronology": true
+      },
+      "facts": {
+        "declarations": [],
+        "references": [],
+        "date_scopes": [
+          [
+            "one_agreement",
+            "2026-12-31",
+            "2026-01-01"
+          ]
+        ],
+        "range_pairs": null
+      },
+      "expected_graph_review": null,
+      "stratum": "canonical",
+      "interpretation": "",
+      "origin": "Agent-authored controlled synthetic text; no expert legal review."
+    },
+    "mode": "txt",
+    "flags": [
+      {
+        "flag_id": "FLAG_DATE_baseline_T04_txt_001",
+        "doc_id": "baseline_T04_txt",
+        "flag_type": "INVERTED_CONTRACT_TERM",
+        "category": "RULE_BASED",
+        "severity": "HIGH",
+        "title": "Illogical Term: Effective Date after Termination Date",
+        "description": "Effective Date 'December 31, 2026' (2026-12-31) in clause 'baseline_T04_txt_0' is 364 days after Termination Date 'January 01, 2026' (2026-01-01) in clause 'baseline_T04_txt_1'.",
+        "clause_id": "baseline_T04_txt_0",
+        "involved_clause_ids": [
+          "baseline_T04_txt_1",
+          "baseline_T04_txt_0"
+        ],
+        "evidence": {
+          "effective_date": "2026-12-31",
+          "termination_date": "2026-01-01",
+          "effective_raw": "December 31, 2026",
+          "termination_raw": "January 01, 2026",
+          "delta_days": -364
+        },
+        "claim_scope": {
+          "what_this_shows": "The parsed contract effective date is chronologically after the stated termination/expiration date.",
+          "what_this_does_not_show": "Does not evaluate if subsequent amendments or side letters extend the term."
+        }
+      }
+    ],
+    "dates": [
+      {
+        "role": "EFFECTIVE_DATE",
+        "raw_text": "December 31, 2026",
+        "parsed_iso": "2026-12-31",
+        "clause_id": "baseline_T04_txt_0",
+        "char_start": 38,
+        "char_end": 55
+      },
+      {
+        "role": "TERMINATION_DATE",
+        "raw_text": "January 01, 2026",
+        "parsed_iso": "2026-01-01",
+        "clause_id": "baseline_T04_txt_1",
+        "char_start": 97,
+        "char_end": 113
+      }
+    ]
+  },
+  {
+    "case": {
+      "case_id": "T05",
+      "family": "date_range",
+      "split": "EXPOSED_DEVELOPMENT",
+      "label_provenance": "MECHANICALLY_VERIFIABLE_SYNTHETIC",
+      "independently_adjudicated": false,
+      "source_document": "cases/T05.txt",
+      "clauses": [
+        "Section 1. Service period\nService runs from 2026-01-01 to 2026-12-31."
+      ],
+      "expected_authored_units": 1,
+      "task_labels": {
+        "date_chronology": false
+      },
+      "facts": {
+        "declarations": [],
+        "references": [],
+        "date_scopes": null,
+        "range_pairs": [
+          [
+            "2026-01-01",
+            "2026-12-31"
+          ]
+        ]
+      },
+      "expected_graph_review": null,
+      "stratum": "canonical",
+      "interpretation": "",
+      "origin": "Agent-authored controlled synthetic text; no expert legal review."
+    },
+    "mode": "authored",
+    "flags": [],
+    "dates": [
+      {
+        "role": "GENERAL_DATE",
+        "raw_text": "2026-01-01",
+        "parsed_iso": "2026-01-01",
+        "clause_id": "baseline_T05_authored_0",
+        "char_start": 44,
+        "char_end": 54
+      },
+      {
+        "role": "GENERAL_DATE",
+        "raw_text": "2026-12-31",
+        "parsed_iso": "2026-12-31",
+        "clause_id": "baseline_T05_authored_0",
+        "char_start": 58,
+        "char_end": 68
+      }
+    ]
+  },
+  {
+    "case": {
+      "case_id": "T05",
+      "family": "date_range",
+      "split": "EXPOSED_DEVELOPMENT",
+      "label_provenance": "MECHANICALLY_VERIFIABLE_SYNTHETIC",
+      "independently_adjudicated": false,
+      "source_document": "cases/T05.txt",
+      "clauses": [
+        "Section 1. Service period\nService runs from 2026-01-01 to 2026-12-31."
+      ],
+      "expected_authored_units": 1,
+      "task_labels": {
+        "date_chronology": false
+      },
+      "facts": {
+        "declarations": [],
+        "references": [],
+        "date_scopes": null,
+        "range_pairs": [
+          [
+            "2026-01-01",
+            "2026-12-31"
+          ]
+        ]
+      },
+      "expected_graph_review": null,
+      "stratum": "canonical",
+      "interpretation": "",
+      "origin": "Agent-authored controlled synthetic text; no expert legal review."
+    },
+    "mode": "txt",
+    "flags": [],
+    "dates": [
+      {
+        "role": "GENERAL_DATE",
+        "raw_text": "2026-01-01",
+        "parsed_iso": "2026-01-01",
+        "clause_id": "baseline_T05_txt_0",
+        "char_start": 44,
+        "char_end": 54
+      },
+      {
+        "role": "GENERAL_DATE",
+        "raw_text": "2026-12-31",
+        "parsed_iso": "2026-12-31",
+        "clause_id": "baseline_T05_txt_0",
+        "char_start": 58,
+        "char_end": 68
+      }
+    ]
+  },
+  {
+    "case": {
+      "case_id": "T06",
+      "family": "date_range",
+      "split": "EXPOSED_DEVELOPMENT",
+      "label_provenance": "MECHANICALLY_VERIFIABLE_SYNTHETIC",
+      "independently_adjudicated": false,
+      "source_document": "cases/T06.txt",
+      "clauses": [
+        "Section 1. Service period\nService runs from 2026-12-31 to 2026-01-01."
+      ],
+      "expected_authored_units": 1,
+      "task_labels": {
+        "date_chronology": true
+      },
+      "facts": {
+        "declarations": [],
+        "references": [],
+        "date_scopes": null,
+        "range_pairs": [
+          [
+            "2026-12-31",
+            "2026-01-01"
+          ]
+        ]
+      },
+      "expected_graph_review": null,
+      "stratum": "canonical",
+      "interpretation": "",
+      "origin": "Agent-authored controlled synthetic text; no expert legal review."
+    },
+    "mode": "authored",
+    "flags": [
+      {
+        "flag_id": "FLAG_DATE_baseline_T06_authored_001",
+        "doc_id": "baseline_T06_authored",
+        "flag_type": "INVERTED_DATE_RANGE",
+        "category": "RULE_BASED",
+        "severity": "HIGH",
+        "title": "Inverted Date Span in Clause",
+        "description": "Clause 'baseline_T06_authored_0' specifies an inverted date range: Start date '2026-12-31' (2026-12-31) occurs 364 days after end date '2026-01-01' (2026-01-01).",
+        "clause_id": "baseline_T06_authored_0",
+        "involved_clause_ids": [
+          "baseline_T06_authored_0"
+        ],
+        "evidence": {
+          "start_date": "2026-12-31",
+          "end_date": "2026-01-01",
+          "delta_days": -364,
+          "start_raw": "2026-12-31",
+          "end_raw": "2026-01-01"
+        },
+        "claim_scope": {
+          "what_this_shows": "Chronological parsing identified that the stated start date occurs after the stated end date.",
+          "what_this_does_not_show": "Does not determine whether this is a drafting typo or an intentional retrospective clause."
+        }
+      }
+    ],
+    "dates": [
+      {
+        "role": "GENERAL_DATE",
+        "raw_text": "2026-12-31",
+        "parsed_iso": "2026-12-31",
+        "clause_id": "baseline_T06_authored_0",
+        "char_start": 44,
+        "char_end": 54
+      },
+      {
+        "role": "GENERAL_DATE",
+        "raw_text": "2026-01-01",
+        "parsed_iso": "2026-01-01",
+        "clause_id": "baseline_T06_authored_0",
+        "char_start": 58,
+        "char_end": 68
+      }
+    ]
+  },
+  {
+    "case": {
+      "case_id": "T06",
+      "family": "date_range",
+      "split": "EXPOSED_DEVELOPMENT",
+      "label_provenance": "MECHANICALLY_VERIFIABLE_SYNTHETIC",
+      "independently_adjudicated": false,
+      "source_document": "cases/T06.txt",
+      "clauses": [
+        "Section 1. Service period\nService runs from 2026-12-31 to 2026-01-01."
+      ],
+      "expected_authored_units": 1,
+      "task_labels": {
+        "date_chronology": true
+      },
+      "facts": {
+        "declarations": [],
+        "references": [],
+        "date_scopes": null,
+        "range_pairs": [
+          [
+            "2026-12-31",
+            "2026-01-01"
+          ]
+        ]
+      },
+      "expected_graph_review": null,
+      "stratum": "canonical",
+      "interpretation": "",
+      "origin": "Agent-authored controlled synthetic text; no expert legal review."
+    },
+    "mode": "txt",
+    "flags": [
+      {
+        "flag_id": "FLAG_DATE_baseline_T06_txt_001",
+        "doc_id": "baseline_T06_txt",
+        "flag_type": "INVERTED_DATE_RANGE",
+        "category": "RULE_BASED",
+        "severity": "HIGH",
+        "title": "Inverted Date Span in Clause",
+        "description": "Clause 'baseline_T06_txt_0' specifies an inverted date range: Start date '2026-12-31' (2026-12-31) occurs 364 days after end date '2026-01-01' (2026-01-01).",
+        "clause_id": "baseline_T06_txt_0",
+        "involved_clause_ids": [
+          "baseline_T06_txt_0"
+        ],
+        "evidence": {
+          "start_date": "2026-12-31",
+          "end_date": "2026-01-01",
+          "delta_days": -364,
+          "start_raw": "2026-12-31",
+          "end_raw": "2026-01-01"
+        },
+        "claim_scope": {
+          "what_this_shows": "Chronological parsing identified that the stated start date occurs after the stated end date.",
+          "what_this_does_not_show": "Does not determine whether this is a drafting typo or an intentional retrospective clause."
+        }
+      }
+    ],
+    "dates": [
+      {
+        "role": "GENERAL_DATE",
+        "raw_text": "2026-12-31",
+        "parsed_iso": "2026-12-31",
+        "clause_id": "baseline_T06_txt_0",
+        "char_start": 44,
+        "char_end": 54
+      },
+      {
+        "role": "GENERAL_DATE",
+        "raw_text": "2026-01-01",
+        "parsed_iso": "2026-01-01",
+        "clause_id": "baseline_T06_txt_0",
+        "char_start": 58,
+        "char_end": 68
+      }
+    ]
+  },
+  {
+    "case": {
+      "case_id": "T07",
+      "family": "date_independent_events",
+      "split": "EXPOSED_DEVELOPMENT",
+      "label_provenance": "MECHANICALLY_VERIFIABLE_SYNTHETIC",
+      "independently_adjudicated": false,
+      "source_document": "cases/T07.txt",
+      "clauses": [
+        "Section 1. Archive\nThe archive records December 31, 2026 and October 1, 2026 as independent review dates, without an ordered service interval."
+      ],
+      "expected_authored_units": 1,
+      "task_labels": {
+        "date_chronology": false
+      },
+      "facts": {
+        "declarations": [],
+        "references": [],
+        "date_scopes": null,
+        "range_pairs": []
+      },
+      "expected_graph_review": null,
+      "stratum": "canonical",
+      "interpretation": "",
+      "origin": "Agent-authored controlled synthetic text; no expert legal review."
+    },
+    "mode": "authored",
+    "flags": [],
+    "dates": [
+      {
+        "role": "GENERAL_DATE",
+        "raw_text": "December 31, 2026",
+        "parsed_iso": "2026-12-31",
+        "clause_id": "baseline_T07_authored_0",
+        "char_start": 39,
+        "char_end": 56
+      },
+      {
+        "role": "GENERAL_DATE",
+        "raw_text": "October 1, 2026",
+        "parsed_iso": "2026-10-01",
+        "clause_id": "baseline_T07_authored_0",
+        "char_start": 61,
+        "char_end": 76
+      }
+    ]
+  },
+  {
+    "case": {
+      "case_id": "T07",
+      "family": "date_independent_events",
+      "split": "EXPOSED_DEVELOPMENT",
+      "label_provenance": "MECHANICALLY_VERIFIABLE_SYNTHETIC",
+      "independently_adjudicated": false,
+      "source_document": "cases/T07.txt",
+      "clauses": [
+        "Section 1. Archive\nThe archive records December 31, 2026 and October 1, 2026 as independent review dates, without an ordered service interval."
+      ],
+      "expected_authored_units": 1,
+      "task_labels": {
+        "date_chronology": false
+      },
+      "facts": {
+        "declarations": [],
+        "references": [],
+        "date_scopes": null,
+        "range_pairs": []
+      },
+      "expected_graph_review": null,
+      "stratum": "canonical",
+      "interpretation": "",
+      "origin": "Agent-authored controlled synthetic text; no expert legal review."
+    },
+    "mode": "txt",
+    "flags": [],
+    "dates": [
+      {
+        "role": "GENERAL_DATE",
+        "raw_text": "December 31, 2026",
+        "parsed_iso": "2026-12-31",
+        "clause_id": "baseline_T07_txt_0",
+        "char_start": 39,
+        "char_end": 56
+      },
+      {
+        "role": "GENERAL_DATE",
+        "raw_text": "October 1, 2026",
+        "parsed_iso": "2026-10-01",
+        "clause_id": "baseline_T07_txt_0",
+        "char_start": 61,
+        "char_end": 76
+      }
+    ]
+  },
+  {
+    "case": {
+      "case_id": "T08",
+      "family": "date_independent_events",
+      "split": "EXPOSED_DEVELOPMENT",
+      "label_provenance": "MECHANICALLY_VERIFIABLE_SYNTHETIC",
+      "independently_adjudicated": false,
+      "source_document": "cases/T08.txt",
+      "clauses": [
+        "Section 1. Archive\nThe record dated December 31, 2026 relates to a separate historical entry dated January 1, 2026."
+      ],
+      "expected_authored_units": 1,
+      "task_labels": {
+        "date_chronology": false
+      },
+      "facts": {
+        "declarations": [],
+        "references": [],
+        "date_scopes": null,
+        "range_pairs": []
+      },
+      "expected_graph_review": null,
+      "stratum": "challenge",
+      "interpretation": "The substring \"to\" is not evidence of an ordered date range.",
+      "origin": "Agent-authored controlled synthetic text; no expert legal review."
+    },
+    "mode": "authored",
+    "flags": [
+      {
+        "flag_id": "FLAG_DATE_baseline_T08_authored_001",
+        "doc_id": "baseline_T08_authored",
+        "flag_type": "INVERTED_DATE_RANGE",
+        "category": "RULE_BASED",
+        "severity": "HIGH",
+        "title": "Inverted Date Span in Clause",
+        "description": "Clause 'baseline_T08_authored_0' specifies an inverted date range: Start date 'December 31, 2026' (2026-12-31) occurs 364 days after end date 'January 1, 2026' (2026-01-01).",
+        "clause_id": "baseline_T08_authored_0",
+        "involved_clause_ids": [
+          "baseline_T08_authored_0"
+        ],
+        "evidence": {
+          "start_date": "2026-12-31",
+          "end_date": "2026-01-01",
+          "delta_days": -364,
+          "start_raw": "December 31, 2026",
+          "end_raw": "January 1, 2026"
+        },
+        "claim_scope": {
+          "what_this_shows": "Chronological parsing identified that the stated start date occurs after the stated end date.",
+          "what_this_does_not_show": "Does not determine whether this is a drafting typo or an intentional retrospective clause."
+        }
+      }
+    ],
+    "dates": [
+      {
+        "role": "GENERAL_DATE",
+        "raw_text": "December 31, 2026",
+        "parsed_iso": "2026-12-31",
+        "clause_id": "baseline_T08_authored_0",
+        "char_start": 36,
+        "char_end": 53
+      },
+      {
+        "role": "GENERAL_DATE",
+        "raw_text": "January 1, 2026",
+        "parsed_iso": "2026-01-01",
+        "clause_id": "baseline_T08_authored_0",
+        "char_start": 99,
+        "char_end": 114
+      }
+    ]
+  },
+  {
+    "case": {
+      "case_id": "T08",
+      "family": "date_independent_events",
+      "split": "EXPOSED_DEVELOPMENT",
+      "label_provenance": "MECHANICALLY_VERIFIABLE_SYNTHETIC",
+      "independently_adjudicated": false,
+      "source_document": "cases/T08.txt",
+      "clauses": [
+        "Section 1. Archive\nThe record dated December 31, 2026 relates to a separate historical entry dated January 1, 2026."
+      ],
+      "expected_authored_units": 1,
+      "task_labels": {
+        "date_chronology": false
+      },
+      "facts": {
+        "declarations": [],
+        "references": [],
+        "date_scopes": null,
+        "range_pairs": []
+      },
+      "expected_graph_review": null,
+      "stratum": "challenge",
+      "interpretation": "The substring \"to\" is not evidence of an ordered date range.",
+      "origin": "Agent-authored controlled synthetic text; no expert legal review."
+    },
+    "mode": "txt",
+    "flags": [
+      {
+        "flag_id": "FLAG_DATE_baseline_T08_txt_001",
+        "doc_id": "baseline_T08_txt",
+        "flag_type": "INVERTED_DATE_RANGE",
+        "category": "RULE_BASED",
+        "severity": "HIGH",
+        "title": "Inverted Date Span in Clause",
+        "description": "Clause 'baseline_T08_txt_0' specifies an inverted date range: Start date 'December 31, 2026' (2026-12-31) occurs 364 days after end date 'January 1, 2026' (2026-01-01).",
+        "clause_id": "baseline_T08_txt_0",
+        "involved_clause_ids": [
+          "baseline_T08_txt_0"
+        ],
+        "evidence": {
+          "start_date": "2026-12-31",
+          "end_date": "2026-01-01",
+          "delta_days": -364,
+          "start_raw": "December 31, 2026",
+          "end_raw": "January 1, 2026"
+        },
+        "claim_scope": {
+          "what_this_shows": "Chronological parsing identified that the stated start date occurs after the stated end date.",
+          "what_this_does_not_show": "Does not determine whether this is a drafting typo or an intentional retrospective clause."
+        }
+      }
+    ],
+    "dates": [
+      {
+        "role": "GENERAL_DATE",
+        "raw_text": "December 31, 2026",
+        "parsed_iso": "2026-12-31",
+        "clause_id": "baseline_T08_txt_0",
+        "char_start": 36,
+        "char_end": 53
+      },
+      {
+        "role": "GENERAL_DATE",
+        "raw_text": "January 1, 2026",
+        "parsed_iso": "2026-01-01",
+        "clause_id": "baseline_T08_txt_0",
+        "char_start": 99,
+        "char_end": 114
+      }
+    ]
+  },
+  {
+    "case": {
+      "case_id": "T09",
+      "family": "date_payment",
+      "split": "EXPOSED_DEVELOPMENT",
+      "label_provenance": "MECHANICALLY_VERIFIABLE_SYNTHETIC",
+      "independently_adjudicated": false,
+      "source_document": "cases/T09.txt",
+      "clauses": [
+        "Section 1. Effective date\nThe Effective Date is 2026-06-01.",
+        "Section 2. Payment\nPayment due on 2026-05-01."
+      ],
+      "expected_authored_units": 2,
+      "task_labels": {
+        "date_chronology": true
+      },
+      "facts": {
+        "declarations": [],
+        "references": [],
+        "date_scopes": [
+          [
+            "payment_before_effective_predicate",
+            "2026-06-01",
+            "2026-05-01"
+          ]
+        ],
+        "range_pairs": null
+      },
+      "expected_graph_review": null,
+      "stratum": "canonical",
+      "interpretation": "Task is the stated arithmetic predicate only, not legal invalidity of prepayments.",
+      "origin": "Agent-authored controlled synthetic text; no expert legal review."
+    },
+    "mode": "authored",
+    "flags": [
+      {
+        "flag_id": "FLAG_DATE_baseline_T09_authored_001",
+        "doc_id": "baseline_T09_authored",
+        "flag_type": "PAYMENT_BEFORE_EFFECTIVE_DATE",
+        "category": "RULE_BASED",
+        "severity": "HIGH",
+        "title": "Payment Due Before Contract Effective Date",
+        "description": "Payment due date '2026-05-01' (2026-05-01) in clause 'baseline_T09_authored_1' falls 31 days before contract Effective Date '2026-06-01' (2026-06-01).",
+        "clause_id": "baseline_T09_authored_1",
+        "involved_clause_ids": [
+          "baseline_T09_authored_1",
+          "baseline_T09_authored_0"
+        ],
+        "evidence": {
+          "payment_due_date": "2026-05-01",
+          "reference_date": "2026-06-01",
+          "reference_role": "EFFECTIVE_DATE",
+          "delta_days": 31
+        },
+        "claim_scope": {
+          "what_this_shows": "Scheduled payment date precedes the operational effective or execution date.",
+          "what_this_does_not_show": "Does not verify whether pre-contractual deposit agreements exist."
+        }
+      }
+    ],
+    "dates": [
+      {
+        "role": "EFFECTIVE_DATE",
+        "raw_text": "2026-06-01",
+        "parsed_iso": "2026-06-01",
+        "clause_id": "baseline_T09_authored_0",
+        "char_start": 48,
+        "char_end": 58
+      },
+      {
+        "role": "PAYMENT_DUE_DATE",
+        "raw_text": "2026-05-01",
+        "parsed_iso": "2026-05-01",
+        "clause_id": "baseline_T09_authored_1",
+        "char_start": 95,
+        "char_end": 105
+      }
+    ]
+  },
+  {
+    "case": {
+      "case_id": "T09",
+      "family": "date_payment",
+      "split": "EXPOSED_DEVELOPMENT",
+      "label_provenance": "MECHANICALLY_VERIFIABLE_SYNTHETIC",
+      "independently_adjudicated": false,
+      "source_document": "cases/T09.txt",
+      "clauses": [
+        "Section 1. Effective date\nThe Effective Date is 2026-06-01.",
+        "Section 2. Payment\nPayment due on 2026-05-01."
+      ],
+      "expected_authored_units": 2,
+      "task_labels": {
+        "date_chronology": true
+      },
+      "facts": {
+        "declarations": [],
+        "references": [],
+        "date_scopes": [
+          [
+            "payment_before_effective_predicate",
+            "2026-06-01",
+            "2026-05-01"
+          ]
+        ],
+        "range_pairs": null
+      },
+      "expected_graph_review": null,
+      "stratum": "canonical",
+      "interpretation": "Task is the stated arithmetic predicate only, not legal invalidity of prepayments.",
+      "origin": "Agent-authored controlled synthetic text; no expert legal review."
+    },
+    "mode": "txt",
+    "flags": [
+      {
+        "flag_id": "FLAG_DATE_baseline_T09_txt_001",
+        "doc_id": "baseline_T09_txt",
+        "flag_type": "PAYMENT_BEFORE_EFFECTIVE_DATE",
+        "category": "RULE_BASED",
+        "severity": "HIGH",
+        "title": "Payment Due Before Contract Effective Date",
+        "description": "Payment due date '2026-05-01' (2026-05-01) in clause 'baseline_T09_txt_1' falls 31 days before contract Effective Date '2026-06-01' (2026-06-01).",
+        "clause_id": "baseline_T09_txt_1",
+        "involved_clause_ids": [
+          "baseline_T09_txt_1",
+          "baseline_T09_txt_0"
+        ],
+        "evidence": {
+          "payment_due_date": "2026-05-01",
+          "reference_date": "2026-06-01",
+          "reference_role": "EFFECTIVE_DATE",
+          "delta_days": 31
+        },
+        "claim_scope": {
+          "what_this_shows": "Scheduled payment date precedes the operational effective or execution date.",
+          "what_this_does_not_show": "Does not verify whether pre-contractual deposit agreements exist."
+        }
+      }
+    ],
+    "dates": [
+      {
+        "role": "EFFECTIVE_DATE",
+        "raw_text": "2026-06-01",
+        "parsed_iso": "2026-06-01",
+        "clause_id": "baseline_T09_txt_0",
+        "char_start": 48,
+        "char_end": 58
+      },
+      {
+        "role": "PAYMENT_DUE_DATE",
+        "raw_text": "2026-05-01",
+        "parsed_iso": "2026-05-01",
+        "clause_id": "baseline_T09_txt_1",
+        "char_start": 95,
+        "char_end": 105
+      }
+    ]
+  },
+  {
+    "case": {
+      "case_id": "T10",
+      "family": "date_notice",
+      "split": "EXPOSED_DEVELOPMENT",
+      "label_provenance": "MECHANICALLY_VERIFIABLE_SYNTHETIC",
+      "independently_adjudicated": false,
+      "source_document": "cases/T10.txt",
+      "clauses": [
+        "Section 1. End\nThe Expiration Date is 2026-06-01.",
+        "Section 2. Notice\nNotice required by 2026-07-01."
+      ],
+      "expected_authored_units": 2,
+      "task_labels": {
+        "date_chronology": true
+      },
+      "facts": {
+        "declarations": [],
+        "references": [],
+        "date_scopes": [
+          [
+            "notice_before_end_predicate",
+            "2026-07-01",
+            "2026-06-01"
+          ]
+        ],
+        "range_pairs": null
+      },
+      "expected_graph_review": null,
+      "stratum": "canonical",
+      "interpretation": "",
+      "origin": "Agent-authored controlled synthetic text; no expert legal review."
+    },
+    "mode": "authored",
+    "flags": [
+      {
+        "flag_id": "FLAG_DATE_baseline_T10_authored_001",
+        "doc_id": "baseline_T10_authored",
+        "flag_type": "NOTICE_AFTER_EXPIRATION",
+        "category": "RULE_BASED",
+        "severity": "MEDIUM",
+        "title": "Notice Deadline Falls After Contract Expiration",
+        "description": "Notice deadline '2026-07-01' (2026-07-01) in clause 'baseline_T10_authored_1' is 30 days after contract expiration '2026-06-01' (2026-06-01).",
+        "clause_id": "baseline_T10_authored_1",
+        "involved_clause_ids": [
+          "baseline_T10_authored_1",
+          "baseline_T10_authored_0"
+        ],
+        "evidence": {
+          "notice_date": "2026-07-01",
+          "expiration_date": "2026-06-01",
+          "delta_days": -30
+        },
+        "claim_scope": {
+          "what_this_shows": "Notice deadline is scheduled after the contract has already expired.",
+          "what_this_does_not_show": "Does not account for post-termination survival clauses."
+        }
+      }
+    ],
+    "dates": [
+      {
+        "role": "EXPIRATION_DATE",
+        "raw_text": "2026-06-01",
+        "parsed_iso": "2026-06-01",
+        "clause_id": "baseline_T10_authored_0",
+        "char_start": 38,
+        "char_end": 48
+      },
+      {
+        "role": "NOTICE_DATE",
+        "raw_text": "2026-07-01",
+        "parsed_iso": "2026-07-01",
+        "clause_id": "baseline_T10_authored_1",
+        "char_start": 88,
+        "char_end": 98
+      }
+    ]
+  },
+  {
+    "case": {
+      "case_id": "T10",
+      "family": "date_notice",
+      "split": "EXPOSED_DEVELOPMENT",
+      "label_provenance": "MECHANICALLY_VERIFIABLE_SYNTHETIC",
+      "independently_adjudicated": false,
+      "source_document": "cases/T10.txt",
+      "clauses": [
+        "Section 1. End\nThe Expiration Date is 2026-06-01.",
+        "Section 2. Notice\nNotice required by 2026-07-01."
+      ],
+      "expected_authored_units": 2,
+      "task_labels": {
+        "date_chronology": true
+      },
+      "facts": {
+        "declarations": [],
+        "references": [],
+        "date_scopes": [
+          [
+            "notice_before_end_predicate",
+            "2026-07-01",
+            "2026-06-01"
+          ]
+        ],
+        "range_pairs": null
+      },
+      "expected_graph_review": null,
+      "stratum": "canonical",
+      "interpretation": "",
+      "origin": "Agent-authored controlled synthetic text; no expert legal review."
+    },
+    "mode": "txt",
+    "flags": [
+      {
+        "flag_id": "FLAG_DATE_baseline_T10_txt_001",
+        "doc_id": "baseline_T10_txt",
+        "flag_type": "NOTICE_AFTER_EXPIRATION",
+        "category": "RULE_BASED",
+        "severity": "MEDIUM",
+        "title": "Notice Deadline Falls After Contract Expiration",
+        "description": "Notice deadline '2026-07-01' (2026-07-01) in clause 'baseline_T10_txt_1' is 30 days after contract expiration '2026-06-01' (2026-06-01).",
+        "clause_id": "baseline_T10_txt_1",
+        "involved_clause_ids": [
+          "baseline_T10_txt_0",
+          "baseline_T10_txt_1"
+        ],
+        "evidence": {
+          "notice_date": "2026-07-01",
+          "expiration_date": "2026-06-01",
+          "delta_days": -30
+        },
+        "claim_scope": {
+          "what_this_shows": "Notice deadline is scheduled after the contract has already expired.",
+          "what_this_does_not_show": "Does not account for post-termination survival clauses."
+        }
+      }
+    ],
+    "dates": [
+      {
+        "role": "EXPIRATION_DATE",
+        "raw_text": "2026-06-01",
+        "parsed_iso": "2026-06-01",
+        "clause_id": "baseline_T10_txt_0",
+        "char_start": 38,
+        "char_end": 48
+      },
+      {
+        "role": "NOTICE_DATE",
+        "raw_text": "2026-07-01",
+        "parsed_iso": "2026-07-01",
+        "clause_id": "baseline_T10_txt_1",
+        "char_start": 88,
+        "char_end": 98
+      }
+    ]
+  },
+  {
+    "case": {
+      "case_id": "T11",
+      "family": "ambiguous_date_format",
+      "split": "EXPOSED_DEVELOPMENT",
+      "label_provenance": "PROVISIONAL_HUMAN_REVIEW",
+      "independently_adjudicated": false,
+      "source_document": "cases/T11.txt",
+      "clauses": [
+        "Section 1. Term\nThe Effective Date is 03/04/2026.",
+        "Section 2. End\nThe Termination Date is 04/03/2026."
+      ],
+      "expected_authored_units": 2,
+      "task_labels": {},
+      "facts": {
+        "declarations": [],
+        "references": [],
+        "date_scopes": null,
+        "range_pairs": null
+      },
+      "expected_graph_review": null,
+      "stratum": "canonical",
+      "interpretation": "No locale specified: month/day interpretation is ambiguous. No binary chronology label.",
+      "origin": "Agent-authored controlled synthetic text; no expert legal review."
+    },
+    "mode": "authored",
+    "flags": [],
+    "dates": [
+      {
+        "role": "EFFECTIVE_DATE",
+        "raw_text": "03/04/2026",
+        "parsed_iso": "2026-03-04",
+        "clause_id": "baseline_T11_authored_0",
+        "char_start": 38,
+        "char_end": 48
+      },
+      {
+        "role": "TERMINATION_DATE",
+        "raw_text": "04/03/2026",
+        "parsed_iso": "2026-04-03",
+        "clause_id": "baseline_T11_authored_1",
+        "char_start": 90,
+        "char_end": 100
+      }
+    ]
+  },
+  {
+    "case": {
+      "case_id": "T11",
+      "family": "ambiguous_date_format",
+      "split": "EXPOSED_DEVELOPMENT",
+      "label_provenance": "PROVISIONAL_HUMAN_REVIEW",
+      "independently_adjudicated": false,
+      "source_document": "cases/T11.txt",
+      "clauses": [
+        "Section 1. Term\nThe Effective Date is 03/04/2026.",
+        "Section 2. End\nThe Termination Date is 04/03/2026."
+      ],
+      "expected_authored_units": 2,
+      "task_labels": {},
+      "facts": {
+        "declarations": [],
+        "references": [],
+        "date_scopes": null,
+        "range_pairs": null
+      },
+      "expected_graph_review": null,
+      "stratum": "canonical",
+      "interpretation": "No locale specified: month/day interpretation is ambiguous. No binary chronology label.",
+      "origin": "Agent-authored controlled synthetic text; no expert legal review."
+    },
+    "mode": "txt",
+    "flags": [],
+    "dates": [
+      {
+        "role": "EFFECTIVE_DATE",
+        "raw_text": "03/04/2026",
+        "parsed_iso": "2026-03-04",
+        "clause_id": "baseline_T11_txt_0",
+        "char_start": 38,
+        "char_end": 48
+      },
+      {
+        "role": "TERMINATION_DATE",
+        "raw_text": "04/03/2026",
+        "parsed_iso": "2026-04-03",
+        "clause_id": "baseline_T11_txt_1",
+        "char_start": 90,
+        "char_end": 100
+      }
+    ]
+  },
+  {
+    "case": {
+      "case_id": "T12",
+      "family": "date_separate_scopes",
+      "split": "EXPOSED_DEVELOPMENT",
+      "label_provenance": "MECHANICALLY_VERIFIABLE_SYNTHETIC",
+      "independently_adjudicated": false,
+      "source_document": "cases/T12.txt",
+      "clauses": [
+        "Section 1. Agreement A\nFor Agreement A, the Effective Date is 2026-06-01.",
+        "Section 2. Agreement A\nFor Agreement A, the Termination Date is 2026-12-31.",
+        "Section 3. Agreement B\nFor Agreement B, the Effective Date is 2026-01-01.",
+        "Section 4. Agreement B\nFor Agreement B, the Termination Date is 2026-03-01."
+      ],
+      "expected_authored_units": 4,
+      "task_labels": {
+        "date_chronology": false
+      },
+      "facts": {
+        "declarations": [],
+        "references": [],
+        "date_scopes": [
+          [
+            "A",
+            "2026-06-01",
+            "2026-12-31"
+          ],
+          [
+            "B",
+            "2026-01-01",
+            "2026-03-01"
+          ]
+        ],
+        "range_pairs": null
+      },
+      "expected_graph_review": null,
+      "stratum": "challenge",
+      "interpretation": "",
+      "origin": "Agent-authored controlled synthetic text; no expert legal review."
+    },
+    "mode": "authored",
+    "flags": [
+      {
+        "flag_id": "FLAG_DATE_baseline_T12_authored_001",
+        "doc_id": "baseline_T12_authored",
+        "flag_type": "INVERTED_CONTRACT_TERM",
+        "category": "RULE_BASED",
+        "severity": "HIGH",
+        "title": "Illogical Term: Effective Date after Termination Date",
+        "description": "Effective Date '2026-06-01' (2026-06-01) in clause 'baseline_T12_authored_0' is 92 days after Termination Date '2026-03-01' (2026-03-01) in clause 'baseline_T12_authored_3'.",
+        "clause_id": "baseline_T12_authored_0",
+        "involved_clause_ids": [
+          "baseline_T12_authored_3",
+          "baseline_T12_authored_0"
+        ],
+        "evidence": {
+          "effective_date": "2026-06-01",
+          "termination_date": "2026-03-01",
+          "effective_raw": "2026-06-01",
+          "termination_raw": "2026-03-01",
+          "delta_days": -92
+        },
+        "claim_scope": {
+          "what_this_shows": "The parsed contract effective date is chronologically after the stated termination/expiration date.",
+          "what_this_does_not_show": "Does not evaluate if subsequent amendments or side letters extend the term."
+        }
+      }
+    ],
+    "dates": [
+      {
+        "role": "EFFECTIVE_DATE",
+        "raw_text": "2026-06-01",
+        "parsed_iso": "2026-06-01",
+        "clause_id": "baseline_T12_authored_0",
+        "char_start": 62,
+        "char_end": 72
+      },
+      {
+        "role": "TERMINATION_DATE",
+        "raw_text": "2026-12-31",
+        "parsed_iso": "2026-12-31",
+        "clause_id": "baseline_T12_authored_1",
+        "char_start": 139,
+        "char_end": 149
+      },
+      {
+        "role": "EFFECTIVE_DATE",
+        "raw_text": "2026-01-01",
+        "parsed_iso": "2026-01-01",
+        "clause_id": "baseline_T12_authored_2",
+        "char_start": 214,
+        "char_end": 224
+      },
+      {
+        "role": "TERMINATION_DATE",
+        "raw_text": "2026-03-01",
+        "parsed_iso": "2026-03-01",
+        "clause_id": "baseline_T12_authored_3",
+        "char_start": 291,
+        "char_end": 301
+      }
+    ]
+  },
+  {
+    "case": {
+      "case_id": "T12",
+      "family": "date_separate_scopes",
+      "split": "EXPOSED_DEVELOPMENT",
+      "label_provenance": "MECHANICALLY_VERIFIABLE_SYNTHETIC",
+      "independently_adjudicated": false,
+      "source_document": "cases/T12.txt",
+      "clauses": [
+        "Section 1. Agreement A\nFor Agreement A, the Effective Date is 2026-06-01.",
+        "Section 2. Agreement A\nFor Agreement A, the Termination Date is 2026-12-31.",
+        "Section 3. Agreement B\nFor Agreement B, the Effective Date is 2026-01-01.",
+        "Section 4. Agreement B\nFor Agreement B, the Termination Date is 2026-03-01."
+      ],
+      "expected_authored_units": 4,
+      "task_labels": {
+        "date_chronology": false
+      },
+      "facts": {
+        "declarations": [],
+        "references": [],
+        "date_scopes": [
+          [
+            "A",
+            "2026-06-01",
+            "2026-12-31"
+          ],
+          [
+            "B",
+            "2026-01-01",
+            "2026-03-01"
+          ]
+        ],
+        "range_pairs": null
+      },
+      "expected_graph_review": null,
+      "stratum": "challenge",
+      "interpretation": "",
+      "origin": "Agent-authored controlled synthetic text; no expert legal review."
+    },
+    "mode": "txt",
+    "flags": [
+      {
+        "flag_id": "FLAG_DATE_baseline_T12_txt_001",
+        "doc_id": "baseline_T12_txt",
+        "flag_type": "INVERTED_CONTRACT_TERM",
+        "category": "RULE_BASED",
+        "severity": "HIGH",
+        "title": "Illogical Term: Effective Date after Termination Date",
+        "description": "Effective Date '2026-06-01' (2026-06-01) in clause 'baseline_T12_txt_0' is 92 days after Termination Date '2026-03-01' (2026-03-01) in clause 'baseline_T12_txt_3'.",
+        "clause_id": "baseline_T12_txt_0",
+        "involved_clause_ids": [
+          "baseline_T12_txt_3",
+          "baseline_T12_txt_0"
+        ],
+        "evidence": {
+          "effective_date": "2026-06-01",
+          "termination_date": "2026-03-01",
+          "effective_raw": "2026-06-01",
+          "termination_raw": "2026-03-01",
+          "delta_days": -92
+        },
+        "claim_scope": {
+          "what_this_shows": "The parsed contract effective date is chronologically after the stated termination/expiration date.",
+          "what_this_does_not_show": "Does not evaluate if subsequent amendments or side letters extend the term."
+        }
+      }
+    ],
+    "dates": [
+      {
+        "role": "EFFECTIVE_DATE",
+        "raw_text": "2026-06-01",
+        "parsed_iso": "2026-06-01",
+        "clause_id": "baseline_T12_txt_0",
+        "char_start": 62,
+        "char_end": 72
+      },
+      {
+        "role": "TERMINATION_DATE",
+        "raw_text": "2026-12-31",
+        "parsed_iso": "2026-12-31",
+        "clause_id": "baseline_T12_txt_1",
+        "char_start": 139,
+        "char_end": 149
+      },
+      {
+        "role": "EFFECTIVE_DATE",
+        "raw_text": "2026-01-01",
+        "parsed_iso": "2026-01-01",
+        "clause_id": "baseline_T12_txt_2",
+        "char_start": 214,
+        "char_end": 224
+      },
+      {
+        "role": "TERMINATION_DATE",
+        "raw_text": "2026-03-01",
+        "parsed_iso": "2026-03-01",
+        "clause_id": "baseline_T12_txt_3",
+        "char_start": 291,
+        "char_end": 301
+      }
+    ]
+  },
+  {
+    "case": {
+      "case_id": "T13",
+      "family": "date_linewrap",
+      "split": "EXPOSED_DEVELOPMENT",
+      "label_provenance": "MECHANICALLY_VERIFIABLE_SYNTHETIC",
+      "independently_adjudicated": false,
+      "source_document": "cases/T13.txt",
+      "clauses": [
+        "Section 1. Term\nThe Effective Date is\n2026-06-01.\nThe Termination Date is\n2026-05-01."
+      ],
+      "expected_authored_units": 1,
+      "task_labels": {
+        "date_chronology": true
+      },
+      "facts": {
+        "declarations": [],
+        "references": [],
+        "date_scopes": [
+          [
+            "one_agreement",
+            "2026-06-01",
+            "2026-05-01"
+          ]
+        ],
+        "range_pairs": null
+      },
+      "expected_graph_review": null,
+      "stratum": "challenge",
+      "interpretation": "",
+      "origin": "Agent-authored controlled synthetic text; no expert legal review."
+    },
+    "mode": "authored",
+    "flags": [
+      {
+        "flag_id": "FLAG_DATE_baseline_T13_authored_001",
+        "doc_id": "baseline_T13_authored",
+        "flag_type": "INVERTED_CONTRACT_TERM",
+        "category": "RULE_BASED",
+        "severity": "HIGH",
+        "title": "Illogical Term: Effective Date after Termination Date",
+        "description": "Effective Date '2026-06-01' (2026-06-01) in clause 'baseline_T13_authored_0' is 31 days after Termination Date '2026-05-01' (2026-05-01) in clause 'baseline_T13_authored_0'.",
+        "clause_id": "baseline_T13_authored_0",
+        "involved_clause_ids": [
+          "baseline_T13_authored_0"
+        ],
+        "evidence": {
+          "effective_date": "2026-06-01",
+          "termination_date": "2026-05-01",
+          "effective_raw": "2026-06-01",
+          "termination_raw": "2026-05-01",
+          "delta_days": -31
+        },
+        "claim_scope": {
+          "what_this_shows": "The parsed contract effective date is chronologically after the stated termination/expiration date.",
+          "what_this_does_not_show": "Does not evaluate if subsequent amendments or side letters extend the term."
+        }
+      }
+    ],
+    "dates": [
+      {
+        "role": "EFFECTIVE_DATE",
+        "raw_text": "2026-06-01",
+        "parsed_iso": "2026-06-01",
+        "clause_id": "baseline_T13_authored_0",
+        "char_start": 38,
+        "char_end": 48
+      },
+      {
+        "role": "TERMINATION_DATE",
+        "raw_text": "2026-05-01",
+        "parsed_iso": "2026-05-01",
+        "clause_id": "baseline_T13_authored_0",
+        "char_start": 74,
+        "char_end": 84
+      }
+    ]
+  },
+  {
+    "case": {
+      "case_id": "T13",
+      "family": "date_linewrap",
+      "split": "EXPOSED_DEVELOPMENT",
+      "label_provenance": "MECHANICALLY_VERIFIABLE_SYNTHETIC",
+      "independently_adjudicated": false,
+      "source_document": "cases/T13.txt",
+      "clauses": [
+        "Section 1. Term\nThe Effective Date is\n2026-06-01.\nThe Termination Date is\n2026-05-01."
+      ],
+      "expected_authored_units": 1,
+      "task_labels": {
+        "date_chronology": true
+      },
+      "facts": {
+        "declarations": [],
+        "references": [],
+        "date_scopes": [
+          [
+            "one_agreement",
+            "2026-06-01",
+            "2026-05-01"
+          ]
+        ],
+        "range_pairs": null
+      },
+      "expected_graph_review": null,
+      "stratum": "challenge",
+      "interpretation": "",
+      "origin": "Agent-authored controlled synthetic text; no expert legal review."
+    },
+    "mode": "txt",
+    "flags": [],
+    "dates": [
+      {
+        "role": "TERMINATION_DATE",
+        "raw_text": "2026-06-01",
+        "parsed_iso": "2026-06-01",
+        "clause_id": "baseline_T13_txt_1",
+        "char_start": 38,
+        "char_end": 48
+      },
+      {
+        "role": "GENERAL_DATE",
+        "raw_text": "2026-05-01",
+        "parsed_iso": "2026-05-01",
+        "clause_id": "baseline_T13_txt_2",
+        "char_start": 74,
+        "char_end": 84
+      }
+    ]
+  },
+  {
+    "case": {
+      "case_id": "T13",
+      "family": "date_linewrap",
+      "split": "EXPOSED_DEVELOPMENT",
+      "label_provenance": "MECHANICALLY_VERIFIABLE_SYNTHETIC",
+      "independently_adjudicated": false,
+      "source_document": "cases/T13.txt",
+      "clauses": [
+        "Section 1. Term\nThe Effective Date is\n2026-06-01.\nThe Termination Date is\n2026-05-01."
+      ],
+      "expected_authored_units": 1,
+      "task_labels": {
+        "date_chronology": true
+      },
+      "facts": {
+        "declarations": [],
+        "references": [],
+        "date_scopes": [
+          [
+            "one_agreement",
+            "2026-06-01",
+            "2026-05-01"
+          ]
+        ],
+        "range_pairs": null
+      },
+      "expected_graph_review": null,
+      "stratum": "challenge",
+      "interpretation": "",
+      "origin": "Agent-authored controlled synthetic text; no expert legal review."
+    },
+    "mode": "pdf",
+    "flags": [],
+    "dates": [
+      {
+        "role": "TERMINATION_DATE",
+        "raw_text": "2026-06-01",
+        "parsed_iso": "2026-06-01",
+        "clause_id": "baseline_T13_pdf_1",
+        "char_start": 38,
+        "char_end": 48
+      },
+      {
+        "role": "GENERAL_DATE",
+        "raw_text": "2026-05-01",
+        "parsed_iso": "2026-05-01",
+        "clause_id": "baseline_T13_pdf_2",
+        "char_start": 74,
+        "char_end": 84
+      }
+    ]
+  },
+  {
+    "case": {
+      "case_id": "T13",
+      "family": "date_linewrap",
+      "split": "EXPOSED_DEVELOPMENT",
+      "label_provenance": "MECHANICALLY_VERIFIABLE_SYNTHETIC",
+      "independently_adjudicated": false,
+      "source_document": "cases/T13.txt",
+      "clauses": [
+        "Section 1. Term\nThe Effective Date is\n2026-06-01.\nThe Termination Date is\n2026-05-01."
+      ],
+      "expected_authored_units": 1,
+      "task_labels": {
+        "date_chronology": true
+      },
+      "facts": {
+        "declarations": [],
+        "references": [],
+        "date_scopes": [
+          [
+            "one_agreement",
+            "2026-06-01",
+            "2026-05-01"
+          ]
+        ],
+        "range_pairs": null
+      },
+      "expected_graph_review": null,
+      "stratum": "challenge",
+      "interpretation": "",
+      "origin": "Agent-authored controlled synthetic text; no expert legal review."
+    },
+    "mode": "docx",
+    "flags": [],
+    "dates": [
+      {
+        "role": "TERMINATION_DATE",
+        "raw_text": "2026-06-01",
+        "parsed_iso": "2026-06-01",
+        "clause_id": "baseline_T13_docx_1",
+        "char_start": 38,
+        "char_end": 48
+      },
+      {
+        "role": "GENERAL_DATE",
+        "raw_text": "2026-05-01",
+        "parsed_iso": "2026-05-01",
+        "clause_id": "baseline_T13_docx_2",
+        "char_start": 74,
+        "char_end": 84
+      }
+    ]
+  },
+  {
+    "case": {
+      "case_id": "T14",
+      "family": "invalid_calendar_date",
+      "split": "EXPOSED_DEVELOPMENT",
+      "label_provenance": "MECHANICALLY_VERIFIABLE_SYNTHETIC",
+      "independently_adjudicated": false,
+      "source_document": "cases/T14.txt",
+      "clauses": [
+        "Section 1. Term\nThe Effective Date is February 30, 2026."
+      ],
+      "expected_authored_units": 1,
+      "task_labels": {
+        "calendar_invalid": true
+      },
+      "facts": {
+        "declarations": [],
+        "references": [],
+        "date_scopes": null,
+        "range_pairs": null
+      },
+      "expected_graph_review": null,
+      "stratum": "canonical",
+      "interpretation": "Calendar-invalid date is mechanically known; calendar validity is a separate unsupported detector task, not chronology F1.",
+      "origin": "Agent-authored controlled synthetic text; no expert legal review."
+    },
+    "mode": "authored",
+    "flags": [],
+    "dates": []
+  },
+  {
+    "case": {
+      "case_id": "T14",
+      "family": "invalid_calendar_date",
+      "split": "EXPOSED_DEVELOPMENT",
+      "label_provenance": "MECHANICALLY_VERIFIABLE_SYNTHETIC",
+      "independently_adjudicated": false,
+      "source_document": "cases/T14.txt",
+      "clauses": [
+        "Section 1. Term\nThe Effective Date is February 30, 2026."
+      ],
+      "expected_authored_units": 1,
+      "task_labels": {
+        "calendar_invalid": true
+      },
+      "facts": {
+        "declarations": [],
+        "references": [],
+        "date_scopes": null,
+        "range_pairs": null
+      },
+      "expected_graph_review": null,
+      "stratum": "canonical",
+      "interpretation": "Calendar-invalid date is mechanically known; calendar validity is a separate unsupported detector task, not chronology F1.",
+      "origin": "Agent-authored controlled synthetic text; no expert legal review."
+    },
+    "mode": "txt",
+    "flags": [],
+    "dates": []
+  },
+  {
+    "case": {
+      "case_id": "T15",
+      "family": "intentional_prepayment",
+      "split": "EXPOSED_DEVELOPMENT",
+      "label_provenance": "PROVISIONAL_HUMAN_REVIEW",
+      "independently_adjudicated": false,
+      "source_document": "cases/T15.txt",
+      "clauses": [
+        "Section 1. Effective\nThe Effective Date is 2026-06-01.",
+        "Section 2. Deposit\nPayment due on 2026-05-01 is an expressly permitted refundable advance deposit before effectiveness."
+      ],
+      "expected_authored_units": 2,
+      "task_labels": {},
+      "facts": {
+        "declarations": [],
+        "references": [],
+        "date_scopes": null,
+        "range_pairs": null
+      },
+      "expected_graph_review": null,
+      "stratum": "canonical",
+      "interpretation": "Potential legal false alarm if an arithmetic warning is treated as a defect. No expert legal label assigned.",
+      "origin": "Agent-authored controlled synthetic text; no expert legal review."
+    },
+    "mode": "authored",
+    "flags": [
+      {
+        "flag_id": "FLAG_DATE_baseline_T15_authored_001",
+        "doc_id": "baseline_T15_authored",
+        "flag_type": "PAYMENT_BEFORE_EFFECTIVE_DATE",
+        "category": "RULE_BASED",
+        "severity": "HIGH",
+        "title": "Payment Due Before Contract Effective Date",
+        "description": "Payment due date '2026-05-01' (2026-05-01) in clause 'baseline_T15_authored_1' falls 31 days before contract Effective Date '2026-06-01' (2026-06-01).",
+        "clause_id": "baseline_T15_authored_1",
+        "involved_clause_ids": [
+          "baseline_T15_authored_0",
+          "baseline_T15_authored_1"
+        ],
+        "evidence": {
+          "payment_due_date": "2026-05-01",
+          "reference_date": "2026-06-01",
+          "reference_role": "EFFECTIVE_DATE",
+          "delta_days": 31
+        },
+        "claim_scope": {
+          "what_this_shows": "Scheduled payment date precedes the operational effective or execution date.",
+          "what_this_does_not_show": "Does not verify whether pre-contractual deposit agreements exist."
+        }
+      }
+    ],
+    "dates": [
+      {
+        "role": "EFFECTIVE_DATE",
+        "raw_text": "2026-06-01",
+        "parsed_iso": "2026-06-01",
+        "clause_id": "baseline_T15_authored_0",
+        "char_start": 43,
+        "char_end": 53
+      },
+      {
+        "role": "PAYMENT_DUE_DATE",
+        "raw_text": "2026-05-01",
+        "parsed_iso": "2026-05-01",
+        "clause_id": "baseline_T15_authored_1",
+        "char_start": 90,
+        "char_end": 100
+      }
+    ]
+  },
+  {
+    "case": {
+      "case_id": "T15",
+      "family": "intentional_prepayment",
+      "split": "EXPOSED_DEVELOPMENT",
+      "label_provenance": "PROVISIONAL_HUMAN_REVIEW",
+      "independently_adjudicated": false,
+      "source_document": "cases/T15.txt",
+      "clauses": [
+        "Section 1. Effective\nThe Effective Date is 2026-06-01.",
+        "Section 2. Deposit\nPayment due on 2026-05-01 is an expressly permitted refundable advance deposit before effectiveness."
+      ],
+      "expected_authored_units": 2,
+      "task_labels": {},
+      "facts": {
+        "declarations": [],
+        "references": [],
+        "date_scopes": null,
+        "range_pairs": null
+      },
+      "expected_graph_review": null,
+      "stratum": "canonical",
+      "interpretation": "Potential legal false alarm if an arithmetic warning is treated as a defect. No expert legal label assigned.",
+      "origin": "Agent-authored controlled synthetic text; no expert legal review."
+    },
+    "mode": "txt",
+    "flags": [
+      {
+        "flag_id": "FLAG_DATE_baseline_T15_txt_001",
+        "doc_id": "baseline_T15_txt",
+        "flag_type": "PAYMENT_BEFORE_EFFECTIVE_DATE",
+        "category": "RULE_BASED",
+        "severity": "HIGH",
+        "title": "Payment Due Before Contract Effective Date",
+        "description": "Payment due date '2026-05-01' (2026-05-01) in clause 'baseline_T15_txt_1' falls 31 days before contract Effective Date '2026-06-01' (2026-06-01).",
+        "clause_id": "baseline_T15_txt_1",
+        "involved_clause_ids": [
+          "baseline_T15_txt_1",
+          "baseline_T15_txt_0"
+        ],
+        "evidence": {
+          "payment_due_date": "2026-05-01",
+          "reference_date": "2026-06-01",
+          "reference_role": "EFFECTIVE_DATE",
+          "delta_days": 31
+        },
+        "claim_scope": {
+          "what_this_shows": "Scheduled payment date precedes the operational effective or execution date.",
+          "what_this_does_not_show": "Does not verify whether pre-contractual deposit agreements exist."
+        }
+      }
+    ],
+    "dates": [
+      {
+        "role": "EFFECTIVE_DATE",
+        "raw_text": "2026-06-01",
+        "parsed_iso": "2026-06-01",
+        "clause_id": "baseline_T15_txt_0",
+        "char_start": 43,
+        "char_end": 53
+      },
+      {
+        "role": "PAYMENT_DUE_DATE",
+        "raw_text": "2026-05-01",
+        "parsed_iso": "2026-05-01",
+        "clause_id": "baseline_T15_txt_1",
+        "char_start": 90,
+        "char_end": 100
+      }
+    ]
+  },
+  {
+    "case": {
+      "case_id": "T16",
+      "family": "date_far_role",
+      "split": "EXPOSED_DEVELOPMENT",
+      "label_provenance": "MECHANICALLY_VERIFIABLE_SYNTHETIC",
+      "independently_adjudicated": false,
+      "source_document": "cases/T16.txt",
+      "clauses": [
+        "Section 1. Term\nThe Effective Date is specified for the sole synthetic agreement with no other date roles in this passage. specified for the sole synthetic agreement with no other date roles in this passage. 2026-06-01.",
+        "Section 2. End\nThe Termination Date is 2026-05-01."
+      ],
+      "expected_authored_units": 2,
+      "task_labels": {
+        "date_chronology": true
+      },
+      "facts": {
+        "declarations": [],
+        "references": [],
+        "date_scopes": [
+          [
+            "one_agreement",
+            "2026-06-01",
+            "2026-05-01"
+          ]
+        ],
+        "range_pairs": null
+      },
+      "expected_graph_review": null,
+      "stratum": "challenge",
+      "interpretation": "",
+      "origin": "Agent-authored controlled synthetic text; no expert legal review."
+    },
+    "mode": "authored",
+    "flags": [],
+    "dates": [
+      {
+        "role": "GENERAL_DATE",
+        "raw_text": "2026-06-01",
+        "parsed_iso": "2026-06-01",
+        "clause_id": "baseline_T16_authored_0",
+        "char_start": 208,
+        "char_end": 218
+      },
+      {
+        "role": "TERMINATION_DATE",
+        "raw_text": "2026-05-01",
+        "parsed_iso": "2026-05-01",
+        "clause_id": "baseline_T16_authored_1",
+        "char_start": 260,
+        "char_end": 270
+      }
+    ]
+  },
+  {
+    "case": {
+      "case_id": "T16",
+      "family": "date_far_role",
+      "split": "EXPOSED_DEVELOPMENT",
+      "label_provenance": "MECHANICALLY_VERIFIABLE_SYNTHETIC",
+      "independently_adjudicated": false,
+      "source_document": "cases/T16.txt",
+      "clauses": [
+        "Section 1. Term\nThe Effective Date is specified for the sole synthetic agreement with no other date roles in this passage. specified for the sole synthetic agreement with no other date roles in this passage. 2026-06-01.",
+        "Section 2. End\nThe Termination Date is 2026-05-01."
+      ],
+      "expected_authored_units": 2,
+      "task_labels": {
+        "date_chronology": true
+      },
+      "facts": {
+        "declarations": [],
+        "references": [],
+        "date_scopes": [
+          [
+            "one_agreement",
+            "2026-06-01",
+            "2026-05-01"
+          ]
+        ],
+        "range_pairs": null
+      },
+      "expected_graph_review": null,
+      "stratum": "challenge",
+      "interpretation": "",
+      "origin": "Agent-authored controlled synthetic text; no expert legal review."
+    },
+    "mode": "txt",
+    "flags": [],
+    "dates": [
+      {
+        "role": "GENERAL_DATE",
+        "raw_text": "2026-06-01",
+        "parsed_iso": "2026-06-01",
+        "clause_id": "baseline_T16_txt_0",
+        "char_start": 208,
+        "char_end": 218
+      },
+      {
+        "role": "TERMINATION_DATE",
+        "raw_text": "2026-05-01",
+        "parsed_iso": "2026-05-01",
+        "clause_id": "baseline_T16_txt_1",
+        "char_start": 260,
+        "char_end": 270
+      }
+    ]
+  },
+  {
+    "case": {
+      "case_id": "T17",
+      "family": "date_trailing_role",
+      "split": "EXPOSED_DEVELOPMENT",
+      "label_provenance": "MECHANICALLY_VERIFIABLE_SYNTHETIC",
+      "independently_adjudicated": false,
+      "source_document": "cases/T17.txt",
+      "clauses": [
+        "Section 1. Term\n2026-12-31 is the Effective Date.",
+        "Section 2. End\n2026-01-01 is the Termination Date."
+      ],
+      "expected_authored_units": 2,
+      "task_labels": {
+        "date_chronology": true
+      },
+      "facts": {
+        "declarations": [],
+        "references": [],
+        "date_scopes": [
+          [
+            "one_agreement",
+            "2026-12-31",
+            "2026-01-01"
+          ]
+        ],
+        "range_pairs": null
+      },
+      "expected_graph_review": null,
+      "stratum": "challenge",
+      "interpretation": "",
+      "origin": "Agent-authored controlled synthetic text; no expert legal review."
+    },
+    "mode": "authored",
+    "flags": [
+      {
+        "flag_id": "FLAG_DATE_baseline_T17_authored_001",
+        "doc_id": "baseline_T17_authored",
+        "flag_type": "INVERTED_CONTRACT_TERM",
+        "category": "RULE_BASED",
+        "severity": "HIGH",
+        "title": "Illogical Term: Effective Date after Termination Date",
+        "description": "Effective Date '2026-12-31' (2026-12-31) in clause 'baseline_T17_authored_0' is 364 days after Termination Date '2026-01-01' (2026-01-01) in clause 'baseline_T17_authored_1'.",
+        "clause_id": "baseline_T17_authored_0",
+        "involved_clause_ids": [
+          "baseline_T17_authored_1",
+          "baseline_T17_authored_0"
+        ],
+        "evidence": {
+          "effective_date": "2026-12-31",
+          "termination_date": "2026-01-01",
+          "effective_raw": "2026-12-31",
+          "termination_raw": "2026-01-01",
+          "delta_days": -364
+        },
+        "claim_scope": {
+          "what_this_shows": "The parsed contract effective date is chronologically after the stated termination/expiration date.",
+          "what_this_does_not_show": "Does not evaluate if subsequent amendments or side letters extend the term."
+        }
+      }
+    ],
+    "dates": [
+      {
+        "role": "EFFECTIVE_DATE",
+        "raw_text": "2026-12-31",
+        "parsed_iso": "2026-12-31",
+        "clause_id": "baseline_T17_authored_0",
+        "char_start": 16,
+        "char_end": 26
+      },
+      {
+        "role": "TERMINATION_DATE",
+        "raw_text": "2026-01-01",
+        "parsed_iso": "2026-01-01",
+        "clause_id": "baseline_T17_authored_1",
+        "char_start": 66,
+        "char_end": 76
+      }
+    ]
+  },
+  {
+    "case": {
+      "case_id": "T17",
+      "family": "date_trailing_role",
+      "split": "EXPOSED_DEVELOPMENT",
+      "label_provenance": "MECHANICALLY_VERIFIABLE_SYNTHETIC",
+      "independently_adjudicated": false,
+      "source_document": "cases/T17.txt",
+      "clauses": [
+        "Section 1. Term\n2026-12-31 is the Effective Date.",
+        "Section 2. End\n2026-01-01 is the Termination Date."
+      ],
+      "expected_authored_units": 2,
+      "task_labels": {
+        "date_chronology": true
+      },
+      "facts": {
+        "declarations": [],
+        "references": [],
+        "date_scopes": [
+          [
+            "one_agreement",
+            "2026-12-31",
+            "2026-01-01"
+          ]
+        ],
+        "range_pairs": null
+      },
+      "expected_graph_review": null,
+      "stratum": "challenge",
+      "interpretation": "",
+      "origin": "Agent-authored controlled synthetic text; no expert legal review."
+    },
+    "mode": "txt",
+    "flags": [
+      {
+        "flag_id": "FLAG_DATE_baseline_T17_txt_001",
+        "doc_id": "baseline_T17_txt",
+        "flag_type": "INVERTED_CONTRACT_TERM",
+        "category": "RULE_BASED",
+        "severity": "HIGH",
+        "title": "Illogical Term: Effective Date after Termination Date",
+        "description": "Effective Date '2026-12-31' (2026-12-31) in clause 'baseline_T17_txt_1' is 364 days after Termination Date '2026-01-01' (2026-01-01) in clause 'baseline_T17_txt_3'.",
+        "clause_id": "baseline_T17_txt_1",
+        "involved_clause_ids": [
+          "baseline_T17_txt_3",
+          "baseline_T17_txt_1"
+        ],
+        "evidence": {
+          "effective_date": "2026-12-31",
+          "termination_date": "2026-01-01",
+          "effective_raw": "2026-12-31",
+          "termination_raw": "2026-01-01",
+          "delta_days": -364
+        },
+        "claim_scope": {
+          "what_this_shows": "The parsed contract effective date is chronologically after the stated termination/expiration date.",
+          "what_this_does_not_show": "Does not evaluate if subsequent amendments or side letters extend the term."
+        }
+      }
+    ],
+    "dates": [
+      {
+        "role": "EFFECTIVE_DATE",
+        "raw_text": "2026-12-31",
+        "parsed_iso": "2026-12-31",
+        "clause_id": "baseline_T17_txt_1",
+        "char_start": 16,
+        "char_end": 26
+      },
+      {
+        "role": "TERMINATION_DATE",
+        "raw_text": "2026-01-01",
+        "parsed_iso": "2026-01-01",
+        "clause_id": "baseline_T17_txt_3",
+        "char_start": 66,
+        "char_end": 76
+      }
+    ]
+  }
+]

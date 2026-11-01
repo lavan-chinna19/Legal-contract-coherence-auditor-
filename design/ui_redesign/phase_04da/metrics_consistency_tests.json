@@ -1,0 +1,11 @@
+{
+  "status": "AUDIT_PASSED",
+  "total_checks": 8,
+  "passed_checks": 8,
+  "failed_checks": 0,
+  "structural_denominator": 6,
+  "rule_denominator": 5,
+  "negative_controls_evaluated": 2,
+  "channel_a_invariance_verified": true,
+  "findings": []
+}

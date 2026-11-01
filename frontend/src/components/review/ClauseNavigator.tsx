@@ -23,7 +23,7 @@ export function ClauseNavigator({
   hasNext,
   currentClauseNumber,
 }: ClauseNavigatorProps) {
-  const displayNum = currentClauseNumber !== undefined ? currentClauseNumber : currentIndex + 1;
+  const displayNum = currentClauseNumber !== undefined ? currentClauseNumber + 1 : currentIndex + 1;
 
   return (
     <div
@@ -50,6 +50,7 @@ export function ClauseNavigator({
       </Button>
 
       <span
+        title={`Clause ${displayNum}`}
         style={{
           fontSize: "0.78rem",
           fontWeight: 600,
@@ -59,7 +60,7 @@ export function ClauseNavigator({
           fontFamily: "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace",
         }}
       >
-        § {displayNum} ({currentIndex + 1}/{totalClauses})
+        {currentIndex + 1}/{totalClauses}
       </span>
 
       <Button

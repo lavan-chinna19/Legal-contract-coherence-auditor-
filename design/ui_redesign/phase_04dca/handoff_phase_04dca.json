@@ -1,0 +1,43 @@
+{
+  "phase": "PHASE_4D_C_A",
+  "program": "LexAudit Scientific Evidence & Reproducibility Correction",
+  "timestamp_utc": "2026-10-23T10:35:00Z",
+  "final_verdict": "EXPLORATORY BENCHMARK ONLY — PREREGISTRATION COMPROMISED",
+  "audits_completed": {
+    "audit_a_checkpoint_hash_integrity": "PASS - IDENTICAL_BYTES_VERIFIED (Historical reporting error resolved; byte identity confirmed)",
+    "audit_b_heldout_test_chronology": "PASS - EXECUTION_REPEATED_WITH_FROZEN_CONFIGURATION (Exploratory status)",
+    "audit_c_parent_denominator_and_sec_inventory": "PASS - 18 Dev + 9 Val + 5 Test = 32 Parents across 15 Families verified; SEC inventory reconciled (50 entries, 19 accessions, 19 CIKs, 50 files)",
+    "audit_d_sec_edgar_copyright_rights": "PASS - PUBLICLY_ACCESSIBLE_RIGHTS_UNDETERMINED (17 U.S.C. Section 105 corrected)",
+    "audit_e_ground_truth_validity": "PASS - All 28 positives reviewed; P1 intra-clause defect identified; sensitivity analysis provided",
+    "audit_f_metric_consistency_and_c2_reconciliation": "PASS - Candidate C2 raw stored predictions (TP=2, FP=16) and reported underfitting (TP=0, FP=0, FN=2, TN=16) reconciled; NOT_ESTIMABLE applied for undefined metrics; regression baselines reconciled (183 vs 193 passed)"
+  },
+  "reconciled_counts": {
+    "sec_manifest_exhibit_entries": 50,
+    "sec_unique_accession_numbers": 19,
+    "sec_unique_ciks": 19,
+    "sec_downloaded_text_files": 50,
+    "manifest_dictionary_keys": 10,
+    "eligible_parent_contracts": 32,
+    "excluded_exhibits_size_bounds": 18,
+    "corporate_families": 15,
+    "development_parents": 18,
+    "validation_parents": 9,
+    "sealed_test_parents": 5,
+    "total_perturbations": 174,
+    "eligible_benchmark_cases": 142,
+    "excluded_ambiguous_cases": 32,
+    "heldout_test_eligible_cases": 18,
+    "heldout_test_positives_raw": 2,
+    "heldout_test_positives_confirmed": 0,
+    "heldout_test_negatives": 16
+  },
+  "backend_regression_baseline_counts": {
+    "phase_04db_baseline_passed": 183,
+    "phase_04db_total_collected": 185,
+    "phase_04dc_full_suite_passed": 193,
+    "phase_04dc_total_collected": 195,
+    "phase_04dca_focused_suite_passed": 26
+  },
+  "deliverables_generated": 24,
+  "next_recommended_research_step": "STOP. Conduct expert legal annotation and construct genuine pre-registered confirmatory benchmark on unexposed corporate families before any production deployment."
+}

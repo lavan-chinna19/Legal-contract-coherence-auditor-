@@ -1,0 +1,47 @@
+{
+  "timestamp": "2026-10-21T07:33:07Z",
+  "audit_version": "Phase 4C-A (Consistency Corrected)",
+  "command": "pytest tests/ -v",
+  "total_collected": 143,
+  "passed": 141,
+  "skipped": 2,
+  "failed": 0,
+  "errors": 0,
+  "duration_seconds": 225.44,
+  "baseline_comparison": {
+    "historical_phase4c_passed": 131,
+    "historical_phase4c_skipped": 2,
+    "new_security_tests_added": 6,
+    "new_consistency_tests_added": 4,
+    "total_new_tests_passed": 10,
+    "delta_passed": "+10",
+    "regression_detected": false
+  },
+  "skipped_tests": [
+    "tests/test_cuad_order.py::test_live_cuad_order_report_exists",
+    "tests/test_cuad_order.py::test_live_cuad_report_has_verdict"
+  ],
+  "new_test_modules": [
+    {
+      "module": "tests/test_api_reposition.py",
+      "new_tests": [
+        "test_reposition_omitted_opt_in_rejected_422",
+        "test_reposition_null_opt_in_rejected_422",
+        "test_reposition_coercive_string_opt_in_rejected_422",
+        "test_reposition_negative_threshold_rejected_422",
+        "test_reposition_threshold_above_one_rejected_422",
+        "test_reposition_clauses_exceeding_100_rejected_400"
+      ]
+    },
+    {
+      "module": "tests/test_benchmark_consistency.py",
+      "new_tests": [
+        "test_case_level_data_integrity",
+        "test_aggregate_metrics_mathematical_derivation",
+        "test_paired_baseline_consistency",
+        "test_negative_control_abstention_consistency"
+      ]
+    }
+  ],
+  "verdict": "PASS"
+}

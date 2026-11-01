@@ -1,0 +1,5 @@
+Section 1.1(a). Services
+Subclause text.
+
+Section 2. Payment
+See Section 1.1(a) above.

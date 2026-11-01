@@ -1,0 +1,14 @@
+1. Deliverables and Specifications.
+   The Vendor shall provide the following operational components:
+     (a) Database migration scripts;
+     (b) API documentation and OpenAPI schemas;
+     (c) Security penetration test reports.
+
+   All deliverables must receive written acceptance before invoicing.
+
+2. Acceptance Criteria and Validation.
+   The Customer shall have ten business days to review:
+     - Functional compliance;
+     - Latency benchmarks under peak load.
+
+   Failure to reject within ten business days constitutes formal acceptance.

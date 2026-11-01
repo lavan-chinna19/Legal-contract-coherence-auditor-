@@ -1,0 +1,11 @@
+{
+  "before_implementation": true,
+  "files": {
+    "development.json": "d301a8f787a7504917eea8440a02421827ace721d912e9f0ae1d802366112a10",
+    "evaluation.json": "e654b5c346e8f81df80947c587d25890a03c59c2daaa7b96f0be2385b058ac9c",
+    "PROTOCOL.md": "befa059bbd78c391a25d00955b62197c7f1c308fe95e3a0510ea71d7edd9b3eb",
+    "build_benchmark.py": "5b531d04d9963dcd6b422694cf371a701cc9c1f076fb35fcdf7016eb0b0d5271"
+  },
+  "pre_implementation_correction": "Draft preserved in benchmark_draft: unsupported literal field labels corrected to literal source, no binding code existed or predictions made.",
+  "policy": "Evaluation split not executed until source freeze. Distinct document/template families; author-controlled synthetic labels, not independent legal holdout."
+}

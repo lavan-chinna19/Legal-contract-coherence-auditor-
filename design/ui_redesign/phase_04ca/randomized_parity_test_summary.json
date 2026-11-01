@@ -1,0 +1,77 @@
+{
+  "timestamp": "2026-10-21 06:40:58 UTC",
+  "tolerance_threshold": 0.0001,
+  "deterministic_cases_evaluated": 18,
+  "deterministic_candidates_compared": 68,
+  "deterministic_rank_disagreements": 0,
+  "deterministic_abstention_disagreements": 0,
+  "max_deterministic_abs_delta": "0.00000000",
+  "max_deterministic_rel_delta": "0.00000000",
+  "randomized_scale_tests": [
+    {
+      "num_clauses": 2,
+      "target_clause_idx": 1,
+      "candidates_evaluated": 2,
+      "max_abs_delta_J": "0.00000000",
+      "parity_status": "PASS",
+      "latency_ms": 76.25
+    },
+    {
+      "num_clauses": 3,
+      "target_clause_idx": 1,
+      "candidates_evaluated": 3,
+      "max_abs_delta_J": "0.00000000",
+      "parity_status": "PASS",
+      "latency_ms": 72.34
+    },
+    {
+      "num_clauses": 5,
+      "target_clause_idx": 2,
+      "candidates_evaluated": 5,
+      "max_abs_delta_J": "0.00000000",
+      "parity_status": "PASS",
+      "latency_ms": 79.61
+    },
+    {
+      "num_clauses": 8,
+      "target_clause_idx": 4,
+      "candidates_evaluated": 8,
+      "max_abs_delta_J": "0.00000000",
+      "parity_status": "PASS",
+      "latency_ms": 95.4
+    },
+    {
+      "num_clauses": 12,
+      "target_clause_idx": 6,
+      "candidates_evaluated": 12,
+      "max_abs_delta_J": "0.00000000",
+      "parity_status": "PASS",
+      "latency_ms": 112.87
+    },
+    {
+      "num_clauses": 20,
+      "target_clause_idx": 10,
+      "candidates_evaluated": 20,
+      "max_abs_delta_J": "0.00000000",
+      "parity_status": "PASS",
+      "latency_ms": 189.8
+    },
+    {
+      "num_clauses": 50,
+      "target_clause_idx": 25,
+      "candidates_evaluated": 50,
+      "max_abs_delta_J": "0.00000000",
+      "parity_status": "PASS",
+      "latency_ms": 424.27
+    },
+    {
+      "num_clauses": 100,
+      "target_clause_idx": 50,
+      "candidates_evaluated": 100,
+      "max_abs_delta_J": "0.00000000",
+      "parity_status": "PASS",
+      "latency_ms": 782.87
+    }
+  ],
+  "overall_parity_verdict": "BITWISE_EXACT_PARITY_PASS"
+}

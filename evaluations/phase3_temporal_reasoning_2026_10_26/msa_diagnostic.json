@@ -1,0 +1,298 @@
+Section 1. Preamble and Parties. This Master Services Agreement is entered into as of January 1, 2025 by and between Client Inc. and Provider LLC.
+Section 2. Scope of Services. Provider agrees to provide software development and consulting services as described in Exhibit A attached hereto.
+Section 3. Payment Terms. Invoices shall be payable within thirty (30) days of receipt. Payment due date shall be on or after the Effective Date.
+Section 4. Intellectual Property. All work product developed pursuant to Section 2 shall be deemed work made for hire owned by Client.
+Section 5. Confidentiality. Each party agrees to maintain in strict confidence all proprietary information disclosed under this Agreement.
+Section 6. Term and Termination. The effective date of this Agreement is January 1, 2025 and the termination date shall be December 31, 2025.
+Section 7. Indemnification. Provider shall defend and indemnify Client against any third-party claims arising from a breach of Section 5.
+Section 8. Limitation of Liability. Neither party shall be liable for indirect or consequential damages arising under this Agreement.
+Section 9. Governing Law. This Agreement shall be governed by and construed in accordance with the laws of the State of Delaware.
+Section 10. Miscellaneous. This Agreement, including Exhibit A, constitutes the entire understanding between the parties.
+Exhibit A. Statement of Work. Scope details, technical deliverables, and milestone specifications.
+{
+  "version": "context-temporal-v1",
+  "coordinate_space": "original_extracted_text",
+  "source_sha256": "80de4cea0a1cfc9d6a39cc06b94c599665e4c5c3a9dc889ae0bc27cc53e522e8",
+  "status": "CONFIRMED_TEMPORAL_CONFLICT",
+  "statements": [
+    {
+      "statement_id": "structural_document:time:0",
+      "raw_text": "This Master Services Agreement is entered into as of January 1, 2025 by and between Client Inc. and Provider LLC.",
+      "char_start": 33,
+      "char_end": 146,
+      "coordinate_space": "original_extracted_text",
+      "clause_id": "structural_document:source:0",
+      "section_uid": "structural_document:section:0",
+      "section_identity": "1",
+      "scope": "document",
+      "phase": "CURRENT",
+      "party_context": null,
+      "kind": "ABSOLUTE",
+      "role": null,
+      "event": null,
+      "actor": null,
+      "action": null,
+      "triggering_event": null,
+      "absolute_date": "2025-01-01",
+      "raw_date": "January 1, 2025",
+      "date_start": 86,
+      "date_end": 101,
+      "duration_value": null,
+      "duration_unit": null,
+      "timing_basis": null,
+      "deadline_type": "EXACT_DATE",
+      "relation": null,
+      "lower_offset": null,
+      "upper_offset": null,
+      "qualifiers": [],
+      "uncertainty": [
+        "MISSING_OR_AMBIGUOUS_DATE_ROLE"
+      ],
+      "parsing_status": "REVIEW_REQUIRED"
+    },
+    {
+      "statement_id": "structural_document:time:1",
+      "raw_text": "Invoices shall be payable within thirty (30) days of receipt.",
+      "char_start": 318,
+      "char_end": 379,
+      "coordinate_space": "original_extracted_text",
+      "clause_id": "structural_document:source:2",
+      "section_uid": "structural_document:section:2",
+      "section_identity": "3",
+      "scope": "document",
+      "phase": "CURRENT",
+      "party_context": null,
+      "kind": "DURATION",
+      "role": "DEADLINE",
+      "event": "obligation:invoices:be payable",
+      "actor": "invoices",
+      "action": "be payable",
+      "triggering_event": null,
+      "absolute_date": null,
+      "raw_date": null,
+      "date_start": null,
+      "date_end": null,
+      "duration_value": 30,
+      "duration_unit": "day",
+      "timing_basis": "UNSPECIFIED_DAY",
+      "deadline_type": "within",
+      "relation": null,
+      "lower_offset": null,
+      "upper_offset": null,
+      "qualifiers": [],
+      "uncertainty": [
+        "MISSING_OR_UNSUPPORTED_TRIGGER",
+        "UNSPECIFIED_DAY_BASIS"
+      ],
+      "parsing_status": "REVIEW_REQUIRED"
+    },
+    {
+      "statement_id": "structural_document:time:2",
+      "raw_text": "The effective date of this Agreement is January 1, 2025 and the termination date shall be December 31, 2025.",
+      "char_start": 745,
+      "char_end": 853,
+      "coordinate_space": "original_extracted_text",
+      "clause_id": "structural_document:source:5",
+      "section_uid": "structural_document:section:5",
+      "section_identity": "6",
+      "scope": "document",
+      "phase": "CURRENT",
+      "party_context": null,
+      "kind": "ABSOLUTE",
+      "role": "EFFECTIVE_DATE",
+      "event": "obligation:and the termination date:be december 31, 2025",
+      "actor": "and the termination date",
+      "action": "be december 31, 2025",
+      "triggering_event": null,
+      "absolute_date": "2025-01-01",
+      "raw_date": "January 1, 2025",
+      "date_start": 785,
+      "date_end": 800,
+      "duration_value": null,
+      "duration_unit": null,
+      "timing_basis": null,
+      "deadline_type": "EXACT_DATE",
+      "relation": null,
+      "lower_offset": null,
+      "upper_offset": null,
+      "qualifiers": [],
+      "uncertainty": [],
+      "parsing_status": "EXPLICIT_SUPPORTED"
+    },
+    {
+      "statement_id": "structural_document:time:3",
+      "raw_text": "The effective date of this Agreement is January 1, 2025 and the termination date shall be December 31, 2025.",
+      "char_start": 745,
+      "char_end": 853,
+      "coordinate_space": "original_extracted_text",
+      "clause_id": "structural_document:source:5",
+      "section_uid": "structural_document:section:5",
+      "section_identity": "6",
+      "scope": "document",
+      "phase": "CURRENT",
+      "party_context": null,
+      "kind": "ABSOLUTE",
+      "role": "TERMINATION_DATE",
+      "event": "obligation:and the termination date:be december 31, 2025",
+      "actor": "and the termination date",
+      "action": "be december 31, 2025",
+      "triggering_event": null,
+      "absolute_date": "2025-12-31",
+      "raw_date": "December 31, 2025",
+      "date_start": 835,
+      "date_end": 852,
+      "duration_value": null,
+      "duration_unit": null,
+      "timing_basis": null,
+      "deadline_type": "EXACT_DATE",
+      "relation": null,
+      "lower_offset": null,
+      "upper_offset": null,
+      "qualifiers": [],
+      "uncertainty": [],
+      "parsing_status": "EXPLICIT_SUPPORTED"
+    }
+  ],
+  "decisions": [
+    {
+      "category": "REVIEW_REQUIRED",
+      "check": "PARSE_UNCERTAINTY",
+      "reason": "MISSING_OR_AMBIGUOUS_DATE_ROLE",
+      "statement_ids": [
+        "structural_document:time:0"
+      ],
+      "evidence": [
+        {
+          "statement_id": "structural_document:time:0",
+          "char_start": 33,
+          "char_end": 146,
+          "date_start": 86,
+          "date_end": 101,
+          "raw_date": "January 1, 2025",
+          "section_uid": "structural_document:section:0",
+          "clause_id": "structural_document:source:0",
+          "coordinate_space": "original_extracted_text"
+        }
+      ],
+      "coordinate_space": "original_extracted_text",
+      "scope": "document",
+      "interpretation": "Deterministic textual interpretation only; not legal correctness",
+      "details": {}
+    },
+    {
+      "category": "REVIEW_REQUIRED",
+      "check": "PARSE_UNCERTAINTY",
+      "reason": "MISSING_OR_UNSUPPORTED_TRIGGER; UNSPECIFIED_DAY_BASIS",
+      "statement_ids": [
+        "structural_document:time:1"
+      ],
+      "evidence": [
+        {
+          "statement_id": "structural_document:time:1",
+          "char_start": 318,
+          "char_end": 379,
+          "date_start": null,
+          "date_end": null,
+          "raw_date": null,
+          "section_uid": "structural_document:section:2",
+          "clause_id": "structural_document:source:2",
+          "coordinate_space": "original_extracted_text"
+        }
+      ],
+      "coordinate_space": "original_extracted_text",
+      "scope": "document",
+      "interpretation": "Deterministic textual interpretation only; not legal correctness",
+      "details": {}
+    },
+    {
+      "category": "CONSISTENT",
+      "check": "CONTRACT_TERM",
+      "reason": "Same-scope effective/end endpoints are ordered.",
+      "statement_ids": [
+        "structural_document:time:2",
+        "structural_document:time:3"
+      ],
+      "evidence": [
+        {
+          "statement_id": "structural_document:time:2",
+          "char_start": 745,
+          "char_end": 853,
+          "date_start": 785,
+          "date_end": 800,
+          "raw_date": "January 1, 2025",
+          "section_uid": "structural_document:section:5",
+          "clause_id": "structural_document:source:5",
+          "coordinate_space": "original_extracted_text"
+        },
+        {
+          "statement_id": "structural_document:time:3",
+          "char_start": 745,
+          "char_end": 853,
+          "date_start": 835,
+          "date_end": 852,
+          "raw_date": "December 31, 2025",
+          "section_uid": "structural_document:section:5",
+          "clause_id": "structural_document:source:5",
+          "coordinate_space": "original_extracted_text"
+        }
+      ],
+      "coordinate_space": "original_extracted_text",
+      "scope": "document",
+      "interpretation": "Deterministic textual interpretation only; not legal correctness",
+      "details": {
+        "effective_date": "2025-01-01",
+        "termination_date": "2025-12-31",
+        "effective_raw": "January 1, 2025",
+        "termination_raw": "December 31, 2025",
+        "delta_days": 364
+      }
+    },
+    {
+      "category": "CONFIRMED_TEMPORAL_CONFLICT",
+      "check": "SAME_EVENT_DATE",
+      "reason": "Same named event has disjoint exact calendar dates under the same scope/phase.",
+      "statement_ids": [
+        "structural_document:time:2",
+        "structural_document:time:3"
+      ],
+      "evidence": [
+        {
+          "statement_id": "structural_document:time:2",
+          "char_start": 745,
+          "char_end": 853,
+          "date_start": 785,
+          "date_end": 800,
+          "raw_date": "January 1, 2025",
+          "section_uid": "structural_document:section:5",
+          "clause_id": "structural_document:source:5",
+          "coordinate_space": "original_extracted_text"
+        },
+        {
+          "statement_id": "structural_document:time:3",
+          "char_start": 745,
+          "char_end": 853,
+          "date_start": 835,
+          "date_end": 852,
+          "raw_date": "December 31, 2025",
+          "section_uid": "structural_document:section:5",
+          "clause_id": "structural_document:source:5",
+          "coordinate_space": "original_extracted_text"
+        }
+      ],
+      "coordinate_space": "original_extracted_text",
+      "scope": "document",
+      "interpretation": "Deterministic textual interpretation only; not legal correctness",
+      "details": {}
+    }
+  ],
+  "decision_counts": {
+    "REVIEW_REQUIRED": 2,
+    "CONSISTENT": 1,
+    "CONFIRMED_TEMPORAL_CONFLICT": 1
+  },
+  "confirmed_conflict_count": 1,
+  "potential_inconsistency_count": 0,
+  "review_count": 2,
+  "unsupported_count": 0,
+  "interpretation": "Textual deterministic constraints and explicit uncertainty; no legal correctness probability."
+}

@@ -1,0 +1,9 @@
+scenario,document_length,target_clause_idx,move_type,candidates_evaluated,max_abs_objective_diff,max_abs_sb_diff,tolerance,parity_status
+N=5_mid,5,2,middle_move,5,0.00000000,0.00000000,0.0001,PASS
+N=5_first,5,0,first_position_move,5,0.00000000,0.00000000,0.0001,PASS
+N=5_last,5,4,last_position_move,5,0.00000000,0.00000000,0.0001,PASS
+N=8_mid,8,4,middle_move,8,0.00000000,0.00000000,0.0001,PASS
+N=8_adjacent,8,1,adjacent_move,8,0.00000000,0.00000000,0.0001,PASS
+N=12_long,12,11,long_distance_move,12,0.00000000,0.00000000,0.0001,PASS
+N=2_short,2,0,two_clause_doc,2,0.00000000,0.00000000,0.0001,PASS
+N=3_short,3,1,three_clause_doc,3,0.00000000,0.00000000,0.0001,PASS

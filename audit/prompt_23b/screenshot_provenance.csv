@@ -1,0 +1,17 @@
+Filename,File Size (Bytes),SHA256 (16-char),Timestamp (Epoch),Phase Claimed,Visible UI Features,Corresponding Network Action,Authentication Verdict
+initial_state.png,116722,0eceb38fe2934c30,1791628671,Phase A/B,Full-height initial view disclaimer banner,GET /health,AUTHENTIC_SCREENSHOT
+initial_state_1440x900.png,69463,7ca2246b589991fc,1791629088,Phase B1,1440x900 desktop viewport disabled button,GET /health,AUTHENTIC_SCREENSHOT
+privacy_acknowledged.png,114951,b292d8431770b35d,1791628847,Phase B1,Full-height privacy checked state,None (Client state),AUTHENTIC_SCREENSHOT
+privacy_acknowledged_1440x900.png,68256,addb9820df13297c,1791629090,Phase B1,1440x900 desktop privacy checked state,None (Client state),AUTHENTIC_SCREENSHOT
+file_selected_ready.png,68510,6ea456b8166e88d1,1791629091,Phase B2,File attached in dropzone active button,None (Client state),AUTHENTIC_SCREENSHOT
+analysis_running.png,69758,ca855bee09eb4f89,1791629093,Phase B3,Loading spinner with pipeline status text,POST /v1/upload & POST /v1/analyze,AUTHENTIC_SCREENSHOT
+results_view_desktop.png,76196,f6c9c6e81c47bbb7,1791629098,Phase C,4 KPI cards sequence map clause findings,GET /v1/jobs/.../results,AUTHENTIC_SCREENSHOT
+desktop_1440x900.png,76196,f6c9c6e81c47bbb7,1791629109,Phase F,Identical bytes to results_view_desktop.png,None (Viewport check),REUSED_DUPLICATE_CAPTURE
+laptop_1024x768.png,66509,068353be90094fb1,1791629110,Phase F,1024x768 laptop viewport layout,None (Viewport check),AUTHENTIC_SCREENSHOT
+tablet_768x1024.png,68946,0dacbcb07d4aa3b4,1791629112,Phase F,768x1024 portrait tablet layout,None (Viewport check),AUTHENTIC_SCREENSHOT
+mobile_390x844.png,45918,3a54bbda3116df7e,1791629114,Phase F,390x844 mobile single-column layout,None (Viewport check),AUTHENTIC_SCREENSHOT
+xai_attribution_view.png,49671,a2e1e4212d067d87,1791629102,Phase D,26 Integrated Gradients token badges,GET /v1/xai/attribution,AUTHENTIC_SCREENSHOT
+xai_sensitivity_view.png,59840,90cf9d3742f0006b,1791629103,Phase D,Neighborhood sensitivity delta (+0.0752),GET /v1/xai/sensitivity,AUTHENTIC_SCREENSHOT
+feedback_view_before_submit.png,56437,aeffbc6ccff38098,1791629105,Phase E,Feedback form dropdowns and options,None (Client state),AUTHENTIC_SCREENSHOT
+feedback_submitted_success.png,60205,9ce23828721dfd32,1791629107,Phase E,Green feedback success notification banner,POST /v1/feedback,AUTHENTIC_SCREENSHOT
+transparency_tab.png,117126,93acc20b05c3bac2,1791628895,Phase A,Empirical metrics table and citations,None (Static view),AUTHENTIC_SCREENSHOT

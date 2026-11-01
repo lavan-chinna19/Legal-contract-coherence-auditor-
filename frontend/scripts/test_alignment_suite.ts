@@ -526,3 +526,6 @@ const artifact = {
 
 fs.writeFileSync(RESULTS_PATH, JSON.stringify(artifact, null, 2), "utf8");
 console.log(`\nResults written to: ${RESULTS_PATH}`);
+
+// A failed alignment assertion must fail the command as well as the report.
+process.exitCode = allPassed ? 0 : 1;

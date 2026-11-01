@@ -1,0 +1,322 @@
+[
+  {
+    "test_id": "ENV-01",
+    "section": "Environment",
+    "scenario": "Backend /health liveness check",
+    "expected": "200 OK with status: ok",
+    "actual": "200 {'status': 'ok'}",
+    "status": "PASS",
+    "evidence_file": "",
+    "severity_if_failed": "NONE"
+  },
+  {
+    "test_id": "ENV-02",
+    "section": "Environment",
+    "scenario": "Backend /ready dependency readiness check",
+    "expected": "200 OK with status: ready",
+    "actual": "200 {'status': 'ready'}",
+    "status": "PASS",
+    "evidence_file": "",
+    "severity_if_failed": "NONE"
+  },
+  {
+    "test_id": "UPL-01",
+    "section": "Phase B: Upload",
+    "scenario": "Valid small UTF-8 contract upload",
+    "expected": "200 OK with valid doc_id",
+    "actual": "200 OK (doc_id=doc_4e8d6c21)",
+    "status": "PASS",
+    "evidence_file": "",
+    "severity_if_failed": "NONE"
+  },
+  {
+    "test_id": "UPL-02",
+    "section": "Phase B: Upload",
+    "scenario": "Valid multi-clause contract upload",
+    "expected": "200 OK with valid doc_id",
+    "actual": "200 OK (doc_id=doc_1b63ad99)",
+    "status": "PASS",
+    "evidence_file": "",
+    "severity_if_failed": "NONE"
+  },
+  {
+    "test_id": "UPL-03",
+    "section": "Phase B: Upload",
+    "scenario": "Empty file rejection",
+    "expected": "400 Bad Request (Uploaded file is empty)",
+    "actual": "400 Bad Request: Uploaded file is empty.",
+    "status": "PASS",
+    "evidence_file": "",
+    "severity_if_failed": "NONE"
+  },
+  {
+    "test_id": "UPL-04",
+    "section": "Phase B: Upload",
+    "scenario": "Non-UTF8 binary upload rejection",
+    "expected": "400 Bad Request (UTF-8 requirement)",
+    "actual": "400 Bad Request: Uploaded file must be valid UTF-8 text.",
+    "status": "PASS",
+    "evidence_file": "",
+    "severity_if_failed": "NONE"
+  },
+  {
+    "test_id": "UPL-05",
+    "section": "Phase B: Upload",
+    "scenario": "Ciphertext at rest verification",
+    "expected": "Disk file is Fernet ciphertext",
+    "actual": "Verified 888 encrypted bytes, starts with Fernet header",
+    "status": "PASS",
+    "evidence_file": "",
+    "severity_if_failed": "NONE"
+  },
+  {
+    "test_id": "ANL-01",
+    "section": "Phase C: Analysis",
+    "scenario": "Small contract end-to-end analysis",
+    "expected": "Job completed successfully",
+    "actual": "COMPLETED in 0.52s (job_id=829ecfb2-eccd-4b5d-b36e-7b14932367a4)",
+    "status": "PASS",
+    "evidence_file": "",
+    "severity_if_failed": "NONE"
+  },
+  {
+    "test_id": "ANL-02",
+    "section": "Phase C: Analysis",
+    "scenario": "Multi-clause contract end-to-end analysis",
+    "expected": "Job completed successfully",
+    "actual": "COMPLETED in 0.51s (job_id=febb1473-7359-4a92-a342-8fff484309d9)",
+    "status": "PASS",
+    "evidence_file": "",
+    "severity_if_failed": "NONE"
+  },
+  {
+    "test_id": "SEG-01",
+    "section": "Phase D: Segmentation",
+    "scenario": "Clause count correctness",
+    "expected": "5 distinct clauses extracted",
+    "actual": "Found 5 clauses",
+    "status": "PASS",
+    "evidence_file": "",
+    "severity_if_failed": "NONE"
+  },
+  {
+    "test_id": "SEG-02",
+    "section": "Phase D: Segmentation",
+    "scenario": "Clause ID uniqueness",
+    "expected": "All clause IDs unique",
+    "actual": "5 unique IDs out of 5",
+    "status": "PASS",
+    "evidence_file": "",
+    "severity_if_failed": "NONE"
+  },
+  {
+    "test_id": "COH-01",
+    "section": "Phase E: Coherence",
+    "scenario": "Dual-channel evidence integrity",
+    "expected": "Both Channel A and B evidence computed",
+    "actual": "Channel A & B evidence present on all clauses",
+    "status": "PASS",
+    "evidence_file": "",
+    "severity_if_failed": "NONE"
+  },
+  {
+    "test_id": "COH-02",
+    "section": "Phase E: Coherence",
+    "scenario": "Conformal intervals & severity levels",
+    "expected": "Valid intervals and severity classifications",
+    "actual": "All clauses contain calibrated intervals and valid severity",
+    "status": "PASS",
+    "evidence_file": "",
+    "severity_if_failed": "NONE"
+  },
+  {
+    "test_id": "COH-03",
+    "section": "Phase E: Coherence",
+    "scenario": "Behavioral probe: Abrupt topic shift anomaly detection",
+    "expected": "Outlier clause produces high anomaly score",
+    "actual": "Outlier clause score: 0.3568 (Severity: MEDIUM)",
+    "status": "PASS",
+    "evidence_file": "",
+    "severity_if_failed": "NONE"
+  },
+  {
+    "test_id": "RUL-01",
+    "section": "Phase G: Rules",
+    "scenario": "Deterministic reference & date inconsistency detection",
+    "expected": "Both broken reference and date violation detected",
+    "actual": "Detected flags: ['DANGLING_SECTION_REFERENCE', 'DANGLING_SCHEDULE_REFERENCE', 'INVERTED_CONTRACT_TERM']",
+    "status": "PASS",
+    "evidence_file": "",
+    "severity_if_failed": "NONE"
+  },
+  {
+    "test_id": "XAI-01",
+    "section": "Phase H: XAI",
+    "scenario": "Channel A Integrated Gradients token attribution",
+    "expected": "Real tokens and finite attribution values returned",
+    "actual": "Returned 26 tokens with computed attribution scores (sample: ['[CLS]', '1', '.', 'term'])",
+    "status": "PASS",
+    "evidence_file": "",
+    "severity_if_failed": "NONE"
+  },
+  {
+    "test_id": "XAI-02",
+    "section": "Phase H: XAI",
+    "scenario": "Channel B neighborhood perturbation sensitivity",
+    "expected": "Perturbation sensitivity computed",
+    "actual": "Returned neighbor=doc_1b63ad99_1, delta=0.0752",
+    "status": "PASS",
+    "evidence_file": "",
+    "severity_if_failed": "NONE"
+  },
+  {
+    "test_id": "XAI-03",
+    "section": "Phase H: XAI",
+    "scenario": "Nonexistent clause XAI query rejection",
+    "expected": "404 Not Found",
+    "actual": "404 Not Found",
+    "status": "PASS",
+    "evidence_file": "",
+    "severity_if_failed": "NONE"
+  },
+  {
+    "test_id": "FDB-01",
+    "section": "Phase I: Feedback",
+    "scenario": "Valid reviewer feedback submission",
+    "expected": "200 OK with feedback_id",
+    "actual": "200 OK (feedback_id=2687b1b1-4016-4c6a-b4a2-9ffcf749ff13)",
+    "status": "PASS",
+    "evidence_file": "",
+    "severity_if_failed": "NONE"
+  },
+  {
+    "test_id": "FDB-02",
+    "section": "Phase I: Feedback",
+    "scenario": "Invalid reviewer verdict rejection",
+    "expected": "422 Unprocessable Entity",
+    "actual": "422 Unprocessable Entity",
+    "status": "PASS",
+    "evidence_file": "",
+    "severity_if_failed": "NONE"
+  },
+  {
+    "test_id": "SEC-01",
+    "section": "Phase J: Security",
+    "scenario": "Cross-client document analyze rejection",
+    "expected": "404 Not Found (prevents enumeration)",
+    "actual": "404 Not Found",
+    "status": "PASS",
+    "evidence_file": "",
+    "severity_if_failed": "NONE"
+  },
+  {
+    "test_id": "SEC-02",
+    "section": "Phase J: Security",
+    "scenario": "Cross-client job status access rejection",
+    "expected": "404 Not Found",
+    "actual": "404 Not Found",
+    "status": "PASS",
+    "evidence_file": "",
+    "severity_if_failed": "NONE"
+  },
+  {
+    "test_id": "SEC-03",
+    "section": "Phase J: Security",
+    "scenario": "Cross-client job results access rejection",
+    "expected": "404 Not Found",
+    "actual": "404 Not Found",
+    "status": "PASS",
+    "evidence_file": "",
+    "severity_if_failed": "NONE"
+  },
+  {
+    "test_id": "SEC-04",
+    "section": "Phase J: Security",
+    "scenario": "Cross-client XAI explanation access rejection",
+    "expected": "404 Not Found",
+    "actual": "404 Not Found",
+    "status": "PASS",
+    "evidence_file": "",
+    "severity_if_failed": "NONE"
+  },
+  {
+    "test_id": "SEC-05",
+    "section": "Phase J: Security",
+    "scenario": "Cross-client feedback submission rejection",
+    "expected": "404 Not Found",
+    "actual": "404 Not Found",
+    "status": "PASS",
+    "evidence_file": "",
+    "severity_if_failed": "NONE"
+  },
+  {
+    "test_id": "SEC-06",
+    "section": "Phase J: Security",
+    "scenario": "Ordinary user key rejected from administrative cleanup",
+    "expected": "403 Forbidden",
+    "actual": "403 Forbidden",
+    "status": "PASS",
+    "evidence_file": "",
+    "severity_if_failed": "NONE"
+  },
+  {
+    "test_id": "SEC-07",
+    "section": "Phase J: Security",
+    "scenario": "Unauthenticated request rejected from cleanup",
+    "expected": "401 Unauthorized",
+    "actual": "401 Unauthorized",
+    "status": "PASS",
+    "evidence_file": "",
+    "severity_if_failed": "NONE"
+  },
+  {
+    "test_id": "SEC-08",
+    "section": "Phase J: Security",
+    "scenario": "Admin key authorized for administrative cleanup",
+    "expected": "200 OK (cleanup_complete)",
+    "actual": "200 OK: {'deleted_documents_count': 0, 'retained_documents_count': 20, 'jobs_purged_count': 0, 'max_age_seconds': 86400.0, 'timestamp': '2026-10-10T08:21:33.871644+00:00'}",
+    "status": "PASS",
+    "evidence_file": "",
+    "severity_if_failed": "NONE"
+  },
+  {
+    "test_id": "NEG-01",
+    "section": "Phase K: Negative",
+    "scenario": "Missing authentication header",
+    "expected": "401 Unauthorized",
+    "actual": "401 Unauthorized",
+    "status": "PASS",
+    "evidence_file": "",
+    "severity_if_failed": "NONE"
+  },
+  {
+    "test_id": "NEG-02",
+    "section": "Phase K: Negative",
+    "scenario": "Invalid authentication token",
+    "expected": "401 Unauthorized",
+    "actual": "401 Unauthorized",
+    "status": "PASS",
+    "evidence_file": "",
+    "severity_if_failed": "NONE"
+  },
+  {
+    "test_id": "NEG-03",
+    "section": "Phase K: Negative",
+    "scenario": "Non-existent document analysis request",
+    "expected": "404 Not Found",
+    "actual": "404 Not Found",
+    "status": "PASS",
+    "evidence_file": "",
+    "severity_if_failed": "NONE"
+  },
+  {
+    "test_id": "NEG-04",
+    "section": "Phase K: Negative",
+    "scenario": "Non-existent job polling request",
+    "expected": "404 Not Found",
+    "actual": "404 Not Found",
+    "status": "PASS",
+    "evidence_file": "",
+    "severity_if_failed": "NONE"
+  }
+]

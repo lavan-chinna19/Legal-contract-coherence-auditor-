@@ -1,0 +1,10 @@
+fixture,status,doc_id,clauses_count,backend_job_id,mean_score,rule_flags_count,alignment_result,notes
+fixture_01_baseline.txt,SUCCESS,doc_13f70fad,5,1971b314-3ede-4eea-af09-bbb5020a706d,0.3377,0,PROVEN_ALIGNABLE,"Segmented 5 authoritative clauses, doc_id verified (doc_13f70fad)."
+fixture_02_repeated_prefix.txt,SUCCESS,doc_1e4c1b60,3,75b4a818-c24a-4d83-a939-0e5529e72c41,0.3228,1,PROVEN_ALIGNABLE,"Segmented 3 authoritative clauses, doc_id verified (doc_1e4c1b60)."
+fixture_03_identical_clauses.txt,SUCCESS,doc_ecd9d69a,5,53deda8f-ac7c-4b97-8f56-fcead6855eb5,0.3424,0,PROVEN_ALIGNABLE,"Segmented 5 authoritative clauses, doc_id verified (doc_ecd9d69a)."
+fixture_04_long_clause.txt,SUCCESS,doc_4e736872,3,a65b75aa-b6a3-42ec-a4e8-5b58248ba6cd,0.3548,0,PROVEN_ALIGNABLE,"Segmented 3 authoritative clauses, doc_id verified (doc_4e736872)."
+fixture_05_multiline_text.txt,SUCCESS,doc_be91ba42,5,353a79c9-fe66-40d4-b4c8-42042cbd4dba,0.349,0,PROVEN_ALIGNABLE,"Segmented 5 authoritative clauses, doc_id verified (doc_be91ba42)."
+fixture_06_nested_numbering.txt,SUCCESS,doc_47b0625c,4,67fea8ac-ff0f-45a7-869d-3865b6a123c9,0.3336,0,PROVEN_ALIGNABLE,"Segmented 4 authoritative clauses, doc_id verified (doc_47b0625c)."
+fixture_09_unicode_symbols.txt,SUCCESS,doc_718fc277,3,80a754f9-2d0f-4105-847d-4bf7e57e88c8,0.3518,0,PROVEN_ALIGNABLE,"Segmented 3 authoritative clauses, doc_id verified (doc_718fc277)."
+fixture_10_literal_ellipsis.txt,SUCCESS,doc_9b6464c7,3,4bd9dc25-be58-4a23-b48e-1cc3d36691f0,0.3472,0,PROVEN_ALIGNABLE,"Segmented 3 authoritative clauses, doc_id verified (doc_9b6464c7)."
+fixture_12_short_clause.txt,SUCCESS,doc_28448b53,3,a67341ea-2832-441b-be67-313450164191,0.3458,0,PROVEN_ALIGNABLE,"Segmented 3 authoritative clauses, doc_id verified (doc_28448b53)."

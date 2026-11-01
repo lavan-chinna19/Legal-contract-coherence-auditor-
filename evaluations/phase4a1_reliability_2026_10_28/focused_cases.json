@@ -1,0 +1,368 @@
+{
+  "cases": [
+    {
+      "case_id": "notification_type_only",
+      "text": "Section 1. Duty\nThe provider shall notify the customer.\nSection 2. Duty\nThe customer shall be notified by the provider.",
+      "gold_state": "UNCERTAIN",
+      "gold_match": null,
+      "actors_left": [
+        "provider"
+      ],
+      "actors_right": [
+        "provider"
+      ],
+      "action": "NOTIFY",
+      "recipient": "customer",
+      "expected_actor_action_relationship": "MATCHED",
+      "expected_instance": null,
+      "provenance": "MECHANICAL_AUTHOR_CONSTRUCTED_EXPOSED_DEVELOPMENT",
+      "independent_annotation": false
+    },
+    {
+      "case_id": "named_notice_passive",
+      "text": "Section 1. Duty\nThe provider shall notify the customer about Notice Alpha.\nSection 2. Duty\nThe customer shall be notified by the provider about Notice Alpha.",
+      "gold_state": "MATCHED",
+      "gold_match": true,
+      "actors_left": [
+        "provider"
+      ],
+      "actors_right": [
+        "provider"
+      ],
+      "action": "NOTIFY",
+      "recipient": "customer",
+      "expected_actor_action_relationship": "MATCHED",
+      "expected_instance": "notice alpha",
+      "provenance": "MECHANICAL_AUTHOR_CONSTRUCTED_EXPOSED_DEVELOPMENT",
+      "independent_annotation": false
+    },
+    {
+      "case_id": "missing_passive_agent",
+      "text": "Section 1. Duty\nThe provider shall notify the customer about Notice Alpha.\nSection 2. Duty\nThe customer shall be notified about Notice Alpha.",
+      "gold_state": "UNCERTAIN",
+      "gold_match": null,
+      "actors_left": [
+        "provider"
+      ],
+      "actors_right": [],
+      "action": "NOTIFY",
+      "recipient": "customer",
+      "expected_actor_action_relationship": "UNCERTAIN",
+      "expected_instance": "notice alpha",
+      "provenance": "MECHANICAL_AUTHOR_CONSTRUCTED_EXPOSED_DEVELOPMENT",
+      "independent_annotation": false
+    },
+    {
+      "case_id": "joint_active",
+      "text": "Section 1. Duty\nThe provider and subcontractor shall notify the customer about Notice Alpha.\nSection 2. Duty\nThe provider shall notify the customer about Notice Alpha.",
+      "gold_state": "DIFFERENT",
+      "gold_match": false,
+      "actors_left": [
+        "provider",
+        "subcontractor"
+      ],
+      "actors_right": [
+        "provider"
+      ],
+      "action": "NOTIFY",
+      "recipient": "customer",
+      "expected_actor_action_relationship": "DIFFERENT",
+      "expected_instance": "notice alpha",
+      "provenance": "MECHANICAL_AUTHOR_CONSTRUCTED_EXPOSED_DEVELOPMENT",
+      "independent_annotation": false
+    },
+    {
+      "case_id": "joint_passive",
+      "text": "Section 1. Duty\nThe provider and subcontractor shall notify the customer about Notice Alpha.\nSection 2. Duty\nThe customer shall be notified by the provider and subcontractor about Notice Alpha.",
+      "gold_state": "MATCHED",
+      "gold_match": true,
+      "actors_left": [
+        "provider",
+        "subcontractor"
+      ],
+      "actors_right": [
+        "provider",
+        "subcontractor"
+      ],
+      "action": "NOTIFY",
+      "recipient": "customer",
+      "expected_actor_action_relationship": "MATCHED",
+      "expected_instance": "notice alpha",
+      "provenance": "MECHANICAL_AUTHOR_CONSTRUCTED_EXPOSED_DEVELOPMENT",
+      "independent_annotation": false
+    },
+    {
+      "case_id": "joint_reordered",
+      "text": "Section 1. Duty\nThe provider and subcontractor shall notify the customer about Notice Alpha.\nSection 2. Duty\nThe customer shall be notified by the subcontractor and provider about Notice Alpha.",
+      "gold_state": "MATCHED",
+      "gold_match": true,
+      "actors_left": [
+        "provider",
+        "subcontractor"
+      ],
+      "actors_right": [
+        "subcontractor",
+        "provider"
+      ],
+      "action": "NOTIFY",
+      "recipient": "customer",
+      "expected_actor_action_relationship": "MATCHED",
+      "expected_instance": "notice alpha",
+      "provenance": "MECHANICAL_AUTHOR_CONSTRUCTED_EXPOSED_DEVELOPMENT",
+      "independent_annotation": false
+    },
+    {
+      "case_id": "compound_three",
+      "text": "Section 1. Duty\nThe provider, subcontractor and agent shall notify the customer about Notice Alpha.\nSection 2. Duty\nThe customer shall be notified by the agent, provider and subcontractor about Notice Alpha.",
+      "gold_state": "MATCHED",
+      "gold_match": true,
+      "actors_left": [
+        "provider",
+        "subcontractor",
+        "agent"
+      ],
+      "actors_right": [
+        "agent",
+        "provider",
+        "subcontractor"
+      ],
+      "action": "NOTIFY",
+      "recipient": "customer",
+      "expected_actor_action_relationship": "MATCHED",
+      "expected_instance": "notice alpha",
+      "provenance": "MECHANICAL_AUTHOR_CONSTRUCTED_EXPOSED_DEVELOPMENT",
+      "independent_annotation": false
+    },
+    {
+      "case_id": "alternative_subject",
+      "text": "Section 1. Duty\nThe provider or subcontractor shall notify the customer about Notice Alpha.\nSection 2. Duty\nThe provider shall notify the customer about Notice Alpha.",
+      "gold_state": "UNCERTAIN",
+      "gold_match": null,
+      "actors_left": [],
+      "actors_right": [
+        "provider"
+      ],
+      "action": "NOTIFY",
+      "recipient": "customer",
+      "expected_actor_action_relationship": "UNCERTAIN",
+      "expected_instance": "notice alpha",
+      "provenance": "MECHANICAL_AUTHOR_CONSTRUCTED_EXPOSED_DEVELOPMENT",
+      "independent_annotation": false
+    },
+    {
+      "case_id": "passive_payment",
+      "text": "Section 1. Duty\nPurchaser shall pay Invoice Cedar.\nSection 2. Duty\nInvoice Cedar must be paid by Purchaser.",
+      "gold_state": "MATCHED",
+      "gold_match": true,
+      "actors_left": [
+        "purchaser"
+      ],
+      "actors_right": [
+        "purchaser"
+      ],
+      "action": "PAY",
+      "recipient": null,
+      "expected_actor_action_relationship": "MATCHED",
+      "expected_instance": "invoice cedar",
+      "provenance": "MECHANICAL_AUTHOR_CONSTRUCTED_EXPOSED_DEVELOPMENT",
+      "independent_annotation": false
+    },
+    {
+      "case_id": "passive_delivery",
+      "text": "Section 1. Duty\nProvider must deliver Report Bravo to Customer.\nSection 2. Duty\nReport Bravo shall be delivered to Customer by Provider.",
+      "gold_state": "MATCHED",
+      "gold_match": true,
+      "actors_left": [
+        "provider"
+      ],
+      "actors_right": [
+        "provider"
+      ],
+      "action": "DELIVER",
+      "recipient": "customer",
+      "expected_actor_action_relationship": "MATCHED",
+      "expected_instance": "report bravo",
+      "provenance": "MECHANICAL_AUTHOR_CONSTRUCTED_EXPOSED_DEVELOPMENT",
+      "independent_annotation": false
+    },
+    {
+      "case_id": "generic_event_type",
+      "text": "Section 1. Duty\nBuyer shall pay the invoice.\nSection 2. Duty\nThe invoice shall be paid by Buyer.",
+      "gold_state": "UNCERTAIN",
+      "gold_match": null,
+      "actors_left": [
+        "buyer"
+      ],
+      "actors_right": [
+        "buyer"
+      ],
+      "action": "PAY",
+      "recipient": null,
+      "expected_actor_action_relationship": "MATCHED",
+      "expected_instance": null,
+      "provenance": "MECHANICAL_AUTHOR_CONSTRUCTED_EXPOSED_DEVELOPMENT",
+      "independent_annotation": false
+    },
+    {
+      "case_id": "distinct_instances",
+      "text": "Section 1. Duty\nProvider shall notify Customer about Notice Alpha.\nSection 2. Duty\nCustomer shall be notified by Provider about Notice Bravo.",
+      "gold_state": "DIFFERENT",
+      "gold_match": false,
+      "actors_left": [
+        "provider"
+      ],
+      "actors_right": [
+        "provider"
+      ],
+      "action": "NOTIFY",
+      "recipient": "customer",
+      "expected_actor_action_relationship": "MATCHED",
+      "expected_instance": null,
+      "provenance": "MECHANICAL_AUTHOR_CONSTRUCTED_EXPOSED_DEVELOPMENT",
+      "independent_annotation": false
+    },
+    {
+      "case_id": "recurrence",
+      "text": "Section 1. Duty\nBuyer shall pay Invoice Alpha each month.\nSection 2. Duty\nInvoice Alpha shall be paid by Buyer each month.",
+      "gold_state": "UNCERTAIN",
+      "gold_match": null,
+      "actors_left": [
+        "buyer"
+      ],
+      "actors_right": [
+        "buyer"
+      ],
+      "action": "PAY",
+      "recipient": null,
+      "expected_actor_action_relationship": "MATCHED",
+      "expected_instance": null,
+      "provenance": "MECHANICAL_AUTHOR_CONSTRUCTED_EXPOSED_DEVELOPMENT",
+      "independent_annotation": false
+    },
+    {
+      "case_id": "same_explicit_occurrence",
+      "text": "Section 1. Duty\nBuyer shall pay Invoice Alpha for occurrence 1.\nSection 2. Duty\nInvoice Alpha shall be paid by Buyer for occurrence 1.",
+      "gold_state": "MATCHED",
+      "gold_match": true,
+      "actors_left": [
+        "buyer"
+      ],
+      "actors_right": [
+        "buyer"
+      ],
+      "action": "PAY",
+      "recipient": null,
+      "expected_actor_action_relationship": "MATCHED",
+      "expected_instance": "invoice alpha|occurrence:1",
+      "provenance": "MECHANICAL_AUTHOR_CONSTRUCTED_EXPOSED_DEVELOPMENT",
+      "independent_annotation": false
+    },
+    {
+      "case_id": "different_explicit_occurrences",
+      "text": "Section 1. Duty\nBuyer shall pay Invoice Alpha for occurrence 1.\nSection 2. Duty\nInvoice Alpha shall be paid by Buyer for occurrence 2.",
+      "gold_state": "DIFFERENT",
+      "gold_match": false,
+      "actors_left": [
+        "buyer"
+      ],
+      "actors_right": [
+        "buyer"
+      ],
+      "action": "PAY",
+      "recipient": null,
+      "expected_actor_action_relationship": "MATCHED",
+      "expected_instance": null,
+      "provenance": "MECHANICAL_AUTHOR_CONSTRUCTED_EXPOSED_DEVELOPMENT",
+      "independent_annotation": false
+    },
+    {
+      "case_id": "one_sided_occurrence",
+      "text": "Section 1. Duty\nBuyer shall pay Invoice Alpha for occurrence 1.\nSection 2. Duty\nInvoice Alpha shall be paid by Buyer.",
+      "gold_state": "UNCERTAIN",
+      "gold_match": null,
+      "actors_left": [
+        "buyer"
+      ],
+      "actors_right": [
+        "buyer"
+      ],
+      "action": "PAY",
+      "recipient": null,
+      "expected_actor_action_relationship": "MATCHED",
+      "expected_instance": null,
+      "provenance": "MECHANICAL_AUTHOR_CONSTRUCTED_EXPOSED_DEVELOPMENT",
+      "independent_annotation": false
+    },
+    {
+      "case_id": "passive_condition",
+      "text": "Section 1. Duty\nIf approved, Provider shall notify Customer about Notice Alpha.\nSection 2. Duty\nIf requested, Customer shall be notified by Provider about Notice Alpha.",
+      "gold_state": "UNCERTAIN",
+      "gold_match": null,
+      "actors_left": [
+        "provider"
+      ],
+      "actors_right": [
+        "provider"
+      ],
+      "action": "NOTIFY",
+      "recipient": "customer",
+      "expected_actor_action_relationship": "MATCHED",
+      "expected_instance": "notice alpha",
+      "provenance": "MECHANICAL_AUTHOR_CONSTRUCTED_EXPOSED_DEVELOPMENT",
+      "independent_annotation": false
+    },
+    {
+      "case_id": "passive_exception",
+      "text": "Section 1. Duty\nProvider shall notify Customer about Notice Alpha unless disputed.\nSection 2. Duty\nCustomer shall be notified by Provider about Notice Alpha.",
+      "gold_state": "UNCERTAIN",
+      "gold_match": null,
+      "actors_left": [
+        "provider"
+      ],
+      "actors_right": [
+        "provider"
+      ],
+      "action": "NOTIFY",
+      "recipient": "customer",
+      "expected_actor_action_relationship": "MATCHED",
+      "expected_instance": "notice alpha",
+      "provenance": "MECHANICAL_AUTHOR_CONSTRUCTED_EXPOSED_DEVELOPMENT",
+      "independent_annotation": false
+    },
+    {
+      "case_id": "passive_negation",
+      "text": "Section 1. Duty\nProvider shall not notify Customer about Notice Alpha.\nSection 2. Duty\nCustomer shall be notified by Provider about Notice Alpha.",
+      "gold_state": "UNCERTAIN",
+      "gold_match": null,
+      "actors_left": [
+        "provider"
+      ],
+      "actors_right": [
+        "provider"
+      ],
+      "action": "NOTIFY",
+      "recipient": "customer",
+      "expected_actor_action_relationship": "UNCERTAIN",
+      "expected_instance": "notice alpha",
+      "provenance": "MECHANICAL_AUTHOR_CONSTRUCTED_EXPOSED_DEVELOPMENT",
+      "independent_annotation": false
+    },
+    {
+      "case_id": "unknown_action",
+      "text": "Section 1. Duty\nProvider shall reconcile the accounts.\nSection 2. Duty\nThe accounts shall be reconciled by Provider.",
+      "gold_state": "UNSUPPORTED",
+      "gold_match": null,
+      "actors_left": [
+        "provider"
+      ],
+      "actors_right": [],
+      "action": "RECONCILE",
+      "recipient": null,
+      "expected_actor_action_relationship": "UNCERTAIN",
+      "expected_instance": null,
+      "provenance": "MECHANICAL_AUTHOR_CONSTRUCTED_EXPOSED_DEVELOPMENT",
+      "independent_annotation": false
+    }
+  ],
+  "claim": "Controlled authored regression cases, not unseen or expert adjudicated"
+}

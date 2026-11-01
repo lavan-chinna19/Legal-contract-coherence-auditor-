@@ -1,0 +1,8 @@
+Section 1. Definitions
+Services means the example work.
+
+Section 2. Goods
+Goods are specified here.
+
+Section 3. Payment
+Payment follows the immediately preceding Section 1.

@@ -1,0 +1,4 @@
+evaluation_criterion,TP,FP,FN,TN,recall,precision,specificity,eligible_positives,matched_negatives,wilson_95_ci_recall,notes
+PRODUCTION_ANOMALY_PREDICATE (is_anomaly / SeverityRanker),0,0,5,2,0.0% (0/5),UNDEFINED (0/0),100.0% (2/2),5,2,"[0.0000, 0.4345]","Production predicate requires combined >= 0.50 or Channel B >= 0.70; all 66 clauses remained CLEAN tier (scores < 0.35, is_anomaly=False)."
+EXPLORATORY_DELTA_THRESHOLD (max_delta_B >= 0.08),0,0,5,2,0.0% (0/5),UNDEFINED (0/0),100.0% (2/2),5,2,"[0.0000, 0.4345]",Exploratory delta threshold 0.08 was not reached (max observed delta was +0.0152).
+BROAD_TRANSFORMATION_RESPONSE (6 cases incl ambiguous),0,0,6,2,0.0% (0/6),UNDEFINED (0/0),100.0% (2/2),6,2,"[0.0000, 0.3903]",Includes SCEN_P2_03_SWAP_SUBTLE (Confidentiality vs Indemnification swap).

@@ -1,0 +1,15 @@
+Section 1. Grant of License. Licensor grants Licensee a non-exclusive, non-transferable license to use the Software.
+
+Section 2. Permitted Users. Use of the Software is limited to authorized employees pursuant to Section 1.
+
+Section 4. Schedule of Fees. Annual subscription fee shall be $50,000 payable upon execution.
+
+Section 3. Fees and Taxes. Licensee shall pay the annual subscription fees set forth in Section 4.
+
+Section 5. Warranty Disclaimer. Licensor disclaims all implied warranties of merchantability and fitness for a particular purpose.
+
+Section 6. Audit Rights. Licensor may audit Licensee's software deployment once annually upon reasonable notice.
+
+Section 7. Term. The initial term begins on March 1, 2025 and expires on February 28, 2026.
+
+Section 8. Dispute Resolution. Any dispute under this Agreement shall be resolved through binding arbitration.

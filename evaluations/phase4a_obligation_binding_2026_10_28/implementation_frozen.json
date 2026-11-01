@@ -1,0 +1,13 @@
+{
+  "frozen_before_evaluation": true,
+  "files": {
+    "evaluations/phase4a_obligation_binding_2026_10_28/evaluate.py": "2b254593f4b8cce547ba501740178e3c6c5729e30e1a84681058648ecf02a1ec",
+    "evaluations/phase4a_obligation_binding_2026_10_28/PROTOCOL.md": "befa059bbd78c391a25d00955b62197c7f1c308fe95e3a0510ea71d7edd9b3eb",
+    "src/api/release_routes.py": "999b1d7345b9835bfd64eeb4854666c62ec4638384a016e58f76e51ac9f166f2",
+    "src/api/reports.py": "8117ff1bc9f527fd1352c41db0b3cd8ce7ec0ef2c8f675174a7d5f02452af932",
+    "src/obligations/__init__.py": "31898b958b7d08aed392348473e934fddc98986ba99b742727d9418a079c35d6",
+    "src/obligations/binding.py": "18195475a72060c5df63c9cfed585fb793ac164d76104bcdd7e607205e030836",
+    "tests/test_obligation_binding.py": "1b648e30bbb4a3c4c91ff937b4bf36b0f87399421f181e7d2bf570f687968032",
+    "tests/test_obligation_integration.py": "f5af4215452e9f73de86445b6cc1e52d642fa1969cfa4ec5bd823d0c14cccf98"
+  }
+}

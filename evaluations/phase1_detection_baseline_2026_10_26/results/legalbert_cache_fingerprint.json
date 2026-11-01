@@ -1,0 +1,27 @@
+{
+  "model": "nlpaueb/legal-bert-base-uncased",
+  "cached_main_revision": "15b570cbf88259610b082a167dacc190124f60f6",
+  "files": {
+    "config.json": {
+      "sha256": "716ea70c3c3e74bfe8496cc04cba7cd52f4ca45401e74042bb1058fe0390a1b6",
+      "bytes": 1017
+    },
+    "pytorch_model.bin": {
+      "sha256": "6b4f1da798ff101a66ad5cb11c6daa7f99cd41e7909277e01398576e8bd789bd",
+      "bytes": 440474526
+    },
+    "special_tokens_map.json": {
+      "sha256": "303df45a03609e4ead04bc3dc1536d0ab19b5358db685b6f3da123d05ec200e3",
+      "bytes": 112
+    },
+    "tokenizer_config.json": {
+      "sha256": "a025160ef0431f1a392f6f050c1310f4c5d9fb6f275932dbccba73c4d214bf10",
+      "bytes": 48
+    },
+    "vocab.txt": {
+      "sha256": "3aaa02f2e3a397eee0f813caa567c87cddab1045a4a6b8ac6261f0cc799efb8f",
+      "bytes": 221793
+    }
+  },
+  "note": "Supplementary post-run fingerprint of already local offline model. Production checkpoint and centroids were hashed before predictions in frozen_manifest.json. No model downloaded or modified."
+}

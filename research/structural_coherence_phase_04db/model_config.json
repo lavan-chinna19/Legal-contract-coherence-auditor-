@@ -1,0 +1,56 @@
+{
+  "phase": "PHASE_4D_B",
+  "baseline_frozen_models": {
+    "channel_a": {
+      "name": "FrozenSentenceTransformerChannelA",
+      "embedding_model": "all-MiniLM-L6-v2",
+      "embedding_dimension": 384,
+      "centroid_fixture": "fixtures/ledgar_centroids.npz",
+      "distance_metric": "cosine",
+      "clip_bounds": [0.20, 0.80]
+    },
+    "channel_b": {
+      "name": "FrozenPairwiseMLPChannelB",
+      "architecture": "Sequential(Linear(768, 128), ReLU(), Dropout(0.2), Linear(128, 1))",
+      "input_dimension": 768,
+      "checkpoint": "models/coherence_classifier.pt",
+      "anomaly_threshold": 0.70
+    },
+    "ensemble": {
+      "name": "ProductionDualChannelEnsemble",
+      "weights": [0.5, 0.5],
+      "anomaly_threshold": 0.50,
+      "override_threshold": 0.70
+    }
+  },
+  "experimental_candidates": {
+    "candidate_c1": {
+      "name": "Candidate_C1_ContextualBoundary",
+      "version": "1.1.0_contextual",
+      "type": "multi_factor_boundary_detector",
+      "window_size": 2,
+      "weights": {
+        "w_ctx": 0.35,
+        "w_contrast": 0.25,
+        "w_discordance": 0.40
+      },
+      "threshold": 0.42
+    },
+    "candidate_c2": {
+      "name": "Candidate_C2_SequenceBiLSTM",
+      "version": "1.0.0_experimental",
+      "architecture": "BiLSTM(input_dim=385, hidden_dim=64, num_layers=1, bidirectional=True) -> Linear(128, 1)",
+      "checkpoint": "models/experimental/phase_04db/contextual_sequence_coherence.pt",
+      "checkpoint_sha256": "cac804594959a419126463191c3c520206f00244540133492ffd98bbd4a4c9aa",
+      "input_dimension": 385,
+      "threshold": 0.50
+    },
+    "candidate_c3": {
+      "name": "Candidate_C3_TopologicalDependency",
+      "version": "1.0.0_dag",
+      "type": "topological_precedence_dag",
+      "lifecycle_stages": 7,
+      "threshold": 0.50
+    }
+  }
+}

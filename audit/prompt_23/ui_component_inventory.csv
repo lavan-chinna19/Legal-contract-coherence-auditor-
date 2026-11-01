@@ -1,0 +1,36 @@
+Component_ID,UI_Location,Expected_Function,Actual_Behavior,Backend_Dependency,Test_Status
+nav-title,Header Left,Displays application branding,Displays 'Legal Contract Coherence Auditor',None,PASS
+backend-status-pill,Header Right,Shows backend connectivity status,Displays 'Online' green pill when backend reachable,GET /health,PASS
+api-key-input,Top Bar,Accepts client API key,Stores key in React state and passes in X-API-Key header,None,PASS
+tab-upload,Navigation Tabs,Switches to Upload & Audit tab,Displays upload zone and privacy consent,None,PASS
+tab-results,Navigation Tabs,Switches to Results tab,Displays metric cards and clause list,GET /v1/jobs/{id}/results,PASS
+tab-xai,Navigation Tabs,Switches to Explainability tab,Displays token attribution and perturbation views,GET /v1/xai/attribution; GET /v1/xai/sensitivity,PASS
+tab-feedback,Navigation Tabs,Switches to Reviewer Feedback tab,Displays feedback form and verdict inputs,POST /v1/feedback,PASS
+tab-transparency,Navigation Tabs,Switches to Model Card tab,Displays methodology and data retention disclosure,None,PASS
+contract-file-input,Upload Tab,Accepts contract text file,Loads file into state and displays filename,None,PASS
+privacy-checkbox,Upload Tab,Enforces privacy notice acknowledgment,Toggles privacyAcknowledged state; enables button,None,PASS
+btn-analyze,Upload Tab,Initiates upload and asynchronous audit,Uploads and polls job; disabled until privacy+key,POST /v1/upload; POST /v1/analyze; GET /v1/jobs/{id},PASS
+analysis-status-banner,Upload Tab,Shows progress during analysis,Displays upload status and polling updates,None,PASS
+metric-total-clauses,Results Tab,Displays total segmented clause count,Renders total_clauses integer,GET /v1/jobs/{id}/results,PASS
+metric-ml-anomalies,Results Tab,Displays ML anomaly count,Renders ml_anomaly_count integer,GET /v1/jobs/{id}/results,PASS
+metric-rule-violations,Results Tab,Displays deterministic rule violation count,Renders rule_violation_count integer,GET /v1/jobs/{id}/results,PASS
+metric-total-flags,Results Tab,Displays combined total flags,Renders total_flags integer,GET /v1/jobs/{id}/results,PASS
+metric-mean-coherence,Results Tab,Displays mean combined coherence score,Renders mean_combined_score formatted float,GET /v1/jobs/{id}/results,PASS
+metric-max-coherence,Results Tab,Displays max combined coherence score,Renders max_combined_score formatted float,GET /v1/jobs/{id}/results,PASS
+severity-breakdown-high,Results Tab,Displays high severity count badge,Renders high_severity_count with red badge,GET /v1/jobs/{id}/results,PASS
+severity-breakdown-med,Results Tab,Displays medium severity count badge,Renders medium_severity_count with amber badge,GET /v1/jobs/{id}/results,PASS
+severity-breakdown-low,Results Tab,Displays low severity count badge,Renders low_severity_count with green badge,GET /v1/jobs/{id}/results,PASS
+coherence-sequence-map,Results Tab,Displays visual sequence progression blocks,Renders interactive severity blocks,GET /v1/jobs/{id}/results,PASS
+clause-selection-dropdown,Results Tab,Allows selecting active clause,Updates selectedClauseId state,GET /v1/jobs/{id}/results,PASS
+clause-table,Results Tab,Displays table of clauses and previews,Renders rows with scores and confidence intervals,GET /v1/jobs/{id}/results,PASS
+rule-flags-list,Results Tab,Displays list of detected rule flags,Renders rule violations with claim scopes,GET /v1/jobs/{id}/results,PASS
+xai-mode-selector,XAI Tab,Selects between Attribution and Sensitivity,Switches active XAI calculation mode,None,PASS
+xai-attribution-display,XAI Tab,Renders token-level Integrated Gradients,Displays tokens with color-coded gradients,GET /v1/xai/attribution,PASS
+xai-sensitivity-display,XAI Tab,Renders neighbor perturbation sensitivity,Displays neighbor clause score deltas,GET /v1/xai/sensitivity,PASS
+feedback-clause-selector,Feedback Tab,Selects target clause for feedback,Populates clause ID from analysis results,None,PASS
+feedback-verdict-selector,Feedback Tab,Selects CONFIRM_ANOMALY or REJECT_ANOMALY,Sets feedbackVerdict state,None,PASS
+feedback-reviewer-id-input,Feedback Tab,Captures reviewer identification,Sets reviewerId state,None,PASS
+feedback-provenance-select,Feedback Tab,Selects REAL or SYNTHETIC provenance,Sets feedbackProvenance state,None,PASS
+btn-submit-feedback,Feedback Tab,Submits reviewer feedback record,Submits payload to backend; displays success ID,POST /v1/feedback,PASS
+feedback-success-banner,Feedback Tab,Confirms feedback persistence,Displays green alert with feedback_id,None,PASS
+disclaimer-banner,Global Footer,Displays research prototype legal disclaimer,Renders bold non-legal-advice warning,None,PASS

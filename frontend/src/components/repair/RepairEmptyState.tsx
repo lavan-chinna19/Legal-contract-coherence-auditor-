@@ -8,7 +8,7 @@ interface RepairEmptyStateProps {
 }
 
 export function RepairEmptyState({
-  message = "Select a clause in the Contract Review workspace and click 'Explore alternative positions' to inspect counterfactual candidate insertion slots.",
+  message = "Select a clause in the Contract Review workspace and click 'Suggested positions (Experimental)' to inspect counterfactual candidate insertion slots.",
 }: RepairEmptyStateProps) {
   return (
     <div
@@ -48,7 +48,7 @@ export function RepairEmptyState({
           marginBottom: "0.5rem",
         }}
       >
-        Counterfactual Repositioning
+        Suggested Clause Positions
       </h3>
       <p
         style={{

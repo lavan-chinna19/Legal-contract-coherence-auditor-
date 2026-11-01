@@ -1,0 +1,10 @@
+model_name,model_type,split,condition_positives,condition_negatives,tp,fp,fn,tn,recall,precision,f1,specificity,fpr,balanced_accuracy,wilson_95_ci_lower,wilson_95_ci_upper,mean_latency_ms
+Baseline_B0_FrozenChannelB,Frozen Neural Pairwise,DIAGNOSTIC,5,2,0,0,5,2,0.0,N/A,N/A,1.0,0.0,0.5,0.0,0.4345,24.01
+Baseline_B0_FrozenChannelB,Frozen Neural Pairwise,VALIDATION,2,1,0,0,2,1,0.0,N/A,N/A,1.0,0.0,0.5,0.0,0.6576,6.35
+Baseline_B0_FrozenChannelB,Frozen Neural Pairwise,HELDOUT_TEST,2,2,0,0,2,2,0.0,N/A,N/A,1.0,0.0,0.5,0.0,0.6576,7.68
+Baseline_B1_ProductionDualChannel,Frozen Dual Channel Ensemble,DIAGNOSTIC,5,2,0,0,5,2,0.0,N/A,N/A,1.0,0.0,0.5,0.0,0.4345,41.93
+Baseline_B1_ProductionDualChannel,Frozen Dual Channel Ensemble,VALIDATION,2,1,0,0,2,1,0.0,N/A,N/A,1.0,0.0,0.5,0.0,0.6576,42.09
+Baseline_B1_ProductionDualChannel,Frozen Dual Channel Ensemble,HELDOUT_TEST,2,2,0,0,2,2,0.0,N/A,N/A,1.0,0.0,0.5,0.0,0.6576,38.31
+Baseline_B2_AdjacentCosine,Simple Cosine Baseline,DIAGNOSTIC,5,2,0,0,5,2,0.0,N/A,N/A,1.0,0.0,0.5,0.0,0.4345,7.54
+Baseline_B2_AdjacentCosine,Simple Cosine Baseline,VALIDATION,2,1,0,0,2,1,0.0,N/A,N/A,1.0,0.0,0.5,0.0,0.6576,7.61
+Baseline_B2_AdjacentCosine,Simple Cosine Baseline,HELDOUT_TEST,2,2,0,0,2,2,0.0,N/A,N/A,1.0,0.0,0.5,0.0,0.6576,6.62

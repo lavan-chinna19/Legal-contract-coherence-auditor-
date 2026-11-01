@@ -1,0 +1,7 @@
+num_clauses_N,num_candidates,median_embedding_latency_ms,median_candidate_gen_latency_ms,median_reference_rescoring_ms,iqr_reference_rescoring_ms,median_optimized_rescoring_ms,iqr_optimized_rescoring_ms,speedup_ratio,per_candidate_opt_latency_ms,environment
+3,3,3.34,0.021,9.27,1.14,2.14,0.49,4.34x,0.712,"Host CPU (x86_64, PyTorch CPU, 5 trials)"
+5,5,2.27,0.018,19.35,0.89,2.39,0.34,8.09x,0.479,"Host CPU (x86_64, PyTorch CPU, 5 trials)"
+8,8,1.81,0.043,42.18,1.68,3.49,0.39,12.07x,0.437,"Host CPU (x86_64, PyTorch CPU, 5 trials)"
+12,12,2.52,0.091,79.01,1.11,4.88,0.63,16.20x,0.406,"Host CPU (x86_64, PyTorch CPU, 5 trials)"
+16,16,2.83,0.157,123.37,5.72,5.99,0.42,20.59x,0.375,"Host CPU (x86_64, PyTorch CPU, 5 trials)"
+20,20,3.35,0.244,181.52,6.31,7.98,0.57,22.74x,0.399,"Host CPU (x86_64, PyTorch CPU, 5 trials)"

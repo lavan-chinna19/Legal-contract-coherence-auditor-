@@ -1,0 +1,9 @@
+detector,supported_pattern,implementation_source,expected_input,actual_output_indicator,limitations,confidence_level
+Channel A Scorer,Out-of-distribution semantic shift,src/scoring/channel_a.py,Clause embeddings,channel_a_anomaly_score,Permutation invariant (insensitive to order),HIGH
+Channel B Scorer,Adjacent discourse transition break,src/scoring/channel_b.py,Adjacent clause text pair,channel_b_anomaly_score,Local edge only; sensitive to context truncation,HIGH
+Unified Pipeline,Combined semantic + discourse severity,src/scoring/pipeline.py,Dual scores + conformal calibration,combined_score / severity,Heuristic weighting; calibration derived on synthetic shuffles,HIGH
+CrossReferenceChecker,Dangling internal Section citations,src/rules/reference_checker.py,Full contract clauses,flag_type: DANGLING_SECTION_REFERENCE,Requires explicit Section \d+ syntax; misses informal citations,HIGH
+CrossReferenceChecker,Undeclared Exhibit citations,src/rules/reference_checker.py,Full contract clauses,flag_type: DANGLING_EXHIBIT_REFERENCE,Only matches Exhibit [A-Z]; misses schedule cross-references,HIGH
+DateLogicChecker,Chronological temporal inversion,src/rules/date_checker.py,Date clauses,flag_type: CHRONOLOGICAL_INVERSION,Requires explicit date keywords (effective/termination/term),HIGH
+Duplicate Detector,Exact or near-duplicate clauses,NONE (UNAVAILABLE),Clause sequences,N/A,No dedicated detector exists in frozen LexAudit pipeline,HIGH
+Arbitrary Deletion Detector,Missing arbitrary clause,NONE (UNAVAILABLE),Clause sequences,N/A,Missing clause undetectable without surviving reference dependency,HIGH

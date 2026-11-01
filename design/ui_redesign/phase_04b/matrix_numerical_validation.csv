@@ -1,0 +1,13 @@
+antecedent_index,antecedent_name,successor_index,successor_name,artifact_score,direct_inference_score,absolute_delta,status
+0,Witnesseth,0,Witnesseth,0.442357,0.442357,2.35e-07,EXACT_MATCH
+0,Witnesseth,1,Governing Laws,0.33571,0.33571,2.27e-07,EXACT_MATCH
+1,Governing Laws,0,Witnesseth,0.334194,0.334194,1.74e-07,EXACT_MATCH
+0,Witnesseth,65,Use Of Proceeds,0.342631,0.342631,2.51e-07,EXACT_MATCH
+65,Use Of Proceeds,0,Witnesseth,0.33867,0.33867,4.32e-07,EXACT_MATCH
+5,Records,12,Non-Disparagement,0.351667,0.351667,2.85e-07,EXACT_MATCH
+12,Non-Disparagement,5,Records,0.338207,0.338207,1.85e-07,EXACT_MATCH
+20,Binding Effect,20,Binding Effect,0.438122,0.438122,2.13e-07,EXACT_MATCH
+33,No Conflicts,44,Events Of Default,0.337162,0.337162,2.50e-07,EXACT_MATCH
+44,Events Of Default,33,No Conflicts,0.337824,0.337824,2.22e-07,EXACT_MATCH
+50,Condition,60,Confidentiality,0.362391,0.362391,3.23e-07,EXACT_MATCH
+65,Use Of Proceeds,65,Use Of Proceeds,0.461397,0.461397,3.65e-07,EXACT_MATCH

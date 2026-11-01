@@ -1,0 +1,328 @@
+{
+  "doc_id": "doc_7c93455a",
+  "total_clauses": 3,
+  "ml_anomaly_count": 0,
+  "rule_violation_count": 3,
+  "total_flags": 3,
+  "high_severity_count": 1,
+  "medium_severity_count": 2,
+  "low_severity_count": 0,
+  "scoring_result": {
+    "doc_id": "doc_7c93455a",
+    "total_clauses": 3,
+    "anomaly_count": 0,
+    "high_severity_count": 0,
+    "medium_severity_count": 0,
+    "mean_combined_score": 0.3356,
+    "max_combined_score": 0.3365,
+    "clauses": [
+      {
+        "clause_id": "doc_7c93455a_0",
+        "doc_id": "doc_7c93455a",
+        "sequence_idx": 0,
+        "text_preview": "1. Term and Commencement. This Agreement commences on December 1, 2026 and terminates on January 1, ...",
+        "channel_a_score": 0.0,
+        "channel_b_score": 0.6729,
+        "combined_score": 0.3365,
+        "channel_a_evidence": {
+          "nearest_centroid_label": "type_89",
+          "centroid_distance": 0.0747,
+          "is_ood": false,
+          "top_k_distances": {
+            "type_89": 0.0747,
+            "type_33": 0.1208,
+            "type_88": 0.1267
+          }
+        },
+        "channel_b_evidence": {
+          "incoming_prob": null,
+          "outgoing_prob": 0.3271,
+          "incoming_anomaly": null,
+          "outgoing_anomaly": 0.6729,
+          "prev_clause_id": null,
+          "next_clause_id": "doc_7c93455a_1"
+        },
+        "is_anomaly": false,
+        "severity": "CLEAN",
+        "source_label": "Numbered Clause",
+        "confidence_interval": [
+          0.0,
+          1.0
+        ],
+        "calibration_source": "synthetic_shuffle_only",
+        "cross_channel_agreement": 0.3271,
+        "agreement_type": "CHANNEL_B_DOMINANT",
+        "interval_width": 1.0,
+        "severity_justification": "Scores well within normal legal contract distribution envelope"
+      },
+      {
+        "clause_id": "doc_7c93455a_1",
+        "doc_id": "doc_7c93455a",
+        "sequence_idx": 1,
+        "text_preview": "2. Payment Terms. Fees shall be paid according to the schedule set forth in Section 99 of this Agree...",
+        "channel_a_score": 0.0,
+        "channel_b_score": 0.6729,
+        "combined_score": 0.3365,
+        "channel_a_evidence": {
+          "nearest_centroid_label": "type_89",
+          "centroid_distance": 0.0776,
+          "is_ood": false,
+          "top_k_distances": {
+            "type_89": 0.0776,
+            "type_41": 0.0854,
+            "type_46": 0.0923
+          }
+        },
+        "channel_b_evidence": {
+          "incoming_prob": 0.3271,
+          "outgoing_prob": 0.3327,
+          "incoming_anomaly": 0.6729,
+          "outgoing_anomaly": 0.6673,
+          "prev_clause_id": "doc_7c93455a_0",
+          "next_clause_id": "doc_7c93455a_2"
+        },
+        "is_anomaly": false,
+        "severity": "CLEAN",
+        "source_label": "Numbered Clause",
+        "confidence_interval": [
+          0.0,
+          1.0
+        ],
+        "calibration_source": "synthetic_shuffle_only",
+        "cross_channel_agreement": 0.3271,
+        "agreement_type": "CHANNEL_B_DOMINANT",
+        "interval_width": 1.0,
+        "severity_justification": "Scores well within normal legal contract distribution envelope"
+      },
+      {
+        "clause_id": "doc_7c93455a_2",
+        "doc_id": "doc_7c93455a",
+        "sequence_idx": 2,
+        "text_preview": "3. Governing Law. This contract is governed by the laws of California.",
+        "channel_a_score": 0.0,
+        "channel_b_score": 0.6673,
+        "combined_score": 0.3337,
+        "channel_a_evidence": {
+          "nearest_centroid_label": "type_4",
+          "centroid_distance": 0.0679,
+          "is_ood": false,
+          "top_k_distances": {
+            "type_4": 0.0679,
+            "type_47": 0.1103,
+            "type_89": 0.1199
+          }
+        },
+        "channel_b_evidence": {
+          "incoming_prob": 0.3327,
+          "outgoing_prob": null,
+          "incoming_anomaly": 0.6673,
+          "outgoing_anomaly": null,
+          "prev_clause_id": "doc_7c93455a_1",
+          "next_clause_id": null
+        },
+        "is_anomaly": false,
+        "severity": "CLEAN",
+        "source_label": "Numbered Clause",
+        "confidence_interval": [
+          0.0,
+          1.0
+        ],
+        "calibration_source": "synthetic_shuffle_only",
+        "cross_channel_agreement": 0.3327,
+        "agreement_type": "CHANNEL_B_DOMINANT",
+        "interval_width": 1.0,
+        "severity_justification": "Scores well within normal legal contract distribution envelope"
+      }
+    ],
+    "metadata": {
+      "alpha_weight": 0.5,
+      "high_threshold": 0.75,
+      "med_threshold": 0.5,
+      "timestamp": "2026-10-10 08:21:31 UTC",
+      "rule_flags": [
+        {
+          "flag_id": "FLAG_REF_doc_7c93455a_001",
+          "doc_id": "doc_7c93455a",
+          "flag_type": "DANGLING_SECTION_REFERENCE",
+          "category": "RULE_BASED",
+          "severity": "MEDIUM",
+          "title": "Dangling Reference: 'set forth in Section 99' not found",
+          "description": "Clause 'doc_7c93455a_1' cites 'set forth in Section 99', but no matching section '99' was declared in the contract text.",
+          "clause_id": "doc_7c93455a_1",
+          "involved_clause_ids": [
+            "doc_7c93455a_1"
+          ],
+          "evidence": {
+            "citation_text": "set forth in Section 99",
+            "target_type": "SECTION",
+            "target_id": "99",
+            "available_targets_count": 0,
+            "available_targets_sample": [],
+            "char_start": 170,
+            "char_end": 193
+          },
+          "claim_scope": {
+            "what_this_shows": "Exact text scanning identified a cross-reference to a section/exhibit not declared in this document.",
+            "what_this_does_not_show": "Does not evaluate whether the reference exists in an external schedule or master agreement not included in the uploaded text."
+          }
+        },
+        {
+          "flag_id": "FLAG_REF_doc_7c93455a_002",
+          "doc_id": "doc_7c93455a",
+          "flag_type": "DANGLING_SCHEDULE_REFERENCE",
+          "category": "RULE_BASED",
+          "severity": "MEDIUM",
+          "title": "Dangling Reference: 'schedule set' not found",
+          "description": "Clause 'doc_7c93455a_1' cites 'schedule set', but no matching schedule 'SET' was declared in the contract text.",
+          "clause_id": "doc_7c93455a_1",
+          "involved_clause_ids": [
+            "doc_7c93455a_1"
+          ],
+          "evidence": {
+            "citation_text": "schedule set",
+            "target_type": "SCHEDULE",
+            "target_id": "SET",
+            "available_targets_count": 0,
+            "available_targets_sample": [],
+            "char_start": 161,
+            "char_end": 173
+          },
+          "claim_scope": {
+            "what_this_shows": "Exact text scanning identified a cross-reference to a section/exhibit not declared in this document.",
+            "what_this_does_not_show": "Does not evaluate whether the reference exists in an external schedule or master agreement not included in the uploaded text."
+          }
+        },
+        {
+          "flag_id": "FLAG_DATE_doc_7c93455a_001",
+          "doc_id": "doc_7c93455a",
+          "flag_type": "INVERTED_CONTRACT_TERM",
+          "category": "RULE_BASED",
+          "severity": "HIGH",
+          "title": "Illogical Term: Effective Date after Termination Date",
+          "description": "Effective Date 'December 1, 2026' (2026-12-01) in clause 'doc_7c93455a_0' is 334 days after Termination Date 'January 1, 2026' (2026-01-01) in clause 'doc_7c93455a_0'.",
+          "clause_id": "doc_7c93455a_0",
+          "involved_clause_ids": [
+            "doc_7c93455a_0"
+          ],
+          "evidence": {
+            "effective_date": "2026-12-01",
+            "termination_date": "2026-01-01",
+            "effective_raw": "December 1, 2026",
+            "termination_raw": "January 1, 2026",
+            "delta_days": -334
+          },
+          "claim_scope": {
+            "what_this_shows": "The parsed contract effective date is chronologically after the stated termination/expiration date.",
+            "what_this_does_not_show": "Does not evaluate if subsequent amendments or side letters extend the term."
+          }
+        }
+      ],
+      "rule_violation_count": 3
+    },
+    "calibration_source": "synthetic_shuffle_only"
+  },
+  "rule_flags": [
+    {
+      "flag_id": "FLAG_REF_doc_7c93455a_001",
+      "doc_id": "doc_7c93455a",
+      "flag_type": "DANGLING_SECTION_REFERENCE",
+      "category": "RULE_BASED",
+      "severity": "MEDIUM",
+      "title": "Dangling Reference: 'set forth in Section 99' not found",
+      "description": "Clause 'doc_7c93455a_1' cites 'set forth in Section 99', but no matching section '99' was declared in the contract text.",
+      "clause_id": "doc_7c93455a_1",
+      "involved_clause_ids": [
+        "doc_7c93455a_1"
+      ],
+      "evidence": {
+        "citation_text": "set forth in Section 99",
+        "target_type": "SECTION",
+        "target_id": "99",
+        "available_targets_count": 0,
+        "available_targets_sample": [],
+        "char_start": 170,
+        "char_end": 193
+      },
+      "claim_scope": {
+        "what_this_shows": "Exact text scanning identified a cross-reference to a section/exhibit not declared in this document.",
+        "what_this_does_not_show": "Does not evaluate whether the reference exists in an external schedule or master agreement not included in the uploaded text."
+      }
+    },
+    {
+      "flag_id": "FLAG_REF_doc_7c93455a_002",
+      "doc_id": "doc_7c93455a",
+      "flag_type": "DANGLING_SCHEDULE_REFERENCE",
+      "category": "RULE_BASED",
+      "severity": "MEDIUM",
+      "title": "Dangling Reference: 'schedule set' not found",
+      "description": "Clause 'doc_7c93455a_1' cites 'schedule set', but no matching schedule 'SET' was declared in the contract text.",
+      "clause_id": "doc_7c93455a_1",
+      "involved_clause_ids": [
+        "doc_7c93455a_1"
+      ],
+      "evidence": {
+        "citation_text": "schedule set",
+        "target_type": "SCHEDULE",
+        "target_id": "SET",
+        "available_targets_count": 0,
+        "available_targets_sample": [],
+        "char_start": 161,
+        "char_end": 173
+      },
+      "claim_scope": {
+        "what_this_shows": "Exact text scanning identified a cross-reference to a section/exhibit not declared in this document.",
+        "what_this_does_not_show": "Does not evaluate whether the reference exists in an external schedule or master agreement not included in the uploaded text."
+      }
+    },
+    {
+      "flag_id": "FLAG_DATE_doc_7c93455a_001",
+      "doc_id": "doc_7c93455a",
+      "flag_type": "INVERTED_CONTRACT_TERM",
+      "category": "RULE_BASED",
+      "severity": "HIGH",
+      "title": "Illogical Term: Effective Date after Termination Date",
+      "description": "Effective Date 'December 1, 2026' (2026-12-01) in clause 'doc_7c93455a_0' is 334 days after Termination Date 'January 1, 2026' (2026-01-01) in clause 'doc_7c93455a_0'.",
+      "clause_id": "doc_7c93455a_0",
+      "involved_clause_ids": [
+        "doc_7c93455a_0"
+      ],
+      "evidence": {
+        "effective_date": "2026-12-01",
+        "termination_date": "2026-01-01",
+        "effective_raw": "December 1, 2026",
+        "termination_raw": "January 1, 2026",
+        "delta_days": -334
+      },
+      "claim_scope": {
+        "what_this_shows": "The parsed contract effective date is chronologically after the stated termination/expiration date.",
+        "what_this_does_not_show": "Does not evaluate if subsequent amendments or side letters extend the term."
+      }
+    }
+  ],
+  "declared_targets": [],
+  "extracted_dates": [
+    {
+      "role": "EFFECTIVE_DATE",
+      "raw_text": "December 1, 2026",
+      "parsed_iso": "2026-12-01",
+      "clause_id": "doc_7c93455a_0",
+      "char_start": 54,
+      "char_end": 70
+    },
+    {
+      "role": "TERMINATION_DATE",
+      "raw_text": "January 1, 2026",
+      "parsed_iso": "2026-01-01",
+      "clause_id": "doc_7c93455a_0",
+      "char_start": 89,
+      "char_end": 104
+    }
+  ],
+  "metadata": {
+    "timestamp": "2026-10-10 08:21:31 UTC",
+    "ref_flags_count": 2,
+    "date_flags_count": 1,
+    "declared_targets_count": 0,
+    "extracted_dates_count": 2
+  }
+}

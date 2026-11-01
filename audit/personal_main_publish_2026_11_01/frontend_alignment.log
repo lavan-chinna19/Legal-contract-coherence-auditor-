@@ -1,0 +1,71 @@
+
+> frontend@0.1.0 test:alignment
+> node --experimental-strip-types scripts/test_alignment_suite.ts
+
+(node:10996) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///F:/projects/nlp/Legal-contract-coherence-auditor-/frontend/scripts/test_alignment_suite.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to F:\projects\nlp\Legal-contract-coherence-auditor-\frontend\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+=================================================================
+LEXAUDIT PHASE 3A — CLAUSE ALIGNMENT UNIT TEST SUITE
+=================================================================
+
+
+Test Cases Executed: 17
+Test Cases Passed:   17
+Test Cases Failed:   0
+Overall Status:      ALL TESTS PASSED [PASS]
+
+[PASS] TC-01 - Baseline Five Numbered Clauses
+       Observed: ["VERIFIED_FULL_TEXT","VERIFIED_FULL_TEXT","VERIFIED_FULL_TEXT","VERIFIED_FULL_TEXT","VERIFIED_FULL_TEXT"]
+       Notes:    All 5 sequential clauses uniquely aligned with verified full-text boundaries.
+[PASS] TC-02 - Repeated Prefix with Distinct Headings
+       Observed: ["VERIFIED_FULL_TEXT","VERIFIED_FULL_TEXT","VERIFIED_FULL_TEXT"]
+       Notes:    Sequential disambiguation successfully aligned each clause with its distinct heading offset.
+[PASS] TC-03 - Identical Boilerplate Clauses With Distinct Section Numbers
+       Observed: ["VERIFIED_FULL_TEXT","VERIFIED_FULL_TEXT","VERIFIED_FULL_TEXT","VERIFIED_FULL_TEXT","VERIFIED_FULL_TEXT"]
+       Notes:    Distinguished by section numbers in backend previews, both identical bodies verified.
+[PASS] TC-04 - Long Clause Exceeding 5,000 Characters
+       Observed: ["VERIFIED_FULL_TEXT","VERIFIED_FULL_TEXT","VERIFIED_FULL_TEXT"]
+       Notes:    Long clause successfully resolved with 9951 characters extracted intact.
+[PASS] TC-05 - Multiline Text with Sub-clauses
+       Observed: ["VERIFIED_FULL_TEXT","VERIFIED_FULL_TEXT","VERIFIED_FULL_TEXT","VERIFIED_FULL_TEXT","VERIFIED_FULL_TEXT"]
+       Notes:    Backend-segmented sub-clauses (a), (b), (c) all aligned cleanly with raw multiline text.
+[PASS] TC-06 - Nested Numbering Hierarchy
+       Observed: ["VERIFIED_FULL_TEXT","VERIFIED_FULL_TEXT","VERIFIED_FULL_TEXT","VERIFIED_FULL_TEXT"]
+       Notes:    Hierarchical sub-sections bounded strictly without prefix collision.
+[PASS] TC-07 - Mixed Line Endings (CRLF / LF)
+       Observed: ["VERIFIED_FULL_TEXT","VERIFIED_FULL_TEXT","VERIFIED_FULL_TEXT"]
+       Notes:    Both CRLF and LF delimited clauses aligned safely.
+[PASS] TC-08 - Whitespace Variability (Tabs, Indentation, Trailing)
+       Observed: ["VERIFIED_FULL_TEXT","VERIFIED_FULL_TEXT","VERIFIED_FULL_TEXT"]
+       Notes:    Irregular whitespace parsed without boundary distortion.
+[PASS] TC-09 - Unicode and Legal Symbol Preservation
+       Observed: ["VERIFIED_FULL_TEXT","VERIFIED_FULL_TEXT","VERIFIED_FULL_TEXT"]
+       Notes:    Special characters (§, €, ©, ™, ®, accents) preserved exactly without mojibake.
+[PASS] TC-10 - Literal Ellipsis Inside Text (<100 Chars)
+       Observed: ["VERIFIED_FULL_TEXT","VERIFIED_FULL_TEXT","VERIFIED_FULL_TEXT"]
+       Notes:    Literal ellipsis preserved without false truncation stripping.
+[PASS] TC-11 - Heading Token Reuse (Ambiguity Fallback & Clause Verification)
+       Observed: ["PREVIEW_ONLY_AMBIGUOUS","PREVIEW_ONLY_AMBIGUOUS","PREVIEW_ONLY_AMBIGUOUS","VERIFIED_FULL_TEXT","VERIFIED_FULL_TEXT","VERIFIED_FULL_TEXT"]
+       Notes:    Non-unique repeated headings safely flagged as PREVIEW_ONLY_AMBIGUOUS while unique body clauses verified.
+[PASS] TC-12 - Short Clauses (<100 Chars)
+       Observed: ["VERIFIED_FULL_TEXT","VERIFIED_FULL_TEXT","VERIFIED_FULL_TEXT"]
+       Notes:    Short clauses without backend truncation marks aligned to exact byte boundary.
+[PASS] TC-13 - Non-Unique Substring Embedded in Prior Clause
+       Observed: ["VERIFIED_FULL_TEXT","VERIFIED_FULL_TEXT","VERIFIED_FULL_TEXT"]
+       Notes:    Monotonic offset tracking prevented backward search jumping into Clause A's inner citation.
+[PASS] TC-14 - Missing Match Desynchronization
+       Observed: ["PREVIEW_ONLY_AMBIGUOUS","PREVIEW_ONLY_UNMATCHED"]
+       Notes:    Missing clause correctly dropped to PREVIEW_ONLY_UNMATCHED without inventing text.
+[PASS] TC-15 - Boundary Ambiguity Fallback
+       Observed: ["PREVIEW_ONLY_AMBIGUOUS","PREVIEW_ONLY_UNMATCHED"]
+       Notes:    Unverified subsequent boundary triggered safe PREVIEW_ONLY_AMBIGUOUS fallback for Clause 0.
+[PASS] TC-16 - Async Race / Document ID Mismatch Guard
+       Observed: ["PREVIEW_ONLY_AMBIGUOUS"]
+       Notes:    Document ID mismatch detected, prevented in-flight delayed result from overwriting newer document.
+[PASS] TC-17 - Missing Raw Contract Text in Memory
+       Observed: ["PREVIEW_ONLY_INSUFFICIENT_EVIDENCE"]
+       Notes:    Empty/null contract memory returns PREVIEW_ONLY_INSUFFICIENT_EVIDENCE.
+
+Results written to: F:\projects\nlp\Legal-contract-coherence-auditor-\tmp\final-release\alignment_test_results.json

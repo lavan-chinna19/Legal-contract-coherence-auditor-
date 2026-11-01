@@ -1,0 +1,10 @@
+metric,value,integer_counts,notes
+TP,3,3/3 positive cases,"P5_01, P5_02, P6_01 accurately flagged and attributed"
+FP,0,0/2 clean controls,Zero spurious reference flags on unperturbed negative controls
+FN,0,0/3 positive cases,Zero missed reference violations
+TN,2,2/2 clean controls,Both clean MSA and SLA produced zero false reference alarms
+Precision,1.0,3/3,100.0% precision on synthetic fixtures
+Recall,1.0,3/3,100.0% recall on synthetic fixtures
+F1_Score,1.0,-,1.0000
+Specificity,1.0,2/2,100.0% specificity
+Wilson_95_CI_Recall,"[0.4385, 1.0000]",3/3 positive cases,Two-sided Wilson 95% score interval

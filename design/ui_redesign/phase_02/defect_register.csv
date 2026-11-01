@@ -1,0 +1,4 @@
+Defect ID,Category,Severity,Description,Discovery Point,Resolution / Mitigation,Status
+P2-001,Frontend Typing,MEDIUM,CardProps interface collision with HTMLAttributes title property,npm run build,Omitted title from HTMLAttributes in CardProps interface,RESOLVED
+P2-002,React Hook Linting,LOW,Synchronous setState inside ThemeContext useEffect triggered cascading render warning,npx eslint src/,Wrapped initial theme state dispatch in queueMicrotask,RESOLVED
+P2-003,DOM Accessibility,LOW,HeaderBar status pill role="status" collided with test feedback success querySelector,Browser CDP Test,Added dedicated ID #feedback-success-msg to feedback success paragraph,RESOLVED

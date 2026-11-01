@@ -1,0 +1,60 @@
+{
+  "timestamp": "2026-10-10T16:05:00+05:30",
+  "audit_phase": "PROMPT_23A",
+  "pytest": {
+    "command": "python -m pytest tests/ -v -ra",
+    "total_tests": 118,
+    "passed": 116,
+    "skipped": 2,
+    "failed": 0,
+    "duration_seconds": 82.43,
+    "status": "PASS",
+    "skipped_tests": [
+      "tests/test_edgar_pipeline.py::test_edgar_pipeline_skip_reason",
+      "tests/test_model_training.py::test_model_training_skip_reason"
+    ]
+  },
+  "frontend_build": {
+    "framework": "Next.js 16.4.0 (Turbopack)",
+    "command": "npm run build",
+    "exit_code": 0,
+    "status": "PASS",
+    "duration_seconds": 2.2,
+    "routes": [
+      {
+        "route": "/",
+        "type": "Static",
+        "size_bytes": 248000
+      },
+      {
+        "route": "/_not-found",
+        "type": "Static",
+        "size_bytes": 900
+      }
+    ],
+    "compilation_errors": 0
+  },
+  "frontend_lint": {
+    "linter": "ESLint 9.x",
+    "command": ".\\node_modules\\.bin\\eslint.cmd src/",
+    "exit_code": 1,
+    "status": "FAIL_NON_BLOCKING",
+    "problems_count": 10,
+    "errors": 6,
+    "warnings": 4,
+    "summary": "react/no-unescaped-entities on JSX static quotation marks and react-hooks/set-state-in-effect in useEffect hook (logged as P23A-001)"
+  },
+  "backend_endpoints": {
+    "health_endpoint": {
+      "url": "http://127.0.0.1:8000/health",
+      "http_status": 200,
+      "status": "PASS"
+    },
+    "ready_endpoint": {
+      "url": "http://127.0.0.1:8000/ready",
+      "http_status": 200,
+      "status": "PASS"
+    }
+  },
+  "conclusion": "Backend regression baseline 100% clean (116 passed, 2 skipped). Next.js frontend production bundle successfully builds. Linter warnings documented under defect P23A-001 without blocking runtime execution."
+}

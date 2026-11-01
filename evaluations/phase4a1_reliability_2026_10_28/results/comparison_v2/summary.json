@@ -1,0 +1,169 @@
+{
+  "EXPOSED_ORIGINAL_DEVELOPMENT": {
+    "old": {
+      "binary": {
+        "n": 14,
+        "TP": 7,
+        "FP": 0,
+        "FN": 0,
+        "TN": 7,
+        "precision": 1.0,
+        "recall": 1.0,
+        "F1": 1.0,
+        "FPR": 0.0,
+        "FNR": 0.0
+      },
+      "selected_pair_statuses": {
+        "MATCHED": 7,
+        "DIFFERENT": 7,
+        "UNCERTAIN": 12,
+        "UNSUPPORTED": 2
+      },
+      "selected_decided": 14,
+      "documents": 28,
+      "selected_abstained": 14,
+      "emitted_pairs": 34,
+      "emitted_decided_pairs": 17,
+      "emitted_abstained_pairs": 17,
+      "documents_with_any_supported_pair": 15
+    },
+    "new": {
+      "binary": {
+        "n": 14,
+        "TP": 7,
+        "FP": 0,
+        "FN": 0,
+        "TN": 7,
+        "precision": 1.0,
+        "recall": 1.0,
+        "F1": 1.0,
+        "FPR": 0.0,
+        "FNR": 0.0
+      },
+      "selected_pair_statuses": {
+        "MATCHED": 7,
+        "DIFFERENT": 7,
+        "UNCERTAIN": 12,
+        "UNSUPPORTED": 2
+      },
+      "selected_decided": 14,
+      "documents": 28,
+      "selected_abstained": 14,
+      "emitted_pairs": 34,
+      "emitted_decided_pairs": 17,
+      "emitted_abstained_pairs": 17,
+      "documents_with_any_supported_pair": 15
+    }
+  },
+  "EXPOSED_ORIGINAL_EVALUATION": {
+    "old": {
+      "binary": {
+        "n": 16,
+        "TP": 7,
+        "FP": 0,
+        "FN": 1,
+        "TN": 8,
+        "precision": 1.0,
+        "recall": 0.875,
+        "F1": 0.9333333333333333,
+        "FPR": 0.0,
+        "FNR": 0.125
+      },
+      "selected_pair_statuses": {
+        "MATCHED": 7,
+        "DIFFERENT": 8,
+        "UNCERTAIN": 12,
+        "UNSUPPORTED": 3
+      },
+      "selected_decided": 15,
+      "documents": 30,
+      "selected_abstained": 15,
+      "emitted_pairs": 36,
+      "emitted_decided_pairs": 18,
+      "emitted_abstained_pairs": 18,
+      "documents_with_any_supported_pair": 16
+    },
+    "new": {
+      "binary": {
+        "n": 16,
+        "TP": 8,
+        "FP": 0,
+        "FN": 0,
+        "TN": 8,
+        "precision": 1.0,
+        "recall": 1.0,
+        "F1": 1.0,
+        "FPR": 0.0,
+        "FNR": 0.0
+      },
+      "selected_pair_statuses": {
+        "MATCHED": 8,
+        "DIFFERENT": 8,
+        "UNCERTAIN": 12,
+        "UNSUPPORTED": 2
+      },
+      "selected_decided": 16,
+      "documents": 30,
+      "selected_abstained": 14,
+      "emitted_pairs": 36,
+      "emitted_decided_pairs": 19,
+      "emitted_abstained_pairs": 17,
+      "documents_with_any_supported_pair": 17
+    }
+  },
+  "FOCUSED_AUTHORED_DEVELOPMENT": {
+    "old": {
+      "binary": {
+        "n": 10,
+        "TP": 0,
+        "FP": 0,
+        "FN": 7,
+        "TN": 3,
+        "precision": null,
+        "recall": 0.0,
+        "F1": 0.0,
+        "FPR": 0.0,
+        "FNR": 1.0
+      },
+      "selected_pair_statuses": {
+        "UNSUPPORTED": 18,
+        "DIFFERENT": 1,
+        "UNCERTAIN": 1
+      },
+      "selected_decided": 1,
+      "documents": 20,
+      "selected_abstained": 19,
+      "emitted_pairs": 20,
+      "emitted_decided_pairs": 1,
+      "emitted_abstained_pairs": 19,
+      "documents_with_any_supported_pair": 1
+    },
+    "new": {
+      "binary": {
+        "n": 10,
+        "TP": 7,
+        "FP": 0,
+        "FN": 0,
+        "TN": 3,
+        "precision": 1.0,
+        "recall": 1.0,
+        "F1": 1.0,
+        "FPR": 0.0,
+        "FNR": 0.0
+      },
+      "selected_pair_statuses": {
+        "UNCERTAIN": 9,
+        "MATCHED": 7,
+        "DIFFERENT": 3,
+        "UNSUPPORTED": 1
+      },
+      "selected_decided": 10,
+      "documents": 20,
+      "selected_abstained": 10,
+      "emitted_pairs": 20,
+      "emitted_decided_pairs": 10,
+      "emitted_abstained_pairs": 10,
+      "documents_with_any_supported_pair": 10
+    }
+  }
+}

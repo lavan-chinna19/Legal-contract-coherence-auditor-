@@ -1,0 +1,25 @@
+UI_ID,Element,Browser_Action,Expected_Result,Actual_Result,Screenshot_Trace,Status
+UI-01,Header Branding (h1),Visual Inspection,Displays 'Legal Contract Coherence Auditor',Rendered with scale icon and research prototype badge,initial_state_1440x900.png,PASS
+UI-02,Backend Status Pill,Visual Inspection,Displays 'Backend: online' green dot,Rendered 'Backend: online' with green dot,initial_state_1440x900.png,PASS
+UI-03,Backend URL Input,CDP Key Input,Stores backend URL in state,Defaulted to 'http://localhost:8000',initial_state_1440x900.png,PASS
+UI-04,API Key Input,CDP Keyboard Entry,Accepts key and updates React state,Entered 'dev_auditor_key_12345',privacy_acknowledged_1440x900.png,PASS
+UI-05,Tab 1 (Upload & Ingest),Click,Activates upload tab view,Tab 1 active by default and switches back,initial_state_1440x900.png,PASS
+UI-06,Tab 2 (Coherence Heatmap),Click,Disabled before analysis; active after,Initially disabled; unlocks after analysis,results_view_desktop.png,PASS
+UI-07,Tab 3 (Explainability),Click,Disabled before analysis; active after,Initially disabled; unlocks after analysis,xai_attribution_view.png,PASS
+UI-08,Tab 4 (Reviewer Feedback),Click,Disabled before analysis; active after,Initially disabled; unlocks after analysis,feedback_view_before_submit.png,PASS
+UI-09,Tab 5 (Transparency),Click,Opens model card and benchmarks,Displays empirical benchmarks table,transparency_tab.png,PASS
+UI-10,Privacy Consent Checkbox,Click,Toggles privacy acknowledgment,Toggles true/false; enables analyze button,privacy_acknowledged_1440x900.png,PASS
+UI-11,Contract File Input,CDP setFileInputFiles,Loads File object into state,Attached 'valid_multiclause.txt',file_selected_ready.png,PASS
+UI-12,Analyze Button,Click,Triggers upload & pipeline execution,Triggers POST /v1/upload & /v1/analyze,analysis_running.png,PASS
+UI-13,Total Clauses KPI,Render Inspection,Shows 5 clauses,'5' rendered in card,results_view_desktop.png,PASS
+UI-14,Total Anomalies KPI,Render Inspection,Shows 2 anomalies,'2' rendered in card,results_view_desktop.png,PASS
+UI-15,High Severity KPI,Render Inspection,Shows 2 high severity items,'2' rendered with red badge,results_view_desktop.png,PASS
+UI-16,Medium Severity KPI,Render Inspection,Shows 0 medium severity items,'0' rendered with amber badge,results_view_desktop.png,PASS
+UI-17,Mean Anomaly Score KPI,Render Inspection,Shows 0.341 score,'0.341' rendered in card,results_view_desktop.png,PASS
+UI-18,XAI Token Attribution Stream,Render Inspection,Renders 26 tokens with gradient colors,26 colored token badges rendered,xai_attribution_view.png,PASS
+UI-19,XAI Sensitivity Toggle,Click,Toggles to perturbation view,Renders neighbor clause delta score,xai_sensitivity_view.png,PASS
+UI-20,Reviewer Verdict Dropdown,Select Change,Allows CONFIRM_ANOMALY / REJECT_ANOMALY,CONFIRM_ANOMALY selected,feedback_view_before_submit.png,PASS
+UI-21,Reviewer ID Input,Keyboard Entry,Captures reviewer identification,Defaulted to 'reviewer_01',feedback_view_before_submit.png,PASS
+UI-22,Provenance Dropdown,Select Change,Allows REAL / SYNTHETIC_TEST,Defaulted to 'REAL',feedback_view_before_submit.png,PASS
+UI-23,Submit Feedback Button,Click,Submits POST /v1/feedback,200 OK returned; feedback persisted,feedback_submitted_success.png,PASS
+UI-24,Global Disclaimer Banner,Visual Inspection,Shows research prototype warning,Warning banner rendered on all views,initial_state_1440x900.png,PASS

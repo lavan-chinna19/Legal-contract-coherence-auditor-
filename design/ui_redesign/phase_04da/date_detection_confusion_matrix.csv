@@ -1,0 +1,10 @@
+metric,value,integer_counts,notes
+TP,2,2/2 positive cases,P7_01 (Term inverted) and P7_02 (Payment inverted) detected
+FP,0,0/2 clean controls,Zero spurious date flags on unperturbed controls
+FN,0,0/2 positive cases,Zero missed date chronology violations
+TN,2,2/2 clean controls,Both clean controls produced zero date warnings
+Precision,1.0,2/2,100.0% precision
+Recall,1.0,2/2,100.0% recall
+F1_Score,1.0,-,1.0000
+Specificity,1.0,2/2,100.0% specificity
+Wilson_95_CI_Recall,"[0.3424, 1.0000]",2/2 positive cases,Two-sided Wilson 95% score interval

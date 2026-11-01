@@ -1,0 +1,74 @@
+[
+  {
+    "case_id": "evaluation_different_trigger",
+    "gold": "UNCERTAIN",
+    "without_guards": "MATCHED",
+    "with_guards": "UNCERTAIN"
+  },
+  {
+    "case_id": "evaluation_one_missing_trigger",
+    "gold": "UNCERTAIN",
+    "without_guards": "MATCHED",
+    "with_guards": "UNCERTAIN"
+  },
+  {
+    "case_id": "evaluation_different_condition",
+    "gold": "UNCERTAIN",
+    "without_guards": "MATCHED",
+    "with_guards": "UNCERTAIN"
+  },
+  {
+    "case_id": "evaluation_one_condition",
+    "gold": "UNCERTAIN",
+    "without_guards": "MATCHED",
+    "with_guards": "UNCERTAIN"
+  },
+  {
+    "case_id": "evaluation_exception",
+    "gold": "UNCERTAIN",
+    "without_guards": "MATCHED",
+    "with_guards": "UNCERTAIN"
+  },
+  {
+    "case_id": "evaluation_different_recipient",
+    "gold": "DIFFERENT",
+    "without_guards": "MATCHED",
+    "with_guards": "DIFFERENT"
+  },
+  {
+    "case_id": "evaluation_one_missing_recipient",
+    "gold": "UNCERTAIN",
+    "without_guards": "MATCHED",
+    "with_guards": "UNCERTAIN"
+  },
+  {
+    "case_id": "evaluation_same_recurring_type",
+    "gold": "UNCERTAIN",
+    "without_guards": "MATCHED",
+    "with_guards": "UNCERTAIN"
+  },
+  {
+    "case_id": "evaluation_unsupported_action",
+    "gold": "UNSUPPORTED",
+    "without_guards": "UNCERTAIN",
+    "with_guards": "UNSUPPORTED"
+  },
+  {
+    "case_id": "evaluation_different_scope",
+    "gold": "DIFFERENT",
+    "without_guards": "MATCHED",
+    "with_guards": "DIFFERENT"
+  },
+  {
+    "case_id": "evaluation_different_phase",
+    "gold": "DIFFERENT",
+    "without_guards": "MATCHED",
+    "with_guards": "DIFFERENT"
+  },
+  {
+    "case_id": "evaluation_passive_identity",
+    "gold": "MATCHED",
+    "without_guards": "UNCERTAIN",
+    "with_guards": "UNSUPPORTED"
+  }
+]

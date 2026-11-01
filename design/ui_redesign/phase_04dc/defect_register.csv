@@ -1,0 +1,4 @@
+defect_id,severity,component,description,status
+DEF-4DC-01,MEDIUM,Candidate_C3,C3 produces 68.75% false positive rate on valid non-canonical commercial contracts,DOCUMENTED
+DEF-4DC-02,HIGH,Candidate_C2,C2 sequence BiLSTM underfits and achieves 0% recall,DOCUMENTED
+DEF-4DC-03,HIGH,Channel_B,Frozen Channel B over-predicts anomalies on real SEC filings (0% specificity),DOCUMENTED

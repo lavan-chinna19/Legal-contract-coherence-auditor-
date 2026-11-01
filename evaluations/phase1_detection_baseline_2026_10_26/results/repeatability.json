@@ -1,0 +1,17 @@
+{
+  "primary_records": 148,
+  "replication_records": 148,
+  "ignored_non_predictive_fields": [
+    "flag_id",
+    "timestamp"
+  ],
+  "canonicalized_unordered_fields": [
+    "declared_targets",
+    "available_targets_sample",
+    "involved_clause_ids"
+  ],
+  "raw_order_equal_records": 3,
+  "stable_prediction_records": 148,
+  "differences": [],
+  "passed": true
+}

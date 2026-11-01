@@ -1,0 +1,825 @@
+{
+  "selection": "Same three substantive cached SEC exhibits as Phase 4A; no new selection based on successful predictions",
+  "observations": [
+    {
+      "path": "data/raw/sec_edgar/0000737758_23_000034_EX-10_27.txt",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/737758/000073775823000034/ttc-10312023xex1027.htm",
+      "entity_name": "TORO CO  (TTC)  (CIK 0000737758)",
+      "accession": "0000737758-23-000034",
+      "exhibit": "EX-10.27",
+      "filing_date": "2023-12-20",
+      "mode": "raw_source",
+      "raw_sha256": "6f6f35f43a8803aa2f1dd97688aa65d4784155d31590ecf7b07c8cee048ddb34",
+      "extraction_sha256": "6f6f35f43a8803aa2f1dd97688aa65d4784155d31590ecf7b07c8cee048ddb34",
+      "coordinate_note": "Spans index this identified extraction view, not original HTML bytes or PDF geometry.",
+      "old_record_count": 23,
+      "new_record_count": 23,
+      "old_pair_counts": {
+        "UNSUPPORTED": 253
+      },
+      "new_pair_counts": {
+        "UNSUPPORTED": 253
+      },
+      "modal_cues": 26,
+      "unrepresented_modal_cues": 0,
+      "inline_heading_cues_skipped": 0,
+      "candidate_pair_examples": [
+        {
+          "status": "UNSUPPORTED",
+          "category": "UNSUPPORTED_MARKUP",
+          "reasons": [
+            "INCOMPLETE_OR_UNSUPPORTED_PARSE",
+            "ACTION_OUTSIDE_LEXICON",
+            "ACTION_OUTSIDE_LEXICON"
+          ],
+          "evidence": [
+            {
+              "record_id": "0000737758_23_000034_EX-10_27_raw_source:obligation:0",
+              "char_start": 6456,
+              "char_end": 6584,
+              "text": "all capitalized terms not otherwise defined herein shall have the respective meanings given thereto in the Credit Agreement)&#59",
+              "actor": null,
+              "action": null,
+              "unsupported": [
+                "ACTION_OUTSIDE_LEXICON"
+              ],
+              "uncertainty": [
+                "AMBIGUOUS_OR_NONPARTY_SUBJECT",
+                "NO_EXPLICIT_NAMED_OBJECT_INSTANCE",
+                "NEGATION_OR_ALTERNATIVE"
+              ]
+            },
+            {
+              "record_id": "0000737758_23_000034_EX-10_27_raw_source:obligation:1",
+              "char_start": 8699,
+              "char_end": 8867,
+              "text": "line-height:100%\"> of the Credit Agreement is hereby amended such that, after giving effect to all such amendments, it shall read in its entirety as set forth below&#58",
+              "actor": null,
+              "action": null,
+              "unsupported": [
+                "ACTION_OUTSIDE_LEXICON"
+              ],
+              "uncertainty": [
+                "AMBIGUOUS_OR_NONPARTY_SUBJECT",
+                "NO_EXPLICIT_NAMED_OBJECT_INSTANCE",
+                "UNRESOLVED_TRIGGER"
+              ]
+            }
+          ],
+          "qualified_legal_label": null
+        },
+        {
+          "status": "UNSUPPORTED",
+          "category": "UNSUPPORTED_MARKUP",
+          "reasons": [
+            "INCOMPLETE_OR_UNSUPPORTED_PARSE",
+            "ACTION_OUTSIDE_LEXICON",
+            "ACTION_OUTSIDE_LEXICON"
+          ],
+          "evidence": [
+            {
+              "record_id": "0000737758_23_000034_EX-10_27_raw_source:obligation:0",
+              "char_start": 6456,
+              "char_end": 6584,
+              "text": "all capitalized terms not otherwise defined herein shall have the respective meanings given thereto in the Credit Agreement)&#59",
+              "actor": null,
+              "action": null,
+              "unsupported": [
+                "ACTION_OUTSIDE_LEXICON"
+              ],
+              "uncertainty": [
+                "AMBIGUOUS_OR_NONPARTY_SUBJECT",
+                "NO_EXPLICIT_NAMED_OBJECT_INSTANCE",
+                "NEGATION_OR_ALTERNATIVE"
+              ]
+            },
+            {
+              "record_id": "0000737758_23_000034_EX-10_27_raw_source:obligation:2",
+              "char_start": 11200,
+              "char_end": 11368,
+              "text": "line-height:100%\"> of the Credit Agreement is hereby amended such that, after giving effect to all such amendments, it shall read in its entirety as set forth below&#58",
+              "actor": null,
+              "action": null,
+              "unsupported": [
+                "ACTION_OUTSIDE_LEXICON"
+              ],
+              "uncertainty": [
+                "AMBIGUOUS_OR_NONPARTY_SUBJECT",
+                "NO_EXPLICIT_NAMED_OBJECT_INSTANCE",
+                "UNRESOLVED_TRIGGER"
+              ]
+            }
+          ],
+          "qualified_legal_label": null
+        },
+        {
+          "status": "UNSUPPORTED",
+          "category": "UNSUPPORTED_MARKUP",
+          "reasons": [
+            "INCOMPLETE_OR_UNSUPPORTED_PARSE",
+            "ACTION_OUTSIDE_LEXICON",
+            "ACTION_OUTSIDE_LEXICON"
+          ],
+          "evidence": [
+            {
+              "record_id": "0000737758_23_000034_EX-10_27_raw_source:obligation:0",
+              "char_start": 6456,
+              "char_end": 6584,
+              "text": "all capitalized terms not otherwise defined herein shall have the respective meanings given thereto in the Credit Agreement)&#59",
+              "actor": null,
+              "action": null,
+              "unsupported": [
+                "ACTION_OUTSIDE_LEXICON"
+              ],
+              "uncertainty": [
+                "AMBIGUOUS_OR_NONPARTY_SUBJECT",
+                "NO_EXPLICIT_NAMED_OBJECT_INSTANCE",
+                "NEGATION_OR_ALTERNATIVE"
+              ]
+            },
+            {
+              "record_id": "0000737758_23_000034_EX-10_27_raw_source:obligation:3",
+              "char_start": 13548,
+              "char_end": 13704,
+              "text": "line-height:100%\"> hereof, shall become effective on the first Business Day on which the following conditions are satisfied or waived (such date, the &#8220",
+              "actor": null,
+              "action": null,
+              "unsupported": [
+                "ACTION_OUTSIDE_LEXICON"
+              ],
+              "uncertainty": [
+                "AMBIGUOUS_OR_NONPARTY_SUBJECT",
+                "NO_EXPLICIT_NAMED_OBJECT_INSTANCE",
+                "UNRESOLVED_TRIGGER"
+              ]
+            }
+          ],
+          "qualified_legal_label": null
+        }
+      ],
+      "missing_modal_examples": [],
+      "decision_categories": {
+        "UNSUPPORTED_MARKUP": 253
+      },
+      "expert_labels": 0,
+      "legal_accuracy": "NOT_ASSESSED"
+    },
+    {
+      "path": "data/raw/sec_edgar/0000737758_23_000034_EX-10_27.txt",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/737758/000073775823000034/ttc-10312023xex1027.htm",
+      "entity_name": "TORO CO  (TTC)  (CIK 0000737758)",
+      "accession": "0000737758-23-000034",
+      "exhibit": "EX-10.27",
+      "filing_date": "2023-12-20",
+      "mode": "existing_legacy_html_extraction",
+      "raw_sha256": "6f6f35f43a8803aa2f1dd97688aa65d4784155d31590ecf7b07c8cee048ddb34",
+      "extraction_sha256": "710763a7b0d4bc500bac79151dfb98c8f993b3f7b407364229b7c3b3321d2c41",
+      "coordinate_note": "Spans index this identified extraction view, not original HTML bytes or PDF geometry.",
+      "old_record_count": 2,
+      "new_record_count": 2,
+      "old_pair_counts": {
+        "UNSUPPORTED": 1
+      },
+      "new_pair_counts": {
+        "UNSUPPORTED": 1
+      },
+      "modal_cues": 26,
+      "unrepresented_modal_cues": 24,
+      "inline_heading_cues_skipped": 24,
+      "candidate_pair_examples": [
+        {
+          "status": "UNSUPPORTED",
+          "category": "UNSUPPORTED_GRAMMAR_OR_ACTION",
+          "reasons": [
+            "INCOMPLETE_OR_UNSUPPORTED_PARSE",
+            "ACTION_OUTSIDE_LEXICON",
+            "ACTION_OUTSIDE_LEXICON"
+          ],
+          "evidence": [
+            {
+              "record_id": "0000737758_23_000034_EX-10_27_existing_legacy_html_extraction:obligation:0",
+              "char_start": 1545,
+              "char_end": 1669,
+              "text": "all capitalized terms not otherwise defined herein shall have the respective meanings given thereto in the Credit Agreement)",
+              "actor": null,
+              "action": null,
+              "unsupported": [
+                "ACTION_OUTSIDE_LEXICON"
+              ],
+              "uncertainty": [
+                "AMBIGUOUS_OR_NONPARTY_SUBJECT",
+                "NO_EXPLICIT_NAMED_OBJECT_INSTANCE",
+                "NEGATION_OR_ALTERNATIVE",
+                "AMBIGUOUS_SOURCE_STRUCTURE"
+              ]
+            },
+            {
+              "record_id": "0000737758_23_000034_EX-10_27_existing_legacy_html_extraction:obligation:1",
+              "char_start": 8251,
+              "char_end": 8478,
+              "text": "No promise, condition, representation or warranty, express or implied, not set forth in the Relevant Documents shall bind any party hereto, and no such party has relied on any such promise, condition, representation or warranty",
+              "actor": null,
+              "action": null,
+              "unsupported": [
+                "ACTION_OUTSIDE_LEXICON"
+              ],
+              "uncertainty": [
+                "AMBIGUOUS_OR_NONPARTY_SUBJECT",
+                "NO_EXPLICIT_NAMED_OBJECT_INSTANCE",
+                "NEGATION_OR_ALTERNATIVE",
+                "AMBIGUOUS_SOURCE_STRUCTURE"
+              ]
+            }
+          ],
+          "qualified_legal_label": null
+        }
+      ],
+      "missing_modal_examples": [
+        {
+          "char_start": 2181,
+          "char_end": 2371,
+          "text": "ent is hereby amended such that, after giving effect to all such amendments, it shall read in its entirety as set forth below:  \n ““  Consolidated EBIT  ” means, for any period, for Toro and",
+          "modal_start": 2261,
+          "category": "PARSING_FAILURE_INLINE_BODY_SKIPPED",
+          "section_uid": "structural_document:section:1",
+          "note": "Lexical modal cue only; not independently labelled as an obligation or defect."
+        },
+        {
+          "char_start": 3380,
+          "char_end": 3570,
+          "text": "ent is hereby amended such that, after giving effect to all such amendments, it shall read in its entirety as set forth below:  \n ““  Sanction(s)  ” means any sanction administered or enforc",
+          "modal_start": 3460,
+          "category": "PARSING_FAILURE_INLINE_BODY_SKIPPED",
+          "section_uid": "structural_document:section:2",
+          "note": "Lexical modal cue only; not independently labelled as an obligation or defect."
+        }
+      ],
+      "decision_categories": {
+        "UNSUPPORTED_GRAMMAR_OR_ACTION": 1
+      },
+      "expert_labels": 0,
+      "legal_accuracy": "NOT_ASSESSED"
+    },
+    {
+      "path": "data/raw/sec_edgar/0000737758_23_000034_EX-10_29.txt",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/737758/000073775823000034/ttc-10312023xex1029.htm",
+      "entity_name": "TORO CO  (TTC)  (CIK 0000737758)",
+      "accession": "0000737758-23-000034",
+      "exhibit": "EX-10.29",
+      "filing_date": "2023-12-20",
+      "mode": "raw_source",
+      "raw_sha256": "fe9db6e6b9ac9b1bd2452f812c2977401f6f38f33e49689c641cf99e0389710d",
+      "extraction_sha256": "fe9db6e6b9ac9b1bd2452f812c2977401f6f38f33e49689c641cf99e0389710d",
+      "coordinate_note": "Spans index this identified extraction view, not original HTML bytes or PDF geometry.",
+      "old_record_count": 23,
+      "new_record_count": 23,
+      "old_pair_counts": {
+        "UNSUPPORTED": 253
+      },
+      "new_pair_counts": {
+        "UNSUPPORTED": 253
+      },
+      "modal_cues": 26,
+      "unrepresented_modal_cues": 0,
+      "inline_heading_cues_skipped": 0,
+      "candidate_pair_examples": [
+        {
+          "status": "UNSUPPORTED",
+          "category": "UNSUPPORTED_MARKUP",
+          "reasons": [
+            "INCOMPLETE_OR_UNSUPPORTED_PARSE",
+            "ACTION_OUTSIDE_LEXICON",
+            "ACTION_OUTSIDE_LEXICON"
+          ],
+          "evidence": [
+            {
+              "record_id": "0000737758_23_000034_EX-10_29_raw_source:obligation:0",
+              "char_start": 4159,
+              "char_end": 4287,
+              "text": "all capitalized terms not otherwise defined herein shall have the respective meanings given thereto in the Credit Agreement)&#59",
+              "actor": null,
+              "action": null,
+              "unsupported": [
+                "ACTION_OUTSIDE_LEXICON"
+              ],
+              "uncertainty": [
+                "AMBIGUOUS_OR_NONPARTY_SUBJECT",
+                "NO_EXPLICIT_NAMED_OBJECT_INSTANCE",
+                "NEGATION_OR_ALTERNATIVE"
+              ]
+            },
+            {
+              "record_id": "0000737758_23_000034_EX-10_29_raw_source:obligation:1",
+              "char_start": 6410,
+              "char_end": 6578,
+              "text": "line-height:100%\"> of the Credit Agreement is hereby amended such that, after giving effect to all such amendments, it shall read in its entirety as set forth below&#58",
+              "actor": null,
+              "action": null,
+              "unsupported": [
+                "ACTION_OUTSIDE_LEXICON"
+              ],
+              "uncertainty": [
+                "AMBIGUOUS_OR_NONPARTY_SUBJECT",
+                "NO_EXPLICIT_NAMED_OBJECT_INSTANCE",
+                "UNRESOLVED_TRIGGER"
+              ]
+            }
+          ],
+          "qualified_legal_label": null
+        },
+        {
+          "status": "UNSUPPORTED",
+          "category": "UNSUPPORTED_MARKUP",
+          "reasons": [
+            "INCOMPLETE_OR_UNSUPPORTED_PARSE",
+            "ACTION_OUTSIDE_LEXICON",
+            "ACTION_OUTSIDE_LEXICON"
+          ],
+          "evidence": [
+            {
+              "record_id": "0000737758_23_000034_EX-10_29_raw_source:obligation:0",
+              "char_start": 4159,
+              "char_end": 4287,
+              "text": "all capitalized terms not otherwise defined herein shall have the respective meanings given thereto in the Credit Agreement)&#59",
+              "actor": null,
+              "action": null,
+              "unsupported": [
+                "ACTION_OUTSIDE_LEXICON"
+              ],
+              "uncertainty": [
+                "AMBIGUOUS_OR_NONPARTY_SUBJECT",
+                "NO_EXPLICIT_NAMED_OBJECT_INSTANCE",
+                "NEGATION_OR_ALTERNATIVE"
+              ]
+            },
+            {
+              "record_id": "0000737758_23_000034_EX-10_29_raw_source:obligation:2",
+              "char_start": 8911,
+              "char_end": 9079,
+              "text": "line-height:100%\"> of the Credit Agreement is hereby amended such that, after giving effect to all such amendments, it shall read in its entirety as set forth below&#58",
+              "actor": null,
+              "action": null,
+              "unsupported": [
+                "ACTION_OUTSIDE_LEXICON"
+              ],
+              "uncertainty": [
+                "AMBIGUOUS_OR_NONPARTY_SUBJECT",
+                "NO_EXPLICIT_NAMED_OBJECT_INSTANCE",
+                "UNRESOLVED_TRIGGER"
+              ]
+            }
+          ],
+          "qualified_legal_label": null
+        },
+        {
+          "status": "UNSUPPORTED",
+          "category": "UNSUPPORTED_MARKUP",
+          "reasons": [
+            "INCOMPLETE_OR_UNSUPPORTED_PARSE",
+            "ACTION_OUTSIDE_LEXICON",
+            "ACTION_OUTSIDE_LEXICON"
+          ],
+          "evidence": [
+            {
+              "record_id": "0000737758_23_000034_EX-10_29_raw_source:obligation:0",
+              "char_start": 4159,
+              "char_end": 4287,
+              "text": "all capitalized terms not otherwise defined herein shall have the respective meanings given thereto in the Credit Agreement)&#59",
+              "actor": null,
+              "action": null,
+              "unsupported": [
+                "ACTION_OUTSIDE_LEXICON"
+              ],
+              "uncertainty": [
+                "AMBIGUOUS_OR_NONPARTY_SUBJECT",
+                "NO_EXPLICIT_NAMED_OBJECT_INSTANCE",
+                "NEGATION_OR_ALTERNATIVE"
+              ]
+            },
+            {
+              "record_id": "0000737758_23_000034_EX-10_29_raw_source:obligation:3",
+              "char_start": 10977,
+              "char_end": 11133,
+              "text": "line-height:100%\"> hereof, shall become effective on the first Business Day on which the following conditions are satisfied or waived (such date, the &#8220",
+              "actor": null,
+              "action": null,
+              "unsupported": [
+                "ACTION_OUTSIDE_LEXICON"
+              ],
+              "uncertainty": [
+                "AMBIGUOUS_OR_NONPARTY_SUBJECT",
+                "NO_EXPLICIT_NAMED_OBJECT_INSTANCE",
+                "UNRESOLVED_TRIGGER"
+              ]
+            }
+          ],
+          "qualified_legal_label": null
+        }
+      ],
+      "missing_modal_examples": [],
+      "decision_categories": {
+        "UNSUPPORTED_MARKUP": 253
+      },
+      "expert_labels": 0,
+      "legal_accuracy": "NOT_ASSESSED"
+    },
+    {
+      "path": "data/raw/sec_edgar/0000737758_23_000034_EX-10_29.txt",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/737758/000073775823000034/ttc-10312023xex1029.htm",
+      "entity_name": "TORO CO  (TTC)  (CIK 0000737758)",
+      "accession": "0000737758-23-000034",
+      "exhibit": "EX-10.29",
+      "filing_date": "2023-12-20",
+      "mode": "existing_legacy_html_extraction",
+      "raw_sha256": "fe9db6e6b9ac9b1bd2452f812c2977401f6f38f33e49689c641cf99e0389710d",
+      "extraction_sha256": "243ad84d77d879d9534ce306eb0987edaadbdee90e8ceec5e84537e1110210b1",
+      "coordinate_note": "Spans index this identified extraction view, not original HTML bytes or PDF geometry.",
+      "old_record_count": 1,
+      "new_record_count": 1,
+      "old_pair_counts": {},
+      "new_pair_counts": {},
+      "modal_cues": 26,
+      "unrepresented_modal_cues": 25,
+      "inline_heading_cues_skipped": 25,
+      "candidate_pair_examples": [],
+      "missing_modal_examples": [
+        {
+          "char_start": 1526,
+          "char_end": 1716,
+          "text": "ent is hereby amended such that, after giving effect to all such amendments, it shall read in its entirety as set forth below:  \n ““  Consolidated EBIT  ” means, for any period, for Toro and",
+          "modal_start": 1606,
+          "category": "PARSING_FAILURE_INLINE_BODY_SKIPPED",
+          "section_uid": "structural_document:section:1",
+          "note": "Lexical modal cue only; not independently labelled as an obligation or defect."
+        },
+        {
+          "char_start": 2725,
+          "char_end": 2915,
+          "text": "ent is hereby amended such that, after giving effect to all such amendments, it shall read in its entirety as set forth below:  \n ““  Sanction(s)  ” means any sanction administered or enforc",
+          "modal_start": 2805,
+          "category": "PARSING_FAILURE_INLINE_BODY_SKIPPED",
+          "section_uid": "structural_document:section:2",
+          "note": "Lexical modal cue only; not independently labelled as an obligation or defect."
+        }
+      ],
+      "decision_categories": {},
+      "expert_labels": 0,
+      "legal_accuracy": "NOT_ASSESSED"
+    },
+    {
+      "path": "data/raw/sec_edgar/0000737758_23_000034_EX-10_34.txt",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/737758/000073775823000034/ttc-10312023xex1034.htm",
+      "entity_name": "TORO CO  (TTC)  (CIK 0000737758)",
+      "accession": "0000737758-23-000034",
+      "exhibit": "EX-10.34",
+      "filing_date": "2023-12-20",
+      "mode": "raw_source",
+      "raw_sha256": "13a75e8d9134503d03ad8190374a358f82b2451553053509bcbce4f8b5ae89e7",
+      "extraction_sha256": "13a75e8d9134503d03ad8190374a358f82b2451553053509bcbce4f8b5ae89e7",
+      "coordinate_note": "Spans index this identified extraction view, not original HTML bytes or PDF geometry.",
+      "old_record_count": 9,
+      "new_record_count": 9,
+      "old_pair_counts": {
+        "UNSUPPORTED": 36
+      },
+      "new_pair_counts": {
+        "UNSUPPORTED": 36
+      },
+      "modal_cues": 10,
+      "unrepresented_modal_cues": 0,
+      "inline_heading_cues_skipped": 0,
+      "candidate_pair_examples": [
+        {
+          "status": "UNSUPPORTED",
+          "category": "UNSUPPORTED_MARKUP",
+          "reasons": [
+            "INCOMPLETE_OR_UNSUPPORTED_PARSE",
+            "ACTION_OUTSIDE_LEXICON",
+            "ACTION_OUTSIDE_LEXICON"
+          ],
+          "evidence": [
+            {
+              "record_id": "0000737758_23_000034_EX-10_34_raw_source:obligation:0",
+              "char_start": 3066,
+              "char_end": 3310,
+              "text": "Capitalized terms used herein and not otherwise defined shall have the meanings ascribed thereto in the Credit Agreement (as hereinafter defined).</font></div><div><font><br></font></div><div style=\"text-align:center\"><font style=\"color:#000000",
+              "actor": null,
+              "action": null,
+              "unsupported": [
+                "ACTION_OUTSIDE_LEXICON"
+              ],
+              "uncertainty": [
+                "AMBIGUOUS_OR_NONPARTY_SUBJECT",
+                "NO_EXPLICIT_NAMED_OBJECT_INSTANCE",
+                "NEGATION_OR_ALTERNATIVE"
+              ]
+            },
+            {
+              "record_id": "0000737758_23_000034_EX-10_34_raw_source:obligation:1",
+              "char_start": 6879,
+              "char_end": 7180,
+              "text": "Subject to the terms and conditions of this Agreement, Lender agrees to advance to Borrower from time to time during the period beginning on the Closing Date and ending on October 31, 2017, or such earlier date on which the LLC Term shall end (such date or such earlier date, if applicable, the &#8220",
+              "actor": null,
+              "action": null,
+              "unsupported": [
+                "ACTION_OUTSIDE_LEXICON"
+              ],
+              "uncertainty": [
+                "AMBIGUOUS_OR_NONPARTY_SUBJECT",
+                "NO_EXPLICIT_NAMED_OBJECT_INSTANCE",
+                "CONDITION_OUTSIDE_SIMPLE_GRAMMAR",
+                "EXCEPTION_OR_PRECEDENCE_UNRESOLVED"
+              ]
+            }
+          ],
+          "qualified_legal_label": null
+        },
+        {
+          "status": "UNSUPPORTED",
+          "category": "UNSUPPORTED_MARKUP",
+          "reasons": [
+            "INCOMPLETE_OR_UNSUPPORTED_PARSE",
+            "ACTION_OUTSIDE_LEXICON",
+            "ACTION_OUTSIDE_LEXICON"
+          ],
+          "evidence": [
+            {
+              "record_id": "0000737758_23_000034_EX-10_34_raw_source:obligation:0",
+              "char_start": 3066,
+              "char_end": 3310,
+              "text": "Capitalized terms used herein and not otherwise defined shall have the meanings ascribed thereto in the Credit Agreement (as hereinafter defined).</font></div><div><font><br></font></div><div style=\"text-align:center\"><font style=\"color:#000000",
+              "actor": null,
+              "action": null,
+              "unsupported": [
+                "ACTION_OUTSIDE_LEXICON"
+              ],
+              "uncertainty": [
+                "AMBIGUOUS_OR_NONPARTY_SUBJECT",
+                "NO_EXPLICIT_NAMED_OBJECT_INSTANCE",
+                "NEGATION_OR_ALTERNATIVE"
+              ]
+            },
+            {
+              "record_id": "0000737758_23_000034_EX-10_34_raw_source:obligation:2",
+              "char_start": 8260,
+              "char_end": 8413,
+              "text": "provided, however, that the aggregate principal amount of all Revolving Loans outstanding at any time shall not exceed the Commitment at such time.&#8221",
+              "actor": null,
+              "action": null,
+              "unsupported": [
+                "ACTION_OUTSIDE_LEXICON"
+              ],
+              "uncertainty": [
+                "AMBIGUOUS_OR_NONPARTY_SUBJECT",
+                "NO_EXPLICIT_NAMED_OBJECT_INSTANCE",
+                "NEGATION_OR_ALTERNATIVE"
+              ]
+            }
+          ],
+          "qualified_legal_label": null
+        },
+        {
+          "status": "UNSUPPORTED",
+          "category": "UNSUPPORTED_MARKUP",
+          "reasons": [
+            "INCOMPLETE_OR_UNSUPPORTED_PARSE",
+            "ACTION_OUTSIDE_LEXICON",
+            "ACTION_OUTSIDE_LEXICON"
+          ],
+          "evidence": [
+            {
+              "record_id": "0000737758_23_000034_EX-10_34_raw_source:obligation:0",
+              "char_start": 3066,
+              "char_end": 3310,
+              "text": "Capitalized terms used herein and not otherwise defined shall have the meanings ascribed thereto in the Credit Agreement (as hereinafter defined).</font></div><div><font><br></font></div><div style=\"text-align:center\"><font style=\"color:#000000",
+              "actor": null,
+              "action": null,
+              "unsupported": [
+                "ACTION_OUTSIDE_LEXICON"
+              ],
+              "uncertainty": [
+                "AMBIGUOUS_OR_NONPARTY_SUBJECT",
+                "NO_EXPLICIT_NAMED_OBJECT_INSTANCE",
+                "NEGATION_OR_ALTERNATIVE"
+              ]
+            },
+            {
+              "record_id": "0000737758_23_000034_EX-10_34_raw_source:obligation:3",
+              "char_start": 9561,
+              "char_end": 9812,
+              "text": "If Lender desires to decrease the TCFIF Rate in order to comply with the requirements of Section 2.8(b) of the Joint Venture Agreement, such decrease shall be effective as of the date TCFIF or an Affiliate of TCFIF </font></div><div style=\"height:72pt",
+              "actor": null,
+              "action": null,
+              "unsupported": [
+                "ACTION_OUTSIDE_LEXICON"
+              ],
+              "uncertainty": [
+                "AMBIGUOUS_OR_NONPARTY_SUBJECT",
+                "NO_EXPLICIT_NAMED_OBJECT_INSTANCE",
+                "CONDITION_OUTSIDE_SIMPLE_GRAMMAR"
+              ]
+            }
+          ],
+          "qualified_legal_label": null
+        }
+      ],
+      "missing_modal_examples": [],
+      "decision_categories": {
+        "UNSUPPORTED_MARKUP": 36
+      },
+      "expert_labels": 0,
+      "legal_accuracy": "NOT_ASSESSED"
+    },
+    {
+      "path": "data/raw/sec_edgar/0000737758_23_000034_EX-10_34.txt",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/737758/000073775823000034/ttc-10312023xex1034.htm",
+      "entity_name": "TORO CO  (TTC)  (CIK 0000737758)",
+      "accession": "0000737758-23-000034",
+      "exhibit": "EX-10.34",
+      "filing_date": "2023-12-20",
+      "mode": "existing_legacy_html_extraction",
+      "raw_sha256": "13a75e8d9134503d03ad8190374a358f82b2451553053509bcbce4f8b5ae89e7",
+      "extraction_sha256": "616c78ed70b69400d46e3b79d0a539f794812c8dc8e68b5628a15828efbd0bd7",
+      "coordinate_note": "Spans index this identified extraction view, not original HTML bytes or PDF geometry.",
+      "old_record_count": 5,
+      "new_record_count": 5,
+      "old_pair_counts": {
+        "UNSUPPORTED": 10
+      },
+      "new_pair_counts": {
+        "UNSUPPORTED": 10
+      },
+      "modal_cues": 10,
+      "unrepresented_modal_cues": 5,
+      "inline_heading_cues_skipped": 5,
+      "candidate_pair_examples": [
+        {
+          "status": "UNSUPPORTED",
+          "category": "UNSUPPORTED_GRAMMAR_OR_ACTION",
+          "reasons": [
+            "INCOMPLETE_OR_UNSUPPORTED_PARSE",
+            "ACTION_OUTSIDE_LEXICON",
+            "ACTION_OUTSIDE_LEXICON"
+          ],
+          "evidence": [
+            {
+              "record_id": "0000737758_23_000034_EX-10_34_existing_legacy_html_extraction:obligation:0",
+              "char_start": 645,
+              "char_end": 790,
+              "text": "Capitalized terms used herein and not otherwise defined shall have the meanings ascribed thereto in the Credit Agreement (as hereinafter defined)",
+              "actor": null,
+              "action": null,
+              "unsupported": [
+                "ACTION_OUTSIDE_LEXICON"
+              ],
+              "uncertainty": [
+                "AMBIGUOUS_OR_NONPARTY_SUBJECT",
+                "NO_EXPLICIT_NAMED_OBJECT_INSTANCE",
+                "NEGATION_OR_ALTERNATIVE",
+                "AMBIGUOUS_SOURCE_STRUCTURE"
+              ]
+            },
+            {
+              "record_id": "0000737758_23_000034_EX-10_34_existing_legacy_html_extraction:obligation:1",
+              "char_start": 1518,
+              "char_end": 1951,
+              "text": "Subject to the terms and conditions of this Agreement, Lender agrees to advance to Borrower from time to time during the period beginning on the Closing Date and ending on October 31, 2017, or such earlier date on which the LLC Term shall end (such date or such earlier date, if applicable, the “  Revolving Loan Maturity Date  ”), such loans as Borrower may request under this   Section 2.01   (individually, a “  Revolving Loan  ”)",
+              "actor": null,
+              "action": null,
+              "unsupported": [
+                "ACTION_OUTSIDE_LEXICON"
+              ],
+              "uncertainty": [
+                "AMBIGUOUS_OR_NONPARTY_SUBJECT",
+                "NO_EXPLICIT_NAMED_OBJECT_INSTANCE",
+                "CONDITION_OUTSIDE_SIMPLE_GRAMMAR",
+                "EXCEPTION_OR_PRECEDENCE_UNRESOLVED",
+                "AMBIGUOUS_SOURCE_STRUCTURE"
+              ]
+            }
+          ],
+          "qualified_legal_label": null
+        },
+        {
+          "status": "UNSUPPORTED",
+          "category": "UNSUPPORTED_GRAMMAR_OR_ACTION",
+          "reasons": [
+            "INCOMPLETE_OR_UNSUPPORTED_PARSE",
+            "ACTION_OUTSIDE_LEXICON",
+            "ACTION_OUTSIDE_LEXICON"
+          ],
+          "evidence": [
+            {
+              "record_id": "0000737758_23_000034_EX-10_34_existing_legacy_html_extraction:obligation:0",
+              "char_start": 645,
+              "char_end": 790,
+              "text": "Capitalized terms used herein and not otherwise defined shall have the meanings ascribed thereto in the Credit Agreement (as hereinafter defined)",
+              "actor": null,
+              "action": null,
+              "unsupported": [
+                "ACTION_OUTSIDE_LEXICON"
+              ],
+              "uncertainty": [
+                "AMBIGUOUS_OR_NONPARTY_SUBJECT",
+                "NO_EXPLICIT_NAMED_OBJECT_INSTANCE",
+                "NEGATION_OR_ALTERNATIVE",
+                "AMBIGUOUS_SOURCE_STRUCTURE"
+              ]
+            },
+            {
+              "record_id": "0000737758_23_000034_EX-10_34_existing_legacy_html_extraction:obligation:2",
+              "char_start": 1953,
+              "char_end": 2101,
+              "text": "provided, however, that the aggregate principal amount of all Revolving Loans outstanding at any time shall not exceed the Commitment at such time.”",
+              "actor": null,
+              "action": null,
+              "unsupported": [
+                "ACTION_OUTSIDE_LEXICON"
+              ],
+              "uncertainty": [
+                "AMBIGUOUS_OR_NONPARTY_SUBJECT",
+                "NO_EXPLICIT_NAMED_OBJECT_INSTANCE",
+                "NEGATION_OR_ALTERNATIVE",
+                "AMBIGUOUS_SOURCE_STRUCTURE"
+              ]
+            }
+          ],
+          "qualified_legal_label": null
+        },
+        {
+          "status": "UNSUPPORTED",
+          "category": "UNSUPPORTED_GRAMMAR_OR_ACTION",
+          "reasons": [
+            "INCOMPLETE_OR_UNSUPPORTED_PARSE",
+            "ACTION_OUTSIDE_LEXICON",
+            "ACTION_OUTSIDE_LEXICON"
+          ],
+          "evidence": [
+            {
+              "record_id": "0000737758_23_000034_EX-10_34_existing_legacy_html_extraction:obligation:0",
+              "char_start": 645,
+              "char_end": 790,
+              "text": "Capitalized terms used herein and not otherwise defined shall have the meanings ascribed thereto in the Credit Agreement (as hereinafter defined)",
+              "actor": null,
+              "action": null,
+              "unsupported": [
+                "ACTION_OUTSIDE_LEXICON"
+              ],
+              "uncertainty": [
+                "AMBIGUOUS_OR_NONPARTY_SUBJECT",
+                "NO_EXPLICIT_NAMED_OBJECT_INSTANCE",
+                "NEGATION_OR_ALTERNATIVE",
+                "AMBIGUOUS_SOURCE_STRUCTURE"
+              ]
+            },
+            {
+              "record_id": "0000737758_23_000034_EX-10_34_existing_legacy_html_extraction:obligation:3",
+              "char_start": 2253,
+              "char_end": 2468,
+              "text": "“If Lender desires to decrease the TCFIF Rate in order to comply with the requirements of Section 2.8(b) of the Joint Venture Agreement, such decrease shall be effective as of the date TCFIF or an Affiliate of TCFIF",
+              "actor": null,
+              "action": null,
+              "unsupported": [
+                "ACTION_OUTSIDE_LEXICON"
+              ],
+              "uncertainty": [
+                "AMBIGUOUS_OR_NONPARTY_SUBJECT",
+                "NO_EXPLICIT_NAMED_OBJECT_INSTANCE",
+                "CONDITION_OUTSIDE_SIMPLE_GRAMMAR",
+                "AMBIGUOUS_SOURCE_STRUCTURE"
+              ]
+            }
+          ],
+          "qualified_legal_label": null
+        }
+      ],
+      "missing_modal_examples": [
+        {
+          "char_start": 3836,
+          "char_end": 4028,
+          "text": "ns and provisions of the Credit Agreement, except as amended by this Amendment, shall remain unmodified and in full force and effect.  All references in any document or instrument to the Credi",
+          "modal_start": 3916,
+          "category": "PARSING_FAILURE_INLINE_BODY_SKIPPED",
+          "section_uid": "structural_document:section:6",
+          "note": "Lexical modal cue only; not independently labelled as an obligation or defect."
+        },
+        {
+          "char_start": 4530,
+          "char_end": 4723,
+          "text": "eto pertaining to the subject matter hereof with the effect that this Amendment shall control with respect to the specific subjects hereof.  \n\n 4.      Counterparts  .  This Amendment may be ex",
+          "modal_start": 4610,
+          "category": "PARSING_FAILURE_INLINE_BODY_SKIPPED",
+          "section_uid": "structural_document:section:7",
+          "note": "Lexical modal cue only; not independently labelled as an obligation or defect."
+        }
+      ],
+      "decision_categories": {
+        "UNSUPPORTED_GRAMMAR_OR_ACTION": 10
+      },
+      "expert_labels": 0,
+      "legal_accuracy": "NOT_ASSESSED"
+    }
+  ],
+  "parser_bug_scope": "Binding consumer skips complete heading lines that include inline body text. Not repaired: outside the three specified repairs; Phase 2 parser unchanged.",
+  "ambiguity_note": "Unresolved conditions/instances are meaning or evidence uncertainty. Unsupported actions are grammar limits. Skipped source text is an implementation parsing bug; these categories are not legal defect labels."
+}

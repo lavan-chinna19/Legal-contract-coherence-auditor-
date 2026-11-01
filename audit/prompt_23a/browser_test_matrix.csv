@@ -1,0 +1,21 @@
+Test_ID,Category,Scenario_Description,Expected_Browser_Behavior,Actual_Observed_Result,Screenshot_Evidence,Classification,Verdict
+BTEST-01,Phase B: Privacy,Initial upload view before acknowledgment,Checkbox unchecked and Analyze button disabled,Checkbox unchecked and button.disabled is True,initial_state_1440x900.png,BROWSER_VERIFIED,PASS
+BTEST-02,Phase B: Privacy,API key entry & privacy consent toggle,Checkbox checks; button enables when file+key present,Checkbox toggles; button state updates dynamically,privacy_acknowledged_1440x900.png,BROWSER_VERIFIED,PASS
+BTEST-03,Phase B: Upload,Native file input selection,File object attached to input[type=file],File attached (valid_multiclause.txt); button enabled,file_selected_ready.png,BROWSER_VERIFIED,PASS
+BTEST-04,Phase B: Analysis,Click Analyze button & observe progress,Status changes to analyzing with status text,Button shows Analyzing...; analysisStatus displayed,analysis_running.png,BROWSER_VERIFIED,PASS
+BTEST-05,Phase B: Analysis,Job polling and auto-transition to Results,Transitions to Tab 2 upon COMPLETED status,UI automatically switched to Results tab in 5.59s,results_view_desktop.png,BROWSER_VERIFIED,PASS
+BTEST-06,Phase C: KPIs,Total Clauses card rendering,Renders exact clause count '5','5' rendered in .kpi-value element,results_view_desktop.png,BROWSER_VERIFIED,PASS
+BTEST-07,Phase C: KPIs,Total Anomalies card rendering,Renders exact flag count '2','2' rendered in amber .kpi-value,results_view_desktop.png,BROWSER_VERIFIED,PASS
+BTEST-08,Phase C: KPIs,High Severity count card,Renders high severity count '2','2' rendered in red .kpi-value,results_view_desktop.png,BROWSER_VERIFIED,PASS
+BTEST-09,Phase C: KPIs,Medium Severity count card,Renders medium severity count '0','0' rendered in .kpi-value,results_view_desktop.png,BROWSER_VERIFIED,PASS
+BTEST-10,Phase C: KPIs,Mean Anomaly Score card,Renders formatted score '0.341','0.341' rendered in .kpi-value,results_view_desktop.png,BROWSER_VERIFIED,PASS
+BTEST-11,Phase D: XAI,Switch to Explainability (XAI) tab,Unlocks and displays Tab 3,Tab 3 active; shows Integrated Gradients panel,xai_attribution_view.png,BROWSER_VERIFIED,PASS
+BTEST-12,Phase D: XAI,Integrated Gradients token stream,Renders 26 tokens with gradient colors,26 tokens rendered with background colors,xai_attribution_view.png,BROWSER_VERIFIED,PASS
+BTEST-13,Phase D: XAI,Channel B Sensitivity view,Renders perturbation delta with neighbor,Displays neighbor clause ID and delta score,xai_sensitivity_view.png,BROWSER_VERIFIED,PASS
+BTEST-14,Phase E: Feedback,Switch to Reviewer Feedback tab,Unlocks and displays Tab 4,Tab 4 active; shows feedback form and selects,feedback_view_before_submit.png,BROWSER_VERIFIED,PASS
+BTEST-15,Phase E: Feedback,Submit CONFIRM_ANOMALY verdict,Sends POST /v1/feedback and alerts success,Network 200 OK; feedback ID generated,feedback_submitted_success.png,BROWSER_VERIFIED,PASS
+BTEST-16,Phase F: Responsive,Desktop viewport (1440x900),Clean layout with no horizontal scrollbar,Rendered cleanly; all cards and tabs visible,desktop_1440x900.png,BROWSER_VERIFIED,PASS
+BTEST-17,Phase F: Responsive,Laptop viewport (1024x768),Responsive grid adapts smoothly,Grid columns wrap cleanly; no clipped elements,laptop_1024x768.png,BROWSER_VERIFIED,PASS
+BTEST-18,Phase F: Responsive,Tablet viewport (768x1024),Vertical tablet stack with readable text,KPI cards stack in 2 columns; tabs accessible,tablet_768x1024.png,BROWSER_VERIFIED,PASS
+BTEST-19,Phase F: Responsive,Mobile viewport (390x844),Single-column mobile layout,Full mobile reflow; banner wraps; buttons usable,mobile_390x844.png,BROWSER_VERIFIED,PASS
+BTEST-20,Phase G: A11y,Global legal disclaimer presence,Present on all views with bold warning,Verified visible on all tabs and viewports,initial_state_1440x900.png,BROWSER_VERIFIED,PASS

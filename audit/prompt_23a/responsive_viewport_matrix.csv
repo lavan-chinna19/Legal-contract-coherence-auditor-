@@ -1,0 +1,5 @@
+Viewport_Class,Dimensions,Screenshot_File,Horizontal_Overflow,Navigation_Usable,KPI_Layout,Text_Wrapping,Primary_Actions_Accessible,Status
+Desktop,1440x900,desktop_1440x900.png,None (Clean),Full tabs visible,5-column grid,Clean wrapping,All buttons click-accessible,PASS
+Laptop,1024x768,laptop_1024x768.png,None (Clean),Full tabs visible,5-column grid adapts,Clean wrapping,All buttons click-accessible,PASS
+Tablet,768x1024,tablet_768x1024.png,None (Clean),Tabs visible with wrapping,2-column grid reflow,Clean wrapping,All buttons click-accessible,PASS
+Mobile,390x844,mobile_390x844.png,None (Clean),Scrollable tab row,Single-column stack,Full reflow with zero cutoff,Buttons span full width cleanly,PASS

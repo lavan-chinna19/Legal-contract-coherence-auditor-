@@ -1,0 +1,22 @@
+{
+  "date": "2026-10-28",
+  "working_directory": "F:/projects/nlp/Legal-contract-coherence-auditor-",
+  "python_prefix": "tmp/final-release/clean-env/Scripts/python.exe",
+  "commands": [
+    {"command": "python -c <original inline-heading reproduction>", "exit_code": 0, "result": "Section1 payment source retained structurally but omitted from binding records; original_reproduction.json saved"},
+    {"command": "python -m pytest tests/test_final_source_parsing.py -q --junitxml=reproduction_before.xml", "exit_code": 1, "passed": 3, "failed": 10, "seconds": 0.38, "result": "Expected pre-fix failures reproduce same-line, nested, multiline and source-limit omission"},
+    {"command": "python -m pytest tests/test_final_source_parsing.py tests/test_obligation_binding.py tests/test_obligation_reliability.py tests/test_structural_parser.py -q --junitxml=affected_after.xml", "exit_code": 0, "passed": 127, "failed": 0, "seconds": 24.17},
+    {"command": "python -m pytest tests -q --junitxml=full_native_v1.xml", "exit_code": 0, "passed": 484, "failed": 0, "skipped": 2, "warnings": 9, "seconds": 144.89, "authoritative_final_native": true},
+    {"command": "python verify_public_sources.py", "exit_code": 0, "documents": 3, "observations": 6, "result": "Same cached public contracts; source/structure/reference/inventories unchanged; normalized skipped modal cues54 -> 0, records8 -> 49, pairs11 -> 416, all unsupported"},
+    {"command": "python verify_core.py", "exit_code": 0, "seconds": 35.718, "result": "148 neural/structure/reference/graph/direct-date checks and 38 saved Phase3 date results match; core hashes unchanged"},
+    {"command": "npm run lint", "working_directory": "frontend", "exit_code": 0},
+    {"command": "npm run build", "working_directory": "frontend", "exit_code": 0},
+    {"command": "npm run test:workflow", "working_directory": "frontend", "exit_code": 0, "passed": 20},
+    {"command": "npm run test:alignment", "working_directory": "frontend", "exit_code": 0, "passed": 17},
+    {"command": "docker version --format '{{json .}}'", "exit_code": 1, "result": "Client29.6.1, Server=null; dockerDesktopLinuxEngine named pipe missing", "runtime_status": "UNVERIFIED_BLOCKED"}
+  ],
+  "environment": "Python3.11.9 CPU environment, offline local models, isolated temporary storage; Node24.13.1, npm11.8.0; permitted localhost for actual integration",
+  "scope": "Final source-consumption correction and research freeze; no new labelled benchmark or algorithm phase",
+  "implementation_delta": "One executable line: body_start uses identifier_end rather than heading_end; two explanatory comments",
+  "git_commit_push_deploy": "None"
+}

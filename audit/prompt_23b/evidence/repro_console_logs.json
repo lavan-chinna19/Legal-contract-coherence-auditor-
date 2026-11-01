@@ -1,0 +1,304 @@
+[
+  {
+    "source": "console-api",
+    "level": "info",
+    "text": "%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold",
+    "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_1bjkg68unqmjx._.js",
+    "line": 720,
+    "column": 28
+  },
+  {
+    "type": "info",
+    "args": [
+      {
+        "type": "string",
+        "value": "%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools"
+      },
+      {
+        "type": "string",
+        "value": "font-weight:bold"
+      }
+    ],
+    "executionContextId": 3,
+    "timestamp": 1791632873835.951,
+    "stackTrace": {
+      "callFrames": [
+        {
+          "functionName": "info",
+          "scriptId": "13",
+          "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_1bjkg68unqmjx._.js",
+          "lineNumber": 719,
+          "columnNumber": 27
+        },
+        {
+          "functionName": "",
+          "scriptId": "8",
+          "url": "http://localhost:3000/_next/static/chunks/1daa_next_dist_compiled_react-dom_cjs_react-dom-client_development_0mp0cp_t-ezj9.js",
+          "lineNumber": 16718,
+          "columnNumber": 53
+        },
+        {
+          "functionName": "module evaluation",
+          "scriptId": "8",
+          "url": "http://localhost:3000/_next/static/chunks/1daa_next_dist_compiled_react-dom_cjs_react-dom-client_development_0mp0cp_t-ezj9.js",
+          "lineNumber": 16755,
+          "columnNumber": 1
+        },
+        {
+          "functionName": "",
+          "scriptId": "19",
+          "url": "http://localhost:3000/_next/static/chunks/turbopack-_00pkkjbg3g3xr._.js",
+          "lineNumber": 1624,
+          "columnNumber": 26
+        },
+        {
+          "functionName": "runModuleExecutionHooks",
+          "scriptId": "19",
+          "url": "http://localhost:3000/_next/static/chunks/turbopack-_00pkkjbg3g3xr._.js",
+          "lineNumber": 1954,
+          "columnNumber": 12
+        },
+        {
+          "functionName": "instantiateModuleShared",
+          "scriptId": "19",
+          "url": "http://localhost:3000/_next/static/chunks/turbopack-_00pkkjbg3g3xr._.js",
+          "lineNumber": 1622,
+          "columnNumber": 8
+        },
+        {
+          "functionName": "instantiateModule",
+          "scriptId": "19",
+          "url": "http://localhost:3000/_next/static/chunks/turbopack-_00pkkjbg3g3xr._.js",
+          "lineNumber": 1939,
+          "columnNumber": 11
+        },
+        {
+          "functionName": "getOrInstantiateModuleFromParent",
+          "scriptId": "19",
+          "url": "http://localhost:3000/_next/static/chunks/turbopack-_00pkkjbg3g3xr._.js",
+          "lineNumber": 1922,
+          "columnNumber": 11
+        },
+        {
+          "functionName": "commonJsRequire",
+          "scriptId": "19",
+          "url": "http://localhost:3000/_next/static/chunks/turbopack-_00pkkjbg3g3xr._.js",
+          "lineNumber": 494,
+          "columnNumber": 11
+        },
+        {
+          "functionName": "module evaluation",
+          "scriptId": "10",
+          "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_0grqycjrj6mju._.js",
+          "lineNumber": 32,
+          "columnNumber": 43
+        },
+        {
+          "functionName": "",
+          "scriptId": "19",
+          "url": "http://localhost:3000/_next/static/chunks/turbopack-_00pkkjbg3g3xr._.js",
+          "lineNumber": 1624,
+          "columnNumber": 26
+        },
+        {
+          "functionName": "runModuleExecutionHooks",
+          "scriptId": "19",
+          "url": "http://localhost:3000/_next/static/chunks/turbopack-_00pkkjbg3g3xr._.js",
+          "lineNumber": 1954,
+          "columnNumber": 12
+        },
+        {
+          "functionName": "instantiateModuleShared",
+          "scriptId": "19",
+          "url": "http://localhost:3000/_next/static/chunks/turbopack-_00pkkjbg3g3xr._.js",
+          "lineNumber": 1622,
+          "columnNumber": 8
+        },
+        {
+          "functionName": "instantiateModule",
+          "scriptId": "19",
+          "url": "http://localhost:3000/_next/static/chunks/turbopack-_00pkkjbg3g3xr._.js",
+          "lineNumber": 1939,
+          "columnNumber": 11
+        },
+        {
+          "functionName": "getOrInstantiateModuleFromParent",
+          "scriptId": "19",
+          "url": "http://localhost:3000/_next/static/chunks/turbopack-_00pkkjbg3g3xr._.js",
+          "lineNumber": 1922,
+          "columnNumber": 11
+        },
+        {
+          "functionName": "commonJsRequire",
+          "scriptId": "19",
+          "url": "http://localhost:3000/_next/static/chunks/turbopack-_00pkkjbg3g3xr._.js",
+          "lineNumber": 494,
+          "columnNumber": 11
+        },
+        {
+          "functionName": "module evaluation",
+          "scriptId": "14",
+          "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_14zvornz047l2._.js",
+          "lineNumber": 226,
+          "columnNumber": 79
+        },
+        {
+          "functionName": "",
+          "scriptId": "19",
+          "url": "http://localhost:3000/_next/static/chunks/turbopack-_00pkkjbg3g3xr._.js",
+          "lineNumber": 1624,
+          "columnNumber": 26
+        },
+        {
+          "functionName": "runModuleExecutionHooks",
+          "scriptId": "19",
+          "url": "http://localhost:3000/_next/static/chunks/turbopack-_00pkkjbg3g3xr._.js",
+          "lineNumber": 1954,
+          "columnNumber": 12
+        },
+        {
+          "functionName": "instantiateModuleShared",
+          "scriptId": "19",
+          "url": "http://localhost:3000/_next/static/chunks/turbopack-_00pkkjbg3g3xr._.js",
+          "lineNumber": 1622,
+          "columnNumber": 8
+        },
+        {
+          "functionName": "instantiateModule",
+          "scriptId": "19",
+          "url": "http://localhost:3000/_next/static/chunks/turbopack-_00pkkjbg3g3xr._.js",
+          "lineNumber": 1939,
+          "columnNumber": 11
+        },
+        {
+          "functionName": "getOrInstantiateModuleFromParent",
+          "scriptId": "19",
+          "url": "http://localhost:3000/_next/static/chunks/turbopack-_00pkkjbg3g3xr._.js",
+          "lineNumber": 1922,
+          "columnNumber": 11
+        },
+        {
+          "functionName": "commonJsRequire",
+          "scriptId": "19",
+          "url": "http://localhost:3000/_next/static/chunks/turbopack-_00pkkjbg3g3xr._.js",
+          "lineNumber": 494,
+          "columnNumber": 11
+        },
+        {
+          "functionName": "",
+          "scriptId": "14",
+          "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_14zvornz047l2._.js",
+          "lineNumber": 606,
+          "columnNumber": 46
+        },
+        {
+          "functionName": "",
+          "scriptId": "14",
+          "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_14zvornz047l2._.js",
+          "lineNumber": 93,
+          "columnNumber": 8
+        },
+        {
+          "functionName": "loadScriptsInSequence",
+          "scriptId": "14",
+          "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_14zvornz047l2._.js",
+          "lineNumber": 57,
+          "columnNumber": 15
+        },
+        {
+          "functionName": "appBootstrap",
+          "scriptId": "14",
+          "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_14zvornz047l2._.js",
+          "lineNumber": 86,
+          "columnNumber": 4
+        },
+        {
+          "functionName": "module evaluation",
+          "scriptId": "14",
+          "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_14zvornz047l2._.js",
+          "lineNumber": 605,
+          "columnNumber": 31
+        },
+        {
+          "functionName": "",
+          "scriptId": "19",
+          "url": "http://localhost:3000/_next/static/chunks/turbopack-_00pkkjbg3g3xr._.js",
+          "lineNumber": 1624,
+          "columnNumber": 26
+        },
+        {
+          "functionName": "runModuleExecutionHooks",
+          "scriptId": "19",
+          "url": "http://localhost:3000/_next/static/chunks/turbopack-_00pkkjbg3g3xr._.js",
+          "lineNumber": 1954,
+          "columnNumber": 12
+        },
+        {
+          "functionName": "instantiateModuleShared",
+          "scriptId": "19",
+          "url": "http://localhost:3000/_next/static/chunks/turbopack-_00pkkjbg3g3xr._.js",
+          "lineNumber": 1622,
+          "columnNumber": 8
+        },
+        {
+          "functionName": "instantiateModule",
+          "scriptId": "19",
+          "url": "http://localhost:3000/_next/static/chunks/turbopack-_00pkkjbg3g3xr._.js",
+          "lineNumber": 1939,
+          "columnNumber": 11
+        },
+        {
+          "functionName": "getOrInstantiateRuntimeModule",
+          "scriptId": "19",
+          "url": "http://localhost:3000/_next/static/chunks/turbopack-_00pkkjbg3g3xr._.js",
+          "lineNumber": 1900,
+          "columnNumber": 11
+        },
+        {
+          "functionName": "registerChunk",
+          "scriptId": "19",
+          "url": "http://localhost:3000/_next/static/chunks/turbopack-_00pkkjbg3g3xr._.js",
+          "lineNumber": 2315,
+          "columnNumber": 20
+        }
+      ]
+    }
+  },
+  {
+    "source": "console-api",
+    "level": "log",
+    "text": "[HMR] connected",
+    "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_1bjkg68unqmjx._.js",
+    "line": 720,
+    "column": 28
+  },
+  {
+    "type": "log",
+    "args": [
+      {
+        "type": "string",
+        "value": "[HMR] connected"
+      }
+    ],
+    "executionContextId": 3,
+    "timestamp": 1791632873871.887,
+    "stackTrace": {
+      "callFrames": [
+        {
+          "functionName": "log",
+          "scriptId": "13",
+          "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_1bjkg68unqmjx._.js",
+          "lineNumber": 719,
+          "columnNumber": 27
+        },
+        {
+          "functionName": "handleOnline",
+          "scriptId": "14",
+          "url": "http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_14zvornz047l2._.js",
+          "lineNumber": 16404,
+          "columnNumber": 27
+        }
+      ]
+    }
+  }
+]

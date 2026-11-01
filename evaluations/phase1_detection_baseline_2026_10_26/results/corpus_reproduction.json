@@ -1,0 +1,289 @@
+{
+  "files": [
+    {
+      "path": "corpus.json",
+      "equal": true
+    },
+    {
+      "path": "cases\\C01.txt",
+      "equal": true
+    },
+    {
+      "path": "cases\\C02.txt",
+      "equal": true
+    },
+    {
+      "path": "cases\\C03.txt",
+      "equal": true
+    },
+    {
+      "path": "cases\\C04.txt",
+      "equal": true
+    },
+    {
+      "path": "cases\\O01.txt",
+      "equal": true
+    },
+    {
+      "path": "cases\\O02.txt",
+      "equal": true
+    },
+    {
+      "path": "cases\\O03.txt",
+      "equal": true
+    },
+    {
+      "path": "cases\\O04.txt",
+      "equal": true
+    },
+    {
+      "path": "cases\\O05.txt",
+      "equal": true
+    },
+    {
+      "path": "cases\\O06.txt",
+      "equal": true
+    },
+    {
+      "path": "cases\\O07.txt",
+      "equal": true
+    },
+    {
+      "path": "cases\\O08.txt",
+      "equal": true
+    },
+    {
+      "path": "cases\\O09.txt",
+      "equal": true
+    },
+    {
+      "path": "cases\\O10.txt",
+      "equal": true
+    },
+    {
+      "path": "cases\\O11.txt",
+      "equal": true
+    },
+    {
+      "path": "cases\\O12.txt",
+      "equal": true
+    },
+    {
+      "path": "cases\\R01.txt",
+      "equal": true
+    },
+    {
+      "path": "cases\\R02.txt",
+      "equal": true
+    },
+    {
+      "path": "cases\\R03.txt",
+      "equal": true
+    },
+    {
+      "path": "cases\\R04.txt",
+      "equal": true
+    },
+    {
+      "path": "cases\\R05.txt",
+      "equal": true
+    },
+    {
+      "path": "cases\\R06.txt",
+      "equal": true
+    },
+    {
+      "path": "cases\\R07.txt",
+      "equal": true
+    },
+    {
+      "path": "cases\\R08.txt",
+      "equal": true
+    },
+    {
+      "path": "cases\\R09.txt",
+      "equal": true
+    },
+    {
+      "path": "cases\\R10.txt",
+      "equal": true
+    },
+    {
+      "path": "cases\\R11.txt",
+      "equal": true
+    },
+    {
+      "path": "cases\\R12.txt",
+      "equal": true
+    },
+    {
+      "path": "cases\\R13.txt",
+      "equal": true
+    },
+    {
+      "path": "cases\\R14.txt",
+      "equal": true
+    },
+    {
+      "path": "cases\\R15.txt",
+      "equal": true
+    },
+    {
+      "path": "cases\\R16.txt",
+      "equal": true
+    },
+    {
+      "path": "cases\\R17.txt",
+      "equal": true
+    },
+    {
+      "path": "cases\\R18.txt",
+      "equal": true
+    },
+    {
+      "path": "cases\\R19.txt",
+      "equal": true
+    },
+    {
+      "path": "cases\\R20.txt",
+      "equal": true
+    },
+    {
+      "path": "cases\\R21.txt",
+      "equal": true
+    },
+    {
+      "path": "cases\\R22.txt",
+      "equal": true
+    },
+    {
+      "path": "cases\\R23.txt",
+      "equal": true
+    },
+    {
+      "path": "cases\\R24.txt",
+      "equal": true
+    },
+    {
+      "path": "cases\\R25.txt",
+      "equal": true
+    },
+    {
+      "path": "cases\\R26.txt",
+      "equal": true
+    },
+    {
+      "path": "cases\\R27.txt",
+      "equal": true
+    },
+    {
+      "path": "cases\\R28.txt",
+      "equal": true
+    },
+    {
+      "path": "cases\\S01.txt",
+      "equal": true
+    },
+    {
+      "path": "cases\\S02.txt",
+      "equal": true
+    },
+    {
+      "path": "cases\\S03.txt",
+      "equal": true
+    },
+    {
+      "path": "cases\\S04.txt",
+      "equal": true
+    },
+    {
+      "path": "cases\\S05.txt",
+      "equal": true
+    },
+    {
+      "path": "cases\\T01.txt",
+      "equal": true
+    },
+    {
+      "path": "cases\\T02.txt",
+      "equal": true
+    },
+    {
+      "path": "cases\\T03.txt",
+      "equal": true
+    },
+    {
+      "path": "cases\\T04.txt",
+      "equal": true
+    },
+    {
+      "path": "cases\\T05.txt",
+      "equal": true
+    },
+    {
+      "path": "cases\\T06.txt",
+      "equal": true
+    },
+    {
+      "path": "cases\\T07.txt",
+      "equal": true
+    },
+    {
+      "path": "cases\\T08.txt",
+      "equal": true
+    },
+    {
+      "path": "cases\\T09.txt",
+      "equal": true
+    },
+    {
+      "path": "cases\\T10.txt",
+      "equal": true
+    },
+    {
+      "path": "cases\\T11.txt",
+      "equal": true
+    },
+    {
+      "path": "cases\\T12.txt",
+      "equal": true
+    },
+    {
+      "path": "cases\\T13.txt",
+      "equal": true
+    },
+    {
+      "path": "cases\\T14.txt",
+      "equal": true
+    },
+    {
+      "path": "cases\\T15.txt",
+      "equal": true
+    },
+    {
+      "path": "cases\\T16.txt",
+      "equal": true
+    },
+    {
+      "path": "cases\\T17.txt",
+      "equal": true
+    },
+    {
+      "path": "cases\\W01.txt",
+      "equal": true
+    },
+    {
+      "path": "cases\\W02.txt",
+      "equal": true
+    },
+    {
+      "path": "cases\\W03.txt",
+      "equal": true
+    },
+    {
+      "path": "cases\\W04.txt",
+      "equal": true
+    }
+  ],
+  "passed": true
+}

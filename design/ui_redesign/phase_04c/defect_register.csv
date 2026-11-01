@@ -1,0 +1,5 @@
+defect_id,category,severity,description,remediation,verification_status
+DEF-4C-001,Scientific Parity,High,Initial local optimization draft omitted 4-decimal clause rounding present in DualChannelScorer resulting in 1e-5 discrepancy,Mirrored round(float(sb) 4) in local edge update routine,RESOLVED (exact 0.00000000 parity achieved)
+DEF-4C-002,Frontend Linter,Medium,React 19 eslint flagged direct setState in useEffect during initial modal mount,Wrapped initial candidate fetch in queueMicrotask matching Explainability pattern,RESOLVED (eslint 0 errors 0 warnings)
+DEF-4C-003,Scientific Methodology,High,Phase 4A informal proposal of delta > 0.15 threshold was unworkable on document-mean anomaly scale,Empirically calibrated threshold tau = 0.0050 on development contracts,RESOLVED (100% abstention on negative controls)
+DEF-4C-004,Legal Architecture,Medium,Automated parsing cannot verify complete legal structural enforceability for arbitrary contract formats,Added prominent structural constraint warning and human review caveat to UI and API,RESOLVED (verified in UI and browser tests)

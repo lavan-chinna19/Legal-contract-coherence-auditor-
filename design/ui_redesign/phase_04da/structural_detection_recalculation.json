@@ -1,0 +1,429 @@
+{
+  "audit_phase": "PHASE_4D_A",
+  "evaluated_scenarios": [
+    {
+      "scenario_id": "SCEN_P1_01_DISP_DISTANT",
+      "perturbation_type": "P1_DISPLACEMENT",
+      "original_doc_id": "SYNTH_DOC_01_MSA",
+      "target_clause_ids": [
+        "SYNTH_DOC_01_MSA_c01"
+      ],
+      "affected_clause_ids": [
+        "SYNTH_DOC_01_MSA_c01"
+      ],
+      "original_clause_order": [
+        "SYNTH_DOC_01_MSA_c00",
+        "SYNTH_DOC_01_MSA_c01",
+        "SYNTH_DOC_01_MSA_c02",
+        "SYNTH_DOC_01_MSA_c03",
+        "SYNTH_DOC_01_MSA_c04",
+        "SYNTH_DOC_01_MSA_c05",
+        "SYNTH_DOC_01_MSA_c06",
+        "SYNTH_DOC_01_MSA_c07",
+        "SYNTH_DOC_01_MSA_c08",
+        "SYNTH_DOC_01_MSA_c09",
+        "SYNTH_DOC_01_MSA_c10"
+      ],
+      "perturbed_clause_order": [
+        "SYNTH_DOC_01_MSA_c00",
+        "SYNTH_DOC_01_MSA_c02",
+        "SYNTH_DOC_01_MSA_c03",
+        "SYNTH_DOC_01_MSA_c04",
+        "SYNTH_DOC_01_MSA_c05",
+        "SYNTH_DOC_01_MSA_c06",
+        "SYNTH_DOC_01_MSA_c07",
+        "SYNTH_DOC_01_MSA_c08",
+        "SYNTH_DOC_01_MSA_c09",
+        "SYNTH_DOC_01_MSA_c10",
+        "SYNTH_DOC_01_MSA_c01"
+      ],
+      "channel_a_permutation_invariant": true,
+      "orig_doc_anomalies": 0,
+      "pert_doc_anomalies": 0,
+      "delta_anomaly_count": 0,
+      "orig_mean_combined": 0.3403,
+      "pert_mean_combined": 0.3408,
+      "delta_mean_combined": 0.0005,
+      "orig_max_combined": 0.3449,
+      "pert_max_combined": 0.3449,
+      "orig_max_channel_a": 0.0,
+      "pert_max_channel_a": 0.0,
+      "orig_max_channel_b": 0.6898,
+      "pert_max_channel_b": 0.6898,
+      "orig_severities": [
+        "CLEAN"
+      ],
+      "pert_severities": [
+        "CLEAN"
+      ],
+      "orig_has_anomaly": false,
+      "pert_has_anomaly": false,
+      "clause_count": 11,
+      "max_affected_b_delta": -0.0096,
+      "production_anomaly_detected": false,
+      "production_novel_finding_detected": false,
+      "exploratory_008_delta_detected": false,
+      "ground_truth_condition": "INDEPENDENTLY_SUPPORTED_STRUCTURAL_ANOMALY",
+      "eligible_for_strict_evaluation": true,
+      "explanation": "Under production predicate, all clauses remained CLEAN/LOW severity (scores < 0.35, far below 0.50 MED_THRESHOLD). Under exploratory score-delta heuristic (threshold=0.08), max Channel B delta was -0.0096 < 0.08."
+    },
+    {
+      "scenario_id": "SCEN_P1_02_DISP_MODERATE",
+      "perturbation_type": "P1_DISPLACEMENT",
+      "original_doc_id": "SYNTH_DOC_01_MSA",
+      "target_clause_ids": [
+        "SYNTH_DOC_01_MSA_c05"
+      ],
+      "affected_clause_ids": [
+        "SYNTH_DOC_01_MSA_c05"
+      ],
+      "original_clause_order": [
+        "SYNTH_DOC_01_MSA_c00",
+        "SYNTH_DOC_01_MSA_c01",
+        "SYNTH_DOC_01_MSA_c02",
+        "SYNTH_DOC_01_MSA_c03",
+        "SYNTH_DOC_01_MSA_c04",
+        "SYNTH_DOC_01_MSA_c05",
+        "SYNTH_DOC_01_MSA_c06",
+        "SYNTH_DOC_01_MSA_c07",
+        "SYNTH_DOC_01_MSA_c08",
+        "SYNTH_DOC_01_MSA_c09",
+        "SYNTH_DOC_01_MSA_c10"
+      ],
+      "perturbed_clause_order": [
+        "SYNTH_DOC_01_MSA_c00",
+        "SYNTH_DOC_01_MSA_c01",
+        "SYNTH_DOC_01_MSA_c05",
+        "SYNTH_DOC_01_MSA_c02",
+        "SYNTH_DOC_01_MSA_c03",
+        "SYNTH_DOC_01_MSA_c04",
+        "SYNTH_DOC_01_MSA_c06",
+        "SYNTH_DOC_01_MSA_c07",
+        "SYNTH_DOC_01_MSA_c08",
+        "SYNTH_DOC_01_MSA_c09",
+        "SYNTH_DOC_01_MSA_c10"
+      ],
+      "channel_a_permutation_invariant": true,
+      "orig_doc_anomalies": 0,
+      "pert_doc_anomalies": 0,
+      "delta_anomaly_count": 0,
+      "orig_mean_combined": 0.3403,
+      "pert_mean_combined": 0.3393,
+      "delta_mean_combined": -0.001,
+      "orig_max_combined": 0.3449,
+      "pert_max_combined": 0.3449,
+      "orig_max_channel_a": 0.0,
+      "pert_max_channel_a": 0.0,
+      "orig_max_channel_b": 0.6898,
+      "pert_max_channel_b": 0.6898,
+      "orig_severities": [
+        "CLEAN"
+      ],
+      "pert_severities": [
+        "CLEAN"
+      ],
+      "orig_has_anomaly": false,
+      "pert_has_anomaly": false,
+      "clause_count": 11,
+      "max_affected_b_delta": -0.0037,
+      "production_anomaly_detected": false,
+      "production_novel_finding_detected": false,
+      "exploratory_008_delta_detected": false,
+      "ground_truth_condition": "SYNTHETIC_TRANSFORMATION_UNEXPECTED_DISCOURSE",
+      "eligible_for_strict_evaluation": true,
+      "explanation": "Under production predicate, all clauses remained CLEAN/LOW severity (scores < 0.35, far below 0.50 MED_THRESHOLD). Under exploratory score-delta heuristic (threshold=0.08), max Channel B delta was -0.0037 < 0.08."
+    },
+    {
+      "scenario_id": "SCEN_P1_03_DISP_SUBTLE",
+      "perturbation_type": "P1_DISPLACEMENT",
+      "original_doc_id": "SYNTH_DOC_01_MSA",
+      "target_clause_ids": [
+        "SYNTH_DOC_01_MSA_c03"
+      ],
+      "affected_clause_ids": [
+        "SYNTH_DOC_01_MSA_c03"
+      ],
+      "original_clause_order": [
+        "SYNTH_DOC_01_MSA_c00",
+        "SYNTH_DOC_01_MSA_c01",
+        "SYNTH_DOC_01_MSA_c02",
+        "SYNTH_DOC_01_MSA_c03",
+        "SYNTH_DOC_01_MSA_c04",
+        "SYNTH_DOC_01_MSA_c05",
+        "SYNTH_DOC_01_MSA_c06",
+        "SYNTH_DOC_01_MSA_c07",
+        "SYNTH_DOC_01_MSA_c08",
+        "SYNTH_DOC_01_MSA_c09",
+        "SYNTH_DOC_01_MSA_c10"
+      ],
+      "perturbed_clause_order": [
+        "SYNTH_DOC_01_MSA_c00",
+        "SYNTH_DOC_01_MSA_c01",
+        "SYNTH_DOC_01_MSA_c02",
+        "SYNTH_DOC_01_MSA_c04",
+        "SYNTH_DOC_01_MSA_c03",
+        "SYNTH_DOC_01_MSA_c05",
+        "SYNTH_DOC_01_MSA_c06",
+        "SYNTH_DOC_01_MSA_c07",
+        "SYNTH_DOC_01_MSA_c08",
+        "SYNTH_DOC_01_MSA_c09",
+        "SYNTH_DOC_01_MSA_c10"
+      ],
+      "channel_a_permutation_invariant": true,
+      "orig_doc_anomalies": 0,
+      "pert_doc_anomalies": 0,
+      "delta_anomaly_count": 0,
+      "orig_mean_combined": 0.3403,
+      "pert_mean_combined": 0.3406,
+      "delta_mean_combined": 0.0003,
+      "orig_max_combined": 0.3449,
+      "pert_max_combined": 0.3449,
+      "orig_max_channel_a": 0.0,
+      "pert_max_channel_a": 0.0,
+      "orig_max_channel_b": 0.6898,
+      "pert_max_channel_b": 0.6898,
+      "orig_severities": [
+        "CLEAN"
+      ],
+      "pert_severities": [
+        "CLEAN"
+      ],
+      "orig_has_anomaly": false,
+      "pert_has_anomaly": false,
+      "clause_count": 11,
+      "max_affected_b_delta": 0.0085,
+      "production_anomaly_detected": false,
+      "production_novel_finding_detected": false,
+      "exploratory_008_delta_detected": false,
+      "ground_truth_condition": "SYNTHETIC_TRANSFORMATION_LOCAL_DISPLACEMENT",
+      "eligible_for_strict_evaluation": true,
+      "explanation": "Under production predicate, all clauses remained CLEAN/LOW severity (scores < 0.35, far below 0.50 MED_THRESHOLD). Under exploratory score-delta heuristic (threshold=0.08), max Channel B delta was 0.0085 < 0.08."
+    },
+    {
+      "scenario_id": "SCEN_P2_01_SWAP_ADJACENT",
+      "perturbation_type": "P2_SWAP",
+      "original_doc_id": "SYNTH_DOC_01_MSA",
+      "target_clause_ids": [
+        "SYNTH_DOC_01_MSA_c00",
+        "SYNTH_DOC_01_MSA_c01"
+      ],
+      "affected_clause_ids": [
+        "SYNTH_DOC_01_MSA_c00",
+        "SYNTH_DOC_01_MSA_c01"
+      ],
+      "original_clause_order": [
+        "SYNTH_DOC_01_MSA_c00",
+        "SYNTH_DOC_01_MSA_c01",
+        "SYNTH_DOC_01_MSA_c02",
+        "SYNTH_DOC_01_MSA_c03",
+        "SYNTH_DOC_01_MSA_c04",
+        "SYNTH_DOC_01_MSA_c05",
+        "SYNTH_DOC_01_MSA_c06",
+        "SYNTH_DOC_01_MSA_c07",
+        "SYNTH_DOC_01_MSA_c08",
+        "SYNTH_DOC_01_MSA_c09",
+        "SYNTH_DOC_01_MSA_c10"
+      ],
+      "perturbed_clause_order": [
+        "SYNTH_DOC_01_MSA_c01",
+        "SYNTH_DOC_01_MSA_c00",
+        "SYNTH_DOC_01_MSA_c02",
+        "SYNTH_DOC_01_MSA_c03",
+        "SYNTH_DOC_01_MSA_c04",
+        "SYNTH_DOC_01_MSA_c05",
+        "SYNTH_DOC_01_MSA_c06",
+        "SYNTH_DOC_01_MSA_c07",
+        "SYNTH_DOC_01_MSA_c08",
+        "SYNTH_DOC_01_MSA_c09",
+        "SYNTH_DOC_01_MSA_c10"
+      ],
+      "channel_a_permutation_invariant": true,
+      "orig_doc_anomalies": 0,
+      "pert_doc_anomalies": 0,
+      "delta_anomaly_count": 0,
+      "orig_mean_combined": 0.3403,
+      "pert_mean_combined": 0.341,
+      "delta_mean_combined": 0.0007,
+      "orig_max_combined": 0.3449,
+      "pert_max_combined": 0.3449,
+      "orig_max_channel_a": 0.0,
+      "pert_max_channel_a": 0.0,
+      "orig_max_channel_b": 0.6898,
+      "pert_max_channel_b": 0.6898,
+      "orig_severities": [
+        "CLEAN"
+      ],
+      "pert_severities": [
+        "CLEAN"
+      ],
+      "orig_has_anomaly": false,
+      "pert_has_anomaly": false,
+      "clause_count": 11,
+      "max_affected_b_delta": 0.0152,
+      "production_anomaly_detected": false,
+      "production_novel_finding_detected": false,
+      "exploratory_008_delta_detected": false,
+      "ground_truth_condition": "INDEPENDENTLY_SUPPORTED_STRUCTURAL_ANOMALY",
+      "eligible_for_strict_evaluation": true,
+      "explanation": "Under production predicate, all clauses remained CLEAN/LOW severity (scores < 0.35, far below 0.50 MED_THRESHOLD). Under exploratory score-delta heuristic (threshold=0.08), max Channel B delta was 0.0152 < 0.08."
+    },
+    {
+      "scenario_id": "SCEN_P2_02_SWAP_DISTANT",
+      "perturbation_type": "P2_SWAP",
+      "original_doc_id": "SYNTH_DOC_01_MSA",
+      "target_clause_ids": [
+        "SYNTH_DOC_01_MSA_c02",
+        "SYNTH_DOC_01_MSA_c08"
+      ],
+      "affected_clause_ids": [
+        "SYNTH_DOC_01_MSA_c02",
+        "SYNTH_DOC_01_MSA_c08"
+      ],
+      "original_clause_order": [
+        "SYNTH_DOC_01_MSA_c00",
+        "SYNTH_DOC_01_MSA_c01",
+        "SYNTH_DOC_01_MSA_c02",
+        "SYNTH_DOC_01_MSA_c03",
+        "SYNTH_DOC_01_MSA_c04",
+        "SYNTH_DOC_01_MSA_c05",
+        "SYNTH_DOC_01_MSA_c06",
+        "SYNTH_DOC_01_MSA_c07",
+        "SYNTH_DOC_01_MSA_c08",
+        "SYNTH_DOC_01_MSA_c09",
+        "SYNTH_DOC_01_MSA_c10"
+      ],
+      "perturbed_clause_order": [
+        "SYNTH_DOC_01_MSA_c00",
+        "SYNTH_DOC_01_MSA_c01",
+        "SYNTH_DOC_01_MSA_c08",
+        "SYNTH_DOC_01_MSA_c03",
+        "SYNTH_DOC_01_MSA_c04",
+        "SYNTH_DOC_01_MSA_c05",
+        "SYNTH_DOC_01_MSA_c06",
+        "SYNTH_DOC_01_MSA_c07",
+        "SYNTH_DOC_01_MSA_c02",
+        "SYNTH_DOC_01_MSA_c09",
+        "SYNTH_DOC_01_MSA_c10"
+      ],
+      "channel_a_permutation_invariant": true,
+      "orig_doc_anomalies": 0,
+      "pert_doc_anomalies": 0,
+      "delta_anomaly_count": 0,
+      "orig_mean_combined": 0.3403,
+      "pert_mean_combined": 0.3414,
+      "delta_mean_combined": 0.0011,
+      "orig_max_combined": 0.3449,
+      "pert_max_combined": 0.3449,
+      "orig_max_channel_a": 0.0,
+      "pert_max_channel_a": 0.0,
+      "orig_max_channel_b": 0.6898,
+      "pert_max_channel_b": 0.6898,
+      "orig_severities": [
+        "CLEAN"
+      ],
+      "pert_severities": [
+        "CLEAN"
+      ],
+      "orig_has_anomaly": false,
+      "pert_has_anomaly": false,
+      "clause_count": 11,
+      "max_affected_b_delta": 0.01,
+      "production_anomaly_detected": false,
+      "production_novel_finding_detected": false,
+      "exploratory_008_delta_detected": false,
+      "ground_truth_condition": "SYNTHETIC_TRANSFORMATION_UNEXPECTED_DISCOURSE",
+      "eligible_for_strict_evaluation": true,
+      "explanation": "Under production predicate, all clauses remained CLEAN/LOW severity (scores < 0.35, far below 0.50 MED_THRESHOLD). Under exploratory score-delta heuristic (threshold=0.08), max Channel B delta was 0.0100 < 0.08."
+    },
+    {
+      "scenario_id": "SCEN_P2_03_SWAP_SUBTLE",
+      "perturbation_type": "P2_SWAP",
+      "original_doc_id": "SYNTH_DOC_01_MSA",
+      "target_clause_ids": [
+        "SYNTH_DOC_01_MSA_c04",
+        "SYNTH_DOC_01_MSA_c06"
+      ],
+      "affected_clause_ids": [
+        "SYNTH_DOC_01_MSA_c04",
+        "SYNTH_DOC_01_MSA_c06"
+      ],
+      "original_clause_order": [
+        "SYNTH_DOC_01_MSA_c00",
+        "SYNTH_DOC_01_MSA_c01",
+        "SYNTH_DOC_01_MSA_c02",
+        "SYNTH_DOC_01_MSA_c03",
+        "SYNTH_DOC_01_MSA_c04",
+        "SYNTH_DOC_01_MSA_c05",
+        "SYNTH_DOC_01_MSA_c06",
+        "SYNTH_DOC_01_MSA_c07",
+        "SYNTH_DOC_01_MSA_c08",
+        "SYNTH_DOC_01_MSA_c09",
+        "SYNTH_DOC_01_MSA_c10"
+      ],
+      "perturbed_clause_order": [
+        "SYNTH_DOC_01_MSA_c00",
+        "SYNTH_DOC_01_MSA_c01",
+        "SYNTH_DOC_01_MSA_c02",
+        "SYNTH_DOC_01_MSA_c03",
+        "SYNTH_DOC_01_MSA_c06",
+        "SYNTH_DOC_01_MSA_c05",
+        "SYNTH_DOC_01_MSA_c04",
+        "SYNTH_DOC_01_MSA_c07",
+        "SYNTH_DOC_01_MSA_c08",
+        "SYNTH_DOC_01_MSA_c09",
+        "SYNTH_DOC_01_MSA_c10"
+      ],
+      "channel_a_permutation_invariant": true,
+      "orig_doc_anomalies": 0,
+      "pert_doc_anomalies": 0,
+      "delta_anomaly_count": 0,
+      "orig_mean_combined": 0.3403,
+      "pert_mean_combined": 0.3407,
+      "delta_mean_combined": 0.0004,
+      "orig_max_combined": 0.3449,
+      "pert_max_combined": 0.3449,
+      "orig_max_channel_a": 0.0,
+      "pert_max_channel_a": 0.0,
+      "orig_max_channel_b": 0.6898,
+      "pert_max_channel_b": 0.6898,
+      "orig_severities": [
+        "CLEAN"
+      ],
+      "pert_severities": [
+        "CLEAN"
+      ],
+      "orig_has_anomaly": false,
+      "pert_has_anomaly": false,
+      "clause_count": 11,
+      "max_affected_b_delta": 0.0033,
+      "production_anomaly_detected": false,
+      "production_novel_finding_detected": false,
+      "exploratory_008_delta_detected": false,
+      "ground_truth_condition": "AMBIGUOUS_ORDERING",
+      "eligible_for_strict_evaluation": false,
+      "explanation": "Under production predicate, all clauses remained CLEAN/LOW severity (scores < 0.35, far below 0.50 MED_THRESHOLD). Under exploratory score-delta heuristic (threshold=0.08), max Channel B delta was 0.0033 < 0.08."
+    }
+  ],
+  "summary": {
+    "total_structural_cases": 6,
+    "strictly_eligible_cases": 5,
+    "production_anomaly_detection_count": 0,
+    "production_novel_finding_count": 0,
+    "exploratory_008_delta_count": 0,
+    "channel_a_permutation_invariance_verified": true,
+    "max_observed_b_delta": 0.0152,
+    "min_observed_b_delta": -0.0096,
+    "wilson_95_ci_strict_5_cases": [
+      0.0,
+      0.4345
+    ],
+    "wilson_95_ci_broad_6_cases": [
+      0.0,
+      0.3903
+    ],
+    "all_clauses_evaluated_count": 66,
+    "all_clauses_orig_anomalies_count": 0,
+    "all_clauses_pert_anomalies_count": 0,
+    "all_clauses_severity_clean_confirmed": true
+  }
+}

@@ -1,0 +1,7 @@
+epoch,train_loss,val_loss,is_best_checkpoint,learning_rate
+1,0.7581,0.4551,True,0.001
+2,0.6499,0.2966,True,0.001
+3,0.7097,0.2997,False,0.001
+4,0.5165,0.3981,False,0.001
+5,0.5627,0.3999,False,0.001
+6,0.5937,0.3545,False,0.001

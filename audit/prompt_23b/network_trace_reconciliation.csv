@@ -1,0 +1,9 @@
+Transaction Sequence,Action / Phase,HTTP Method,URL Path,Status,Initiator (Browser or Script),Document / Job ID,Payload Shape,Verdict
+1,Liveness Check,GET,/health,200,Browser (page.tsx:98),N/A,{"status": "healthy"},RECONCILED
+2,Document Upload,POST,/v1/upload,200,Browser (page.tsx:116),doc_97a800a4,multipart/form-data (encrypted at rest),RECONCILED
+3,Analysis Trigger,POST,/v1/analyze,200,Browser (page.tsx:130),doc_97a800a4,{"doc_id": "doc_97a800a4"},RECONCILED
+4,Job Status Polling,GET,/v1/jobs/{job_id},200,Browser (page.tsx:153),47c203bb-c8c1-4336-8deb-bb27562fd5b3,{"status": "COMPLETED"},RECONCILED
+5,Results Fetch,GET,/v1/jobs/{job_id}/results,200,Browser (page.tsx:170),47c203bb-c8c1-4336-8deb-bb27562fd5b3,UnifiedAuditReportModel,RECONCILED
+6,XAI Token Attribution,GET,/v1/xai/attribution?doc_id={d}&clause_id={c},200,Browser (page.tsx:231),doc_97a800a4_0,{"ig_payload": {"tokens": [...], "attributions": [...]}},RECONCILED
+7,XAI Sensitivity,GET,/v1/xai/sensitivity?doc_id={d}&clause_id={c},200,Browser (page.tsx:236),doc_97a800a4_0,{"sensitivity_payload": {"score_delta": 0.0752}},RECONCILED
+8,Reviewer Feedback,POST,/v1/feedback,200,Browser (page.tsx:206),doc_97a800a4,FeedbackRequest (stored in feedback.sqlite),RECONCILED

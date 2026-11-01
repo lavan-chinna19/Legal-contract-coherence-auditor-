@@ -1,0 +1,6 @@
+{
+  "run_id": "evaluation_first_pass",
+  "split": "evaluation",
+  "source_frozen": true,
+  "policy": "One initial reserved-split evaluation. Any later correction is exposed development, never an untouched score."
+}

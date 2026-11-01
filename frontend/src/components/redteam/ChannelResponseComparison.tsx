@@ -52,7 +52,7 @@ export function ChannelResponseComparison({ caseResult }: ChannelResponseCompari
           </div>
 
           <p className="text-[11px] text-slate-400 leading-relaxed border-t border-slate-900 pt-2">
-            💡 Channel A embeds clauses individually against LEDGAR topic centroids. Structural displacement (P1) and swaps (P2) yield ΔSA ≈ 0.0 because semantic content is unchanged.
+             Channel A embeds clauses individually against LEDGAR topic centroids. Structural displacement (P1) and swaps (P2) yield ΔSA ≈ 0.0 because semantic content is unchanged.
           </p>
         </div>
 

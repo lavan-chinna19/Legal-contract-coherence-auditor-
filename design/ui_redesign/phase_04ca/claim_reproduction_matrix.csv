@@ -1,0 +1,9 @@
+claim_id,category,phase_4c_claimed_value,phase_4ca_reproduced_value,numerical_delta,reproduction_classification,audit_notes
+CLM-01,benchmark_sample,9 eligible held-out contracts,9 eligible held-out contracts,0,EXACT_REPRODUCTION,Verified against test_01_synthetic_displacement_manifest.json (10 held-out; 1 excluded due to length < 3 clauses)
+CLM-02,accuracy_top1,3/9 (33.33%),3/9 (33.33%),0.0000,EXACT_REPRODUCTION,Identical case-by-case Top-1 recovery across cases C-01 to C-09
+CLM-03,accuracy_top3,7/9 (77.78%),7/9 (77.78%),0.0000,EXACT_REPRODUCTION,Identical case-by-case Top-3 recovery across cases C-01 to C-09
+CLM-04,ranking_mrr,0.5448,0.5447,-0.0001,WITHIN_NUMERICAL_TOLERANCE,Minor floating point rounding discrepancy in 4th decimal place
+CLM-05,safety_negative_control,9/9 abstained (100%),9/9 abstained (100%),0.0000,EXACT_REPRODUCTION,All 9 unperturbed negative controls correctly yield recommended_slot=None
+CLM-06,runtime_speedup,Up to 18.7x,Up to 22.7x (median 18.2x),+4.0x,EXACT_REPRODUCTION,Verified across synthetic fixtures N=3 to N=20; speedup scales with clause count
+CLM-07,backend_regression,131 passed / 2 skipped,137 passed / 2 skipped,+6 passed,EXACT_REPRODUCTION,131 original tests intact; 6 new Phase 4C-A security tests added and passed
+CLM-08,api_security_opt_in,"Omission causes HTTP 400","Omission was accepted (HTTP 200) in 4C; fixed to HTTP 422 in 4C-A",N/A,CLAIM_NOT_REPRODUCED,Phase 4C had experimental: bool = True as default. Defect DEF-4CA-03 identified and resolved via strict=True

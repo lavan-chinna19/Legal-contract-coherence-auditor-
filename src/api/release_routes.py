@@ -91,3 +91,23 @@ def dependency_graph(request: DependencyRequest, client_id: str = Depends(verify
     job.result["metadata"]["dependency_graph"] = graph
     save_analysis_snapshot(job.model_dump())
     return graph
+
+
+@router.post('/experimental/obligation-bindings')
+def obligation_bindings(request: DependencyRequest, client_id: str = Depends(verify_api_key)):
+    """Separately opt-in experimental identity evidence; existing findings are untouched."""
+    if not request.experimental:
+        raise HTTPException(400, 'Explicit experimental opt-in is required.')
+    job=owned_job(request.job_id,client_id)
+    meta=job.result.get('metadata',{})
+    source=meta.get('original_source_text');inventory=meta.get('clause_inventory')
+    if source is None or inventory is None:
+        raise HTTPException(409, 'Reanalyze this legacy document to establish original extracted evidence.')
+    from src.obligations import analyze_bindings
+    try:
+        binding=analyze_bindings(inventory,job.doc_id,source_text=source)
+    except ValueError:
+        raise HTTPException(413,'Source exceeds the supported structural input limit.')
+    job.result['metadata']['obligation_binding']=binding
+    save_analysis_snapshot(job.model_dump())
+    return binding

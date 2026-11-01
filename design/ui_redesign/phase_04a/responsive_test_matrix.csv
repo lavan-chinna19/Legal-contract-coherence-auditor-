@@ -1,0 +1,5 @@
+Viewport,Target Device,Orientation,Page Overflow (X),KPI Card Layout,Score Timeline,Dual Column Diagnostic,Status,Screenshot Artifact
+1440x900,Desktop Large / External Monitor,Landscape,False,5-column inline grid,Full sequence visible without clipping,2-column side-by-side grid,PASS,05_analytics_responsive_1440x900.png
+1024x768,Desktop Standard / Small Laptop,Landscape,False,Wrap grid (minmax 180px),Horizontal scroll container with axis labels,2-column side-by-side grid,PASS,06_analytics_responsive_1024x768.png
+768x1024,Tablet / iPad Portrait,Portrait,False,2-column wrapped grid,Internal horizontal pan with touch support,Stacked single-column layout,PASS,07_analytics_responsive_768x1024.png
+390x844,Mobile / iPhone 13/14 Pro,Portrait,False,Single-column stacked,Internal touch scroll (bars minWidth 18px),Stacked single-column layout,PASS,08_analytics_responsive_390x844.png

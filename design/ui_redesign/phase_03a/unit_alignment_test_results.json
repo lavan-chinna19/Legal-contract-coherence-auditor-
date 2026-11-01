@@ -1,0 +1,322 @@
+{
+  "timestamp": "2026-10-21T22:18:32.389Z",
+  "totalTests": 17,
+  "passedCount": 17,
+  "failedCount": 0,
+  "overallStatus": "PASS",
+  "engineVersion": "1.0.0-phase3a",
+  "testResults": [
+    {
+      "id": "TC-01",
+      "name": "Baseline Five Numbered Clauses",
+      "fixtureFile": "fixture_01_baseline.txt",
+      "totalClauses": 5,
+      "expectedStatus": [
+        "VERIFIED_FULL_TEXT",
+        "VERIFIED_FULL_TEXT",
+        "VERIFIED_FULL_TEXT",
+        "VERIFIED_FULL_TEXT",
+        "VERIFIED_FULL_TEXT"
+      ],
+      "observedStatus": [
+        "VERIFIED_FULL_TEXT",
+        "VERIFIED_FULL_TEXT",
+        "VERIFIED_FULL_TEXT",
+        "VERIFIED_FULL_TEXT",
+        "VERIFIED_FULL_TEXT"
+      ],
+      "pass": true,
+      "notes": "All 5 sequential clauses uniquely aligned with verified full-text boundaries."
+    },
+    {
+      "id": "TC-02",
+      "name": "Repeated Prefix with Distinct Headings",
+      "fixtureFile": "fixture_02_repeated_prefix.txt",
+      "totalClauses": 3,
+      "expectedStatus": [
+        "VERIFIED_FULL_TEXT",
+        "VERIFIED_FULL_TEXT",
+        "VERIFIED_FULL_TEXT"
+      ],
+      "observedStatus": [
+        "VERIFIED_FULL_TEXT",
+        "VERIFIED_FULL_TEXT",
+        "VERIFIED_FULL_TEXT"
+      ],
+      "pass": true,
+      "notes": "Sequential disambiguation successfully aligned each clause with its distinct heading offset."
+    },
+    {
+      "id": "TC-03",
+      "name": "Identical Boilerplate Clauses With Distinct Section Numbers",
+      "fixtureFile": "fixture_03_identical_clauses.txt",
+      "totalClauses": 5,
+      "expectedStatus": [
+        "VERIFIED_FULL_TEXT",
+        "VERIFIED_FULL_TEXT",
+        "VERIFIED_FULL_TEXT",
+        "VERIFIED_FULL_TEXT",
+        "VERIFIED_FULL_TEXT"
+      ],
+      "observedStatus": [
+        "VERIFIED_FULL_TEXT",
+        "VERIFIED_FULL_TEXT",
+        "VERIFIED_FULL_TEXT",
+        "VERIFIED_FULL_TEXT",
+        "VERIFIED_FULL_TEXT"
+      ],
+      "pass": true,
+      "notes": "Distinguished by section numbers in backend previews, both identical bodies verified."
+    },
+    {
+      "id": "TC-04",
+      "name": "Long Clause Exceeding 5,000 Characters",
+      "fixtureFile": "fixture_04_long_clause.txt",
+      "totalClauses": 3,
+      "expectedStatus": [
+        "VERIFIED_FULL_TEXT",
+        "VERIFIED_FULL_TEXT",
+        "VERIFIED_FULL_TEXT"
+      ],
+      "observedStatus": [
+        "VERIFIED_FULL_TEXT",
+        "VERIFIED_FULL_TEXT",
+        "VERIFIED_FULL_TEXT"
+      ],
+      "pass": true,
+      "notes": "Long clause successfully resolved with 9951 characters extracted intact."
+    },
+    {
+      "id": "TC-05",
+      "name": "Multiline Text with Sub-clauses",
+      "fixtureFile": "fixture_05_multiline_text.txt",
+      "totalClauses": 5,
+      "expectedStatus": [
+        "VERIFIED_FULL_TEXT",
+        "VERIFIED_FULL_TEXT",
+        "VERIFIED_FULL_TEXT",
+        "VERIFIED_FULL_TEXT",
+        "VERIFIED_FULL_TEXT"
+      ],
+      "observedStatus": [
+        "VERIFIED_FULL_TEXT",
+        "VERIFIED_FULL_TEXT",
+        "VERIFIED_FULL_TEXT",
+        "VERIFIED_FULL_TEXT",
+        "VERIFIED_FULL_TEXT"
+      ],
+      "pass": true,
+      "notes": "Backend-segmented sub-clauses (a), (b), (c) all aligned cleanly with raw multiline text."
+    },
+    {
+      "id": "TC-06",
+      "name": "Nested Numbering Hierarchy",
+      "fixtureFile": "fixture_06_nested_numbering.txt",
+      "totalClauses": 4,
+      "expectedStatus": [
+        "VERIFIED_FULL_TEXT",
+        "VERIFIED_FULL_TEXT",
+        "VERIFIED_FULL_TEXT",
+        "VERIFIED_FULL_TEXT"
+      ],
+      "observedStatus": [
+        "VERIFIED_FULL_TEXT",
+        "VERIFIED_FULL_TEXT",
+        "VERIFIED_FULL_TEXT",
+        "VERIFIED_FULL_TEXT"
+      ],
+      "pass": true,
+      "notes": "Hierarchical sub-sections bounded strictly without prefix collision."
+    },
+    {
+      "id": "TC-07",
+      "name": "Mixed Line Endings (CRLF / LF)",
+      "fixtureFile": "fixture_07_mixed_line_endings.txt",
+      "totalClauses": 3,
+      "expectedStatus": [
+        "VERIFIED_FULL_TEXT",
+        "VERIFIED_FULL_TEXT",
+        "VERIFIED_FULL_TEXT"
+      ],
+      "observedStatus": [
+        "VERIFIED_FULL_TEXT",
+        "VERIFIED_FULL_TEXT",
+        "VERIFIED_FULL_TEXT"
+      ],
+      "pass": true,
+      "notes": "Both CRLF and LF delimited clauses aligned safely."
+    },
+    {
+      "id": "TC-08",
+      "name": "Whitespace Variability (Tabs, Indentation, Trailing)",
+      "fixtureFile": "fixture_08_whitespace_variability.txt",
+      "totalClauses": 3,
+      "expectedStatus": [
+        "VERIFIED_FULL_TEXT",
+        "VERIFIED_FULL_TEXT",
+        "VERIFIED_FULL_TEXT"
+      ],
+      "observedStatus": [
+        "VERIFIED_FULL_TEXT",
+        "VERIFIED_FULL_TEXT",
+        "VERIFIED_FULL_TEXT"
+      ],
+      "pass": true,
+      "notes": "Irregular whitespace parsed without boundary distortion."
+    },
+    {
+      "id": "TC-09",
+      "name": "Unicode and Legal Symbol Preservation",
+      "fixtureFile": "fixture_09_unicode_symbols.txt",
+      "totalClauses": 3,
+      "expectedStatus": [
+        "VERIFIED_FULL_TEXT",
+        "VERIFIED_FULL_TEXT",
+        "VERIFIED_FULL_TEXT"
+      ],
+      "observedStatus": [
+        "VERIFIED_FULL_TEXT",
+        "VERIFIED_FULL_TEXT",
+        "VERIFIED_FULL_TEXT"
+      ],
+      "pass": true,
+      "notes": "Special characters (§, €, ©, ™, ®, accents) preserved exactly without mojibake."
+    },
+    {
+      "id": "TC-10",
+      "name": "Literal Ellipsis Inside Text (<100 Chars)",
+      "fixtureFile": "fixture_10_literal_ellipsis.txt",
+      "totalClauses": 3,
+      "expectedStatus": [
+        "VERIFIED_FULL_TEXT",
+        "VERIFIED_FULL_TEXT",
+        "VERIFIED_FULL_TEXT"
+      ],
+      "observedStatus": [
+        "VERIFIED_FULL_TEXT",
+        "VERIFIED_FULL_TEXT",
+        "VERIFIED_FULL_TEXT"
+      ],
+      "pass": true,
+      "notes": "Literal ellipsis preserved without false truncation stripping."
+    },
+    {
+      "id": "TC-11",
+      "name": "Heading Token Reuse (Ambiguity Fallback & Clause Verification)",
+      "fixtureFile": "fixture_11_heading_reuse.txt",
+      "totalClauses": 6,
+      "expectedStatus": [
+        "PREVIEW_ONLY_AMBIGUOUS",
+        "PREVIEW_ONLY_AMBIGUOUS",
+        "PREVIEW_ONLY_AMBIGUOUS",
+        "VERIFIED_FULL_TEXT",
+        "VERIFIED_FULL_TEXT",
+        "VERIFIED_FULL_TEXT"
+      ],
+      "observedStatus": [
+        "PREVIEW_ONLY_AMBIGUOUS",
+        "PREVIEW_ONLY_AMBIGUOUS",
+        "PREVIEW_ONLY_AMBIGUOUS",
+        "VERIFIED_FULL_TEXT",
+        "VERIFIED_FULL_TEXT",
+        "VERIFIED_FULL_TEXT"
+      ],
+      "pass": true,
+      "notes": "Non-unique repeated headings safely flagged as PREVIEW_ONLY_AMBIGUOUS while unique body clauses verified."
+    },
+    {
+      "id": "TC-12",
+      "name": "Short Clauses (<100 Chars)",
+      "fixtureFile": "fixture_12_short_clause.txt",
+      "totalClauses": 3,
+      "expectedStatus": [
+        "VERIFIED_FULL_TEXT",
+        "VERIFIED_FULL_TEXT",
+        "VERIFIED_FULL_TEXT"
+      ],
+      "observedStatus": [
+        "VERIFIED_FULL_TEXT",
+        "VERIFIED_FULL_TEXT",
+        "VERIFIED_FULL_TEXT"
+      ],
+      "pass": true,
+      "notes": "Short clauses without backend truncation marks aligned to exact byte boundary."
+    },
+    {
+      "id": "TC-13",
+      "name": "Non-Unique Substring Embedded in Prior Clause",
+      "fixtureFile": "fixture_13_non_unique_substring.txt",
+      "totalClauses": 3,
+      "expectedStatus": [
+        "VERIFIED_FULL_TEXT",
+        "VERIFIED_FULL_TEXT",
+        "VERIFIED_FULL_TEXT"
+      ],
+      "observedStatus": [
+        "VERIFIED_FULL_TEXT",
+        "VERIFIED_FULL_TEXT",
+        "VERIFIED_FULL_TEXT"
+      ],
+      "pass": true,
+      "notes": "Monotonic offset tracking prevented backward search jumping into Clause A's inner citation."
+    },
+    {
+      "id": "TC-14",
+      "name": "Missing Match Desynchronization",
+      "fixtureFile": "fixture_14_missing_match.txt",
+      "totalClauses": 2,
+      "expectedStatus": [
+        "PREVIEW_ONLY_AMBIGUOUS",
+        "PREVIEW_ONLY_UNMATCHED"
+      ],
+      "observedStatus": [
+        "PREVIEW_ONLY_AMBIGUOUS",
+        "PREVIEW_ONLY_UNMATCHED"
+      ],
+      "pass": true,
+      "notes": "Missing clause correctly dropped to PREVIEW_ONLY_UNMATCHED without inventing text."
+    },
+    {
+      "id": "TC-15",
+      "name": "Boundary Ambiguity Fallback",
+      "fixtureFile": "fixture_15_boundary_ambiguity.txt",
+      "totalClauses": 2,
+      "expectedStatus": [
+        "PREVIEW_ONLY_AMBIGUOUS",
+        "PREVIEW_ONLY_UNMATCHED"
+      ],
+      "observedStatus": [
+        "PREVIEW_ONLY_AMBIGUOUS",
+        "PREVIEW_ONLY_UNMATCHED"
+      ],
+      "pass": true,
+      "notes": "Unverified subsequent boundary triggered safe PREVIEW_ONLY_AMBIGUOUS fallback for Clause 0."
+    },
+    {
+      "id": "TC-16",
+      "name": "Async Race / Document ID Mismatch Guard",
+      "totalClauses": 1,
+      "expectedStatus": [
+        "PREVIEW_ONLY_AMBIGUOUS"
+      ],
+      "observedStatus": [
+        "PREVIEW_ONLY_AMBIGUOUS"
+      ],
+      "pass": true,
+      "notes": "Document ID mismatch detected, prevented in-flight delayed result from overwriting newer document."
+    },
+    {
+      "id": "TC-17",
+      "name": "Missing Raw Contract Text in Memory",
+      "totalClauses": 1,
+      "expectedStatus": [
+        "PREVIEW_ONLY_INSUFFICIENT_EVIDENCE"
+      ],
+      "observedStatus": [
+        "PREVIEW_ONLY_INSUFFICIENT_EVIDENCE"
+      ],
+      "pass": true,
+      "notes": "Empty/null contract memory returns PREVIEW_ONLY_INSUFFICIENT_EVIDENCE."
+    }
+  ]
+}

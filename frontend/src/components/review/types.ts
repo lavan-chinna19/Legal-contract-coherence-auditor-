@@ -1,3 +1,8 @@
+export interface DependencyGraphResult {
+  status: string; scope: string; edges: unknown[];
+  findings: { source_clause_id: string; reference: string; reason: string; target?: { clause_id: string; section_id: string } }[];
+  reviews: DependencyGraphResult["findings"];
+}
 export interface ChannelAEvidence {
   nearest_centroid_label: string;
   centroid_distance: number;
@@ -50,7 +55,7 @@ export interface RuleFlag {
 }
 
 export interface DocumentResult {
-  metadata?: { source_text?: string; analysis_state?: string; document_name?: string;
+  metadata?: { source_text?: string; analysis_state?: string; document_name?: string; dependency_graph?: DependencyGraphResult;
     clause_inventory?: { clause_id: string; doc_id: string; text: string; sequence_idx: number; char_start: number; char_end: number }[] };
   doc_id: string;
   total_clauses: number;

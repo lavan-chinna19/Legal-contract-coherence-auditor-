@@ -1,0 +1,5 @@
+1. Initial Operational Terms. The parties shall collaborate in good faith on the initial deployment schedule.
+2. Assignment Restrictions. Standard Boilerplate Provision. Neither party may assign or transfer its rights or delegate its obligations hereunder without the prior written consent of the other party.
+3. Technology Transfer. The licensor grants a non-exclusive license to use the licensed software for internal business operations.
+4. Secondary Assignment Clause. Standard Boilerplate Provision. Neither party may assign or transfer its rights or delegate its obligations hereunder without the prior written consent of the other party.
+5. Termination for Convenience. Either party may terminate upon ninety days prior written notice.

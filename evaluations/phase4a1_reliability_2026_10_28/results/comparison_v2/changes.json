@@ -1,0 +1,164 @@
+[
+  {
+    "case_id": "evaluation_passive_identity",
+    "stratum": "EXPOSED_ORIGINAL_EVALUATION",
+    "gold": "MATCHED",
+    "before": "UNSUPPORTED",
+    "after": "MATCHED",
+    "corrected": true,
+    "introduced": false
+  },
+  {
+    "case_id": "notification_type_only",
+    "stratum": "FOCUSED_AUTHORED_DEVELOPMENT",
+    "gold": "UNCERTAIN",
+    "before": "UNSUPPORTED",
+    "after": "UNCERTAIN",
+    "corrected": true,
+    "introduced": false
+  },
+  {
+    "case_id": "named_notice_passive",
+    "stratum": "FOCUSED_AUTHORED_DEVELOPMENT",
+    "gold": "MATCHED",
+    "before": "UNSUPPORTED",
+    "after": "MATCHED",
+    "corrected": true,
+    "introduced": false
+  },
+  {
+    "case_id": "missing_passive_agent",
+    "stratum": "FOCUSED_AUTHORED_DEVELOPMENT",
+    "gold": "UNCERTAIN",
+    "before": "UNSUPPORTED",
+    "after": "UNCERTAIN",
+    "corrected": true,
+    "introduced": false
+  },
+  {
+    "case_id": "joint_passive",
+    "stratum": "FOCUSED_AUTHORED_DEVELOPMENT",
+    "gold": "MATCHED",
+    "before": "UNSUPPORTED",
+    "after": "MATCHED",
+    "corrected": true,
+    "introduced": false
+  },
+  {
+    "case_id": "joint_reordered",
+    "stratum": "FOCUSED_AUTHORED_DEVELOPMENT",
+    "gold": "MATCHED",
+    "before": "UNSUPPORTED",
+    "after": "MATCHED",
+    "corrected": true,
+    "introduced": false
+  },
+  {
+    "case_id": "compound_three",
+    "stratum": "FOCUSED_AUTHORED_DEVELOPMENT",
+    "gold": "MATCHED",
+    "before": "UNSUPPORTED",
+    "after": "MATCHED",
+    "corrected": true,
+    "introduced": false
+  },
+  {
+    "case_id": "passive_payment",
+    "stratum": "FOCUSED_AUTHORED_DEVELOPMENT",
+    "gold": "MATCHED",
+    "before": "UNSUPPORTED",
+    "after": "MATCHED",
+    "corrected": true,
+    "introduced": false
+  },
+  {
+    "case_id": "passive_delivery",
+    "stratum": "FOCUSED_AUTHORED_DEVELOPMENT",
+    "gold": "MATCHED",
+    "before": "UNSUPPORTED",
+    "after": "MATCHED",
+    "corrected": true,
+    "introduced": false
+  },
+  {
+    "case_id": "generic_event_type",
+    "stratum": "FOCUSED_AUTHORED_DEVELOPMENT",
+    "gold": "UNCERTAIN",
+    "before": "UNSUPPORTED",
+    "after": "UNCERTAIN",
+    "corrected": true,
+    "introduced": false
+  },
+  {
+    "case_id": "distinct_instances",
+    "stratum": "FOCUSED_AUTHORED_DEVELOPMENT",
+    "gold": "DIFFERENT",
+    "before": "UNSUPPORTED",
+    "after": "DIFFERENT",
+    "corrected": true,
+    "introduced": false
+  },
+  {
+    "case_id": "recurrence",
+    "stratum": "FOCUSED_AUTHORED_DEVELOPMENT",
+    "gold": "UNCERTAIN",
+    "before": "UNSUPPORTED",
+    "after": "UNCERTAIN",
+    "corrected": true,
+    "introduced": false
+  },
+  {
+    "case_id": "same_explicit_occurrence",
+    "stratum": "FOCUSED_AUTHORED_DEVELOPMENT",
+    "gold": "MATCHED",
+    "before": "UNSUPPORTED",
+    "after": "MATCHED",
+    "corrected": true,
+    "introduced": false
+  },
+  {
+    "case_id": "different_explicit_occurrences",
+    "stratum": "FOCUSED_AUTHORED_DEVELOPMENT",
+    "gold": "DIFFERENT",
+    "before": "UNSUPPORTED",
+    "after": "DIFFERENT",
+    "corrected": true,
+    "introduced": false
+  },
+  {
+    "case_id": "one_sided_occurrence",
+    "stratum": "FOCUSED_AUTHORED_DEVELOPMENT",
+    "gold": "UNCERTAIN",
+    "before": "UNSUPPORTED",
+    "after": "UNCERTAIN",
+    "corrected": true,
+    "introduced": false
+  },
+  {
+    "case_id": "passive_condition",
+    "stratum": "FOCUSED_AUTHORED_DEVELOPMENT",
+    "gold": "UNCERTAIN",
+    "before": "UNSUPPORTED",
+    "after": "UNCERTAIN",
+    "corrected": true,
+    "introduced": false
+  },
+  {
+    "case_id": "passive_exception",
+    "stratum": "FOCUSED_AUTHORED_DEVELOPMENT",
+    "gold": "UNCERTAIN",
+    "before": "UNSUPPORTED",
+    "after": "UNCERTAIN",
+    "corrected": true,
+    "introduced": false
+  },
+  {
+    "case_id": "passive_negation",
+    "stratum": "FOCUSED_AUTHORED_DEVELOPMENT",
+    "gold": "UNCERTAIN",
+    "before": "UNSUPPORTED",
+    "after": "UNCERTAIN",
+    "corrected": true,
+    "introduced": false
+  }
+]

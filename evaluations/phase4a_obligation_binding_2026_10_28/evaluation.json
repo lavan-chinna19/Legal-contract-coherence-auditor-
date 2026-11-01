@@ -1,0 +1,1064 @@
+{
+  "split": "evaluation",
+  "independent_annotation_count": 0,
+  "cases": [
+    {
+      "case_id": "evaluation_synonym_identity",
+      "family_id": "evaluation_synonym_identity",
+      "split": "evaluation",
+      "text": "Section 7. Duty\nPurchaser is required to pay Invoice Cedar within 10 calendar days after receipt of Invoice Cedar.\n\nSection 9. Duty\nPurchaser must remit Invoice Cedar within 10 calendar days after receipt of Invoice Cedar.",
+      "gold_state": "MATCHED",
+      "gold_match": true,
+      "mechanical_rule": "Explicit same party, payment action, named invoice occurrence and receipt trigger; controlled remit/pay paraphrase",
+      "label_provenance": "AUTHOR_CONSTRUCTED_MECHANICAL",
+      "independently_adjudicated": false,
+      "left_section": "7",
+      "right_section": "9",
+      "left_index": 0,
+      "right_index": 0,
+      "expected_left": [
+        {
+          "actor": "purchaser",
+          "action": "PAY",
+          "object": "invoice cedar",
+          "recipient": null,
+          "trigger": "receipt of invoice cedar",
+          "event_instance": "invoice cedar"
+        }
+      ],
+      "expected_right": [
+        {
+          "actor": "purchaser",
+          "action": "PAY",
+          "object": "invoice cedar",
+          "recipient": null,
+          "trigger": "receipt of invoice cedar",
+          "event_instance": "invoice cedar"
+        }
+      ]
+    },
+    {
+      "case_id": "evaluation_different_actor",
+      "family_id": "evaluation_different_actor",
+      "split": "evaluation",
+      "text": "Section 7. Duty\nPurchaser is required to pay Invoice Cedar within 10 calendar days after receipt of Invoice Cedar.\n\nSection 9. Duty\nVendor must remit Invoice Cedar within 10 calendar days after receipt of Invoice Cedar.",
+      "gold_state": "DIFFERENT",
+      "gold_match": false,
+      "mechanical_rule": "different_actor",
+      "label_provenance": "AUTHOR_CONSTRUCTED_MECHANICAL",
+      "independently_adjudicated": false,
+      "left_section": "7",
+      "right_section": "9",
+      "left_index": 0,
+      "right_index": 0,
+      "expected_left": [
+        {
+          "actor": "purchaser",
+          "action": "PAY",
+          "object": "invoice cedar",
+          "recipient": null,
+          "trigger": "receipt of invoice cedar",
+          "event_instance": "invoice cedar"
+        }
+      ],
+      "expected_right": [
+        {
+          "actor": "vendor",
+          "action": "PAY",
+          "object": "invoice cedar",
+          "recipient": null,
+          "trigger": "receipt of invoice cedar",
+          "event_instance": "invoice cedar"
+        }
+      ]
+    },
+    {
+      "case_id": "evaluation_different_action",
+      "family_id": "evaluation_different_action",
+      "split": "evaluation",
+      "text": "Section 7. Duty\nPurchaser is required to pay Invoice Cedar within 10 calendar days after receipt of Invoice Cedar.\n\nSection 9. Duty\nPurchaser must provide Invoice Cedar within 10 calendar days after receipt of Invoice Cedar.",
+      "gold_state": "DIFFERENT",
+      "gold_match": false,
+      "mechanical_rule": "different_action",
+      "label_provenance": "AUTHOR_CONSTRUCTED_MECHANICAL",
+      "independently_adjudicated": false,
+      "left_section": "7",
+      "right_section": "9",
+      "left_index": 0,
+      "right_index": 0,
+      "expected_left": [
+        {
+          "actor": "purchaser",
+          "action": "PAY",
+          "object": "invoice cedar",
+          "recipient": null,
+          "trigger": "receipt of invoice cedar",
+          "event_instance": "invoice cedar"
+        }
+      ],
+      "expected_right": [
+        {
+          "actor": "purchaser",
+          "action": "DELIVER",
+          "object": "invoice cedar",
+          "recipient": null,
+          "trigger": "receipt of invoice cedar",
+          "event_instance": "invoice cedar"
+        }
+      ]
+    },
+    {
+      "case_id": "evaluation_different_instance",
+      "family_id": "evaluation_different_instance",
+      "split": "evaluation",
+      "text": "Section 7. Duty\nPurchaser is required to pay Invoice Cedar within 10 calendar days after receipt of Invoice Cedar.\n\nSection 9. Duty\nPurchaser must remit Report Juniper within 10 calendar days after receipt of Invoice Cedar.",
+      "gold_state": "DIFFERENT",
+      "gold_match": false,
+      "mechanical_rule": "different_instance",
+      "label_provenance": "AUTHOR_CONSTRUCTED_MECHANICAL",
+      "independently_adjudicated": false,
+      "left_section": "7",
+      "right_section": "9",
+      "left_index": 0,
+      "right_index": 0,
+      "expected_left": [
+        {
+          "actor": "purchaser",
+          "action": "PAY",
+          "object": "invoice cedar",
+          "recipient": null,
+          "trigger": "receipt of invoice cedar",
+          "event_instance": "invoice cedar"
+        }
+      ],
+      "expected_right": [
+        {
+          "actor": "purchaser",
+          "action": "PAY",
+          "object": "report juniper",
+          "recipient": null,
+          "trigger": "receipt of invoice cedar",
+          "event_instance": "report juniper"
+        }
+      ]
+    },
+    {
+      "case_id": "evaluation_different_trigger",
+      "family_id": "evaluation_different_trigger",
+      "split": "evaluation",
+      "text": "Section 7. Duty\nPurchaser is required to pay Invoice Cedar within 10 calendar days after receipt of Invoice Cedar.\n\nSection 9. Duty\nPurchaser must remit Invoice Cedar within 10 calendar days after acceptance of Invoice Cedar.",
+      "gold_state": "UNCERTAIN",
+      "gold_match": null,
+      "mechanical_rule": "Trigger equivalence not established, not labelled legal conflict",
+      "label_provenance": "AUTHOR_CONSTRUCTED_MECHANICAL",
+      "independently_adjudicated": false,
+      "left_section": "7",
+      "right_section": "9",
+      "left_index": 0,
+      "right_index": 0,
+      "expected_left": [
+        {
+          "actor": "purchaser",
+          "action": "PAY",
+          "object": "invoice cedar",
+          "recipient": null,
+          "trigger": "receipt of invoice cedar",
+          "event_instance": "invoice cedar"
+        }
+      ],
+      "expected_right": [
+        {
+          "actor": "purchaser",
+          "action": "PAY",
+          "object": "invoice cedar",
+          "recipient": null,
+          "trigger": "acceptance of invoice cedar",
+          "event_instance": "invoice cedar"
+        }
+      ]
+    },
+    {
+      "case_id": "evaluation_one_missing_trigger",
+      "family_id": "evaluation_one_missing_trigger",
+      "split": "evaluation",
+      "text": "Section 7. Duty\nPurchaser is required to pay Invoice Cedar within 10 calendar days after receipt of Invoice Cedar.\n\nSection 9. Duty\nPurchaser must remit Invoice Cedar within 10 calendar days.",
+      "gold_state": "UNCERTAIN",
+      "gold_match": null,
+      "mechanical_rule": "one_missing_trigger",
+      "label_provenance": "AUTHOR_CONSTRUCTED_MECHANICAL",
+      "independently_adjudicated": false,
+      "left_section": "7",
+      "right_section": "9",
+      "left_index": 0,
+      "right_index": 0,
+      "expected_left": [
+        {
+          "actor": "purchaser",
+          "action": "PAY",
+          "object": "invoice cedar",
+          "recipient": null,
+          "trigger": "receipt of invoice cedar",
+          "event_instance": "invoice cedar"
+        }
+      ],
+      "expected_right": [
+        {
+          "actor": "purchaser",
+          "action": "PAY",
+          "object": "invoice cedar",
+          "recipient": null,
+          "trigger": null,
+          "event_instance": "invoice cedar"
+        }
+      ]
+    },
+    {
+      "case_id": "evaluation_same_condition",
+      "family_id": "evaluation_same_condition",
+      "split": "evaluation",
+      "text": "Section 7. Duty\nIf approved, Purchaser is required to pay Invoice Cedar within 10 calendar days after receipt of Invoice Cedar.\n\nSection 9. Duty\nIf approved, Purchaser must remit Invoice Cedar within 10 calendar days after receipt of Invoice Cedar.",
+      "gold_state": "MATCHED",
+      "gold_match": true,
+      "mechanical_rule": "same_condition",
+      "label_provenance": "AUTHOR_CONSTRUCTED_MECHANICAL",
+      "independently_adjudicated": false,
+      "left_section": "7",
+      "right_section": "9",
+      "left_index": 0,
+      "right_index": 0,
+      "expected_left": [
+        {
+          "actor": "purchaser",
+          "action": "PAY",
+          "object": "invoice cedar",
+          "recipient": null,
+          "trigger": "receipt of invoice cedar",
+          "event_instance": "invoice cedar"
+        }
+      ],
+      "expected_right": [
+        {
+          "actor": "purchaser",
+          "action": "PAY",
+          "object": "invoice cedar",
+          "recipient": null,
+          "trigger": "receipt of invoice cedar",
+          "event_instance": "invoice cedar"
+        }
+      ]
+    },
+    {
+      "case_id": "evaluation_different_condition",
+      "family_id": "evaluation_different_condition",
+      "split": "evaluation",
+      "text": "Section 7. Duty\nIf requested, Purchaser is required to pay Invoice Cedar within 10 calendar days after receipt of Invoice Cedar.\n\nSection 9. Duty\nIf approved, Purchaser must remit Invoice Cedar within 10 calendar days after receipt of Invoice Cedar.",
+      "gold_state": "UNCERTAIN",
+      "gold_match": null,
+      "mechanical_rule": "different_condition",
+      "label_provenance": "AUTHOR_CONSTRUCTED_MECHANICAL",
+      "independently_adjudicated": false,
+      "left_section": "7",
+      "right_section": "9",
+      "left_index": 0,
+      "right_index": 0,
+      "expected_left": [
+        {
+          "actor": "purchaser",
+          "action": "PAY",
+          "object": "invoice cedar",
+          "recipient": null,
+          "trigger": "receipt of invoice cedar",
+          "event_instance": "invoice cedar"
+        }
+      ],
+      "expected_right": [
+        {
+          "actor": "purchaser",
+          "action": "PAY",
+          "object": "invoice cedar",
+          "recipient": null,
+          "trigger": "receipt of invoice cedar",
+          "event_instance": "invoice cedar"
+        }
+      ]
+    },
+    {
+      "case_id": "evaluation_one_condition",
+      "family_id": "evaluation_one_condition",
+      "split": "evaluation",
+      "text": "Section 7. Duty\nPurchaser is required to pay Invoice Cedar within 10 calendar days after receipt of Invoice Cedar.\n\nSection 9. Duty\nIf approved, Purchaser must remit Invoice Cedar within 10 calendar days after receipt of Invoice Cedar.",
+      "gold_state": "UNCERTAIN",
+      "gold_match": null,
+      "mechanical_rule": "one_condition",
+      "label_provenance": "AUTHOR_CONSTRUCTED_MECHANICAL",
+      "independently_adjudicated": false,
+      "left_section": "7",
+      "right_section": "9",
+      "left_index": 0,
+      "right_index": 0,
+      "expected_left": [
+        {
+          "actor": "purchaser",
+          "action": "PAY",
+          "object": "invoice cedar",
+          "recipient": null,
+          "trigger": "receipt of invoice cedar",
+          "event_instance": "invoice cedar"
+        }
+      ],
+      "expected_right": [
+        {
+          "actor": "purchaser",
+          "action": "PAY",
+          "object": "invoice cedar",
+          "recipient": null,
+          "trigger": "receipt of invoice cedar",
+          "event_instance": "invoice cedar"
+        }
+      ]
+    },
+    {
+      "case_id": "evaluation_exception",
+      "family_id": "evaluation_exception",
+      "split": "evaluation",
+      "text": "Section 7. Duty\nPurchaser is required to pay Invoice Cedar within 10 calendar days after receipt of Invoice Cedar.\n\nSection 9. Duty\nPurchaser must remit Invoice Cedar within 10 calendar days after receipt of Invoice Cedar unless disputed.",
+      "gold_state": "UNCERTAIN",
+      "gold_match": null,
+      "mechanical_rule": "exception",
+      "label_provenance": "AUTHOR_CONSTRUCTED_MECHANICAL",
+      "independently_adjudicated": false,
+      "left_section": "7",
+      "right_section": "9",
+      "left_index": 0,
+      "right_index": 0,
+      "expected_left": [
+        {
+          "actor": "purchaser",
+          "action": "PAY",
+          "object": "invoice cedar",
+          "recipient": null,
+          "trigger": "receipt of invoice cedar",
+          "event_instance": "invoice cedar"
+        }
+      ],
+      "expected_right": [
+        {
+          "actor": "purchaser",
+          "action": "PAY",
+          "object": "invoice cedar",
+          "recipient": null,
+          "trigger": "receipt of invoice cedar",
+          "event_instance": "invoice cedar"
+        }
+      ]
+    },
+    {
+      "case_id": "evaluation_pronoun",
+      "family_id": "evaluation_pronoun",
+      "split": "evaluation",
+      "text": "Section 7. Duty\nPurchaser is required to pay Invoice Cedar within 10 calendar days after receipt of Invoice Cedar.\n\nSection 9. Duty\nIt must remit Invoice Cedar within 10 calendar days after receipt of Invoice Cedar.",
+      "gold_state": "UNCERTAIN",
+      "gold_match": null,
+      "mechanical_rule": "pronoun",
+      "label_provenance": "AUTHOR_CONSTRUCTED_MECHANICAL",
+      "independently_adjudicated": false,
+      "left_section": "7",
+      "right_section": "9",
+      "left_index": 0,
+      "right_index": 0,
+      "expected_left": [
+        {
+          "actor": "purchaser",
+          "action": "PAY",
+          "object": "invoice cedar",
+          "recipient": null,
+          "trigger": "receipt of invoice cedar",
+          "event_instance": "invoice cedar"
+        }
+      ],
+      "expected_right": [
+        {
+          "actor": null,
+          "action": "PAY",
+          "object": "invoice cedar",
+          "recipient": null,
+          "trigger": "receipt of invoice cedar",
+          "event_instance": "invoice cedar"
+        }
+      ]
+    },
+    {
+      "case_id": "evaluation_missing_actor",
+      "family_id": "evaluation_missing_actor",
+      "split": "evaluation",
+      "text": "Section 7. Duty\nPurchaser is required to pay Invoice Cedar within 10 calendar days after receipt of Invoice Cedar.\n\nSection 9. Duty\nmust remit Invoice Cedar within 10 calendar days after receipt of Invoice Cedar.",
+      "gold_state": "UNCERTAIN",
+      "gold_match": null,
+      "mechanical_rule": "missing_actor",
+      "label_provenance": "AUTHOR_CONSTRUCTED_MECHANICAL",
+      "independently_adjudicated": false,
+      "left_section": "7",
+      "right_section": "9",
+      "left_index": 0,
+      "right_index": 0,
+      "expected_left": [
+        {
+          "actor": "purchaser",
+          "action": "PAY",
+          "object": "invoice cedar",
+          "recipient": null,
+          "trigger": "receipt of invoice cedar",
+          "event_instance": "invoice cedar"
+        }
+      ],
+      "expected_right": [
+        {
+          "actor": null,
+          "action": "PAY",
+          "object": "invoice cedar",
+          "recipient": null,
+          "trigger": "receipt of invoice cedar",
+          "event_instance": "invoice cedar"
+        }
+      ]
+    },
+    {
+      "case_id": "evaluation_same_recipient",
+      "family_id": "evaluation_same_recipient",
+      "split": "evaluation",
+      "text": "Section 7. Duty\nPurchaser is required to pay Invoice Cedar to Vendor within 10 calendar days after receipt of Invoice Cedar.\n\nSection 9. Duty\nPurchaser must remit Invoice Cedar to Vendor within 10 calendar days after receipt of Invoice Cedar.",
+      "gold_state": "MATCHED",
+      "gold_match": true,
+      "mechanical_rule": "same_recipient",
+      "label_provenance": "AUTHOR_CONSTRUCTED_MECHANICAL",
+      "independently_adjudicated": false,
+      "left_section": "7",
+      "right_section": "9",
+      "left_index": 0,
+      "right_index": 0,
+      "expected_left": [
+        {
+          "actor": "purchaser",
+          "action": "PAY",
+          "object": "invoice cedar",
+          "recipient": "vendor",
+          "trigger": "receipt of invoice cedar",
+          "event_instance": "invoice cedar"
+        }
+      ],
+      "expected_right": [
+        {
+          "actor": "purchaser",
+          "action": "PAY",
+          "object": "invoice cedar",
+          "recipient": "vendor",
+          "trigger": "receipt of invoice cedar",
+          "event_instance": "invoice cedar"
+        }
+      ]
+    },
+    {
+      "case_id": "evaluation_different_recipient",
+      "family_id": "evaluation_different_recipient",
+      "split": "evaluation",
+      "text": "Section 7. Duty\nPurchaser is required to pay Invoice Cedar to Vendor within 10 calendar days after receipt of Invoice Cedar.\n\nSection 9. Duty\nPurchaser must remit Invoice Cedar to Agent within 10 calendar days after receipt of Invoice Cedar.",
+      "gold_state": "DIFFERENT",
+      "gold_match": false,
+      "mechanical_rule": "different_recipient",
+      "label_provenance": "AUTHOR_CONSTRUCTED_MECHANICAL",
+      "independently_adjudicated": false,
+      "left_section": "7",
+      "right_section": "9",
+      "left_index": 0,
+      "right_index": 0,
+      "expected_left": [
+        {
+          "actor": "purchaser",
+          "action": "PAY",
+          "object": "invoice cedar",
+          "recipient": "vendor",
+          "trigger": "receipt of invoice cedar",
+          "event_instance": "invoice cedar"
+        }
+      ],
+      "expected_right": [
+        {
+          "actor": "purchaser",
+          "action": "PAY",
+          "object": "invoice cedar",
+          "recipient": "agent",
+          "trigger": "receipt of invoice cedar",
+          "event_instance": "invoice cedar"
+        }
+      ]
+    },
+    {
+      "case_id": "evaluation_one_missing_recipient",
+      "family_id": "evaluation_one_missing_recipient",
+      "split": "evaluation",
+      "text": "Section 7. Duty\nPurchaser is required to pay Invoice Cedar within 10 calendar days after receipt of Invoice Cedar.\n\nSection 9. Duty\nPurchaser must remit Invoice Cedar to Vendor within 10 calendar days after receipt of Invoice Cedar.",
+      "gold_state": "UNCERTAIN",
+      "gold_match": null,
+      "mechanical_rule": "one_missing_recipient",
+      "label_provenance": "AUTHOR_CONSTRUCTED_MECHANICAL",
+      "independently_adjudicated": false,
+      "left_section": "7",
+      "right_section": "9",
+      "left_index": 0,
+      "right_index": 0,
+      "expected_left": [
+        {
+          "actor": "purchaser",
+          "action": "PAY",
+          "object": "invoice cedar",
+          "recipient": null,
+          "trigger": "receipt of invoice cedar",
+          "event_instance": "invoice cedar"
+        }
+      ],
+      "expected_right": [
+        {
+          "actor": "purchaser",
+          "action": "PAY",
+          "object": "invoice cedar",
+          "recipient": "vendor",
+          "trigger": "receipt of invoice cedar",
+          "event_instance": "invoice cedar"
+        }
+      ]
+    },
+    {
+      "case_id": "evaluation_no_timing",
+      "family_id": "evaluation_no_timing",
+      "split": "evaluation",
+      "text": "Section 7. Duty\nPurchaser is required to pay Invoice Cedar after receipt of Invoice Cedar.\n\nSection 9. Duty\nPurchaser must remit Invoice Cedar after receipt of Invoice Cedar.",
+      "gold_state": "MATCHED",
+      "gold_match": true,
+      "mechanical_rule": "no_timing",
+      "label_provenance": "AUTHOR_CONSTRUCTED_MECHANICAL",
+      "independently_adjudicated": false,
+      "left_section": "7",
+      "right_section": "9",
+      "left_index": 0,
+      "right_index": 0,
+      "expected_left": [
+        {
+          "actor": "purchaser",
+          "action": "PAY",
+          "object": "invoice cedar",
+          "recipient": null,
+          "trigger": "receipt of invoice cedar",
+          "event_instance": "invoice cedar"
+        }
+      ],
+      "expected_right": [
+        {
+          "actor": "purchaser",
+          "action": "PAY",
+          "object": "invoice cedar",
+          "recipient": null,
+          "trigger": "receipt of invoice cedar",
+          "event_instance": "invoice cedar"
+        }
+      ]
+    },
+    {
+      "case_id": "evaluation_different_deadlines",
+      "family_id": "evaluation_different_deadlines",
+      "split": "evaluation",
+      "text": "Section 7. Duty\nPurchaser is required to pay Invoice Cedar within 10 calendar days after receipt of Invoice Cedar.\n\nSection 9. Duty\nPurchaser must remit Invoice Cedar within 20 calendar days after receipt of Invoice Cedar.",
+      "gold_state": "MATCHED",
+      "gold_match": true,
+      "mechanical_rule": "Different deadlines do not change identity; binding never classifies temporal conflict",
+      "label_provenance": "AUTHOR_CONSTRUCTED_MECHANICAL",
+      "independently_adjudicated": false,
+      "left_section": "7",
+      "right_section": "9",
+      "left_index": 0,
+      "right_index": 0,
+      "expected_left": [
+        {
+          "actor": "purchaser",
+          "action": "PAY",
+          "object": "invoice cedar",
+          "recipient": null,
+          "trigger": "receipt of invoice cedar",
+          "event_instance": "invoice cedar"
+        }
+      ],
+      "expected_right": [
+        {
+          "actor": "purchaser",
+          "action": "PAY",
+          "object": "invoice cedar",
+          "recipient": null,
+          "trigger": "receipt of invoice cedar",
+          "event_instance": "invoice cedar"
+        }
+      ]
+    },
+    {
+      "case_id": "evaluation_same_recurring_type",
+      "family_id": "evaluation_same_recurring_type",
+      "split": "evaluation",
+      "text": "Section 7. Duty\nPurchaser is required to pay Invoice Cedar within 10 calendar days after receipt of Invoice Cedar each month.\n\nSection 9. Duty\nPurchaser must remit Invoice Cedar within 10 calendar days after receipt of Invoice Cedar each month.",
+      "gold_state": "UNCERTAIN",
+      "gold_match": null,
+      "mechanical_rule": "Same type, no uniquely established occurrence",
+      "label_provenance": "AUTHOR_CONSTRUCTED_MECHANICAL",
+      "independently_adjudicated": false,
+      "left_section": "7",
+      "right_section": "9",
+      "left_index": 0,
+      "right_index": 0,
+      "expected_left": [
+        {
+          "actor": "purchaser",
+          "action": "PAY",
+          "object": "invoice cedar",
+          "recipient": null,
+          "trigger": "receipt of invoice cedar",
+          "event_instance": "invoice cedar"
+        }
+      ],
+      "expected_right": [
+        {
+          "actor": "purchaser",
+          "action": "PAY",
+          "object": "invoice cedar",
+          "recipient": null,
+          "trigger": "receipt of invoice cedar",
+          "event_instance": "invoice cedar"
+        }
+      ]
+    },
+    {
+      "case_id": "evaluation_different_object_same_party",
+      "family_id": "evaluation_different_object_same_party",
+      "split": "evaluation",
+      "text": "Section 7. Duty\nPurchaser is required to pay Invoice Cedar within 10 calendar days after receipt of Invoice Cedar.\n\nSection 9. Duty\nPurchaser must remit Invoice Spruce within 10 calendar days after receipt of Invoice Cedar.",
+      "gold_state": "DIFFERENT",
+      "gold_match": false,
+      "mechanical_rule": "different_object_same_party",
+      "label_provenance": "AUTHOR_CONSTRUCTED_MECHANICAL",
+      "independently_adjudicated": false,
+      "left_section": "7",
+      "right_section": "9",
+      "left_index": 0,
+      "right_index": 0,
+      "expected_left": [
+        {
+          "actor": "purchaser",
+          "action": "PAY",
+          "object": "invoice cedar",
+          "recipient": null,
+          "trigger": "receipt of invoice cedar",
+          "event_instance": "invoice cedar"
+        }
+      ],
+      "expected_right": [
+        {
+          "actor": "purchaser",
+          "action": "PAY",
+          "object": "invoice spruce",
+          "recipient": null,
+          "trigger": "receipt of invoice cedar",
+          "event_instance": "invoice spruce"
+        }
+      ]
+    },
+    {
+      "case_id": "evaluation_generic_object",
+      "family_id": "evaluation_generic_object",
+      "split": "evaluation",
+      "text": "Section 7. Duty\nPurchaser is required to pay the invoice within 10 calendar days after receipt of Invoice Cedar.\n\nSection 9. Duty\nPurchaser must remit the invoice within 10 calendar days after receipt of Invoice Cedar.",
+      "gold_state": "UNCERTAIN",
+      "gold_match": null,
+      "mechanical_rule": "generic_object",
+      "label_provenance": "AUTHOR_CONSTRUCTED_MECHANICAL",
+      "independently_adjudicated": false,
+      "left_section": "7",
+      "right_section": "9",
+      "left_index": 0,
+      "right_index": 0,
+      "expected_left": [
+        {
+          "actor": "purchaser",
+          "action": "PAY",
+          "object": "the invoice",
+          "recipient": null,
+          "trigger": "receipt of invoice cedar",
+          "event_instance": null
+        }
+      ],
+      "expected_right": [
+        {
+          "actor": "purchaser",
+          "action": "PAY",
+          "object": "the invoice",
+          "recipient": null,
+          "trigger": "receipt of invoice cedar",
+          "event_instance": null
+        }
+      ]
+    },
+    {
+      "case_id": "evaluation_unsupported_action",
+      "family_id": "evaluation_unsupported_action",
+      "split": "evaluation",
+      "text": "Section 7. Duty\nPurchaser is required to pay Invoice Cedar within 10 calendar days after receipt of Invoice Cedar.\n\nSection 9. Duty\nPurchaser shall reconcile the accounts.",
+      "gold_state": "UNSUPPORTED",
+      "gold_match": null,
+      "mechanical_rule": "unsupported_action",
+      "label_provenance": "AUTHOR_CONSTRUCTED_MECHANICAL",
+      "independently_adjudicated": false,
+      "left_section": "7",
+      "right_section": "9",
+      "left_index": 0,
+      "right_index": 0,
+      "expected_left": [
+        {
+          "actor": "purchaser",
+          "action": "PAY",
+          "object": "invoice cedar",
+          "recipient": null,
+          "trigger": "receipt of invoice cedar",
+          "event_instance": "invoice cedar"
+        }
+      ],
+      "expected_right": [
+        {
+          "actor": "purchaser",
+          "action": "RECONCILE",
+          "object": "the accounts",
+          "recipient": null,
+          "trigger": null,
+          "event_instance": null
+        }
+      ]
+    },
+    {
+      "case_id": "evaluation_complex_semantics",
+      "family_id": "evaluation_complex_semantics",
+      "split": "evaluation",
+      "text": "Section 7. Duty\nPurchaser is required to pay Invoice Cedar within 10 calendar days after receipt of Invoice Cedar.\n\nSection 9. Duty\nPurchaser will perform reasonably necessary acts notwithstanding prior practice.",
+      "gold_state": null,
+      "gold_match": null,
+      "mechanical_rule": "complex_semantics",
+      "label_provenance": "PROVISIONAL_INTERPRETATION",
+      "independently_adjudicated": false,
+      "left_section": "7",
+      "right_section": "9",
+      "left_index": 0,
+      "right_index": 0,
+      "expected_left": [
+        {
+          "actor": "purchaser",
+          "action": "PAY",
+          "object": "invoice cedar",
+          "recipient": null,
+          "trigger": "receipt of invoice cedar",
+          "event_instance": "invoice cedar"
+        }
+      ],
+      "expected_right": [
+        {
+          "actor": "purchaser",
+          "action": "PAY",
+          "object": "invoice cedar",
+          "recipient": null,
+          "trigger": "receipt of invoice cedar",
+          "event_instance": "invoice cedar"
+        }
+      ]
+    },
+    {
+      "case_id": "evaluation_multiple_modals",
+      "family_id": "evaluation_multiple_modals",
+      "split": "evaluation",
+      "text": "Section 7. Duty\nVendor is required to deliver Report Juniper. Purchaser is required to pay Invoice Cedar within 10 calendar days after receipt of Invoice Cedar.\n\nSection 9. Duty\nPurchaser must remit Invoice Cedar within 10 calendar days after receipt of Invoice Cedar.",
+      "gold_state": "MATCHED",
+      "gold_match": true,
+      "mechanical_rule": "multiple_modals",
+      "label_provenance": "AUTHOR_CONSTRUCTED_MECHANICAL",
+      "independently_adjudicated": false,
+      "left_section": "7",
+      "right_section": "9",
+      "left_index": 1,
+      "right_index": 0,
+      "expected_left": [
+        {
+          "actor": "vendor",
+          "action": "DELIVER",
+          "object": "report juniper",
+          "recipient": null,
+          "trigger": null,
+          "event_instance": "report juniper"
+        },
+        {
+          "actor": "purchaser",
+          "action": "PAY",
+          "object": "invoice cedar",
+          "recipient": null,
+          "trigger": "receipt of invoice cedar",
+          "event_instance": "invoice cedar"
+        }
+      ],
+      "expected_right": [
+        {
+          "actor": "purchaser",
+          "action": "PAY",
+          "object": "invoice cedar",
+          "recipient": null,
+          "trigger": "receipt of invoice cedar",
+          "event_instance": "invoice cedar"
+        }
+      ]
+    },
+    {
+      "case_id": "evaluation_reference_object",
+      "family_id": "evaluation_reference_object",
+      "split": "evaluation",
+      "text": "Section 7. Duty\nPurchaser is required to pay Invoice Cedar within 10 calendar days.\n\nSection 9. Duty\nPurchaser must remit the obligation in Section 7 within 10 calendar days.",
+      "gold_state": "MATCHED",
+      "gold_match": true,
+      "mechanical_rule": "reference_object",
+      "label_provenance": "AUTHOR_CONSTRUCTED_MECHANICAL",
+      "independently_adjudicated": false,
+      "left_section": "7",
+      "right_section": "9",
+      "left_index": 0,
+      "right_index": 0,
+      "expected_left": [
+        {
+          "actor": "purchaser",
+          "action": "PAY",
+          "object": "invoice cedar",
+          "recipient": null,
+          "trigger": null,
+          "event_instance": "invoice cedar"
+        }
+      ],
+      "expected_right": [
+        {
+          "actor": "purchaser",
+          "action": "PAY",
+          "object": "invoice cedar",
+          "recipient": null,
+          "trigger": null,
+          "event_instance": "invoice cedar"
+        }
+      ]
+    },
+    {
+      "case_id": "evaluation_missing_reference",
+      "family_id": "evaluation_missing_reference",
+      "split": "evaluation",
+      "text": "Section 7. Duty\nPurchaser is required to pay Invoice Cedar within 10 calendar days.\n\nSection 9. Duty\nPurchaser must remit the obligation in Section 99 within 10 calendar days.",
+      "gold_state": "UNCERTAIN",
+      "gold_match": null,
+      "mechanical_rule": "missing_reference",
+      "label_provenance": "AUTHOR_CONSTRUCTED_MECHANICAL",
+      "independently_adjudicated": false,
+      "left_section": "7",
+      "right_section": "9",
+      "left_index": 0,
+      "right_index": 0,
+      "expected_left": [
+        {
+          "actor": "purchaser",
+          "action": "PAY",
+          "object": "invoice cedar",
+          "recipient": null,
+          "trigger": null,
+          "event_instance": "invoice cedar"
+        }
+      ],
+      "expected_right": [
+        {
+          "actor": "purchaser",
+          "action": "PAY",
+          "object": "the obligation in section 99",
+          "recipient": null,
+          "trigger": null,
+          "event_instance": null
+        }
+      ]
+    },
+    {
+      "case_id": "evaluation_ambiguous_reference",
+      "family_id": "evaluation_ambiguous_reference",
+      "split": "evaluation",
+      "text": "Section 7. Duty\nPurchaser is required to pay Invoice Cedar within 10 calendar days.\n\nSection 9. Duty\nPurchaser must remit the obligation in Section 5 within 10 calendar days.\nSection 5. Extra\nPurchaser is required to pay Invoice Cedar within 10 calendar days after receipt of Invoice Cedar.\nSection 5. Duplicate\nPurchaser is required to pay Invoice Cedar within 10 calendar days after receipt of Invoice Cedar.",
+      "gold_state": "UNCERTAIN",
+      "gold_match": null,
+      "mechanical_rule": "ambiguous_reference",
+      "label_provenance": "AUTHOR_CONSTRUCTED_MECHANICAL",
+      "independently_adjudicated": false,
+      "left_section": "7",
+      "right_section": "9",
+      "left_index": 0,
+      "right_index": 0,
+      "expected_left": [
+        {
+          "actor": "purchaser",
+          "action": "PAY",
+          "object": "invoice cedar",
+          "recipient": null,
+          "trigger": null,
+          "event_instance": "invoice cedar"
+        }
+      ],
+      "expected_right": [
+        {
+          "actor": "purchaser",
+          "action": "PAY",
+          "object": "the obligation in section 5",
+          "recipient": null,
+          "trigger": null,
+          "event_instance": null
+        }
+      ]
+    },
+    {
+      "case_id": "evaluation_different_scope",
+      "family_id": "evaluation_different_scope",
+      "split": "evaluation",
+      "text": "Section 7. Duty\nFor Agreement A, Purchaser is required to pay Invoice Cedar within 10 calendar days after receipt of Invoice Cedar.\n\nSection 9. Duty\nFor Agreement B, Purchaser must remit Invoice Cedar within 10 calendar days after receipt of Invoice Cedar.",
+      "gold_state": "DIFFERENT",
+      "gold_match": false,
+      "mechanical_rule": "different_scope",
+      "label_provenance": "AUTHOR_CONSTRUCTED_MECHANICAL",
+      "independently_adjudicated": false,
+      "left_section": "7",
+      "right_section": "9",
+      "left_index": 0,
+      "right_index": 0,
+      "expected_left": [
+        {
+          "actor": "purchaser",
+          "action": "PAY",
+          "object": "invoice cedar",
+          "recipient": null,
+          "trigger": "receipt of invoice cedar",
+          "event_instance": "invoice cedar"
+        }
+      ],
+      "expected_right": [
+        {
+          "actor": "purchaser",
+          "action": "PAY",
+          "object": "invoice cedar",
+          "recipient": null,
+          "trigger": "receipt of invoice cedar",
+          "event_instance": "invoice cedar"
+        }
+      ]
+    },
+    {
+      "case_id": "evaluation_different_phase",
+      "family_id": "evaluation_different_phase",
+      "split": "evaluation",
+      "text": "Section 7. Duty\nFor Phase 1, Purchaser is required to pay Invoice Cedar within 10 calendar days after receipt of Invoice Cedar.\n\nSection 9. Duty\nFor Phase 2, Purchaser must remit Invoice Cedar within 10 calendar days after receipt of Invoice Cedar.",
+      "gold_state": "DIFFERENT",
+      "gold_match": false,
+      "mechanical_rule": "different_phase",
+      "label_provenance": "AUTHOR_CONSTRUCTED_MECHANICAL",
+      "independently_adjudicated": false,
+      "left_section": "7",
+      "right_section": "9",
+      "left_index": 0,
+      "right_index": 0,
+      "expected_left": [
+        {
+          "actor": "purchaser",
+          "action": "PAY",
+          "object": "invoice cedar",
+          "recipient": null,
+          "trigger": "receipt of invoice cedar",
+          "event_instance": "invoice cedar"
+        }
+      ],
+      "expected_right": [
+        {
+          "actor": "purchaser",
+          "action": "PAY",
+          "object": "invoice cedar",
+          "recipient": null,
+          "trigger": "receipt of invoice cedar",
+          "event_instance": "invoice cedar"
+        }
+      ]
+    },
+    {
+      "case_id": "evaluation_passive_identity",
+      "family_id": "evaluation_passive_identity",
+      "split": "evaluation",
+      "text": "Section 7. Duty\nInvoice Cedar must be paid by Purchaser within 10 calendar days after receipt of Invoice Cedar.\n\nSection 9. Duty\nInvoice Cedar must be paid by Purchaser within 10 calendar days after receipt of Invoice Cedar.",
+      "gold_state": "MATCHED",
+      "gold_match": true,
+      "mechanical_rule": "Explicit by-agent passive grammar, same named invoice and trigger; no inference needed by annotator",
+      "label_provenance": "AUTHOR_CONSTRUCTED_MECHANICAL",
+      "independently_adjudicated": false,
+      "left_section": "7",
+      "right_section": "9",
+      "left_index": 0,
+      "right_index": 0,
+      "expected_left": [
+        {
+          "actor": "purchaser",
+          "action": "PAY",
+          "object": "invoice cedar",
+          "recipient": null,
+          "trigger": "receipt of invoice cedar",
+          "event_instance": "invoice cedar"
+        }
+      ],
+      "expected_right": [
+        {
+          "actor": "purchaser",
+          "action": "PAY",
+          "object": "invoice cedar",
+          "recipient": null,
+          "trigger": "receipt of invoice cedar",
+          "event_instance": "invoice cedar"
+        }
+      ]
+    },
+    {
+      "case_id": "evaluation_coordinated_subject",
+      "family_id": "evaluation_coordinated_subject",
+      "split": "evaluation",
+      "text": "Section 7. Duty\nPurchaser is required to pay Invoice Cedar within 10 calendar days after receipt of Invoice Cedar.\n\nSection 9. Duty\nPurchaser and Vendor must remit Invoice Cedar within 10 calendar days after receipt of Invoice Cedar.",
+      "gold_state": "DIFFERENT",
+      "gold_match": false,
+      "mechanical_rule": "Explicit joint subject differs from sole subject; unsupported grammar may abstain",
+      "label_provenance": "AUTHOR_CONSTRUCTED_MECHANICAL",
+      "independently_adjudicated": false,
+      "left_section": "7",
+      "right_section": "9",
+      "left_index": 0,
+      "right_index": 0,
+      "expected_left": [
+        {
+          "actor": "purchaser",
+          "action": "PAY",
+          "object": "invoice cedar",
+          "recipient": null,
+          "trigger": "receipt of invoice cedar",
+          "event_instance": "invoice cedar"
+        }
+      ],
+      "expected_right": [
+        {
+          "actor": "purchaser and vendor",
+          "action": "PAY",
+          "object": "invoice cedar",
+          "recipient": null,
+          "trigger": "receipt of invoice cedar",
+          "event_instance": "invoice cedar"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+model_key,case_id,category_code,transformation_name,predicted_anomaly,anomaly_score,threshold,correctly_rejected
+B0_ChannelB,SEC_CIK932021_EX_10_24_N3_FRONT_DISPUTE,N3,Hard Negative: Front-Loaded Dispute Resolution,True,0.7764,0.7,False
+B0_ChannelB,SEC_CIK932021_EX_10_24_N4_FRONT_DEFS,N4,Hard Negative: Front-Loaded Definitions,True,0.7764,0.7,False
+B0_ChannelB,SEC_CIK932021_EX_10_26_N3_FRONT_DISPUTE,N3,Hard Negative: Front-Loaded Dispute Resolution,True,0.7871,0.7,False
+B0_ChannelB,SEC_CIK932021_EX_10_26_N4_FRONT_DEFS,N4,Hard Negative: Front-Loaded Definitions,True,0.7871,0.7,False
+B0_ChannelB,SEC_CIK886128_EX_10_87_N3_FRONT_DISPUTE,N3,Hard Negative: Front-Loaded Dispute Resolution,True,0.783,0.7,False
+B0_ChannelB,SEC_CIK886128_EX_10_88_N3_FRONT_DISPUTE,N3,Hard Negative: Front-Loaded Dispute Resolution,True,0.7975,0.7,False
+B1_ProductionEnsemble,SEC_CIK932021_EX_10_24_N3_FRONT_DISPUTE,N3,Hard Negative: Front-Loaded Dispute Resolution,True,0.6945,0.5,False
+B1_ProductionEnsemble,SEC_CIK932021_EX_10_24_N4_FRONT_DEFS,N4,Hard Negative: Front-Loaded Definitions,True,0.6945,0.5,False
+B1_ProductionEnsemble,SEC_CIK932021_EX_10_26_N3_FRONT_DISPUTE,N3,Hard Negative: Front-Loaded Dispute Resolution,True,0.8831,0.5,False
+B1_ProductionEnsemble,SEC_CIK932021_EX_10_26_N4_FRONT_DEFS,N4,Hard Negative: Front-Loaded Definitions,True,0.8831,0.5,False
+B1_ProductionEnsemble,SEC_CIK886128_EX_10_87_N3_FRONT_DISPUTE,N3,Hard Negative: Front-Loaded Dispute Resolution,True,0.7914,0.5,False
+B1_ProductionEnsemble,SEC_CIK886128_EX_10_88_N3_FRONT_DISPUTE,N3,Hard Negative: Front-Loaded Dispute Resolution,True,0.8987,0.5,False
+B2_CosineSimilarity,SEC_CIK932021_EX_10_24_N3_FRONT_DISPUTE,N3,Hard Negative: Front-Loaded Dispute Resolution,False,0.5913,0.6,True
+B2_CosineSimilarity,SEC_CIK932021_EX_10_24_N4_FRONT_DEFS,N4,Hard Negative: Front-Loaded Definitions,False,0.5913,0.6,True
+B2_CosineSimilarity,SEC_CIK932021_EX_10_26_N3_FRONT_DISPUTE,N3,Hard Negative: Front-Loaded Dispute Resolution,True,0.8579,0.6,False
+B2_CosineSimilarity,SEC_CIK932021_EX_10_26_N4_FRONT_DEFS,N4,Hard Negative: Front-Loaded Definitions,True,0.8579,0.6,False
+B2_CosineSimilarity,SEC_CIK886128_EX_10_87_N3_FRONT_DISPUTE,N3,Hard Negative: Front-Loaded Dispute Resolution,True,0.7053,0.6,False
+B2_CosineSimilarity,SEC_CIK886128_EX_10_88_N3_FRONT_DISPUTE,N3,Hard Negative: Front-Loaded Dispute Resolution,True,0.9215,0.6,False
+C1_BoundaryContrast,SEC_CIK932021_EX_10_24_N3_FRONT_DISPUTE,N3,Hard Negative: Front-Loaded Dispute Resolution,True,0.6913,0.5,False
+C1_BoundaryContrast,SEC_CIK932021_EX_10_24_N4_FRONT_DEFS,N4,Hard Negative: Front-Loaded Definitions,True,0.6913,0.5,False
+C1_BoundaryContrast,SEC_CIK932021_EX_10_26_N3_FRONT_DISPUTE,N3,Hard Negative: Front-Loaded Dispute Resolution,True,0.7753,0.5,False
+C1_BoundaryContrast,SEC_CIK932021_EX_10_26_N4_FRONT_DEFS,N4,Hard Negative: Front-Loaded Definitions,True,0.7753,0.5,False
+C1_BoundaryContrast,SEC_CIK886128_EX_10_87_N3_FRONT_DISPUTE,N3,Hard Negative: Front-Loaded Dispute Resolution,True,0.7159,0.5,False
+C1_BoundaryContrast,SEC_CIK886128_EX_10_88_N3_FRONT_DISPUTE,N3,Hard Negative: Front-Loaded Dispute Resolution,True,0.8397,0.5,False
+C2_SequenceBiLSTM,SEC_CIK932021_EX_10_24_N3_FRONT_DISPUTE,N3,Hard Negative: Front-Loaded Dispute Resolution,True,0.523,0.5,False
+C2_SequenceBiLSTM,SEC_CIK932021_EX_10_24_N4_FRONT_DEFS,N4,Hard Negative: Front-Loaded Definitions,True,0.523,0.5,False
+C2_SequenceBiLSTM,SEC_CIK932021_EX_10_26_N3_FRONT_DISPUTE,N3,Hard Negative: Front-Loaded Dispute Resolution,True,0.5233,0.5,False
+C2_SequenceBiLSTM,SEC_CIK932021_EX_10_26_N4_FRONT_DEFS,N4,Hard Negative: Front-Loaded Definitions,True,0.5233,0.5,False
+C2_SequenceBiLSTM,SEC_CIK886128_EX_10_87_N3_FRONT_DISPUTE,N3,Hard Negative: Front-Loaded Dispute Resolution,True,0.5233,0.5,False
+C2_SequenceBiLSTM,SEC_CIK886128_EX_10_88_N3_FRONT_DISPUTE,N3,Hard Negative: Front-Loaded Dispute Resolution,True,0.5228,0.5,False
+C3_TopologicalDAG,SEC_CIK932021_EX_10_24_N3_FRONT_DISPUTE,N3,Hard Negative: Front-Loaded Dispute Resolution,True,1.0,0.5,False
+C3_TopologicalDAG,SEC_CIK932021_EX_10_24_N4_FRONT_DEFS,N4,Hard Negative: Front-Loaded Definitions,True,1.0,0.5,False
+C3_TopologicalDAG,SEC_CIK932021_EX_10_26_N3_FRONT_DISPUTE,N3,Hard Negative: Front-Loaded Dispute Resolution,True,1.0,0.5,False
+C3_TopologicalDAG,SEC_CIK932021_EX_10_26_N4_FRONT_DEFS,N4,Hard Negative: Front-Loaded Definitions,True,1.0,0.5,False
+C3_TopologicalDAG,SEC_CIK886128_EX_10_87_N3_FRONT_DISPUTE,N3,Hard Negative: Front-Loaded Dispute Resolution,True,1.0,0.5,False
+C3_TopologicalDAG,SEC_CIK886128_EX_10_88_N3_FRONT_DISPUTE,N3,Hard Negative: Front-Loaded Dispute Resolution,False,0.0,0.5,True

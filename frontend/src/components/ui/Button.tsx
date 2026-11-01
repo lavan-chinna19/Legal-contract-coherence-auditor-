@@ -39,7 +39,8 @@ export function Button({
 
   return (
     <button
-      className={`${variantClass} ${className}`.trim()}
+      type="button"
+      className={`btn ${variantClass} ${className}`.trim()}
       style={sizeStyles[size]}
       disabled={disabled || loading}
       {...props}

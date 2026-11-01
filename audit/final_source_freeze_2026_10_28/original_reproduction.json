@@ -1,0 +1,133 @@
+{
+  "source": "Section 1. Payment. Buyer shall pay Invoice Alpha.\nSection 1.1. Notice\nProvider shall deliver Report Bravo.",
+  "sections": [
+    {
+      "target_type": "SECTION",
+      "identity": "1",
+      "identity_key": "1",
+      "raw_identifier": "1",
+      "identifier_start": 8,
+      "identifier_end": 9,
+      "heading_start": 0,
+      "heading_end": 50,
+      "heading_text": "Section 1. Payment. Buyer shall pay Invoice Alpha.",
+      "title": "Payment",
+      "title_start": 11,
+      "title_end": 18,
+      "section_uid": "structural_document:section:0",
+      "order": 0,
+      "parent_identity": null,
+      "parent_uid": null,
+      "parent_candidates": [],
+      "children": [
+        "structural_document:section:1"
+      ],
+      "char_start": 0,
+      "char_end": 51,
+      "source_clause_ids": [],
+      "clause_id": "structural_document:source:0",
+      "text": "Section 1. Payment. Buyer shall pay Invoice Alpha.\n"
+    },
+    {
+      "target_type": "SECTION",
+      "identity": "1.1",
+      "identity_key": "1.1",
+      "raw_identifier": "1.1",
+      "identifier_start": 59,
+      "identifier_end": 62,
+      "heading_start": 51,
+      "heading_end": 70,
+      "heading_text": "Section 1.1. Notice",
+      "title": "Notice",
+      "title_start": 64,
+      "title_end": 70,
+      "section_uid": "structural_document:section:1",
+      "order": 1,
+      "parent_identity": "1",
+      "parent_uid": "structural_document:section:0",
+      "parent_candidates": [
+        "structural_document:section:0"
+      ],
+      "children": [],
+      "char_start": 51,
+      "char_end": 107,
+      "source_clause_ids": [],
+      "clause_id": "structural_document:source:1",
+      "text": "Section 1.1. Notice\nProvider shall deliver Report Bravo."
+    }
+  ],
+  "records": [
+    {
+      "record_id": "structural_document:obligation:0",
+      "raw_text": "Provider shall deliver Report Bravo",
+      "char_start": 71,
+      "char_end": 106,
+      "coordinate_space": "original_extracted_text",
+      "section_uid": "structural_document:section:1",
+      "section_identity": "1.1",
+      "clause_id": "structural_document:source:1",
+      "actor": "provider",
+      "action": "DELIVER",
+      "object": "report bravo",
+      "recipient": null,
+      "trigger": null,
+      "event_instance": "report bravo",
+      "deadline": null,
+      "actors": [
+        "provider"
+      ],
+      "actor_mode": "SINGLE",
+      "voice": "ACTIVE",
+      "event_type": "DELIVER:report",
+      "event_instance_basis": "NAMED_OBJECT_IDENTIFIER",
+      "scope": "document",
+      "phase": "current",
+      "conditions": [],
+      "exceptions": [],
+      "evidence": {
+        "action": [
+          {
+            "text": "deliver",
+            "char_start": 86,
+            "char_end": 93
+          }
+        ],
+        "actor": [
+          {
+            "text": "Provider",
+            "char_start": 71,
+            "char_end": 79
+          }
+        ],
+        "actors": [
+          {
+            "text": "Provider",
+            "char_start": 71,
+            "char_end": 79
+          }
+        ],
+        "object": [
+          {
+            "text": "Report Bravo",
+            "char_start": 94,
+            "char_end": 106
+          }
+        ],
+        "event_instance": [
+          {
+            "text": "Report Bravo",
+            "char_start": 94,
+            "char_end": 106
+          }
+        ]
+      },
+      "reference_target": null,
+      "missing_fields": [
+        "deadline"
+      ],
+      "uncertainty": [],
+      "unsupported": []
+    }
+  ],
+  "missing_inline_body": true
+}

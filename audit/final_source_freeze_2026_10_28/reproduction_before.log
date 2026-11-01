@@ -1,0 +1,150 @@
+FFFFFFFF...FF                                                            [100%]
+================================== FAILURES ===================================
+__________ test_same_line_body_is_not_discarded[Section 1. Payment.] __________
+
+heading = 'Section 1. Payment.'
+
+    @pytest.mark.parametrize('heading',[
+        'Section 1. Payment.', '1. Payment.', 'Section 1.2(a). Payment.',
+        'Article IV. Payment.', '   Section 1. Payment.',
+    ])
+    def test_same_line_body_is_not_discarded(heading):
+        source=heading+' Buyer shall pay Invoice Alpha.'
+        structure=parse_contract(source_text=source);result=analyze_bindings(source_text=source)
+>       assert len(result['records'])==1
+E       assert 0 == 1
+E        +  where 0 = len([])
+
+tests\test_final_source_parsing.py:24: AssertionError
+______________ test_same_line_body_is_not_discarded[1. Payment.] ______________
+
+heading = '1. Payment.'
+
+    @pytest.mark.parametrize('heading',[
+        'Section 1. Payment.', '1. Payment.', 'Section 1.2(a). Payment.',
+        'Article IV. Payment.', '   Section 1. Payment.',
+    ])
+    def test_same_line_body_is_not_discarded(heading):
+        source=heading+' Buyer shall pay Invoice Alpha.'
+        structure=parse_contract(source_text=source);result=analyze_bindings(source_text=source)
+>       assert len(result['records'])==1
+E       assert 0 == 1
+E        +  where 0 = len([])
+
+tests\test_final_source_parsing.py:24: AssertionError
+_______ test_same_line_body_is_not_discarded[Section 1.2(a). Payment.] ________
+
+heading = 'Section 1.2(a). Payment.'
+
+    @pytest.mark.parametrize('heading',[
+        'Section 1. Payment.', '1. Payment.', 'Section 1.2(a). Payment.',
+        'Article IV. Payment.', '   Section 1. Payment.',
+    ])
+    def test_same_line_body_is_not_discarded(heading):
+        source=heading+' Buyer shall pay Invoice Alpha.'
+        structure=parse_contract(source_text=source);result=analyze_bindings(source_text=source)
+>       assert len(result['records'])==1
+E       assert 0 == 1
+E        +  where 0 = len([])
+
+tests\test_final_source_parsing.py:24: AssertionError
+_________ test_same_line_body_is_not_discarded[Article IV. Payment.] __________
+
+heading = 'Article IV. Payment.'
+
+    @pytest.mark.parametrize('heading',[
+        'Section 1. Payment.', '1. Payment.', 'Section 1.2(a). Payment.',
+        'Article IV. Payment.', '   Section 1. Payment.',
+    ])
+    def test_same_line_body_is_not_discarded(heading):
+        source=heading+' Buyer shall pay Invoice Alpha.'
+        structure=parse_contract(source_text=source);result=analyze_bindings(source_text=source)
+>       assert len(result['records'])==1
+E       assert 0 == 1
+E        +  where 0 = len([])
+
+tests\test_final_source_parsing.py:24: AssertionError
+________ test_same_line_body_is_not_discarded[   Section 1. Payment.] _________
+
+heading = '   Section 1. Payment.'
+
+    @pytest.mark.parametrize('heading',[
+        'Section 1. Payment.', '1. Payment.', 'Section 1.2(a). Payment.',
+        'Article IV. Payment.', '   Section 1. Payment.',
+    ])
+    def test_same_line_body_is_not_discarded(heading):
+        source=heading+' Buyer shall pay Invoice Alpha.'
+        structure=parse_contract(source_text=source);result=analyze_bindings(source_text=source)
+>       assert len(result['records'])==1
+E       assert 0 == 1
+E        +  where 0 = len([])
+
+tests\test_final_source_parsing.py:24: AssertionError
+_______________ test_nested_relative_heading_body_and_hierarchy _______________
+
+    def test_nested_relative_heading_body_and_hierarchy():
+        source=('Section 4. Services\n'
+            'Section 4.2. Delivery. Provider shall deliver Report Bravo.\n'
+            '(a) Customer shall pay Invoice Alpha.\n'
+            'Section 4.3. Notice\nProvider shall notify Customer about Notice Cedar.')
+        structure=parse_contract(source_text=source);result=analyze_bindings(source_text=source)
+>       assert len(result['records'])==3
+E       AssertionError: assert 1 == 3
+E        +  where 1 = len([{'record_id': 'structural_document:obligation:0', 'raw_text': 'Provider shall notify Customer about Notice Cedar', 'char_start': 138, 'char_end': 187, ...}])
+
+tests\test_final_source_parsing.py:37: AssertionError
+___________ test_multiline_body_remains_available_with_inline_body ____________
+
+    def test_multiline_body_remains_available_with_inline_body():
+        source=('Section 1. Payment. Buyer shall pay Invoice Alpha.\n'
+            'Seller shall deliver Report Bravo.\n'
+            'Section 2. Notice\nCustomer shall be notified by Provider about Notice Cedar.')
+        structure=parse_contract(source_text=source);result=analyze_bindings(source_text=source)
+>       assert len(result['records'])==3
+E       AssertionError: assert 2 == 3
+E        +  where 2 = len([{'record_id': 'structural_document:obligation:0', 'raw_text': 'Seller shall deliver Report Bravo', 'char_start': 51, ...:1', 'raw_text': 'Customer shall be notified by Provider about Notice Cedar', 'char_start': 104, 'char_end': 161, ...}])
+
+tests\test_final_source_parsing.py:49: AssertionError
+__________________ test_inline_citation_is_not_a_new_heading __________________
+
+    def test_inline_citation_is_not_a_new_heading():
+        source=('Section 1. Duty. Buyer shall pay Invoice Alpha under Section 4.\n'
+            'Section 4. Other\nProvider shall deliver Report Bravo.')
+        structure=parse_contract(source_text=source);result=analyze_bindings(source_text=source)
+        assert [s['identity'] for s in structure.sections]==['1','4']
+>       assert len(result['records'])==2
+E       AssertionError: assert 1 == 2
+E        +  where 1 = len([{'record_id': 'structural_document:obligation:0', 'raw_text': 'Provider shall deliver Report Bravo', 'char_start': 81, 'char_end': 116, ...}])
+
+tests\test_final_source_parsing.py:58: AssertionError
+_____________________ test_unicode_and_crlf_inline_source _____________________
+
+    def test_unicode_and_crlf_inline_source():
+        source='Section 1. Caf�. Provider shall deliver Report Bravo.\r\nSection 2. Payment. Buyer shall pay Invoice Alpha.'
+        structure=parse_contract(source_text=source);result=analyze_bindings(source_text=source)
+>       assert len(result['records'])==2
+E       assert 0 == 2
+E        +  where 0 = len([])
+
+tests\test_final_source_parsing.py:77: AssertionError
+_____________ test_large_inline_input_advertises_existing_limits ______________
+
+    def test_large_inline_input_advertises_existing_limits():
+        source='\n'.join(f'Section {i+1}. Duty. Buyer shall pay Invoice Alpha.' for i in range(105))
+        result=analyze_bindings(source_text=source)
+>       assert not result['complete'] and 'RECORD_LIMIT' in result['issues']
+E       assert (not True)
+
+tests\test_final_source_parsing.py:83: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/test_final_source_parsing.py::test_same_line_body_is_not_discarded[Section 1. Payment.]
+FAILED tests/test_final_source_parsing.py::test_same_line_body_is_not_discarded[1. Payment.]
+FAILED tests/test_final_source_parsing.py::test_same_line_body_is_not_discarded[Section 1.2(a). Payment.]
+FAILED tests/test_final_source_parsing.py::test_same_line_body_is_not_discarded[Article IV. Payment.]
+FAILED tests/test_final_source_parsing.py::test_same_line_body_is_not_discarded[   Section 1. Payment.]
+FAILED tests/test_final_source_parsing.py::test_nested_relative_heading_body_and_hierarchy
+FAILED tests/test_final_source_parsing.py::test_multiline_body_remains_available_with_inline_body
+FAILED tests/test_final_source_parsing.py::test_inline_citation_is_not_a_new_heading
+FAILED tests/test_final_source_parsing.py::test_unicode_and_crlf_inline_source
+FAILED tests/test_final_source_parsing.py::test_large_inline_input_advertises_existing_limits
+10 failed, 3 passed in 0.38s

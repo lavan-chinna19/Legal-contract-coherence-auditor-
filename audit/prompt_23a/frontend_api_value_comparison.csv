@@ -1,0 +1,12 @@
+Field_Name,Backend_JSON_Path,Actual_API_Value,Rendered_Browser_Value,Formatting_Rule,Discrepancy_Detected,Value_Verification_Verdict
+Total Clauses,total_clauses,5,5,Direct integer render,None,EXACT_MATCH
+Total Anomalies,total_flags,2,2,Direct integer render,None,EXACT_MATCH
+High Severity Count,high_severity_count,2,2,Direct integer render,None,EXACT_MATCH
+Medium Severity Count,medium_severity_count,0,0,Direct integer render,None,EXACT_MATCH
+Mean Anomaly Score,scoring_result.mean_combined_score,0.3407,0.341,toFixed(3) mathematical rounding,None,EXACT_MATCH
+Max Anomaly Score,scoring_result.max_combined_score,0.3427,0.343,toFixed(3) mathematical rounding,None,EXACT_MATCH
+XAI Token Stream,ig_payload.tokens,26 tokens,26 token badges,Mapped array render,None,EXACT_MATCH
+XAI Neighbor Delta,sensitivity_payload.score_delta,0.0752,+0.075,toFixed(3) with sign,None,EXACT_MATCH
+Reviewer Verdict,request.reviewer_verdict,CONFIRM_ANOMALY,CONFIRM_ANOMALY,Select value binding,None,EXACT_MATCH
+Reviewer ID,request.reviewer_id,reviewer_01,reviewer_01,Input text binding,None,EXACT_MATCH
+Feedback Provenance,request.provenance,REAL,REAL,Select value binding,None,EXACT_MATCH

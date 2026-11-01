@@ -1,0 +1,7 @@
+model_key,cases_timed,median_total_ms,mean_total_ms,p95_total_ms,median_prep_ms,median_emb_ms,median_feat_ms,median_infer_ms,median_dec_ms
+B0_ChannelB,18,31.02,36.8,77.98,0.0,26.37,0.0,3.72,0.93
+B1_ProductionEnsemble,18,53.82,65.75,144.91,0.0,47.36,2.69,2.69,1.08
+B2_CosineSimilarity,18,22.33,28.63,58.84,0.0,21.21,0.0,0.89,0.22
+C1_BoundaryContrast,18,53.52,71.32,160.22,0.0,42.82,8.03,1.61,1.07
+C2_SequenceBiLSTM,18,43.4,57.42,130.19,0.0,36.89,0.0,5.64,0.87
+C3_TopologicalDAG,18,0.81,1.89,5.89,0.0,0.0,0.57,0.16,0.08

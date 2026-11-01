@@ -1,0 +1,17 @@
+Section 1. Purpose
+This is a completely fictional agreement between Example Party A and Example Party B created solely to demonstrate textual dependency checking.
+
+Section 2. Advance Payment
+Under Section 4 above, Example Party A must issue the payment notice before funds are transferred. This demonstration intentionally puts the referenced payment-notice section later in the document, so the directional word contradicts its position.
+
+Section 3. Delivery
+Example Party B shall provide the synthetic deliverables after receiving a written instruction.
+
+Section 4. Payment Notice
+Example Party A shall send a written payment notice confirming the amount and the due date. This section is the explicit reference target.
+
+Section 5. Confidentiality
+The fictional parties agree not to disclose nonpublic demonstration material unless permission is granted.
+
+Section 6. Term
+This classroom example remains in effect for thirty days and has no legal force.

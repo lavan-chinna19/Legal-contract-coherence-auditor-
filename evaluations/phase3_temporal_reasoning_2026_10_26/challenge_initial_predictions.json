@@ -1,0 +1,1906 @@
+[
+  {
+    "case": {
+      "case_id": "C01",
+      "text": "Section 1. Term\nThe Effective Date is not 2026-06-01.\nSection 2. Term\nThe Effective Date is 2026-07-01.",
+      "confirmed_conflict_gold": false,
+      "construction_rule": "Negated date is not a positive singleton fact",
+      "provenance": "POST_IMPLEMENTATION_MECHANICAL_CHALLENGE",
+      "independently_adjudicated": false,
+      "split": "EXPOSED_DEVELOPMENT"
+    },
+    "prediction": true,
+    "metadata": {
+      "version": "context-temporal-v1",
+      "coordinate_space": "original_extracted_text",
+      "source_sha256": "f058dc8801180e0f833d33060ee7f7ca03bb0af057c0e4c8acfa2c07dafa109d",
+      "status": "CONFIRMED_TEMPORAL_CONFLICT",
+      "statements": [
+        {
+          "statement_id": "C01:time:0",
+          "raw_text": "Term\nThe Effective Date is not 2026-06-01.",
+          "char_start": 11,
+          "char_end": 53,
+          "coordinate_space": "original_extracted_text",
+          "clause_id": "C01:source:0",
+          "section_uid": "C01:section:0",
+          "section_identity": "1",
+          "scope": "document",
+          "phase": "CURRENT",
+          "kind": "ABSOLUTE",
+          "role": "EFFECTIVE_DATE",
+          "event": "effective date",
+          "actor": null,
+          "action": null,
+          "triggering_event": null,
+          "absolute_date": "2026-06-01",
+          "raw_date": "2026-06-01",
+          "date_start": 42,
+          "date_end": 52,
+          "duration_value": null,
+          "duration_unit": null,
+          "timing_basis": null,
+          "deadline_type": "EXACT_DATE",
+          "relation": null,
+          "lower_offset": null,
+          "upper_offset": null,
+          "qualifiers": [],
+          "uncertainty": [],
+          "parsing_status": "EXPLICIT_SUPPORTED"
+        },
+        {
+          "statement_id": "C01:time:1",
+          "raw_text": "Term\nThe Effective Date is 2026-07-01.",
+          "char_start": 65,
+          "char_end": 103,
+          "coordinate_space": "original_extracted_text",
+          "clause_id": "C01:source:1",
+          "section_uid": "C01:section:1",
+          "section_identity": "2",
+          "scope": "document",
+          "phase": "CURRENT",
+          "kind": "ABSOLUTE",
+          "role": "EFFECTIVE_DATE",
+          "event": "effective date",
+          "actor": null,
+          "action": null,
+          "triggering_event": null,
+          "absolute_date": "2026-07-01",
+          "raw_date": "2026-07-01",
+          "date_start": 92,
+          "date_end": 102,
+          "duration_value": null,
+          "duration_unit": null,
+          "timing_basis": null,
+          "deadline_type": "EXACT_DATE",
+          "relation": null,
+          "lower_offset": null,
+          "upper_offset": null,
+          "qualifiers": [],
+          "uncertainty": [],
+          "parsing_status": "EXPLICIT_SUPPORTED"
+        }
+      ],
+      "decisions": [
+        {
+          "category": "CONFIRMED_TEMPORAL_CONFLICT",
+          "check": "SAME_EVENT_DATE",
+          "reason": "Same named event has disjoint exact calendar dates under the same scope/phase.",
+          "statement_ids": [
+            "C01:time:0",
+            "C01:time:1"
+          ],
+          "evidence": [
+            {
+              "statement_id": "C01:time:0",
+              "char_start": 11,
+              "char_end": 53,
+              "date_start": 42,
+              "date_end": 52,
+              "raw_date": "2026-06-01",
+              "section_uid": "C01:section:0",
+              "clause_id": "C01:source:0",
+              "coordinate_space": "original_extracted_text"
+            },
+            {
+              "statement_id": "C01:time:1",
+              "char_start": 65,
+              "char_end": 103,
+              "date_start": 92,
+              "date_end": 102,
+              "raw_date": "2026-07-01",
+              "section_uid": "C01:section:1",
+              "clause_id": "C01:source:1",
+              "coordinate_space": "original_extracted_text"
+            }
+          ],
+          "coordinate_space": "original_extracted_text",
+          "scope": "document",
+          "interpretation": "Deterministic textual interpretation only; not legal correctness",
+          "details": {}
+        }
+      ],
+      "decision_counts": {
+        "CONFIRMED_TEMPORAL_CONFLICT": 1
+      },
+      "confirmed_conflict_count": 1,
+      "potential_inconsistency_count": 0,
+      "review_count": 0,
+      "unsupported_count": 0,
+      "interpretation": "Textual deterministic constraints and explicit uncertainty; no legal correctness probability."
+    }
+  },
+  {
+    "case": {
+      "case_id": "C02",
+      "text": "Section 1. Events\nEvent Completion occurs on 2026-06-01 and Event Inspection occurs on 2026-07-01.",
+      "confirmed_conflict_gold": false,
+      "construction_rule": "Two distinct named events in one sentence",
+      "provenance": "POST_IMPLEMENTATION_MECHANICAL_CHALLENGE",
+      "independently_adjudicated": false,
+      "split": "EXPOSED_DEVELOPMENT"
+    },
+    "prediction": true,
+    "metadata": {
+      "version": "context-temporal-v1",
+      "coordinate_space": "original_extracted_text",
+      "source_sha256": "c5c8ca62e5a6620a3182c9223d617d738c46e0b28724c0a5d0d124693915db87",
+      "status": "CONFIRMED_TEMPORAL_CONFLICT",
+      "statements": [
+        {
+          "statement_id": "C02:time:0",
+          "raw_text": "Events\nEvent Completion occurs on 2026-06-01 and Event Inspection occurs on 2026-07-01.",
+          "char_start": 11,
+          "char_end": 98,
+          "coordinate_space": "original_extracted_text",
+          "clause_id": "C02:source:0",
+          "section_uid": "C02:section:0",
+          "section_identity": "1",
+          "scope": "document",
+          "phase": "CURRENT",
+          "kind": "ABSOLUTE",
+          "role": "EVENT_DATE",
+          "event": "completion",
+          "actor": null,
+          "action": null,
+          "triggering_event": null,
+          "absolute_date": "2026-06-01",
+          "raw_date": "2026-06-01",
+          "date_start": 45,
+          "date_end": 55,
+          "duration_value": null,
+          "duration_unit": null,
+          "timing_basis": null,
+          "deadline_type": "EXACT_DATE",
+          "relation": null,
+          "lower_offset": null,
+          "upper_offset": null,
+          "qualifiers": [],
+          "uncertainty": [],
+          "parsing_status": "EXPLICIT_SUPPORTED"
+        },
+        {
+          "statement_id": "C02:time:1",
+          "raw_text": "Events\nEvent Completion occurs on 2026-06-01 and Event Inspection occurs on 2026-07-01.",
+          "char_start": 11,
+          "char_end": 98,
+          "coordinate_space": "original_extracted_text",
+          "clause_id": "C02:source:0",
+          "section_uid": "C02:section:0",
+          "section_identity": "1",
+          "scope": "document",
+          "phase": "CURRENT",
+          "kind": "ABSOLUTE",
+          "role": "EVENT_DATE",
+          "event": "completion",
+          "actor": null,
+          "action": null,
+          "triggering_event": null,
+          "absolute_date": "2026-07-01",
+          "raw_date": "2026-07-01",
+          "date_start": 87,
+          "date_end": 97,
+          "duration_value": null,
+          "duration_unit": null,
+          "timing_basis": null,
+          "deadline_type": "EXACT_DATE",
+          "relation": null,
+          "lower_offset": null,
+          "upper_offset": null,
+          "qualifiers": [],
+          "uncertainty": [],
+          "parsing_status": "EXPLICIT_SUPPORTED"
+        }
+      ],
+      "decisions": [
+        {
+          "category": "CONFIRMED_TEMPORAL_CONFLICT",
+          "check": "SAME_EVENT_DATE",
+          "reason": "Same named event has disjoint exact calendar dates under the same scope/phase.",
+          "statement_ids": [
+            "C02:time:0",
+            "C02:time:1"
+          ],
+          "evidence": [
+            {
+              "statement_id": "C02:time:0",
+              "char_start": 11,
+              "char_end": 98,
+              "date_start": 45,
+              "date_end": 55,
+              "raw_date": "2026-06-01",
+              "section_uid": "C02:section:0",
+              "clause_id": "C02:source:0",
+              "coordinate_space": "original_extracted_text"
+            },
+            {
+              "statement_id": "C02:time:1",
+              "char_start": 11,
+              "char_end": 98,
+              "date_start": 87,
+              "date_end": 97,
+              "raw_date": "2026-07-01",
+              "section_uid": "C02:section:0",
+              "clause_id": "C02:source:0",
+              "coordinate_space": "original_extracted_text"
+            }
+          ],
+          "coordinate_space": "original_extracted_text",
+          "scope": "document",
+          "interpretation": "Deterministic textual interpretation only; not legal correctness",
+          "details": {}
+        }
+      ],
+      "decision_counts": {
+        "CONFIRMED_TEMPORAL_CONFLICT": 1
+      },
+      "confirmed_conflict_count": 1,
+      "potential_inconsistency_count": 0,
+      "review_count": 0,
+      "unsupported_count": 0,
+      "interpretation": "Textual deterministic constraints and explicit uncertainty; no legal correctness probability."
+    }
+  },
+  {
+    "case": {
+      "case_id": "C03",
+      "text": "Section 1. Event\nFor Buyer, Event Completion occurs on 2026-06-01.\nSection 2. Event\nFor Seller, Event Completion occurs on 2026-07-01.",
+      "confirmed_conflict_gold": false,
+      "construction_rule": "Explicit different responsible actors for same event label",
+      "provenance": "POST_IMPLEMENTATION_MECHANICAL_CHALLENGE",
+      "independently_adjudicated": false,
+      "split": "EXPOSED_DEVELOPMENT"
+    },
+    "prediction": true,
+    "metadata": {
+      "version": "context-temporal-v1",
+      "coordinate_space": "original_extracted_text",
+      "source_sha256": "e109d3ae32eb8e1073d76c125bc8b33cea3157dd5639179b322fde446354663d",
+      "status": "CONFIRMED_TEMPORAL_CONFLICT",
+      "statements": [
+        {
+          "statement_id": "C03:time:0",
+          "raw_text": "Event\nFor Buyer, Event Completion occurs on 2026-06-01.",
+          "char_start": 11,
+          "char_end": 66,
+          "coordinate_space": "original_extracted_text",
+          "clause_id": "C03:source:0",
+          "section_uid": "C03:section:0",
+          "section_identity": "1",
+          "scope": "document",
+          "phase": "CURRENT",
+          "kind": "ABSOLUTE",
+          "role": "EVENT_DATE",
+          "event": "completion",
+          "actor": null,
+          "action": null,
+          "triggering_event": null,
+          "absolute_date": "2026-06-01",
+          "raw_date": "2026-06-01",
+          "date_start": 55,
+          "date_end": 65,
+          "duration_value": null,
+          "duration_unit": null,
+          "timing_basis": null,
+          "deadline_type": "EXACT_DATE",
+          "relation": null,
+          "lower_offset": null,
+          "upper_offset": null,
+          "qualifiers": [],
+          "uncertainty": [],
+          "parsing_status": "EXPLICIT_SUPPORTED"
+        },
+        {
+          "statement_id": "C03:time:1",
+          "raw_text": "Event\nFor Seller, Event Completion occurs on 2026-07-01.",
+          "char_start": 78,
+          "char_end": 134,
+          "coordinate_space": "original_extracted_text",
+          "clause_id": "C03:source:1",
+          "section_uid": "C03:section:1",
+          "section_identity": "2",
+          "scope": "document",
+          "phase": "CURRENT",
+          "kind": "ABSOLUTE",
+          "role": "EVENT_DATE",
+          "event": "completion",
+          "actor": null,
+          "action": null,
+          "triggering_event": null,
+          "absolute_date": "2026-07-01",
+          "raw_date": "2026-07-01",
+          "date_start": 123,
+          "date_end": 133,
+          "duration_value": null,
+          "duration_unit": null,
+          "timing_basis": null,
+          "deadline_type": "EXACT_DATE",
+          "relation": null,
+          "lower_offset": null,
+          "upper_offset": null,
+          "qualifiers": [],
+          "uncertainty": [],
+          "parsing_status": "EXPLICIT_SUPPORTED"
+        }
+      ],
+      "decisions": [
+        {
+          "category": "CONFIRMED_TEMPORAL_CONFLICT",
+          "check": "SAME_EVENT_DATE",
+          "reason": "Same named event has disjoint exact calendar dates under the same scope/phase.",
+          "statement_ids": [
+            "C03:time:0",
+            "C03:time:1"
+          ],
+          "evidence": [
+            {
+              "statement_id": "C03:time:0",
+              "char_start": 11,
+              "char_end": 66,
+              "date_start": 55,
+              "date_end": 65,
+              "raw_date": "2026-06-01",
+              "section_uid": "C03:section:0",
+              "clause_id": "C03:source:0",
+              "coordinate_space": "original_extracted_text"
+            },
+            {
+              "statement_id": "C03:time:1",
+              "char_start": 78,
+              "char_end": 134,
+              "date_start": 123,
+              "date_end": 133,
+              "raw_date": "2026-07-01",
+              "section_uid": "C03:section:1",
+              "clause_id": "C03:source:1",
+              "coordinate_space": "original_extracted_text"
+            }
+          ],
+          "coordinate_space": "original_extracted_text",
+          "scope": "document",
+          "interpretation": "Deterministic textual interpretation only; not legal correctness",
+          "details": {}
+        }
+      ],
+      "decision_counts": {
+        "CONFIRMED_TEMPORAL_CONFLICT": 1
+      },
+      "confirmed_conflict_count": 1,
+      "potential_inconsistency_count": 0,
+      "review_count": 0,
+      "unsupported_count": 0,
+      "interpretation": "Textual deterministic constraints and explicit uncertainty; no legal correctness probability."
+    }
+  },
+  {
+    "case": {
+      "case_id": "C04",
+      "text": "Section 1. Invoice\nInvoice Alpha is received on 2026-01-01.\nSection 2. Payment\nBuyer shall pay Invoice Alpha within thirty-one calendar days after receipt of Invoice Alpha.\nSection 3. Payment\nBuyer shall pay Invoice Alpha on 2026-01-20.",
+      "confirmed_conflict_gold": false,
+      "construction_rule": "31-day bound permits offset19",
+      "provenance": "POST_IMPLEMENTATION_MECHANICAL_CHALLENGE",
+      "independently_adjudicated": false,
+      "split": "EXPOSED_DEVELOPMENT"
+    },
+    "prediction": false,
+    "metadata": {
+      "version": "context-temporal-v1",
+      "coordinate_space": "original_extracted_text",
+      "source_sha256": "2b99bf696af1b50321c2343dbbdfbb31dffcabac36507c0810541345c83c16f7",
+      "status": "REVIEW_REQUIRED",
+      "statements": [
+        {
+          "statement_id": "C04:time:0",
+          "raw_text": "Invoice\nInvoice Alpha is received on 2026-01-01.",
+          "char_start": 11,
+          "char_end": 59,
+          "coordinate_space": "original_extracted_text",
+          "clause_id": "C04:source:0",
+          "section_uid": "C04:section:0",
+          "section_identity": "1",
+          "scope": "document",
+          "phase": "CURRENT",
+          "kind": "ABSOLUTE",
+          "role": "EVENT_DATE",
+          "event": "invoice alpha receipt",
+          "actor": null,
+          "action": null,
+          "triggering_event": null,
+          "absolute_date": "2026-01-01",
+          "raw_date": "2026-01-01",
+          "date_start": 48,
+          "date_end": 58,
+          "duration_value": null,
+          "duration_unit": null,
+          "timing_basis": null,
+          "deadline_type": "EXACT_DATE",
+          "relation": null,
+          "lower_offset": null,
+          "upper_offset": null,
+          "qualifiers": [],
+          "uncertainty": [],
+          "parsing_status": "EXPLICIT_SUPPORTED"
+        },
+        {
+          "statement_id": "C04:time:1",
+          "raw_text": "Payment\nBuyer shall pay Invoice Alpha within thirty-one calendar days after receipt of Invoice Alpha.",
+          "char_start": 71,
+          "char_end": 172,
+          "coordinate_space": "original_extracted_text",
+          "clause_id": "C04:source:1",
+          "section_uid": "C04:section:1",
+          "section_identity": "2",
+          "scope": "document",
+          "phase": "CURRENT",
+          "kind": "DURATION",
+          "role": "PAYMENT_DUE_DATE",
+          "event": "obligation:buyer:pay invoice alpha",
+          "actor": "buyer",
+          "action": "pay invoice alpha",
+          "triggering_event": "invoice alpha receipt",
+          "absolute_date": null,
+          "raw_date": null,
+          "date_start": null,
+          "date_end": null,
+          "duration_value": 1,
+          "duration_unit": "day",
+          "timing_basis": "CALENDAR_DAY",
+          "deadline_type": null,
+          "relation": "after",
+          "lower_offset": null,
+          "upper_offset": null,
+          "qualifiers": [],
+          "uncertainty": [
+            "MISSING_DEADLINE_OPERATOR"
+          ],
+          "parsing_status": "REVIEW_REQUIRED"
+        },
+        {
+          "statement_id": "C04:time:2",
+          "raw_text": "Payment\nBuyer shall pay Invoice Alpha on 2026-01-20.",
+          "char_start": 184,
+          "char_end": 236,
+          "coordinate_space": "original_extracted_text",
+          "clause_id": "C04:source:2",
+          "section_uid": "C04:section:2",
+          "section_identity": "3",
+          "scope": "document",
+          "phase": "CURRENT",
+          "kind": "ABSOLUTE",
+          "role": "PAYMENT_DUE_DATE",
+          "event": "obligation:buyer:pay invoice alpha",
+          "actor": "buyer",
+          "action": "pay invoice alpha",
+          "triggering_event": null,
+          "absolute_date": "2026-01-20",
+          "raw_date": "2026-01-20",
+          "date_start": 225,
+          "date_end": 235,
+          "duration_value": null,
+          "duration_unit": null,
+          "timing_basis": null,
+          "deadline_type": "EXACT_DATE",
+          "relation": null,
+          "lower_offset": null,
+          "upper_offset": null,
+          "qualifiers": [],
+          "uncertainty": [],
+          "parsing_status": "EXPLICIT_SUPPORTED"
+        }
+      ],
+      "decisions": [
+        {
+          "category": "REVIEW_REQUIRED",
+          "check": "PARSE_UNCERTAINTY",
+          "reason": "MISSING_DEADLINE_OPERATOR",
+          "statement_ids": [
+            "C04:time:1"
+          ],
+          "evidence": [
+            {
+              "statement_id": "C04:time:1",
+              "char_start": 71,
+              "char_end": 172,
+              "date_start": null,
+              "date_end": null,
+              "raw_date": null,
+              "section_uid": "C04:section:1",
+              "clause_id": "C04:source:1",
+              "coordinate_space": "original_extracted_text"
+            }
+          ],
+          "coordinate_space": "original_extracted_text",
+          "scope": "document",
+          "interpretation": "Deterministic textual interpretation only; not legal correctness",
+          "details": {}
+        },
+        {
+          "category": "CONSISTENT",
+          "check": "UNCOMPARED_STATEMENT",
+          "reason": "Explicit date parsed; no second supported constraint establishes a conflict. This is not validation of event truth.",
+          "statement_ids": [
+            "C04:time:0"
+          ],
+          "evidence": [
+            {
+              "statement_id": "C04:time:0",
+              "char_start": 11,
+              "char_end": 59,
+              "date_start": 48,
+              "date_end": 58,
+              "raw_date": "2026-01-01",
+              "section_uid": "C04:section:0",
+              "clause_id": "C04:source:0",
+              "coordinate_space": "original_extracted_text"
+            }
+          ],
+          "coordinate_space": "original_extracted_text",
+          "scope": "document",
+          "interpretation": "Deterministic textual interpretation only; not legal correctness",
+          "details": {}
+        },
+        {
+          "category": "CONSISTENT",
+          "check": "UNCOMPARED_STATEMENT",
+          "reason": "Explicit date parsed; no second supported constraint establishes a conflict. This is not validation of event truth.",
+          "statement_ids": [
+            "C04:time:2"
+          ],
+          "evidence": [
+            {
+              "statement_id": "C04:time:2",
+              "char_start": 184,
+              "char_end": 236,
+              "date_start": 225,
+              "date_end": 235,
+              "raw_date": "2026-01-20",
+              "section_uid": "C04:section:2",
+              "clause_id": "C04:source:2",
+              "coordinate_space": "original_extracted_text"
+            }
+          ],
+          "coordinate_space": "original_extracted_text",
+          "scope": "document",
+          "interpretation": "Deterministic textual interpretation only; not legal correctness",
+          "details": {}
+        }
+      ],
+      "decision_counts": {
+        "REVIEW_REQUIRED": 1,
+        "CONSISTENT": 2
+      },
+      "confirmed_conflict_count": 0,
+      "potential_inconsistency_count": 0,
+      "review_count": 1,
+      "unsupported_count": 0,
+      "interpretation": "Textual deterministic constraints and explicit uncertainty; no legal correctness probability."
+    }
+  },
+  {
+    "case": {
+      "case_id": "C05",
+      "text": "Section 1. Invoice\nInvoice Alpha is received on 2026-01-01.\nSection 2. Payment\nBuyer shall pay Invoice Alpha within thirty-one calendar days after receipt of Invoice Alpha.\nSection 3. Payment\nBuyer shall pay Invoice Alpha on 2026-02-15.",
+      "confirmed_conflict_gold": true,
+      "construction_rule": "31-day bound excludes offset45",
+      "provenance": "POST_IMPLEMENTATION_MECHANICAL_CHALLENGE",
+      "independently_adjudicated": false,
+      "split": "EXPOSED_DEVELOPMENT"
+    },
+    "prediction": false,
+    "metadata": {
+      "version": "context-temporal-v1",
+      "coordinate_space": "original_extracted_text",
+      "source_sha256": "6170ae60af827b24078151e4cabd948df0866a44efca92d0bddf990e28ee4388",
+      "status": "REVIEW_REQUIRED",
+      "statements": [
+        {
+          "statement_id": "C05:time:0",
+          "raw_text": "Invoice\nInvoice Alpha is received on 2026-01-01.",
+          "char_start": 11,
+          "char_end": 59,
+          "coordinate_space": "original_extracted_text",
+          "clause_id": "C05:source:0",
+          "section_uid": "C05:section:0",
+          "section_identity": "1",
+          "scope": "document",
+          "phase": "CURRENT",
+          "kind": "ABSOLUTE",
+          "role": "EVENT_DATE",
+          "event": "invoice alpha receipt",
+          "actor": null,
+          "action": null,
+          "triggering_event": null,
+          "absolute_date": "2026-01-01",
+          "raw_date": "2026-01-01",
+          "date_start": 48,
+          "date_end": 58,
+          "duration_value": null,
+          "duration_unit": null,
+          "timing_basis": null,
+          "deadline_type": "EXACT_DATE",
+          "relation": null,
+          "lower_offset": null,
+          "upper_offset": null,
+          "qualifiers": [],
+          "uncertainty": [],
+          "parsing_status": "EXPLICIT_SUPPORTED"
+        },
+        {
+          "statement_id": "C05:time:1",
+          "raw_text": "Payment\nBuyer shall pay Invoice Alpha within thirty-one calendar days after receipt of Invoice Alpha.",
+          "char_start": 71,
+          "char_end": 172,
+          "coordinate_space": "original_extracted_text",
+          "clause_id": "C05:source:1",
+          "section_uid": "C05:section:1",
+          "section_identity": "2",
+          "scope": "document",
+          "phase": "CURRENT",
+          "kind": "DURATION",
+          "role": "PAYMENT_DUE_DATE",
+          "event": "obligation:buyer:pay invoice alpha",
+          "actor": "buyer",
+          "action": "pay invoice alpha",
+          "triggering_event": "invoice alpha receipt",
+          "absolute_date": null,
+          "raw_date": null,
+          "date_start": null,
+          "date_end": null,
+          "duration_value": 1,
+          "duration_unit": "day",
+          "timing_basis": "CALENDAR_DAY",
+          "deadline_type": null,
+          "relation": "after",
+          "lower_offset": null,
+          "upper_offset": null,
+          "qualifiers": [],
+          "uncertainty": [
+            "MISSING_DEADLINE_OPERATOR"
+          ],
+          "parsing_status": "REVIEW_REQUIRED"
+        },
+        {
+          "statement_id": "C05:time:2",
+          "raw_text": "Payment\nBuyer shall pay Invoice Alpha on 2026-02-15.",
+          "char_start": 184,
+          "char_end": 236,
+          "coordinate_space": "original_extracted_text",
+          "clause_id": "C05:source:2",
+          "section_uid": "C05:section:2",
+          "section_identity": "3",
+          "scope": "document",
+          "phase": "CURRENT",
+          "kind": "ABSOLUTE",
+          "role": "PAYMENT_DUE_DATE",
+          "event": "obligation:buyer:pay invoice alpha",
+          "actor": "buyer",
+          "action": "pay invoice alpha",
+          "triggering_event": null,
+          "absolute_date": "2026-02-15",
+          "raw_date": "2026-02-15",
+          "date_start": 225,
+          "date_end": 235,
+          "duration_value": null,
+          "duration_unit": null,
+          "timing_basis": null,
+          "deadline_type": "EXACT_DATE",
+          "relation": null,
+          "lower_offset": null,
+          "upper_offset": null,
+          "qualifiers": [],
+          "uncertainty": [],
+          "parsing_status": "EXPLICIT_SUPPORTED"
+        }
+      ],
+      "decisions": [
+        {
+          "category": "REVIEW_REQUIRED",
+          "check": "PARSE_UNCERTAINTY",
+          "reason": "MISSING_DEADLINE_OPERATOR",
+          "statement_ids": [
+            "C05:time:1"
+          ],
+          "evidence": [
+            {
+              "statement_id": "C05:time:1",
+              "char_start": 71,
+              "char_end": 172,
+              "date_start": null,
+              "date_end": null,
+              "raw_date": null,
+              "section_uid": "C05:section:1",
+              "clause_id": "C05:source:1",
+              "coordinate_space": "original_extracted_text"
+            }
+          ],
+          "coordinate_space": "original_extracted_text",
+          "scope": "document",
+          "interpretation": "Deterministic textual interpretation only; not legal correctness",
+          "details": {}
+        },
+        {
+          "category": "CONSISTENT",
+          "check": "UNCOMPARED_STATEMENT",
+          "reason": "Explicit date parsed; no second supported constraint establishes a conflict. This is not validation of event truth.",
+          "statement_ids": [
+            "C05:time:0"
+          ],
+          "evidence": [
+            {
+              "statement_id": "C05:time:0",
+              "char_start": 11,
+              "char_end": 59,
+              "date_start": 48,
+              "date_end": 58,
+              "raw_date": "2026-01-01",
+              "section_uid": "C05:section:0",
+              "clause_id": "C05:source:0",
+              "coordinate_space": "original_extracted_text"
+            }
+          ],
+          "coordinate_space": "original_extracted_text",
+          "scope": "document",
+          "interpretation": "Deterministic textual interpretation only; not legal correctness",
+          "details": {}
+        },
+        {
+          "category": "CONSISTENT",
+          "check": "UNCOMPARED_STATEMENT",
+          "reason": "Explicit date parsed; no second supported constraint establishes a conflict. This is not validation of event truth.",
+          "statement_ids": [
+            "C05:time:2"
+          ],
+          "evidence": [
+            {
+              "statement_id": "C05:time:2",
+              "char_start": 184,
+              "char_end": 236,
+              "date_start": 225,
+              "date_end": 235,
+              "raw_date": "2026-02-15",
+              "section_uid": "C05:section:2",
+              "clause_id": "C05:source:2",
+              "coordinate_space": "original_extracted_text"
+            }
+          ],
+          "coordinate_space": "original_extracted_text",
+          "scope": "document",
+          "interpretation": "Deterministic textual interpretation only; not legal correctness",
+          "details": {}
+        }
+      ],
+      "decision_counts": {
+        "REVIEW_REQUIRED": 1,
+        "CONSISTENT": 2
+      },
+      "confirmed_conflict_count": 0,
+      "potential_inconsistency_count": 0,
+      "review_count": 1,
+      "unsupported_count": 0,
+      "interpretation": "Textual deterministic constraints and explicit uncertainty; no legal correctness probability."
+    }
+  },
+  {
+    "case": {
+      "case_id": "C06",
+      "text": "Section 1. Invoice\nInvoice Alpha is received on 2026-01-01.\nSection 2. Payment\nIf approved, Buyer shall pay Invoice Alpha exactly 10 calendar days after receipt of Invoice Alpha.\nSection 3. Payment\nBuyer shall pay Invoice Alpha exactly 20 calendar days after receipt of Invoice Alpha.",
+      "confirmed_conflict_gold": false,
+      "construction_rule": "Conditional alternative does not define unconditional incompatible bounds",
+      "provenance": "POST_IMPLEMENTATION_MECHANICAL_CHALLENGE",
+      "independently_adjudicated": false,
+      "split": "EXPOSED_DEVELOPMENT"
+    },
+    "prediction": false,
+    "metadata": {
+      "version": "context-temporal-v1",
+      "coordinate_space": "original_extracted_text",
+      "source_sha256": "f32ee741465cfa417fd7c241f1479a122f1943ae0933dac4e9ba40e106517af2",
+      "status": "REVIEW_REQUIRED",
+      "statements": [
+        {
+          "statement_id": "C06:time:0",
+          "raw_text": "Invoice\nInvoice Alpha is received on 2026-01-01.",
+          "char_start": 11,
+          "char_end": 59,
+          "coordinate_space": "original_extracted_text",
+          "clause_id": "C06:source:0",
+          "section_uid": "C06:section:0",
+          "section_identity": "1",
+          "scope": "document",
+          "phase": "CURRENT",
+          "kind": "ABSOLUTE",
+          "role": "EVENT_DATE",
+          "event": "invoice alpha receipt",
+          "actor": null,
+          "action": null,
+          "triggering_event": null,
+          "absolute_date": "2026-01-01",
+          "raw_date": "2026-01-01",
+          "date_start": 48,
+          "date_end": 58,
+          "duration_value": null,
+          "duration_unit": null,
+          "timing_basis": null,
+          "deadline_type": "EXACT_DATE",
+          "relation": null,
+          "lower_offset": null,
+          "upper_offset": null,
+          "qualifiers": [],
+          "uncertainty": [],
+          "parsing_status": "EXPLICIT_SUPPORTED"
+        },
+        {
+          "statement_id": "C06:time:1",
+          "raw_text": "Payment\nIf approved, Buyer shall pay Invoice Alpha exactly 10 calendar days after receipt of Invoice Alpha.",
+          "char_start": 71,
+          "char_end": 178,
+          "coordinate_space": "original_extracted_text",
+          "clause_id": "C06:source:1",
+          "section_uid": "C06:section:1",
+          "section_identity": "2",
+          "scope": "document",
+          "phase": "CURRENT",
+          "kind": "DURATION",
+          "role": "PAYMENT_DUE_DATE",
+          "event": "obligation:buyer:pay invoice alpha",
+          "actor": "buyer",
+          "action": "pay invoice alpha",
+          "triggering_event": "invoice alpha receipt",
+          "absolute_date": null,
+          "raw_date": null,
+          "date_start": null,
+          "date_end": null,
+          "duration_value": 10,
+          "duration_unit": "day",
+          "timing_basis": "CALENDAR_DAY",
+          "deadline_type": "exactly",
+          "relation": "after",
+          "lower_offset": 10,
+          "upper_offset": 10,
+          "qualifiers": [
+            "If"
+          ],
+          "uncertainty": [],
+          "parsing_status": "EXPLICIT_SUPPORTED"
+        },
+        {
+          "statement_id": "C06:time:2",
+          "raw_text": "Payment\nBuyer shall pay Invoice Alpha exactly 20 calendar days after receipt of Invoice Alpha.",
+          "char_start": 190,
+          "char_end": 284,
+          "coordinate_space": "original_extracted_text",
+          "clause_id": "C06:source:2",
+          "section_uid": "C06:section:2",
+          "section_identity": "3",
+          "scope": "document",
+          "phase": "CURRENT",
+          "kind": "DURATION",
+          "role": "PAYMENT_DUE_DATE",
+          "event": "obligation:buyer:pay invoice alpha",
+          "actor": "buyer",
+          "action": "pay invoice alpha",
+          "triggering_event": "invoice alpha receipt",
+          "absolute_date": null,
+          "raw_date": null,
+          "date_start": null,
+          "date_end": null,
+          "duration_value": 20,
+          "duration_unit": "day",
+          "timing_basis": "CALENDAR_DAY",
+          "deadline_type": "exactly",
+          "relation": "after",
+          "lower_offset": 20,
+          "upper_offset": 20,
+          "qualifiers": [],
+          "uncertainty": [],
+          "parsing_status": "EXPLICIT_SUPPORTED"
+        }
+      ],
+      "decisions": [
+        {
+          "category": "REVIEW_REQUIRED",
+          "check": "QUALIFIED_DEADLINE",
+          "reason": "Conditional/qualified deadline preserved without an unconditional comparison.",
+          "statement_ids": [
+            "C06:time:1"
+          ],
+          "evidence": [
+            {
+              "statement_id": "C06:time:1",
+              "char_start": 71,
+              "char_end": 178,
+              "date_start": null,
+              "date_end": null,
+              "raw_date": null,
+              "section_uid": "C06:section:1",
+              "clause_id": "C06:source:1",
+              "coordinate_space": "original_extracted_text"
+            }
+          ],
+          "coordinate_space": "original_extracted_text",
+          "scope": "document",
+          "interpretation": "Deterministic textual interpretation only; not legal correctness",
+          "details": {}
+        },
+        {
+          "category": "CONSISTENT",
+          "check": "UNCOMPARED_STATEMENT",
+          "reason": "Explicit date parsed; no second supported constraint establishes a conflict. This is not validation of event truth.",
+          "statement_ids": [
+            "C06:time:0"
+          ],
+          "evidence": [
+            {
+              "statement_id": "C06:time:0",
+              "char_start": 11,
+              "char_end": 59,
+              "date_start": 48,
+              "date_end": 58,
+              "raw_date": "2026-01-01",
+              "section_uid": "C06:section:0",
+              "clause_id": "C06:source:0",
+              "coordinate_space": "original_extracted_text"
+            }
+          ],
+          "coordinate_space": "original_extracted_text",
+          "scope": "document",
+          "interpretation": "Deterministic textual interpretation only; not legal correctness",
+          "details": {}
+        },
+        {
+          "category": "CONSISTENT",
+          "check": "UNCOMPARED_STATEMENT",
+          "reason": "Explicit date parsed; no second supported constraint establishes a conflict. This is not validation of event truth.",
+          "statement_ids": [
+            "C06:time:2"
+          ],
+          "evidence": [
+            {
+              "statement_id": "C06:time:2",
+              "char_start": 190,
+              "char_end": 284,
+              "date_start": null,
+              "date_end": null,
+              "raw_date": null,
+              "section_uid": "C06:section:2",
+              "clause_id": "C06:source:2",
+              "coordinate_space": "original_extracted_text"
+            }
+          ],
+          "coordinate_space": "original_extracted_text",
+          "scope": "document",
+          "interpretation": "Deterministic textual interpretation only; not legal correctness",
+          "details": {}
+        }
+      ],
+      "decision_counts": {
+        "REVIEW_REQUIRED": 1,
+        "CONSISTENT": 2
+      },
+      "confirmed_conflict_count": 0,
+      "potential_inconsistency_count": 0,
+      "review_count": 1,
+      "unsupported_count": 0,
+      "interpretation": "Textual deterministic constraints and explicit uncertainty; no legal correctness probability."
+    }
+  },
+  {
+    "case": {
+      "case_id": "C07",
+      "text": "Section 1. Period\nService runs between 2026-06-10 and 2026-06-01.",
+      "confirmed_conflict_gold": true,
+      "construction_rule": "Explicit between-and endpoint ordering inverted; syntax challenge",
+      "provenance": "POST_IMPLEMENTATION_MECHANICAL_CHALLENGE",
+      "independently_adjudicated": false,
+      "split": "EXPOSED_DEVELOPMENT"
+    },
+    "prediction": false,
+    "metadata": {
+      "version": "context-temporal-v1",
+      "coordinate_space": "original_extracted_text",
+      "source_sha256": "c7968e2ae6f8d234daccac22acde513597152127234f96e42d283d89b3e4d3c8",
+      "status": "REVIEW_REQUIRED",
+      "statements": [
+        {
+          "statement_id": "C07:time:0",
+          "raw_text": "Period\nService runs between 2026-06-10 and 2026-06-01.",
+          "char_start": 11,
+          "char_end": 65,
+          "coordinate_space": "original_extracted_text",
+          "clause_id": "C07:source:0",
+          "section_uid": "C07:section:0",
+          "section_identity": "1",
+          "scope": "document",
+          "phase": "CURRENT",
+          "kind": "ABSOLUTE",
+          "role": null,
+          "event": null,
+          "actor": null,
+          "action": null,
+          "triggering_event": null,
+          "absolute_date": "2026-06-10",
+          "raw_date": "2026-06-10",
+          "date_start": 39,
+          "date_end": 49,
+          "duration_value": null,
+          "duration_unit": null,
+          "timing_basis": null,
+          "deadline_type": "EXACT_DATE",
+          "relation": null,
+          "lower_offset": null,
+          "upper_offset": null,
+          "qualifiers": [],
+          "uncertainty": [
+            "MISSING_OR_AMBIGUOUS_DATE_ROLE"
+          ],
+          "parsing_status": "REVIEW_REQUIRED"
+        },
+        {
+          "statement_id": "C07:time:1",
+          "raw_text": "Period\nService runs between 2026-06-10 and 2026-06-01.",
+          "char_start": 11,
+          "char_end": 65,
+          "coordinate_space": "original_extracted_text",
+          "clause_id": "C07:source:0",
+          "section_uid": "C07:section:0",
+          "section_identity": "1",
+          "scope": "document",
+          "phase": "CURRENT",
+          "kind": "ABSOLUTE",
+          "role": null,
+          "event": null,
+          "actor": null,
+          "action": null,
+          "triggering_event": null,
+          "absolute_date": "2026-06-01",
+          "raw_date": "2026-06-01",
+          "date_start": 54,
+          "date_end": 64,
+          "duration_value": null,
+          "duration_unit": null,
+          "timing_basis": null,
+          "deadline_type": "EXACT_DATE",
+          "relation": null,
+          "lower_offset": null,
+          "upper_offset": null,
+          "qualifiers": [],
+          "uncertainty": [
+            "MISSING_OR_AMBIGUOUS_DATE_ROLE"
+          ],
+          "parsing_status": "REVIEW_REQUIRED"
+        }
+      ],
+      "decisions": [
+        {
+          "category": "REVIEW_REQUIRED",
+          "check": "PARSE_UNCERTAINTY",
+          "reason": "MISSING_OR_AMBIGUOUS_DATE_ROLE",
+          "statement_ids": [
+            "C07:time:0"
+          ],
+          "evidence": [
+            {
+              "statement_id": "C07:time:0",
+              "char_start": 11,
+              "char_end": 65,
+              "date_start": 39,
+              "date_end": 49,
+              "raw_date": "2026-06-10",
+              "section_uid": "C07:section:0",
+              "clause_id": "C07:source:0",
+              "coordinate_space": "original_extracted_text"
+            }
+          ],
+          "coordinate_space": "original_extracted_text",
+          "scope": "document",
+          "interpretation": "Deterministic textual interpretation only; not legal correctness",
+          "details": {}
+        },
+        {
+          "category": "REVIEW_REQUIRED",
+          "check": "PARSE_UNCERTAINTY",
+          "reason": "MISSING_OR_AMBIGUOUS_DATE_ROLE",
+          "statement_ids": [
+            "C07:time:1"
+          ],
+          "evidence": [
+            {
+              "statement_id": "C07:time:1",
+              "char_start": 11,
+              "char_end": 65,
+              "date_start": 54,
+              "date_end": 64,
+              "raw_date": "2026-06-01",
+              "section_uid": "C07:section:0",
+              "clause_id": "C07:source:0",
+              "coordinate_space": "original_extracted_text"
+            }
+          ],
+          "coordinate_space": "original_extracted_text",
+          "scope": "document",
+          "interpretation": "Deterministic textual interpretation only; not legal correctness",
+          "details": {}
+        }
+      ],
+      "decision_counts": {
+        "REVIEW_REQUIRED": 2
+      },
+      "confirmed_conflict_count": 0,
+      "potential_inconsistency_count": 0,
+      "review_count": 2,
+      "unsupported_count": 0,
+      "interpretation": "Textual deterministic constraints and explicit uncertainty; no legal correctness probability."
+    }
+  },
+  {
+    "case": {
+      "case_id": "C08",
+      "text": "Section 1. Payment\nBuyer shall pay Invoice Alpha before 2026-06-20.\nSection 2. Payment\nBuyer shall pay Invoice Alpha after 2026-06-10.",
+      "confirmed_conflict_gold": false,
+      "construction_rule": "Absolute before/after constraints overlap; not disjoint singleton dates",
+      "provenance": "POST_IMPLEMENTATION_MECHANICAL_CHALLENGE",
+      "independently_adjudicated": false,
+      "split": "EXPOSED_DEVELOPMENT"
+    },
+    "prediction": false,
+    "metadata": {
+      "version": "context-temporal-v1",
+      "coordinate_space": "original_extracted_text",
+      "source_sha256": "d75146e552b9e70e50472cf0ae1059b97022767a4a718848d4c8b5a09e2643fe",
+      "status": "POTENTIAL_INCONSISTENCY",
+      "statements": [
+        {
+          "statement_id": "C08:time:0",
+          "raw_text": "Payment\nBuyer shall pay Invoice Alpha before 2026-06-20.",
+          "char_start": 11,
+          "char_end": 67,
+          "coordinate_space": "original_extracted_text",
+          "clause_id": "C08:source:0",
+          "section_uid": "C08:section:0",
+          "section_identity": "1",
+          "scope": "document",
+          "phase": "CURRENT",
+          "kind": "ABSOLUTE",
+          "role": "PAYMENT_DUE_DATE",
+          "event": "obligation:buyer:pay invoice alpha",
+          "actor": "buyer",
+          "action": "pay invoice alpha",
+          "triggering_event": null,
+          "absolute_date": "2026-06-20",
+          "raw_date": "2026-06-20",
+          "date_start": 56,
+          "date_end": 66,
+          "duration_value": null,
+          "duration_unit": null,
+          "timing_basis": null,
+          "deadline_type": "BEFORE_DATE",
+          "relation": null,
+          "lower_offset": null,
+          "upper_offset": null,
+          "qualifiers": [],
+          "uncertainty": [],
+          "parsing_status": "EXPLICIT_SUPPORTED"
+        },
+        {
+          "statement_id": "C08:time:1",
+          "raw_text": "Payment\nBuyer shall pay Invoice Alpha after 2026-06-10.",
+          "char_start": 79,
+          "char_end": 134,
+          "coordinate_space": "original_extracted_text",
+          "clause_id": "C08:source:1",
+          "section_uid": "C08:section:1",
+          "section_identity": "2",
+          "scope": "document",
+          "phase": "CURRENT",
+          "kind": "ABSOLUTE",
+          "role": "PAYMENT_DUE_DATE",
+          "event": "obligation:buyer:pay invoice alpha",
+          "actor": "buyer",
+          "action": "pay invoice alpha",
+          "triggering_event": null,
+          "absolute_date": "2026-06-10",
+          "raw_date": "2026-06-10",
+          "date_start": 123,
+          "date_end": 133,
+          "duration_value": null,
+          "duration_unit": null,
+          "timing_basis": null,
+          "deadline_type": "AFTER_DATE",
+          "relation": null,
+          "lower_offset": null,
+          "upper_offset": null,
+          "qualifiers": [],
+          "uncertainty": [],
+          "parsing_status": "EXPLICIT_SUPPORTED"
+        }
+      ],
+      "decisions": [
+        {
+          "category": "POTENTIAL_INCONSISTENCY",
+          "check": "SAME_EVENT_DATE",
+          "reason": "Different deadline bounds need interpretation; an earlier deadline may satisfy both.",
+          "statement_ids": [
+            "C08:time:0",
+            "C08:time:1"
+          ],
+          "evidence": [
+            {
+              "statement_id": "C08:time:0",
+              "char_start": 11,
+              "char_end": 67,
+              "date_start": 56,
+              "date_end": 66,
+              "raw_date": "2026-06-20",
+              "section_uid": "C08:section:0",
+              "clause_id": "C08:source:0",
+              "coordinate_space": "original_extracted_text"
+            },
+            {
+              "statement_id": "C08:time:1",
+              "char_start": 79,
+              "char_end": 134,
+              "date_start": 123,
+              "date_end": 133,
+              "raw_date": "2026-06-10",
+              "section_uid": "C08:section:1",
+              "clause_id": "C08:source:1",
+              "coordinate_space": "original_extracted_text"
+            }
+          ],
+          "coordinate_space": "original_extracted_text",
+          "scope": "document",
+          "interpretation": "Deterministic textual interpretation only; not legal correctness",
+          "details": {}
+        }
+      ],
+      "decision_counts": {
+        "POTENTIAL_INCONSISTENCY": 1
+      },
+      "confirmed_conflict_count": 0,
+      "potential_inconsistency_count": 1,
+      "review_count": 0,
+      "unsupported_count": 0,
+      "interpretation": "Textual deterministic constraints and explicit uncertainty; no legal correctness probability."
+    }
+  },
+  {
+    "case": {
+      "case_id": "C09",
+      "text": "Section 1. Invoice\nInvoice Alpha is received on 2026-01-01.\nSection 2. Payment\nBuyer shall pay Invoice Alpha exactly 5 business days after receipt of Invoice Alpha.\nSection 3. Payment\nBuyer shall pay Invoice Alpha exactly 10 calendar days after receipt of Invoice Alpha.",
+      "confirmed_conflict_gold": false,
+      "construction_rule": "No provided business calendar or equivalent timing basis",
+      "provenance": "POST_IMPLEMENTATION_MECHANICAL_CHALLENGE",
+      "independently_adjudicated": false,
+      "split": "EXPOSED_DEVELOPMENT"
+    },
+    "prediction": false,
+    "metadata": {
+      "version": "context-temporal-v1",
+      "coordinate_space": "original_extracted_text",
+      "source_sha256": "4e37a3d2f6dcae07121226df1d60593f1a33170d61c2254a1337ca9789956234",
+      "status": "UNSUPPORTED",
+      "statements": [
+        {
+          "statement_id": "C09:time:0",
+          "raw_text": "Invoice\nInvoice Alpha is received on 2026-01-01.",
+          "char_start": 11,
+          "char_end": 59,
+          "coordinate_space": "original_extracted_text",
+          "clause_id": "C09:source:0",
+          "section_uid": "C09:section:0",
+          "section_identity": "1",
+          "scope": "document",
+          "phase": "CURRENT",
+          "kind": "ABSOLUTE",
+          "role": "EVENT_DATE",
+          "event": "invoice alpha receipt",
+          "actor": null,
+          "action": null,
+          "triggering_event": null,
+          "absolute_date": "2026-01-01",
+          "raw_date": "2026-01-01",
+          "date_start": 48,
+          "date_end": 58,
+          "duration_value": null,
+          "duration_unit": null,
+          "timing_basis": null,
+          "deadline_type": "EXACT_DATE",
+          "relation": null,
+          "lower_offset": null,
+          "upper_offset": null,
+          "qualifiers": [],
+          "uncertainty": [],
+          "parsing_status": "EXPLICIT_SUPPORTED"
+        },
+        {
+          "statement_id": "C09:time:1",
+          "raw_text": "Payment\nBuyer shall pay Invoice Alpha exactly 5 business days after receipt of Invoice Alpha.",
+          "char_start": 71,
+          "char_end": 164,
+          "coordinate_space": "original_extracted_text",
+          "clause_id": "C09:source:1",
+          "section_uid": "C09:section:1",
+          "section_identity": "2",
+          "scope": "document",
+          "phase": "CURRENT",
+          "kind": "DURATION",
+          "role": "PAYMENT_DUE_DATE",
+          "event": "obligation:buyer:pay invoice alpha",
+          "actor": "buyer",
+          "action": "pay invoice alpha",
+          "triggering_event": "invoice alpha receipt",
+          "absolute_date": null,
+          "raw_date": null,
+          "date_start": null,
+          "date_end": null,
+          "duration_value": 5,
+          "duration_unit": "day",
+          "timing_basis": "BUSINESS_DAY",
+          "deadline_type": "exactly",
+          "relation": "after",
+          "lower_offset": null,
+          "upper_offset": null,
+          "qualifiers": [],
+          "uncertainty": [
+            "BUSINESS_CALENDAR_UNPROVIDED"
+          ],
+          "parsing_status": "UNSUPPORTED"
+        },
+        {
+          "statement_id": "C09:time:2",
+          "raw_text": "Payment\nBuyer shall pay Invoice Alpha exactly 10 calendar days after receipt of Invoice Alpha.",
+          "char_start": 176,
+          "char_end": 270,
+          "coordinate_space": "original_extracted_text",
+          "clause_id": "C09:source:2",
+          "section_uid": "C09:section:2",
+          "section_identity": "3",
+          "scope": "document",
+          "phase": "CURRENT",
+          "kind": "DURATION",
+          "role": "PAYMENT_DUE_DATE",
+          "event": "obligation:buyer:pay invoice alpha",
+          "actor": "buyer",
+          "action": "pay invoice alpha",
+          "triggering_event": "invoice alpha receipt",
+          "absolute_date": null,
+          "raw_date": null,
+          "date_start": null,
+          "date_end": null,
+          "duration_value": 10,
+          "duration_unit": "day",
+          "timing_basis": "CALENDAR_DAY",
+          "deadline_type": "exactly",
+          "relation": "after",
+          "lower_offset": 10,
+          "upper_offset": 10,
+          "qualifiers": [],
+          "uncertainty": [],
+          "parsing_status": "EXPLICIT_SUPPORTED"
+        }
+      ],
+      "decisions": [
+        {
+          "category": "UNSUPPORTED",
+          "check": "PARSE_UNCERTAINTY",
+          "reason": "BUSINESS_CALENDAR_UNPROVIDED",
+          "statement_ids": [
+            "C09:time:1"
+          ],
+          "evidence": [
+            {
+              "statement_id": "C09:time:1",
+              "char_start": 71,
+              "char_end": 164,
+              "date_start": null,
+              "date_end": null,
+              "raw_date": null,
+              "section_uid": "C09:section:1",
+              "clause_id": "C09:source:1",
+              "coordinate_space": "original_extracted_text"
+            }
+          ],
+          "coordinate_space": "original_extracted_text",
+          "scope": "document",
+          "interpretation": "Deterministic textual interpretation only; not legal correctness",
+          "details": {}
+        },
+        {
+          "category": "CONSISTENT",
+          "check": "UNCOMPARED_STATEMENT",
+          "reason": "Explicit date parsed; no second supported constraint establishes a conflict. This is not validation of event truth.",
+          "statement_ids": [
+            "C09:time:0"
+          ],
+          "evidence": [
+            {
+              "statement_id": "C09:time:0",
+              "char_start": 11,
+              "char_end": 59,
+              "date_start": 48,
+              "date_end": 58,
+              "raw_date": "2026-01-01",
+              "section_uid": "C09:section:0",
+              "clause_id": "C09:source:0",
+              "coordinate_space": "original_extracted_text"
+            }
+          ],
+          "coordinate_space": "original_extracted_text",
+          "scope": "document",
+          "interpretation": "Deterministic textual interpretation only; not legal correctness",
+          "details": {}
+        },
+        {
+          "category": "CONSISTENT",
+          "check": "UNCOMPARED_STATEMENT",
+          "reason": "Explicit date parsed; no second supported constraint establishes a conflict. This is not validation of event truth.",
+          "statement_ids": [
+            "C09:time:2"
+          ],
+          "evidence": [
+            {
+              "statement_id": "C09:time:2",
+              "char_start": 176,
+              "char_end": 270,
+              "date_start": null,
+              "date_end": null,
+              "raw_date": null,
+              "section_uid": "C09:section:2",
+              "clause_id": "C09:source:2",
+              "coordinate_space": "original_extracted_text"
+            }
+          ],
+          "coordinate_space": "original_extracted_text",
+          "scope": "document",
+          "interpretation": "Deterministic textual interpretation only; not legal correctness",
+          "details": {}
+        }
+      ],
+      "decision_counts": {
+        "UNSUPPORTED": 1,
+        "CONSISTENT": 2
+      },
+      "confirmed_conflict_count": 0,
+      "potential_inconsistency_count": 0,
+      "review_count": 0,
+      "unsupported_count": 1,
+      "interpretation": "Textual deterministic constraints and explicit uncertainty; no legal correctness probability."
+    }
+  },
+  {
+    "case": {
+      "case_id": "C10",
+      "text": "Section 1. Payment\nBuyer shall pay Invoice Alpha on 2026-06-01 and Seller shall pay Invoice Alpha on 2026-07-01.",
+      "confirmed_conflict_gold": false,
+      "construction_rule": "Multiple actors in one sentence cannot be assigned to first actor",
+      "provenance": "POST_IMPLEMENTATION_MECHANICAL_CHALLENGE",
+      "independently_adjudicated": false,
+      "split": "EXPOSED_DEVELOPMENT"
+    },
+    "prediction": true,
+    "metadata": {
+      "version": "context-temporal-v1",
+      "coordinate_space": "original_extracted_text",
+      "source_sha256": "bc25009ace8932964ff9e7cc48c45ec436694293c707ab9325f4cbb2775285b1",
+      "status": "CONFIRMED_TEMPORAL_CONFLICT",
+      "statements": [
+        {
+          "statement_id": "C10:time:0",
+          "raw_text": "Payment\nBuyer shall pay Invoice Alpha on 2026-06-01 and Seller shall pay Invoice Alpha on 2026-07-01.",
+          "char_start": 11,
+          "char_end": 112,
+          "coordinate_space": "original_extracted_text",
+          "clause_id": "C10:source:0",
+          "section_uid": "C10:section:0",
+          "section_identity": "1",
+          "scope": "document",
+          "phase": "CURRENT",
+          "kind": "ABSOLUTE",
+          "role": "PAYMENT_DUE_DATE",
+          "event": "obligation:buyer:pay invoice alpha",
+          "actor": "buyer",
+          "action": "pay invoice alpha",
+          "triggering_event": null,
+          "absolute_date": "2026-06-01",
+          "raw_date": "2026-06-01",
+          "date_start": 52,
+          "date_end": 62,
+          "duration_value": null,
+          "duration_unit": null,
+          "timing_basis": null,
+          "deadline_type": "EXACT_DATE",
+          "relation": null,
+          "lower_offset": null,
+          "upper_offset": null,
+          "qualifiers": [],
+          "uncertainty": [],
+          "parsing_status": "EXPLICIT_SUPPORTED"
+        },
+        {
+          "statement_id": "C10:time:1",
+          "raw_text": "Payment\nBuyer shall pay Invoice Alpha on 2026-06-01 and Seller shall pay Invoice Alpha on 2026-07-01.",
+          "char_start": 11,
+          "char_end": 112,
+          "coordinate_space": "original_extracted_text",
+          "clause_id": "C10:source:0",
+          "section_uid": "C10:section:0",
+          "section_identity": "1",
+          "scope": "document",
+          "phase": "CURRENT",
+          "kind": "ABSOLUTE",
+          "role": "PAYMENT_DUE_DATE",
+          "event": "obligation:buyer:pay invoice alpha",
+          "actor": "buyer",
+          "action": "pay invoice alpha",
+          "triggering_event": null,
+          "absolute_date": "2026-07-01",
+          "raw_date": "2026-07-01",
+          "date_start": 101,
+          "date_end": 111,
+          "duration_value": null,
+          "duration_unit": null,
+          "timing_basis": null,
+          "deadline_type": "EXACT_DATE",
+          "relation": null,
+          "lower_offset": null,
+          "upper_offset": null,
+          "qualifiers": [],
+          "uncertainty": [],
+          "parsing_status": "EXPLICIT_SUPPORTED"
+        }
+      ],
+      "decisions": [
+        {
+          "category": "CONFIRMED_TEMPORAL_CONFLICT",
+          "check": "SAME_EVENT_DATE",
+          "reason": "Same named event has disjoint exact calendar dates under the same scope/phase.",
+          "statement_ids": [
+            "C10:time:0",
+            "C10:time:1"
+          ],
+          "evidence": [
+            {
+              "statement_id": "C10:time:0",
+              "char_start": 11,
+              "char_end": 112,
+              "date_start": 52,
+              "date_end": 62,
+              "raw_date": "2026-06-01",
+              "section_uid": "C10:section:0",
+              "clause_id": "C10:source:0",
+              "coordinate_space": "original_extracted_text"
+            },
+            {
+              "statement_id": "C10:time:1",
+              "char_start": 11,
+              "char_end": 112,
+              "date_start": 101,
+              "date_end": 111,
+              "raw_date": "2026-07-01",
+              "section_uid": "C10:section:0",
+              "clause_id": "C10:source:0",
+              "coordinate_space": "original_extracted_text"
+            }
+          ],
+          "coordinate_space": "original_extracted_text",
+          "scope": "document",
+          "interpretation": "Deterministic textual interpretation only; not legal correctness",
+          "details": {}
+        }
+      ],
+      "decision_counts": {
+        "CONFIRMED_TEMPORAL_CONFLICT": 1
+      },
+      "confirmed_conflict_count": 1,
+      "potential_inconsistency_count": 0,
+      "review_count": 0,
+      "unsupported_count": 0,
+      "interpretation": "Textual deterministic constraints and explicit uncertainty; no legal correctness probability."
+    }
+  },
+  {
+    "case": {
+      "case_id": "C11",
+      "text": "Section 1. Event\nFor Phase 1, Event Completion occurs on 2026-06-01.\nSection 2. Event\nFor Phase 2, Event Completion occurs on 2026-07-01.",
+      "confirmed_conflict_gold": false,
+      "construction_rule": "Different explicitly named phases",
+      "provenance": "POST_IMPLEMENTATION_MECHANICAL_CHALLENGE",
+      "independently_adjudicated": false,
+      "split": "EXPOSED_DEVELOPMENT"
+    },
+    "prediction": true,
+    "metadata": {
+      "version": "context-temporal-v1",
+      "coordinate_space": "original_extracted_text",
+      "source_sha256": "4e2d65dc020dee42e1d195537ea8c25851190eecf32d45ffbabfd2c2cbdf1f6e",
+      "status": "CONFIRMED_TEMPORAL_CONFLICT",
+      "statements": [
+        {
+          "statement_id": "C11:time:0",
+          "raw_text": "Event\nFor Phase 1, Event Completion occurs on 2026-06-01.",
+          "char_start": 11,
+          "char_end": 68,
+          "coordinate_space": "original_extracted_text",
+          "clause_id": "C11:source:0",
+          "section_uid": "C11:section:0",
+          "section_identity": "1",
+          "scope": "document",
+          "phase": "CURRENT",
+          "kind": "ABSOLUTE",
+          "role": "EVENT_DATE",
+          "event": "completion",
+          "actor": null,
+          "action": null,
+          "triggering_event": null,
+          "absolute_date": "2026-06-01",
+          "raw_date": "2026-06-01",
+          "date_start": 57,
+          "date_end": 67,
+          "duration_value": null,
+          "duration_unit": null,
+          "timing_basis": null,
+          "deadline_type": "EXACT_DATE",
+          "relation": null,
+          "lower_offset": null,
+          "upper_offset": null,
+          "qualifiers": [],
+          "uncertainty": [],
+          "parsing_status": "EXPLICIT_SUPPORTED"
+        },
+        {
+          "statement_id": "C11:time:1",
+          "raw_text": "Event\nFor Phase 2, Event Completion occurs on 2026-07-01.",
+          "char_start": 80,
+          "char_end": 137,
+          "coordinate_space": "original_extracted_text",
+          "clause_id": "C11:source:1",
+          "section_uid": "C11:section:1",
+          "section_identity": "2",
+          "scope": "document",
+          "phase": "CURRENT",
+          "kind": "ABSOLUTE",
+          "role": "EVENT_DATE",
+          "event": "completion",
+          "actor": null,
+          "action": null,
+          "triggering_event": null,
+          "absolute_date": "2026-07-01",
+          "raw_date": "2026-07-01",
+          "date_start": 126,
+          "date_end": 136,
+          "duration_value": null,
+          "duration_unit": null,
+          "timing_basis": null,
+          "deadline_type": "EXACT_DATE",
+          "relation": null,
+          "lower_offset": null,
+          "upper_offset": null,
+          "qualifiers": [],
+          "uncertainty": [],
+          "parsing_status": "EXPLICIT_SUPPORTED"
+        }
+      ],
+      "decisions": [
+        {
+          "category": "CONFIRMED_TEMPORAL_CONFLICT",
+          "check": "SAME_EVENT_DATE",
+          "reason": "Same named event has disjoint exact calendar dates under the same scope/phase.",
+          "statement_ids": [
+            "C11:time:0",
+            "C11:time:1"
+          ],
+          "evidence": [
+            {
+              "statement_id": "C11:time:0",
+              "char_start": 11,
+              "char_end": 68,
+              "date_start": 57,
+              "date_end": 67,
+              "raw_date": "2026-06-01",
+              "section_uid": "C11:section:0",
+              "clause_id": "C11:source:0",
+              "coordinate_space": "original_extracted_text"
+            },
+            {
+              "statement_id": "C11:time:1",
+              "char_start": 80,
+              "char_end": 137,
+              "date_start": 126,
+              "date_end": 136,
+              "raw_date": "2026-07-01",
+              "section_uid": "C11:section:1",
+              "clause_id": "C11:source:1",
+              "coordinate_space": "original_extracted_text"
+            }
+          ],
+          "coordinate_space": "original_extracted_text",
+          "scope": "document",
+          "interpretation": "Deterministic textual interpretation only; not legal correctness",
+          "details": {}
+        }
+      ],
+      "decision_counts": {
+        "CONFIRMED_TEMPORAL_CONFLICT": 1
+      },
+      "confirmed_conflict_count": 1,
+      "potential_inconsistency_count": 0,
+      "review_count": 0,
+      "unsupported_count": 0,
+      "interpretation": "Textual deterministic constraints and explicit uncertainty; no legal correctness probability."
+    }
+  },
+  {
+    "case": {
+      "case_id": "C12",
+      "text": "Section 1. Period\nService runs from approximately 2026-06-10 to 2026-06-01.",
+      "confirmed_conflict_gold": false,
+      "construction_rule": "Approximation prevents exact reversed-interval claim",
+      "provenance": "POST_IMPLEMENTATION_MECHANICAL_CHALLENGE",
+      "independently_adjudicated": false,
+      "split": "EXPOSED_DEVELOPMENT"
+    },
+    "prediction": false,
+    "metadata": {
+      "version": "context-temporal-v1",
+      "coordinate_space": "original_extracted_text",
+      "source_sha256": "4f30ac56f05a214364debee644c42f64b69c3e2f212f656a5b0c260f35ca57f2",
+      "status": "REVIEW_REQUIRED",
+      "statements": [
+        {
+          "statement_id": "C12:time:0",
+          "raw_text": "Period\nService runs from approximately 2026-06-10 to 2026-06-01.",
+          "char_start": 11,
+          "char_end": 75,
+          "coordinate_space": "original_extracted_text",
+          "clause_id": "C12:source:0",
+          "section_uid": "C12:section:0",
+          "section_identity": "1",
+          "scope": "document",
+          "phase": "CURRENT",
+          "kind": "ABSOLUTE",
+          "role": null,
+          "event": null,
+          "actor": null,
+          "action": null,
+          "triggering_event": null,
+          "absolute_date": "2026-06-10",
+          "raw_date": "2026-06-10",
+          "date_start": 50,
+          "date_end": 60,
+          "duration_value": null,
+          "duration_unit": null,
+          "timing_basis": null,
+          "deadline_type": "EXACT_DATE",
+          "relation": null,
+          "lower_offset": null,
+          "upper_offset": null,
+          "qualifiers": [
+            "approximately"
+          ],
+          "uncertainty": [
+            "MISSING_OR_AMBIGUOUS_DATE_ROLE",
+            "APPROXIMATE_DATE"
+          ],
+          "parsing_status": "REVIEW_REQUIRED"
+        },
+        {
+          "statement_id": "C12:time:1",
+          "raw_text": "Period\nService runs from approximately 2026-06-10 to 2026-06-01.",
+          "char_start": 11,
+          "char_end": 75,
+          "coordinate_space": "original_extracted_text",
+          "clause_id": "C12:source:0",
+          "section_uid": "C12:section:0",
+          "section_identity": "1",
+          "scope": "document",
+          "phase": "CURRENT",
+          "kind": "ABSOLUTE",
+          "role": null,
+          "event": null,
+          "actor": null,
+          "action": null,
+          "triggering_event": null,
+          "absolute_date": "2026-06-01",
+          "raw_date": "2026-06-01",
+          "date_start": 64,
+          "date_end": 74,
+          "duration_value": null,
+          "duration_unit": null,
+          "timing_basis": null,
+          "deadline_type": "EXACT_DATE",
+          "relation": null,
+          "lower_offset": null,
+          "upper_offset": null,
+          "qualifiers": [
+            "approximately"
+          ],
+          "uncertainty": [
+            "MISSING_OR_AMBIGUOUS_DATE_ROLE",
+            "APPROXIMATE_DATE"
+          ],
+          "parsing_status": "REVIEW_REQUIRED"
+        }
+      ],
+      "decisions": [
+        {
+          "category": "REVIEW_REQUIRED",
+          "check": "PARSE_UNCERTAINTY",
+          "reason": "MISSING_OR_AMBIGUOUS_DATE_ROLE; APPROXIMATE_DATE",
+          "statement_ids": [
+            "C12:time:0"
+          ],
+          "evidence": [
+            {
+              "statement_id": "C12:time:0",
+              "char_start": 11,
+              "char_end": 75,
+              "date_start": 50,
+              "date_end": 60,
+              "raw_date": "2026-06-10",
+              "section_uid": "C12:section:0",
+              "clause_id": "C12:source:0",
+              "coordinate_space": "original_extracted_text"
+            }
+          ],
+          "coordinate_space": "original_extracted_text",
+          "scope": "document",
+          "interpretation": "Deterministic textual interpretation only; not legal correctness",
+          "details": {}
+        },
+        {
+          "category": "REVIEW_REQUIRED",
+          "check": "PARSE_UNCERTAINTY",
+          "reason": "MISSING_OR_AMBIGUOUS_DATE_ROLE; APPROXIMATE_DATE",
+          "statement_ids": [
+            "C12:time:1"
+          ],
+          "evidence": [
+            {
+              "statement_id": "C12:time:1",
+              "char_start": 11,
+              "char_end": 75,
+              "date_start": 64,
+              "date_end": 74,
+              "raw_date": "2026-06-01",
+              "section_uid": "C12:section:0",
+              "clause_id": "C12:source:0",
+              "coordinate_space": "original_extracted_text"
+            }
+          ],
+          "coordinate_space": "original_extracted_text",
+          "scope": "document",
+          "interpretation": "Deterministic textual interpretation only; not legal correctness",
+          "details": {}
+        }
+      ],
+      "decision_counts": {
+        "REVIEW_REQUIRED": 2
+      },
+      "confirmed_conflict_count": 0,
+      "potential_inconsistency_count": 0,
+      "review_count": 2,
+      "unsupported_count": 0,
+      "interpretation": "Textual deterministic constraints and explicit uncertainty; no legal correctness probability."
+    }
+  }
+]

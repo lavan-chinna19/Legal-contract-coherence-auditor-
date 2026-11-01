@@ -1,0 +1,3 @@
+scenario_id,baseline_anomalies,perturbed_anomalies,delta_anomalies,rule_violations,false_positive_status
+SCEN_P9_01_CLEAN_CONTROL_MSA,0,0,0,0,CLEAN_ZERO_FALSE_POSITIVES
+SCEN_P9_02_CLEAN_CONTROL_SLA,0,0,0,0,CLEAN_ZERO_FALSE_POSITIVES

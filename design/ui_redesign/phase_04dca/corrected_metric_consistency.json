@@ -1,0 +1,450 @@
+{
+  "benchmark_provenance": "Phase 4D-C Independent Contract Benchmark Audit (Phase 4D-C-A)",
+  "timestamp_audit_utc": "2026-10-23T10:30:00Z",
+  "evaluation_scope": "Held-Out Test Partition (SEC EDGAR Exhibit 10)",
+  "sec_edgar_source_inventory": {
+    "total_manifest_entries": 50,
+    "unique_accession_numbers": 19,
+    "unique_ciks": 19,
+    "downloaded_exhibit_text_files": 50,
+    "eligible_parent_contracts": 32,
+    "excluded_exhibits_size_bounds": 18,
+    "corporate_entity_families": 15,
+    "manifest_json_top_level_keys": 10,
+    "audit_note": "The top-level dictionary in data/raw/sec_edgar/edgar_manifest.json contains 10 metadata keys (generated_at, strategy, efts_note, target_count, candidates_checked, skipped_no_ex10, manifest_count, fetched_count, failed_count, entries). Earlier drafts mistakenly confused these 10 dictionary keys with filing counts. The manifest['entries'] array contains exactly 50 contract exhibit records across 19 unique accession numbers and 19 unique CIKs, corresponding to 50 downloaded text files. Filtering for length bounds (10 to 125 clauses) yields exactly 32 eligible independent parent agreements across 15 entity families."
+  },
+  "backend_regression_baseline_reconciliation": {
+    "phase_04db_full_suite": {
+      "total_collected": 185,
+      "passed": 183,
+      "skipped": 2,
+      "failed": 0,
+      "duration_seconds": 162.24,
+      "evidence_source": "design/ui_redesign/phase_04db/backend_regression_results.json"
+    },
+    "phase_04dc_full_suite": {
+      "total_collected": 195,
+      "passed": 193,
+      "skipped": 2,
+      "failed": 0,
+      "warnings": 4,
+      "duration_seconds": 188.14,
+      "log_source": "design/ui_redesign/phase_04dc/backend_test_evidence.log",
+      "results_json": "design/ui_redesign/phase_04dc/backend_regression_results.json",
+      "reconciliation_explanation": "Phase 4D-C added 10 new independent benchmark unit tests (tests/test_independent_benchmark.py) to the 185 tests collected in Phase 4D-B, bringing the total collected from 185 to 195 and the passed count from 183 to 193. The historical reference of 183 in some Phase 4D-C preservation documents was an unupdated Phase 4D-B baseline reference."
+    },
+    "phase_04dca_focused_audit_suite": {
+      "test_modules": [
+        "tests/test_independent_benchmark.py",
+        "tests/test_phase_04dca_audit.py"
+      ],
+      "status": "PASS",
+      "verdict": "FOCUSED_AUDIT_SUITE_100_PERCENT_PASSED"
+    }
+  },
+  "authoritative_parent_count": {
+    "development": 18,
+    "validation": 9,
+    "sealed_test": 5,
+    "total_independent_parents": 32
+  },
+  "authoritative_family_count": {
+    "development": 9,
+    "validation": 3,
+    "sealed_test": 3,
+    "total_independent_families": 15
+  },
+  "authoritative_case_count": {
+    "development": {
+      "total": 106,
+      "eligible": 88,
+      "excluded_ambiguous": 18
+    },
+    "validation": {
+      "total": 45,
+      "eligible": 36,
+      "excluded_ambiguous": 9
+    },
+    "sealed_test": {
+      "total": 23,
+      "eligible": 18,
+      "excluded_ambiguous": 5
+    },
+    "total_all_partitions": {
+      "total": 174,
+      "eligible": 142,
+      "excluded_ambiguous": 32
+    }
+  },
+  "raw_stored_predictions_direct_reconstruction": {
+    "status": "RECONSTRUCTED_DIRECTLY_FROM_CSV",
+    "source_file": "research/independent_contract_benchmark_phase_04dc/case_level_predictions.csv",
+    "eligible_test_cases": 18,
+    "positives": 2,
+    "negatives": 16,
+    "models": {
+      "Baseline_B0_FrozenChannelB": {
+        "tp": 2,
+        "fp": 16,
+        "fn": 0,
+        "tn": 0,
+        "precision": 0.1111,
+        "recall": 1.0,
+        "specificity": 0.0,
+        "f1": 0.2,
+        "balanced_accuracy": 0.5,
+        "recall_ci_95": [0.3424, 1.0],
+        "specificity_ci_95": [0.0, 0.1936]
+      },
+      "Baseline_B1_ProductionDualChannel": {
+        "tp": 2,
+        "fp": 16,
+        "fn": 0,
+        "tn": 0,
+        "precision": 0.1111,
+        "recall": 1.0,
+        "specificity": 0.0,
+        "f1": 0.2,
+        "balanced_accuracy": 0.5,
+        "recall_ci_95": [0.3424, 1.0],
+        "specificity_ci_95": [0.0, 0.1936]
+      },
+      "Baseline_B2_AdjacentCosine": {
+        "tp": 2,
+        "fp": 10,
+        "fn": 0,
+        "tn": 6,
+        "precision": 0.1667,
+        "recall": 1.0,
+        "specificity": 0.375,
+        "f1": 0.2857,
+        "balanced_accuracy": 0.6875,
+        "recall_ci_95": [0.3424, 1.0],
+        "specificity_ci_95": [0.1848, 0.6136]
+      },
+      "Candidate_C1_ContextualBoundary": {
+        "tp": 2,
+        "fp": 16,
+        "fn": 0,
+        "tn": 0,
+        "precision": 0.1111,
+        "recall": 1.0,
+        "specificity": 0.0,
+        "f1": 0.2,
+        "balanced_accuracy": 0.5,
+        "recall_ci_95": [0.3424, 1.0],
+        "specificity_ci_95": [0.0, 0.1936]
+      },
+      "Candidate_C2_SequenceBiLSTM_RawThresholded": {
+        "tp": 2,
+        "fp": 16,
+        "fn": 0,
+        "tn": 0,
+        "precision": 0.1111,
+        "recall": 1.0,
+        "specificity": 0.0,
+        "f1": 0.2,
+        "balanced_accuracy": 0.5,
+        "recall_ci_95": [0.3424, 1.0],
+        "specificity_ci_95": [0.0, 0.1936],
+        "derivation_explanation": "In case_level_predictions.csv rows 72-89, Candidate C2 evaluated with uncalibrated sigmoid output clustering between 0.5228 and 0.5233. Because the decision threshold was set to 0.50, all 18 cases satisfied score >= 0.50, producing predicted_anomaly=True for all cases."
+      },
+      "Candidate_C3_TopologicalDependency": {
+        "tp": 2,
+        "fp": 11,
+        "fn": 0,
+        "tn": 5,
+        "precision": 0.1538,
+        "recall": 1.0,
+        "specificity": 0.3125,
+        "f1": 0.2667,
+        "balanced_accuracy": 0.6562,
+        "recall_ci_95": [0.3424, 1.0],
+        "specificity_ci_95": [0.1416, 0.556]
+      }
+    }
+  },
+  "canonical_historical_reported_metrics": {
+    "status": "PHASE_04DC_REPORTED_BASELINE",
+    "source_file": "design/ui_redesign/phase_04dc/metric_consistency_results.json",
+    "description": "Authoritative historical metrics as published in Phase 4D-C metric_consistency_results.json and candidate_comparison_report.md, where Candidate C2 was classified as complete underfitting.",
+    "eligible_test_cases": 18,
+    "positives": 2,
+    "negatives": 16,
+    "models": {
+      "Baseline_B0_FrozenChannelB": {
+        "tp": 2,
+        "fp": 16,
+        "fn": 0,
+        "tn": 0,
+        "precision": 0.1111,
+        "recall": 1.0,
+        "specificity": 0.0,
+        "f1": 0.2,
+        "balanced_accuracy": 0.5,
+        "recall_ci_95": [0.3424, 1.0],
+        "specificity_ci_95": [0.0, 0.1936]
+      },
+      "Baseline_B1_ProductionDualChannel": {
+        "tp": 2,
+        "fp": 16,
+        "fn": 0,
+        "tn": 0,
+        "precision": 0.1111,
+        "recall": 1.0,
+        "specificity": 0.0,
+        "f1": 0.2,
+        "balanced_accuracy": 0.5,
+        "recall_ci_95": [0.3424, 1.0],
+        "specificity_ci_95": [0.0, 0.1936]
+      },
+      "Baseline_B2_AdjacentCosine": {
+        "tp": 2,
+        "fp": 10,
+        "fn": 0,
+        "tn": 6,
+        "precision": 0.1667,
+        "recall": 1.0,
+        "specificity": 0.375,
+        "f1": 0.2857,
+        "balanced_accuracy": 0.6875,
+        "recall_ci_95": [0.3424, 1.0],
+        "specificity_ci_95": [0.1848, 0.6136]
+      },
+      "Candidate_C1_ContextualBoundary": {
+        "tp": 2,
+        "fp": 16,
+        "fn": 0,
+        "tn": 0,
+        "precision": 0.1111,
+        "recall": 1.0,
+        "specificity": 0.0,
+        "f1": 0.2,
+        "balanced_accuracy": 0.5,
+        "recall_ci_95": [0.3424, 1.0],
+        "specificity_ci_95": [0.0, 0.1936]
+      },
+      "Candidate_C2_SequenceBiLSTM_ReportedUnderfitting": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 2,
+        "tn": 16,
+        "precision": "NOT_ESTIMABLE",
+        "recall": 0.0,
+        "specificity": 1.0,
+        "f1": "NOT_ESTIMABLE",
+        "balanced_accuracy": 0.5,
+        "recall_ci_95": [0.0, 0.6576],
+        "specificity_ci_95": [0.8064, 1.0],
+        "reporting_note": "Reported in Phase 4D-C metric_consistency_results.json and candidate_comparison_report.md as 0% recall (complete underfitting). With TP=0 and FP=0, precision and F1 are mathematically undefined (0/0) and reported under explicit convention as NOT_ESTIMABLE."
+      },
+      "Candidate_C3_TopologicalDependency": {
+        "tp": 2,
+        "fp": 11,
+        "fn": 0,
+        "tn": 5,
+        "precision": 0.1538,
+        "recall": 1.0,
+        "specificity": 0.3125,
+        "f1": 0.2667,
+        "balanced_accuracy": 0.6562,
+        "recall_ci_95": [0.3424, 1.0],
+        "specificity_ci_95": [0.1416, 0.556]
+      }
+    }
+  },
+  "posthoc_sensitivity_analysis_views": {
+    "view_1_exclude_invalid_p1": {
+      "description": "Excludes P1 (intra-clause antecedent inversion); preserves 1 positive (P2) and 16 negatives (17 eligible cases)",
+      "eligible_cases": 17,
+      "positives": 1,
+      "negatives": 16,
+      "models": {
+        "Baseline_B0_FrozenChannelB": {
+          "tp": 1,
+          "fp": 16,
+          "fn": 0,
+          "tn": 0,
+          "precision": 0.0588,
+          "recall": 1.0,
+          "specificity": 0.0,
+          "f1": 0.1111,
+          "balanced_accuracy": 0.5,
+          "recall_ci_95": [0.2065, 1.0],
+          "specificity_ci_95": [0.0, 0.1936]
+        },
+        "Baseline_B1_ProductionDualChannel": {
+          "tp": 1,
+          "fp": 16,
+          "fn": 0,
+          "tn": 0,
+          "precision": 0.0588,
+          "recall": 1.0,
+          "specificity": 0.0,
+          "f1": 0.1111,
+          "balanced_accuracy": 0.5,
+          "recall_ci_95": [0.2065, 1.0],
+          "specificity_ci_95": [0.0, 0.1936]
+        },
+        "Baseline_B2_AdjacentCosine": {
+          "tp": 1,
+          "fp": 10,
+          "fn": 0,
+          "tn": 6,
+          "precision": 0.0909,
+          "recall": 1.0,
+          "specificity": 0.375,
+          "f1": 0.1667,
+          "balanced_accuracy": 0.6875,
+          "recall_ci_95": [0.2065, 1.0],
+          "specificity_ci_95": [0.1848, 0.6136]
+        },
+        "Candidate_C1_ContextualBoundary": {
+          "tp": 1,
+          "fp": 16,
+          "fn": 0,
+          "tn": 0,
+          "precision": 0.0588,
+          "recall": 1.0,
+          "specificity": 0.0,
+          "f1": 0.1111,
+          "balanced_accuracy": 0.5,
+          "recall_ci_95": [0.2065, 1.0],
+          "specificity_ci_95": [0.0, 0.1936]
+        },
+        "Candidate_C2_SequenceBiLSTM_RawThresholded": {
+          "tp": 1,
+          "fp": 16,
+          "fn": 0,
+          "tn": 0,
+          "precision": 0.0588,
+          "recall": 1.0,
+          "specificity": 0.0,
+          "f1": 0.1111,
+          "balanced_accuracy": 0.5,
+          "recall_ci_95": [0.2065, 1.0],
+          "specificity_ci_95": [0.0, 0.1936]
+        },
+        "Candidate_C2_SequenceBiLSTM_ReportedUnderfitting": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 1,
+          "tn": 16,
+          "precision": "NOT_ESTIMABLE",
+          "recall": 0.0,
+          "specificity": 1.0,
+          "f1": "NOT_ESTIMABLE",
+          "balanced_accuracy": 0.5,
+          "recall_ci_95": [0.0, 0.7935],
+          "specificity_ci_95": [0.8064, 1.0]
+        },
+        "Candidate_C3_TopologicalDependency": {
+          "tp": 1,
+          "fp": 11,
+          "fn": 0,
+          "tn": 5,
+          "precision": 0.0833,
+          "recall": 1.0,
+          "specificity": 0.3125,
+          "f1": 0.1538,
+          "balanced_accuracy": 0.6562,
+          "recall_ci_95": [0.2065, 1.0],
+          "specificity_ci_95": [0.1416, 0.556]
+        }
+      }
+    },
+    "view_2_exclude_both_unsupported_positives": {
+      "description": "Excludes both P1 and P2 due to intra-clause antecedent containment; leaves 0 verified positives and 16 negatives (16 eligible cases). With 0 verified positives, strict positive recall, precision, F1, and balanced accuracy are NOT_ESTIMABLE.",
+      "eligible_cases": 16,
+      "positives": 0,
+      "negatives": 16,
+      "negative_adjudication_qualification": "Negative controls (N1-N4) have not been independently adjudicated by qualified legal counsel (marked NO_EXPERT_ADJUDICATION); specificity and false-positive conclusions must be qualified accordingly.",
+      "models": {
+        "Baseline_B0_FrozenChannelB": {
+          "tp": 0,
+          "fp": 16,
+          "fn": 0,
+          "tn": 0,
+          "precision": "NOT_ESTIMABLE",
+          "recall": "NOT_ESTIMABLE",
+          "specificity": 0.0,
+          "f1": "NOT_ESTIMABLE",
+          "balanced_accuracy": "NOT_ESTIMABLE",
+          "specificity_ci_95": [0.0, 0.1936]
+        },
+        "Baseline_B1_ProductionDualChannel": {
+          "tp": 0,
+          "fp": 16,
+          "fn": 0,
+          "tn": 0,
+          "precision": "NOT_ESTIMABLE",
+          "recall": "NOT_ESTIMABLE",
+          "specificity": 0.0,
+          "f1": "NOT_ESTIMABLE",
+          "balanced_accuracy": "NOT_ESTIMABLE",
+          "specificity_ci_95": [0.0, 0.1936]
+        },
+        "Baseline_B2_AdjacentCosine": {
+          "tp": 0,
+          "fp": 10,
+          "fn": 0,
+          "tn": 6,
+          "precision": "NOT_ESTIMABLE",
+          "recall": "NOT_ESTIMABLE",
+          "specificity": 0.375,
+          "f1": "NOT_ESTIMABLE",
+          "balanced_accuracy": "NOT_ESTIMABLE",
+          "specificity_ci_95": [0.1848, 0.6136]
+        },
+        "Candidate_C1_ContextualBoundary": {
+          "tp": 0,
+          "fp": 16,
+          "fn": 0,
+          "tn": 0,
+          "precision": "NOT_ESTIMABLE",
+          "recall": "NOT_ESTIMABLE",
+          "specificity": 0.0,
+          "f1": "NOT_ESTIMABLE",
+          "balanced_accuracy": "NOT_ESTIMABLE",
+          "specificity_ci_95": [0.0, 0.1936]
+        },
+        "Candidate_C2_SequenceBiLSTM_RawThresholded": {
+          "tp": 0,
+          "fp": 16,
+          "fn": 0,
+          "tn": 0,
+          "precision": "NOT_ESTIMABLE",
+          "recall": "NOT_ESTIMABLE",
+          "specificity": 0.0,
+          "f1": "NOT_ESTIMABLE",
+          "balanced_accuracy": "NOT_ESTIMABLE",
+          "specificity_ci_95": [0.0, 0.1936]
+        },
+        "Candidate_C2_SequenceBiLSTM_ReportedUnderfitting": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "tn": 16,
+          "precision": "NOT_ESTIMABLE",
+          "recall": "NOT_ESTIMABLE",
+          "specificity": 1.0,
+          "f1": "NOT_ESTIMABLE",
+          "balanced_accuracy": "NOT_ESTIMABLE",
+          "specificity_ci_95": [0.8064, 1.0]
+        },
+        "Candidate_C3_TopologicalDependency": {
+          "tp": 0,
+          "fp": 11,
+          "fn": 0,
+          "tn": 5,
+          "precision": "NOT_ESTIMABLE",
+          "recall": "NOT_ESTIMABLE",
+          "specificity": 0.3125,
+          "f1": "NOT_ESTIMABLE",
+          "balanced_accuracy": "NOT_ESTIMABLE",
+          "specificity_ci_95": [0.1416, 0.556]
+        }
+      }
+    }
+  }
+}

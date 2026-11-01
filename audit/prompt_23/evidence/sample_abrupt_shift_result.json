@@ -1,0 +1,157 @@
+{
+  "doc_id": "doc_20956e1c",
+  "total_clauses": 3,
+  "ml_anomaly_count": 3,
+  "rule_violation_count": 0,
+  "total_flags": 3,
+  "high_severity_count": 0,
+  "medium_severity_count": 3,
+  "low_severity_count": 0,
+  "scoring_result": {
+    "doc_id": "doc_20956e1c",
+    "total_clauses": 3,
+    "anomaly_count": 3,
+    "high_severity_count": 0,
+    "medium_severity_count": 3,
+    "mean_combined_score": 0.356,
+    "max_combined_score": 0.3568,
+    "clauses": [
+      {
+        "clause_id": "doc_20956e1c_0",
+        "doc_id": "doc_20956e1c",
+        "sequence_idx": 0,
+        "text_preview": "1. Confidentiality. The parties shall keep all trade secrets confidential.",
+        "channel_a_score": 0.0,
+        "channel_b_score": 0.7135,
+        "combined_score": 0.3568,
+        "channel_a_evidence": {
+          "nearest_centroid_label": "type_20",
+          "centroid_distance": 0.1612,
+          "is_ood": false,
+          "top_k_distances": {
+            "type_20": 0.1612,
+            "type_32": 0.1829,
+            "type_41": 0.1829
+          }
+        },
+        "channel_b_evidence": {
+          "incoming_prob": null,
+          "outgoing_prob": 0.2865,
+          "incoming_anomaly": null,
+          "outgoing_anomaly": 0.7135,
+          "prev_clause_id": null,
+          "next_clause_id": "doc_20956e1c_1"
+        },
+        "is_anomaly": true,
+        "severity": "MEDIUM",
+        "source_label": "Numbered Clause",
+        "confidence_interval": [
+          0.0,
+          1.0
+        ],
+        "calibration_source": "synthetic_shuffle_only",
+        "cross_channel_agreement": 0.2865,
+        "agreement_type": "CHANNEL_B_DOMINANT",
+        "interval_width": 1.0,
+        "severity_justification": "Structural transition break flagged by Channel B (Score B=0.71 >= 0.70)"
+      },
+      {
+        "clause_id": "doc_20956e1c_1",
+        "doc_id": "doc_20956e1c",
+        "sequence_idx": 1,
+        "text_preview": "2. Quantum Mechanics and Stellar Nucleosynthesis. The thermodynamic equilibrium of stellar cores dic...",
+        "channel_a_score": 0.0,
+        "channel_b_score": 0.7135,
+        "combined_score": 0.3568,
+        "channel_a_evidence": {
+          "nearest_centroid_label": "type_89",
+          "centroid_distance": 0.1675,
+          "is_ood": false,
+          "top_k_distances": {
+            "type_89": 0.1675,
+            "type_41": 0.1712,
+            "type_88": 0.1752
+          }
+        },
+        "channel_b_evidence": {
+          "incoming_prob": 0.2865,
+          "outgoing_prob": 0.2912,
+          "incoming_anomaly": 0.7135,
+          "outgoing_anomaly": 0.7088,
+          "prev_clause_id": "doc_20956e1c_0",
+          "next_clause_id": "doc_20956e1c_2"
+        },
+        "is_anomaly": true,
+        "severity": "MEDIUM",
+        "source_label": "Numbered Clause",
+        "confidence_interval": [
+          0.0,
+          1.0
+        ],
+        "calibration_source": "synthetic_shuffle_only",
+        "cross_channel_agreement": 0.2865,
+        "agreement_type": "CHANNEL_B_DOMINANT",
+        "interval_width": 1.0,
+        "severity_justification": "Structural transition break flagged by Channel B (Score B=0.71 >= 0.70)"
+      },
+      {
+        "clause_id": "doc_20956e1c_2",
+        "doc_id": "doc_20956e1c",
+        "sequence_idx": 2,
+        "text_preview": "3. Return of Materials. Upon termination, all confidential documents shall be returned.",
+        "channel_a_score": 0.0,
+        "channel_b_score": 0.7088,
+        "combined_score": 0.3544,
+        "channel_a_evidence": {
+          "nearest_centroid_label": "type_88",
+          "centroid_distance": 0.1231,
+          "is_ood": false,
+          "top_k_distances": {
+            "type_88": 0.1231,
+            "type_20": 0.1253,
+            "type_89": 0.1254
+          }
+        },
+        "channel_b_evidence": {
+          "incoming_prob": 0.2912,
+          "outgoing_prob": null,
+          "incoming_anomaly": 0.7088,
+          "outgoing_anomaly": null,
+          "prev_clause_id": "doc_20956e1c_1",
+          "next_clause_id": null
+        },
+        "is_anomaly": true,
+        "severity": "MEDIUM",
+        "source_label": "Numbered Clause",
+        "confidence_interval": [
+          0.0,
+          1.0
+        ],
+        "calibration_source": "synthetic_shuffle_only",
+        "cross_channel_agreement": 0.2912,
+        "agreement_type": "CHANNEL_B_DOMINANT",
+        "interval_width": 1.0,
+        "severity_justification": "Structural transition break flagged by Channel B (Score B=0.71 >= 0.70)"
+      }
+    ],
+    "metadata": {
+      "alpha_weight": 0.5,
+      "high_threshold": 0.75,
+      "med_threshold": 0.5,
+      "timestamp": "2026-10-10 08:21:31 UTC",
+      "rule_flags": [],
+      "rule_violation_count": 0
+    },
+    "calibration_source": "synthetic_shuffle_only"
+  },
+  "rule_flags": [],
+  "declared_targets": [],
+  "extracted_dates": [],
+  "metadata": {
+    "timestamp": "2026-10-10 08:21:31 UTC",
+    "ref_flags_count": 0,
+    "date_flags_count": 0,
+    "declared_targets_count": 0,
+    "extracted_dates_count": 0
+  }
+}

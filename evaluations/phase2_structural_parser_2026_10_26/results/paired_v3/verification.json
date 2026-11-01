@@ -1,0 +1,16 @@
+{
+  "analyses_per_implementation": 148,
+  "unique_development_documents": 70,
+  "neural_parity": 148,
+  "phase1_reproduced": 148,
+  "date_parity": 148,
+  "exact_source_preservation": 148,
+  "exact_offset_preservation": 148,
+  "corrected_decisions": 19,
+  "introduced_regressions": 0,
+  "elapsed_seconds": 38.0940000000046,
+  "all_inputs_exposed_development": true,
+  "independently_adjudicated": 0,
+  "immutable_file_hashes_verified": 156,
+  "source_manifest_unchanged": true
+}

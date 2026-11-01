@@ -305,9 +305,9 @@ export function ExplainabilityWorkspace({
       )}
 
       {/* Claim Boundaries & Methodology */}
-      <ExplanationLimitations
+      <details className="card"><summary>Interpretation and limits</summary><ExplanationLimitations
         claimScope={attributionData?.claim_scope || sensitivityData?.claim_scope}
-      />
+      /></details>
     </div>
   );
 }

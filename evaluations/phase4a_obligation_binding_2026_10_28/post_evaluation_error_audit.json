@@ -1,0 +1,362 @@
+{
+  "audit_type": "POST_EXPOSURE_LABEL_AND_ERROR_REVIEW",
+  "production_changed": false,
+  "frozen_labels_or_results_changed": false,
+  "results": [
+    {
+      "run": "development_v1",
+      "raw_metrics_unchanged": true,
+      "event_instance_label_cells_requiring_review": [
+        {
+          "case_id": "development_same_recurring_type",
+          "side": "left",
+          "index": 0,
+          "gold": "invoice alpha",
+          "prediction": null,
+          "reason": "Gold copied the named invoice type even though each-month language does not identify a unique event occurrence. Pair gold UNCERTAIN remains valid."
+        },
+        {
+          "case_id": "development_same_recurring_type",
+          "side": "right",
+          "index": 0,
+          "gold": "invoice alpha",
+          "prediction": null,
+          "reason": "Gold copied the named invoice type even though each-month language does not identify a unique event occurrence. Pair gold UNCERTAIN remains valid."
+        }
+      ],
+      "posthoc_event_exact_sensitivity": {
+        "correct": 53,
+        "denominator": 53,
+        "note": "Excludes only the two invalid type-vs-occurrence gold cells. This is explicitly posthoc sensitivity, not a replacement untouched score."
+      },
+      "guard_ablation_corrected_state_errors": [
+        "development_different_trigger",
+        "development_one_missing_trigger",
+        "development_different_condition",
+        "development_one_condition",
+        "development_exception",
+        "development_different_recipient",
+        "development_one_missing_recipient",
+        "development_same_recurring_type",
+        "development_unsupported_action",
+        "development_different_scope",
+        "development_different_phase"
+      ],
+      "guard_ablation_introduced_state_errors": [],
+      "remaining_pair_errors": [],
+      "field_errors": [
+        {
+          "case_id": "development_same_recurring_type",
+          "errors": [
+            {
+              "side": "left",
+              "index": 0,
+              "field": "event_instance",
+              "expected": "invoice alpha",
+              "predicted": null
+            },
+            {
+              "side": "right",
+              "index": 0,
+              "field": "event_instance",
+              "expected": "invoice alpha",
+              "predicted": null
+            }
+          ]
+        },
+        {
+          "case_id": "development_generic_object",
+          "errors": [
+            {
+              "side": "left",
+              "index": 0,
+              "field": "object",
+              "expected": "the invoice",
+              "predicted": null
+            },
+            {
+              "side": "right",
+              "index": 0,
+              "field": "object",
+              "expected": "the invoice",
+              "predicted": null
+            }
+          ]
+        },
+        {
+          "case_id": "development_unsupported_action",
+          "errors": [
+            {
+              "side": "right",
+              "index": 0,
+              "field": "action",
+              "expected": "RECONCILE",
+              "predicted": null
+            },
+            {
+              "side": "right",
+              "index": 0,
+              "field": "object",
+              "expected": "the accounts",
+              "predicted": null
+            }
+          ]
+        },
+        {
+          "case_id": "development_missing_reference",
+          "errors": [
+            {
+              "side": "right",
+              "index": 0,
+              "field": "object",
+              "expected": "the obligation in section 99",
+              "predicted": null
+            }
+          ]
+        },
+        {
+          "case_id": "development_ambiguous_reference",
+          "errors": [
+            {
+              "side": "right",
+              "index": 0,
+              "field": "object",
+              "expected": "the obligation in section 5",
+              "predicted": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "run": "evaluation_first_pass",
+      "raw_metrics_unchanged": true,
+      "event_instance_label_cells_requiring_review": [
+        {
+          "case_id": "evaluation_same_recurring_type",
+          "side": "left",
+          "index": 0,
+          "gold": "invoice cedar",
+          "prediction": null,
+          "reason": "Gold copied the named invoice type even though each-month language does not identify a unique event occurrence. Pair gold UNCERTAIN remains valid."
+        },
+        {
+          "case_id": "evaluation_same_recurring_type",
+          "side": "right",
+          "index": 0,
+          "gold": "invoice cedar",
+          "prediction": null,
+          "reason": "Gold copied the named invoice type even though each-month language does not identify a unique event occurrence. Pair gold UNCERTAIN remains valid."
+        }
+      ],
+      "posthoc_event_exact_sensitivity": {
+        "correct": 55,
+        "denominator": 57,
+        "note": "Excludes only the two invalid type-vs-occurrence gold cells. This is explicitly posthoc sensitivity, not a replacement untouched score."
+      },
+      "guard_ablation_corrected_state_errors": [
+        "evaluation_different_trigger",
+        "evaluation_one_missing_trigger",
+        "evaluation_different_condition",
+        "evaluation_one_condition",
+        "evaluation_exception",
+        "evaluation_different_recipient",
+        "evaluation_one_missing_recipient",
+        "evaluation_same_recurring_type",
+        "evaluation_unsupported_action",
+        "evaluation_different_scope",
+        "evaluation_different_phase"
+      ],
+      "guard_ablation_introduced_state_errors": [],
+      "remaining_pair_errors": [
+        {
+          "case_id": "evaluation_passive_identity",
+          "gold": "MATCHED",
+          "prediction": "UNSUPPORTED",
+          "source": "Section 7. Duty\nInvoice Cedar must be paid by Purchaser within 10 calendar days after receipt of Invoice Cedar.\n\nSection 9. Duty\nInvoice Cedar must be paid by Purchaser within 10 calendar days after receipt of Invoice Cedar.",
+          "evidence": {
+            "left_id": "evaluation_passive_identity:obligation:0",
+            "right_id": "evaluation_passive_identity:obligation:1",
+            "status": "UNSUPPORTED",
+            "reasons": [
+              "INCOMPLETE_OR_UNSUPPORTED_PARSE",
+              "ACTION_OUTSIDE_LEXICON",
+              "ACTION_OUTSIDE_LEXICON"
+            ],
+            "compared_fields": {},
+            "evidence": [
+              {
+                "record_id": "evaluation_passive_identity:obligation:0",
+                "char_start": 16,
+                "char_end": 110,
+                "section_uid": "evaluation_passive_identity:section:0"
+              },
+              {
+                "record_id": "evaluation_passive_identity:obligation:1",
+                "char_start": 129,
+                "char_end": 223,
+                "section_uid": "evaluation_passive_identity:section:1"
+              }
+            ]
+          }
+        }
+      ],
+      "field_errors": [
+        {
+          "case_id": "evaluation_same_recurring_type",
+          "errors": [
+            {
+              "side": "left",
+              "index": 0,
+              "field": "event_instance",
+              "expected": "invoice cedar",
+              "predicted": null
+            },
+            {
+              "side": "right",
+              "index": 0,
+              "field": "event_instance",
+              "expected": "invoice cedar",
+              "predicted": null
+            }
+          ]
+        },
+        {
+          "case_id": "evaluation_generic_object",
+          "errors": [
+            {
+              "side": "left",
+              "index": 0,
+              "field": "object",
+              "expected": "the invoice",
+              "predicted": null
+            },
+            {
+              "side": "right",
+              "index": 0,
+              "field": "object",
+              "expected": "the invoice",
+              "predicted": null
+            }
+          ]
+        },
+        {
+          "case_id": "evaluation_unsupported_action",
+          "errors": [
+            {
+              "side": "right",
+              "index": 0,
+              "field": "action",
+              "expected": "RECONCILE",
+              "predicted": null
+            },
+            {
+              "side": "right",
+              "index": 0,
+              "field": "object",
+              "expected": "the accounts",
+              "predicted": null
+            }
+          ]
+        },
+        {
+          "case_id": "evaluation_missing_reference",
+          "errors": [
+            {
+              "side": "right",
+              "index": 0,
+              "field": "object",
+              "expected": "the obligation in section 99",
+              "predicted": null
+            }
+          ]
+        },
+        {
+          "case_id": "evaluation_ambiguous_reference",
+          "errors": [
+            {
+              "side": "right",
+              "index": 0,
+              "field": "object",
+              "expected": "the obligation in section 5",
+              "predicted": null
+            }
+          ]
+        },
+        {
+          "case_id": "evaluation_passive_identity",
+          "errors": [
+            {
+              "side": "left",
+              "index": 0,
+              "field": "actor",
+              "expected": "purchaser",
+              "predicted": null
+            },
+            {
+              "side": "left",
+              "index": 0,
+              "field": "action",
+              "expected": "PAY",
+              "predicted": null
+            },
+            {
+              "side": "left",
+              "index": 0,
+              "field": "object",
+              "expected": "invoice cedar",
+              "predicted": null
+            },
+            {
+              "side": "left",
+              "index": 0,
+              "field": "event_instance",
+              "expected": "invoice cedar",
+              "predicted": null
+            },
+            {
+              "side": "right",
+              "index": 0,
+              "field": "actor",
+              "expected": "purchaser",
+              "predicted": null
+            },
+            {
+              "side": "right",
+              "index": 0,
+              "field": "action",
+              "expected": "PAY",
+              "predicted": null
+            },
+            {
+              "side": "right",
+              "index": 0,
+              "field": "object",
+              "expected": "invoice cedar",
+              "predicted": null
+            },
+            {
+              "side": "right",
+              "index": 0,
+              "field": "event_instance",
+              "expected": "invoice cedar",
+              "predicted": null
+            }
+          ]
+        },
+        {
+          "case_id": "evaluation_coordinated_subject",
+          "errors": [
+            {
+              "side": "right",
+              "index": 0,
+              "field": "actor",
+              "expected": "purchaser and vendor",
+              "predicted": "vendor"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+Section 1. Agreement A
+For Agreement A, the Effective Date is 2026-06-01.
+
+Section 2. Agreement A
+For Agreement A, the Termination Date is 2026-12-31.
+
+Section 3. Agreement B
+For Agreement B, the Effective Date is 2026-01-01.
+
+Section 4. Agreement B
+For Agreement B, the Termination Date is 2026-03-01.

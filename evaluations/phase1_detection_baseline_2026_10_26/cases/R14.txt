@@ -1,0 +1,7 @@
+Section 1. First meaning
+First text.
+Section 1. Second meaning
+Second text.
+
+Section 2. Payment
+See Section 1 above.

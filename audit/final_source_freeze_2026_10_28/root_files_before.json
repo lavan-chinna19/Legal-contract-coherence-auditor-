@@ -1,0 +1,14 @@
+{
+  ".dockerignore": "d20855656c4e2deadf6410cf458058fce1028b3bc5e39479162313c213d7c499",
+  ".gitignore": "5d96a48e55f713524eb6690311f46d307c79080d3e1cbfc4c647d9f65be94c35",
+  "CONTRIBUTORS.md": "50f0150813521384a6d809097a91ab79f17ddd14111d4264ecfc66c16f651c5d",
+  "docker-compose.yml": "f5c790836d521185b155f900bde5d0e508e07161f321959b5c6e59430c6f95b1",
+  "Dockerfile.backend": "badbefdebae2c7856eea0e47bec500fd71d49b3780d9a8926d89a9f6125c3532",
+  "Dockerfile.frontend": "05a28bfd544ffb86c1adfd5dee61dcf2682fbf26bb25fd20945fd692de9f5910",
+  "Dockerfile.streamlit": "05c3a0d33b67a3de9e995f6c2841edd1175bbaab5444f1ca2c8632482938dd99",
+  "README.md": "38eb19836ec77e466d7cbf682a481a5832686879356c67960deb0725823aa472",
+  "requirements-lock.txt": "29d14305036c50bd423b6cdee15341a120007e523c437a6fa078ab0a0b26bac4",
+  "requirements-release-lock.txt": "101776f4ba5ac7a8948822522cef235688140fd9174c5e3d4ca216e67190335d",
+  "requirements-release.txt": "bc6c8ca7aaebab7d7b224374e2b9cb52620cce3422c5e92d0271539d13b83a87",
+  "requirements.txt": "e32b8718f3e80f44415ccf968722d2bec78a7705dc4301727556e8bf81ce05d2"
+}

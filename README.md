@@ -1,5 +1,11 @@
 # LexAudit — Legal Contract Coherence Auditor
 
+**Research freeze — 2026-10-28:** final native verification is 484 passed, 0 failed,
+2 optional skips. Docker runtime for this revision is unverified; authentic-contract
+contradiction detection remains NO-GO. The component score below records the earlier
+application release. Use [the final source-parsing and research-freeze report](docs/FINAL_SOURCE_PARSING_AND_RESEARCH_FREEZE.md)
+for current evidence, source identity, limitations and reproduction instructions.
+
 LexAudit is a local legal-NLP research application. **24/24 application components
 are implemented and workflow-verified (100/100).** This is application completion,
 not proof of legal accuracy or scientifically validated production readiness.
@@ -103,10 +109,11 @@ cd frontend
 npm run dev -- --hostname 127.0.0.1
 ```
 
-Open `http://127.0.0.1:3000`. In **Connection**, set
-`http://127.0.0.1:8010` and the public synthetic-demo key
-`dev_auditor_key_12345`. Sign in, acknowledge the privacy notice, upload, preview
-and analyze a document. Review, explanations, counterfactuals, Robustness Lab
+Open `http://127.0.0.1:3000`. In **Settings**, enter the public synthetic-demo
+access key `dev_auditor_key_12345` and choose **Connect engine**. The native
+engine defaults to `http://127.0.0.1:8010`; a different trusted address can be
+set under **Connection address**. In **New Audit**, acknowledge privacy consent,
+choose a file, select **Upload and preview**, then **Analyze document**. Review, explanations, counterfactuals, Robustness Lab
 and report downloads use the saved results.
 
 For private use, create a Git-ignored `.env` from the empty-field template and
@@ -130,7 +137,7 @@ docker compose --env-file .env.docker.local -p lexaudit-release ps
 ```
 
 Open `http://127.0.0.1:3001`; the API gateway is `http://127.0.0.1:8011`.
-Enter your private `API_KEY` from `.env.docker.local` in Connection. The initializer
+Enter your private `API_KEY` from `.env.docker.local` in **Settings** and connect. The initializer
 preserves existing keys and prints no secrets. Protect that file: losing the
 stable encryption key makes retained history unreadable.
 
@@ -156,6 +163,7 @@ cd frontend
 npm run lint
 npx tsc --noEmit
 npm run test:alignment
+npm run test:workflow
 npm run build
 ```
 
@@ -232,3 +240,14 @@ provenance review; public filing access is not blanket redistribution permission
 See [third-party notices](docs/THIRD_PARTY_NOTICES.md) and
 [data governance](docs/data_governance.md). Private contracts, raw research data,
 caches and optional experimental weights remain local.
+
+## UI workflow update — 2026-10-26
+
+The four primary sections are **New Audit**, **Audit Results**, **Reports & History**
+and **Settings**. Optional **Research Tools** retains model evaluation, compatibility
+maps and robustness experiments. Reference checks and suggested positions remain
+experimental. Access keys stay only in page memory; reconnect in Settings after
+reload. No automatic shared-key or browser-storage authentication is introduced.
+See [UI audit](docs/UI_CLEANUP_AUDIT.md) and
+[UI completion report](docs/UI_REDESIGN_COMPLETION_REPORT.md) for current evidence
+and the Docker-engine availability limitation.

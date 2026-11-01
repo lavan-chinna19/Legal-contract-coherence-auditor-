@@ -40,11 +40,9 @@ export function ClauseExplanationHeader({
         <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", marginBottom: "0.25rem", flexWrap: "wrap" }}>
           <BrainCircuit size={18} style={{ color: "var(--color-accent)" }} aria-hidden="true" />
           <h2 style={{ fontSize: "1.1rem", fontWeight: 600, color: "var(--color-text-primary)", margin: 0 }}>
-            Explainability Diagnostics: § {selectedClause.sequence_idx}
+            Explanations · Clause {selectedClause.sequence_idx + 1}
           </h2>
-          <span className="badge" style={{ fontSize: "0.75rem", fontFamily: "monospace", maxWidth: "100%", whiteSpace: "normal", overflowWrap: "anywhere" }}>
-            {selectedClause.clause_id}
-          </span>
+
           <span
             className={`badge badge-${selectedClause.severity.toLowerCase()}`}
             style={{ fontSize: "0.75rem" }}
@@ -53,9 +51,8 @@ export function ClauseExplanationHeader({
           </span>
         </div>
         <p style={{ fontSize: "0.85rem", color: "var(--color-text-secondary)", margin: 0 }}>
-          Nearest Canonical Topic Cluster: <strong>{nearestLabel}</strong> | Document:{" "}
-          <span style={{ fontFamily: "monospace" }}>{docId}</span>
-        </p>
+          Nearest reference topic: <strong>{nearestLabel}</strong>
+        </p><details className="source-details"><summary>Source details</summary><p>Document: {docId} · Clause: {selectedClause.clause_id}</p></details>
       </div>
 
       <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap" }}>

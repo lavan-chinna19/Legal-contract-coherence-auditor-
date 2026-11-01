@@ -1,0 +1,9 @@
+defect_id,category,severity,description,remediation_status,verification
+DEF-04B-01,SCIENTIFIC_AMBIGUITY,HIGH,Unclear whether high CoherenceScorerHead sigmoid output represents normal sequential flow or anomaly,RESOLVED,Audited src/coherence/trainer.py and channel_b.py: high output indicates coherent flow (low anomaly).
+DEF-04B-02,SCIENTIFIC_AMBIGUITY,MEDIUM,Historical demonstration KPI discrepancy (0 anomalies vs 2 anomalies on 5-clause fixtures),RESOLVED,Demonstrated DIFFERENT_FIXTURES cause (valid_multiclause.txt vs fixture_01_baseline.txt) on identical checkpoints.
+DEF-04B-03,SCIENTIFIC_AMBIGUITY,MEDIUM,Confusion regarding nominal conformal coverage (90% vs 95%),RESOLVED,Audited src/calibration/conformal.py: nominal coverage is 90% (alpha=0.10); 95% is bootstrap CI for empirical benchmarks.
+DEF-04B-04,MODEL_ASSUMPTION,HIGH,Matrix assumed to be row-stochastic Markov transition probability distribution,RESOLVED,Model trained with BCE; rows sum to ~23.0. Normalization rejected; non-stochasticity disclosed in UI.
+DEF-04B-05,FRONTEND_RACE_CONDITION,HIGH,Delayed Integrated Gradients response overwriting active view after rapid clause switching,RESOLVED,Implemented activeClauseIdRef and cancelled guard pattern in ExplainabilityWorkspace.tsx.
+DEF-04B-06,FRONTEND_LINT,LOW,ESLint React 19 setState in effect and unescaped quote warnings,RESOLVED,Wrapped initial fetch in queueMicrotask and escaped HTML entities in components.
+DEF-04B-07,UI_ACCESSIBILITY,LOW,Large 66x66 matrix could be difficult for keyboard and screen-reader navigation,RESOLVED,Implemented one-click Accessible Table Alternative and preset filtering to 12 core commercial clauses.
+DEF-04B-08,FRONTEND_ROBUSTNESS,LOW,Possible null neighbor_position causing TypeError in sensitivity upper-casing,RESOLVED,Added safe fallback (sensitivityData.neighbor_position || 'none').toUpperCase().

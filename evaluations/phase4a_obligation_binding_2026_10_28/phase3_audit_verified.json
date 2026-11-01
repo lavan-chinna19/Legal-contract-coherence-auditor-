@@ -1,0 +1,242 @@
+{
+  "confusion_and_metric_checks": [
+    {
+      "stratum": "NEW_MECHANICAL_SYNTHETIC",
+      "task": "legacy_alert_proxy",
+      "recomputed": {
+        "TP": 4,
+        "FP": 5,
+        "FN": 9,
+        "TN": 32,
+        "n": 50,
+        "precision": 0.4444444444444444,
+        "recall": 0.3076923076923077,
+        "F1": 0.36363636363636365,
+        "false_positive_rate": 0.13513513513513514
+      },
+      "matches": true
+    },
+    {
+      "stratum": "NEW_MECHANICAL_SYNTHETIC",
+      "task": "new_confirmed_screen",
+      "recomputed": {
+        "TP": 13,
+        "FP": 0,
+        "FN": 0,
+        "TN": 37,
+        "n": 50,
+        "precision": 1.0,
+        "recall": 1.0,
+        "F1": 1.0,
+        "false_positive_rate": 0.0
+      },
+      "matches": true
+    },
+    {
+      "stratum": "NEW_MECHANICAL_SYNTHETIC",
+      "task": "selective_supported_relation",
+      "recomputed": {
+        "TP": 13,
+        "FP": 0,
+        "FN": 0,
+        "TN": 9,
+        "n": 22,
+        "precision": 1.0,
+        "recall": 1.0,
+        "F1": 1.0,
+        "false_positive_rate": 0.0
+      },
+      "matches": true
+    },
+    {
+      "stratum": "ORIGINAL_PHASE1",
+      "task": "old",
+      "recomputed": {
+        "TP": 6,
+        "FP": 2,
+        "FN": 2,
+        "TN": 4,
+        "n": 14,
+        "precision": 0.75,
+        "recall": 0.75,
+        "F1": 0.75,
+        "false_positive_rate": 0.3333333333333333
+      },
+      "matches": true
+    },
+    {
+      "stratum": "ORIGINAL_PHASE1",
+      "task": "new",
+      "recomputed": {
+        "TP": 8,
+        "FP": 0,
+        "FN": 0,
+        "TN": 6,
+        "n": 14,
+        "precision": 1.0,
+        "recall": 1.0,
+        "F1": 1.0,
+        "false_positive_rate": 0.0
+      },
+      "matches": true
+    },
+    {
+      "stratum": "POST_IMPLEMENTATION_MECHANICAL_CHALLENGE",
+      "task": "legacy_alert_proxy",
+      "recomputed": {
+        "TP": 0,
+        "FP": 1,
+        "FN": 2,
+        "TN": 9,
+        "n": 12,
+        "precision": 0.0,
+        "recall": 0.0,
+        "F1": 0.0,
+        "false_positive_rate": 0.1
+      },
+      "matches": true
+    },
+    {
+      "stratum": "POST_IMPLEMENTATION_MECHANICAL_CHALLENGE",
+      "task": "new_confirmed_screen",
+      "recomputed": {
+        "TP": 2,
+        "FP": 0,
+        "FN": 0,
+        "TN": 10,
+        "n": 12,
+        "precision": 1.0,
+        "recall": 1.0,
+        "F1": 1.0,
+        "false_positive_rate": 0.0
+      },
+      "matches": true
+    },
+    {
+      "stratum": "POST_IMPLEMENTATION_MECHANICAL_CHALLENGE",
+      "task": "selective_supported_relation",
+      "recomputed": {
+        "TP": 2,
+        "FP": 0,
+        "FN": 0,
+        "TN": 1,
+        "n": 3,
+        "precision": 1.0,
+        "recall": 1.0,
+        "F1": 1.0,
+        "false_positive_rate": 0.0
+      },
+      "matches": true
+    },
+    {
+      "stratum": "PROVISIONAL_INTERPRETATION",
+      "task": "legacy_alert_proxy",
+      "recomputed": {
+        "TP": 0,
+        "FP": 0,
+        "FN": 0,
+        "TN": 0,
+        "n": 0,
+        "precision": null,
+        "recall": null,
+        "F1": null,
+        "false_positive_rate": null
+      },
+      "matches": true
+    },
+    {
+      "stratum": "PROVISIONAL_INTERPRETATION",
+      "task": "new_confirmed_screen",
+      "recomputed": {
+        "TP": 0,
+        "FP": 0,
+        "FN": 0,
+        "TN": 0,
+        "n": 0,
+        "precision": null,
+        "recall": null,
+        "F1": null,
+        "false_positive_rate": null
+      },
+      "matches": true
+    },
+    {
+      "stratum": "PROVISIONAL_INTERPRETATION",
+      "task": "selective_supported_relation",
+      "recomputed": {
+        "TP": 0,
+        "FP": 0,
+        "FN": 0,
+        "TN": 0,
+        "n": 0,
+        "precision": null,
+        "recall": null,
+        "F1": null,
+        "false_positive_rate": null
+      },
+      "matches": true
+    }
+  ],
+  "coverage": [
+    {
+      "stratum": "NEW_MECHANICAL_SYNTHETIC",
+      "documents": 50,
+      "supported_relational": 22,
+      "review": 15,
+      "unsupported": 5,
+      "review_unsupported_union": 20,
+      "supported_statements": 96,
+      "recognized_statements": 118
+    },
+    {
+      "stratum": "ORIGINAL_PHASE1",
+      "documents": 17,
+      "supported_relational": 11,
+      "review": 6,
+      "unsupported": 1,
+      "review_unsupported_union": 7,
+      "supported_statements": 24,
+      "recognized_statements": 36
+    },
+    {
+      "stratum": "POST_IMPLEMENTATION_MECHANICAL_CHALLENGE",
+      "documents": 12,
+      "supported_relational": 3,
+      "review": 5,
+      "unsupported": 1,
+      "review_unsupported_union": 6,
+      "supported_statements": 20,
+      "recognized_statements": 28
+    },
+    {
+      "stratum": "PROVISIONAL_INTERPRETATION",
+      "documents": 8,
+      "supported_relational": 0,
+      "review": 1,
+      "unsupported": 6,
+      "review_unsupported_union": 6,
+      "supported_statements": 4,
+      "recognized_statements": 11
+    }
+  ],
+  "report_errata": [
+    {
+      "field": "new mechanical review/unsupported union",
+      "reported": "21/50 (42%)",
+      "actual": "20/50 (40%)"
+    },
+    {
+      "field": "new mechanical review documents",
+      "reported": 16,
+      "actual": 15
+    },
+    {
+      "field": "new mechanical supported statements",
+      "reported": "94/118 (79.66%)",
+      "actual": "96/118 (81.36%)"
+    }
+  ],
+  "metric_semantics": "Full screen denominator includes abstentions as no confirmation: positive abstention FN, negative abstention screen TN. Selective metrics must show coverage. Review union and supported-relational share can overlap; they are not complements.",
+  "original_audit_note": "phase3_audit.json checked raw summary but its fixed interpretation incorrectly repeated 42%; this verified audit explicitly checks report discrepancies.",
+  "raw_summary_checks_pass": true
+}

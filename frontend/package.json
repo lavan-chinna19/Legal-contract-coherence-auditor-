@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "test:alignment": "node --experimental-strip-types scripts/test_alignment_suite.ts"
+    "test:alignment": "node --experimental-strip-types scripts/test_alignment_suite.ts",
+    "test:workflow": "node --experimental-strip-types --test scripts/test_workflow_suite.ts"
   },
   "dependencies": {
     "lucide-react": "^1.55.0",

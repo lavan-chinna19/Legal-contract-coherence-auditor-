@@ -1,0 +1,3 @@
+scenario_id,detection_status,dedicated_detector_status,mean_b_delta,delta_combined,descriptive_observation
+SCEN_P3_01_DUP_EXACT,NOT_APPLICABLE,UNAVAILABLE,0.00059,0.0003,"Channel B registers transition shifts, but no dedicated duplicate detection rule exists."
+SCEN_P3_02_DUP_EXACT_SLA,NOT_APPLICABLE,UNAVAILABLE,0.00429,0.0021,"Channel B registers transition shifts, but no dedicated duplicate detection rule exists."

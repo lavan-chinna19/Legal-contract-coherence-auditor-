@@ -1,0 +1,9 @@
+{
+  "archive": "audit/final_source_freeze_2026_10_28/LexAudit-research-prototype-source.zip",
+  "sha256": "2654fd55aba3ed00e320251252b03bbc686f0206bdf387879b9ad0b198da6b20",
+  "bytes": 3539385,
+  "included_files": 809,
+  "manifest": "audit/final_source_freeze_2026_10_28/RESEARCH_FREEZE_MANIFEST.json",
+  "manifest_sha256": "500ea6faea687b7dc705af232cba811edab34cfa4fb0f0fc73594bd2dffd8d39",
+  "purpose": "Local source/evidence freeze only; no Git commit, public publication or deployment"
+}

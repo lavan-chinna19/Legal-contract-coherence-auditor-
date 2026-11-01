@@ -1,0 +1,39 @@
+{
+  "phase": "PHASE_4D_B",
+  "audit_timestamp": "2026-10-22T22:45:00+05:30",
+  "verification_items": [
+    {
+      "item": "Wilson 95% Confidence Interval Exactness",
+      "test_cases": [
+        {"k": 0, "n": 5, "calculated": [0.0, 0.4345], "expected": [0.0, 0.4345], "status": "EXACT_MATCH"},
+        {"k": 0, "n": 6, "calculated": [0.0, 0.3903], "expected": [0.0, 0.3903], "status": "EXACT_MATCH"},
+        {"k": 0, "n": 2, "calculated": [0.0, 0.6576], "expected": [0.0, 0.6576], "status": "EXACT_MATCH"},
+        {"k": 1, "n": 5, "calculated": [0.0362, 0.6245], "expected": [0.0362, 0.6245], "status": "EXACT_MATCH"},
+        {"k": 2, "n": 2, "calculated": [0.3424, 1.0], "expected": [0.3424, 1.0], "status": "EXACT_MATCH"}
+      ],
+      "status": "PASS"
+    },
+    {
+      "item": "Case-Level Aggregate Parity",
+      "records_checked": 90,
+      "case_level_file": "research/structural_coherence_phase_04db/case_level_predictions.csv",
+      "summary_file": "research/structural_coherence_phase_04db/evaluation_summary.json",
+      "discrepancies_found": 0,
+      "status": "PASS"
+    },
+    {
+      "item": "Split Isolation and Case ID Uniqueness",
+      "total_cases": 15,
+      "unique_case_ids": 15,
+      "cross_split_leakage": 0,
+      "status": "PASS"
+    },
+    {
+      "item": "Label Eligibility Filtering",
+      "strict_positive_denominator_excludes_ambiguous": true,
+      "ambiguous_cases_count": 1,
+      "status": "PASS"
+    }
+  ],
+  "overall_verdict": "MATHEMATICALLY_CONSISTENT"
+}

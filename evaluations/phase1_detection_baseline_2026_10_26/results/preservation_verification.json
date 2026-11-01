@@ -1,0 +1,9 @@
+{
+  "existing_files_checked": 1040,
+  "changed_existing_files": [],
+  "missing_existing_files": [],
+  "head_before": "0106f32f0d2cf99a210adf5550b6abe2f66aafc9",
+  "head_after": "0106f32f0d2cf99a210adf5550b6abe2f66aafc9",
+  "passed": true,
+  "scope": "Pre-existing source/frontend/models/fixtures/docs/research/design/audit/raw-data plus root configuration. New evaluation files and new baseline documentation are excluded."
+}

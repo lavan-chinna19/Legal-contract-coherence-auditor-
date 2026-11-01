@@ -131,7 +131,7 @@ export function CounterfactualRepairWorkspace({
     <div
       className="counterfactual-repair-workspace"
       role="region"
-      aria-label="Counterfactual Clause Repositioning Workspace"
+      aria-label="Suggested Clause Positions (Experimental)"
       style={{
         display: "flex",
         flexDirection: "column",
@@ -423,7 +423,7 @@ export function CounterfactualRepairWorkspace({
               aria-label="Explain clause via XAI"
             >
               <BrainCircuit size={13} aria-hidden="true" />
-              <span>Explain Clause (XAI)</span>
+              <span>Explain clause</span>
             </button>
           )}
 

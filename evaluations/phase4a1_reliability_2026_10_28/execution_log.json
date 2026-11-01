@@ -1,0 +1,23 @@
+{
+  "date": "2026-10-28",
+  "working_directory": "F:/projects/nlp/Legal-contract-coherence-auditor-",
+  "python_prefix": "tmp/final-release/clean-env/Scripts/python.exe",
+  "commands": [
+    {"command": "python build_focused_cases.py", "exit_code": 0, "documents": 20, "result": "Mechanically authored focused cases frozen before repairs/final testing; not unseen independent evidence"},
+    {"command": "python run_comparison.py --baseline --run-id baseline_v1", "exit_code": 0, "result": "Actual original binding module: 58/58 archived predictions reproduce exactly; 20 focused and six public-view baseline observations saved"},
+    {"command": "python -m pytest tests/test_obligation_binding.py tests/test_obligation_reliability.py -q --junitxml=affected_v1.xml", "exit_code": 0, "passed": 63, "seconds": 0.30, "note": "Initial targeted run before final trigger/definition safety guards"},
+    {"command": "python run_comparison.py --run-id comparison_v1", "exit_code": 0, "result": "Initial repairs; manual public inspection found unwanted joint actor candidate in definitional language; retained rather than overwritten"},
+    {"command": "python run_comparison.py --run-id comparison_v2", "exit_code": 0, "authoritative_comparison": true, "result": "Final narrow subject guard; 78 exposed/authored synthetic observations and six public-view observations; no new final labelled pair errors"},
+    {"command": "python -m pytest tests/test_obligation_binding.py tests/test_obligation_reliability.py tests/test_obligation_integration.py tests/test_obligation_reliability_integration.py -q --junitxml=affected_v2.xml", "exit_code": 0, "passed": 73, "warnings": 2, "seconds": 34.77},
+    {"command": "python -m pytest tests -q --junitxml=full_native_v1.xml", "exit_code": 0, "passed": 468, "failed": 0, "skipped": 2, "warnings": 9, "seconds": 152.63, "authoritative_full_native": true},
+    {"command": "python verify_core.py", "exit_code": 0, "seconds": 33.5, "result": "148 neural/structure/reference/graph/direct unchanged-date checks and 38 historical Phase 3 date checks pass; frozen core hashes match"},
+    {"command": "python analyze_evidence.py", "exit_code": 0, "result": "Separate four-cell recurrence annotation overlay; raw and corrected metrics retained for both versions. Three public contracts: 0/11 normalized pairs supported; 54/62 modal cues skipped on inline heading lines, unrelated repair not attempted"},
+    {"command": "docker version --format '{{json .}}'", "exit_code": 1, "result": "Client present, Server=null, dockerDesktopLinuxEngine pipe absent", "runtime_status": "BLOCKED_NOT_VERIFIED"},
+    {"command": "python verify_final.py", "exit_code": 0, "result": "1416-file snapshot has no unexpected changes; actual frozen baseline, input/source manifests, local model cache, Git HEAD, core parity and 468-pass native totals verified"}
+  ],
+  "environment": "Existing CPU environment; offline local models; isolated temporary storage; permitted localhost for real HTTP/model integration",
+  "public_label_count": 0,
+  "phase4b_started": false,
+  "final_decision": "NO-GO for narrow authentic-contract contradiction detection demonstration",
+  "git_commit_push_deploy": "None"
+}

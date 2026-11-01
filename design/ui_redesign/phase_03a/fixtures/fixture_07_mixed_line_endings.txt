@@ -1,0 +1,6 @@
+1. Section Alpha.
+This clause uses Windows CRLF line termination format.
+2. Section Beta.
+This clause uses Unix LF line termination format.
+3. Section Gamma.
+This clause concludes with mixed CRLF line termination format.

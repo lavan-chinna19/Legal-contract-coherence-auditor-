@@ -1,0 +1,5 @@
+method,top1_recovery,top3_recovery,mrr,top1_ci95,mrr_ci95
+Counterfactual Scorer (Primary Frozen Head),0.3333,0.7778,0.5448,"[0.1111, 0.6667]","[0.3318, 0.7731]"
+Pairwise Cosine Similarity Heuristic,0.1111,0.5556,0.4028,N/A,N/A
+Random Eligible Insertion Baseline,0.0928,0.2784,0.2662,N/A,N/A
+Current Displaced Position (Identity),0.0000,0.0000,0.0000,N/A,N/A

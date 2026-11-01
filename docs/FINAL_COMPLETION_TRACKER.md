@@ -123,3 +123,100 @@ absent. The historical 24-component release score is not a fresh Docker
 verification for Phase 2. Independent legal annotation, unseen-family evaluation
 and external security validation remain external blockers. No commit, push or
 deployment occurred.
+
+## Phase 3 temporal reasoning — 2026-10-28
+
+This additive milestone records native Phase 3 evidence; it does not change the historical
+application-release score or award fresh Docker/scientific validation.
+
+| Component | Status | Verification |
+| --- | --- | --- |
+| Exact legacy temporal baseline preservation | COMPLETE | Old source hash retained; 38/38 original observations reproduced |
+| Source-backed temporal statement extraction | COMPLETE | Exact spans, parties/actions/triggers, roles, sections, phases, durations and uncertainty tests |
+| Scoped chronology and explicit deadline relations | COMPLETE | Controlled paired evaluation, compatibility and negative regression tests |
+| Abstention and potential/confirmed distinction | COMPLETE | Metadata and API review state verified, including saved uncertain analyses |
+| FastAPI/history/report integration | COMPLETE | Actual model TXT/PDF/DOCX workflows; PDF and DOCX content extracted back |
+| Frozen neural/Phase 2 preservation | COMPLETE | 148/148 neural, structure, reference and graph parity |
+| Full native regression | COMPLETE | 395 passed / 0 failed / 2 optional CUAD skips |
+| Frontend compatibility | COMPLETE | lint/build pass; 20 workflow and 17 alignment checks pass; frontend unchanged |
+| Reproducible evaluation and four required reports | COMPLETE | Phase 3 evaluation directory, manifests, retained failed runs and reports |
+| Docker runtime verification for this revision | BLOCKED | Engine pipe missing; Docker version exit 1; no container run claimed |
+| Independent legal annotation / unseen-family evaluation | BLOCKED | External validation, zero independently adjudicated examples |
+| External security validation | BLOCKED | Not performed; local auth checks are not independent security validation |
+
+Original exposed chronology screen improves from TP/FP/FN/TN 6/2/2/4 to 8/0/0/6. New controlled
+and post-implementation challenge confirmation screens have no final labelled errors, with
+limited relational coverage and substantial abstention. These are development metrics, not
+real-world legal accuracy. See [PHASE3_IMPLEMENTATION_REPORT.md](PHASE3_IMPLEMENTATION_REPORT.md).
+No commit, push, deployment, model/threshold edit or historical artifact deletion occurred.
+
+## Phase 4A obligation/event binding — 2026-10-28
+
+The bounded native research implementation is delivered as an opt-in experimental result.
+This is not a new application-release completion percentage or scientific-readiness award.
+
+| Component | Status | Evidence / remaining work |
+| --- | --- | --- |
+| Phase 3 raw-results audit | COMPLETE | Matrices and 44% reproduce; additive correction: review union 40%, supported statements 96/118 |
+| Explicit obligation fields and conservative pair states | COMPLETE | MATCHED/DIFFERENT/UNCERTAIN/UNSUPPORTED, exact source evidence within the declared active grammar |
+| Opt-in authenticated API, persistence and reports | COMPLETE | Actual model TXT/PDF/DOCX workflows; existing analysis exactly unchanged after opt-in |
+| Frozen development/reserved split experiment | COMPLETE | 28 development / 30 reserved documents; source frozen before one reserved evaluation; no retuning |
+| Native/frontend regression and core preservation | COMPLETE | 440 passed / 0 failed / 2 optional skips; lint/build, 20 workflow, 17 alignment pass; preserved outputs match |
+| Compound actor representation | FAILED VALIDATION | Reserved joint subject collapses to Vendor; pair DIFFERENT happens to be correct; requires future repair |
+| Passive obligation coverage | NOT STARTED | Outside declared active grammar; reserved positive abstains, one FN counted |
+| Event-instance field annotation quality | FAILED VALIDATION | Two recurring-case gold cells per split conflate type and occurrence; frozen results retained with caveat |
+| Public-contract reliability | BLOCKED | No expert labels; substantive views yield partial records and only unsupported pairs |
+| Docker runtime for this revision | BLOCKED | Missing host engine pipe; no container run |
+| Independent legal/family/security validation | BLOCKED | No qualified annotation or external validation performed |
+
+Reserved binary TP/FP/FN/TN: 7/0/1/8 (n=16), P100%, R87.5%, F1 93.33%, FPR0%, FNR12.5%.
+All-case coverage 15/30 (50%); abstention 15/30. These are controlled synthetic comparability
+metrics, not legal contradiction accuracy. **Phase 4B automatic contradiction detection: NO-GO.**
+See [PHASE4A_IMPLEMENTATION_REPORT.md](PHASE4A_IMPLEMENTATION_REPORT.md) and the error analysis.
+Phase 2 structure, Phase 3 temporal logic, neural assets/thresholds, frontend and historical
+research remain unchanged. No commit, push or deployment occurred.
+
+## Phase 4A.1 reliability and feasibility — 2026-10-28
+
+The bounded three-repair phase is complete as an experimental research iteration; this does
+not award real-contract scientific readiness or change the historical application-release score.
+
+| Item | Status | Verified evidence / remaining limitation |
+| --- | --- | --- |
+| Original evaluation denominator reconciliation | COMPLETE | n16 binary includes one positive abstention; coverage15/30 uses all documents |
+| Explicit recurrence annotation correction | COMPLETE | Four separate overlay cells; original labels/predictions and pair labels unchanged |
+| Supported passive by-agent extraction | COMPLETE | Original exposed FN repaired; active/passive source-backed notification/payment/delivery tests |
+| Joint/compound responsible parties | COMPLETE | Actor lists preserved; original joint field and focused ordering/list examples pass |
+| Event type/instance separation | COMPLETE | No occurrence invented from type or trigger; explicit occurrences retained; ambiguity abstains |
+| API/history/PDF/DOCX verification | COMPLETE | Actual model TXT/PDF/DOCX workflows and unchanged pre/post core results |
+| Native regression/core preservation | COMPLETE | 468 passed, 0 failed, 2 optional skips; 148 core parity and 38 historical date matches |
+| Public-contract applicability | FAILED VALIDATION | 0/11 emitted normalized pairs supported, 0/3 documents; no independent legal labels |
+| Inline heading body consumption | BLOCKED | 54 lexical modal cues skipped; unrelated parsing repair outside this three-repair scope |
+| Docker runtime for this revision | BLOCKED | Host engine pipe unavailable; no runtime claim |
+
+Former reserved examples are now exposed development evidence. Binary matching improves from
+7/0/1/8 to 8/0/0/8; supported selected-pair coverage16/30. Focused additions improve from
+0/0/7/3 to 7/0/0/3 with coverage10/20. These are small synthetic results, not legal accuracy.
+**Narrow authentic-contract contradiction demonstration: NO-GO. Phase 4B not started.**
+See [PHASE4A1_RELIABILITY_AND_FEASIBILITY_REPORT.md](PHASE4A1_RELIABILITY_AND_FEASIBILITY_REPORT.md).
+No neural/model/threshold, Phase 2 structure, Phase 3 temporal, frontend or historical research
+changes; no commit, push or deployment.
+
+## Final source correction and research freeze — 2026-10-28
+
+| Item | Status | Evidence |
+| --- | --- | --- |
+| Inline heading-body omission | COMPLETE | One executable consumer-line correction; title/body retained after known identifier |
+| Source/identity/hierarchy/offset compatibility | COMPLETE | Structural parser unchanged; numbered/nested/relative/multiline/citation/ambiguous/CRLF tests |
+| Final native regression and format workflows | COMPLETE | 484 passed, 0 failed, 2 optional skips; actual TXT/PDF/DOCX auth/history/export tests |
+| Existing audit-output compatibility | COMPLETE | 148 neural/structure/reference/graph/direct-date parity; 38 historical date matches |
+| UI compatibility | COMPLETE | Existing lint/build, 20 workflow and 17 alignment checks pass; frontend source unchanged |
+| Three public-contract source checks | COMPLETE | Previously skipped modal cues54 -> 0; inventories unchanged; no legal accuracy label |
+| Public-contract matching readiness | FAILED VALIDATION | All 416 newly exposed normalized-view pairs unsupported; no contradiction-readiness claim |
+| Docker runtime for frozen revision | BLOCKED | Host engine pipe absent; runtime unverified |
+| Reproducible source and paper-evidence identity | COMPLETE | Freeze manifest, local source archive/receipt, environment/assets hashes and inventory |
+
+Classification: **frozen native research prototype**, not scientifically validated legal
+production readiness. Historical application scores/results are preserved. No new model,
+threshold tuning, benchmark cycle, Phase 4B, commit, push or deployment. Implementation stops
+after this freeze. See [FINAL_SOURCE_PARSING_AND_RESEARCH_FREEZE.md](FINAL_SOURCE_PARSING_AND_RESEARCH_FREEZE.md).

@@ -1,0 +1,8 @@
+defect_id,title,component,severity,status,root_cause,resolution_or_mitigation
+DEF-01,Naive indexOf Offset 0 Matching,ContractReviewWorkspace,HIGH,RESOLVED,Inline indexOf searched from 0 without monotonic tracking causing first-occurrence collision,Replaced with alignment.ts sequential monotonic cursor tracking
+DEF-02,Document Swallowing on Next-Clause Miss,ContractReviewWorkspace,HIGH,RESOLVED,Defaulted endPos to raw.length if next clause prefix not found,Replaced with verified boundary gate requiring proven adjacent start index
+DEF-03,Indiscriminate Literal Ellipsis Stripping,ContractReviewWorkspace,MEDIUM,RESOLVED,Regex stripped trailing dots even from literal ellipsis in substantive legal text,Updated extractSearchToken to require preview length >= 100 before stripping
+DEF-04,CRLF vs LF Linebreak Desynchronization,ContractReviewWorkspace,MEDIUM,RESOLVED,FastAPI normalized to LF while Windows clients upload CRLF causing verbatim mismatch,Implemented findOccurrencesForToken adapting newlines dynamically without offset drift
+DEF-05,Missing Preview-Only Status Badge,ClauseCard,MEDIUM,RESOLVED,Unverified clauses did not indicate why full text was unavailable,Added accessible status badge 'Preview only — full clause boundary could not be verified'
+DEF-06,Backend Source Offsets Not Serialized,src/api/schema.py,LOW,DOCUMENTED_LIMITATION,ClauseScoringResultModel does not expose char_start/char_end over HTTP,Mitigated via frontend alignment engine with safe fallback to preview
+DEF-07,Repeated Non-Unique Headings Ambiguity,RuleBasedSegmenter,LOW,DOCUMENTED_LIMITATION,Identical repeated headings produce identical previews without sequence numbers,Safely handled by falling back to PREVIEW_ONLY_AMBIGUOUS for repeated headings

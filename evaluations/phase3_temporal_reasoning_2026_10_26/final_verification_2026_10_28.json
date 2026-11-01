@@ -1,0 +1,113 @@
+{
+  "snapshot_existing_files": 1276,
+  "changed_existing_files": [
+    "src/api/jobs.py",
+    "src/api/reports.py",
+    "src/rules/date_checker.py",
+    "src/rules/unified_pipeline.py",
+    "tests/test_final_release.py",
+    "docs/FINAL_COMPLETION_TRACKER.md"
+  ],
+  "missing_existing_files": [],
+  "unexpected_existing_changes": [],
+  "preserved_phase1_files": 120,
+  "preserved_phase2_files": 71,
+  "preserved_frontend_files": 107,
+  "raw_research_files_checked": 51,
+  "changed_raw_research_files": [],
+  "local_legalbert_cache": {
+    "config.json": true,
+    "pytorch_model.bin": true,
+    "special_tokens_map.json": true,
+    "tokenizer_config.json": true,
+    "vocab.txt": true
+  },
+  "legacy_source_matches_original": true,
+  "new_dataset_matches_authored_hash": true,
+  "final_evaluated_source_manifest_matches": true,
+  "git_head_at_original_oct26_snapshot": "0106f32f0d2cf99a210adf5550b6abe2f66aafc9",
+  "git_head_at_resumed_session": "e5436ea4da3fcaeb7f000a0c06a95a3a125514b8",
+  "git_head_after": "e5436ea4da3fcaeb7f000a0c06a95a3a125514b8",
+  "git_history_note": "Existing Phase 2 commit was already present when resumed. No Git mutation in this implementation session.",
+  "test_runs": [
+    {
+      "file": "initial_regression.xml",
+      "tests": 58,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "skips": [],
+      "passed": 58
+    },
+    {
+      "file": "affected_v1.xml",
+      "tests": 144,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "skips": [],
+      "passed": 144
+    },
+    {
+      "file": "full_native_v1.xml",
+      "tests": 394,
+      "failures": 1,
+      "errors": 0,
+      "skipped": 2,
+      "skips": [
+        {
+          "test": "test_live_cuad_order_report_exists",
+          "reason": "CUAD order report not yet generated. Run: python -m src.data.ingest_cuad first."
+        },
+        {
+          "test": "test_live_cuad_report_has_verdict",
+          "reason": "CUAD order report not yet generated."
+        }
+      ],
+      "passed": 391
+    },
+    {
+      "file": "affected_v2.xml",
+      "tests": 117,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "skips": [],
+      "passed": 117
+    },
+    {
+      "file": "full_native_v2.xml",
+      "tests": 397,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 2,
+      "skips": [
+        {
+          "test": "test_live_cuad_order_report_exists",
+          "reason": "CUAD order report not yet generated. Run: python -m src.data.ingest_cuad first."
+        },
+        {
+          "test": "test_live_cuad_report_has_verdict",
+          "reason": "CUAD order report not yet generated."
+        }
+      ],
+      "passed": 395
+    }
+  ],
+  "paired_verification": {
+    "analyses": 108,
+    "neural_parity_cases": 148,
+    "old_baseline_reproduced": true,
+    "parity_counts": {
+      "neural_identical": 148,
+      "structure_identical": 148,
+      "references_identical": 148,
+      "graph_identical": 148
+    },
+    "exact_temporal_spans_verified": true,
+    "parser_exceptions": 0,
+    "source_manifest_unchanged": true,
+    "elapsed_seconds": 15.25
+  },
+  "passed": true
+}

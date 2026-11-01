@@ -1,0 +1,31 @@
+{
+  "date": "2026-10-28",
+  "python_prefix": "tmp/final-release/clean-env/Scripts/python.exe",
+  "working_directory": "F:/projects/nlp/Legal-contract-coherence-auditor-",
+  "commands": [
+    {"command": "python audit_phase3.py", "exit_code": 0, "result": "Raw confusion/ratio checks pass; report errata identified: final review union 40%, supported statements 96/118"},
+    {"command": "python build_benchmark.py", "exit_code": 0, "result": "28 development / 30 reserved documents frozen before binding implementation; draft literal-field correction retained"},
+    {"command": "python -m pytest tests/test_obligation_binding.py -q --junitxml=development_v1.xml", "exit_code": 0, "passed": 39, "seconds": 0.44},
+    {"command": "python -m pytest tests/test_obligation_binding.py tests/test_obligation_integration.py -q --junitxml=integration_v1.xml", "exit_code": 2, "collection_errors": 1, "result": "Incorrect local test import; fixed to tests.test_temporal_integration before reserved evaluation"},
+    {"command": "python -m pytest tests/test_obligation_binding.py tests/test_obligation_integration.py -q --junitxml=integration_v2.xml", "exit_code": 0, "passed": 44, "warnings": 2, "seconds": 54.76, "note": "Before final markup unit guard; included full real-model format workflows"},
+    {"command": "python evaluate.py --split development --run-id development_v1", "exit_code": 0, "documents": 28, "result": "27/27 expected labelled states, one provisional unscored; 50% coverage; raw field limitations retained"},
+    {"command": "python -m pytest tests -q --junitxml=full_native_v1.xml", "exit_code": 0, "passed": 440, "failed": 0, "skipped": 2, "warnings": 9, "seconds": 269.66, "authoritative_full_native": true},
+    {"command": "python verify_existing_outputs.py", "exit_code": 0, "seconds": 73.031, "result": "148 neural/structural/reference/graph/direct-date checks; 38 saved Phase 3 date checks; all pass"},
+    {"command": "python public_smoke.py", "exit_code": 0, "documents": 3, "observations": 6, "result": "Smallest reference-style SEC exhibits; raw unsupported, normalized no supported obligations; no labels"},
+    {"command": "python public_smoke.py --substantive", "exit_code": 0, "documents": 3, "observations": 6, "result": "Fixed 20-200KB/path stratum; eight partial normalized records, eleven unsupported pairs; no labels"},
+    {"command": "npm run lint", "working_directory": "frontend", "exit_code": 0},
+    {"command": "npm run build", "working_directory": "frontend", "exit_code": 0},
+    {"command": "npm run test:workflow", "working_directory": "frontend", "exit_code": 0, "passed": 20},
+    {"command": "npm run test:alignment", "working_directory": "frontend", "exit_code": 0, "passed": 17},
+    {"command": "docker version --format '{{json .}}'", "exit_code": 1, "result": "Server=null; missing dockerDesktopLinuxEngine pipe", "runtime_status": "BLOCKED_NOT_VERIFIED"},
+    {"command": "python evaluate.py --freeze", "exit_code": 0, "result": "Production/test/protocol source frozen before reserved exposure"},
+    {"command": "python evaluate.py --split evaluation --run-id evaluation_first_pass", "exit_code": 0, "documents": 30, "result": "Full binary n16: TP7 FP0 FN1 TN8; coverage15/30; abstention15/30; no production tuning afterward"},
+    {"command": "python analyze_errors.py", "exit_code": 0, "result": "Passive miss, compound actor error and two recurrence type/instance label defects per split retained; sensitivity explicitly posthoc"},
+    {"command": "python reproduce_frozen.py --run-id exposed_reproduction_v1", "exit_code": 0, "observations": 58, "identical": 58, "independent_new_examples": 0, "result": "Exposed deterministic reproduction only; frozen source and benchmark unchanged"},
+    {"command": "python verify_final.py", "exit_code": 0, "result": "1345-file preservation, frozen source/benchmark, local model cache, Git HEAD, native totals and pair metrics verified; no unexpected changes"}
+  ],
+  "environment": "Existing CPU clean Python, offline frozen models, isolated temporary user storage, permitted localhost for actual HTTP integration",
+  "independent_legal_labels": 0,
+  "phase4b_recommendation": "NO-GO for automatic distant-clause contradiction detection",
+  "git_commit_push_deploy": "None"
+}

@@ -125,7 +125,7 @@ export function RedTeamWorkspace({
 
   const handleExecute = async () => {
     if (!experimentalOptIn) {
-      alert("Explicit experimental opt-in required by Contract §7/§20.");
+      alert("Opt in before running a research experiment.");
       return;
     }
 
@@ -180,10 +180,10 @@ export function RedTeamWorkspace({
               <FlaskConical size={18} />
             </div>
             <h2 className="text-base font-bold text-slate-100">
-              Self Red-Team Robustness Laboratory
+              Robustness Testing (Research)
             </h2>
             <span className="text-[10px] font-mono bg-blue-950/60 text-blue-300 border border-blue-800/40 px-2 py-0.5 rounded font-bold">
-              PHASE 4D
+              Research
             </span>
           </div>
           <p className="text-xs text-slate-400 mt-1 max-w-2xl leading-relaxed">

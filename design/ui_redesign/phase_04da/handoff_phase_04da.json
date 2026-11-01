@@ -1,0 +1,153 @@
+{
+  "phase": "PHASE_04DA",
+  "program": "LexAudit Research Extension",
+  "audit_date": "2026-10-22T04:15:00Z",
+  "auditor_role": "Principal ML Research Auditor & Independent Verification Lead",
+  "verdict": "READY_WITH_DOCUMENTED_SCIENTIFIC_LIMITATIONS",
+  "repository": {
+    "git_branch": "main",
+    "git_head_commit": "23dbcf536f2fb3dce1611e2d2ae71e9ca8c86f55",
+    "worktree_staged_changes": 0,
+    "commits_created": 0,
+    "backup_snapshot_path": "C:\\Users\\gowth\\.gemini\\antigravity-ide\\brain\\69e9beaf-b94a-4f84-8c17-05ea3face92e\\scratch\\phase4da_backup_snapshot"
+  },
+  "priority_one_threshold_audit": {
+    "target_threshold": 0.08,
+    "source_verification": "PHASE_4D_CRITERION_INCORRECT",
+    "findings": "0.08 does not exist in production scoring configuration (src/config.py or src/scoring/severity.py). It was an ad-hoc runner parameter applied to max_affected_clause_b_delta. Equating score delta with production anomaly severity is a category error.",
+    "production_detection_predicate": "SeverityRanker.assess_clause requires composite score S >= 0.50 (or single-channel >= 0.70)"
+  },
+  "structural_recalculation": {
+    "total_cases": 6,
+    "p1_displacement_cases": 3,
+    "p2_swap_cases": 3,
+    "total_clause_comparisons": 66,
+    "total_transition_edges": 60,
+    "channel_a_permutation_invariance": {
+      "verified_delta": 0.0,
+      "max_delta": 0.0,
+      "status": "MATHEMATICALLY_AND_EMPIRICALLY_PROVEN"
+    },
+    "channel_b_logit_compression": {
+      "min_transition_prob": 0.3102,
+      "max_transition_prob": 0.3389,
+      "total_spread": 0.0287,
+      "max_single_transition_delta": 0.0152
+    },
+    "production_detections": {
+      "detected_count": 0,
+      "total_count": 6,
+      "detection_rate": 0.0,
+      "all_cases_clean_tier": true,
+      "per_clause_decisions": {
+        "clauses_evaluated_count": 66,
+        "max_combined_before": 0.3449,
+        "max_combined_after": 0.3449,
+        "max_channel_a_before": 0.0,
+        "max_channel_a_after": 0.0,
+        "max_channel_b_before": 0.6898,
+        "max_channel_b_after": 0.6898,
+        "severities_before": "100% CLEAN (66/66 clauses < 0.35)",
+        "severities_after": "100% CLEAN (66/66 clauses < 0.35)",
+        "is_anomaly_before": "100% False (0/66 anomalies)",
+        "is_anomaly_after": "100% False (0/66 anomalies)"
+      }
+    }
+  },
+  "decoupled_benchmarks": {
+    "broken_references": {
+      "condition_positives": 3,
+      "condition_negatives": 2,
+      "tp": 3,
+      "fp": 0,
+      "fn": 0,
+      "tn": 2,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "accuracy": 1.0,
+      "wilson_95_ci_recall": [0.4385, 1.0]
+    },
+    "date_inversions": {
+      "condition_positives": 2,
+      "condition_negatives": 2,
+      "tp": 2,
+      "fp": 0,
+      "fn": 0,
+      "tn": 2,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "accuracy": 1.0,
+      "wilson_95_ci_recall": [0.3424, 1.0]
+    },
+    "structural_perturbations_strict": {
+      "condition_positives": 5,
+      "condition_negatives": 2,
+      "tp": 0,
+      "fp": 0,
+      "fn": 5,
+      "tn": 2,
+      "precision": null,
+      "recall": 0.0,
+      "f1": null,
+      "accuracy": 0.2857,
+      "wilson_95_ci_recall": [0.0, 0.4345]
+    },
+    "structural_perturbations_broad": {
+      "condition_positives": 6,
+      "condition_negatives": 2,
+      "tp": 0,
+      "fp": 0,
+      "fn": 6,
+      "tn": 2,
+      "precision": null,
+      "recall": 0.0,
+      "f1": null,
+      "accuracy": 0.25,
+      "wilson_95_ci_recall": [0.0, 0.3903]
+    }
+  },
+  "backend_regression": {
+    "total_collected": 172,
+    "passed": 170,
+    "skipped": 2,
+    "failed": 0,
+    "warnings": 4,
+    "duration_seconds": 117.67,
+    "exit_code": 0,
+    "raw_log_path": "design/ui_redesign/phase_04da/backend_pytest_raw.log",
+    "test_api_integration_remediation": {
+      "file": "tests/test_api_integration.py",
+      "change": "max_retries = 120 -> max_retries = 240 in test_end_to_end_analysis_flow",
+      "rationale": "Prevented flaky timeout under heavy concurrent PyTorch CPU test suite inference",
+      "assertions_weakened": false,
+      "security_checks_weakened": false
+    }
+  },
+  "frontend_regression": {
+    "typescript_errors": 0,
+    "eslint_errors": 0,
+    "alignment_tests_passed": 17,
+    "alignment_tests_total": 17,
+    "next_build_status": "SUCCESS",
+    "build_duration_seconds": 11.4
+  },
+  "browser_acceptance_32_checks": {
+    "total_checks": 32,
+    "executed_checks": 32,
+    "passed_checks": 32,
+    "failed_checks": 0,
+    "unexecuted_checks": 0,
+    "pass_rate_percent": 100.0,
+    "matrix_csv_path": "design/ui_redesign/phase_04da/browser_acceptance_32_check_matrix.csv",
+    "report_md_path": "design/ui_redesign/phase_04da/browser_acceptance_report.md",
+    "evidence_screenshots_count": 13
+  },
+  "scientific_limitations": [
+    "Frozen Channel A OOD distance is permutation-invariant and cannot detect clause displacements or swaps.",
+    "Fine-tuned Legal-BERT Channel B transition probabilities are compressed into a narrow [0.3102, 0.3389] range, with max delta +0.0152 insufficient to cross production anomaly threshold 0.50.",
+    "Existing frozen pipeline lacks a dedicated duplicate clause detector; P3 and P4 are evaluated descriptively only.",
+    "Dual-channel composite score halves Channel B shifts (0.5 weight), further dampening structural signal."
+  ]
+}

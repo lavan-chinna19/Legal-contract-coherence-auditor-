@@ -1,0 +1,30 @@
+[
+  {
+    "name": "invalid.txt",
+    "expected_status": 400,
+    "observed_status": 400,
+    "passed": true,
+    "detail": "File is damaged, encrypted, or invalid for its format. TXT must be UTF-8."
+  },
+  {
+    "name": "damaged.pdf",
+    "expected_status": 400,
+    "observed_status": 400,
+    "passed": true,
+    "detail": "File is damaged, encrypted, or invalid for its format. TXT must be UTF-8."
+  },
+  {
+    "name": "damaged.docx",
+    "expected_status": 400,
+    "observed_status": 400,
+    "passed": true,
+    "detail": "File is damaged, encrypted, or invalid for its format. TXT must be UTF-8."
+  },
+  {
+    "name": "blank.pdf",
+    "expected_status": 400,
+    "observed_status": 400,
+    "passed": true,
+    "detail": "No readable text found. Empty or scanned documents require text extraction or OCR first."
+  }
+]

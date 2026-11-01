@@ -1,0 +1,5 @@
+Section 2. Services
+The services are defined here.
+
+Section 1. Payment
+Payment follows Section 2 below.

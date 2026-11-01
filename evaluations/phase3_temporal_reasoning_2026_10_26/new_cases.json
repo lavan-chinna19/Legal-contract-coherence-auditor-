@@ -1,0 +1,586 @@
+{
+  "dataset_role": "NEWLY_AUTHORED_EXPOSED_SYNTHETIC_DEVELOPMENT",
+  "independent_adjudication_count": 0,
+  "cases": [
+    {
+      "case_id": "N01",
+      "text": "Section 1. Timing\nThe Effective Date is 2026-01-01.\n\nSection 2. Timing\nThe Expiration Date is 2026-12-31.",
+      "confirmed_conflict_gold": false,
+      "expected_category": null,
+      "construction_rule": "Ordered explicit term endpoints",
+      "provenance": "NEW_MECHANICAL_SYNTHETIC",
+      "independently_adjudicated": false,
+      "split": "EXPOSED_DEVELOPMENT"
+    },
+    {
+      "case_id": "N02",
+      "text": "Section 1. Timing\nThe Effective Date is 2026-12-31.\n\nSection 2. Timing\nThe Expiration Date is 2026-01-01.",
+      "confirmed_conflict_gold": true,
+      "expected_category": null,
+      "construction_rule": "Reversed explicit term endpoints",
+      "provenance": "NEW_MECHANICAL_SYNTHETIC",
+      "independently_adjudicated": false,
+      "split": "EXPOSED_DEVELOPMENT"
+    },
+    {
+      "case_id": "N03",
+      "text": "Section 1. Timing\nFor Agreement A, the Effective Date is 2026-06-01.\n\nSection 2. Timing\nFor Agreement A, the Expiration Date is 2026-12-31.\n\nSection 3. Timing\nFor Agreement B, the Effective Date is 2026-01-01.\n\nSection 4. Timing\nFor Agreement B, the Expiration Date is 2026-03-01.",
+      "confirmed_conflict_gold": false,
+      "expected_category": null,
+      "construction_rule": "Two individually valid agreements; no cross-product comparison",
+      "provenance": "NEW_MECHANICAL_SYNTHETIC",
+      "independently_adjudicated": false,
+      "split": "EXPOSED_DEVELOPMENT"
+    },
+    {
+      "case_id": "N04",
+      "text": "Section 1. Timing\nBuyer shall pay Invoice Alpha on 2026-02-01.\n\nSection 2. Timing\nSeller shall pay Invoice Alpha on 2026-03-01.",
+      "confirmed_conflict_gold": false,
+      "expected_category": null,
+      "construction_rule": "Different explicit actors; no identical-obligation contradiction",
+      "provenance": "NEW_MECHANICAL_SYNTHETIC",
+      "independently_adjudicated": false,
+      "split": "EXPOSED_DEVELOPMENT"
+    },
+    {
+      "case_id": "N05",
+      "text": "Section 1. Timing\nEvent Completion occurs on 2026-06-01.\n\nSection 2. Timing\nEvent Completion occurs on 2026-07-01.",
+      "confirmed_conflict_gold": true,
+      "expected_category": null,
+      "construction_rule": "Same unqualified exact named event, same scope, different singleton dates",
+      "provenance": "NEW_MECHANICAL_SYNTHETIC",
+      "independently_adjudicated": false,
+      "split": "EXPOSED_DEVELOPMENT"
+    },
+    {
+      "case_id": "N06",
+      "text": "Section 1. Timing\nEvent Completion occurs on 2026-06-01.\n\nSection 2. Timing\nEvent Completion occurs on 2026-06-01.",
+      "confirmed_conflict_gold": false,
+      "expected_category": null,
+      "construction_rule": "Identical named-event date repeated",
+      "provenance": "NEW_MECHANICAL_SYNTHETIC",
+      "independently_adjudicated": false,
+      "split": "EXPOSED_DEVELOPMENT"
+    },
+    {
+      "case_id": "N07",
+      "text": "Section 1. Timing\nEvent Completion occurs on 2026-06-01.\n\nSection 2. Timing\nEvent Inspection occurs on 2026-07-01.",
+      "confirmed_conflict_gold": false,
+      "expected_category": null,
+      "construction_rule": "Different named events need not share dates",
+      "provenance": "NEW_MECHANICAL_SYNTHETIC",
+      "independently_adjudicated": false,
+      "split": "EXPOSED_DEVELOPMENT"
+    },
+    {
+      "case_id": "N08",
+      "text": "Section 1. Timing\nEvent Completion occurs on 2026-06-01.\n\nSection 2. Timing\nUnder the amendment, Event Completion occurs on 2026-07-01.",
+      "confirmed_conflict_gold": null,
+      "expected_category": null,
+      "construction_rule": "Amendment precedence requires interpretation",
+      "provenance": "PROVISIONAL_INTERPRETATION",
+      "independently_adjudicated": false,
+      "split": "EXPOSED_DEVELOPMENT"
+    },
+    {
+      "case_id": "N09",
+      "text": "Section 1. Timing\nInvoice Alpha is received on 2026-01-01.\n\nSection 2. Timing\nBuyer shall pay Invoice Alpha within 30 calendar days after receipt of Invoice Alpha.\n\nSection 3. Timing\nBuyer shall pay Invoice Alpha on 2026-01-20.",
+      "confirmed_conflict_gold": false,
+      "expected_category": null,
+      "construction_rule": "Explicit payment date within 30 calendar days after dated named receipt",
+      "provenance": "NEW_MECHANICAL_SYNTHETIC",
+      "independently_adjudicated": false,
+      "split": "EXPOSED_DEVELOPMENT"
+    },
+    {
+      "case_id": "N10",
+      "text": "Section 1. Timing\nInvoice Alpha is received on 2026-01-01.\n\nSection 2. Timing\nBuyer shall pay Invoice Alpha within 30 calendar days after receipt of Invoice Alpha.\n\nSection 3. Timing\nBuyer shall pay Invoice Alpha on 2026-02-15.",
+      "confirmed_conflict_gold": true,
+      "expected_category": null,
+      "construction_rule": "Explicit payment date exceeds Jan 31 upper bound",
+      "provenance": "NEW_MECHANICAL_SYNTHETIC",
+      "independently_adjudicated": false,
+      "split": "EXPOSED_DEVELOPMENT"
+    },
+    {
+      "case_id": "N11",
+      "text": "Section 1. Timing\nDelivery Alpha occurs on 2026-01-01.\n\nSection 2. Timing\nBuyer shall pay Invoice Alpha within 10 calendar days after Delivery Alpha.\n\nSection 3. Timing\nBuyer shall pay Invoice Alpha on 2026-01-20.",
+      "confirmed_conflict_gold": true,
+      "expected_category": null,
+      "construction_rule": "Trigger and payment stated across sections; payment exceeds Jan 11",
+      "provenance": "NEW_MECHANICAL_SYNTHETIC",
+      "independently_adjudicated": false,
+      "split": "EXPOSED_DEVELOPMENT"
+    },
+    {
+      "case_id": "N12",
+      "text": "Section 1. Timing\nInvoice Alpha is received on 2026-01-01.\n\nSection 2. Timing\nDelivery Alpha occurs on 2026-01-15.\n\nSection 3. Timing\nBuyer shall pay Invoice Alpha within 30 calendar days after receipt of Invoice Alpha.\n\nSection 4. Timing\nBuyer shall pay Invoice Alpha within 30 calendar days after Delivery Alpha.",
+      "confirmed_conflict_gold": false,
+      "expected_category": null,
+      "construction_rule": "Different trigger events cannot automatically form disjoint bounds",
+      "provenance": "NEW_MECHANICAL_SYNTHETIC",
+      "independently_adjudicated": false,
+      "split": "EXPOSED_DEVELOPMENT"
+    },
+    {
+      "case_id": "N13",
+      "text": "Section 1. Timing\nInvoice Alpha is received on 2026-01-01.\n\nSection 2. Timing\nBuyer shall give notice within 10 calendar days after receipt of Invoice Alpha.\n\nSection 3. Timing\nBuyer shall give notice within 20 calendar days after receipt of Invoice Alpha.",
+      "confirmed_conflict_gold": false,
+      "expected_category": "POTENTIAL_INCONSISTENCY",
+      "construction_rule": "Two upper bounds overlap; stricter deadline can satisfy both",
+      "provenance": "NEW_MECHANICAL_SYNTHETIC",
+      "independently_adjudicated": false,
+      "split": "EXPOSED_DEVELOPMENT"
+    },
+    {
+      "case_id": "N14",
+      "text": "Section 1. Timing\nInvoice Alpha is received on 2026-01-01.\n\nSection 2. Timing\nBuyer shall pay Invoice Alpha exactly 10 calendar days after receipt of Invoice Alpha.\n\nSection 3. Timing\nBuyer shall pay Invoice Alpha exactly 20 calendar days after receipt of Invoice Alpha.",
+      "confirmed_conflict_gold": true,
+      "expected_category": null,
+      "construction_rule": "Disjoint singleton offsets for identical actor/action/trigger",
+      "provenance": "NEW_MECHANICAL_SYNTHETIC",
+      "independently_adjudicated": false,
+      "split": "EXPOSED_DEVELOPMENT"
+    },
+    {
+      "case_id": "N15",
+      "text": "Section 1. Timing\nInvoice Alpha is received on 2026-01-01.\n\nSection 2. Timing\nBuyer shall pay Invoice Alpha within 30 calendar days after receipt of Invoice Alpha.\n\nSection 3. Timing\nBuyer shall pay Invoice Alpha at least 60 calendar days after receipt of Invoice Alpha.",
+      "confirmed_conflict_gold": true,
+      "expected_category": null,
+      "construction_rule": "Offset lower 60 exceeds upper 30",
+      "provenance": "NEW_MECHANICAL_SYNTHETIC",
+      "independently_adjudicated": false,
+      "split": "EXPOSED_DEVELOPMENT"
+    },
+    {
+      "case_id": "N16",
+      "text": "Section 1. Timing\nInvoice Alpha is received on 2026-01-01.\n\nSection 2. Timing\nBuyer shall pay Invoice Alpha within 30 calendar days after receipt of Invoice Alpha.\n\nSection 3. Timing\nBuyer shall pay Invoice Alpha at least 10 calendar days after receipt of Invoice Alpha.",
+      "confirmed_conflict_gold": false,
+      "expected_category": null,
+      "construction_rule": "Offset interval [10,30] is feasible; no mathematical contradiction",
+      "provenance": "NEW_MECHANICAL_SYNTHETIC",
+      "independently_adjudicated": false,
+      "split": "EXPOSED_DEVELOPMENT"
+    },
+    {
+      "case_id": "N17",
+      "text": "Section 1. Timing\nInvoice Alpha is received on 2026-01-01.\n\nSection 2. Timing\nBuyer shall pay Invoice Alpha within 30 calendar days after receipt of Invoice Alpha.\n\nSection 3. Timing\nBuyer shall pay Invoice Alpha within 30 business days after receipt of Invoice Alpha.",
+      "confirmed_conflict_gold": false,
+      "expected_category": null,
+      "construction_rule": "Business and calendar basis not interchangeable",
+      "provenance": "NEW_MECHANICAL_SYNTHETIC",
+      "independently_adjudicated": false,
+      "split": "EXPOSED_DEVELOPMENT"
+    },
+    {
+      "case_id": "N18",
+      "text": "Section 1. Timing\nBuyer shall pay Invoice Alpha within 30 calendar days after receipt of Invoice Alpha.",
+      "confirmed_conflict_gold": false,
+      "expected_category": "REVIEW_REQUIRED",
+      "construction_rule": "Trigger timestamp absent; no invented calendar deadline",
+      "provenance": "NEW_MECHANICAL_SYNTHETIC",
+      "independently_adjudicated": false,
+      "split": "EXPOSED_DEVELOPMENT"
+    },
+    {
+      "case_id": "N19",
+      "text": "Section 1. Timing\nInvoice Alpha is received on 2026-01-01.\n\nSection 2. Timing\nPayment is required within 30 calendar days after receipt of Invoice Alpha.",
+      "confirmed_conflict_gold": false,
+      "expected_category": "REVIEW_REQUIRED",
+      "construction_rule": "Responsible actor not stated; do not invent actor",
+      "provenance": "NEW_MECHANICAL_SYNTHETIC",
+      "independently_adjudicated": false,
+      "split": "EXPOSED_DEVELOPMENT"
+    },
+    {
+      "case_id": "N20",
+      "text": "Section 1. Timing\nThe Effective Date is 03/04/2026.\n\nSection 2. Timing\nThe Expiration Date is 04/03/2026.",
+      "confirmed_conflict_gold": false,
+      "expected_category": "REVIEW_REQUIRED",
+      "construction_rule": "Numeric locale ambiguous; no unique ordering",
+      "provenance": "NEW_MECHANICAL_SYNTHETIC",
+      "independently_adjudicated": false,
+      "split": "EXPOSED_DEVELOPMENT"
+    },
+    {
+      "case_id": "N21",
+      "text": "Section 1. Timing\nThe Effective Date is February 30, 2026.",
+      "confirmed_conflict_gold": false,
+      "expected_category": "REVIEW_REQUIRED",
+      "construction_rule": "Calendar-invalid date must not silently disappear",
+      "provenance": "NEW_MECHANICAL_SYNTHETIC",
+      "independently_adjudicated": false,
+      "split": "EXPOSED_DEVELOPMENT"
+    },
+    {
+      "case_id": "N22",
+      "text": "Section 1. Timing\nThe archive entry dated December 31, 2026 relates to a historical entry dated January 1, 2026.",
+      "confirmed_conflict_gold": false,
+      "expected_category": null,
+      "construction_rule": "Historical independent dates are not an interval",
+      "provenance": "NEW_MECHANICAL_SYNTHETIC",
+      "independently_adjudicated": false,
+      "split": "EXPOSED_DEVELOPMENT"
+    },
+    {
+      "case_id": "N23",
+      "text": "Section 1. Timing\nThe Expiration Date is 2026-07-01.\n\nSection 2. Timing\nBuyer shall give notice at least 30 calendar days before the Expiration Date.",
+      "confirmed_conflict_gold": false,
+      "expected_category": null,
+      "construction_rule": "Notice period is a duration relative to expiry, not a competing expiry date",
+      "provenance": "NEW_MECHANICAL_SYNTHETIC",
+      "independently_adjudicated": false,
+      "split": "EXPOSED_DEVELOPMENT"
+    },
+    {
+      "case_id": "N24",
+      "text": "Section 1. Timing\nThis agreement is executed on 2026-07-01.\n\nSection 2. Timing\nThe Expiration Date is 2026-06-01.\n\nSection 3. Timing\nThe parties expressly authorize retrospective ratification.",
+      "confirmed_conflict_gold": null,
+      "expected_category": null,
+      "construction_rule": "Execution/effectiveness/legal retroactivity not mechanically invalid",
+      "provenance": "PROVISIONAL_INTERPRETATION",
+      "independently_adjudicated": false,
+      "split": "EXPOSED_DEVELOPMENT"
+    },
+    {
+      "case_id": "N25",
+      "text": "Section 1. Timing\nFor the initial term, the Effective Date is 2026-01-01.\n\nSection 2. Timing\nFor the initial term, the Expiration Date is 2026-12-31.\n\nSection 3. Timing\nFor the renewal term, the Effective Date is 2027-01-01.\n\nSection 4. Timing\nFor the renewal term, the Expiration Date is 2027-12-31.",
+      "confirmed_conflict_gold": false,
+      "expected_category": null,
+      "construction_rule": "Initial and renewal phases individually ordered",
+      "provenance": "NEW_MECHANICAL_SYNTHETIC",
+      "independently_adjudicated": false,
+      "split": "EXPOSED_DEVELOPMENT"
+    },
+    {
+      "case_id": "N26",
+      "text": "Section 1. Timing\nEvent Completion occurs on 2026-06-01.\n\nSection 2. Timing\nIf approval is granted, Event Completion occurs on 2026-07-01.",
+      "confirmed_conflict_gold": false,
+      "expected_category": null,
+      "construction_rule": "Conditional alternate date is not an unconditional singleton conflict",
+      "provenance": "NEW_MECHANICAL_SYNTHETIC",
+      "independently_adjudicated": false,
+      "split": "EXPOSED_DEVELOPMENT"
+    },
+    {
+      "case_id": "N27",
+      "text": "Section 1. Timing\nEvent Completion occurs on approximately 2026-06-01.\n\nSection 2. Timing\nEvent Completion occurs on 2026-06-03.",
+      "confirmed_conflict_gold": false,
+      "expected_category": null,
+      "construction_rule": "Approximate dates do not imply disjoint exact singleton dates",
+      "provenance": "NEW_MECHANICAL_SYNTHETIC",
+      "independently_adjudicated": false,
+      "split": "EXPOSED_DEVELOPMENT"
+    },
+    {
+      "case_id": "N28",
+      "text": "Section 1. Timing\nService runs from 2026-12-31 to 2026-01-01.",
+      "confirmed_conflict_gold": true,
+      "expected_category": null,
+      "construction_rule": "Explicit from-to range inverted",
+      "provenance": "NEW_MECHANICAL_SYNTHETIC",
+      "independently_adjudicated": false,
+      "split": "EXPOSED_DEVELOPMENT"
+    },
+    {
+      "case_id": "N29",
+      "text": "Section 1. Timing\nReview records list 2026-12-31 and 2026-01-01 independently.",
+      "confirmed_conflict_gold": false,
+      "expected_category": null,
+      "construction_rule": "Descending dates without range syntax are not inverted range",
+      "provenance": "NEW_MECHANICAL_SYNTHETIC",
+      "independently_adjudicated": false,
+      "split": "EXPOSED_DEVELOPMENT"
+    },
+    {
+      "case_id": "N30",
+      "text": "Section 1. Timing\nThe Effective Date is 2026-06-01.\n\nSection 2. Timing\nPayment due on 2026-05-01 is an expressly permitted refundable advance deposit.",
+      "confirmed_conflict_gold": false,
+      "expected_category": null,
+      "construction_rule": "Explicit permitted prepayment cannot be a confirmed conflict",
+      "provenance": "NEW_MECHANICAL_SYNTHETIC",
+      "independently_adjudicated": false,
+      "split": "EXPOSED_DEVELOPMENT"
+    },
+    {
+      "case_id": "N31",
+      "text": "Section 1. Timing\nMilestone Alpha occurs on 2026-06-02.\n\nSection 2. Timing\nMilestone Beta occurs on 2026-06-01.\n\nSection 3. Timing\nMilestone Alpha must occur before Milestone Beta.",
+      "confirmed_conflict_gold": true,
+      "expected_category": null,
+      "construction_rule": "Explicit ordered event sequence contradicted by stated exact dates",
+      "provenance": "NEW_MECHANICAL_SYNTHETIC",
+      "independently_adjudicated": false,
+      "split": "EXPOSED_DEVELOPMENT"
+    },
+    {
+      "case_id": "N32",
+      "text": "Section 1. Timing\nMilestone Alpha occurs on 2026-06-02.\n\nSection 2. Timing\nMilestone Beta occurs on 2026-06-01.",
+      "confirmed_conflict_gold": false,
+      "expected_category": null,
+      "construction_rule": "No sequence constraint; section order is not temporal order",
+      "provenance": "NEW_MECHANICAL_SYNTHETIC",
+      "independently_adjudicated": false,
+      "split": "EXPOSED_DEVELOPMENT"
+    },
+    {
+      "case_id": "N33",
+      "text": "Section 1. Timing\nMilestone Alpha occurs on 2026-06-02.\n\nSection 2. Timing\nMilestone Beta occurs on 2026-06-01.\n\nSection 3. Timing\nMilestone Alpha need not occur before Milestone Beta.",
+      "confirmed_conflict_gold": false,
+      "expected_category": null,
+      "construction_rule": "Negated sequence is not positive before constraint",
+      "provenance": "NEW_MECHANICAL_SYNTHETIC",
+      "independently_adjudicated": false,
+      "split": "EXPOSED_DEVELOPMENT"
+    },
+    {
+      "case_id": "N34",
+      "text": "Section 1. Timing\nInvoice Alpha is received on 2026-01-01.\n\nSection 2. Timing\nBuyer shall pay Invoice Alpha exactly 2 weeks after receipt of Invoice Alpha.\n\nSection 3. Timing\nBuyer shall pay Invoice Alpha exactly 14 calendar days after receipt of Invoice Alpha.",
+      "confirmed_conflict_gold": false,
+      "expected_category": null,
+      "construction_rule": "Two calendar weeks equal 14 calendar days",
+      "provenance": "NEW_MECHANICAL_SYNTHETIC",
+      "independently_adjudicated": false,
+      "split": "EXPOSED_DEVELOPMENT"
+    },
+    {
+      "case_id": "N35",
+      "text": "Section 1. Timing\nInvoice Alpha is received on 2026-01-01.\n\nSection 2. Timing\nBuyer shall pay Invoice Alpha within 1 month after receipt of Invoice Alpha.",
+      "confirmed_conflict_gold": false,
+      "expected_category": "UNSUPPORTED",
+      "construction_rule": "Month boundary/calendar policy not defined for arithmetic",
+      "provenance": "NEW_MECHANICAL_SYNTHETIC",
+      "independently_adjudicated": false,
+      "split": "EXPOSED_DEVELOPMENT"
+    },
+    {
+      "case_id": "N36",
+      "text": "Section 1. Timing\nThe Expiration Date is 2026-07-20.\n\nSection 2. Timing\nBuyer shall give notice no later than 5 calendar days before the Expiration Date.\n\nSection 3. Timing\nBuyer shall give notice on 2026-07-18.",
+      "confirmed_conflict_gold": true,
+      "expected_category": null,
+      "construction_rule": "Absolute notice date violates explicit latest July 15, not inferred from expiry alone",
+      "provenance": "NEW_MECHANICAL_SYNTHETIC",
+      "independently_adjudicated": false,
+      "split": "EXPOSED_DEVELOPMENT"
+    },
+    {
+      "case_id": "N37",
+      "text": "Section 1. Timing\nInvoice Alpha is received on 2026-01-01.\n\nSection 2. Timing\nInvoice Beta is received on 2026-01-15.\n\nSection 3. Timing\nBuyer shall pay Invoice Alpha within 30 calendar days after receipt of Invoice Alpha.\n\nSection 4. Timing\nBuyer shall pay Invoice Alpha within 10 calendar days after receipt of Invoice Beta.",
+      "confirmed_conflict_gold": false,
+      "expected_category": null,
+      "construction_rule": "Different named invoice receipts remain distinct triggers",
+      "provenance": "NEW_MECHANICAL_SYNTHETIC",
+      "independently_adjudicated": false,
+      "split": "EXPOSED_DEVELOPMENT"
+    },
+    {
+      "case_id": "N38",
+      "text": "Section 1. Timing\nThe Effective Date is\n2026-06-01.\nThe Expiration Date is\n2026-05-01.",
+      "confirmed_conflict_gold": true,
+      "expected_category": null,
+      "construction_rule": "Source roles survive line wrapping independently of neural segmentation",
+      "provenance": "NEW_MECHANICAL_SYNTHETIC",
+      "independently_adjudicated": false,
+      "split": "EXPOSED_DEVELOPMENT"
+    },
+    {
+      "case_id": "N39",
+      "text": "Section 1. Timing\nThe Effective Date and the Expiration Date are 2026-06-01.",
+      "confirmed_conflict_gold": false,
+      "expected_category": null,
+      "construction_rule": "Multiple roles around one date need no invented conflicting endpoint",
+      "provenance": "NEW_MECHANICAL_SYNTHETIC",
+      "independently_adjudicated": false,
+      "split": "EXPOSED_DEVELOPMENT"
+    },
+    {
+      "case_id": "N40",
+      "text": "Section 1. Timing\nThe Effective Date is 2026/01/01.\n\nSection 2. Timing\nThe Expiration Date is 2026/12/31.",
+      "confirmed_conflict_gold": false,
+      "expected_category": null,
+      "construction_rule": "Year-first slash dates have defined ordering",
+      "provenance": "NEW_MECHANICAL_SYNTHETIC",
+      "independently_adjudicated": false,
+      "split": "EXPOSED_DEVELOPMENT"
+    },
+    {
+      "case_id": "N41",
+      "text": "Section 1. Timing\nThe Effective Date is 13/01/2026.\n\nSection 2. Timing\nThe Expiration Date is 01/02/2026.",
+      "confirmed_conflict_gold": false,
+      "expected_category": "REVIEW_REQUIRED",
+      "construction_rule": "Second date still ambiguous; do not force locale from first",
+      "provenance": "NEW_MECHANICAL_SYNTHETIC",
+      "independently_adjudicated": false,
+      "split": "EXPOSED_DEVELOPMENT"
+    },
+    {
+      "case_id": "N42",
+      "text": "Section 1. Timing\n2026-12-31 is the Effective Date.\n\nSection 2. Timing\n2026-01-01 is the Expiration Date.",
+      "confirmed_conflict_gold": true,
+      "expected_category": null,
+      "construction_rule": "Following role within full statement permits reversed endpoint check",
+      "provenance": "NEW_MECHANICAL_SYNTHETIC",
+      "independently_adjudicated": false,
+      "split": "EXPOSED_DEVELOPMENT"
+    },
+    {
+      "case_id": "N43",
+      "text": "Section 1. Timing\nInvoice Alpha is received on 2026-01-01.\n\nSection 2. Timing\nBuyer shall pay Invoice Alpha within thirty (30) calendar days after receipt of Invoice Alpha.\n\nSection 3. Timing\nBuyer shall pay Invoice Alpha on 2026-02-15.",
+      "confirmed_conflict_gold": true,
+      "expected_category": null,
+      "construction_rule": "Written and numeric durations agree; Jan 31 upper bound",
+      "provenance": "NEW_MECHANICAL_SYNTHETIC",
+      "independently_adjudicated": false,
+      "split": "EXPOSED_DEVELOPMENT"
+    },
+    {
+      "case_id": "N44",
+      "text": "Section 1. Timing\nInvoice Alpha is received on 2026-01-01.\n\nSection 2. Timing\nBuyer shall pay Invoice Alpha within thirty (60) calendar days after receipt of Invoice Alpha.",
+      "confirmed_conflict_gold": false,
+      "expected_category": "REVIEW_REQUIRED",
+      "construction_rule": "Written/numeric duration disagreement requests review",
+      "provenance": "NEW_MECHANICAL_SYNTHETIC",
+      "independently_adjudicated": false,
+      "split": "EXPOSED_DEVELOPMENT"
+    },
+    {
+      "case_id": "N45",
+      "text": "Section 1. Timing\nEvent Completion occurs on 2026-06-01.\n\nSection 2. Timing\nEvent completion occurs on 2026-06-01.",
+      "confirmed_conflict_gold": false,
+      "expected_category": null,
+      "construction_rule": "Case folding alone is not a different event",
+      "provenance": "NEW_MECHANICAL_SYNTHETIC",
+      "independently_adjudicated": false,
+      "split": "EXPOSED_DEVELOPMENT"
+    },
+    {
+      "case_id": "N46",
+      "text": "Section 1. Timing\nBuyer shall complete Inspection on 2026-06-01.\n\nSection 2. Timing\nSeller shall complete Inspection on 2026-07-01.",
+      "confirmed_conflict_gold": false,
+      "expected_category": null,
+      "construction_rule": "Different actors with same action are distinct obligations",
+      "provenance": "NEW_MECHANICAL_SYNTHETIC",
+      "independently_adjudicated": false,
+      "split": "EXPOSED_DEVELOPMENT"
+    },
+    {
+      "case_id": "N47",
+      "text": "Section 1. Timing\nFor the initial term, Event Completion occurs on 2026-06-01.\n\nSection 2. Timing\nFor the renewal term, Event Completion occurs on 2027-06-01.",
+      "confirmed_conflict_gold": false,
+      "expected_category": null,
+      "construction_rule": "Same event label in distinct phases not conflated",
+      "provenance": "NEW_MECHANICAL_SYNTHETIC",
+      "independently_adjudicated": false,
+      "split": "EXPOSED_DEVELOPMENT"
+    },
+    {
+      "case_id": "N48",
+      "text": "Section 1. Timing\nThe Expiration Date is 2026-07-20.\n\nSection 2. Timing\nBuyer shall give notice at least 10 calendar days before the Expiration Date.\n\nSection 3. Timing\nBuyer shall give notice no later than 5 calendar days before the Expiration Date.",
+      "confirmed_conflict_gold": false,
+      "expected_category": null,
+      "construction_rule": "Before-event upper bounds overlap",
+      "provenance": "NEW_MECHANICAL_SYNTHETIC",
+      "independently_adjudicated": false,
+      "split": "EXPOSED_DEVELOPMENT"
+    },
+    {
+      "case_id": "N49",
+      "text": "Section 1. Timing\nService runs from May 10, 2026 through May 1, 2026.",
+      "confirmed_conflict_gold": true,
+      "expected_category": null,
+      "construction_rule": "Named-month explicit range inverted",
+      "provenance": "NEW_MECHANICAL_SYNTHETIC",
+      "independently_adjudicated": false,
+      "split": "EXPOSED_DEVELOPMENT"
+    },
+    {
+      "case_id": "N50",
+      "text": "Section 1. Timing\nThe Effective Date is 2024-02-29.\n\nSection 2. Timing\nThe contract duration is 1 year from the Effective Date.",
+      "confirmed_conflict_gold": false,
+      "expected_category": "UNSUPPORTED",
+      "construction_rule": "Anniversary/leap-year duration policy unsupported",
+      "provenance": "NEW_MECHANICAL_SYNTHETIC",
+      "independently_adjudicated": false,
+      "split": "EXPOSED_DEVELOPMENT"
+    },
+    {
+      "case_id": "N51",
+      "text": "Section 1. Timing\nEvent Completion occurs on 2026-06-01 at 09:00 UTC.\n\nSection 2. Timing\nEvent Completion occurs on 2026-06-01 at 10:00 UTC.",
+      "confirmed_conflict_gold": false,
+      "expected_category": "UNSUPPORTED",
+      "construction_rule": "Time-of-day semantics outside date-only engine",
+      "provenance": "NEW_MECHANICAL_SYNTHETIC",
+      "independently_adjudicated": false,
+      "split": "EXPOSED_DEVELOPMENT"
+    },
+    {
+      "case_id": "N52",
+      "text": "Section 1. Timing\nIf renewed, Buyer shall give notice within 30 calendar days after Event Renewal Approval.",
+      "confirmed_conflict_gold": false,
+      "expected_category": "REVIEW_REQUIRED",
+      "construction_rule": "Conditional renewal trigger missing; no calendar anchor invented",
+      "provenance": "NEW_MECHANICAL_SYNTHETIC",
+      "independently_adjudicated": false,
+      "split": "EXPOSED_DEVELOPMENT"
+    },
+    {
+      "case_id": "P01",
+      "text": "Section 1. Timing\nBuyer shall give notice within 10 business days.\n\nSection 2. Timing\nExcept in emergencies, Buyer shall give notice within 20 calendar days.",
+      "confirmed_conflict_gold": null,
+      "expected_category": null,
+      "construction_rule": "Exception scope and calendar require interpretation",
+      "provenance": "PROVISIONAL_INTERPRETATION",
+      "independently_adjudicated": false,
+      "split": "EXPOSED_DEVELOPMENT"
+    },
+    {
+      "case_id": "P02",
+      "text": "Section 1. Timing\nPayment is due before effectiveness unless waived.",
+      "confirmed_conflict_gold": null,
+      "expected_category": null,
+      "construction_rule": "No absolute date or unique timing basis",
+      "provenance": "PROVISIONAL_INTERPRETATION",
+      "independently_adjudicated": false,
+      "split": "EXPOSED_DEVELOPMENT"
+    },
+    {
+      "case_id": "P03",
+      "text": "Section 1. Timing\nDelivery should occur around the first week of May 2026.",
+      "confirmed_conflict_gold": null,
+      "expected_category": null,
+      "construction_rule": "Approximate natural-language window",
+      "provenance": "PROVISIONAL_INTERPRETATION",
+      "independently_adjudicated": false,
+      "split": "EXPOSED_DEVELOPMENT"
+    },
+    {
+      "case_id": "P04",
+      "text": "Section 1. Timing\nThe amended schedule supersedes the previous completion date.",
+      "confirmed_conflict_gold": null,
+      "expected_category": null,
+      "construction_rule": "No dated old/new facts; legal precedence not inferred",
+      "provenance": "PROVISIONAL_INTERPRETATION",
+      "independently_adjudicated": false,
+      "split": "EXPOSED_DEVELOPMENT"
+    },
+    {
+      "case_id": "P05",
+      "text": "Section 1. Timing\nNotice is required promptly after material breach.",
+      "confirmed_conflict_gold": null,
+      "expected_category": null,
+      "construction_rule": "Qualitative duration and trigger interpretation",
+      "provenance": "PROVISIONAL_INTERPRETATION",
+      "independently_adjudicated": false,
+      "split": "EXPOSED_DEVELOPMENT"
+    },
+    {
+      "case_id": "P06",
+      "text": "Section 1. Timing\nThe parties may extend the term by mutual consent.",
+      "confirmed_conflict_gold": null,
+      "expected_category": null,
+      "construction_rule": "Possible future extension does not define actual expiry",
+      "provenance": "PROVISIONAL_INTERPRETATION",
+      "independently_adjudicated": false,
+      "split": "EXPOSED_DEVELOPMENT"
+    }
+  ]
+}

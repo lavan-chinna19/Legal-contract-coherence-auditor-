@@ -1,0 +1,323 @@
+{
+  "timestamp": "2026-10-14T15:35:58.925432+00:00",
+  "total_test_cases": 12,
+  "passed_test_cases": 12,
+  "failed_test_cases": 0,
+  "overall_status": "PASS",
+  "results": [
+    {
+      "test_id": "TC-WPG-01",
+      "name": "Normal Words",
+      "input_tokens_count": 4,
+      "output_words_count": 4,
+      "expected_words": [
+        "The",
+        "contract",
+        "is",
+        "valid"
+      ],
+      "observed_words": [
+        "The",
+        "contract",
+        "is",
+        "valid"
+      ],
+      "status": "PASS",
+      "notes": "Single-token standard English words preserve 1:1 boundary."
+    },
+    {
+      "test_id": "TC-WPG-02",
+      "name": "Split Words",
+      "input_tokens_count": 5,
+      "output_words_count": 2,
+      "expected_words": [
+        "indemnification",
+        "agreement"
+      ],
+      "observed_words": [
+        "indemnification",
+        "agreement"
+      ],
+      "status": "PASS",
+      "notes": "Subword fragments merged into single word with summed attribution."
+    },
+    {
+      "test_id": "TC-WPG-03",
+      "name": "Standalone Punctuation",
+      "input_tokens_count": 6,
+      "output_words_count": 6,
+      "expected_words": [
+        "Section",
+        "1",
+        ".",
+        "01",
+        ";",
+        "and"
+      ],
+      "observed_words": [
+        "Section",
+        "1",
+        ".",
+        "01",
+        ";",
+        "and"
+      ],
+      "status": "PASS",
+      "notes": "Punctuation marks remain discrete tokens."
+    },
+    {
+      "test_id": "TC-WPG-04",
+      "name": "Sentence Boundaries",
+      "input_tokens_count": 9,
+      "output_words_count": 9,
+      "expected_words": [
+        "Term",
+        ".",
+        "The",
+        "term",
+        "shall",
+        "be",
+        "one",
+        "year",
+        "."
+      ],
+      "observed_words": [
+        "Term",
+        ".",
+        "The",
+        "term",
+        "shall",
+        "be",
+        "one",
+        "year",
+        "."
+      ],
+      "status": "PASS",
+      "notes": "Period boundary does not fuse adjacent words."
+    },
+    {
+      "test_id": "TC-WPG-05",
+      "name": "Special Tokens",
+      "input_tokens_count": 3,
+      "output_words_count": 3,
+      "expected_words": [
+        "[CLS]",
+        "Confidentiality",
+        "[SEP]"
+      ],
+      "observed_words": [
+        "[CLS]",
+        "Confidentiality",
+        "[SEP]"
+      ],
+      "status": "PASS",
+      "notes": "[CLS] and [SEP] marked as isSpecialToken=True."
+    },
+    {
+      "test_id": "TC-WPG-06",
+      "name": "Unknown Tokens",
+      "input_tokens_count": 4,
+      "output_words_count": 4,
+      "expected_words": [
+        "[CLS]",
+        "[UNK]",
+        "clause",
+        "[SEP]"
+      ],
+      "observed_words": [
+        "[CLS]",
+        "[UNK]",
+        "clause",
+        "[SEP]"
+      ],
+      "status": "PASS",
+      "notes": "[UNK] token preserved without artificial string imputation."
+    },
+    {
+      "test_id": "TC-WPG-07",
+      "name": "Negative Attribution",
+      "input_tokens_count": 3,
+      "output_words_count": 2,
+      "expected_words": [
+        "standard",
+        "boilerplate"
+      ],
+      "observed_words": [
+        "standard",
+        "boilerplate"
+      ],
+      "status": "PASS",
+      "notes": "Negative tokens marked with sign='NEGATIVE' (coherence anchors)."
+    },
+    {
+      "test_id": "TC-WPG-08",
+      "name": "Positive Attribution",
+      "input_tokens_count": 2,
+      "output_words_count": 2,
+      "expected_words": [
+        "unusual",
+        "stipulation"
+      ],
+      "observed_words": [
+        "unusual",
+        "stipulation"
+      ],
+      "status": "PASS",
+      "notes": "Positive tokens marked with sign='POSITIVE' (anomaly drivers)."
+    },
+    {
+      "test_id": "TC-WPG-09",
+      "name": "Zero Attribution",
+      "input_tokens_count": 2,
+      "output_words_count": 2,
+      "expected_words": [
+        "the",
+        "of"
+      ],
+      "observed_words": [
+        "the",
+        "of"
+      ],
+      "status": "PASS",
+      "notes": "Zero values marked with sign='NEUTRAL'."
+    },
+    {
+      "test_id": "TC-WPG-10",
+      "name": "Empty Token Array",
+      "input_tokens_count": 0,
+      "output_words_count": 0,
+      "expected_words": [],
+      "observed_words": [],
+      "status": "PASS",
+      "notes": "Empty input produces empty array without exception."
+    },
+    {
+      "test_id": "TC-WPG-11",
+      "name": "Long Sequence (50 tokens)",
+      "input_tokens_count": 50,
+      "output_words_count": 50,
+      "expected_words": [
+        "word0",
+        "word1",
+        "word2",
+        "word3",
+        "word4",
+        "word5",
+        "word6",
+        "word7",
+        "word8",
+        "word9",
+        "word10",
+        "word11",
+        "word12",
+        "word13",
+        "word14",
+        "word15",
+        "word16",
+        "word17",
+        "word18",
+        "word19",
+        "word20",
+        "word21",
+        "word22",
+        "word23",
+        "word24",
+        "word25",
+        "word26",
+        "word27",
+        "word28",
+        "word29",
+        "word30",
+        "word31",
+        "word32",
+        "word33",
+        "word34",
+        "word35",
+        "word36",
+        "word37",
+        "word38",
+        "word39",
+        "word40",
+        "word41",
+        "word42",
+        "word43",
+        "word44",
+        "word45",
+        "word46",
+        "word47",
+        "word48",
+        "word49"
+      ],
+      "observed_words": [
+        "word0",
+        "word1",
+        "word2",
+        "word3",
+        "word4",
+        "word5",
+        "word6",
+        "word7",
+        "word8",
+        "word9",
+        "word10",
+        "word11",
+        "word12",
+        "word13",
+        "word14",
+        "word15",
+        "word16",
+        "word17",
+        "word18",
+        "word19",
+        "word20",
+        "word21",
+        "word22",
+        "word23",
+        "word24",
+        "word25",
+        "word26",
+        "word27",
+        "word28",
+        "word29",
+        "word30",
+        "word31",
+        "word32",
+        "word33",
+        "word34",
+        "word35",
+        "word36",
+        "word37",
+        "word38",
+        "word39",
+        "word40",
+        "word41",
+        "word42",
+        "word43",
+        "word44",
+        "word45",
+        "word46",
+        "word47",
+        "word48",
+        "word49"
+      ],
+      "status": "PASS",
+      "notes": "Long token sequences process in < 5ms."
+    },
+    {
+      "test_id": "TC-WPG-12",
+      "name": "Truncated / Hanging Subtoken Sequence",
+      "input_tokens_count": 3,
+      "output_words_count": 2,
+      "expected_words": [
+        "fragment",
+        "normalend"
+      ],
+      "observed_words": [
+        "fragment",
+        "normalend"
+      ],
+      "status": "PASS",
+      "notes": "Orphan initial ##fragment handled gracefully as standalone root."
+    }
+  ]
+}
